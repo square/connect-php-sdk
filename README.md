@@ -1,9 +1,9 @@
 Connect v2 PHP SDK
 ==================
 
-This repository contains the released PHP client SDK. Check out our [other
-repository](https://github.com/square/connect-api-specification) for the
-specification and template files we used to generate this.
+This repository contains the released PHP client SDK. Check out our [API
+specification repository](https://github.com/square/connect-api-specification)
+for the specification and template files we used to generate this.
 
 Usage
 -----
