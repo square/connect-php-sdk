@@ -1,6 +1,6 @@
 # Change Log
 
-## Upcoming (available on dev-master)
+### Version 2.0.0.1 (2016-05-19)
 
 * Improve error messaging for API connection failures.
 
