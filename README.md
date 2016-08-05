@@ -5,6 +5,11 @@ This repository contains the released PHP client SDK. Check out our [API
 specification repository](https://github.com/square/connect-api-specification)
 for the specification and template files we used to generate this.
 
+Requirements
+------------
+
+Using the connect PHP SDK requires PHP >= 5.4.0
+
 Usage
 -----
 
