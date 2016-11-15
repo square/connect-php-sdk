@@ -7,6 +7,8 @@ for the specification and template files we used to generate this.
 
 If you are looking for a sample e-commerce application using these APIs, check out the [`connect-api-examples`](https://github.com/square/connect-api-examples/tree/master/connect-examples/v2/php_payment) repository. 
 
+To learn more about the Square APIs in general, head on over to the [Square API documentation](https://docs.connect.squareup.com/)
+
 Requirements
 ------------
 * `PHP >= 5.4.0`
