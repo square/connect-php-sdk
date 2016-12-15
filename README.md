@@ -212,8 +212,8 @@ $transaction_api->charge($authorization, $location_id, $body);
 
 Response: [\SquareConnect\Model\ChargeResponse](lib/Model/ChargeResponse.php)
 ``` 
-$transaction_api->createCustomer($authorization, $body)->getErrors();
-$transaction_api->createCustomer($authorization, $body)->getTransaction();
+$transaction_api->charge($authorization, $location_id, $body)->getErrors();
+$transaction_api->charge($authorization, $location_id, $body)->getTransaction();
 ```
 See all the functions you can use with the `->getTransactions()` response in the [transaction model](lib/Model/Transaction.php)
 
