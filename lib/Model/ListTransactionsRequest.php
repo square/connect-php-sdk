@@ -140,7 +140,6 @@ class ListTransactionsRequest implements ArrayAccess
      */
     public function setBeginTime($begin_time)
     {
-        
         $this->begin_time = $begin_time;
         return $this;
     }
@@ -160,7 +159,6 @@ class ListTransactionsRequest implements ArrayAccess
      */
     public function setEndTime($end_time)
     {
-        
         $this->end_time = $end_time;
         return $this;
     }
@@ -180,10 +178,6 @@ class ListTransactionsRequest implements ArrayAccess
      */
     public function setSortOrder($sort_order)
     {
-        $allowed_values = array("DESC", "ASC");
-        if (!in_array($sort_order, $allowed_values)) {
-            throw new \InvalidArgumentException("Invalid value for 'sort_order', must be one of 'DESC', 'ASC'");
-        }
         $this->sort_order = $sort_order;
         return $this;
     }
@@ -203,7 +197,6 @@ class ListTransactionsRequest implements ArrayAccess
      */
     public function setCursor($cursor)
     {
-        
         $this->cursor = $cursor;
         return $this;
     }

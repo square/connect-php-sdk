@@ -210,7 +210,6 @@ class ChargeRequest implements ArrayAccess
      */
     public function setIdempotencyKey($idempotency_key)
     {
-        
         $this->idempotency_key = $idempotency_key;
         return $this;
     }
@@ -230,7 +229,6 @@ class ChargeRequest implements ArrayAccess
      */
     public function setAmountMoney($amount_money)
     {
-        
         $this->amount_money = $amount_money;
         return $this;
     }
@@ -250,7 +248,6 @@ class ChargeRequest implements ArrayAccess
      */
     public function setCardNonce($card_nonce)
     {
-        
         $this->card_nonce = $card_nonce;
         return $this;
     }
@@ -270,7 +267,6 @@ class ChargeRequest implements ArrayAccess
      */
     public function setCustomerCardId($customer_card_id)
     {
-        
         $this->customer_card_id = $customer_card_id;
         return $this;
     }
@@ -290,7 +286,6 @@ class ChargeRequest implements ArrayAccess
      */
     public function setDelayCapture($delay_capture)
     {
-        
         $this->delay_capture = $delay_capture;
         return $this;
     }
@@ -310,7 +305,6 @@ class ChargeRequest implements ArrayAccess
      */
     public function setReferenceId($reference_id)
     {
-        
         $this->reference_id = $reference_id;
         return $this;
     }
@@ -330,7 +324,6 @@ class ChargeRequest implements ArrayAccess
      */
     public function setNote($note)
     {
-        
         $this->note = $note;
         return $this;
     }
@@ -350,7 +343,6 @@ class ChargeRequest implements ArrayAccess
      */
     public function setCustomerId($customer_id)
     {
-        
         $this->customer_id = $customer_id;
         return $this;
     }
@@ -370,7 +362,6 @@ class ChargeRequest implements ArrayAccess
      */
     public function setBillingAddress($billing_address)
     {
-        
         $this->billing_address = $billing_address;
         return $this;
     }
@@ -390,7 +381,6 @@ class ChargeRequest implements ArrayAccess
      */
     public function setShippingAddress($shipping_address)
     {
-        
         $this->shipping_address = $shipping_address;
         return $this;
     }
@@ -410,7 +400,6 @@ class ChargeRequest implements ArrayAccess
      */
     public function setBuyerEmailAddress($buyer_email_address)
     {
-        
         $this->buyer_email_address = $buyer_email_address;
         return $this;
     }

@@ -120,7 +120,6 @@ class RetrieveTransactionResponse implements ArrayAccess
      */
     public function setErrors($errors)
     {
-        
         $this->errors = $errors;
         return $this;
     }
@@ -140,7 +139,6 @@ class RetrieveTransactionResponse implements ArrayAccess
      */
     public function setTransaction($transaction)
     {
-        
         $this->transaction = $transaction;
         return $this;
     }

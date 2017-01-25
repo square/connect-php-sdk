@@ -110,7 +110,6 @@ class ListCustomersRequest implements ArrayAccess
      */
     public function setCursor($cursor)
     {
-        
         $this->cursor = $cursor;
         return $this;
     }

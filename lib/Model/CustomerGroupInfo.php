@@ -120,7 +120,6 @@ class CustomerGroupInfo implements ArrayAccess
      */
     public function setId($id)
     {
-        
         $this->id = $id;
         return $this;
     }
@@ -140,7 +139,6 @@ class CustomerGroupInfo implements ArrayAccess
      */
     public function setName($name)
     {
-        
         $this->name = $name;
         return $this;
     }

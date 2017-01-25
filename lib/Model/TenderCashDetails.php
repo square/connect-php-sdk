@@ -120,7 +120,6 @@ class TenderCashDetails implements ArrayAccess
      */
     public function setBuyerTenderedMoney($buyer_tendered_money)
     {
-        
         $this->buyer_tendered_money = $buyer_tendered_money;
         return $this;
     }
@@ -140,7 +139,6 @@ class TenderCashDetails implements ArrayAccess
      */
     public function setChangeBackMoney($change_back_money)
     {
-        
         $this->change_back_money = $change_back_money;
         return $this;
     }

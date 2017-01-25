@@ -200,7 +200,6 @@ class Transaction implements ArrayAccess
      */
     public function setId($id)
     {
-        
         $this->id = $id;
         return $this;
     }
@@ -220,7 +219,6 @@ class Transaction implements ArrayAccess
      */
     public function setLocationId($location_id)
     {
-        
         $this->location_id = $location_id;
         return $this;
     }
@@ -240,7 +238,6 @@ class Transaction implements ArrayAccess
      */
     public function setCreatedAt($created_at)
     {
-        
         $this->created_at = $created_at;
         return $this;
     }
@@ -260,7 +257,6 @@ class Transaction implements ArrayAccess
      */
     public function setTenders($tenders)
     {
-        
         $this->tenders = $tenders;
         return $this;
     }
@@ -280,7 +276,6 @@ class Transaction implements ArrayAccess
      */
     public function setRefunds($refunds)
     {
-        
         $this->refunds = $refunds;
         return $this;
     }
@@ -300,7 +295,6 @@ class Transaction implements ArrayAccess
      */
     public function setReferenceId($reference_id)
     {
-        
         $this->reference_id = $reference_id;
         return $this;
     }
@@ -320,10 +314,6 @@ class Transaction implements ArrayAccess
      */
     public function setProduct($product)
     {
-        $allowed_values = array("REGISTER", "EXTERNAL_API", "BILLING", "APPOINTMENTS", "INVOICES", "ONLINE_STORE", "PAYROLL", "OTHER");
-        if (!in_array($product, $allowed_values)) {
-            throw new \InvalidArgumentException("Invalid value for 'product', must be one of 'REGISTER', 'EXTERNAL_API', 'BILLING', 'APPOINTMENTS', 'INVOICES', 'ONLINE_STORE', 'PAYROLL', 'OTHER'");
-        }
         $this->product = $product;
         return $this;
     }
@@ -343,7 +333,6 @@ class Transaction implements ArrayAccess
      */
     public function setClientId($client_id)
     {
-        
         $this->client_id = $client_id;
         return $this;
     }
@@ -363,7 +352,6 @@ class Transaction implements ArrayAccess
      */
     public function setOrder($order)
     {
-        
         $this->order = $order;
         return $this;
     }
@@ -383,7 +371,6 @@ class Transaction implements ArrayAccess
      */
     public function setShippingAddress($shipping_address)
     {
-        
         $this->shipping_address = $shipping_address;
         return $this;
     }

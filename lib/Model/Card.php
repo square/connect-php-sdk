@@ -170,7 +170,6 @@ class Card implements ArrayAccess
      */
     public function setId($id)
     {
-        
         $this->id = $id;
         return $this;
     }
@@ -190,10 +189,6 @@ class Card implements ArrayAccess
      */
     public function setCardBrand($card_brand)
     {
-        $allowed_values = array("OTHER_BRAND", "VISA", "MASTERCARD", "AMERICAN_EXPRESS", "DISCOVER", "DISCOVER_DINERS", "JCB", "CHINA_UNIONPAY", "SQUARE_GIFT_CARD");
-        if (!in_array($card_brand, $allowed_values)) {
-            throw new \InvalidArgumentException("Invalid value for 'card_brand', must be one of 'OTHER_BRAND', 'VISA', 'MASTERCARD', 'AMERICAN_EXPRESS', 'DISCOVER', 'DISCOVER_DINERS', 'JCB', 'CHINA_UNIONPAY', 'SQUARE_GIFT_CARD'");
-        }
         $this->card_brand = $card_brand;
         return $this;
     }
@@ -213,7 +208,6 @@ class Card implements ArrayAccess
      */
     public function setLast4($last_4)
     {
-        
         $this->last_4 = $last_4;
         return $this;
     }
@@ -233,7 +227,6 @@ class Card implements ArrayAccess
      */
     public function setExpMonth($exp_month)
     {
-        
         $this->exp_month = $exp_month;
         return $this;
     }
@@ -253,7 +246,6 @@ class Card implements ArrayAccess
      */
     public function setExpYear($exp_year)
     {
-        
         $this->exp_year = $exp_year;
         return $this;
     }
@@ -273,7 +265,6 @@ class Card implements ArrayAccess
      */
     public function setCardholderName($cardholder_name)
     {
-        
         $this->cardholder_name = $cardholder_name;
         return $this;
     }
@@ -293,7 +284,6 @@ class Card implements ArrayAccess
      */
     public function setBillingAddress($billing_address)
     {
-        
         $this->billing_address = $billing_address;
         return $this;
     }

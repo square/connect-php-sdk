@@ -120,7 +120,6 @@ class CreateOrderRequestOrder implements ArrayAccess
      */
     public function setReferenceId($reference_id)
     {
-        
         $this->reference_id = $reference_id;
         return $this;
     }
@@ -140,7 +139,6 @@ class CreateOrderRequestOrder implements ArrayAccess
      */
     public function setLineItems($line_items)
     {
-        
         $this->line_items = $line_items;
         return $this;
     }

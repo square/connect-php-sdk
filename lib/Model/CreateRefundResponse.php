@@ -120,7 +120,6 @@ class CreateRefundResponse implements ArrayAccess
      */
     public function setErrors($errors)
     {
-        
         $this->errors = $errors;
         return $this;
     }
@@ -140,7 +139,6 @@ class CreateRefundResponse implements ArrayAccess
      */
     public function setRefund($refund)
     {
-        
         $this->refund = $refund;
         return $this;
     }

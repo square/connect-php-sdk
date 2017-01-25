@@ -170,7 +170,6 @@ class CreateCheckoutRequest implements ArrayAccess
      */
     public function setIdempotencyKey($idempotency_key)
     {
-        
         $this->idempotency_key = $idempotency_key;
         return $this;
     }
@@ -190,7 +189,6 @@ class CreateCheckoutRequest implements ArrayAccess
      */
     public function setOrder($order)
     {
-        
         $this->order = $order;
         return $this;
     }
@@ -210,7 +208,6 @@ class CreateCheckoutRequest implements ArrayAccess
      */
     public function setAskForShippingAddress($ask_for_shipping_address)
     {
-        
         $this->ask_for_shipping_address = $ask_for_shipping_address;
         return $this;
     }
@@ -230,7 +227,6 @@ class CreateCheckoutRequest implements ArrayAccess
      */
     public function setMerchantSupportEmail($merchant_support_email)
     {
-        
         $this->merchant_support_email = $merchant_support_email;
         return $this;
     }
@@ -250,7 +246,6 @@ class CreateCheckoutRequest implements ArrayAccess
      */
     public function setPrePopulateBuyerEmail($pre_populate_buyer_email)
     {
-        
         $this->pre_populate_buyer_email = $pre_populate_buyer_email;
         return $this;
     }
@@ -270,7 +265,6 @@ class CreateCheckoutRequest implements ArrayAccess
      */
     public function setPrePopulateShippingAddress($pre_populate_shipping_address)
     {
-        
         $this->pre_populate_shipping_address = $pre_populate_shipping_address;
         return $this;
     }
@@ -290,7 +284,6 @@ class CreateCheckoutRequest implements ArrayAccess
      */
     public function setRedirectUrl($redirect_url)
     {
-        
         $this->redirect_url = $redirect_url;
         return $this;
     }

@@ -130,10 +130,6 @@ class TenderCardDetails implements ArrayAccess
      */
     public function setStatus($status)
     {
-        $allowed_values = array("AUTHORIZED", "CAPTURED", "VOIDED", "FAILED");
-        if (!in_array($status, $allowed_values)) {
-            throw new \InvalidArgumentException("Invalid value for 'status', must be one of 'AUTHORIZED', 'CAPTURED', 'VOIDED', 'FAILED'");
-        }
         $this->status = $status;
         return $this;
     }
@@ -153,7 +149,6 @@ class TenderCardDetails implements ArrayAccess
      */
     public function setCard($card)
     {
-        
         $this->card = $card;
         return $this;
     }
@@ -173,10 +168,6 @@ class TenderCardDetails implements ArrayAccess
      */
     public function setEntryMethod($entry_method)
     {
-        $allowed_values = array("SWIPED", "KEYED", "EMV", "ON_FILE", "CONTACTLESS");
-        if (!in_array($entry_method, $allowed_values)) {
-            throw new \InvalidArgumentException("Invalid value for 'entry_method', must be one of 'SWIPED', 'KEYED', 'EMV', 'ON_FILE', 'CONTACTLESS'");
-        }
         $this->entry_method = $entry_method;
         return $this;
     }

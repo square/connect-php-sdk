@@ -190,7 +190,6 @@ class Refund implements ArrayAccess
      */
     public function setId($id)
     {
-        
         $this->id = $id;
         return $this;
     }
@@ -210,7 +209,6 @@ class Refund implements ArrayAccess
      */
     public function setLocationId($location_id)
     {
-        
         $this->location_id = $location_id;
         return $this;
     }
@@ -230,7 +228,6 @@ class Refund implements ArrayAccess
      */
     public function setTransactionId($transaction_id)
     {
-        
         $this->transaction_id = $transaction_id;
         return $this;
     }
@@ -250,7 +247,6 @@ class Refund implements ArrayAccess
      */
     public function setTenderId($tender_id)
     {
-        
         $this->tender_id = $tender_id;
         return $this;
     }
@@ -270,7 +266,6 @@ class Refund implements ArrayAccess
      */
     public function setCreatedAt($created_at)
     {
-        
         $this->created_at = $created_at;
         return $this;
     }
@@ -290,7 +285,6 @@ class Refund implements ArrayAccess
      */
     public function setReason($reason)
     {
-        
         $this->reason = $reason;
         return $this;
     }
@@ -310,7 +304,6 @@ class Refund implements ArrayAccess
      */
     public function setAmountMoney($amount_money)
     {
-        
         $this->amount_money = $amount_money;
         return $this;
     }
@@ -330,10 +323,6 @@ class Refund implements ArrayAccess
      */
     public function setStatus($status)
     {
-        $allowed_values = array("PENDING", "APPROVED", "REJECTED", "FAILED");
-        if (!in_array($status, $allowed_values)) {
-            throw new \InvalidArgumentException("Invalid value for 'status', must be one of 'PENDING', 'APPROVED', 'REJECTED', 'FAILED'");
-        }
         $this->status = $status;
         return $this;
     }
@@ -353,7 +342,6 @@ class Refund implements ArrayAccess
      */
     public function setProcessingFeeMoney($processing_fee_money)
     {
-        
         $this->processing_fee_money = $processing_fee_money;
         return $this;
     }

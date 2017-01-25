@@ -150,7 +150,6 @@ class Order implements ArrayAccess
      */
     public function setId($id)
     {
-        
         $this->id = $id;
         return $this;
     }
@@ -170,7 +169,6 @@ class Order implements ArrayAccess
      */
     public function setLocationId($location_id)
     {
-        
         $this->location_id = $location_id;
         return $this;
     }
@@ -190,7 +188,6 @@ class Order implements ArrayAccess
      */
     public function setReferenceId($reference_id)
     {
-        
         $this->reference_id = $reference_id;
         return $this;
     }
@@ -210,7 +207,6 @@ class Order implements ArrayAccess
      */
     public function setLineItems($line_items)
     {
-        
         $this->line_items = $line_items;
         return $this;
     }
@@ -230,7 +226,6 @@ class Order implements ArrayAccess
      */
     public function setTotalMoney($total_money)
     {
-        
         $this->total_money = $total_money;
         return $this;
     }

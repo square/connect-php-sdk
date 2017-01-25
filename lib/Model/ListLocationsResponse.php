@@ -120,7 +120,6 @@ class ListLocationsResponse implements ArrayAccess
      */
     public function setErrors($errors)
     {
-        
         $this->errors = $errors;
         return $this;
     }
@@ -140,7 +139,6 @@ class ListLocationsResponse implements ArrayAccess
      */
     public function setLocations($locations)
     {
-        
         $this->locations = $locations;
         return $this;
     }

@@ -210,7 +210,6 @@ class Tender implements ArrayAccess
      */
     public function setId($id)
     {
-        
         $this->id = $id;
         return $this;
     }
@@ -230,7 +229,6 @@ class Tender implements ArrayAccess
      */
     public function setLocationId($location_id)
     {
-        
         $this->location_id = $location_id;
         return $this;
     }
@@ -250,7 +248,6 @@ class Tender implements ArrayAccess
      */
     public function setTransactionId($transaction_id)
     {
-        
         $this->transaction_id = $transaction_id;
         return $this;
     }
@@ -270,7 +267,6 @@ class Tender implements ArrayAccess
      */
     public function setCreatedAt($created_at)
     {
-        
         $this->created_at = $created_at;
         return $this;
     }
@@ -290,7 +286,6 @@ class Tender implements ArrayAccess
      */
     public function setNote($note)
     {
-        
         $this->note = $note;
         return $this;
     }
@@ -310,7 +305,6 @@ class Tender implements ArrayAccess
      */
     public function setAmountMoney($amount_money)
     {
-        
         $this->amount_money = $amount_money;
         return $this;
     }
@@ -330,7 +324,6 @@ class Tender implements ArrayAccess
      */
     public function setProcessingFeeMoney($processing_fee_money)
     {
-        
         $this->processing_fee_money = $processing_fee_money;
         return $this;
     }
@@ -350,7 +343,6 @@ class Tender implements ArrayAccess
      */
     public function setCustomerId($customer_id)
     {
-        
         $this->customer_id = $customer_id;
         return $this;
     }
@@ -370,10 +362,6 @@ class Tender implements ArrayAccess
      */
     public function setType($type)
     {
-        $allowed_values = array("CARD", "CASH", "THIRD_PARTY_CARD", "SQUARE_GIFT_CARD", "NO_SALE", "OTHER");
-        if (!in_array($type, $allowed_values)) {
-            throw new \InvalidArgumentException("Invalid value for 'type', must be one of 'CARD', 'CASH', 'THIRD_PARTY_CARD', 'SQUARE_GIFT_CARD', 'NO_SALE', 'OTHER'");
-        }
         $this->type = $type;
         return $this;
     }
@@ -393,7 +381,6 @@ class Tender implements ArrayAccess
      */
     public function setCardDetails($card_details)
     {
-        
         $this->card_details = $card_details;
         return $this;
     }
@@ -413,7 +400,6 @@ class Tender implements ArrayAccess
      */
     public function setCashDetails($cash_details)
     {
-        
         $this->cash_details = $cash_details;
         return $this;
     }

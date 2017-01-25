@@ -110,7 +110,6 @@ class CaptureTransactionResponse implements ArrayAccess
      */
     public function setErrors($errors)
     {
-        
         $this->errors = $errors;
         return $this;
     }

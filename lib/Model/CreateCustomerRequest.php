@@ -190,7 +190,6 @@ class CreateCustomerRequest implements ArrayAccess
      */
     public function setGivenName($given_name)
     {
-        
         $this->given_name = $given_name;
         return $this;
     }
@@ -210,7 +209,6 @@ class CreateCustomerRequest implements ArrayAccess
      */
     public function setFamilyName($family_name)
     {
-        
         $this->family_name = $family_name;
         return $this;
     }
@@ -230,7 +228,6 @@ class CreateCustomerRequest implements ArrayAccess
      */
     public function setCompanyName($company_name)
     {
-        
         $this->company_name = $company_name;
         return $this;
     }
@@ -250,7 +247,6 @@ class CreateCustomerRequest implements ArrayAccess
      */
     public function setNickname($nickname)
     {
-        
         $this->nickname = $nickname;
         return $this;
     }
@@ -270,7 +266,6 @@ class CreateCustomerRequest implements ArrayAccess
      */
     public function setEmailAddress($email_address)
     {
-        
         $this->email_address = $email_address;
         return $this;
     }
@@ -290,7 +285,6 @@ class CreateCustomerRequest implements ArrayAccess
      */
     public function setAddress($address)
     {
-        
         $this->address = $address;
         return $this;
     }
@@ -310,7 +304,6 @@ class CreateCustomerRequest implements ArrayAccess
      */
     public function setPhoneNumber($phone_number)
     {
-        
         $this->phone_number = $phone_number;
         return $this;
     }
@@ -330,7 +323,6 @@ class CreateCustomerRequest implements ArrayAccess
      */
     public function setReferenceId($reference_id)
     {
-        
         $this->reference_id = $reference_id;
         return $this;
     }
@@ -350,7 +342,6 @@ class CreateCustomerRequest implements ArrayAccess
      */
     public function setNote($note)
     {
-        
         $this->note = $note;
         return $this;
     }

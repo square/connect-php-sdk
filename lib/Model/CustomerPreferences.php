@@ -110,7 +110,6 @@ class CustomerPreferences implements ArrayAccess
      */
     public function setEmailUnsubscribed($email_unsubscribed)
     {
-        
         $this->email_unsubscribed = $email_unsubscribed;
         return $this;
     }

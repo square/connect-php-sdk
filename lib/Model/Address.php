@@ -250,7 +250,6 @@ class Address implements ArrayAccess
      */
     public function setAddressLine1($address_line_1)
     {
-        
         $this->address_line_1 = $address_line_1;
         return $this;
     }
@@ -270,7 +269,6 @@ class Address implements ArrayAccess
      */
     public function setAddressLine2($address_line_2)
     {
-        
         $this->address_line_2 = $address_line_2;
         return $this;
     }
@@ -290,7 +288,6 @@ class Address implements ArrayAccess
      */
     public function setAddressLine3($address_line_3)
     {
-        
         $this->address_line_3 = $address_line_3;
         return $this;
     }
@@ -310,7 +307,6 @@ class Address implements ArrayAccess
      */
     public function setLocality($locality)
     {
-        
         $this->locality = $locality;
         return $this;
     }
@@ -330,7 +326,6 @@ class Address implements ArrayAccess
      */
     public function setSublocality($sublocality)
     {
-        
         $this->sublocality = $sublocality;
         return $this;
     }
@@ -350,7 +345,6 @@ class Address implements ArrayAccess
      */
     public function setSublocality2($sublocality_2)
     {
-        
         $this->sublocality_2 = $sublocality_2;
         return $this;
     }
@@ -370,7 +364,6 @@ class Address implements ArrayAccess
      */
     public function setSublocality3($sublocality_3)
     {
-        
         $this->sublocality_3 = $sublocality_3;
         return $this;
     }
@@ -390,7 +383,6 @@ class Address implements ArrayAccess
      */
     public function setAdministrativeDistrictLevel1($administrative_district_level_1)
     {
-        
         $this->administrative_district_level_1 = $administrative_district_level_1;
         return $this;
     }
@@ -410,7 +402,6 @@ class Address implements ArrayAccess
      */
     public function setAdministrativeDistrictLevel2($administrative_district_level_2)
     {
-        
         $this->administrative_district_level_2 = $administrative_district_level_2;
         return $this;
     }
@@ -430,7 +421,6 @@ class Address implements ArrayAccess
      */
     public function setAdministrativeDistrictLevel3($administrative_district_level_3)
     {
-        
         $this->administrative_district_level_3 = $administrative_district_level_3;
         return $this;
     }
@@ -450,7 +440,6 @@ class Address implements ArrayAccess
      */
     public function setPostalCode($postal_code)
     {
-        
         $this->postal_code = $postal_code;
         return $this;
     }
@@ -470,10 +459,6 @@ class Address implements ArrayAccess
      */
     public function setCountry($country)
     {
-        $allowed_values = array("ZZ", "AD", "AE", "AF", "AG", "AI", "AL", "AM", "AO", "AQ", "AR", "AS", "AT", "AU", "AW", "AX", "AZ", "BA", "BB", "BD", "BE", "BF", "BG", "BH", "BI", "BJ", "BL", "BM", "BN", "BO", "BQ", "BR", "BS", "BT", "BV", "BW", "BY", "BZ", "CA", "CC", "CD", "CF", "CG", "CH", "CI", "CK", "CL", "CM", "CN", "CO", "CR", "CU", "CV", "CW", "CX", "CY", "CZ", "DE", "DJ", "DK", "DM", "DO", "DZ", "EC", "EE", "EG", "EH", "ER", "ES", "ET", "FI", "FJ", "FK", "FM", "FO", "FR", "GA", "GB", "GD", "GE", "GF", "GG", "GH", "GI", "GL", "GM", "GN", "GP", "GQ", "GR", "GS", "GT", "GU", "GW", "GY", "HK", "HM", "HN", "HR", "HT", "HU", "ID", "IE", "IL", "IM", "IN", "IO", "IQ", "IR", "IS", "IT", "JE", "JM", "JO", "JP", "KE", "KG", "KH", "KI", "KM", "KN", "KP", "KR", "KW", "KY", "KZ", "LA", "LB", "LC", "LI", "LK", "LR", "LS", "LT", "LU", "LV", "LY", "MA", "MC", "MD", "ME", "MF", "MG", "MH", "MK", "ML", "MM", "MN", "MO", "MP", "MQ", "MR", "MS", "MT", "MU", "MV", "MW", "MX", "MY", "MZ", "NA", "NC", "NE", "NF", "NG", "NI", "NL", "NO", "NP", "NR", "NU", "NZ", "OM", "PA", "PE", "PF", "PG", "PH", "PK", "PL", "PM", "PN", "PR", "PS", "PT", "PW", "PY", "QA", "RE", "RO", "RS", "RU", "RW", "SA", "SB", "SC", "SD", "SE", "SG", "SH", "SI", "SJ", "SK", "SL", "SM", "SN", "SO", "SR", "SS", "ST", "SV", "SX", "SY", "SZ", "TC", "TD", "TF", "TG", "TH", "TJ", "TK", "TL", "TM", "TN", "TO", "TR", "TT", "TV", "TW", "TZ", "UA", "UG", "UM", "US", "UY", "UZ", "VA", "VC", "VE", "VG", "VI", "VN", "VU", "WF", "WS", "YE", "YT", "ZA", "ZM", "ZW");
-        if (!in_array($country, $allowed_values)) {
-            throw new \InvalidArgumentException("Invalid value for 'country', must be one of 'ZZ', 'AD', 'AE', 'AF', 'AG', 'AI', 'AL', 'AM', 'AO', 'AQ', 'AR', 'AS', 'AT', 'AU', 'AW', 'AX', 'AZ', 'BA', 'BB', 'BD', 'BE', 'BF', 'BG', 'BH', 'BI', 'BJ', 'BL', 'BM', 'BN', 'BO', 'BQ', 'BR', 'BS', 'BT', 'BV', 'BW', 'BY', 'BZ', 'CA', 'CC', 'CD', 'CF', 'CG', 'CH', 'CI', 'CK', 'CL', 'CM', 'CN', 'CO', 'CR', 'CU', 'CV', 'CW', 'CX', 'CY', 'CZ', 'DE', 'DJ', 'DK', 'DM', 'DO', 'DZ', 'EC', 'EE', 'EG', 'EH', 'ER', 'ES', 'ET', 'FI', 'FJ', 'FK', 'FM', 'FO', 'FR', 'GA', 'GB', 'GD', 'GE', 'GF', 'GG', 'GH', 'GI', 'GL', 'GM', 'GN', 'GP', 'GQ', 'GR', 'GS', 'GT', 'GU', 'GW', 'GY', 'HK', 'HM', 'HN', 'HR', 'HT', 'HU', 'ID', 'IE', 'IL', 'IM', 'IN', 'IO', 'IQ', 'IR', 'IS', 'IT', 'JE', 'JM', 'JO', 'JP', 'KE', 'KG', 'KH', 'KI', 'KM', 'KN', 'KP', 'KR', 'KW', 'KY', 'KZ', 'LA', 'LB', 'LC', 'LI', 'LK', 'LR', 'LS', 'LT', 'LU', 'LV', 'LY', 'MA', 'MC', 'MD', 'ME', 'MF', 'MG', 'MH', 'MK', 'ML', 'MM', 'MN', 'MO', 'MP', 'MQ', 'MR', 'MS', 'MT', 'MU', 'MV', 'MW', 'MX', 'MY', 'MZ', 'NA', 'NC', 'NE', 'NF', 'NG', 'NI', 'NL', 'NO', 'NP', 'NR', 'NU', 'NZ', 'OM', 'PA', 'PE', 'PF', 'PG', 'PH', 'PK', 'PL', 'PM', 'PN', 'PR', 'PS', 'PT', 'PW', 'PY', 'QA', 'RE', 'RO', 'RS', 'RU', 'RW', 'SA', 'SB', 'SC', 'SD', 'SE', 'SG', 'SH', 'SI', 'SJ', 'SK', 'SL', 'SM', 'SN', 'SO', 'SR', 'SS', 'ST', 'SV', 'SX', 'SY', 'SZ', 'TC', 'TD', 'TF', 'TG', 'TH', 'TJ', 'TK', 'TL', 'TM', 'TN', 'TO', 'TR', 'TT', 'TV', 'TW', 'TZ', 'UA', 'UG', 'UM', 'US', 'UY', 'UZ', 'VA', 'VC', 'VE', 'VG', 'VI', 'VN', 'VU', 'WF', 'WS', 'YE', 'YT', 'ZA', 'ZM', 'ZW'");
-        }
         $this->country = $country;
         return $this;
     }
@@ -493,7 +478,6 @@ class Address implements ArrayAccess
      */
     public function setFirstName($first_name)
     {
-        
         $this->first_name = $first_name;
         return $this;
     }
@@ -513,7 +497,6 @@ class Address implements ArrayAccess
      */
     public function setLastName($last_name)
     {
-        
         $this->last_name = $last_name;
         return $this;
     }
@@ -533,7 +516,6 @@ class Address implements ArrayAccess
      */
     public function setOrganization($organization)
     {
-        
         $this->organization = $organization;
         return $this;
     }
