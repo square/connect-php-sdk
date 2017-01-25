@@ -1,6 +1,6 @@
 <?php
 /**
- * RetrieveCustomerResponse
+ * CreateOrderRequest
  *
  * PHP version 5
  *
@@ -35,24 +35,24 @@ namespace SquareConnect\Model;
 
 use \ArrayAccess;
 /**
- * RetrieveCustomerResponse Class Doc Comment
+ * CreateOrderRequest Class Doc Comment
  *
  * @category    Class
- * @description Defines the fields that are included in the response body of a request to the [RetrieveCustomer](#endpoint-retrievecustomer) endpoint.  One of &#x60;errors&#x60; or &#x60;customer&#x60; is present in a given response (never both).
+ * @description Defines the parameters that can be included in the body of a request to the [CreateOrder](#endpoint-createorder) endpoint.
  * @package     SquareConnect
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class RetrieveCustomerResponse implements ArrayAccess
+class CreateOrderRequest implements ArrayAccess
 {
     /**
       * Array of property to type mappings. Used for (de)serialization 
       * @var string[]
       */
     static $swaggerTypes = array(
-        'errors' => '\SquareConnect\Model\Error[]',
-        'customer' => '\SquareConnect\Model\Customer'
+        'idempotency_key' => 'string',
+        'order' => '\SquareConnect\Model\Order'
     );
   
     /** 
@@ -60,8 +60,8 @@ class RetrieveCustomerResponse implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
-        'errors' => 'errors',
-        'customer' => 'customer'
+        'idempotency_key' => 'idempotency_key',
+        'order' => 'order'
     );
   
     /**
@@ -69,8 +69,8 @@ class RetrieveCustomerResponse implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
-        'errors' => 'setErrors',
-        'customer' => 'setCustomer'
+        'idempotency_key' => 'setIdempotencyKey',
+        'order' => 'setOrder'
     );
   
     /**
@@ -78,20 +78,20 @@ class RetrieveCustomerResponse implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
-        'errors' => 'getErrors',
-        'customer' => 'getCustomer'
+        'idempotency_key' => 'getIdempotencyKey',
+        'order' => 'getOrder'
     );
   
     /**
-      * $errors Any errors that occurred during the request.
-      * @var \SquareConnect\Model\Error[]
+      * $idempotency_key A value you specify that uniquely identifies this order among orders you've created.  If you're unsure whether a particular order was created successfully, you can reattempt it with the same idempotency key without worrying about creating duplicate orders.  See [Idempotency keys](#idempotencykeys) for more information.
+      * @var string
       */
-    protected $errors;
+    protected $idempotency_key;
     /**
-      * $customer The requested customer.
-      * @var \SquareConnect\Model\Customer
+      * $order The order to be created.
+      * @var \SquareConnect\Model\Order
       */
-    protected $customer;
+    protected $order;
 
     /**
      * Constructor
@@ -100,48 +100,48 @@ class RetrieveCustomerResponse implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->errors = $data["errors"];
-            $this->customer = $data["customer"];
+            $this->idempotency_key = $data["idempotency_key"];
+            $this->order = $data["order"];
         }
     }
     /**
-     * Gets errors
-     * @return \SquareConnect\Model\Error[]
+     * Gets idempotency_key
+     * @return string
      */
-    public function getErrors()
+    public function getIdempotencyKey()
     {
-        return $this->errors;
+        return $this->idempotency_key;
     }
   
     /**
-     * Sets errors
-     * @param \SquareConnect\Model\Error[] $errors Any errors that occurred during the request.
+     * Sets idempotency_key
+     * @param string $idempotency_key A value you specify that uniquely identifies this order among orders you've created.  If you're unsure whether a particular order was created successfully, you can reattempt it with the same idempotency key without worrying about creating duplicate orders.  See [Idempotency keys](#idempotencykeys) for more information.
      * @return $this
      */
-    public function setErrors($errors)
+    public function setIdempotencyKey($idempotency_key)
     {
         
-        $this->errors = $errors;
+        $this->idempotency_key = $idempotency_key;
         return $this;
     }
     /**
-     * Gets customer
-     * @return \SquareConnect\Model\Customer
+     * Gets order
+     * @return \SquareConnect\Model\Order
      */
-    public function getCustomer()
+    public function getOrder()
     {
-        return $this->customer;
+        return $this->order;
     }
   
     /**
-     * Sets customer
-     * @param \SquareConnect\Model\Customer $customer The requested customer.
+     * Sets order
+     * @param \SquareConnect\Model\Order $order The order to be created.
      * @return $this
      */
-    public function setCustomer($customer)
+    public function setOrder($order)
     {
         
-        $this->customer = $customer;
+        $this->order = $order;
         return $this;
     }
     /**

@@ -1,6 +1,6 @@
 <?php
 /**
- * RetrieveCustomerResponse
+ * CustomerPreferences
  *
  * PHP version 5
  *
@@ -35,24 +35,23 @@ namespace SquareConnect\Model;
 
 use \ArrayAccess;
 /**
- * RetrieveCustomerResponse Class Doc Comment
+ * CustomerPreferences Class Doc Comment
  *
  * @category    Class
- * @description Defines the fields that are included in the response body of a request to the [RetrieveCustomer](#endpoint-retrievecustomer) endpoint.  One of &#x60;errors&#x60; or &#x60;customer&#x60; is present in a given response (never both).
+ * @description Represents a particular customer&#39;s preferences.
  * @package     SquareConnect
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class RetrieveCustomerResponse implements ArrayAccess
+class CustomerPreferences implements ArrayAccess
 {
     /**
       * Array of property to type mappings. Used for (de)serialization 
       * @var string[]
       */
     static $swaggerTypes = array(
-        'errors' => '\SquareConnect\Model\Error[]',
-        'customer' => '\SquareConnect\Model\Customer'
+        'email_unsubscribed' => 'bool'
     );
   
     /** 
@@ -60,8 +59,7 @@ class RetrieveCustomerResponse implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
-        'errors' => 'errors',
-        'customer' => 'customer'
+        'email_unsubscribed' => 'email_unsubscribed'
     );
   
     /**
@@ -69,8 +67,7 @@ class RetrieveCustomerResponse implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
-        'errors' => 'setErrors',
-        'customer' => 'setCustomer'
+        'email_unsubscribed' => 'setEmailUnsubscribed'
     );
   
     /**
@@ -78,20 +75,14 @@ class RetrieveCustomerResponse implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
-        'errors' => 'getErrors',
-        'customer' => 'getCustomer'
+        'email_unsubscribed' => 'getEmailUnsubscribed'
     );
   
     /**
-      * $errors Any errors that occurred during the request.
-      * @var \SquareConnect\Model\Error[]
+      * $email_unsubscribed The customer has unsubscribed from receiving marketing campaign emails.
+      * @var bool
       */
-    protected $errors;
-    /**
-      * $customer The requested customer.
-      * @var \SquareConnect\Model\Customer
-      */
-    protected $customer;
+    protected $email_unsubscribed;
 
     /**
      * Constructor
@@ -100,48 +91,27 @@ class RetrieveCustomerResponse implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->errors = $data["errors"];
-            $this->customer = $data["customer"];
+            $this->email_unsubscribed = $data["email_unsubscribed"];
         }
     }
     /**
-     * Gets errors
-     * @return \SquareConnect\Model\Error[]
+     * Gets email_unsubscribed
+     * @return bool
      */
-    public function getErrors()
+    public function getEmailUnsubscribed()
     {
-        return $this->errors;
+        return $this->email_unsubscribed;
     }
   
     /**
-     * Sets errors
-     * @param \SquareConnect\Model\Error[] $errors Any errors that occurred during the request.
+     * Sets email_unsubscribed
+     * @param bool $email_unsubscribed The customer has unsubscribed from receiving marketing campaign emails.
      * @return $this
      */
-    public function setErrors($errors)
+    public function setEmailUnsubscribed($email_unsubscribed)
     {
         
-        $this->errors = $errors;
-        return $this;
-    }
-    /**
-     * Gets customer
-     * @return \SquareConnect\Model\Customer
-     */
-    public function getCustomer()
-    {
-        return $this->customer;
-    }
-  
-    /**
-     * Sets customer
-     * @param \SquareConnect\Model\Customer $customer The requested customer.
-     * @return $this
-     */
-    public function setCustomer($customer)
-    {
-        
-        $this->customer = $customer;
+        $this->email_unsubscribed = $email_unsubscribed;
         return $this;
     }
     /**

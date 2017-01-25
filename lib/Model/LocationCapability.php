@@ -38,7 +38,7 @@ use \ArrayAccess;
  * LocationCapability Class Doc Comment
  *
  * @category    Class
- * @description 
+ * @description Indicates account capabilities that a business&#39;s location might or might not have enabled.
  * @package     SquareConnect
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
@@ -78,7 +78,6 @@ class LocationCapability implements ArrayAccess
         
     );
   
-    
 
     /**
      * Constructor
@@ -90,7 +89,6 @@ class LocationCapability implements ArrayAccess
             
         }
     }
-    
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset 

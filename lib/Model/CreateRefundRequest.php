@@ -38,7 +38,7 @@ use \ArrayAccess;
  * CreateRefundRequest Class Doc Comment
  *
  * @category    Class
- * @description Defines the body parameters that can be included in\na request to the **CreateRefund** endpoint.
+ * @description Defines the body parameters that can be included in a request to the [CreateRefund](#endpoint-createrefund) endpoint.
  * @package     SquareConnect
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
@@ -90,31 +90,26 @@ class CreateRefundRequest implements ArrayAccess
         'amount_money' => 'getAmountMoney'
     );
   
-    
     /**
-      * $idempotency_key A value you specify that uniquely identifies this\nrefund among refunds you've created for the tender.\n\nIf you're unsure whether a particular refund succeeded,\nyou can reattempt it with the same idempotency key without\nworrying about duplicating the refund.
+      * $idempotency_key A value you specify that uniquely identifies this refund among refunds you've created for the tender.  If you're unsure whether a particular refund succeeded, you can reattempt it with the same idempotency key without worrying about duplicating the refund.  See [Idempotency keys](#idempotencykeys) for more information.
       * @var string
       */
     protected $idempotency_key;
-    
     /**
-      * $tender_id The ID of the tender to refund.
+      * $tender_id The ID of the tender to refund.  A [`Transaction`](#type-transaction) has one or more `tenders` (i.e., methods of payment) associated with it, and you refund each tender separately with the Connect API.
       * @var string
       */
     protected $tender_id;
-    
     /**
-      * $reason A description of the reason for the refund.
+      * $reason A description of the reason for the refund.  Default value: `Refund via API`
       * @var string
       */
     protected $reason;
-    
     /**
-      * $amount_money The amount of money to refund.
+      * $amount_money The amount of money to refund.  Note that you specify the amount in the __smallest denomination of the applicable currency__. For example, US dollar amounts are specified in cents. See [Working with monetary amounts](#workingwithmonetaryamounts) for details.  This amount cannot exceed the amount that was originally charged to the tender that corresponds to `tender_id`.
       * @var \SquareConnect\Model\Money
       */
     protected $amount_money;
-    
 
     /**
      * Constructor
@@ -129,7 +124,6 @@ class CreateRefundRequest implements ArrayAccess
             $this->amount_money = $data["amount_money"];
         }
     }
-    
     /**
      * Gets idempotency_key
      * @return string
@@ -141,7 +135,7 @@ class CreateRefundRequest implements ArrayAccess
   
     /**
      * Sets idempotency_key
-     * @param string $idempotency_key A value you specify that uniquely identifies this\nrefund among refunds you've created for the tender.\n\nIf you're unsure whether a particular refund succeeded,\nyou can reattempt it with the same idempotency key without\nworrying about duplicating the refund.
+     * @param string $idempotency_key A value you specify that uniquely identifies this refund among refunds you've created for the tender.  If you're unsure whether a particular refund succeeded, you can reattempt it with the same idempotency key without worrying about duplicating the refund.  See [Idempotency keys](#idempotencykeys) for more information.
      * @return $this
      */
     public function setIdempotencyKey($idempotency_key)
@@ -150,7 +144,6 @@ class CreateRefundRequest implements ArrayAccess
         $this->idempotency_key = $idempotency_key;
         return $this;
     }
-    
     /**
      * Gets tender_id
      * @return string
@@ -162,7 +155,7 @@ class CreateRefundRequest implements ArrayAccess
   
     /**
      * Sets tender_id
-     * @param string $tender_id The ID of the tender to refund.
+     * @param string $tender_id The ID of the tender to refund.  A [`Transaction`](#type-transaction) has one or more `tenders` (i.e., methods of payment) associated with it, and you refund each tender separately with the Connect API.
      * @return $this
      */
     public function setTenderId($tender_id)
@@ -171,7 +164,6 @@ class CreateRefundRequest implements ArrayAccess
         $this->tender_id = $tender_id;
         return $this;
     }
-    
     /**
      * Gets reason
      * @return string
@@ -183,7 +175,7 @@ class CreateRefundRequest implements ArrayAccess
   
     /**
      * Sets reason
-     * @param string $reason A description of the reason for the refund.
+     * @param string $reason A description of the reason for the refund.  Default value: `Refund via API`
      * @return $this
      */
     public function setReason($reason)
@@ -192,7 +184,6 @@ class CreateRefundRequest implements ArrayAccess
         $this->reason = $reason;
         return $this;
     }
-    
     /**
      * Gets amount_money
      * @return \SquareConnect\Model\Money
@@ -204,7 +195,7 @@ class CreateRefundRequest implements ArrayAccess
   
     /**
      * Sets amount_money
-     * @param \SquareConnect\Model\Money $amount_money The amount of money to refund.
+     * @param \SquareConnect\Model\Money $amount_money The amount of money to refund.  Note that you specify the amount in the __smallest denomination of the applicable currency__. For example, US dollar amounts are specified in cents. See [Working with monetary amounts](#workingwithmonetaryamounts) for details.  This amount cannot exceed the amount that was originally charged to the tender that corresponds to `tender_id`.
      * @return $this
      */
     public function setAmountMoney($amount_money)
@@ -213,7 +204,6 @@ class CreateRefundRequest implements ArrayAccess
         $this->amount_money = $amount_money;
         return $this;
     }
-    
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset 

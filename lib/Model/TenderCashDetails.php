@@ -38,7 +38,7 @@ use \ArrayAccess;
  * TenderCashDetails Class Doc Comment
  *
  * @category    Class
- * @description Represents the details of a cash tender.
+ * @description Represents the details of a tender with &#x60;type&#x60; &#x60;CASH&#x60;.
  * @package     SquareConnect
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
@@ -82,19 +82,16 @@ class TenderCashDetails implements ArrayAccess
         'change_back_money' => 'getChangeBackMoney'
     );
   
-    
     /**
-      * $buyer_tendered_money The total amount provided by the buyer for this tender, before change is given.
+      * $buyer_tendered_money The total amount of cash provided by the buyer, before change is given.
       * @var \SquareConnect\Model\Money
       */
     protected $buyer_tendered_money;
-    
     /**
-      * $change_back_money The change returned to the buyer for this tender. This amount should be >= 0.
+      * $change_back_money The amount of change returned to the buyer.
       * @var \SquareConnect\Model\Money
       */
     protected $change_back_money;
-    
 
     /**
      * Constructor
@@ -107,7 +104,6 @@ class TenderCashDetails implements ArrayAccess
             $this->change_back_money = $data["change_back_money"];
         }
     }
-    
     /**
      * Gets buyer_tendered_money
      * @return \SquareConnect\Model\Money
@@ -119,7 +115,7 @@ class TenderCashDetails implements ArrayAccess
   
     /**
      * Sets buyer_tendered_money
-     * @param \SquareConnect\Model\Money $buyer_tendered_money The total amount provided by the buyer for this tender, before change is given.
+     * @param \SquareConnect\Model\Money $buyer_tendered_money The total amount of cash provided by the buyer, before change is given.
      * @return $this
      */
     public function setBuyerTenderedMoney($buyer_tendered_money)
@@ -128,7 +124,6 @@ class TenderCashDetails implements ArrayAccess
         $this->buyer_tendered_money = $buyer_tendered_money;
         return $this;
     }
-    
     /**
      * Gets change_back_money
      * @return \SquareConnect\Model\Money
@@ -140,7 +135,7 @@ class TenderCashDetails implements ArrayAccess
   
     /**
      * Sets change_back_money
-     * @param \SquareConnect\Model\Money $change_back_money The change returned to the buyer for this tender. This amount should be >= 0.
+     * @param \SquareConnect\Model\Money $change_back_money The amount of change returned to the buyer.
      * @return $this
      */
     public function setChangeBackMoney($change_back_money)
@@ -149,7 +144,6 @@ class TenderCashDetails implements ArrayAccess
         $this->change_back_money = $change_back_money;
         return $this;
     }
-    
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset 

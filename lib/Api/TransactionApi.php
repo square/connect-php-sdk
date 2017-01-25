@@ -90,376 +90,12 @@ class TransactionApi
         return $this;
     }
   
-    
-    /**
-     * listTransactions
-     *
-     * ListTransactions
-     *
-     * @param string $authorization The value to provide in the Authorization header of\nyour request. This value should follow the format `Bearer YOUR_ACCESS_TOKEN_HERE`. (required)
-     * @param string $location_id The ID of the location to list transactions for. (required)
-     * @param string $begin_time The beginning of the requested reporting period, in RFC 3339 format. (optional)
-     * @param string $end_time The end of the requested reporting period, in RFC 3339 format. (optional)
-     * @param string $sort_order The order in which results are listed in the response (`ASC` for\nchronological, `DESC` for reverse-chronological). (optional)
-     * @param string $cursor A pagination cursor to retrieve the next set of results for your\noriginal query to the endpoint. (optional)
-     * @return \SquareConnect\Model\ListTransactionsResponse
-     * @throws \SquareConnect\ApiException on non-2xx response
-     */
-    public function listTransactions($authorization, $location_id, $begin_time = null, $end_time = null, $sort_order = null, $cursor = null)
-    {
-        list($response, $statusCode, $httpHeader) = $this->listTransactionsWithHttpInfo ($authorization, $location_id, $begin_time, $end_time, $sort_order, $cursor);
-        return $response; 
-    }
-
-
-    /**
-     * listTransactionsWithHttpInfo
-     *
-     * ListTransactions
-     *
-     * @param string $authorization The value to provide in the Authorization header of\nyour request. This value should follow the format `Bearer YOUR_ACCESS_TOKEN_HERE`. (required)
-     * @param string $location_id The ID of the location to list transactions for. (required)
-     * @param string $begin_time The beginning of the requested reporting period, in RFC 3339 format. (optional)
-     * @param string $end_time The end of the requested reporting period, in RFC 3339 format. (optional)
-     * @param string $sort_order The order in which results are listed in the response (`ASC` for\nchronological, `DESC` for reverse-chronological). (optional)
-     * @param string $cursor A pagination cursor to retrieve the next set of results for your\noriginal query to the endpoint. (optional)
-     * @return Array of \SquareConnect\Model\ListTransactionsResponse, HTTP status code, HTTP response headers (array of strings)
-     * @throws \SquareConnect\ApiException on non-2xx response
-     */
-    public function listTransactionsWithHttpInfo($authorization, $location_id, $begin_time = null, $end_time = null, $sort_order = null, $cursor = null)
-    {
-        
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $authorization when calling listTransactions');
-        }
-        // verify the required parameter 'location_id' is set
-        if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling listTransactions');
-        }
-  
-        // parse inputs
-        $resourcePath = "/v2/locations/{location_id}/transactions";
-        $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = ApiClient::selectHeaderAccept(array('application/json'));
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-  
-        // query params
-        
-        if ($begin_time !== null) {
-            $queryParams['begin_time'] = $this->apiClient->getSerializer()->toQueryValue($begin_time);
-        }// query params
-        
-        if ($end_time !== null) {
-            $queryParams['end_time'] = $this->apiClient->getSerializer()->toQueryValue($end_time);
-        }// query params
-        
-        if ($sort_order !== null) {
-            $queryParams['sort_order'] = $this->apiClient->getSerializer()->toQueryValue($sort_order);
-        }// query params
-        
-        if ($cursor !== null) {
-            $queryParams['cursor'] = $this->apiClient->getSerializer()->toQueryValue($cursor);
-        }
-        // header params
-        
-        if ($authorization !== null) {
-            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
-        }
-        // path params
-        
-        if ($location_id !== null) {
-            $resourcePath = str_replace(
-                "{" . "location_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($location_id),
-                $resourcePath
-            );
-        }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        
-        
-  
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath, 'GET',
-                $queryParams, $httpBody,
-                $headerParams, '\SquareConnect\Model\ListTransactionsResponse'
-            );
-            
-            if (!$response) {
-                return array(null, $statusCode, $httpHeader);
-            }
-
-            return array(\SquareConnect\ObjectSerializer::deserialize($response, '\SquareConnect\Model\ListTransactionsResponse', $httpHeader), $statusCode, $httpHeader);
-            
-        } catch (ApiException $e) {
-            switch ($e->getCode()) { 
-            case 200:
-                $data = \SquareConnect\ObjectSerializer::deserialize($e->getResponseBody(), '\SquareConnect\Model\ListTransactionsResponse', $e->getResponseHeaders());
-                $e->setResponseObject($data);
-                break;
-            }
-  
-            throw $e;
-        }
-    }
-    
-    /**
-     * charge
-     *
-     * Charge
-     *
-     * @param string $authorization The value to provide in the Authorization header of\nyour request. This value should follow the format `Bearer YOUR_ACCESS_TOKEN_HERE`. (required)
-     * @param string $location_id The ID of the location to associate the transaction with. (required)
-     * @param \SquareConnect\Model\ChargeRequest $body An object containing the fields to POST for the request.\n\nSee the corresponding object definition for field details. (required)
-     * @return \SquareConnect\Model\ChargeResponse
-     * @throws \SquareConnect\ApiException on non-2xx response
-     */
-    public function charge($authorization, $location_id, $body)
-    {
-        list($response, $statusCode, $httpHeader) = $this->chargeWithHttpInfo ($authorization, $location_id, $body);
-        return $response; 
-    }
-
-
-    /**
-     * chargeWithHttpInfo
-     *
-     * Charge
-     *
-     * @param string $authorization The value to provide in the Authorization header of\nyour request. This value should follow the format `Bearer YOUR_ACCESS_TOKEN_HERE`. (required)
-     * @param string $location_id The ID of the location to associate the transaction with. (required)
-     * @param \SquareConnect\Model\ChargeRequest $body An object containing the fields to POST for the request.\n\nSee the corresponding object definition for field details. (required)
-     * @return Array of \SquareConnect\Model\ChargeResponse, HTTP status code, HTTP response headers (array of strings)
-     * @throws \SquareConnect\ApiException on non-2xx response
-     */
-    public function chargeWithHttpInfo($authorization, $location_id, $body)
-    {
-        
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $authorization when calling charge');
-        }
-        // verify the required parameter 'location_id' is set
-        if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling charge');
-        }
-        // verify the required parameter 'body' is set
-        if ($body === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $body when calling charge');
-        }
-  
-        // parse inputs
-        $resourcePath = "/v2/locations/{location_id}/transactions";
-        $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = ApiClient::selectHeaderAccept(array('application/json'));
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-  
-        
-        // header params
-        
-        if ($authorization !== null) {
-            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
-        }
-        // path params
-        
-        if ($location_id !== null) {
-            $resourcePath = str_replace(
-                "{" . "location_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($location_id),
-                $resourcePath
-            );
-        }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
-  
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath, 'POST',
-                $queryParams, $httpBody,
-                $headerParams, '\SquareConnect\Model\ChargeResponse'
-            );
-            
-            if (!$response) {
-                return array(null, $statusCode, $httpHeader);
-            }
-
-            return array(\SquareConnect\ObjectSerializer::deserialize($response, '\SquareConnect\Model\ChargeResponse', $httpHeader), $statusCode, $httpHeader);
-            
-        } catch (ApiException $e) {
-            switch ($e->getCode()) { 
-            case 200:
-                $data = \SquareConnect\ObjectSerializer::deserialize($e->getResponseBody(), '\SquareConnect\Model\ChargeResponse', $e->getResponseHeaders());
-                $e->setResponseObject($data);
-                break;
-            }
-  
-            throw $e;
-        }
-    }
-    
-    /**
-     * retrieveTransaction
-     *
-     * RetrieveTransaction
-     *
-     * @param string $authorization The value to provide in the Authorization header of\nyour request. This value should follow the format `Bearer YOUR_ACCESS_TOKEN_HERE`. (required)
-     * @param string $location_id  (required)
-     * @param string $transaction_id  (required)
-     * @return \SquareConnect\Model\RetrieveTransactionResponse
-     * @throws \SquareConnect\ApiException on non-2xx response
-     */
-    public function retrieveTransaction($authorization, $location_id, $transaction_id)
-    {
-        list($response, $statusCode, $httpHeader) = $this->retrieveTransactionWithHttpInfo ($authorization, $location_id, $transaction_id);
-        return $response; 
-    }
-
-
-    /**
-     * retrieveTransactionWithHttpInfo
-     *
-     * RetrieveTransaction
-     *
-     * @param string $authorization The value to provide in the Authorization header of\nyour request. This value should follow the format `Bearer YOUR_ACCESS_TOKEN_HERE`. (required)
-     * @param string $location_id  (required)
-     * @param string $transaction_id  (required)
-     * @return Array of \SquareConnect\Model\RetrieveTransactionResponse, HTTP status code, HTTP response headers (array of strings)
-     * @throws \SquareConnect\ApiException on non-2xx response
-     */
-    public function retrieveTransactionWithHttpInfo($authorization, $location_id, $transaction_id)
-    {
-        
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $authorization when calling retrieveTransaction');
-        }
-        // verify the required parameter 'location_id' is set
-        if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling retrieveTransaction');
-        }
-        // verify the required parameter 'transaction_id' is set
-        if ($transaction_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $transaction_id when calling retrieveTransaction');
-        }
-  
-        // parse inputs
-        $resourcePath = "/v2/locations/{location_id}/transactions/{transaction_id}";
-        $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = ApiClient::selectHeaderAccept(array('application/json'));
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-  
-        
-        // header params
-        
-        if ($authorization !== null) {
-            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
-        }
-        // path params
-        
-        if ($location_id !== null) {
-            $resourcePath = str_replace(
-                "{" . "location_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($location_id),
-                $resourcePath
-            );
-        }// path params
-        
-        if ($transaction_id !== null) {
-            $resourcePath = str_replace(
-                "{" . "transaction_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($transaction_id),
-                $resourcePath
-            );
-        }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        
-        
-  
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath, 'GET',
-                $queryParams, $httpBody,
-                $headerParams, '\SquareConnect\Model\RetrieveTransactionResponse'
-            );
-            
-            if (!$response) {
-                return array(null, $statusCode, $httpHeader);
-            }
-
-            return array(\SquareConnect\ObjectSerializer::deserialize($response, '\SquareConnect\Model\RetrieveTransactionResponse', $httpHeader), $statusCode, $httpHeader);
-            
-        } catch (ApiException $e) {
-            switch ($e->getCode()) { 
-            case 200:
-                $data = \SquareConnect\ObjectSerializer::deserialize($e->getResponseBody(), '\SquareConnect\Model\RetrieveTransactionResponse', $e->getResponseHeaders());
-                $e->setResponseObject($data);
-                break;
-            }
-  
-            throw $e;
-        }
-    }
-    
     /**
      * captureTransaction
      *
      * CaptureTransaction
      *
-     * @param string $authorization The value to provide in the Authorization header of\nyour request. This value should follow the format `Bearer YOUR_ACCESS_TOKEN_HERE`. (required)
+     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @param string $location_id  (required)
      * @param string $transaction_id  (required)
      * @return \SquareConnect\Model\CaptureTransactionResponse
@@ -477,7 +113,7 @@ class TransactionApi
      *
      * CaptureTransaction
      *
-     * @param string $authorization The value to provide in the Authorization header of\nyour request. This value should follow the format `Bearer YOUR_ACCESS_TOKEN_HERE`. (required)
+     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @param string $location_id  (required)
      * @param string $transaction_id  (required)
      * @return Array of \SquareConnect\Model\CaptureTransactionResponse, HTTP status code, HTTP response headers (array of strings)
@@ -513,12 +149,10 @@ class TransactionApi
   
         
         // header params
-        
         if ($authorization !== null) {
             $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
         }
         // path params
-        
         if ($location_id !== null) {
             $resourcePath = str_replace(
                 "{" . "location_id" . "}",
@@ -526,7 +160,6 @@ class TransactionApi
                 $resourcePath
             );
         }// path params
-        
         if ($transaction_id !== null) {
             $resourcePath = str_replace(
                 "{" . "transaction_id" . "}",
@@ -546,22 +179,19 @@ class TransactionApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        
-        // make the API Call
+                // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath, 'POST',
                 $queryParams, $httpBody,
                 $headerParams, '\SquareConnect\Model\CaptureTransactionResponse'
             );
-            
             if (!$response) {
                 return array(null, $statusCode, $httpHeader);
             }
 
             return array(\SquareConnect\ObjectSerializer::deserialize($response, '\SquareConnect\Model\CaptureTransactionResponse', $httpHeader), $statusCode, $httpHeader);
-            
-        } catch (ApiException $e) {
+                    } catch (ApiException $e) {
             switch ($e->getCode()) { 
             case 200:
                 $data = \SquareConnect\ObjectSerializer::deserialize($e->getResponseBody(), '\SquareConnect\Model\CaptureTransactionResponse', $e->getResponseHeaders());
@@ -572,13 +202,352 @@ class TransactionApi
             throw $e;
         }
     }
-    
+    /**
+     * charge
+     *
+     * Charge
+     *
+     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
+     * @param string $location_id The ID of the location to associate the created transaction with. (required)
+     * @param \SquareConnect\Model\ChargeRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
+     * @return \SquareConnect\Model\ChargeResponse
+     * @throws \SquareConnect\ApiException on non-2xx response
+     */
+    public function charge($authorization, $location_id, $body)
+    {
+        list($response, $statusCode, $httpHeader) = $this->chargeWithHttpInfo ($authorization, $location_id, $body);
+        return $response; 
+    }
+
+
+    /**
+     * chargeWithHttpInfo
+     *
+     * Charge
+     *
+     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
+     * @param string $location_id The ID of the location to associate the created transaction with. (required)
+     * @param \SquareConnect\Model\ChargeRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
+     * @return Array of \SquareConnect\Model\ChargeResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws \SquareConnect\ApiException on non-2xx response
+     */
+    public function chargeWithHttpInfo($authorization, $location_id, $body)
+    {
+        
+        // verify the required parameter 'authorization' is set
+        if ($authorization === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $authorization when calling charge');
+        }
+        // verify the required parameter 'location_id' is set
+        if ($location_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling charge');
+        }
+        // verify the required parameter 'body' is set
+        if ($body === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $body when calling charge');
+        }
+  
+        // parse inputs
+        $resourcePath = "/v2/locations/{location_id}/transactions";
+        $httpBody = '';
+        $queryParams = array();
+        $headerParams = array();
+        $formParams = array();
+        $_header_accept = ApiClient::selectHeaderAccept(array('application/json'));
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+  
+        
+        // header params
+        if ($authorization !== null) {
+            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
+        }
+        // path params
+        if ($location_id !== null) {
+            $resourcePath = str_replace(
+                "{" . "location_id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($location_id),
+                $resourcePath
+            );
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        // body params
+        $_tempBody = null;
+        if (isset($body)) {
+            $_tempBody = $body;
+        }
+  
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+                // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath, 'POST',
+                $queryParams, $httpBody,
+                $headerParams, '\SquareConnect\Model\ChargeResponse'
+            );
+            if (!$response) {
+                return array(null, $statusCode, $httpHeader);
+            }
+
+            return array(\SquareConnect\ObjectSerializer::deserialize($response, '\SquareConnect\Model\ChargeResponse', $httpHeader), $statusCode, $httpHeader);
+                    } catch (ApiException $e) {
+            switch ($e->getCode()) { 
+            case 200:
+                $data = \SquareConnect\ObjectSerializer::deserialize($e->getResponseBody(), '\SquareConnect\Model\ChargeResponse', $e->getResponseHeaders());
+                $e->setResponseObject($data);
+                break;
+            }
+  
+            throw $e;
+        }
+    }
+    /**
+     * listTransactions
+     *
+     * ListTransactions
+     *
+     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
+     * @param string $location_id The ID of the location to list transactions for. (required)
+     * @param string $begin_time The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)
+     * @param string $end_time The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)
+     * @param string $sort_order The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)
+     * @param string $cursor A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)
+     * @return \SquareConnect\Model\ListTransactionsResponse
+     * @throws \SquareConnect\ApiException on non-2xx response
+     */
+    public function listTransactions($authorization, $location_id, $begin_time = null, $end_time = null, $sort_order = null, $cursor = null)
+    {
+        list($response, $statusCode, $httpHeader) = $this->listTransactionsWithHttpInfo ($authorization, $location_id, $begin_time, $end_time, $sort_order, $cursor);
+        return $response; 
+    }
+
+
+    /**
+     * listTransactionsWithHttpInfo
+     *
+     * ListTransactions
+     *
+     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
+     * @param string $location_id The ID of the location to list transactions for. (required)
+     * @param string $begin_time The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)
+     * @param string $end_time The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)
+     * @param string $sort_order The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)
+     * @param string $cursor A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)
+     * @return Array of \SquareConnect\Model\ListTransactionsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws \SquareConnect\ApiException on non-2xx response
+     */
+    public function listTransactionsWithHttpInfo($authorization, $location_id, $begin_time = null, $end_time = null, $sort_order = null, $cursor = null)
+    {
+        
+        // verify the required parameter 'authorization' is set
+        if ($authorization === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $authorization when calling listTransactions');
+        }
+        // verify the required parameter 'location_id' is set
+        if ($location_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling listTransactions');
+        }
+  
+        // parse inputs
+        $resourcePath = "/v2/locations/{location_id}/transactions";
+        $httpBody = '';
+        $queryParams = array();
+        $headerParams = array();
+        $formParams = array();
+        $_header_accept = ApiClient::selectHeaderAccept(array('application/json'));
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+  
+        // query params
+        if ($begin_time !== null) {
+            $queryParams['begin_time'] = $this->apiClient->getSerializer()->toQueryValue($begin_time);
+        }// query params
+        if ($end_time !== null) {
+            $queryParams['end_time'] = $this->apiClient->getSerializer()->toQueryValue($end_time);
+        }// query params
+        if ($sort_order !== null) {
+            $queryParams['sort_order'] = $this->apiClient->getSerializer()->toQueryValue($sort_order);
+        }// query params
+        if ($cursor !== null) {
+            $queryParams['cursor'] = $this->apiClient->getSerializer()->toQueryValue($cursor);
+        }
+        // header params
+        if ($authorization !== null) {
+            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
+        }
+        // path params
+        if ($location_id !== null) {
+            $resourcePath = str_replace(
+                "{" . "location_id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($location_id),
+                $resourcePath
+            );
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        
+  
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+                // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath, 'GET',
+                $queryParams, $httpBody,
+                $headerParams, '\SquareConnect\Model\ListTransactionsResponse'
+            );
+            if (!$response) {
+                return array(null, $statusCode, $httpHeader);
+            }
+
+            return array(\SquareConnect\ObjectSerializer::deserialize($response, '\SquareConnect\Model\ListTransactionsResponse', $httpHeader), $statusCode, $httpHeader);
+                    } catch (ApiException $e) {
+            switch ($e->getCode()) { 
+            case 200:
+                $data = \SquareConnect\ObjectSerializer::deserialize($e->getResponseBody(), '\SquareConnect\Model\ListTransactionsResponse', $e->getResponseHeaders());
+                $e->setResponseObject($data);
+                break;
+            }
+  
+            throw $e;
+        }
+    }
+    /**
+     * retrieveTransaction
+     *
+     * RetrieveTransaction
+     *
+     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
+     * @param string $location_id The ID of the transaction&#39;s associated location. (required)
+     * @param string $transaction_id The ID of the transaction to retrieve. (required)
+     * @return \SquareConnect\Model\RetrieveTransactionResponse
+     * @throws \SquareConnect\ApiException on non-2xx response
+     */
+    public function retrieveTransaction($authorization, $location_id, $transaction_id)
+    {
+        list($response, $statusCode, $httpHeader) = $this->retrieveTransactionWithHttpInfo ($authorization, $location_id, $transaction_id);
+        return $response; 
+    }
+
+
+    /**
+     * retrieveTransactionWithHttpInfo
+     *
+     * RetrieveTransaction
+     *
+     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
+     * @param string $location_id The ID of the transaction&#39;s associated location. (required)
+     * @param string $transaction_id The ID of the transaction to retrieve. (required)
+     * @return Array of \SquareConnect\Model\RetrieveTransactionResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws \SquareConnect\ApiException on non-2xx response
+     */
+    public function retrieveTransactionWithHttpInfo($authorization, $location_id, $transaction_id)
+    {
+        
+        // verify the required parameter 'authorization' is set
+        if ($authorization === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $authorization when calling retrieveTransaction');
+        }
+        // verify the required parameter 'location_id' is set
+        if ($location_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling retrieveTransaction');
+        }
+        // verify the required parameter 'transaction_id' is set
+        if ($transaction_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $transaction_id when calling retrieveTransaction');
+        }
+  
+        // parse inputs
+        $resourcePath = "/v2/locations/{location_id}/transactions/{transaction_id}";
+        $httpBody = '';
+        $queryParams = array();
+        $headerParams = array();
+        $formParams = array();
+        $_header_accept = ApiClient::selectHeaderAccept(array('application/json'));
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+  
+        
+        // header params
+        if ($authorization !== null) {
+            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
+        }
+        // path params
+        if ($location_id !== null) {
+            $resourcePath = str_replace(
+                "{" . "location_id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($location_id),
+                $resourcePath
+            );
+        }// path params
+        if ($transaction_id !== null) {
+            $resourcePath = str_replace(
+                "{" . "transaction_id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($transaction_id),
+                $resourcePath
+            );
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        
+  
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+                // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath, 'GET',
+                $queryParams, $httpBody,
+                $headerParams, '\SquareConnect\Model\RetrieveTransactionResponse'
+            );
+            if (!$response) {
+                return array(null, $statusCode, $httpHeader);
+            }
+
+            return array(\SquareConnect\ObjectSerializer::deserialize($response, '\SquareConnect\Model\RetrieveTransactionResponse', $httpHeader), $statusCode, $httpHeader);
+                    } catch (ApiException $e) {
+            switch ($e->getCode()) { 
+            case 200:
+                $data = \SquareConnect\ObjectSerializer::deserialize($e->getResponseBody(), '\SquareConnect\Model\RetrieveTransactionResponse', $e->getResponseHeaders());
+                $e->setResponseObject($data);
+                break;
+            }
+  
+            throw $e;
+        }
+    }
     /**
      * voidTransaction
      *
      * VoidTransaction
      *
-     * @param string $authorization The value to provide in the Authorization header of\nyour request. This value should follow the format `Bearer YOUR_ACCESS_TOKEN_HERE`. (required)
+     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @param string $location_id  (required)
      * @param string $transaction_id  (required)
      * @return \SquareConnect\Model\VoidTransactionResponse
@@ -596,7 +565,7 @@ class TransactionApi
      *
      * VoidTransaction
      *
-     * @param string $authorization The value to provide in the Authorization header of\nyour request. This value should follow the format `Bearer YOUR_ACCESS_TOKEN_HERE`. (required)
+     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @param string $location_id  (required)
      * @param string $transaction_id  (required)
      * @return Array of \SquareConnect\Model\VoidTransactionResponse, HTTP status code, HTTP response headers (array of strings)
@@ -632,12 +601,10 @@ class TransactionApi
   
         
         // header params
-        
         if ($authorization !== null) {
             $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
         }
         // path params
-        
         if ($location_id !== null) {
             $resourcePath = str_replace(
                 "{" . "location_id" . "}",
@@ -645,7 +612,6 @@ class TransactionApi
                 $resourcePath
             );
         }// path params
-        
         if ($transaction_id !== null) {
             $resourcePath = str_replace(
                 "{" . "transaction_id" . "}",
@@ -665,22 +631,19 @@ class TransactionApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        
-        // make the API Call
+                // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath, 'POST',
                 $queryParams, $httpBody,
                 $headerParams, '\SquareConnect\Model\VoidTransactionResponse'
             );
-            
             if (!$response) {
                 return array(null, $statusCode, $httpHeader);
             }
 
             return array(\SquareConnect\ObjectSerializer::deserialize($response, '\SquareConnect\Model\VoidTransactionResponse', $httpHeader), $statusCode, $httpHeader);
-            
-        } catch (ApiException $e) {
+                    } catch (ApiException $e) {
             switch ($e->getCode()) { 
             case 200:
                 $data = \SquareConnect\ObjectSerializer::deserialize($e->getResponseBody(), '\SquareConnect\Model\VoidTransactionResponse', $e->getResponseHeaders());
@@ -691,5 +654,4 @@ class TransactionApi
             throw $e;
         }
     }
-    
 }

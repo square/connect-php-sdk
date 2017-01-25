@@ -38,7 +38,7 @@ use \ArrayAccess;
  * TenderCardDetailsEntryMethod Class Doc Comment
  *
  * @category    Class
- * @description The method used to read the card
+ * @description Indicates the method used to enter the card&#39;s details.
  * @package     SquareConnect
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
@@ -78,7 +78,6 @@ class TenderCardDetailsEntryMethod implements ArrayAccess
         
     );
   
-    
 
     /**
      * Constructor
@@ -90,7 +89,6 @@ class TenderCardDetailsEntryMethod implements ArrayAccess
             
         }
     }
-    
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset 

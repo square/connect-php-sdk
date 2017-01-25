@@ -1,6 +1,6 @@
 <?php
 /**
- * RetrieveCustomerResponse
+ * CustomerGroupInfo
  *
  * PHP version 5
  *
@@ -35,24 +35,24 @@ namespace SquareConnect\Model;
 
 use \ArrayAccess;
 /**
- * RetrieveCustomerResponse Class Doc Comment
+ * CustomerGroupInfo Class Doc Comment
  *
  * @category    Class
- * @description Defines the fields that are included in the response body of a request to the [RetrieveCustomer](#endpoint-retrievecustomer) endpoint.  One of &#x60;errors&#x60; or &#x60;customer&#x60; is present in a given response (never both).
+ * @description Contains some brief information about a customer group with its identifier included.
  * @package     SquareConnect
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class RetrieveCustomerResponse implements ArrayAccess
+class CustomerGroupInfo implements ArrayAccess
 {
     /**
       * Array of property to type mappings. Used for (de)serialization 
       * @var string[]
       */
     static $swaggerTypes = array(
-        'errors' => '\SquareConnect\Model\Error[]',
-        'customer' => '\SquareConnect\Model\Customer'
+        'id' => 'string',
+        'name' => 'string'
     );
   
     /** 
@@ -60,8 +60,8 @@ class RetrieveCustomerResponse implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
-        'errors' => 'errors',
-        'customer' => 'customer'
+        'id' => 'id',
+        'name' => 'name'
     );
   
     /**
@@ -69,8 +69,8 @@ class RetrieveCustomerResponse implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
-        'errors' => 'setErrors',
-        'customer' => 'setCustomer'
+        'id' => 'setId',
+        'name' => 'setName'
     );
   
     /**
@@ -78,20 +78,20 @@ class RetrieveCustomerResponse implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
-        'errors' => 'getErrors',
-        'customer' => 'getCustomer'
+        'id' => 'getId',
+        'name' => 'getName'
     );
   
     /**
-      * $errors Any errors that occurred during the request.
-      * @var \SquareConnect\Model\Error[]
+      * $id The ID of the customer group.
+      * @var string
       */
-    protected $errors;
+    protected $id;
     /**
-      * $customer The requested customer.
-      * @var \SquareConnect\Model\Customer
+      * $name The name of the customer group.
+      * @var string
       */
-    protected $customer;
+    protected $name;
 
     /**
      * Constructor
@@ -100,48 +100,48 @@ class RetrieveCustomerResponse implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->errors = $data["errors"];
-            $this->customer = $data["customer"];
+            $this->id = $data["id"];
+            $this->name = $data["name"];
         }
     }
     /**
-     * Gets errors
-     * @return \SquareConnect\Model\Error[]
+     * Gets id
+     * @return string
      */
-    public function getErrors()
+    public function getId()
     {
-        return $this->errors;
+        return $this->id;
     }
   
     /**
-     * Sets errors
-     * @param \SquareConnect\Model\Error[] $errors Any errors that occurred during the request.
+     * Sets id
+     * @param string $id The ID of the customer group.
      * @return $this
      */
-    public function setErrors($errors)
+    public function setId($id)
     {
         
-        $this->errors = $errors;
+        $this->id = $id;
         return $this;
     }
     /**
-     * Gets customer
-     * @return \SquareConnect\Model\Customer
+     * Gets name
+     * @return string
      */
-    public function getCustomer()
+    public function getName()
     {
-        return $this->customer;
+        return $this->name;
     }
   
     /**
-     * Sets customer
-     * @param \SquareConnect\Model\Customer $customer The requested customer.
+     * Sets name
+     * @param string $name The name of the customer group.
      * @return $this
      */
-    public function setCustomer($customer)
+    public function setName($name)
     {
         
-        $this->customer = $customer;
+        $this->name = $name;
         return $this;
     }
     /**

@@ -38,7 +38,7 @@ use \ArrayAccess;
  * CreateCustomerResponse Class Doc Comment
  *
  * @category    Class
- * @description Defines the fields that are included in the response body of\na request to the **CreateCustomer** endpoint.\n\nOne of `errors` or `customer` is present in a given response (never both).
+ * @description Defines the fields that are included in the response body of a request to the [CreateCustomer](#endpoint-createcustomer) endpoint.  One of &#x60;errors&#x60; or &#x60;customer&#x60; is present in a given response (never both).
  * @package     SquareConnect
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
@@ -82,19 +82,16 @@ class CreateCustomerResponse implements ArrayAccess
         'customer' => 'getCustomer'
     );
   
-    
     /**
-      * $errors 
+      * $errors Any errors that occurred during the request.
       * @var \SquareConnect\Model\Error[]
       */
     protected $errors;
-    
     /**
-      * $customer 
+      * $customer The created customer.
       * @var \SquareConnect\Model\Customer
       */
     protected $customer;
-    
 
     /**
      * Constructor
@@ -107,7 +104,6 @@ class CreateCustomerResponse implements ArrayAccess
             $this->customer = $data["customer"];
         }
     }
-    
     /**
      * Gets errors
      * @return \SquareConnect\Model\Error[]
@@ -119,7 +115,7 @@ class CreateCustomerResponse implements ArrayAccess
   
     /**
      * Sets errors
-     * @param \SquareConnect\Model\Error[] $errors 
+     * @param \SquareConnect\Model\Error[] $errors Any errors that occurred during the request.
      * @return $this
      */
     public function setErrors($errors)
@@ -128,7 +124,6 @@ class CreateCustomerResponse implements ArrayAccess
         $this->errors = $errors;
         return $this;
     }
-    
     /**
      * Gets customer
      * @return \SquareConnect\Model\Customer
@@ -140,7 +135,7 @@ class CreateCustomerResponse implements ArrayAccess
   
     /**
      * Sets customer
-     * @param \SquareConnect\Model\Customer $customer 
+     * @param \SquareConnect\Model\Customer $customer The created customer.
      * @return $this
      */
     public function setCustomer($customer)
@@ -149,7 +144,6 @@ class CreateCustomerResponse implements ArrayAccess
         $this->customer = $customer;
         return $this;
     }
-    
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset 

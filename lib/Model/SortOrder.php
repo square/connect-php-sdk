@@ -38,7 +38,7 @@ use \ArrayAccess;
  * SortOrder Class Doc Comment
  *
  * @category    Class
- * @description 
+ * @description The order (e.g., chronological or alphabetical) in which results from a request are returned.
  * @package     SquareConnect
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
@@ -78,7 +78,6 @@ class SortOrder implements ArrayAccess
         
     );
   
-    
 
     /**
      * Constructor
@@ -90,7 +89,6 @@ class SortOrder implements ArrayAccess
             
         }
     }
-    
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset 

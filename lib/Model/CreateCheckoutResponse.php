@@ -1,6 +1,6 @@
 <?php
 /**
- * RetrieveCustomerResponse
+ * CreateCheckoutResponse
  *
  * PHP version 5
  *
@@ -35,24 +35,24 @@ namespace SquareConnect\Model;
 
 use \ArrayAccess;
 /**
- * RetrieveCustomerResponse Class Doc Comment
+ * CreateCheckoutResponse Class Doc Comment
  *
  * @category    Class
- * @description Defines the fields that are included in the response body of a request to the [RetrieveCustomer](#endpoint-retrievecustomer) endpoint.  One of &#x60;errors&#x60; or &#x60;customer&#x60; is present in a given response (never both).
+ * @description Defines the fields that are included in the response body of a request to the [CreateCheckout](#endpoint-createcheckout) endpoint.
  * @package     SquareConnect
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class RetrieveCustomerResponse implements ArrayAccess
+class CreateCheckoutResponse implements ArrayAccess
 {
     /**
       * Array of property to type mappings. Used for (de)serialization 
       * @var string[]
       */
     static $swaggerTypes = array(
-        'errors' => '\SquareConnect\Model\Error[]',
-        'customer' => '\SquareConnect\Model\Customer'
+        'checkout' => '\SquareConnect\Model\Checkout',
+        'errors' => '\SquareConnect\Model\Error[]'
     );
   
     /** 
@@ -60,8 +60,8 @@ class RetrieveCustomerResponse implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
-        'errors' => 'errors',
-        'customer' => 'customer'
+        'checkout' => 'checkout',
+        'errors' => 'errors'
     );
   
     /**
@@ -69,8 +69,8 @@ class RetrieveCustomerResponse implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
-        'errors' => 'setErrors',
-        'customer' => 'setCustomer'
+        'checkout' => 'setCheckout',
+        'errors' => 'setErrors'
     );
   
     /**
@@ -78,20 +78,20 @@ class RetrieveCustomerResponse implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
-        'errors' => 'getErrors',
-        'customer' => 'getCustomer'
+        'checkout' => 'getCheckout',
+        'errors' => 'getErrors'
     );
   
+    /**
+      * $checkout The newly created checkout. If the same request was made with the same idempotency_key, this will be the checkout created with the idempotency_key.
+      * @var \SquareConnect\Model\Checkout
+      */
+    protected $checkout;
     /**
       * $errors Any errors that occurred during the request.
       * @var \SquareConnect\Model\Error[]
       */
     protected $errors;
-    /**
-      * $customer The requested customer.
-      * @var \SquareConnect\Model\Customer
-      */
-    protected $customer;
 
     /**
      * Constructor
@@ -100,9 +100,29 @@ class RetrieveCustomerResponse implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
+            $this->checkout = $data["checkout"];
             $this->errors = $data["errors"];
-            $this->customer = $data["customer"];
         }
+    }
+    /**
+     * Gets checkout
+     * @return \SquareConnect\Model\Checkout
+     */
+    public function getCheckout()
+    {
+        return $this->checkout;
+    }
+  
+    /**
+     * Sets checkout
+     * @param \SquareConnect\Model\Checkout $checkout The newly created checkout. If the same request was made with the same idempotency_key, this will be the checkout created with the idempotency_key.
+     * @return $this
+     */
+    public function setCheckout($checkout)
+    {
+        
+        $this->checkout = $checkout;
+        return $this;
     }
     /**
      * Gets errors
@@ -122,26 +142,6 @@ class RetrieveCustomerResponse implements ArrayAccess
     {
         
         $this->errors = $errors;
-        return $this;
-    }
-    /**
-     * Gets customer
-     * @return \SquareConnect\Model\Customer
-     */
-    public function getCustomer()
-    {
-        return $this->customer;
-    }
-  
-    /**
-     * Sets customer
-     * @param \SquareConnect\Model\Customer $customer The requested customer.
-     * @return $this
-     */
-    public function setCustomer($customer)
-    {
-        
-        $this->customer = $customer;
         return $this;
     }
     /**

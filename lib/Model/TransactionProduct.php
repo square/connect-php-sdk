@@ -38,7 +38,7 @@ use \ArrayAccess;
  * TransactionProduct Class Doc Comment
  *
  * @category    Class
- * @description The name of the product used to accept payment for this transaction
+ * @description Indicates the Square product used to process a transaction.
  * @package     SquareConnect
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
@@ -78,7 +78,6 @@ class TransactionProduct implements ArrayAccess
         
     );
   
-    
 
     /**
      * Constructor
@@ -90,7 +89,6 @@ class TransactionProduct implements ArrayAccess
             
         }
     }
-    
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset 

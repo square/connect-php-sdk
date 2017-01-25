@@ -38,7 +38,7 @@ use \ArrayAccess;
  * ListCustomersRequest Class Doc Comment
  *
  * @category    Class
- * @description 
+ * @description Defines the query parameters that can be provided in a request to the [ListCustomers](#endpoint-listcustomers) endpoint.
  * @package     SquareConnect
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
@@ -78,13 +78,11 @@ class ListCustomersRequest implements ArrayAccess
         'cursor' => 'getCursor'
     );
   
-    
     /**
-      * $cursor 
+      * $cursor A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information.
       * @var string
       */
     protected $cursor;
-    
 
     /**
      * Constructor
@@ -96,7 +94,6 @@ class ListCustomersRequest implements ArrayAccess
             $this->cursor = $data["cursor"];
         }
     }
-    
     /**
      * Gets cursor
      * @return string
@@ -108,7 +105,7 @@ class ListCustomersRequest implements ArrayAccess
   
     /**
      * Sets cursor
-     * @param string $cursor 
+     * @param string $cursor A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information.
      * @return $this
      */
     public function setCursor($cursor)
@@ -117,7 +114,6 @@ class ListCustomersRequest implements ArrayAccess
         $this->cursor = $cursor;
         return $this;
     }
-    
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset 

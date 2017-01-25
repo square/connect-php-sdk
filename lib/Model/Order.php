@@ -1,6 +1,6 @@
 <?php
 /**
- * ListTransactionsRequest
+ * Order
  *
  * PHP version 5
  *
@@ -35,26 +35,27 @@ namespace SquareConnect\Model;
 
 use \ArrayAccess;
 /**
- * ListTransactionsRequest Class Doc Comment
+ * Order Class Doc Comment
  *
  * @category    Class
- * @description Defines the query parameters that can be included in a request to the [ListTransactions](#endpoint-listtransactions) endpoint.
+ * @description Contains all information related to a single order to process with Square, including line items that specify the products to purchase
  * @package     SquareConnect
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ListTransactionsRequest implements ArrayAccess
+class Order implements ArrayAccess
 {
     /**
       * Array of property to type mappings. Used for (de)serialization 
       * @var string[]
       */
     static $swaggerTypes = array(
-        'begin_time' => 'string',
-        'end_time' => 'string',
-        'sort_order' => 'string',
-        'cursor' => 'string'
+        'id' => 'string',
+        'location_id' => 'string',
+        'reference_id' => 'string',
+        'line_items' => '\SquareConnect\Model\OrderLineItem[]',
+        'total_money' => '\SquareConnect\Model\Money'
     );
   
     /** 
@@ -62,10 +63,11 @@ class ListTransactionsRequest implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
-        'begin_time' => 'begin_time',
-        'end_time' => 'end_time',
-        'sort_order' => 'sort_order',
-        'cursor' => 'cursor'
+        'id' => 'id',
+        'location_id' => 'location_id',
+        'reference_id' => 'reference_id',
+        'line_items' => 'line_items',
+        'total_money' => 'total_money'
     );
   
     /**
@@ -73,10 +75,11 @@ class ListTransactionsRequest implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
-        'begin_time' => 'setBeginTime',
-        'end_time' => 'setEndTime',
-        'sort_order' => 'setSortOrder',
-        'cursor' => 'setCursor'
+        'id' => 'setId',
+        'location_id' => 'setLocationId',
+        'reference_id' => 'setReferenceId',
+        'line_items' => 'setLineItems',
+        'total_money' => 'setTotalMoney'
     );
   
     /**
@@ -84,32 +87,38 @@ class ListTransactionsRequest implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
-        'begin_time' => 'getBeginTime',
-        'end_time' => 'getEndTime',
-        'sort_order' => 'getSortOrder',
-        'cursor' => 'getCursor'
+        'id' => 'getId',
+        'location_id' => 'getLocationId',
+        'reference_id' => 'getReferenceId',
+        'line_items' => 'getLineItems',
+        'total_money' => 'getTotalMoney'
     );
   
     /**
-      * $begin_time The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year.
+      * $id The order's unique ID.  This value is not present if the order was not created with the [CreateOrder](#endpoint-createorder) endpoint.
       * @var string
       */
-    protected $begin_time;
+    protected $id;
     /**
-      * $end_time The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time.
+      * $location_id The ID of the merchant location this order is associated with.
       * @var string
       */
-    protected $end_time;
+    protected $location_id;
     /**
-      * $sort_order The order in which results are listed in the response (`ASC` for oldest first, `DESC` for newest first).  Default value: `DESC`
+      * $reference_id A client specified identifier to associate an entity in another system with this order.
       * @var string
       */
-    protected $sort_order;
+    protected $reference_id;
     /**
-      * $cursor A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information.
-      * @var string
+      * $line_items The line items included in the order. Every order has at least one line item.
+      * @var \SquareConnect\Model\OrderLineItem[]
       */
-    protected $cursor;
+    protected $line_items;
+    /**
+      * $total_money The total amount of money to collect for the order.
+      * @var \SquareConnect\Model\Money
+      */
+    protected $total_money;
 
     /**
      * Constructor
@@ -118,93 +127,111 @@ class ListTransactionsRequest implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->begin_time = $data["begin_time"];
-            $this->end_time = $data["end_time"];
-            $this->sort_order = $data["sort_order"];
-            $this->cursor = $data["cursor"];
+            $this->id = $data["id"];
+            $this->location_id = $data["location_id"];
+            $this->reference_id = $data["reference_id"];
+            $this->line_items = $data["line_items"];
+            $this->total_money = $data["total_money"];
         }
     }
     /**
-     * Gets begin_time
+     * Gets id
      * @return string
      */
-    public function getBeginTime()
+    public function getId()
     {
-        return $this->begin_time;
+        return $this->id;
     }
   
     /**
-     * Sets begin_time
-     * @param string $begin_time The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year.
+     * Sets id
+     * @param string $id The order's unique ID.  This value is not present if the order was not created with the [CreateOrder](#endpoint-createorder) endpoint.
      * @return $this
      */
-    public function setBeginTime($begin_time)
+    public function setId($id)
     {
         
-        $this->begin_time = $begin_time;
+        $this->id = $id;
         return $this;
     }
     /**
-     * Gets end_time
+     * Gets location_id
      * @return string
      */
-    public function getEndTime()
+    public function getLocationId()
     {
-        return $this->end_time;
+        return $this->location_id;
     }
   
     /**
-     * Sets end_time
-     * @param string $end_time The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time.
+     * Sets location_id
+     * @param string $location_id The ID of the merchant location this order is associated with.
      * @return $this
      */
-    public function setEndTime($end_time)
+    public function setLocationId($location_id)
     {
         
-        $this->end_time = $end_time;
+        $this->location_id = $location_id;
         return $this;
     }
     /**
-     * Gets sort_order
+     * Gets reference_id
      * @return string
      */
-    public function getSortOrder()
+    public function getReferenceId()
     {
-        return $this->sort_order;
+        return $this->reference_id;
     }
   
     /**
-     * Sets sort_order
-     * @param string $sort_order The order in which results are listed in the response (`ASC` for oldest first, `DESC` for newest first).  Default value: `DESC`
+     * Sets reference_id
+     * @param string $reference_id A client specified identifier to associate an entity in another system with this order.
      * @return $this
      */
-    public function setSortOrder($sort_order)
+    public function setReferenceId($reference_id)
     {
-        $allowed_values = array("DESC", "ASC");
-        if (!in_array($sort_order, $allowed_values)) {
-            throw new \InvalidArgumentException("Invalid value for 'sort_order', must be one of 'DESC', 'ASC'");
-        }
-        $this->sort_order = $sort_order;
+        
+        $this->reference_id = $reference_id;
         return $this;
     }
     /**
-     * Gets cursor
-     * @return string
+     * Gets line_items
+     * @return \SquareConnect\Model\OrderLineItem[]
      */
-    public function getCursor()
+    public function getLineItems()
     {
-        return $this->cursor;
+        return $this->line_items;
     }
   
     /**
-     * Sets cursor
-     * @param string $cursor A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information.
+     * Sets line_items
+     * @param \SquareConnect\Model\OrderLineItem[] $line_items The line items included in the order. Every order has at least one line item.
      * @return $this
      */
-    public function setCursor($cursor)
+    public function setLineItems($line_items)
     {
         
-        $this->cursor = $cursor;
+        $this->line_items = $line_items;
+        return $this;
+    }
+    /**
+     * Gets total_money
+     * @return \SquareConnect\Model\Money
+     */
+    public function getTotalMoney()
+    {
+        return $this->total_money;
+    }
+  
+    /**
+     * Sets total_money
+     * @param \SquareConnect\Model\Money $total_money The total amount of money to collect for the order.
+     * @return $this
+     */
+    public function setTotalMoney($total_money)
+    {
+        
+        $this->total_money = $total_money;
         return $this;
     }
     /**

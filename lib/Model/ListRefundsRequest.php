@@ -38,7 +38,7 @@ use \ArrayAccess;
  * ListRefundsRequest Class Doc Comment
  *
  * @category    Class
- * @description Defines the query parameters that can be included in\na request to the **ListRefunds** endpoint.
+ * @description Defines the query parameters that can be included in a request to the [ListRefunds](#endpoint-listrefunds) endpoint.
  * @package     SquareConnect
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
@@ -90,31 +90,26 @@ class ListRefundsRequest implements ArrayAccess
         'cursor' => 'getCursor'
     );
   
-    
     /**
-      * $begin_time The beginning of the requested reporting period, in RFC 3339 format.
+      * $begin_time The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year.
       * @var string
       */
     protected $begin_time;
-    
     /**
-      * $end_time The end of the requested reporting period, in RFC 3339 format.
+      * $end_time The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time.
       * @var string
       */
     protected $end_time;
-    
     /**
-      * $sort_order The order in which results are listed in the response.
+      * $sort_order The order in which results are listed in the response (`ASC` for oldest first, `DESC` for newest first).  Default value: `DESC`
       * @var string
       */
     protected $sort_order;
-    
     /**
-      * $cursor A pagination cursor to retrieve the next set of results for your\noriginal query to the endpoint.
+      * $cursor A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information.
       * @var string
       */
     protected $cursor;
-    
 
     /**
      * Constructor
@@ -129,7 +124,6 @@ class ListRefundsRequest implements ArrayAccess
             $this->cursor = $data["cursor"];
         }
     }
-    
     /**
      * Gets begin_time
      * @return string
@@ -141,7 +135,7 @@ class ListRefundsRequest implements ArrayAccess
   
     /**
      * Sets begin_time
-     * @param string $begin_time The beginning of the requested reporting period, in RFC 3339 format.
+     * @param string $begin_time The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year.
      * @return $this
      */
     public function setBeginTime($begin_time)
@@ -150,7 +144,6 @@ class ListRefundsRequest implements ArrayAccess
         $this->begin_time = $begin_time;
         return $this;
     }
-    
     /**
      * Gets end_time
      * @return string
@@ -162,7 +155,7 @@ class ListRefundsRequest implements ArrayAccess
   
     /**
      * Sets end_time
-     * @param string $end_time The end of the requested reporting period, in RFC 3339 format.
+     * @param string $end_time The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time.
      * @return $this
      */
     public function setEndTime($end_time)
@@ -171,7 +164,6 @@ class ListRefundsRequest implements ArrayAccess
         $this->end_time = $end_time;
         return $this;
     }
-    
     /**
      * Gets sort_order
      * @return string
@@ -183,7 +175,7 @@ class ListRefundsRequest implements ArrayAccess
   
     /**
      * Sets sort_order
-     * @param string $sort_order The order in which results are listed in the response.
+     * @param string $sort_order The order in which results are listed in the response (`ASC` for oldest first, `DESC` for newest first).  Default value: `DESC`
      * @return $this
      */
     public function setSortOrder($sort_order)
@@ -195,7 +187,6 @@ class ListRefundsRequest implements ArrayAccess
         $this->sort_order = $sort_order;
         return $this;
     }
-    
     /**
      * Gets cursor
      * @return string
@@ -207,7 +198,7 @@ class ListRefundsRequest implements ArrayAccess
   
     /**
      * Sets cursor
-     * @param string $cursor A pagination cursor to retrieve the next set of results for your\noriginal query to the endpoint.
+     * @param string $cursor A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information.
      * @return $this
      */
     public function setCursor($cursor)
@@ -216,7 +207,6 @@ class ListRefundsRequest implements ArrayAccess
         $this->cursor = $cursor;
         return $this;
     }
-    
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset 

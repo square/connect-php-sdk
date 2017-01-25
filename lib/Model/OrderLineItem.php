@@ -1,6 +1,6 @@
 <?php
 /**
- * ListTransactionsRequest
+ * OrderLineItem
  *
  * PHP version 5
  *
@@ -35,26 +35,27 @@ namespace SquareConnect\Model;
 
 use \ArrayAccess;
 /**
- * ListTransactionsRequest Class Doc Comment
+ * OrderLineItem Class Doc Comment
  *
  * @category    Class
- * @description Defines the query parameters that can be included in a request to the [ListTransactions](#endpoint-listtransactions) endpoint.
+ * @description Represents a line item in an order. Each line item describes a different product to purchase, with its own quantity and price details.
  * @package     SquareConnect
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ListTransactionsRequest implements ArrayAccess
+class OrderLineItem implements ArrayAccess
 {
     /**
       * Array of property to type mappings. Used for (de)serialization 
       * @var string[]
       */
     static $swaggerTypes = array(
-        'begin_time' => 'string',
-        'end_time' => 'string',
-        'sort_order' => 'string',
-        'cursor' => 'string'
+        'id' => 'string',
+        'name' => 'string',
+        'quantity' => 'string',
+        'base_price_money' => '\SquareConnect\Model\Money',
+        'total_money' => '\SquareConnect\Model\Money'
     );
   
     /** 
@@ -62,10 +63,11 @@ class ListTransactionsRequest implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
-        'begin_time' => 'begin_time',
-        'end_time' => 'end_time',
-        'sort_order' => 'sort_order',
-        'cursor' => 'cursor'
+        'id' => 'id',
+        'name' => 'name',
+        'quantity' => 'quantity',
+        'base_price_money' => 'base_price_money',
+        'total_money' => 'total_money'
     );
   
     /**
@@ -73,10 +75,11 @@ class ListTransactionsRequest implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
-        'begin_time' => 'setBeginTime',
-        'end_time' => 'setEndTime',
-        'sort_order' => 'setSortOrder',
-        'cursor' => 'setCursor'
+        'id' => 'setId',
+        'name' => 'setName',
+        'quantity' => 'setQuantity',
+        'base_price_money' => 'setBasePriceMoney',
+        'total_money' => 'setTotalMoney'
     );
   
     /**
@@ -84,32 +87,38 @@ class ListTransactionsRequest implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
-        'begin_time' => 'getBeginTime',
-        'end_time' => 'getEndTime',
-        'sort_order' => 'getSortOrder',
-        'cursor' => 'getCursor'
+        'id' => 'getId',
+        'name' => 'getName',
+        'quantity' => 'getQuantity',
+        'base_price_money' => 'getBasePriceMoney',
+        'total_money' => 'getTotalMoney'
     );
   
     /**
-      * $begin_time The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year.
+      * $id The line item's ID, unique only within this order.
       * @var string
       */
-    protected $begin_time;
+    protected $id;
     /**
-      * $end_time The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time.
+      * $name The name of the line item.
       * @var string
       */
-    protected $end_time;
+    protected $name;
     /**
-      * $sort_order The order in which results are listed in the response (`ASC` for oldest first, `DESC` for newest first).  Default value: `DESC`
+      * $quantity The quantity of the product to purchase. Currently, this string must have an integer value.
       * @var string
       */
-    protected $sort_order;
+    protected $quantity;
     /**
-      * $cursor A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information.
-      * @var string
+      * $base_price_money The base price for a single unit of the line item's associated variation.  If a line item represents a Custom Amount instead of a particular product, this field indicates that amount.
+      * @var \SquareConnect\Model\Money
       */
-    protected $cursor;
+    protected $base_price_money;
+    /**
+      * $total_money The total amount of money to collect for this line item.
+      * @var \SquareConnect\Model\Money
+      */
+    protected $total_money;
 
     /**
      * Constructor
@@ -118,93 +127,111 @@ class ListTransactionsRequest implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->begin_time = $data["begin_time"];
-            $this->end_time = $data["end_time"];
-            $this->sort_order = $data["sort_order"];
-            $this->cursor = $data["cursor"];
+            $this->id = $data["id"];
+            $this->name = $data["name"];
+            $this->quantity = $data["quantity"];
+            $this->base_price_money = $data["base_price_money"];
+            $this->total_money = $data["total_money"];
         }
     }
     /**
-     * Gets begin_time
+     * Gets id
      * @return string
      */
-    public function getBeginTime()
+    public function getId()
     {
-        return $this->begin_time;
+        return $this->id;
     }
   
     /**
-     * Sets begin_time
-     * @param string $begin_time The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year.
+     * Sets id
+     * @param string $id The line item's ID, unique only within this order.
      * @return $this
      */
-    public function setBeginTime($begin_time)
+    public function setId($id)
     {
         
-        $this->begin_time = $begin_time;
+        $this->id = $id;
         return $this;
     }
     /**
-     * Gets end_time
+     * Gets name
      * @return string
      */
-    public function getEndTime()
+    public function getName()
     {
-        return $this->end_time;
+        return $this->name;
     }
   
     /**
-     * Sets end_time
-     * @param string $end_time The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time.
+     * Sets name
+     * @param string $name The name of the line item.
      * @return $this
      */
-    public function setEndTime($end_time)
+    public function setName($name)
     {
         
-        $this->end_time = $end_time;
+        $this->name = $name;
         return $this;
     }
     /**
-     * Gets sort_order
+     * Gets quantity
      * @return string
      */
-    public function getSortOrder()
+    public function getQuantity()
     {
-        return $this->sort_order;
+        return $this->quantity;
     }
   
     /**
-     * Sets sort_order
-     * @param string $sort_order The order in which results are listed in the response (`ASC` for oldest first, `DESC` for newest first).  Default value: `DESC`
+     * Sets quantity
+     * @param string $quantity The quantity of the product to purchase. Currently, this string must have an integer value.
      * @return $this
      */
-    public function setSortOrder($sort_order)
+    public function setQuantity($quantity)
     {
-        $allowed_values = array("DESC", "ASC");
-        if (!in_array($sort_order, $allowed_values)) {
-            throw new \InvalidArgumentException("Invalid value for 'sort_order', must be one of 'DESC', 'ASC'");
-        }
-        $this->sort_order = $sort_order;
+        
+        $this->quantity = $quantity;
         return $this;
     }
     /**
-     * Gets cursor
-     * @return string
+     * Gets base_price_money
+     * @return \SquareConnect\Model\Money
      */
-    public function getCursor()
+    public function getBasePriceMoney()
     {
-        return $this->cursor;
+        return $this->base_price_money;
     }
   
     /**
-     * Sets cursor
-     * @param string $cursor A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information.
+     * Sets base_price_money
+     * @param \SquareConnect\Model\Money $base_price_money The base price for a single unit of the line item's associated variation.  If a line item represents a Custom Amount instead of a particular product, this field indicates that amount.
      * @return $this
      */
-    public function setCursor($cursor)
+    public function setBasePriceMoney($base_price_money)
     {
         
-        $this->cursor = $cursor;
+        $this->base_price_money = $base_price_money;
+        return $this;
+    }
+    /**
+     * Gets total_money
+     * @return \SquareConnect\Model\Money
+     */
+    public function getTotalMoney()
+    {
+        return $this->total_money;
+    }
+  
+    /**
+     * Sets total_money
+     * @param \SquareConnect\Model\Money $total_money The total amount of money to collect for this line item.
+     * @return $this
+     */
+    public function setTotalMoney($total_money)
+    {
+        
+        $this->total_money = $total_money;
         return $this;
     }
     /**

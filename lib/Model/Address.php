@@ -38,7 +38,7 @@ use \ArrayAccess;
  * Address Class Doc Comment
  *
  * @category    Class
- * @description 
+ * @description Represents a physical address.
  * @package     SquareConnect
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
@@ -62,7 +62,10 @@ class Address implements ArrayAccess
         'administrative_district_level_2' => 'string',
         'administrative_district_level_3' => 'string',
         'postal_code' => 'string',
-        'country' => 'string'
+        'country' => 'string',
+        'first_name' => 'string',
+        'last_name' => 'string',
+        'organization' => 'string'
     );
   
     /** 
@@ -81,7 +84,10 @@ class Address implements ArrayAccess
         'administrative_district_level_2' => 'administrative_district_level_2',
         'administrative_district_level_3' => 'administrative_district_level_3',
         'postal_code' => 'postal_code',
-        'country' => 'country'
+        'country' => 'country',
+        'first_name' => 'first_name',
+        'last_name' => 'last_name',
+        'organization' => 'organization'
     );
   
     /**
@@ -100,7 +106,10 @@ class Address implements ArrayAccess
         'administrative_district_level_2' => 'setAdministrativeDistrictLevel2',
         'administrative_district_level_3' => 'setAdministrativeDistrictLevel3',
         'postal_code' => 'setPostalCode',
-        'country' => 'setCountry'
+        'country' => 'setCountry',
+        'first_name' => 'setFirstName',
+        'last_name' => 'setLastName',
+        'organization' => 'setOrganization'
     );
   
     /**
@@ -119,82 +128,87 @@ class Address implements ArrayAccess
         'administrative_district_level_2' => 'getAdministrativeDistrictLevel2',
         'administrative_district_level_3' => 'getAdministrativeDistrictLevel3',
         'postal_code' => 'getPostalCode',
-        'country' => 'getCountry'
+        'country' => 'getCountry',
+        'first_name' => 'getFirstName',
+        'last_name' => 'getLastName',
+        'organization' => 'getOrganization'
     );
   
-    
     /**
-      * $address_line_1 
+      * $address_line_1 The first line of the address.  Fields that start with `address_line` provide the address's most specific details, like street number, street name, and building name. They do *not* provide less specific details like city, state/province, or country (these details are provided in other fields).
       * @var string
       */
     protected $address_line_1;
-    
     /**
-      * $address_line_2 
+      * $address_line_2 The second line of the address, if any.
       * @var string
       */
     protected $address_line_2;
-    
     /**
-      * $address_line_3 
+      * $address_line_3 The third line of the address, if any.
       * @var string
       */
     protected $address_line_3;
-    
     /**
-      * $locality 
+      * $locality The city or town of the address.
       * @var string
       */
     protected $locality;
-    
     /**
-      * $sublocality 
+      * $sublocality A civil region within the address's `locality`, if any.
       * @var string
       */
     protected $sublocality;
-    
     /**
-      * $sublocality_2 
+      * $sublocality_2 A civil region within the address's `sublocality`, if any.
       * @var string
       */
     protected $sublocality_2;
-    
     /**
-      * $sublocality_3 
+      * $sublocality_3 A civil region within the address's `sublocality_2`, if any.
       * @var string
       */
     protected $sublocality_3;
-    
     /**
-      * $administrative_district_level_1 
+      * $administrative_district_level_1 A civil entity within the address's country. In the US, this is the state.
       * @var string
       */
     protected $administrative_district_level_1;
-    
     /**
-      * $administrative_district_level_2 
+      * $administrative_district_level_2 A civil entity within the address's `administrative_district_level_1`. In the US, this is the county.
       * @var string
       */
     protected $administrative_district_level_2;
-    
     /**
-      * $administrative_district_level_3 
+      * $administrative_district_level_3 A civil entity within the address's `administrative_district_level_2`, if any.
       * @var string
       */
     protected $administrative_district_level_3;
-    
     /**
-      * $postal_code 
+      * $postal_code The address's postal code.
       * @var string
       */
     protected $postal_code;
-    
     /**
-      * $country 
+      * $country The address's country, in ISO 3166-1-alpha-2 format.
       * @var string
       */
     protected $country;
-    
+    /**
+      * $first_name Optional first name when it's representing recipient.
+      * @var string
+      */
+    protected $first_name;
+    /**
+      * $last_name Optional last name when it's representing recipient.
+      * @var string
+      */
+    protected $last_name;
+    /**
+      * $organization Optional organization name when it's representing recipient.
+      * @var string
+      */
+    protected $organization;
 
     /**
      * Constructor
@@ -215,9 +229,11 @@ class Address implements ArrayAccess
             $this->administrative_district_level_3 = $data["administrative_district_level_3"];
             $this->postal_code = $data["postal_code"];
             $this->country = $data["country"];
+            $this->first_name = $data["first_name"];
+            $this->last_name = $data["last_name"];
+            $this->organization = $data["organization"];
         }
     }
-    
     /**
      * Gets address_line_1
      * @return string
@@ -229,7 +245,7 @@ class Address implements ArrayAccess
   
     /**
      * Sets address_line_1
-     * @param string $address_line_1 
+     * @param string $address_line_1 The first line of the address.  Fields that start with `address_line` provide the address's most specific details, like street number, street name, and building name. They do *not* provide less specific details like city, state/province, or country (these details are provided in other fields).
      * @return $this
      */
     public function setAddressLine1($address_line_1)
@@ -238,7 +254,6 @@ class Address implements ArrayAccess
         $this->address_line_1 = $address_line_1;
         return $this;
     }
-    
     /**
      * Gets address_line_2
      * @return string
@@ -250,7 +265,7 @@ class Address implements ArrayAccess
   
     /**
      * Sets address_line_2
-     * @param string $address_line_2 
+     * @param string $address_line_2 The second line of the address, if any.
      * @return $this
      */
     public function setAddressLine2($address_line_2)
@@ -259,7 +274,6 @@ class Address implements ArrayAccess
         $this->address_line_2 = $address_line_2;
         return $this;
     }
-    
     /**
      * Gets address_line_3
      * @return string
@@ -271,7 +285,7 @@ class Address implements ArrayAccess
   
     /**
      * Sets address_line_3
-     * @param string $address_line_3 
+     * @param string $address_line_3 The third line of the address, if any.
      * @return $this
      */
     public function setAddressLine3($address_line_3)
@@ -280,7 +294,6 @@ class Address implements ArrayAccess
         $this->address_line_3 = $address_line_3;
         return $this;
     }
-    
     /**
      * Gets locality
      * @return string
@@ -292,7 +305,7 @@ class Address implements ArrayAccess
   
     /**
      * Sets locality
-     * @param string $locality 
+     * @param string $locality The city or town of the address.
      * @return $this
      */
     public function setLocality($locality)
@@ -301,7 +314,6 @@ class Address implements ArrayAccess
         $this->locality = $locality;
         return $this;
     }
-    
     /**
      * Gets sublocality
      * @return string
@@ -313,7 +325,7 @@ class Address implements ArrayAccess
   
     /**
      * Sets sublocality
-     * @param string $sublocality 
+     * @param string $sublocality A civil region within the address's `locality`, if any.
      * @return $this
      */
     public function setSublocality($sublocality)
@@ -322,7 +334,6 @@ class Address implements ArrayAccess
         $this->sublocality = $sublocality;
         return $this;
     }
-    
     /**
      * Gets sublocality_2
      * @return string
@@ -334,7 +345,7 @@ class Address implements ArrayAccess
   
     /**
      * Sets sublocality_2
-     * @param string $sublocality_2 
+     * @param string $sublocality_2 A civil region within the address's `sublocality`, if any.
      * @return $this
      */
     public function setSublocality2($sublocality_2)
@@ -343,7 +354,6 @@ class Address implements ArrayAccess
         $this->sublocality_2 = $sublocality_2;
         return $this;
     }
-    
     /**
      * Gets sublocality_3
      * @return string
@@ -355,7 +365,7 @@ class Address implements ArrayAccess
   
     /**
      * Sets sublocality_3
-     * @param string $sublocality_3 
+     * @param string $sublocality_3 A civil region within the address's `sublocality_2`, if any.
      * @return $this
      */
     public function setSublocality3($sublocality_3)
@@ -364,7 +374,6 @@ class Address implements ArrayAccess
         $this->sublocality_3 = $sublocality_3;
         return $this;
     }
-    
     /**
      * Gets administrative_district_level_1
      * @return string
@@ -376,7 +385,7 @@ class Address implements ArrayAccess
   
     /**
      * Sets administrative_district_level_1
-     * @param string $administrative_district_level_1 
+     * @param string $administrative_district_level_1 A civil entity within the address's country. In the US, this is the state.
      * @return $this
      */
     public function setAdministrativeDistrictLevel1($administrative_district_level_1)
@@ -385,7 +394,6 @@ class Address implements ArrayAccess
         $this->administrative_district_level_1 = $administrative_district_level_1;
         return $this;
     }
-    
     /**
      * Gets administrative_district_level_2
      * @return string
@@ -397,7 +405,7 @@ class Address implements ArrayAccess
   
     /**
      * Sets administrative_district_level_2
-     * @param string $administrative_district_level_2 
+     * @param string $administrative_district_level_2 A civil entity within the address's `administrative_district_level_1`. In the US, this is the county.
      * @return $this
      */
     public function setAdministrativeDistrictLevel2($administrative_district_level_2)
@@ -406,7 +414,6 @@ class Address implements ArrayAccess
         $this->administrative_district_level_2 = $administrative_district_level_2;
         return $this;
     }
-    
     /**
      * Gets administrative_district_level_3
      * @return string
@@ -418,7 +425,7 @@ class Address implements ArrayAccess
   
     /**
      * Sets administrative_district_level_3
-     * @param string $administrative_district_level_3 
+     * @param string $administrative_district_level_3 A civil entity within the address's `administrative_district_level_2`, if any.
      * @return $this
      */
     public function setAdministrativeDistrictLevel3($administrative_district_level_3)
@@ -427,7 +434,6 @@ class Address implements ArrayAccess
         $this->administrative_district_level_3 = $administrative_district_level_3;
         return $this;
     }
-    
     /**
      * Gets postal_code
      * @return string
@@ -439,7 +445,7 @@ class Address implements ArrayAccess
   
     /**
      * Sets postal_code
-     * @param string $postal_code 
+     * @param string $postal_code The address's postal code.
      * @return $this
      */
     public function setPostalCode($postal_code)
@@ -448,7 +454,6 @@ class Address implements ArrayAccess
         $this->postal_code = $postal_code;
         return $this;
     }
-    
     /**
      * Gets country
      * @return string
@@ -460,7 +465,7 @@ class Address implements ArrayAccess
   
     /**
      * Sets country
-     * @param string $country 
+     * @param string $country The address's country, in ISO 3166-1-alpha-2 format.
      * @return $this
      */
     public function setCountry($country)
@@ -472,7 +477,66 @@ class Address implements ArrayAccess
         $this->country = $country;
         return $this;
     }
-    
+    /**
+     * Gets first_name
+     * @return string
+     */
+    public function getFirstName()
+    {
+        return $this->first_name;
+    }
+  
+    /**
+     * Sets first_name
+     * @param string $first_name Optional first name when it's representing recipient.
+     * @return $this
+     */
+    public function setFirstName($first_name)
+    {
+        
+        $this->first_name = $first_name;
+        return $this;
+    }
+    /**
+     * Gets last_name
+     * @return string
+     */
+    public function getLastName()
+    {
+        return $this->last_name;
+    }
+  
+    /**
+     * Sets last_name
+     * @param string $last_name Optional last name when it's representing recipient.
+     * @return $this
+     */
+    public function setLastName($last_name)
+    {
+        
+        $this->last_name = $last_name;
+        return $this;
+    }
+    /**
+     * Gets organization
+     * @return string
+     */
+    public function getOrganization()
+    {
+        return $this->organization;
+    }
+  
+    /**
+     * Sets organization
+     * @param string $organization Optional organization name when it's representing recipient.
+     * @return $this
+     */
+    public function setOrganization($organization)
+    {
+        
+        $this->organization = $organization;
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset 
