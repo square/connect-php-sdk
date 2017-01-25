@@ -38,7 +38,7 @@ use \ArrayAccess;
  * DeleteCustomerCardResponse Class Doc Comment
  *
  * @category    Class
- * @description Defines the fields that are included in the response body of\na request to the **DeleteCustomerCard** endpoint.
+ * @description Defines the fields that are included in the response body of a request to the [DeleteCustomerCard](#endpoint-deletecustomercard) endpoint.
  * @package     SquareConnect
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
@@ -78,13 +78,11 @@ class DeleteCustomerCardResponse implements ArrayAccess
         'errors' => 'getErrors'
     );
   
-    
     /**
-      * $errors 
+      * $errors Any errors that occurred during the request.
       * @var \SquareConnect\Model\Error[]
       */
     protected $errors;
-    
 
     /**
      * Constructor
@@ -96,7 +94,6 @@ class DeleteCustomerCardResponse implements ArrayAccess
             $this->errors = $data["errors"];
         }
     }
-    
     /**
      * Gets errors
      * @return \SquareConnect\Model\Error[]
@@ -108,7 +105,7 @@ class DeleteCustomerCardResponse implements ArrayAccess
   
     /**
      * Sets errors
-     * @param \SquareConnect\Model\Error[] $errors 
+     * @param \SquareConnect\Model\Error[] $errors Any errors that occurred during the request.
      * @return $this
      */
     public function setErrors($errors)
@@ -117,7 +114,6 @@ class DeleteCustomerCardResponse implements ArrayAccess
         $this->errors = $errors;
         return $this;
     }
-    
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset 

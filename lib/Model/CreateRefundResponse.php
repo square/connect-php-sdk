@@ -38,7 +38,7 @@ use \ArrayAccess;
  * CreateRefundResponse Class Doc Comment
  *
  * @category    Class
- * @description Defines the fields that are included in the response body of\na request to the **CreateRefund** endpoint.\n\nOne of `errors` or `refund` is present in a given response (never both).
+ * @description Defines the fields that are included in the response body of a request to the [CreateRefund](#endpoint-createrefund) endpoint.  One of &#x60;errors&#x60; or &#x60;refund&#x60; is present in a given response (never both).
  * @package     SquareConnect
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
@@ -82,19 +82,16 @@ class CreateRefundResponse implements ArrayAccess
         'refund' => 'getRefund'
     );
   
-    
     /**
       * $errors Any errors that occurred during the request.
       * @var \SquareConnect\Model\Error[]
       */
     protected $errors;
-    
     /**
-      * $refund The details of the created refund.
+      * $refund The created refund.
       * @var \SquareConnect\Model\Refund
       */
     protected $refund;
-    
 
     /**
      * Constructor
@@ -107,7 +104,6 @@ class CreateRefundResponse implements ArrayAccess
             $this->refund = $data["refund"];
         }
     }
-    
     /**
      * Gets errors
      * @return \SquareConnect\Model\Error[]
@@ -128,7 +124,6 @@ class CreateRefundResponse implements ArrayAccess
         $this->errors = $errors;
         return $this;
     }
-    
     /**
      * Gets refund
      * @return \SquareConnect\Model\Refund
@@ -140,7 +135,7 @@ class CreateRefundResponse implements ArrayAccess
   
     /**
      * Sets refund
-     * @param \SquareConnect\Model\Refund $refund The details of the created refund.
+     * @param \SquareConnect\Model\Refund $refund The created refund.
      * @return $this
      */
     public function setRefund($refund)
@@ -149,7 +144,6 @@ class CreateRefundResponse implements ArrayAccess
         $this->refund = $refund;
         return $this;
     }
-    
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset 

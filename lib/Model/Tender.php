@@ -38,7 +38,7 @@ use \ArrayAccess;
  * Tender Class Doc Comment
  *
  * @category    Class
- * @description Represents a form of tender used to pay in a transaction.
+ * @description Represents a tender (i.e., a method of payment) used in a Square transaction.
  * @package     SquareConnect
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
@@ -118,73 +118,61 @@ class Tender implements ArrayAccess
         'cash_details' => 'getCashDetails'
     );
   
-    
     /**
       * $id The tender's unique ID.
       * @var string
       */
     protected $id;
-    
     /**
-      * $location_id The ID of the tender's associated location.
+      * $location_id The ID of the transaction's associated location.
       * @var string
       */
     protected $location_id;
-    
     /**
       * $transaction_id The ID of the tender's associated transaction.
       * @var string
       */
     protected $transaction_id;
-    
     /**
       * $created_at The time when the tender was created, in RFC 3339 format.
       * @var string
       */
     protected $created_at;
-    
     /**
       * $note An optional note associated with the tender at the time of payment.
       * @var string
       */
     protected $note;
-    
     /**
       * $amount_money The amount of the tender.
       * @var \SquareConnect\Model\Money
       */
     protected $amount_money;
-    
     /**
-      * $processing_fee_money The amount of any Square processing fees applied to the tender.
+      * $processing_fee_money The amount of any Square processing fees applied to the tender.  This field is not immediately populated when a new transaction is created. It is usually available after about ten seconds.
       * @var \SquareConnect\Model\Money
       */
     protected $processing_fee_money;
-    
     /**
-      * $customer_id If the tender represents a customer's card on file, this is\nthe ID of the associated customer.
+      * $customer_id If the tender is associated with a customer or represents a customer's card on file, this is the ID of the associated customer.
       * @var string
       */
     protected $customer_id;
-    
     /**
-      * $type The type of tender.
+      * $type The type of tender, such as `CARD` or `CASH`.
       * @var string
       */
     protected $type;
-    
     /**
-      * $card_details The details of the card tender.\nThis value is present only if the value of `type` is `CARD`.
+      * $card_details The details of the card tender.  This value is present only if the value of `type` is `CARD`.
       * @var \SquareConnect\Model\TenderCardDetails
       */
     protected $card_details;
-    
     /**
-      * $cash_details The details of the cash tender.\nThis value is present only if the value of `type` is `CASH`.
+      * $cash_details The details of the cash tender.  This value is present only if the value of `type` is `CASH`.
       * @var \SquareConnect\Model\TenderCashDetails
       */
     protected $cash_details;
-    
 
     /**
      * Constructor
@@ -206,7 +194,6 @@ class Tender implements ArrayAccess
             $this->cash_details = $data["cash_details"];
         }
     }
-    
     /**
      * Gets id
      * @return string
@@ -227,7 +214,6 @@ class Tender implements ArrayAccess
         $this->id = $id;
         return $this;
     }
-    
     /**
      * Gets location_id
      * @return string
@@ -239,7 +225,7 @@ class Tender implements ArrayAccess
   
     /**
      * Sets location_id
-     * @param string $location_id The ID of the tender's associated location.
+     * @param string $location_id The ID of the transaction's associated location.
      * @return $this
      */
     public function setLocationId($location_id)
@@ -248,7 +234,6 @@ class Tender implements ArrayAccess
         $this->location_id = $location_id;
         return $this;
     }
-    
     /**
      * Gets transaction_id
      * @return string
@@ -269,7 +254,6 @@ class Tender implements ArrayAccess
         $this->transaction_id = $transaction_id;
         return $this;
     }
-    
     /**
      * Gets created_at
      * @return string
@@ -290,7 +274,6 @@ class Tender implements ArrayAccess
         $this->created_at = $created_at;
         return $this;
     }
-    
     /**
      * Gets note
      * @return string
@@ -311,7 +294,6 @@ class Tender implements ArrayAccess
         $this->note = $note;
         return $this;
     }
-    
     /**
      * Gets amount_money
      * @return \SquareConnect\Model\Money
@@ -332,7 +314,6 @@ class Tender implements ArrayAccess
         $this->amount_money = $amount_money;
         return $this;
     }
-    
     /**
      * Gets processing_fee_money
      * @return \SquareConnect\Model\Money
@@ -344,7 +325,7 @@ class Tender implements ArrayAccess
   
     /**
      * Sets processing_fee_money
-     * @param \SquareConnect\Model\Money $processing_fee_money The amount of any Square processing fees applied to the tender.
+     * @param \SquareConnect\Model\Money $processing_fee_money The amount of any Square processing fees applied to the tender.  This field is not immediately populated when a new transaction is created. It is usually available after about ten seconds.
      * @return $this
      */
     public function setProcessingFeeMoney($processing_fee_money)
@@ -353,7 +334,6 @@ class Tender implements ArrayAccess
         $this->processing_fee_money = $processing_fee_money;
         return $this;
     }
-    
     /**
      * Gets customer_id
      * @return string
@@ -365,7 +345,7 @@ class Tender implements ArrayAccess
   
     /**
      * Sets customer_id
-     * @param string $customer_id If the tender represents a customer's card on file, this is\nthe ID of the associated customer.
+     * @param string $customer_id If the tender is associated with a customer or represents a customer's card on file, this is the ID of the associated customer.
      * @return $this
      */
     public function setCustomerId($customer_id)
@@ -374,7 +354,6 @@ class Tender implements ArrayAccess
         $this->customer_id = $customer_id;
         return $this;
     }
-    
     /**
      * Gets type
      * @return string
@@ -386,19 +365,18 @@ class Tender implements ArrayAccess
   
     /**
      * Sets type
-     * @param string $type The type of tender.
+     * @param string $type The type of tender, such as `CARD` or `CASH`.
      * @return $this
      */
     public function setType($type)
     {
-        $allowed_values = array("OTHER", "CARD", "CASH", "THIRD_PARTY_CARD", "SQUARE_GIFT_CARD", "NO_SALE");
+        $allowed_values = array("CARD", "CASH", "THIRD_PARTY_CARD", "SQUARE_GIFT_CARD", "NO_SALE", "OTHER");
         if (!in_array($type, $allowed_values)) {
-            throw new \InvalidArgumentException("Invalid value for 'type', must be one of 'OTHER', 'CARD', 'CASH', 'THIRD_PARTY_CARD', 'SQUARE_GIFT_CARD', 'NO_SALE'");
+            throw new \InvalidArgumentException("Invalid value for 'type', must be one of 'CARD', 'CASH', 'THIRD_PARTY_CARD', 'SQUARE_GIFT_CARD', 'NO_SALE', 'OTHER'");
         }
         $this->type = $type;
         return $this;
     }
-    
     /**
      * Gets card_details
      * @return \SquareConnect\Model\TenderCardDetails
@@ -410,7 +388,7 @@ class Tender implements ArrayAccess
   
     /**
      * Sets card_details
-     * @param \SquareConnect\Model\TenderCardDetails $card_details The details of the card tender.\nThis value is present only if the value of `type` is `CARD`.
+     * @param \SquareConnect\Model\TenderCardDetails $card_details The details of the card tender.  This value is present only if the value of `type` is `CARD`.
      * @return $this
      */
     public function setCardDetails($card_details)
@@ -419,7 +397,6 @@ class Tender implements ArrayAccess
         $this->card_details = $card_details;
         return $this;
     }
-    
     /**
      * Gets cash_details
      * @return \SquareConnect\Model\TenderCashDetails
@@ -431,7 +408,7 @@ class Tender implements ArrayAccess
   
     /**
      * Sets cash_details
-     * @param \SquareConnect\Model\TenderCashDetails $cash_details The details of the cash tender.\nThis value is present only if the value of `type` is `CASH`.
+     * @param \SquareConnect\Model\TenderCashDetails $cash_details The details of the cash tender.  This value is present only if the value of `type` is `CASH`.
      * @return $this
      */
     public function setCashDetails($cash_details)
@@ -440,7 +417,6 @@ class Tender implements ArrayAccess
         $this->cash_details = $cash_details;
         return $this;
     }
-    
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset 

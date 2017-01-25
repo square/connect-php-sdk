@@ -1,6 +1,6 @@
 <?php
 /**
- * RetrieveCustomerResponse
+ * RetrieveTransactionRequest
  *
  * PHP version 5
  *
@@ -35,24 +35,23 @@ namespace SquareConnect\Model;
 
 use \ArrayAccess;
 /**
- * RetrieveCustomerResponse Class Doc Comment
+ * RetrieveTransactionRequest Class Doc Comment
  *
  * @category    Class
- * @description Defines the fields that are included in the response body of a request to the [RetrieveCustomer](#endpoint-retrievecustomer) endpoint.  One of &#x60;errors&#x60; or &#x60;customer&#x60; is present in a given response (never both).
+ * @description 
  * @package     SquareConnect
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class RetrieveCustomerResponse implements ArrayAccess
+class RetrieveTransactionRequest implements ArrayAccess
 {
     /**
       * Array of property to type mappings. Used for (de)serialization 
       * @var string[]
       */
     static $swaggerTypes = array(
-        'errors' => '\SquareConnect\Model\Error[]',
-        'customer' => '\SquareConnect\Model\Customer'
+        
     );
   
     /** 
@@ -60,8 +59,7 @@ class RetrieveCustomerResponse implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
-        'errors' => 'errors',
-        'customer' => 'customer'
+        
     );
   
     /**
@@ -69,8 +67,7 @@ class RetrieveCustomerResponse implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
-        'errors' => 'setErrors',
-        'customer' => 'setCustomer'
+        
     );
   
     /**
@@ -78,20 +75,9 @@ class RetrieveCustomerResponse implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
-        'errors' => 'getErrors',
-        'customer' => 'getCustomer'
+        
     );
   
-    /**
-      * $errors Any errors that occurred during the request.
-      * @var \SquareConnect\Model\Error[]
-      */
-    protected $errors;
-    /**
-      * $customer The requested customer.
-      * @var \SquareConnect\Model\Customer
-      */
-    protected $customer;
 
     /**
      * Constructor
@@ -100,49 +86,8 @@ class RetrieveCustomerResponse implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->errors = $data["errors"];
-            $this->customer = $data["customer"];
+            
         }
-    }
-    /**
-     * Gets errors
-     * @return \SquareConnect\Model\Error[]
-     */
-    public function getErrors()
-    {
-        return $this->errors;
-    }
-  
-    /**
-     * Sets errors
-     * @param \SquareConnect\Model\Error[] $errors Any errors that occurred during the request.
-     * @return $this
-     */
-    public function setErrors($errors)
-    {
-        
-        $this->errors = $errors;
-        return $this;
-    }
-    /**
-     * Gets customer
-     * @return \SquareConnect\Model\Customer
-     */
-    public function getCustomer()
-    {
-        return $this->customer;
-    }
-  
-    /**
-     * Sets customer
-     * @param \SquareConnect\Model\Customer $customer The requested customer.
-     * @return $this
-     */
-    public function setCustomer($customer)
-    {
-        
-        $this->customer = $customer;
-        return $this;
     }
     /**
      * Returns true if offset exists. False otherwise.

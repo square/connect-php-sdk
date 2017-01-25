@@ -94,37 +94,31 @@ class Location implements ArrayAccess
         'capabilities' => 'getCapabilities'
     );
   
-    
     /**
       * $id The location's unique ID.
       * @var string
       */
     protected $id;
-    
     /**
-      * $name The name given to the location.
+      * $name The location's name.
       * @var string
       */
     protected $name;
-    
     /**
-      * $address The address of this location.
+      * $address The location's physical address.
       * @var \SquareConnect\Model\Address
       */
     protected $address;
-    
     /**
-      * $timezone The IANA Timezone Database identifier for the location's timezone.
+      * $timezone The [IANA Timezone Database](https://www.iana.org/time-zones) identifier for the location's timezone.
       * @var string
       */
     protected $timezone;
-    
     /**
-      * $capabilities Indicates which Square features are enabled for the location.\n\nCurrently, there is only one value that might be present in this array:\n`CREDIT_CARD_PROCESSING`.
+      * $capabilities Indicates which Square features are enabled for the location.  See [LocationCapability](#type-locationcapability) for possible values.
       * @var string[]
       */
     protected $capabilities;
-    
 
     /**
      * Constructor
@@ -140,7 +134,6 @@ class Location implements ArrayAccess
             $this->capabilities = $data["capabilities"];
         }
     }
-    
     /**
      * Gets id
      * @return string
@@ -161,7 +154,6 @@ class Location implements ArrayAccess
         $this->id = $id;
         return $this;
     }
-    
     /**
      * Gets name
      * @return string
@@ -173,7 +165,7 @@ class Location implements ArrayAccess
   
     /**
      * Sets name
-     * @param string $name The name given to the location.
+     * @param string $name The location's name.
      * @return $this
      */
     public function setName($name)
@@ -182,7 +174,6 @@ class Location implements ArrayAccess
         $this->name = $name;
         return $this;
     }
-    
     /**
      * Gets address
      * @return \SquareConnect\Model\Address
@@ -194,7 +185,7 @@ class Location implements ArrayAccess
   
     /**
      * Sets address
-     * @param \SquareConnect\Model\Address $address The address of this location.
+     * @param \SquareConnect\Model\Address $address The location's physical address.
      * @return $this
      */
     public function setAddress($address)
@@ -203,7 +194,6 @@ class Location implements ArrayAccess
         $this->address = $address;
         return $this;
     }
-    
     /**
      * Gets timezone
      * @return string
@@ -215,7 +205,7 @@ class Location implements ArrayAccess
   
     /**
      * Sets timezone
-     * @param string $timezone The IANA Timezone Database identifier for the location's timezone.
+     * @param string $timezone The [IANA Timezone Database](https://www.iana.org/time-zones) identifier for the location's timezone.
      * @return $this
      */
     public function setTimezone($timezone)
@@ -224,7 +214,6 @@ class Location implements ArrayAccess
         $this->timezone = $timezone;
         return $this;
     }
-    
     /**
      * Gets capabilities
      * @return string[]
@@ -236,16 +225,18 @@ class Location implements ArrayAccess
   
     /**
      * Sets capabilities
-     * @param string[] $capabilities Indicates which Square features are enabled for the location.\n\nCurrently, there is only one value that might be present in this array:\n`CREDIT_CARD_PROCESSING`.
+     * @param string[] $capabilities Indicates which Square features are enabled for the location.  See [LocationCapability](#type-locationcapability) for possible values.
      * @return $this
      */
     public function setCapabilities($capabilities)
     {
-        
+        $allowed_values = array("CREDIT_CARD_PROCESSING");
+        if (!in_array($capabilities, $allowed_values)) {
+            throw new \InvalidArgumentException("Invalid value for 'capabilities', must be one of 'CREDIT_CARD_PROCESSING'");
+        }
         $this->capabilities = $capabilities;
         return $this;
     }
-    
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset 

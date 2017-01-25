@@ -38,7 +38,7 @@ use \ArrayAccess;
  * Refund Class Doc Comment
  *
  * @category    Class
- * @description 
+ * @description Represents a refund processed for a Square transaction.
  * @package     SquareConnect
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
@@ -110,61 +110,51 @@ class Refund implements ArrayAccess
         'processing_fee_money' => 'getProcessingFeeMoney'
     );
   
-    
     /**
-      * $id The unique ID of the refund.
+      * $id The refund's unique ID.
       * @var string
       */
     protected $id;
-    
     /**
       * $location_id The ID of the refund's associated location.
       * @var string
       */
     protected $location_id;
-    
     /**
-      * $transaction_id The ID of the transaction refunded.
+      * $transaction_id The ID of the transaction that the refunded tender is part of.
       * @var string
       */
     protected $transaction_id;
-    
     /**
-      * $tender_id The ID of the tender refunded.
+      * $tender_id The ID of the refunded tender.
       * @var string
       */
     protected $tender_id;
-    
     /**
       * $created_at The time when the refund was created, in RFC 3339 format.
       * @var string
       */
     protected $created_at;
-    
     /**
       * $reason The reason for the refund being issued.
       * @var string
       */
     protected $reason;
-    
     /**
-      * $amount_money The amount of money refunded.
+      * $amount_money The amount of money refunded to the buyer.
       * @var \SquareConnect\Model\Money
       */
     protected $amount_money;
-    
     /**
-      * $status 
+      * $status The current status of the refund (`PENDING`, `APPROVED`, `REJECTED`, or `FAILED`).
       * @var string
       */
     protected $status;
-    
     /**
-      * $processing_fee_money The amount of processing fee refunded.
+      * $processing_fee_money The amount of Square processing fee money refunded to the *merchant*.
       * @var \SquareConnect\Model\Money
       */
     protected $processing_fee_money;
-    
 
     /**
      * Constructor
@@ -184,7 +174,6 @@ class Refund implements ArrayAccess
             $this->processing_fee_money = $data["processing_fee_money"];
         }
     }
-    
     /**
      * Gets id
      * @return string
@@ -196,7 +185,7 @@ class Refund implements ArrayAccess
   
     /**
      * Sets id
-     * @param string $id The unique ID of the refund.
+     * @param string $id The refund's unique ID.
      * @return $this
      */
     public function setId($id)
@@ -205,7 +194,6 @@ class Refund implements ArrayAccess
         $this->id = $id;
         return $this;
     }
-    
     /**
      * Gets location_id
      * @return string
@@ -226,7 +214,6 @@ class Refund implements ArrayAccess
         $this->location_id = $location_id;
         return $this;
     }
-    
     /**
      * Gets transaction_id
      * @return string
@@ -238,7 +225,7 @@ class Refund implements ArrayAccess
   
     /**
      * Sets transaction_id
-     * @param string $transaction_id The ID of the transaction refunded.
+     * @param string $transaction_id The ID of the transaction that the refunded tender is part of.
      * @return $this
      */
     public function setTransactionId($transaction_id)
@@ -247,7 +234,6 @@ class Refund implements ArrayAccess
         $this->transaction_id = $transaction_id;
         return $this;
     }
-    
     /**
      * Gets tender_id
      * @return string
@@ -259,7 +245,7 @@ class Refund implements ArrayAccess
   
     /**
      * Sets tender_id
-     * @param string $tender_id The ID of the tender refunded.
+     * @param string $tender_id The ID of the refunded tender.
      * @return $this
      */
     public function setTenderId($tender_id)
@@ -268,7 +254,6 @@ class Refund implements ArrayAccess
         $this->tender_id = $tender_id;
         return $this;
     }
-    
     /**
      * Gets created_at
      * @return string
@@ -289,7 +274,6 @@ class Refund implements ArrayAccess
         $this->created_at = $created_at;
         return $this;
     }
-    
     /**
      * Gets reason
      * @return string
@@ -310,7 +294,6 @@ class Refund implements ArrayAccess
         $this->reason = $reason;
         return $this;
     }
-    
     /**
      * Gets amount_money
      * @return \SquareConnect\Model\Money
@@ -322,7 +305,7 @@ class Refund implements ArrayAccess
   
     /**
      * Sets amount_money
-     * @param \SquareConnect\Model\Money $amount_money The amount of money refunded.
+     * @param \SquareConnect\Model\Money $amount_money The amount of money refunded to the buyer.
      * @return $this
      */
     public function setAmountMoney($amount_money)
@@ -331,7 +314,6 @@ class Refund implements ArrayAccess
         $this->amount_money = $amount_money;
         return $this;
     }
-    
     /**
      * Gets status
      * @return string
@@ -343,7 +325,7 @@ class Refund implements ArrayAccess
   
     /**
      * Sets status
-     * @param string $status 
+     * @param string $status The current status of the refund (`PENDING`, `APPROVED`, `REJECTED`, or `FAILED`).
      * @return $this
      */
     public function setStatus($status)
@@ -355,7 +337,6 @@ class Refund implements ArrayAccess
         $this->status = $status;
         return $this;
     }
-    
     /**
      * Gets processing_fee_money
      * @return \SquareConnect\Model\Money
@@ -367,7 +348,7 @@ class Refund implements ArrayAccess
   
     /**
      * Sets processing_fee_money
-     * @param \SquareConnect\Model\Money $processing_fee_money The amount of processing fee refunded.
+     * @param \SquareConnect\Model\Money $processing_fee_money The amount of Square processing fee money refunded to the *merchant*.
      * @return $this
      */
     public function setProcessingFeeMoney($processing_fee_money)
@@ -376,7 +357,6 @@ class Refund implements ArrayAccess
         $this->processing_fee_money = $processing_fee_money;
         return $this;
     }
-    
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset 

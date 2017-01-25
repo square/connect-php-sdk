@@ -38,7 +38,7 @@ use \ArrayAccess;
  * Card Class Doc Comment
  *
  * @category    Class
- * @description Represents a credit card.
+ * @description Represents the non-confidential details of a credit card.
  * @package     SquareConnect
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
@@ -102,49 +102,41 @@ class Card implements ArrayAccess
         'billing_address' => 'getBillingAddress'
     );
   
-    
     /**
       * $id The card's unique ID, if any.
       * @var string
       */
     protected $id;
-    
     /**
-      * $card_brand The card's brand (such as `VISA`).
+      * $card_brand The card's brand (such as `VISA`). See [CardBrand](#type-cardbrand) for all possible values.
       * @var string
       */
     protected $card_brand;
-    
     /**
       * $last_4 The last 4 digits of the card's number.
       * @var string
       */
     protected $last_4;
-    
     /**
-      * $exp_month The month of the card's expiration date, which must be between 1-12.
+      * $exp_month The month of the card's expiration date. This value is always between `1` and `12`, inclusive.
       * @var int
       */
     protected $exp_month;
-    
     /**
-      * $exp_year The year of the card's expiration date, which must be a 4-digit year.
+      * $exp_year The four-digit year of the card's expiration date.
       * @var int
       */
     protected $exp_year;
-    
     /**
-      * $cardholder_name The cardholder name for the card on file.
+      * $cardholder_name The cardholder name. This value is present only if this object represents a customer's card on file.
       * @var string
       */
     protected $cardholder_name;
-    
     /**
-      * $billing_address The billing address for the card on file.
+      * $billing_address The card's billing address. This value is present only if this object represents a customer's card on file.
       * @var \SquareConnect\Model\Address
       */
     protected $billing_address;
-    
 
     /**
      * Constructor
@@ -162,7 +154,6 @@ class Card implements ArrayAccess
             $this->billing_address = $data["billing_address"];
         }
     }
-    
     /**
      * Gets id
      * @return string
@@ -183,7 +174,6 @@ class Card implements ArrayAccess
         $this->id = $id;
         return $this;
     }
-    
     /**
      * Gets card_brand
      * @return string
@@ -195,7 +185,7 @@ class Card implements ArrayAccess
   
     /**
      * Sets card_brand
-     * @param string $card_brand The card's brand (such as `VISA`).
+     * @param string $card_brand The card's brand (such as `VISA`). See [CardBrand](#type-cardbrand) for all possible values.
      * @return $this
      */
     public function setCardBrand($card_brand)
@@ -207,7 +197,6 @@ class Card implements ArrayAccess
         $this->card_brand = $card_brand;
         return $this;
     }
-    
     /**
      * Gets last_4
      * @return string
@@ -228,7 +217,6 @@ class Card implements ArrayAccess
         $this->last_4 = $last_4;
         return $this;
     }
-    
     /**
      * Gets exp_month
      * @return int
@@ -240,7 +228,7 @@ class Card implements ArrayAccess
   
     /**
      * Sets exp_month
-     * @param int $exp_month The month of the card's expiration date, which must be between 1-12.
+     * @param int $exp_month The month of the card's expiration date. This value is always between `1` and `12`, inclusive.
      * @return $this
      */
     public function setExpMonth($exp_month)
@@ -249,7 +237,6 @@ class Card implements ArrayAccess
         $this->exp_month = $exp_month;
         return $this;
     }
-    
     /**
      * Gets exp_year
      * @return int
@@ -261,7 +248,7 @@ class Card implements ArrayAccess
   
     /**
      * Sets exp_year
-     * @param int $exp_year The year of the card's expiration date, which must be a 4-digit year.
+     * @param int $exp_year The four-digit year of the card's expiration date.
      * @return $this
      */
     public function setExpYear($exp_year)
@@ -270,7 +257,6 @@ class Card implements ArrayAccess
         $this->exp_year = $exp_year;
         return $this;
     }
-    
     /**
      * Gets cardholder_name
      * @return string
@@ -282,7 +268,7 @@ class Card implements ArrayAccess
   
     /**
      * Sets cardholder_name
-     * @param string $cardholder_name The cardholder name for the card on file.
+     * @param string $cardholder_name The cardholder name. This value is present only if this object represents a customer's card on file.
      * @return $this
      */
     public function setCardholderName($cardholder_name)
@@ -291,7 +277,6 @@ class Card implements ArrayAccess
         $this->cardholder_name = $cardholder_name;
         return $this;
     }
-    
     /**
      * Gets billing_address
      * @return \SquareConnect\Model\Address
@@ -303,7 +288,7 @@ class Card implements ArrayAccess
   
     /**
      * Sets billing_address
-     * @param \SquareConnect\Model\Address $billing_address The billing address for the card on file.
+     * @param \SquareConnect\Model\Address $billing_address The card's billing address. This value is present only if this object represents a customer's card on file.
      * @return $this
      */
     public function setBillingAddress($billing_address)
@@ -312,7 +297,6 @@ class Card implements ArrayAccess
         $this->billing_address = $billing_address;
         return $this;
     }
-    
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset 

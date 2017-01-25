@@ -90,15 +90,14 @@ class CustomerCardApi
         return $this;
     }
   
-    
     /**
      * createCustomerCard
      *
      * CreateCustomerCard
      *
-     * @param string $authorization The value to provide in the Authorization header of\nyour request. This value should follow the format `Bearer YOUR_ACCESS_TOKEN_HERE`. (required)
-     * @param string $customer_id  (required)
-     * @param \SquareConnect\Model\CreateCustomerCardRequest $body An object containing the fields to POST for the request.\n\nSee the corresponding object definition for field details. (required)
+     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
+     * @param string $customer_id The ID of the customer to link the card on file to. (required)
+     * @param \SquareConnect\Model\CreateCustomerCardRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
      * @return \SquareConnect\Model\CreateCustomerCardResponse
      * @throws \SquareConnect\ApiException on non-2xx response
      */
@@ -114,9 +113,9 @@ class CustomerCardApi
      *
      * CreateCustomerCard
      *
-     * @param string $authorization The value to provide in the Authorization header of\nyour request. This value should follow the format `Bearer YOUR_ACCESS_TOKEN_HERE`. (required)
-     * @param string $customer_id  (required)
-     * @param \SquareConnect\Model\CreateCustomerCardRequest $body An object containing the fields to POST for the request.\n\nSee the corresponding object definition for field details. (required)
+     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
+     * @param string $customer_id The ID of the customer to link the card on file to. (required)
+     * @param \SquareConnect\Model\CreateCustomerCardRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
      * @return Array of \SquareConnect\Model\CreateCustomerCardResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
@@ -150,12 +149,10 @@ class CustomerCardApi
   
         
         // header params
-        
         if ($authorization !== null) {
             $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
         }
         // path params
-        
         if ($customer_id !== null) {
             $resourcePath = str_replace(
                 "{" . "customer_id" . "}",
@@ -179,22 +176,19 @@ class CustomerCardApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        
-        // make the API Call
+                // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath, 'POST',
                 $queryParams, $httpBody,
                 $headerParams, '\SquareConnect\Model\CreateCustomerCardResponse'
             );
-            
             if (!$response) {
                 return array(null, $statusCode, $httpHeader);
             }
 
             return array(\SquareConnect\ObjectSerializer::deserialize($response, '\SquareConnect\Model\CreateCustomerCardResponse', $httpHeader), $statusCode, $httpHeader);
-            
-        } catch (ApiException $e) {
+                    } catch (ApiException $e) {
             switch ($e->getCode()) { 
             case 200:
                 $data = \SquareConnect\ObjectSerializer::deserialize($e->getResponseBody(), '\SquareConnect\Model\CreateCustomerCardResponse', $e->getResponseHeaders());
@@ -205,15 +199,14 @@ class CustomerCardApi
             throw $e;
         }
     }
-    
     /**
      * deleteCustomerCard
      *
      * DeleteCustomerCard
      *
-     * @param string $authorization The value to provide in the Authorization header of\nyour request. This value should follow the format `Bearer YOUR_ACCESS_TOKEN_HERE`. (required)
-     * @param string $customer_id  (required)
-     * @param string $card_id  (required)
+     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
+     * @param string $customer_id The ID of the customer that the card on file belongs to. (required)
+     * @param string $card_id The ID of the card on file to delete. (required)
      * @return \SquareConnect\Model\DeleteCustomerCardResponse
      * @throws \SquareConnect\ApiException on non-2xx response
      */
@@ -229,9 +222,9 @@ class CustomerCardApi
      *
      * DeleteCustomerCard
      *
-     * @param string $authorization The value to provide in the Authorization header of\nyour request. This value should follow the format `Bearer YOUR_ACCESS_TOKEN_HERE`. (required)
-     * @param string $customer_id  (required)
-     * @param string $card_id  (required)
+     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
+     * @param string $customer_id The ID of the customer that the card on file belongs to. (required)
+     * @param string $card_id The ID of the card on file to delete. (required)
      * @return Array of \SquareConnect\Model\DeleteCustomerCardResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
@@ -265,12 +258,10 @@ class CustomerCardApi
   
         
         // header params
-        
         if ($authorization !== null) {
             $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
         }
         // path params
-        
         if ($customer_id !== null) {
             $resourcePath = str_replace(
                 "{" . "customer_id" . "}",
@@ -278,7 +269,6 @@ class CustomerCardApi
                 $resourcePath
             );
         }// path params
-        
         if ($card_id !== null) {
             $resourcePath = str_replace(
                 "{" . "card_id" . "}",
@@ -298,22 +288,19 @@ class CustomerCardApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        
-        // make the API Call
+                // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath, 'DELETE',
                 $queryParams, $httpBody,
                 $headerParams, '\SquareConnect\Model\DeleteCustomerCardResponse'
             );
-            
             if (!$response) {
                 return array(null, $statusCode, $httpHeader);
             }
 
             return array(\SquareConnect\ObjectSerializer::deserialize($response, '\SquareConnect\Model\DeleteCustomerCardResponse', $httpHeader), $statusCode, $httpHeader);
-            
-        } catch (ApiException $e) {
+                    } catch (ApiException $e) {
             switch ($e->getCode()) { 
             case 200:
                 $data = \SquareConnect\ObjectSerializer::deserialize($e->getResponseBody(), '\SquareConnect\Model\DeleteCustomerCardResponse', $e->getResponseHeaders());
@@ -324,5 +311,4 @@ class CustomerCardApi
             throw $e;
         }
     }
-    
 }

@@ -38,7 +38,7 @@ use \ArrayAccess;
  * UpdateCustomerRequest Class Doc Comment
  *
  * @category    Class
- * @description 
+ * @description Defines the body parameters that can be provided in a request to the [UpdateCustomer](#endpoint-updatecustomer) endpoint.
  * @package     SquareConnect
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
@@ -110,61 +110,51 @@ class UpdateCustomerRequest implements ArrayAccess
         'note' => 'getNote'
     );
   
-    
     /**
-      * $given_name 
+      * $given_name The customer's given (i.e., first) name.
       * @var string
       */
     protected $given_name;
-    
     /**
-      * $family_name 
+      * $family_name The customer's family (i.e., last) name.
       * @var string
       */
     protected $family_name;
-    
     /**
-      * $company_name 
+      * $company_name The name of the customer's company.
       * @var string
       */
     protected $company_name;
-    
     /**
-      * $nickname 
+      * $nickname A nickname for the customer.
       * @var string
       */
     protected $nickname;
-    
     /**
-      * $email_address 
+      * $email_address The customer's email address.
       * @var string
       */
     protected $email_address;
-    
     /**
-      * $address 
+      * $address The customer's physical address.
       * @var \SquareConnect\Model\Address
       */
     protected $address;
-    
     /**
-      * $phone_number 
+      * $phone_number The customer's phone number.
       * @var string
       */
     protected $phone_number;
-    
     /**
-      * $reference_id 
+      * $reference_id An optional second ID you can set to associate the customer with an entity in another system.
       * @var string
       */
     protected $reference_id;
-    
     /**
-      * $note 
+      * $note An optional note to associate with the customer.
       * @var string
       */
     protected $note;
-    
 
     /**
      * Constructor
@@ -184,7 +174,6 @@ class UpdateCustomerRequest implements ArrayAccess
             $this->note = $data["note"];
         }
     }
-    
     /**
      * Gets given_name
      * @return string
@@ -196,7 +185,7 @@ class UpdateCustomerRequest implements ArrayAccess
   
     /**
      * Sets given_name
-     * @param string $given_name 
+     * @param string $given_name The customer's given (i.e., first) name.
      * @return $this
      */
     public function setGivenName($given_name)
@@ -205,7 +194,6 @@ class UpdateCustomerRequest implements ArrayAccess
         $this->given_name = $given_name;
         return $this;
     }
-    
     /**
      * Gets family_name
      * @return string
@@ -217,7 +205,7 @@ class UpdateCustomerRequest implements ArrayAccess
   
     /**
      * Sets family_name
-     * @param string $family_name 
+     * @param string $family_name The customer's family (i.e., last) name.
      * @return $this
      */
     public function setFamilyName($family_name)
@@ -226,7 +214,6 @@ class UpdateCustomerRequest implements ArrayAccess
         $this->family_name = $family_name;
         return $this;
     }
-    
     /**
      * Gets company_name
      * @return string
@@ -238,7 +225,7 @@ class UpdateCustomerRequest implements ArrayAccess
   
     /**
      * Sets company_name
-     * @param string $company_name 
+     * @param string $company_name The name of the customer's company.
      * @return $this
      */
     public function setCompanyName($company_name)
@@ -247,7 +234,6 @@ class UpdateCustomerRequest implements ArrayAccess
         $this->company_name = $company_name;
         return $this;
     }
-    
     /**
      * Gets nickname
      * @return string
@@ -259,7 +245,7 @@ class UpdateCustomerRequest implements ArrayAccess
   
     /**
      * Sets nickname
-     * @param string $nickname 
+     * @param string $nickname A nickname for the customer.
      * @return $this
      */
     public function setNickname($nickname)
@@ -268,7 +254,6 @@ class UpdateCustomerRequest implements ArrayAccess
         $this->nickname = $nickname;
         return $this;
     }
-    
     /**
      * Gets email_address
      * @return string
@@ -280,7 +265,7 @@ class UpdateCustomerRequest implements ArrayAccess
   
     /**
      * Sets email_address
-     * @param string $email_address 
+     * @param string $email_address The customer's email address.
      * @return $this
      */
     public function setEmailAddress($email_address)
@@ -289,7 +274,6 @@ class UpdateCustomerRequest implements ArrayAccess
         $this->email_address = $email_address;
         return $this;
     }
-    
     /**
      * Gets address
      * @return \SquareConnect\Model\Address
@@ -301,7 +285,7 @@ class UpdateCustomerRequest implements ArrayAccess
   
     /**
      * Sets address
-     * @param \SquareConnect\Model\Address $address 
+     * @param \SquareConnect\Model\Address $address The customer's physical address.
      * @return $this
      */
     public function setAddress($address)
@@ -310,7 +294,6 @@ class UpdateCustomerRequest implements ArrayAccess
         $this->address = $address;
         return $this;
     }
-    
     /**
      * Gets phone_number
      * @return string
@@ -322,7 +305,7 @@ class UpdateCustomerRequest implements ArrayAccess
   
     /**
      * Sets phone_number
-     * @param string $phone_number 
+     * @param string $phone_number The customer's phone number.
      * @return $this
      */
     public function setPhoneNumber($phone_number)
@@ -331,7 +314,6 @@ class UpdateCustomerRequest implements ArrayAccess
         $this->phone_number = $phone_number;
         return $this;
     }
-    
     /**
      * Gets reference_id
      * @return string
@@ -343,7 +325,7 @@ class UpdateCustomerRequest implements ArrayAccess
   
     /**
      * Sets reference_id
-     * @param string $reference_id 
+     * @param string $reference_id An optional second ID you can set to associate the customer with an entity in another system.
      * @return $this
      */
     public function setReferenceId($reference_id)
@@ -352,7 +334,6 @@ class UpdateCustomerRequest implements ArrayAccess
         $this->reference_id = $reference_id;
         return $this;
     }
-    
     /**
      * Gets note
      * @return string
@@ -364,7 +345,7 @@ class UpdateCustomerRequest implements ArrayAccess
   
     /**
      * Sets note
-     * @param string $note 
+     * @param string $note An optional note to associate with the customer.
      * @return $this
      */
     public function setNote($note)
@@ -373,7 +354,6 @@ class UpdateCustomerRequest implements ArrayAccess
         $this->note = $note;
         return $this;
     }
-    
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset 

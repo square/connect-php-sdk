@@ -38,7 +38,7 @@ use \ArrayAccess;
  * ChargeRequest Class Doc Comment
  *
  * @category    Class
- * @description Defines the parameters that can be included in the body of\na request to the **Charge** endpoint.
+ * @description Defines the parameters that can be included in the body of a request to the [Charge](#endpoint-charge) endpoint.
  * @package     SquareConnect
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
@@ -60,7 +60,8 @@ class ChargeRequest implements ArrayAccess
         'note' => 'string',
         'customer_id' => 'string',
         'billing_address' => '\SquareConnect\Model\Address',
-        'shipping_address' => '\SquareConnect\Model\Address'
+        'shipping_address' => '\SquareConnect\Model\Address',
+        'buyer_email_address' => 'string'
     );
   
     /** 
@@ -77,7 +78,8 @@ class ChargeRequest implements ArrayAccess
         'note' => 'note',
         'customer_id' => 'customer_id',
         'billing_address' => 'billing_address',
-        'shipping_address' => 'shipping_address'
+        'shipping_address' => 'shipping_address',
+        'buyer_email_address' => 'buyer_email_address'
     );
   
     /**
@@ -94,7 +96,8 @@ class ChargeRequest implements ArrayAccess
         'note' => 'setNote',
         'customer_id' => 'setCustomerId',
         'billing_address' => 'setBillingAddress',
-        'shipping_address' => 'setShippingAddress'
+        'shipping_address' => 'setShippingAddress',
+        'buyer_email_address' => 'setBuyerEmailAddress'
     );
   
     /**
@@ -111,70 +114,65 @@ class ChargeRequest implements ArrayAccess
         'note' => 'getNote',
         'customer_id' => 'getCustomerId',
         'billing_address' => 'getBillingAddress',
-        'shipping_address' => 'getShippingAddress'
+        'shipping_address' => 'getShippingAddress',
+        'buyer_email_address' => 'getBuyerEmailAddress'
     );
   
-    
     /**
-      * $idempotency_key A value you specify that uniquely identifies this\ntransaction among transactions you've created.\n\nIf you're unsure whether a particular transaction succeeded,\nyou can reattempt it with the same idempotency key without\nworrying about double-charging the buyer. Note that *all other fields*\nmust also remain identical in your followup request, or an error will occur.
+      * $idempotency_key A value you specify that uniquely identifies this transaction among transactions you've created.  If you're unsure whether a particular transaction succeeded, you can reattempt it with the same idempotency key without worrying about double-charging the buyer.  See [Idempotency keys](#idempotencykeys) for more information.
       * @var string
       */
     protected $idempotency_key;
-    
     /**
-      * $amount_money The amount of money to collect in the transaction.
+      * $amount_money The amount of money to charge.  Note that you specify the amount in the __smallest denomination of the applicable currency__. For example, US dollar amounts are specified in cents. See [Working with monetary amounts](#workingwithmonetaryamounts) for details.  The value of `currency` must match the currency associated with the business that is charging the card.
       * @var \SquareConnect\Model\Money
       */
     protected $amount_money;
-    
     /**
-      * $card_nonce A nonce representing the credit card to charge for this transaction.\nDo not provide a value for this field if you provide a value for\n`customer_card_id`.
+      * $card_nonce A nonce generated from the `SqPaymentForm` that represents the card to charge.  The application that provides a nonce to this endpoint must be the _same application_ that generated the nonce with the `SqPaymentForm`. Otherwise, the nonce is invalid.  Do not provide a value for this field if you provide a value for `customer_card_id`.
       * @var string
       */
     protected $card_nonce;
-    
     /**
-      * $customer_card_id The ID of the customer card on file to charge for this transaction. Do\nnot provide a value for this field if you provide a value for `card_nonce`.
+      * $customer_card_id The ID of the customer card on file to charge. Do not provide a value for this field if you provide a value for `card_nonce`.  If you provide this value, you _must_ also provide a value for `customer_id`.
       * @var string
       */
     protected $customer_card_id;
-    
     /**
-      * $delay_capture If `true`, the request will only perform an Auth on the provided\ncard. You can then later perform either a Capture (with the\n*CaptureTransaction** endpoint) or a Void (with the **VoidTransation**\nendpoint.
+      * $delay_capture If `true`, the request will only perform an Auth on the provided card. You can then later perform either a Capture (with the [CaptureTransaction](#endpoint-capturetransaction) endpoint) or a Void (with the [VoidTransation](#endpoint-voidtransaction) endpoint).  Default value: `false`
       * @var bool
       */
     protected $delay_capture;
-    
     /**
-      * $reference_id An optional ID you can associate with the transaction for your own\npurposes (such as to associate the transaction with an entity ID in your\nown database).
+      * $reference_id An optional ID you can associate with the transaction for your own purposes (such as to associate the transaction with an entity ID in your own database).  This value cannot exceed 40 characters.
       * @var string
       */
     protected $reference_id;
-    
     /**
-      * $note An optional note to associate with the transaction.
+      * $note An optional note to associate with the transaction.  This value cannot exceed 60 characters.
       * @var string
       */
     protected $note;
-    
     /**
-      * $customer_id The ID of the customer to associate this transaction with. This field\nis required if you provide a value for `customer_card_id`, and optional\notherwise.
+      * $customer_id The ID of the customer to associate this transaction with. This field is required if you provide a value for `customer_card_id`, and optional otherwise.
       * @var string
       */
     protected $customer_id;
-    
     /**
-      * $billing_address If available, Postal code in the billing address for US and Canada payments may reduce decline rate.
+      * $billing_address The buyer's billing address. This value is optional, but this transaction is ineligible for chargeback protection if neither this parameter nor `shipping_address` is provided.
       * @var \SquareConnect\Model\Address
       */
     protected $billing_address;
-    
     /**
-      * $shipping_address 
+      * $shipping_address The buyer's shipping address, if available. This value is optional, but this transaction is ineligible for chargeback protection if neither this parameter nor `billing_address` is provided.
       * @var \SquareConnect\Model\Address
       */
     protected $shipping_address;
-    
+    /**
+      * $buyer_email_address The buyer's email address, if available. This value is optional, but this transaction is ineligible for chargeback protection if it is not provided.
+      * @var string
+      */
+    protected $buyer_email_address;
 
     /**
      * Constructor
@@ -193,9 +191,9 @@ class ChargeRequest implements ArrayAccess
             $this->customer_id = $data["customer_id"];
             $this->billing_address = $data["billing_address"];
             $this->shipping_address = $data["shipping_address"];
+            $this->buyer_email_address = $data["buyer_email_address"];
         }
     }
-    
     /**
      * Gets idempotency_key
      * @return string
@@ -207,7 +205,7 @@ class ChargeRequest implements ArrayAccess
   
     /**
      * Sets idempotency_key
-     * @param string $idempotency_key A value you specify that uniquely identifies this\ntransaction among transactions you've created.\n\nIf you're unsure whether a particular transaction succeeded,\nyou can reattempt it with the same idempotency key without\nworrying about double-charging the buyer. Note that *all other fields*\nmust also remain identical in your followup request, or an error will occur.
+     * @param string $idempotency_key A value you specify that uniquely identifies this transaction among transactions you've created.  If you're unsure whether a particular transaction succeeded, you can reattempt it with the same idempotency key without worrying about double-charging the buyer.  See [Idempotency keys](#idempotencykeys) for more information.
      * @return $this
      */
     public function setIdempotencyKey($idempotency_key)
@@ -216,7 +214,6 @@ class ChargeRequest implements ArrayAccess
         $this->idempotency_key = $idempotency_key;
         return $this;
     }
-    
     /**
      * Gets amount_money
      * @return \SquareConnect\Model\Money
@@ -228,7 +225,7 @@ class ChargeRequest implements ArrayAccess
   
     /**
      * Sets amount_money
-     * @param \SquareConnect\Model\Money $amount_money The amount of money to collect in the transaction.
+     * @param \SquareConnect\Model\Money $amount_money The amount of money to charge.  Note that you specify the amount in the __smallest denomination of the applicable currency__. For example, US dollar amounts are specified in cents. See [Working with monetary amounts](#workingwithmonetaryamounts) for details.  The value of `currency` must match the currency associated with the business that is charging the card.
      * @return $this
      */
     public function setAmountMoney($amount_money)
@@ -237,7 +234,6 @@ class ChargeRequest implements ArrayAccess
         $this->amount_money = $amount_money;
         return $this;
     }
-    
     /**
      * Gets card_nonce
      * @return string
@@ -249,7 +245,7 @@ class ChargeRequest implements ArrayAccess
   
     /**
      * Sets card_nonce
-     * @param string $card_nonce A nonce representing the credit card to charge for this transaction.\nDo not provide a value for this field if you provide a value for\n`customer_card_id`.
+     * @param string $card_nonce A nonce generated from the `SqPaymentForm` that represents the card to charge.  The application that provides a nonce to this endpoint must be the _same application_ that generated the nonce with the `SqPaymentForm`. Otherwise, the nonce is invalid.  Do not provide a value for this field if you provide a value for `customer_card_id`.
      * @return $this
      */
     public function setCardNonce($card_nonce)
@@ -258,7 +254,6 @@ class ChargeRequest implements ArrayAccess
         $this->card_nonce = $card_nonce;
         return $this;
     }
-    
     /**
      * Gets customer_card_id
      * @return string
@@ -270,7 +265,7 @@ class ChargeRequest implements ArrayAccess
   
     /**
      * Sets customer_card_id
-     * @param string $customer_card_id The ID of the customer card on file to charge for this transaction. Do\nnot provide a value for this field if you provide a value for `card_nonce`.
+     * @param string $customer_card_id The ID of the customer card on file to charge. Do not provide a value for this field if you provide a value for `card_nonce`.  If you provide this value, you _must_ also provide a value for `customer_id`.
      * @return $this
      */
     public function setCustomerCardId($customer_card_id)
@@ -279,7 +274,6 @@ class ChargeRequest implements ArrayAccess
         $this->customer_card_id = $customer_card_id;
         return $this;
     }
-    
     /**
      * Gets delay_capture
      * @return bool
@@ -291,7 +285,7 @@ class ChargeRequest implements ArrayAccess
   
     /**
      * Sets delay_capture
-     * @param bool $delay_capture If `true`, the request will only perform an Auth on the provided\ncard. You can then later perform either a Capture (with the\n*CaptureTransaction** endpoint) or a Void (with the **VoidTransation**\nendpoint.
+     * @param bool $delay_capture If `true`, the request will only perform an Auth on the provided card. You can then later perform either a Capture (with the [CaptureTransaction](#endpoint-capturetransaction) endpoint) or a Void (with the [VoidTransation](#endpoint-voidtransaction) endpoint).  Default value: `false`
      * @return $this
      */
     public function setDelayCapture($delay_capture)
@@ -300,7 +294,6 @@ class ChargeRequest implements ArrayAccess
         $this->delay_capture = $delay_capture;
         return $this;
     }
-    
     /**
      * Gets reference_id
      * @return string
@@ -312,7 +305,7 @@ class ChargeRequest implements ArrayAccess
   
     /**
      * Sets reference_id
-     * @param string $reference_id An optional ID you can associate with the transaction for your own\npurposes (such as to associate the transaction with an entity ID in your\nown database).
+     * @param string $reference_id An optional ID you can associate with the transaction for your own purposes (such as to associate the transaction with an entity ID in your own database).  This value cannot exceed 40 characters.
      * @return $this
      */
     public function setReferenceId($reference_id)
@@ -321,7 +314,6 @@ class ChargeRequest implements ArrayAccess
         $this->reference_id = $reference_id;
         return $this;
     }
-    
     /**
      * Gets note
      * @return string
@@ -333,7 +325,7 @@ class ChargeRequest implements ArrayAccess
   
     /**
      * Sets note
-     * @param string $note An optional note to associate with the transaction.
+     * @param string $note An optional note to associate with the transaction.  This value cannot exceed 60 characters.
      * @return $this
      */
     public function setNote($note)
@@ -342,7 +334,6 @@ class ChargeRequest implements ArrayAccess
         $this->note = $note;
         return $this;
     }
-    
     /**
      * Gets customer_id
      * @return string
@@ -354,7 +345,7 @@ class ChargeRequest implements ArrayAccess
   
     /**
      * Sets customer_id
-     * @param string $customer_id The ID of the customer to associate this transaction with. This field\nis required if you provide a value for `customer_card_id`, and optional\notherwise.
+     * @param string $customer_id The ID of the customer to associate this transaction with. This field is required if you provide a value for `customer_card_id`, and optional otherwise.
      * @return $this
      */
     public function setCustomerId($customer_id)
@@ -363,7 +354,6 @@ class ChargeRequest implements ArrayAccess
         $this->customer_id = $customer_id;
         return $this;
     }
-    
     /**
      * Gets billing_address
      * @return \SquareConnect\Model\Address
@@ -375,7 +365,7 @@ class ChargeRequest implements ArrayAccess
   
     /**
      * Sets billing_address
-     * @param \SquareConnect\Model\Address $billing_address If available, Postal code in the billing address for US and Canada payments may reduce decline rate.
+     * @param \SquareConnect\Model\Address $billing_address The buyer's billing address. This value is optional, but this transaction is ineligible for chargeback protection if neither this parameter nor `shipping_address` is provided.
      * @return $this
      */
     public function setBillingAddress($billing_address)
@@ -384,7 +374,6 @@ class ChargeRequest implements ArrayAccess
         $this->billing_address = $billing_address;
         return $this;
     }
-    
     /**
      * Gets shipping_address
      * @return \SquareConnect\Model\Address
@@ -396,7 +385,7 @@ class ChargeRequest implements ArrayAccess
   
     /**
      * Sets shipping_address
-     * @param \SquareConnect\Model\Address $shipping_address 
+     * @param \SquareConnect\Model\Address $shipping_address The buyer's shipping address, if available. This value is optional, but this transaction is ineligible for chargeback protection if neither this parameter nor `billing_address` is provided.
      * @return $this
      */
     public function setShippingAddress($shipping_address)
@@ -405,7 +394,26 @@ class ChargeRequest implements ArrayAccess
         $this->shipping_address = $shipping_address;
         return $this;
     }
-    
+    /**
+     * Gets buyer_email_address
+     * @return string
+     */
+    public function getBuyerEmailAddress()
+    {
+        return $this->buyer_email_address;
+    }
+  
+    /**
+     * Sets buyer_email_address
+     * @param string $buyer_email_address The buyer's email address, if available. This value is optional, but this transaction is ineligible for chargeback protection if it is not provided.
+     * @return $this
+     */
+    public function setBuyerEmailAddress($buyer_email_address)
+    {
+        
+        $this->buyer_email_address = $buyer_email_address;
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset 

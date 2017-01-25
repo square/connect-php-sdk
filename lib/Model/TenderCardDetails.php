@@ -38,7 +38,7 @@ use \ArrayAccess;
  * TenderCardDetails Class Doc Comment
  *
  * @category    Class
- * @description Represents the details of a credit card tender.
+ * @description Represents additional details of a tender with &#x60;type&#x60; &#x60;CARD&#x60; or &#x60;SQUARE_GIFT_CARD&#x60;
  * @package     SquareConnect
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
@@ -86,25 +86,21 @@ class TenderCardDetails implements ArrayAccess
         'entry_method' => 'getEntryMethod'
     );
   
-    
     /**
-      * $status The credit card payment's current state (such as `CAPTURED`)
+      * $status The credit card payment's current state (such as `AUTHORIZED` or `CAPTURED`). See [TenderCardDetailsStatus](#type-tendercarddetailsstatus) for possible values.
       * @var string
       */
     protected $status;
-    
     /**
       * $card The credit card's non-confidential details.
       * @var \SquareConnect\Model\Card
       */
     protected $card;
-    
     /**
-      * $entry_method The method used to read the card.
+      * $entry_method The method used to enter the card's details for the transaction.
       * @var string
       */
     protected $entry_method;
-    
 
     /**
      * Constructor
@@ -118,7 +114,6 @@ class TenderCardDetails implements ArrayAccess
             $this->entry_method = $data["entry_method"];
         }
     }
-    
     /**
      * Gets status
      * @return string
@@ -130,7 +125,7 @@ class TenderCardDetails implements ArrayAccess
   
     /**
      * Sets status
-     * @param string $status The credit card payment's current state (such as `CAPTURED`)
+     * @param string $status The credit card payment's current state (such as `AUTHORIZED` or `CAPTURED`). See [TenderCardDetailsStatus](#type-tendercarddetailsstatus) for possible values.
      * @return $this
      */
     public function setStatus($status)
@@ -142,7 +137,6 @@ class TenderCardDetails implements ArrayAccess
         $this->status = $status;
         return $this;
     }
-    
     /**
      * Gets card
      * @return \SquareConnect\Model\Card
@@ -163,7 +157,6 @@ class TenderCardDetails implements ArrayAccess
         $this->card = $card;
         return $this;
     }
-    
     /**
      * Gets entry_method
      * @return string
@@ -175,7 +168,7 @@ class TenderCardDetails implements ArrayAccess
   
     /**
      * Sets entry_method
-     * @param string $entry_method The method used to read the card.
+     * @param string $entry_method The method used to enter the card's details for the transaction.
      * @return $this
      */
     public function setEntryMethod($entry_method)
@@ -187,7 +180,6 @@ class TenderCardDetails implements ArrayAccess
         $this->entry_method = $entry_method;
         return $this;
     }
-    
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset 

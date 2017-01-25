@@ -38,7 +38,7 @@ use \ArrayAccess;
  * RetrieveTransactionResponse Class Doc Comment
  *
  * @category    Class
- * @description Defines the fields that are included in the response body of\na request to the **RetrieveTransaction** endpoint.\n\nOne of `errors` or `transaction` is present in a given response (never both).
+ * @description Defines the fields that are included in the response body of a request to the [RetrieveTransaction](#endpont-retrievetransaction) endpoint.  One of &#x60;errors&#x60; or &#x60;transaction&#x60; is present in a given response (never both).
  * @package     SquareConnect
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
@@ -82,19 +82,16 @@ class RetrieveTransactionResponse implements ArrayAccess
         'transaction' => 'getTransaction'
     );
   
-    
     /**
       * $errors Any errors that occurred during the request.
       * @var \SquareConnect\Model\Error[]
       */
     protected $errors;
-    
     /**
-      * $transaction The details of the requested transaction.
+      * $transaction The requested transaction.
       * @var \SquareConnect\Model\Transaction
       */
     protected $transaction;
-    
 
     /**
      * Constructor
@@ -107,7 +104,6 @@ class RetrieveTransactionResponse implements ArrayAccess
             $this->transaction = $data["transaction"];
         }
     }
-    
     /**
      * Gets errors
      * @return \SquareConnect\Model\Error[]
@@ -128,7 +124,6 @@ class RetrieveTransactionResponse implements ArrayAccess
         $this->errors = $errors;
         return $this;
     }
-    
     /**
      * Gets transaction
      * @return \SquareConnect\Model\Transaction
@@ -140,7 +135,7 @@ class RetrieveTransactionResponse implements ArrayAccess
   
     /**
      * Sets transaction
-     * @param \SquareConnect\Model\Transaction $transaction The details of the requested transaction.
+     * @param \SquareConnect\Model\Transaction $transaction The requested transaction.
      * @return $this
      */
     public function setTransaction($transaction)
@@ -149,7 +144,6 @@ class RetrieveTransactionResponse implements ArrayAccess
         $this->transaction = $transaction;
         return $this;
     }
-    
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset 

@@ -38,7 +38,7 @@ use \ArrayAccess;
  * Money Class Doc Comment
  *
  * @category    Class
- * @description 
+ * @description Represents an amount of money.  __Important:__ Unlike version 1 of the Connect API, __all monetary amounts returned by v2 endpoints are positive.__ (In v1, monetary amounts are negative if they represent money being paid _by_ a merchant, instead of money being paid _to_ a merchant.)
  * @package     SquareConnect
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
@@ -82,19 +82,16 @@ class Money implements ArrayAccess
         'currency' => 'getCurrency'
     );
   
-    
     /**
-      * $amount Amount in the lowest denominated value of this Currency. E.g. in USD\nthese are cents, in JPY they are Yen (which do not have a 'cent' concept).
+      * $amount The amount of money, in the smallest denomination of the currency indicated by `currency`. For example, when `currency` is `USD`, `amount` is in cents.
       * @var int
       */
     protected $amount;
-    
     /**
-      * $currency 
+      * $currency The type of currency, in __ISO 4217 format__. For example, the currency code for US dollars is `USD`.  See [Currency](#type-currency) for possible values.
       * @var string
       */
     protected $currency;
-    
 
     /**
      * Constructor
@@ -107,7 +104,6 @@ class Money implements ArrayAccess
             $this->currency = $data["currency"];
         }
     }
-    
     /**
      * Gets amount
      * @return int
@@ -119,7 +115,7 @@ class Money implements ArrayAccess
   
     /**
      * Sets amount
-     * @param int $amount Amount in the lowest denominated value of this Currency. E.g. in USD\nthese are cents, in JPY they are Yen (which do not have a 'cent' concept).
+     * @param int $amount The amount of money, in the smallest denomination of the currency indicated by `currency`. For example, when `currency` is `USD`, `amount` is in cents.
      * @return $this
      */
     public function setAmount($amount)
@@ -128,7 +124,6 @@ class Money implements ArrayAccess
         $this->amount = $amount;
         return $this;
     }
-    
     /**
      * Gets currency
      * @return string
@@ -140,7 +135,7 @@ class Money implements ArrayAccess
   
     /**
      * Sets currency
-     * @param string $currency 
+     * @param string $currency The type of currency, in __ISO 4217 format__. For example, the currency code for US dollars is `USD`.  See [Currency](#type-currency) for possible values.
      * @return $this
      */
     public function setCurrency($currency)
@@ -152,7 +147,6 @@ class Money implements ArrayAccess
         $this->currency = $currency;
         return $this;
     }
-    
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset 

@@ -1,6 +1,6 @@
 <?php
 /**
- * RetrieveCustomerResponse
+ * CreateOrderRequestOrder
  *
  * PHP version 5
  *
@@ -35,24 +35,24 @@ namespace SquareConnect\Model;
 
 use \ArrayAccess;
 /**
- * RetrieveCustomerResponse Class Doc Comment
+ * CreateOrderRequestOrder Class Doc Comment
  *
  * @category    Class
- * @description Defines the fields that are included in the response body of a request to the [RetrieveCustomer](#endpoint-retrievecustomer) endpoint.  One of &#x60;errors&#x60; or &#x60;customer&#x60; is present in a given response (never both).
+ * @description The object describes the order.
  * @package     SquareConnect
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class RetrieveCustomerResponse implements ArrayAccess
+class CreateOrderRequestOrder implements ArrayAccess
 {
     /**
       * Array of property to type mappings. Used for (de)serialization 
       * @var string[]
       */
     static $swaggerTypes = array(
-        'errors' => '\SquareConnect\Model\Error[]',
-        'customer' => '\SquareConnect\Model\Customer'
+        'reference_id' => 'string',
+        'line_items' => '\SquareConnect\Model\CreateOrderRequestLineItem[]'
     );
   
     /** 
@@ -60,8 +60,8 @@ class RetrieveCustomerResponse implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
-        'errors' => 'errors',
-        'customer' => 'customer'
+        'reference_id' => 'reference_id',
+        'line_items' => 'line_items'
     );
   
     /**
@@ -69,8 +69,8 @@ class RetrieveCustomerResponse implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
-        'errors' => 'setErrors',
-        'customer' => 'setCustomer'
+        'reference_id' => 'setReferenceId',
+        'line_items' => 'setLineItems'
     );
   
     /**
@@ -78,20 +78,20 @@ class RetrieveCustomerResponse implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
-        'errors' => 'getErrors',
-        'customer' => 'getCustomer'
+        'reference_id' => 'getReferenceId',
+        'line_items' => 'getLineItems'
     );
   
     /**
-      * $errors Any errors that occurred during the request.
-      * @var \SquareConnect\Model\Error[]
+      * $reference_id An optional ID you can associate with the order for your own purposes (such as to associate the order with an entity ID in your own database).  This value cannot exceed 40 characters.
+      * @var string
       */
-    protected $errors;
+    protected $reference_id;
     /**
-      * $customer The requested customer.
-      * @var \SquareConnect\Model\Customer
+      * $line_items The line items to associate with this order.  Each line item represents a different product (or a custom monetary amount) to include in a purchase.
+      * @var \SquareConnect\Model\CreateOrderRequestLineItem[]
       */
-    protected $customer;
+    protected $line_items;
 
     /**
      * Constructor
@@ -100,48 +100,48 @@ class RetrieveCustomerResponse implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->errors = $data["errors"];
-            $this->customer = $data["customer"];
+            $this->reference_id = $data["reference_id"];
+            $this->line_items = $data["line_items"];
         }
     }
     /**
-     * Gets errors
-     * @return \SquareConnect\Model\Error[]
+     * Gets reference_id
+     * @return string
      */
-    public function getErrors()
+    public function getReferenceId()
     {
-        return $this->errors;
+        return $this->reference_id;
     }
   
     /**
-     * Sets errors
-     * @param \SquareConnect\Model\Error[] $errors Any errors that occurred during the request.
+     * Sets reference_id
+     * @param string $reference_id An optional ID you can associate with the order for your own purposes (such as to associate the order with an entity ID in your own database).  This value cannot exceed 40 characters.
      * @return $this
      */
-    public function setErrors($errors)
+    public function setReferenceId($reference_id)
     {
         
-        $this->errors = $errors;
+        $this->reference_id = $reference_id;
         return $this;
     }
     /**
-     * Gets customer
-     * @return \SquareConnect\Model\Customer
+     * Gets line_items
+     * @return \SquareConnect\Model\CreateOrderRequestLineItem[]
      */
-    public function getCustomer()
+    public function getLineItems()
     {
-        return $this->customer;
+        return $this->line_items;
     }
   
     /**
-     * Sets customer
-     * @param \SquareConnect\Model\Customer $customer The requested customer.
+     * Sets line_items
+     * @param \SquareConnect\Model\CreateOrderRequestLineItem[] $line_items The line items to associate with this order.  Each line item represents a different product (or a custom monetary amount) to include in a purchase.
      * @return $this
      */
-    public function setCustomer($customer)
+    public function setLineItems($line_items)
     {
         
-        $this->customer = $customer;
+        $this->line_items = $line_items;
         return $this;
     }
     /**

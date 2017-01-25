@@ -38,7 +38,7 @@ use \ArrayAccess;
  * CreateCustomerCardResponse Class Doc Comment
  *
  * @category    Class
- * @description Defines the fields that are included in the response body of\na request to the **CreateCustomerCard** endpoint.\n\nOne of `errors` or `card` is present in a given response (never both).
+ * @description Defines the fields that are included in the response body of a request to the [CreateCustomerCard](#endpoint-createcustomercard) endpoint.  One of &#x60;errors&#x60; or &#x60;card&#x60; is present in a given response (never both).
  * @package     SquareConnect
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
@@ -82,19 +82,16 @@ class CreateCustomerCardResponse implements ArrayAccess
         'card' => 'getCard'
     );
   
-    
     /**
-      * $errors 
+      * $errors Any errors that occurred during the request.
       * @var \SquareConnect\Model\Error[]
       */
     protected $errors;
-    
     /**
-      * $card 
+      * $card The created card on file.
       * @var \SquareConnect\Model\Card
       */
     protected $card;
-    
 
     /**
      * Constructor
@@ -107,7 +104,6 @@ class CreateCustomerCardResponse implements ArrayAccess
             $this->card = $data["card"];
         }
     }
-    
     /**
      * Gets errors
      * @return \SquareConnect\Model\Error[]
@@ -119,7 +115,7 @@ class CreateCustomerCardResponse implements ArrayAccess
   
     /**
      * Sets errors
-     * @param \SquareConnect\Model\Error[] $errors 
+     * @param \SquareConnect\Model\Error[] $errors Any errors that occurred during the request.
      * @return $this
      */
     public function setErrors($errors)
@@ -128,7 +124,6 @@ class CreateCustomerCardResponse implements ArrayAccess
         $this->errors = $errors;
         return $this;
     }
-    
     /**
      * Gets card
      * @return \SquareConnect\Model\Card
@@ -140,7 +135,7 @@ class CreateCustomerCardResponse implements ArrayAccess
   
     /**
      * Sets card
-     * @param \SquareConnect\Model\Card $card 
+     * @param \SquareConnect\Model\Card $card The created card on file.
      * @return $this
      */
     public function setCard($card)
@@ -149,7 +144,6 @@ class CreateCustomerCardResponse implements ArrayAccess
         $this->card = $card;
         return $this;
     }
-    
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset 

@@ -38,7 +38,7 @@ use \ArrayAccess;
  * Country Class Doc Comment
  *
  * @category    Class
- * @description 
+ * @description Indicates the country associated with another entity, such as a business. Values are in [ISO 3166-1-alpha-2 format](http://www.iso.org/iso/home/standards/country_codes.htm).
  * @package     SquareConnect
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
@@ -78,7 +78,6 @@ class Country implements ArrayAccess
         
     );
   
-    
 
     /**
      * Constructor
@@ -90,7 +89,6 @@ class Country implements ArrayAccess
             
         }
     }
-    
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset 
