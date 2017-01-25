@@ -120,7 +120,6 @@ class CreateOrderRequest implements ArrayAccess
      */
     public function setIdempotencyKey($idempotency_key)
     {
-        
         $this->idempotency_key = $idempotency_key;
         return $this;
     }
@@ -140,7 +139,6 @@ class CreateOrderRequest implements ArrayAccess
      */
     public function setOrder($order)
     {
-        
         $this->order = $order;
         return $this;
     }

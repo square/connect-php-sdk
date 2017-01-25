@@ -140,7 +140,6 @@ class CreateRefundRequest implements ArrayAccess
      */
     public function setIdempotencyKey($idempotency_key)
     {
-        
         $this->idempotency_key = $idempotency_key;
         return $this;
     }
@@ -160,7 +159,6 @@ class CreateRefundRequest implements ArrayAccess
      */
     public function setTenderId($tender_id)
     {
-        
         $this->tender_id = $tender_id;
         return $this;
     }
@@ -180,7 +178,6 @@ class CreateRefundRequest implements ArrayAccess
      */
     public function setReason($reason)
     {
-        
         $this->reason = $reason;
         return $this;
     }
@@ -200,7 +197,6 @@ class CreateRefundRequest implements ArrayAccess
      */
     public function setAmountMoney($amount_money)
     {
-        
         $this->amount_money = $amount_money;
         return $this;
     }

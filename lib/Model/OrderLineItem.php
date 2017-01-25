@@ -150,7 +150,6 @@ class OrderLineItem implements ArrayAccess
      */
     public function setId($id)
     {
-        
         $this->id = $id;
         return $this;
     }
@@ -170,7 +169,6 @@ class OrderLineItem implements ArrayAccess
      */
     public function setName($name)
     {
-        
         $this->name = $name;
         return $this;
     }
@@ -190,7 +188,6 @@ class OrderLineItem implements ArrayAccess
      */
     public function setQuantity($quantity)
     {
-        
         $this->quantity = $quantity;
         return $this;
     }
@@ -210,7 +207,6 @@ class OrderLineItem implements ArrayAccess
      */
     public function setBasePriceMoney($base_price_money)
     {
-        
         $this->base_price_money = $base_price_money;
         return $this;
     }
@@ -230,7 +226,6 @@ class OrderLineItem implements ArrayAccess
      */
     public function setTotalMoney($total_money)
     {
-        
         $this->total_money = $total_money;
         return $this;
     }

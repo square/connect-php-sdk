@@ -120,7 +120,6 @@ class CreateCustomerCardResponse implements ArrayAccess
      */
     public function setErrors($errors)
     {
-        
         $this->errors = $errors;
         return $this;
     }
@@ -140,7 +139,6 @@ class CreateCustomerCardResponse implements ArrayAccess
      */
     public function setCard($card)
     {
-        
         $this->card = $card;
         return $this;
     }

@@ -130,7 +130,6 @@ class ListTransactionsResponse implements ArrayAccess
      */
     public function setErrors($errors)
     {
-        
         $this->errors = $errors;
         return $this;
     }
@@ -150,7 +149,6 @@ class ListTransactionsResponse implements ArrayAccess
      */
     public function setTransactions($transactions)
     {
-        
         $this->transactions = $transactions;
         return $this;
     }
@@ -170,7 +168,6 @@ class ListTransactionsResponse implements ArrayAccess
      */
     public function setCursor($cursor)
     {
-        
         $this->cursor = $cursor;
         return $this;
     }

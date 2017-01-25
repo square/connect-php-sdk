@@ -120,7 +120,6 @@ class CreateCheckoutResponse implements ArrayAccess
      */
     public function setCheckout($checkout)
     {
-        
         $this->checkout = $checkout;
         return $this;
     }
@@ -140,7 +139,6 @@ class CreateCheckoutResponse implements ArrayAccess
      */
     public function setErrors($errors)
     {
-        
         $this->errors = $errors;
         return $this;
     }

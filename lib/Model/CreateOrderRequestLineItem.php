@@ -130,7 +130,6 @@ class CreateOrderRequestLineItem implements ArrayAccess
      */
     public function setName($name)
     {
-        
         $this->name = $name;
         return $this;
     }
@@ -150,7 +149,6 @@ class CreateOrderRequestLineItem implements ArrayAccess
      */
     public function setQuantity($quantity)
     {
-        
         $this->quantity = $quantity;
         return $this;
     }
@@ -170,7 +168,6 @@ class CreateOrderRequestLineItem implements ArrayAccess
      */
     public function setBasePriceMoney($base_price_money)
     {
-        
         $this->base_price_money = $base_price_money;
         return $this;
     }

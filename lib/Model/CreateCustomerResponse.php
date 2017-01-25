@@ -120,7 +120,6 @@ class CreateCustomerResponse implements ArrayAccess
      */
     public function setErrors($errors)
     {
-        
         $this->errors = $errors;
         return $this;
     }
@@ -140,7 +139,6 @@ class CreateCustomerResponse implements ArrayAccess
      */
     public function setCustomer($customer)
     {
-        
         $this->customer = $customer;
         return $this;
     }

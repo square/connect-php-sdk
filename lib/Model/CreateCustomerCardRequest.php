@@ -130,7 +130,6 @@ class CreateCustomerCardRequest implements ArrayAccess
      */
     public function setCardNonce($card_nonce)
     {
-        
         $this->card_nonce = $card_nonce;
         return $this;
     }
@@ -150,7 +149,6 @@ class CreateCustomerCardRequest implements ArrayAccess
      */
     public function setBillingAddress($billing_address)
     {
-        
         $this->billing_address = $billing_address;
         return $this;
     }
@@ -170,7 +168,6 @@ class CreateCustomerCardRequest implements ArrayAccess
      */
     public function setCardholderName($cardholder_name)
     {
-        
         $this->cardholder_name = $cardholder_name;
         return $this;
     }

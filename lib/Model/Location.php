@@ -150,7 +150,6 @@ class Location implements ArrayAccess
      */
     public function setId($id)
     {
-        
         $this->id = $id;
         return $this;
     }
@@ -170,7 +169,6 @@ class Location implements ArrayAccess
      */
     public function setName($name)
     {
-        
         $this->name = $name;
         return $this;
     }
@@ -190,7 +188,6 @@ class Location implements ArrayAccess
      */
     public function setAddress($address)
     {
-        
         $this->address = $address;
         return $this;
     }
@@ -210,7 +207,6 @@ class Location implements ArrayAccess
      */
     public function setTimezone($timezone)
     {
-        
         $this->timezone = $timezone;
         return $this;
     }
@@ -230,10 +226,6 @@ class Location implements ArrayAccess
      */
     public function setCapabilities($capabilities)
     {
-        $allowed_values = array("CREDIT_CARD_PROCESSING");
-        if (!in_array($capabilities, $allowed_values)) {
-            throw new \InvalidArgumentException("Invalid value for 'capabilities', must be one of 'CREDIT_CARD_PROCESSING'");
-        }
         $this->capabilities = $capabilities;
         return $this;
     }
