@@ -5,25 +5,9 @@
  *
  * @category Class
  * @package  SquareConnect
- * @author   http://github.com/swagger-api/swagger-codegen
+ * @author   Square Inc.
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
- * @link     https://github.com/swagger-api/swagger-codegen
- */
-
-/**
- *  Copyright 2016 Square, Inc.
- *
- *  Licensed under the Apache License, Version 2.0 (the "License");
- *  you may not use this file except in compliance with the License.
- *  You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- *  Unless required by applicable law or agreed to in writing, software
- *  distributed under the License is distributed on an "AS IS" BASIS,
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *  See the License for the specific language governing permissions and
- *  limitations under the License.
+ * @link     https://squareup.com/developers
  */
 
 /**
@@ -110,7 +94,7 @@ class Configuration
      *
      * @var string
      */
-    protected $userAgent = "Square-Connect-PHP/2.0.1";
+    protected $userAgent = "Square-Connect-PHP/2.0.2";
 
     /**
      * Debug switch (default set to false)
@@ -517,7 +501,7 @@ class Configuration
         $report .= "    OS: ".php_uname()."\n";
         $report .= "    PHP Version: ".phpversion()."\n";
         $report .= "    OpenAPI Spec Version: 2.0\n";
-        $report .= "    SDK Package Version: 2.0.1\n";
+        $report .= "    SDK Package Version: 2.0.2\n";
         $report .= "    Temp Folder Path: ".self::getDefaultConfiguration()->getTempFolderPath()."\n";
 
         return $report;

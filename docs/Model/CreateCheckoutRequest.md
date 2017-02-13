@@ -1,0 +1,16 @@
+# CreateCheckoutRequest
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**idempotency_key** | **string** | A unique string that identifies this checkout among others you&#39;ve created. It can be any valid string but must be unique for every order sent to Square Checkout for a given location ID.  The idempotency key is used to avoid processing the same order more than once. If you&#39;re unsure whether a particular checkout was created successfully, you can reattempt it with the same idempotency key and all the same other parameters without worrying about creating duplicates.  We recommend using a random number/string generator native to the language you are working in to generate strings for your idempotency keys.  See [Idempotency keys](#idempotencykeys) for more information. | 
+**order** | [**\SquareConnect\Model\CreateOrderRequestOrder**](CreateOrderRequestOrder.md) | The order including line items to be checked out. | 
+**ask_for_shipping_address** | **bool** | If &#x60;true&#x60;, Square Checkout will collect shipping information on your behalf and store that information with the transaction information in your Square Dashboard.  Default is &#x60;false&#x60;. | [optional] 
+**merchant_support_email** | **string** | The email address to display on the Square Checkout confirmation page and confirmation email that the buyer can use to contact the merchant.  If this value is not set, the confirmation page and email will display the primary email address associated with the merchant&#39;s Square account.  Default is unset. | [optional] 
+**pre_populate_buyer_email** | **string** | If provided, the buyer&#39;s email is pre-populated on the checkout page as an editable text field.  Default is unset. | [optional] 
+**pre_populate_shipping_address** | [**\SquareConnect\Model\Address**](Address.md) | If provided, the buyer&#39;s shipping info is pre-populated on the checkout page as editable text fields.  Default is unset. | [optional] 
+**redirect_url** | **string** | The URL to redirect to after checkout is completed with &#x60;checkoutId&#x60;, Square&#39;s &#x60;orderId&#x60;, &#x60;transactionId&#x60;, and &#x60;referenceId&#x60; appended as URL parameters. For example, if the provided redirect_url is &#x60;http://www.example.com/order-complete&#x60;, a successful transaction redirects the customer to:  &#x60;http://www.example.com/order-complete?checkoutId&#x3D;xxxxxx&amp;orderId&#x3D;xxxxxx&amp;referenceId&#x3D;xxxxxx&amp;transactionId&#x3D;xxxxxx&#x60;  If you do not provide a redirect URL, Square Checkout will display an order confirmation page on your behalf; however Square strongly recommends that you provide a redirect URL so you can verify the transaction results and finalize the order through your existing/normal confirmation workflow.  Default is unset. | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
