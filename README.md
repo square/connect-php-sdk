@@ -45,254 +45,122 @@ require('connect-php-sdk/autoload.php');
 ```
 *Note: you might have to change the path depending on your project's folder structure.*
 
-Usage
-------------
-There are five main objects that you'll be using, depending on what you want to do, each one is explained in more detail below. 
-```
+## Getting Started
+
+Please follow the [installation procedure](#installation--usage) and then run the following:
+
+```php
 <?php
-$transaction_api = new \SquareConnect\Api\TransactionApi();
-$customerCard_api = new \SquareConnect\Api\CustomerCardApi();
-$customer_api = new \SquareConnect\Api\CustomerApi();
-$location_api = new \SquareConnect\Api\LocationApi();
-$refund_api = new \SquareConnect\Api\RefundApi();
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new SquareConnect\Api\CheckoutApi();
+$authorization = "authorization_example"; // string | The value to provide in the Authorization header of your request. This value should follow the format `Bearer YOUR_ACCESS_TOKEN_HERE`.
+$location_id = "location_id_example"; // string | The ID of the business location to associate the checkout with.
+$body = new \SquareConnect\Model\CreateCheckoutRequest(); // \SquareConnect\Model\CreateCheckoutRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
+
+try {
+    $result = $api_instance->createCheckout($authorization, $location_id, $body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CheckoutApi->createCheckout: ', $e->getMessage(), PHP_EOL;
+}
+
 ?>
 ```
-##### Locations
-You'll need to list locations for your square account before doing most API calls because the `location_id` is a in the url for most endpoints.
-```
-$location_api = new \SquareConnect\Api\LocationApi();
-```
-**List Locations**
-```
-$location_api->listLocations($authorization);
-```
-* `$authorization` : Your access token (sandbox, personal, or OAuth) 
 
-Response: [\SquareConnect\Model\ListLocationsResponse](lib/Model/ListLocationsResponse.php)
-``` 
-$location_api->listLocations($authorization)->getErrors();
-$location_api->listLocations($authorization)->getLocations();
-```
-See all the functions you can use with the `->getLocations()` response in the [location model](lib/Model/Location.php)
-##### Customers
-Customers are end-users of a business and can be associated with transactions.
-```
-$customer_api = new \SquareConnect\Api\CustomerApi();
-```
-**List Customers**
-```
-$customer_api->listCustomers($authorization, $cursor = null);
-```
-* `$authorization` : Your access token (sandbox, personal, or OAuth) 
-* `$cursor` : This is an optional argument that specifies which page of customers to retrieve. Learn more about pagination [here](https://docs.connect.squareup.com/api/connect/v2/#paginatingresults).
+## Documentation for API Endpoints
 
-Response: [\SquareConnect\Model\ListCustomersResponse](lib/Model/ListCustomersResponse.php)
-``` 
-$customer_api->listCustomers($authorization)->getErrors();
-$customer_api->listCustomers($authorization)->getCustomers();
-$customer_api->listCustomers($authorization)->getCursor();
-```
-See all the functions you can use with the `->getCustomers()` response in the [customer model](lib/Model/Customer.php).
+All URIs are relative to *https://connect.squareup.com*
 
-**Create Customer**
-```
-$customer_api->createCustomer($authorization, $body);
-```
-* `$authorization` : Your access token (sandbox, personal, or OAuth) 
-* `$body` : The body is a [SquareConnect\Model\CreateCustomerRequest](lib/Model/CreateCustomerRequest.php) object that you'll have to build with the information of your customer.
+Class | Method | HTTP request | Description
+------------ | ------------- | ------------- | -------------
+*CheckoutApi* | [**createCheckout**](docs/Api/CheckoutApi.md#createcheckout) | **POST** /v2/locations/{location_id}/checkouts | CreateCheckout
+*CustomerApi* | [**createCustomer**](docs/Api/CustomerApi.md#createcustomer) | **POST** /v2/customers | CreateCustomer
+*CustomerApi* | [**deleteCustomer**](docs/Api/CustomerApi.md#deletecustomer) | **DELETE** /v2/customers/{customer_id} | DeleteCustomer
+*CustomerApi* | [**listCustomers**](docs/Api/CustomerApi.md#listcustomers) | **GET** /v2/customers | ListCustomers
+*CustomerApi* | [**retrieveCustomer**](docs/Api/CustomerApi.md#retrievecustomer) | **GET** /v2/customers/{customer_id} | RetrieveCustomer
+*CustomerApi* | [**updateCustomer**](docs/Api/CustomerApi.md#updatecustomer) | **PUT** /v2/customers/{customer_id} | UpdateCustomer
+*CustomerCardApi* | [**createCustomerCard**](docs/Api/CustomerCardApi.md#createcustomercard) | **POST** /v2/customers/{customer_id}/cards | CreateCustomerCard
+*CustomerCardApi* | [**deleteCustomerCard**](docs/Api/CustomerCardApi.md#deletecustomercard) | **DELETE** /v2/customers/{customer_id}/cards/{card_id} | DeleteCustomerCard
+*LocationApi* | [**listLocations**](docs/Api/LocationApi.md#listlocations) | **GET** /v2/locations | ListLocations
+*RefundApi* | [**createRefund**](docs/Api/RefundApi.md#createrefund) | **POST** /v2/locations/{location_id}/transactions/{transaction_id}/refund | CreateRefund
+*RefundApi* | [**listRefunds**](docs/Api/RefundApi.md#listrefunds) | **GET** /v2/locations/{location_id}/refunds | ListRefunds
+*TransactionApi* | [**captureTransaction**](docs/Api/TransactionApi.md#capturetransaction) | **POST** /v2/locations/{location_id}/transactions/{transaction_id}/capture | CaptureTransaction
+*TransactionApi* | [**charge**](docs/Api/TransactionApi.md#charge) | **POST** /v2/locations/{location_id}/transactions | Charge
+*TransactionApi* | [**listTransactions**](docs/Api/TransactionApi.md#listtransactions) | **GET** /v2/locations/{location_id}/transactions | ListTransactions
+*TransactionApi* | [**retrieveTransaction**](docs/Api/TransactionApi.md#retrievetransaction) | **GET** /v2/locations/{location_id}/transactions/{transaction_id} | RetrieveTransaction
+*TransactionApi* | [**voidTransaction**](docs/Api/TransactionApi.md#voidtransaction) | **POST** /v2/locations/{location_id}/transactions/{transaction_id}/void | VoidTransaction
 
-Response: [\SquareConnect\Model\CreateCustomersResponse](lib/Model/CreateCustomerResponse.php)
-``` 
-$customer_api->createCustomer($authorization, $body)->getErrors();
-$customer_api->createCustomer($authorization, $body)->getCustomer();
-```
-See all the functions you can use with the `->getCustomer()` response in the [customer model](lib/Model/Customer.php).
 
-**Retrieve Customer**
-```
-$customer_api->retrieveCustomer($authorization, $customer_id);
-```
-* `$authorization` : Your access token (sandbox, personal, or OAuth) 
-* `$customer_id` : The `id` of the customer you want to retrieve. Use the `->getId()` fuction on a [customer object](lib/Model/Customer.php) to the `customer_id` of a retrieved customer. 
+## Documentation For Models
 
-Response: [\SquareConnect\Model\RetrieveCustomerResponse](lib/Model/RetrieveCustomerResponse.php)
-``` 
-$customer_api->retrieveCustomer($authorization, $customer_id)->getErrors();
-$customer_api->retrieveCustomer($authorization, $customer_id)->getCustomer();
-```
-See all the functions you can use with the `->getCustomer()` response in the [customer model](lib/Model/Customer.php).
-**Update Customer**
-```
-$customer_api->updateCustomer($authorization, $customer_id, $body)
-```
-* `$authorization` : Your access token (sandbox, personal, or OAuth) 
-* `$customer_id` : The `id` of the customer you want to update. Use the `->getId()` fuction on a [customer object](lib/Model/Customer.php) to the `customer_id` of a retrieved customer.
-* `$body` : The body is a [SquareConnect\Model\UpdateCustomerRequest](lib/Model/UpdateCustomerRequest.php) object that you'll have to build with the information of your customer.
+ - [Address](docs/Model/Address.md)
+ - [CaptureTransactionRequest](docs/Model/CaptureTransactionRequest.md)
+ - [CaptureTransactionResponse](docs/Model/CaptureTransactionResponse.md)
+ - [Card](docs/Model/Card.md)
+ - [CardBrand](docs/Model/CardBrand.md)
+ - [ChargeRequest](docs/Model/ChargeRequest.md)
+ - [ChargeResponse](docs/Model/ChargeResponse.md)
+ - [Checkout](docs/Model/Checkout.md)
+ - [Country](docs/Model/Country.md)
+ - [CreateCheckoutRequest](docs/Model/CreateCheckoutRequest.md)
+ - [CreateCheckoutResponse](docs/Model/CreateCheckoutResponse.md)
+ - [CreateCustomerCardRequest](docs/Model/CreateCustomerCardRequest.md)
+ - [CreateCustomerCardResponse](docs/Model/CreateCustomerCardResponse.md)
+ - [CreateCustomerRequest](docs/Model/CreateCustomerRequest.md)
+ - [CreateCustomerResponse](docs/Model/CreateCustomerResponse.md)
+ - [CreateOrderRequest](docs/Model/CreateOrderRequest.md)
+ - [CreateOrderRequestLineItem](docs/Model/CreateOrderRequestLineItem.md)
+ - [CreateOrderRequestOrder](docs/Model/CreateOrderRequestOrder.md)
+ - [CreateRefundRequest](docs/Model/CreateRefundRequest.md)
+ - [CreateRefundResponse](docs/Model/CreateRefundResponse.md)
+ - [Currency](docs/Model/Currency.md)
+ - [Customer](docs/Model/Customer.md)
+ - [CustomerGroupInfo](docs/Model/CustomerGroupInfo.md)
+ - [CustomerPreferences](docs/Model/CustomerPreferences.md)
+ - [DeleteCustomerCardRequest](docs/Model/DeleteCustomerCardRequest.md)
+ - [DeleteCustomerCardResponse](docs/Model/DeleteCustomerCardResponse.md)
+ - [DeleteCustomerRequest](docs/Model/DeleteCustomerRequest.md)
+ - [DeleteCustomerResponse](docs/Model/DeleteCustomerResponse.md)
+ - [Error](docs/Model/Error.md)
+ - [ErrorCategory](docs/Model/ErrorCategory.md)
+ - [ErrorCode](docs/Model/ErrorCode.md)
+ - [ListCustomersRequest](docs/Model/ListCustomersRequest.md)
+ - [ListCustomersResponse](docs/Model/ListCustomersResponse.md)
+ - [ListLocationsRequest](docs/Model/ListLocationsRequest.md)
+ - [ListLocationsResponse](docs/Model/ListLocationsResponse.md)
+ - [ListRefundsRequest](docs/Model/ListRefundsRequest.md)
+ - [ListRefundsResponse](docs/Model/ListRefundsResponse.md)
+ - [ListTransactionsRequest](docs/Model/ListTransactionsRequest.md)
+ - [ListTransactionsResponse](docs/Model/ListTransactionsResponse.md)
+ - [Location](docs/Model/Location.md)
+ - [LocationCapability](docs/Model/LocationCapability.md)
+ - [Money](docs/Model/Money.md)
+ - [Order](docs/Model/Order.md)
+ - [OrderLineItem](docs/Model/OrderLineItem.md)
+ - [Refund](docs/Model/Refund.md)
+ - [RefundStatus](docs/Model/RefundStatus.md)
+ - [RetrieveCustomerRequest](docs/Model/RetrieveCustomerRequest.md)
+ - [RetrieveCustomerResponse](docs/Model/RetrieveCustomerResponse.md)
+ - [RetrieveTransactionRequest](docs/Model/RetrieveTransactionRequest.md)
+ - [RetrieveTransactionResponse](docs/Model/RetrieveTransactionResponse.md)
+ - [SortOrder](docs/Model/SortOrder.md)
+ - [Tender](docs/Model/Tender.md)
+ - [TenderCardDetails](docs/Model/TenderCardDetails.md)
+ - [TenderCardDetailsEntryMethod](docs/Model/TenderCardDetailsEntryMethod.md)
+ - [TenderCardDetailsStatus](docs/Model/TenderCardDetailsStatus.md)
+ - [TenderCashDetails](docs/Model/TenderCashDetails.md)
+ - [TenderType](docs/Model/TenderType.md)
+ - [Transaction](docs/Model/Transaction.md)
+ - [TransactionProduct](docs/Model/TransactionProduct.md)
+ - [UpdateCustomerRequest](docs/Model/UpdateCustomerRequest.md)
+ - [UpdateCustomerResponse](docs/Model/UpdateCustomerResponse.md)
+ - [VoidTransactionRequest](docs/Model/VoidTransactionRequest.md)
+ - [VoidTransactionResponse](docs/Model/VoidTransactionResponse.md)
 
-Response: [\SquareConnect\Model\UpdateCustomerResponse](lib/Model/UpdateCustomerRequest.php)
-``` 
-$customer_api->updateCustomer($authorization, $customer_id, $body)->getErrors();
-$customer_api->updateCustomer($authorization, $customer_id, $body)->getCustomer();
-```
-See all the functions you can use with the `->getCustomer()` response in the [customer model](lib/Model/Customer.php)
 
-**Delete Customer**
-```
-$customer_api->deleteCustomer($authorization, $customer_id)
-```
-* `$authorization` : Your access token (sandbox, personal, or OAuth) 
-* `$customer_id` : The `id` of the customer you want to retrieve. Use the `->getId()` fuction on a [customer object](lib/Model/Customer.php) to the `customer_id` of a retrieved customer.
 
-Response: [\SquareConnect\Model\DeleteCustomerResponse](lib/Model/DeleteCustomerResponse.php)
-``` 
-$customer_api->deleteCustomer($authorization, $customer_id)->getErrors();
-```
-##### Customers Cards
-Customers Cards on file allow merchants to charge customers without them providing their credit card every time. Learn more here: [Saving Customer Information](https://docs.connect.squareup.com/articles/saving-customer-information/)
-```
-$customerCard_api = new \SquareConnect\Api\CustomerCardApi();
-```
-**Create Customer Card**
-```
-$customerCard_api->createCustomerCard($authorization, $customer_id, $body);
-```
-* `$authorization` : Your access token (sandbox, personal, or OAuth) 
-* `$customer_id` : The `id` of the customer you want to associate the card with.
-* `$body` : The body is a [SquareConnect\Model\CreateCustomerCardRequest](lib/Model/CreateCustomerCardRequest.php) object that you'll have to build with the information of your customer's card.
 
-Response: [\SquareConnect\Model\CreateCustomerCardResponse](lib/Model/CreateCustomerCardResponse.php)
-``` 
-$customerCard_api->createCustomerCard($authorization, $customer_id, $body)->getErrors();
-$customerCard_api->createCustomerCard($authorization, $customer_id, $body)->getCard();
-```
-See all the functions you can use with the `->getCard()` response in the [card model](lib/Model/Card.php)
-
-**Delete Customer Card**
-```
-$customerCard_api->deleteCustomerCard($authorization, $customer_id, $card_id)
-```
-* `$authorization` : Your access token (sandbox, personal, or OAuth) 
-* `$customer_id` : The `id` of the customer whose card you want to delete.
-* `$card_id` : The `id` of the card you want to delete.
-
-Response: [\SquareConnect\Model\DeleteCustomerCardResponse](lib/Model/DeleteCustomerCardResponse.php)
-``` 
-$customerCard_api->deleteCustomerCard($authorization, $customer_id, $card_id)->getErrors();
-```
-##### Transactions
-```
-$transaction_api = new \SquareConnect\Api\TransactionApi();
-```
-**List Transactions**
-```
-$transaction_api->listTransactions($authorization, $location_id, $begin_time = null, $end_time = null, $sort_order = null, $cursor = null)
-```
-* `$authorization` : Your access token (sandbox, oauth or personal)
-* `$location_id` : The id of the location you are requesting the transactions for.
-* `$begin_time` : The beginning of the requested reporting period, in RFC 3339 format. (optional)
-* `$end_time` The end of the requested reporting period, in RFC 3339 format. (optional)
-* `$sort_order` The order in which results are listed in the response (`ASC` for chronological, `DESC` for reverse-chronological). (optional)
-* `$cursor` : An optional pagination cursor to retrieve the next set of results for your original query to the endpoint. Learn more about pagination [here](https://docs.connect.squareup.com/api/connect/v2/#paginatingresults).
-
-Response: [\SquareConnect\Model\ListTransactionsResponse](lib/Model/ListTransactionsResponse.php)
-``` 
-$transaction_api->listTransactions($authorization, $location_id)->getErrors();
-$transaction_api->listTransactions($authorization, $location_id)->getTransactions();
-$transaction_api->listTransactions($authorization, $location_id)->getCursor();
-```
-See all the functions you can use with the `->getTransactions()` response in the [transaction model](lib/Model/Transaction.php)
-
-**Charge (Create Transaction)**
-```
-$transaction_api->charge($authorization, $location_id, $body);
-```
-* `$authorization` : Your access token (sandbox, personal, or OAuth)
-* `$location_id` : The id of the location you are creating the transactions for.
-* `$body` : The body is a [SquareConnect\Model\ChargeRequest](lib/Model/ChargeRequest.php) object that you'll have to build with the information of your transaction.
-
-Response: [\SquareConnect\Model\ChargeResponse](lib/Model/ChargeResponse.php)
-``` 
-$transaction_api->charge($authorization, $location_id, $body)->getErrors();
-$transaction_api->charge($authorization, $location_id, $body)->getTransaction();
-```
-See all the functions you can use with the `->getTransactions()` response in the [transaction model](lib/Model/Transaction.php)
-
-**Retrieve Transaction**
-```
-$transaction_api->retrieveTransaction($authorization, $location_id, $transaction_id);
-```
-* `$authorization` : Your access token (sandbox, personal, or OAuth) 
-* `$location_id` : The id of the location you are retrieving the transaction for.
-* `$transaction_id` : The `id` of the transaction you want to retrieve. Use the `->getId()` fuction on a [transaction object](lib/Model/Transaction.php) to get the `transaction_id` 
-
-Response: [\SquareConnect\Model\RetrieveTransactionResponse](lib/Model/RetrieveTransactionResponse.php)
-``` 
-$transaction_api->retrieveTransaction($authorization, $location_id, $transaction_id)->getErrors();
-$transaction_api->retrieveTransaction($authorization, $location_id, $transaction_id)->getTransaction();
-```
-See all the functions you can use with the `->getTransactions()` response in the [transaction model](lib/Model/Transaction.php)
-
-**Capture Transaction**
-Charges a card that was previously authorized. See [delayed capture transactions](https://docs.connect.squareup.com/articles/delayed-capture-transactions/) for more information.
-```
-$transaction_api->captureTransaction($authorization, $location_id, $transaction_id);
-```
-* `$authorization` : Your access token (sandbox, personal, or OAuth) 
-* `$location_id` : The id of the location you are retrieving the transaction for.
-* `$transaction_id` : The `id` of the previously authorized transaction you want to capture. 
-
-Response: [\SquareConnect\Model\CaptureTransactionResponse](lib/Model/CaptureTransactionResponse.php)
-``` 
-$transaction_api->captureTransaction($authorization, $location_id, $transaction_id)->getErrors();
-```
-**Void Transaction**
-Voids a previous card authorization. See [delayed capture transactions](https://docs.connect.squareup.com/articles/delayed-capture-transactions/) for more information.
-```
-$transaction_api->voidTransaction($authorization, $location_id, $transaction_id);
-```
-* `$authorization` : Your access token (sandbox, personal, or OAuth) 
-* `$location_id` : The id of the location you are retrieving the transaction for.
-* `$transaction_id` : The `id` of the previously authorized transaction you want to void. 
-
-Response: [\SquareConnect\Model\VoidTransactionResponse](lib/Model/VoidTransactionResponse.php)
-``` 
-$transaction_api->voidTransaction($authorization, $location_id, $transaction_id)->getErrors();
-```
-##### Refunds
-```
-$refund_api = new \SquareConnect\Api\RefundApi();
-```
-**List Refunds**
-```
-$refund_api->listRefunds($authorization, $location_id, $begin_time = null, $end_time = null, $sort_order = null, $cursor = null)
-```
-* `$authorization` : Your access token (sandbox, oauth or personal)
-* `$location_id` : The id of the location you are requesting the refunds for.
-* `$begin_time` : The beginning of the requested reporting period, in RFC 3339 format. (optional)
-* `$end_time` The end of the requested reporting period, in RFC 3339 format. (optional)
-* `$sort_order` The order in which results are listed in the response (`ASC` for chronological, `DESC` for reverse-chronological). (optional)
-* `$cursor` : An optional pagination cursor to retrieve the next set of results for your original query to the endpoint. Learn more about pagination [here](https://docs.connect.squareup.com/api/connect/v2/#paginatingresults).
-
-Response: [\SquareConnect\Model\ListRefundsResponse](lib/Model/ListRefundsResponse.php)
-``` 
-$refund_api->listRefunds($authorization, $location_id)->getErrors();
-$refund_api->listRefunds($authorization, $location_id)->getCursor();
-```
-
-**Create Refund**
-```
-$refund_api->createRefund($authorization, $location_id, $transaction_id, $body)
-```
-* `$authorization` : Your access token (sandbox, oauth or personal)
-* `$location_id` : The id of the location you are requesting the refunds for.
-* `$transaction_id` : The `id` of the previously charged transaction you want to refund. 
-* `$body` : The body is a [SquareConnect\Model\CreateRefundRequest](lib/Model/CreateRefundRequest.php) object that you'll have to build with the information of your refund.
-
-Response: [\SquareConnect\Model\CreateRefundResponse](lib/Model/CreateRefundResponse.php)
-``` 
-$refund_api->deleteCustomer($authorization, $customer_id)->getErrors();
-$refund_api->deleteCustomer($authorization, $customer_id)->getRefund();
-```
 Contributing
 ------------
 
@@ -304,7 +172,7 @@ License
 -------
 
 ```
-Copyright 2016 Square, Inc.
+Copyright 2017 Square, Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

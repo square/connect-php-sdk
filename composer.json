@@ -8,12 +8,12 @@
         "sdk",
         "api"
     ],
-    "homepage": "http://swagger.io",
+    "homepage": "https://github.com/square/connect-php-sdk",
     "license": "Apache v2",
     "authors": [
         {
             "name": "Square, Inc.",
-            "homepage": "https://github.com/Square/connect-php-sdk"
+            "homepage": "https://squareup.com/developers"
         }
     ],
     "require": {
