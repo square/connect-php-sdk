@@ -23,12 +23,15 @@ use \SquareConnect\ObjectSerializer;
  */
 class LocationApiTest extends \PHPUnit_Framework_TestCase
 {
+    private static $api_instance;
+    private static $test_accounts;
 
     /**
      * Setup before running each test case
      */
     public static function setUpBeforeClass() {
-
+        self::$api_instance = new \SquareConnect\Api\LocationApi();
+        self::$test_accounts = new \SquareConnect\TestAccounts();
     }
 
     /**
@@ -45,6 +48,22 @@ class LocationApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function test_listLocations() {
-
+        $sandbox_account = self::$test_accounts->{'US-Prod-Sandbox'};
+        $authorization = $sandbox_account->{'access_token'};
+        $result = self::$api_instance->listLocations($authorization);
+        
+        $this->assertInstanceOf(
+            '\SquareConnect\Model\ListLocationsResponse',
+            $result
+        );
+        $first_location = $result->getLocations()[0];
+        $this->assertInstanceOf(
+            '\SquareConnect\Model\Location',
+            $first_location
+        );
+        $this->assertEquals(
+            'CBASEEffqN8pnVNXwoCL0dSGMVAgAQ',
+            $first_location->getId()
+        );
     }
 }
