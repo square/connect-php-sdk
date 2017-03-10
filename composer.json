@@ -29,5 +29,8 @@
     },
     "autoload": {
         "psr-4": { "SquareConnect\\" : "lib/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "SquareConnect\\" : "test/" }
     }
 }
