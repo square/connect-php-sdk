@@ -159,6 +159,29 @@ Class | Method | HTTP request | Description
  - [VoidTransactionResponse](docs/Model/VoidTransactionResponse.md)
 
 
+## Documentation For Authorization
+
+## oauth2
+
+- **Type**: OAuth
+- **Flow**: accessCode
+- **Authorization URL**: https://connect.squareup.com/oauth2/authorize?<PARAMETERS>
+- **Scopes**: 
+ - **MERCHANT_PROFILE_READ**: GET endpoints related to a merchant's business and location entities. Almost all Connect API applications need this permission in order to obtain a merchant's location IDs
+ - **PAYMENTS_READ**: GET endpoints related to transactions and refunds
+ - **PAYMENTS_WRITE**: POST, PUT, and DELETE endpoints related to transactions and refunds. E-commerce applications must request this permission
+ - **CUSTOMERS_READ**: GET endpoints related to customer management
+ - **CUSTOMERS_WRITE**: POST, PUT, and DELETE endpoints related to customer management
+ - **SETTLEMENTS_READ**: GET endpoints related to settlements (deposits)
+ - **BANK_ACCOUNTS_READ**: GET endpoints related to a merchant's bank accounts
+ - **ITEMS_READ**: GET endpoints related to a merchant's item library
+ - **ITEMS_WRITE**: POST, PUT, and DELETE endpoints related to a merchant's item library
+ - **ORDERS_READ**: GET endpoints related to a merchant's Square online store.
+ - **ORDERS_WRITE**: POST, PUT, and DELETE endpoints related to a merchant's Square online store
+ - **EMPLOYEES_READ**: GET endpoints related to employee management
+ - **EMPLOYEES_WRITE**: POST, PUT, and DELETE endpoints related to employee management
+ - **TIMECARDS_READ**: GET endpoints related to employee timecards
+ - **TIMECARDS_WRITE**: POST, PUT, and DELETE endpoints related to employee timecards
 
 
 Contributing
