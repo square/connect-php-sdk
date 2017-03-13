@@ -69,16 +69,15 @@ class RefundApi
      *
      * CreateRefund
      *
-     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @param string $location_id The ID of the original transaction&#39;s associated location. (required)
      * @param string $transaction_id The ID of the original transaction that includes the tender to refund. (required)
      * @param \SquareConnect\Model\CreateRefundRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
      * @return \SquareConnect\Model\CreateRefundResponse
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function createRefund($authorization, $location_id, $transaction_id, $body)
+    public function createRefund($location_id, $transaction_id, $body)
     {
-        list($response, $statusCode, $httpHeader) = $this->createRefundWithHttpInfo ($authorization, $location_id, $transaction_id, $body);
+        list($response, $statusCode, $httpHeader) = $this->createRefundWithHttpInfo ($location_id, $transaction_id, $body);
         return $response; 
     }
 
@@ -88,20 +87,15 @@ class RefundApi
      *
      * CreateRefund
      *
-     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @param string $location_id The ID of the original transaction&#39;s associated location. (required)
      * @param string $transaction_id The ID of the original transaction that includes the tender to refund. (required)
      * @param \SquareConnect\Model\CreateRefundRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
      * @return Array of \SquareConnect\Model\CreateRefundResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function createRefundWithHttpInfo($authorization, $location_id, $transaction_id, $body)
+    public function createRefundWithHttpInfo($location_id, $transaction_id, $body)
     {
         
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $authorization when calling createRefund');
-        }
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $location_id when calling createRefund');
@@ -128,10 +122,7 @@ class RefundApi
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
   
         
-        // header params
-        if ($authorization !== null) {
-            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
-        }
+        
         // path params
         if ($location_id !== null) {
             $resourcePath = str_replace(
@@ -163,7 +154,12 @@ class RefundApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-                // make the API Call
+        
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath, 'POST',
@@ -191,7 +187,6 @@ class RefundApi
      *
      * ListRefunds
      *
-     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @param string $location_id The ID of the location to list refunds for. (required)
      * @param string $begin_time The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)
      * @param string $end_time The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)
@@ -200,9 +195,9 @@ class RefundApi
      * @return \SquareConnect\Model\ListRefundsResponse
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function listRefunds($authorization, $location_id, $begin_time = null, $end_time = null, $sort_order = null, $cursor = null)
+    public function listRefunds($location_id, $begin_time = null, $end_time = null, $sort_order = null, $cursor = null)
     {
-        list($response, $statusCode, $httpHeader) = $this->listRefundsWithHttpInfo ($authorization, $location_id, $begin_time, $end_time, $sort_order, $cursor);
+        list($response, $statusCode, $httpHeader) = $this->listRefundsWithHttpInfo ($location_id, $begin_time, $end_time, $sort_order, $cursor);
         return $response; 
     }
 
@@ -212,7 +207,6 @@ class RefundApi
      *
      * ListRefunds
      *
-     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @param string $location_id The ID of the location to list refunds for. (required)
      * @param string $begin_time The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)
      * @param string $end_time The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)
@@ -221,13 +215,9 @@ class RefundApi
      * @return Array of \SquareConnect\Model\ListRefundsResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function listRefundsWithHttpInfo($authorization, $location_id, $begin_time = null, $end_time = null, $sort_order = null, $cursor = null)
+    public function listRefundsWithHttpInfo($location_id, $begin_time = null, $end_time = null, $sort_order = null, $cursor = null)
     {
         
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $authorization when calling listRefunds');
-        }
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $location_id when calling listRefunds');
@@ -258,10 +248,7 @@ class RefundApi
         if ($cursor !== null) {
             $queryParams['cursor'] = $this->apiClient->getSerializer()->toQueryValue($cursor);
         }
-        // header params
-        if ($authorization !== null) {
-            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
-        }
+        
         // path params
         if ($location_id !== null) {
             $resourcePath = str_replace(
@@ -282,7 +269,12 @@ class RefundApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-                // make the API Call
+        
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath, 'GET',

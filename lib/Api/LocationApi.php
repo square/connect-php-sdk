@@ -69,13 +69,12 @@ class LocationApi
      *
      * ListLocations
      *
-     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @return \SquareConnect\Model\ListLocationsResponse
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function listLocations($authorization)
+    public function listLocations()
     {
-        list($response, $statusCode, $httpHeader) = $this->listLocationsWithHttpInfo ($authorization);
+        list($response, $statusCode, $httpHeader) = $this->listLocationsWithHttpInfo ();
         return $response; 
     }
 
@@ -85,17 +84,12 @@ class LocationApi
      *
      * ListLocations
      *
-     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @return Array of \SquareConnect\Model\ListLocationsResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function listLocationsWithHttpInfo($authorization)
+    public function listLocationsWithHttpInfo()
     {
         
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $authorization when calling listLocations');
-        }
   
         // parse inputs
         $resourcePath = "/v2/locations";
@@ -110,10 +104,7 @@ class LocationApi
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
   
         
-        // header params
-        if ($authorization !== null) {
-            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
-        }
+        
         
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
@@ -127,7 +118,12 @@ class LocationApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-                // make the API Call
+        
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath, 'GET',

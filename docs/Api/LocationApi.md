@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **listLocations**
-> \SquareConnect\Model\ListLocationsResponse listLocations($authorization)
+> \SquareConnect\Model\ListLocationsResponse listLocations()
 
 ListLocations
 
@@ -19,11 +19,13 @@ Provides the details for all of a business's locations.  Most other Connect API 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure OAuth2 access token for authorization: oauth2
+SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 $api_instance = new SquareConnect\Api\LocationApi();
-$authorization = "authorization_example"; // string | The value to provide in the Authorization header of your request. This value should follow the format `Bearer YOUR_ACCESS_TOKEN_HERE`.
 
 try {
-    $result = $api_instance->listLocations($authorization);
+    $result = $api_instance->listLocations();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LocationApi->listLocations: ', $e->getMessage(), PHP_EOL;
@@ -32,10 +34,7 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **authorization** | **string**| The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -43,7 +42,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2](../../README.md#oauth2)
 
 ### HTTP request headers
 

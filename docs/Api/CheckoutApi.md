@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **createCheckout**
-> \SquareConnect\Model\CreateCheckoutResponse createCheckout($authorization, $location_id, $body)
+> \SquareConnect\Model\CreateCheckoutResponse createCheckout($location_id, $body)
 
 CreateCheckout
 
@@ -19,13 +19,15 @@ Creates a [Checkout](#type-checkout) response that links a `checkoutId` and `che
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure OAuth2 access token for authorization: oauth2
+SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 $api_instance = new SquareConnect\Api\CheckoutApi();
-$authorization = "authorization_example"; // string | The value to provide in the Authorization header of your request. This value should follow the format `Bearer YOUR_ACCESS_TOKEN_HERE`.
 $location_id = "location_id_example"; // string | The ID of the business location to associate the checkout with.
 $body = new \SquareConnect\Model\CreateCheckoutRequest(); // \SquareConnect\Model\CreateCheckoutRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->createCheckout($authorization, $location_id, $body);
+    $result = $api_instance->createCheckout($location_id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CheckoutApi->createCheckout: ', $e->getMessage(), PHP_EOL;
@@ -37,7 +39,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. |
  **location_id** | **string**| The ID of the business location to associate the checkout with. |
  **body** | [**\SquareConnect\Model\CreateCheckoutRequest**](../Model/\SquareConnect\Model\CreateCheckoutRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
@@ -47,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2](../../README.md#oauth2)
 
 ### HTTP request headers
 
