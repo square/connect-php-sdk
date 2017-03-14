@@ -146,4 +146,168 @@ class LocationApi
             throw $e;
         }
     }
+    /**
+     * v1ListLocations
+     *
+     * Provides details for a business's locations, including their IDs.
+     *
+     * @return \SquareConnect\Model\V1Merchant[]
+     * @throws \SquareConnect\ApiException on non-2xx response
+     */
+    public function v1ListLocations()
+    {
+        list($response, $statusCode, $httpHeader) = $this->v1ListLocationsWithHttpInfo ();
+        return $response; 
+    }
+
+
+    /**
+     * v1ListLocationsWithHttpInfo
+     *
+     * Provides details for a business's locations, including their IDs.
+     *
+     * @return Array of \SquareConnect\Model\V1Merchant[], HTTP status code, HTTP response headers (array of strings)
+     * @throws \SquareConnect\ApiException on non-2xx response
+     */
+    public function v1ListLocationsWithHttpInfo()
+    {
+        
+  
+        // parse inputs
+        $resourcePath = "/v1/me/locations";
+        $httpBody = '';
+        $queryParams = array();
+        $headerParams = array();
+        $formParams = array();
+        $_header_accept = ApiClient::selectHeaderAccept(array('application/json'));
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+  
+        
+        
+        
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        
+  
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath, 'GET',
+                $queryParams, $httpBody,
+                $headerParams, '\SquareConnect\Model\V1Merchant[]'
+            );
+            if (!$response) {
+                return array(null, $statusCode, $httpHeader);
+            }
+
+            return array(\SquareConnect\ObjectSerializer::deserialize($response, '\SquareConnect\Model\V1Merchant[]', $httpHeader), $statusCode, $httpHeader);
+                    } catch (ApiException $e) {
+            switch ($e->getCode()) { 
+            case 200:
+                $data = \SquareConnect\ObjectSerializer::deserialize($e->getResponseBody(), '\SquareConnect\Model\V1Merchant[]', $e->getResponseHeaders());
+                $e->setResponseObject($data);
+                break;
+            }
+  
+            throw $e;
+        }
+    }
+    /**
+     * v1RetrieveBusiness
+     *
+     * Get a business's information.
+     *
+     * @return \SquareConnect\Model\V1Merchant
+     * @throws \SquareConnect\ApiException on non-2xx response
+     */
+    public function v1RetrieveBusiness()
+    {
+        list($response, $statusCode, $httpHeader) = $this->v1RetrieveBusinessWithHttpInfo ();
+        return $response; 
+    }
+
+
+    /**
+     * v1RetrieveBusinessWithHttpInfo
+     *
+     * Get a business's information.
+     *
+     * @return Array of \SquareConnect\Model\V1Merchant, HTTP status code, HTTP response headers (array of strings)
+     * @throws \SquareConnect\ApiException on non-2xx response
+     */
+    public function v1RetrieveBusinessWithHttpInfo()
+    {
+        
+  
+        // parse inputs
+        $resourcePath = "/v1/me";
+        $httpBody = '';
+        $queryParams = array();
+        $headerParams = array();
+        $formParams = array();
+        $_header_accept = ApiClient::selectHeaderAccept(array('application/json'));
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+  
+        
+        
+        
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        
+  
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath, 'GET',
+                $queryParams, $httpBody,
+                $headerParams, '\SquareConnect\Model\V1Merchant'
+            );
+            if (!$response) {
+                return array(null, $statusCode, $httpHeader);
+            }
+
+            return array(\SquareConnect\ObjectSerializer::deserialize($response, '\SquareConnect\Model\V1Merchant', $httpHeader), $statusCode, $httpHeader);
+                    } catch (ApiException $e) {
+            switch ($e->getCode()) { 
+            case 200:
+                $data = \SquareConnect\ObjectSerializer::deserialize($e->getResponseBody(), '\SquareConnect\Model\V1Merchant', $e->getResponseHeaders());
+                $e->setResponseObject($data);
+                break;
+            }
+  
+            throw $e;
+        }
+    }
 }
