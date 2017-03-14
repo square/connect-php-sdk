@@ -32,6 +32,10 @@ class LocationApiTest extends \PHPUnit_Framework_TestCase
     public static function setUpBeforeClass() {
         self::$api_instance = new \SquareConnect\Api\LocationApi();
         self::$test_accounts = new \SquareConnect\TestAccounts();
+        // Configure OAuth2 access token for authorization: oauth2
+        $sandbox_account = self::$test_accounts->{'US-Prod-Sandbox'};
+        $access_token = $sandbox_account->{'access_token'};
+        Configuration::getDefaultConfiguration()->setAccessToken($access_token);
     }
 
     /**
@@ -48,10 +52,7 @@ class LocationApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function test_listLocations() {
-        $sandbox_account = self::$test_accounts->{'US-Prod-Sandbox'};
-        $authorization = $sandbox_account->{'access_token'};
-        $result = self::$api_instance->listLocations($authorization);
-        
+        $result = self::$api_instance->listLocations();
         $this->assertInstanceOf(
             '\SquareConnect\Model\ListLocationsResponse',
             $result
