@@ -13,7 +13,7 @@ use \SquareConnect\ApiException;
 use \SquareConnect\ObjectSerializer;
 
 /**
- * LocationApiTest Class Doc Comment
+ * LocationsApiTest Class Doc Comment
  *
  * @category Class
  * @package  SquareConnect
@@ -21,7 +21,7 @@ use \SquareConnect\ObjectSerializer;
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://squareup.com/developers
  */
-class LocationApiTest extends \PHPUnit_Framework_TestCase
+class LocationsApiTest extends \PHPUnit_Framework_TestCase
 {
     private static $api_instance;
     private static $test_accounts;
@@ -30,7 +30,7 @@ class LocationApiTest extends \PHPUnit_Framework_TestCase
      * Setup before running each test case
      */
     public static function setUpBeforeClass() {
-        self::$api_instance = new \SquareConnect\Api\LocationApi();
+        self::$api_instance = new \SquareConnect\Api\LocationsApi();
         self::$test_accounts = new \SquareConnect\TestAccounts();
         // Configure OAuth2 access token for authorization: oauth2
         $sandbox_account = self::$test_accounts->{'US-Prod-Sandbox'};

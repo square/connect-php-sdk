@@ -13,7 +13,7 @@ use \SquareConnect\ApiException;
 use \SquareConnect\ObjectSerializer;
 
 /**
- * RefundApiTest Class Doc Comment
+ * V1LocationApiTest Class Doc Comment
  *
  * @category Class
  * @package  SquareConnect
@@ -21,7 +21,7 @@ use \SquareConnect\ObjectSerializer;
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://squareup.com/developers
  */
-class RefundApiTest extends \PHPUnit_Framework_TestCase
+class V1LocationApiTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -39,21 +39,21 @@ class RefundApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for createRefund
+     * Test case for listLocations
      *
-     * CreateRefund
+     * Provides details for a business's locations, including their IDs.
      *
      */
-    public function test_createRefund() {
+    public function test_listLocations() {
 
     }
     /**
-     * Test case for listRefunds
+     * Test case for retrieveBusiness
      *
-     * ListRefunds
+     * Get a business's information.
      *
      */
-    public function test_listRefunds() {
+    public function test_retrieveBusiness() {
 
     }
 }
