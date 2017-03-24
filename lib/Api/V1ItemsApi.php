@@ -13,7 +13,7 @@ use \SquareConnect\ApiException;
 use \SquareConnect\ObjectSerializer;
 
 /**
- * ItemsApi Class Doc Comment
+ * V1ItemsApi Class Doc Comment
  *
  * @category Class
  * @package  SquareConnect
@@ -21,7 +21,7 @@ use \SquareConnect\ObjectSerializer;
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://squareup.com/developers
  */
-class ItemsApi
+class V1ItemsApi
 {
 
     /**
@@ -56,7 +56,7 @@ class ItemsApi
     /**
      * Set the API client
      * @param \SquareConnect\ApiClient $apiClient set the API client
-     * @return ItemsApi
+     * @return V1ItemsApi
      */
     public function setApiClient(ApiClient $apiClient)
     {
@@ -65,7 +65,7 @@ class ItemsApi
     }
   
     /**
-     * v1AdjustInventory
+     * adjustInventory
      *
      * Adjusts an item variation's current available inventory.
      *
@@ -75,15 +75,15 @@ class ItemsApi
      * @return \SquareConnect\Model\V1InventoryEntry
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1AdjustInventory($location_id, $variation_id, $body)
+    public function adjustInventory($location_id, $variation_id, $body)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1AdjustInventoryWithHttpInfo ($location_id, $variation_id, $body);
+        list($response, $statusCode, $httpHeader) = $this->adjustInventoryWithHttpInfo ($location_id, $variation_id, $body);
         return $response; 
     }
 
 
     /**
-     * v1AdjustInventoryWithHttpInfo
+     * adjustInventoryWithHttpInfo
      *
      * Adjusts an item variation's current available inventory.
      *
@@ -93,20 +93,20 @@ class ItemsApi
      * @return Array of \SquareConnect\Model\V1InventoryEntry, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1AdjustInventoryWithHttpInfo($location_id, $variation_id, $body)
+    public function adjustInventoryWithHttpInfo($location_id, $variation_id, $body)
     {
         
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1AdjustInventory');
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling adjustInventory');
         }
         // verify the required parameter 'variation_id' is set
         if ($variation_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $variation_id when calling v1AdjustInventory');
+            throw new \InvalidArgumentException('Missing the required parameter $variation_id when calling adjustInventory');
         }
         // verify the required parameter 'body' is set
         if ($body === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $body when calling v1AdjustInventory');
+            throw new \InvalidArgumentException('Missing the required parameter $body when calling adjustInventory');
         }
   
         // parse inputs
@@ -183,7 +183,7 @@ class ItemsApi
         }
     }
     /**
-     * v1ApplyFee
+     * applyFee
      *
      * Associates a fee with an item, meaning the fee is automatically applied to the item in Square Register.
      *
@@ -193,15 +193,15 @@ class ItemsApi
      * @return \SquareConnect\Model\V1Item
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1ApplyFee($location_id, $item_id, $fee_id)
+    public function applyFee($location_id, $item_id, $fee_id)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1ApplyFeeWithHttpInfo ($location_id, $item_id, $fee_id);
+        list($response, $statusCode, $httpHeader) = $this->applyFeeWithHttpInfo ($location_id, $item_id, $fee_id);
         return $response; 
     }
 
 
     /**
-     * v1ApplyFeeWithHttpInfo
+     * applyFeeWithHttpInfo
      *
      * Associates a fee with an item, meaning the fee is automatically applied to the item in Square Register.
      *
@@ -211,20 +211,20 @@ class ItemsApi
      * @return Array of \SquareConnect\Model\V1Item, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1ApplyFeeWithHttpInfo($location_id, $item_id, $fee_id)
+    public function applyFeeWithHttpInfo($location_id, $item_id, $fee_id)
     {
         
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1ApplyFee');
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling applyFee');
         }
         // verify the required parameter 'item_id' is set
         if ($item_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $item_id when calling v1ApplyFee');
+            throw new \InvalidArgumentException('Missing the required parameter $item_id when calling applyFee');
         }
         // verify the required parameter 'fee_id' is set
         if ($fee_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fee_id when calling v1ApplyFee');
+            throw new \InvalidArgumentException('Missing the required parameter $fee_id when calling applyFee');
         }
   
         // parse inputs
@@ -304,7 +304,7 @@ class ItemsApi
         }
     }
     /**
-     * v1ApplyModifierList
+     * applyModifierList
      *
      * Associates a modifier list with an item, meaning modifier options from the list can be applied to the item.
      *
@@ -314,15 +314,15 @@ class ItemsApi
      * @return \SquareConnect\Model\V1Item
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1ApplyModifierList($location_id, $modifier_list_id, $item_id)
+    public function applyModifierList($location_id, $modifier_list_id, $item_id)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1ApplyModifierListWithHttpInfo ($location_id, $modifier_list_id, $item_id);
+        list($response, $statusCode, $httpHeader) = $this->applyModifierListWithHttpInfo ($location_id, $modifier_list_id, $item_id);
         return $response; 
     }
 
 
     /**
-     * v1ApplyModifierListWithHttpInfo
+     * applyModifierListWithHttpInfo
      *
      * Associates a modifier list with an item, meaning modifier options from the list can be applied to the item.
      *
@@ -332,20 +332,20 @@ class ItemsApi
      * @return Array of \SquareConnect\Model\V1Item, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1ApplyModifierListWithHttpInfo($location_id, $modifier_list_id, $item_id)
+    public function applyModifierListWithHttpInfo($location_id, $modifier_list_id, $item_id)
     {
         
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1ApplyModifierList');
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling applyModifierList');
         }
         // verify the required parameter 'modifier_list_id' is set
         if ($modifier_list_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $modifier_list_id when calling v1ApplyModifierList');
+            throw new \InvalidArgumentException('Missing the required parameter $modifier_list_id when calling applyModifierList');
         }
         // verify the required parameter 'item_id' is set
         if ($item_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $item_id when calling v1ApplyModifierList');
+            throw new \InvalidArgumentException('Missing the required parameter $item_id when calling applyModifierList');
         }
   
         // parse inputs
@@ -425,7 +425,7 @@ class ItemsApi
         }
     }
     /**
-     * v1CreateCategory
+     * createCategory
      *
      * Creates an item category.
      *
@@ -434,15 +434,15 @@ class ItemsApi
      * @return \SquareConnect\Model\V1Category
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1CreateCategory($location_id, $body)
+    public function createCategory($location_id, $body)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1CreateCategoryWithHttpInfo ($location_id, $body);
+        list($response, $statusCode, $httpHeader) = $this->createCategoryWithHttpInfo ($location_id, $body);
         return $response; 
     }
 
 
     /**
-     * v1CreateCategoryWithHttpInfo
+     * createCategoryWithHttpInfo
      *
      * Creates an item category.
      *
@@ -451,16 +451,16 @@ class ItemsApi
      * @return Array of \SquareConnect\Model\V1Category, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1CreateCategoryWithHttpInfo($location_id, $body)
+    public function createCategoryWithHttpInfo($location_id, $body)
     {
         
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1CreateCategory');
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling createCategory');
         }
         // verify the required parameter 'body' is set
         if ($body === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $body when calling v1CreateCategory');
+            throw new \InvalidArgumentException('Missing the required parameter $body when calling createCategory');
         }
   
         // parse inputs
@@ -530,7 +530,7 @@ class ItemsApi
         }
     }
     /**
-     * v1CreateDiscount
+     * createDiscount
      *
      * Creates a discount.
      *
@@ -539,15 +539,15 @@ class ItemsApi
      * @return \SquareConnect\Model\V1Discount
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1CreateDiscount($location_id, $body)
+    public function createDiscount($location_id, $body)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1CreateDiscountWithHttpInfo ($location_id, $body);
+        list($response, $statusCode, $httpHeader) = $this->createDiscountWithHttpInfo ($location_id, $body);
         return $response; 
     }
 
 
     /**
-     * v1CreateDiscountWithHttpInfo
+     * createDiscountWithHttpInfo
      *
      * Creates a discount.
      *
@@ -556,16 +556,16 @@ class ItemsApi
      * @return Array of \SquareConnect\Model\V1Discount, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1CreateDiscountWithHttpInfo($location_id, $body)
+    public function createDiscountWithHttpInfo($location_id, $body)
     {
         
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1CreateDiscount');
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling createDiscount');
         }
         // verify the required parameter 'body' is set
         if ($body === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $body when calling v1CreateDiscount');
+            throw new \InvalidArgumentException('Missing the required parameter $body when calling createDiscount');
         }
   
         // parse inputs
@@ -635,7 +635,7 @@ class ItemsApi
         }
     }
     /**
-     * v1CreateFee
+     * createFee
      *
      * Creates a fee (tax).
      *
@@ -644,15 +644,15 @@ class ItemsApi
      * @return \SquareConnect\Model\V1Fee
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1CreateFee($location_id, $body)
+    public function createFee($location_id, $body)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1CreateFeeWithHttpInfo ($location_id, $body);
+        list($response, $statusCode, $httpHeader) = $this->createFeeWithHttpInfo ($location_id, $body);
         return $response; 
     }
 
 
     /**
-     * v1CreateFeeWithHttpInfo
+     * createFeeWithHttpInfo
      *
      * Creates a fee (tax).
      *
@@ -661,16 +661,16 @@ class ItemsApi
      * @return Array of \SquareConnect\Model\V1Fee, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1CreateFeeWithHttpInfo($location_id, $body)
+    public function createFeeWithHttpInfo($location_id, $body)
     {
         
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1CreateFee');
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling createFee');
         }
         // verify the required parameter 'body' is set
         if ($body === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $body when calling v1CreateFee');
+            throw new \InvalidArgumentException('Missing the required parameter $body when calling createFee');
         }
   
         // parse inputs
@@ -740,7 +740,7 @@ class ItemsApi
         }
     }
     /**
-     * v1CreateItem
+     * createItem
      *
      * Creates an item and at least one variation for it.
      *
@@ -749,15 +749,15 @@ class ItemsApi
      * @return \SquareConnect\Model\V1Item
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1CreateItem($location_id, $body)
+    public function createItem($location_id, $body)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1CreateItemWithHttpInfo ($location_id, $body);
+        list($response, $statusCode, $httpHeader) = $this->createItemWithHttpInfo ($location_id, $body);
         return $response; 
     }
 
 
     /**
-     * v1CreateItemWithHttpInfo
+     * createItemWithHttpInfo
      *
      * Creates an item and at least one variation for it.
      *
@@ -766,16 +766,16 @@ class ItemsApi
      * @return Array of \SquareConnect\Model\V1Item, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1CreateItemWithHttpInfo($location_id, $body)
+    public function createItemWithHttpInfo($location_id, $body)
     {
         
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1CreateItem');
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling createItem');
         }
         // verify the required parameter 'body' is set
         if ($body === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $body when calling v1CreateItem');
+            throw new \InvalidArgumentException('Missing the required parameter $body when calling createItem');
         }
   
         // parse inputs
@@ -845,7 +845,7 @@ class ItemsApi
         }
     }
     /**
-     * v1CreateModifierList
+     * createModifierList
      *
      * Creates an item modifier list and at least one modifier option for it.
      *
@@ -854,15 +854,15 @@ class ItemsApi
      * @return \SquareConnect\Model\V1ModifierList
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1CreateModifierList($location_id, $body)
+    public function createModifierList($location_id, $body)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1CreateModifierListWithHttpInfo ($location_id, $body);
+        list($response, $statusCode, $httpHeader) = $this->createModifierListWithHttpInfo ($location_id, $body);
         return $response; 
     }
 
 
     /**
-     * v1CreateModifierListWithHttpInfo
+     * createModifierListWithHttpInfo
      *
      * Creates an item modifier list and at least one modifier option for it.
      *
@@ -871,16 +871,16 @@ class ItemsApi
      * @return Array of \SquareConnect\Model\V1ModifierList, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1CreateModifierListWithHttpInfo($location_id, $body)
+    public function createModifierListWithHttpInfo($location_id, $body)
     {
         
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1CreateModifierList');
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling createModifierList');
         }
         // verify the required parameter 'body' is set
         if ($body === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $body when calling v1CreateModifierList');
+            throw new \InvalidArgumentException('Missing the required parameter $body when calling createModifierList');
         }
   
         // parse inputs
@@ -950,7 +950,7 @@ class ItemsApi
         }
     }
     /**
-     * v1CreateModifierOption
+     * createModifierOption
      *
      * Creates an item modifier option and adds it to a modifier list.
      *
@@ -960,15 +960,15 @@ class ItemsApi
      * @return \SquareConnect\Model\V1ModifierOption
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1CreateModifierOption($location_id, $modifier_list_id, $body)
+    public function createModifierOption($location_id, $modifier_list_id, $body)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1CreateModifierOptionWithHttpInfo ($location_id, $modifier_list_id, $body);
+        list($response, $statusCode, $httpHeader) = $this->createModifierOptionWithHttpInfo ($location_id, $modifier_list_id, $body);
         return $response; 
     }
 
 
     /**
-     * v1CreateModifierOptionWithHttpInfo
+     * createModifierOptionWithHttpInfo
      *
      * Creates an item modifier option and adds it to a modifier list.
      *
@@ -978,20 +978,20 @@ class ItemsApi
      * @return Array of \SquareConnect\Model\V1ModifierOption, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1CreateModifierOptionWithHttpInfo($location_id, $modifier_list_id, $body)
+    public function createModifierOptionWithHttpInfo($location_id, $modifier_list_id, $body)
     {
         
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1CreateModifierOption');
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling createModifierOption');
         }
         // verify the required parameter 'modifier_list_id' is set
         if ($modifier_list_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $modifier_list_id when calling v1CreateModifierOption');
+            throw new \InvalidArgumentException('Missing the required parameter $modifier_list_id when calling createModifierOption');
         }
         // verify the required parameter 'body' is set
         if ($body === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $body when calling v1CreateModifierOption');
+            throw new \InvalidArgumentException('Missing the required parameter $body when calling createModifierOption');
         }
   
         // parse inputs
@@ -1068,7 +1068,7 @@ class ItemsApi
         }
     }
     /**
-     * v1CreatePage
+     * createPage
      *
      * Creates a Favorites page in Square Register.
      *
@@ -1077,15 +1077,15 @@ class ItemsApi
      * @return \SquareConnect\Model\V1Page
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1CreatePage($location_id, $body)
+    public function createPage($location_id, $body)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1CreatePageWithHttpInfo ($location_id, $body);
+        list($response, $statusCode, $httpHeader) = $this->createPageWithHttpInfo ($location_id, $body);
         return $response; 
     }
 
 
     /**
-     * v1CreatePageWithHttpInfo
+     * createPageWithHttpInfo
      *
      * Creates a Favorites page in Square Register.
      *
@@ -1094,16 +1094,16 @@ class ItemsApi
      * @return Array of \SquareConnect\Model\V1Page, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1CreatePageWithHttpInfo($location_id, $body)
+    public function createPageWithHttpInfo($location_id, $body)
     {
         
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1CreatePage');
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling createPage');
         }
         // verify the required parameter 'body' is set
         if ($body === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $body when calling v1CreatePage');
+            throw new \InvalidArgumentException('Missing the required parameter $body when calling createPage');
         }
   
         // parse inputs
@@ -1173,7 +1173,7 @@ class ItemsApi
         }
     }
     /**
-     * v1CreateVariation
+     * createVariation
      *
      * Creates an item variation for an existing item.
      *
@@ -1183,15 +1183,15 @@ class ItemsApi
      * @return \SquareConnect\Model\V1Variation
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1CreateVariation($location_id, $item_id, $body)
+    public function createVariation($location_id, $item_id, $body)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1CreateVariationWithHttpInfo ($location_id, $item_id, $body);
+        list($response, $statusCode, $httpHeader) = $this->createVariationWithHttpInfo ($location_id, $item_id, $body);
         return $response; 
     }
 
 
     /**
-     * v1CreateVariationWithHttpInfo
+     * createVariationWithHttpInfo
      *
      * Creates an item variation for an existing item.
      *
@@ -1201,20 +1201,20 @@ class ItemsApi
      * @return Array of \SquareConnect\Model\V1Variation, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1CreateVariationWithHttpInfo($location_id, $item_id, $body)
+    public function createVariationWithHttpInfo($location_id, $item_id, $body)
     {
         
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1CreateVariation');
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling createVariation');
         }
         // verify the required parameter 'item_id' is set
         if ($item_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $item_id when calling v1CreateVariation');
+            throw new \InvalidArgumentException('Missing the required parameter $item_id when calling createVariation');
         }
         // verify the required parameter 'body' is set
         if ($body === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $body when calling v1CreateVariation');
+            throw new \InvalidArgumentException('Missing the required parameter $body when calling createVariation');
         }
   
         // parse inputs
@@ -1291,7 +1291,7 @@ class ItemsApi
         }
     }
     /**
-     * v1DeleteCategory
+     * deleteCategory
      *
      * Deletes an existing item category.
      *
@@ -1300,15 +1300,15 @@ class ItemsApi
      * @return \SquareConnect\Model\V1Category
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1DeleteCategory($location_id, $category_id)
+    public function deleteCategory($location_id, $category_id)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1DeleteCategoryWithHttpInfo ($location_id, $category_id);
+        list($response, $statusCode, $httpHeader) = $this->deleteCategoryWithHttpInfo ($location_id, $category_id);
         return $response; 
     }
 
 
     /**
-     * v1DeleteCategoryWithHttpInfo
+     * deleteCategoryWithHttpInfo
      *
      * Deletes an existing item category.
      *
@@ -1317,16 +1317,16 @@ class ItemsApi
      * @return Array of \SquareConnect\Model\V1Category, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1DeleteCategoryWithHttpInfo($location_id, $category_id)
+    public function deleteCategoryWithHttpInfo($location_id, $category_id)
     {
         
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1DeleteCategory');
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling deleteCategory');
         }
         // verify the required parameter 'category_id' is set
         if ($category_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $category_id when calling v1DeleteCategory');
+            throw new \InvalidArgumentException('Missing the required parameter $category_id when calling deleteCategory');
         }
   
         // parse inputs
@@ -1399,7 +1399,7 @@ class ItemsApi
         }
     }
     /**
-     * v1DeleteDiscount
+     * deleteDiscount
      *
      * Deletes an existing discount.
      *
@@ -1408,15 +1408,15 @@ class ItemsApi
      * @return \SquareConnect\Model\V1Discount
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1DeleteDiscount($location_id, $discount_id)
+    public function deleteDiscount($location_id, $discount_id)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1DeleteDiscountWithHttpInfo ($location_id, $discount_id);
+        list($response, $statusCode, $httpHeader) = $this->deleteDiscountWithHttpInfo ($location_id, $discount_id);
         return $response; 
     }
 
 
     /**
-     * v1DeleteDiscountWithHttpInfo
+     * deleteDiscountWithHttpInfo
      *
      * Deletes an existing discount.
      *
@@ -1425,16 +1425,16 @@ class ItemsApi
      * @return Array of \SquareConnect\Model\V1Discount, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1DeleteDiscountWithHttpInfo($location_id, $discount_id)
+    public function deleteDiscountWithHttpInfo($location_id, $discount_id)
     {
         
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1DeleteDiscount');
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling deleteDiscount');
         }
         // verify the required parameter 'discount_id' is set
         if ($discount_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $discount_id when calling v1DeleteDiscount');
+            throw new \InvalidArgumentException('Missing the required parameter $discount_id when calling deleteDiscount');
         }
   
         // parse inputs
@@ -1507,7 +1507,7 @@ class ItemsApi
         }
     }
     /**
-     * v1DeleteFee
+     * deleteFee
      *
      * Deletes an existing fee (tax).
      *
@@ -1516,15 +1516,15 @@ class ItemsApi
      * @return \SquareConnect\Model\V1Fee
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1DeleteFee($location_id, $fee_id)
+    public function deleteFee($location_id, $fee_id)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1DeleteFeeWithHttpInfo ($location_id, $fee_id);
+        list($response, $statusCode, $httpHeader) = $this->deleteFeeWithHttpInfo ($location_id, $fee_id);
         return $response; 
     }
 
 
     /**
-     * v1DeleteFeeWithHttpInfo
+     * deleteFeeWithHttpInfo
      *
      * Deletes an existing fee (tax).
      *
@@ -1533,16 +1533,16 @@ class ItemsApi
      * @return Array of \SquareConnect\Model\V1Fee, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1DeleteFeeWithHttpInfo($location_id, $fee_id)
+    public function deleteFeeWithHttpInfo($location_id, $fee_id)
     {
         
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1DeleteFee');
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling deleteFee');
         }
         // verify the required parameter 'fee_id' is set
         if ($fee_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fee_id when calling v1DeleteFee');
+            throw new \InvalidArgumentException('Missing the required parameter $fee_id when calling deleteFee');
         }
   
         // parse inputs
@@ -1615,7 +1615,7 @@ class ItemsApi
         }
     }
     /**
-     * v1DeleteItem
+     * deleteItem
      *
      * Deletes an existing item and all item variations associated with it.
      *
@@ -1624,15 +1624,15 @@ class ItemsApi
      * @return \SquareConnect\Model\V1Item
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1DeleteItem($location_id, $item_id)
+    public function deleteItem($location_id, $item_id)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1DeleteItemWithHttpInfo ($location_id, $item_id);
+        list($response, $statusCode, $httpHeader) = $this->deleteItemWithHttpInfo ($location_id, $item_id);
         return $response; 
     }
 
 
     /**
-     * v1DeleteItemWithHttpInfo
+     * deleteItemWithHttpInfo
      *
      * Deletes an existing item and all item variations associated with it.
      *
@@ -1641,16 +1641,16 @@ class ItemsApi
      * @return Array of \SquareConnect\Model\V1Item, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1DeleteItemWithHttpInfo($location_id, $item_id)
+    public function deleteItemWithHttpInfo($location_id, $item_id)
     {
         
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1DeleteItem');
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling deleteItem');
         }
         // verify the required parameter 'item_id' is set
         if ($item_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $item_id when calling v1DeleteItem');
+            throw new \InvalidArgumentException('Missing the required parameter $item_id when calling deleteItem');
         }
   
         // parse inputs
@@ -1723,7 +1723,7 @@ class ItemsApi
         }
     }
     /**
-     * v1DeleteModifierList
+     * deleteModifierList
      *
      * Deletes an existing item modifier list and all modifier options associated with it.
      *
@@ -1732,15 +1732,15 @@ class ItemsApi
      * @return \SquareConnect\Model\V1ModifierList
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1DeleteModifierList($location_id, $modifier_list_id)
+    public function deleteModifierList($location_id, $modifier_list_id)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1DeleteModifierListWithHttpInfo ($location_id, $modifier_list_id);
+        list($response, $statusCode, $httpHeader) = $this->deleteModifierListWithHttpInfo ($location_id, $modifier_list_id);
         return $response; 
     }
 
 
     /**
-     * v1DeleteModifierListWithHttpInfo
+     * deleteModifierListWithHttpInfo
      *
      * Deletes an existing item modifier list and all modifier options associated with it.
      *
@@ -1749,16 +1749,16 @@ class ItemsApi
      * @return Array of \SquareConnect\Model\V1ModifierList, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1DeleteModifierListWithHttpInfo($location_id, $modifier_list_id)
+    public function deleteModifierListWithHttpInfo($location_id, $modifier_list_id)
     {
         
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1DeleteModifierList');
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling deleteModifierList');
         }
         // verify the required parameter 'modifier_list_id' is set
         if ($modifier_list_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $modifier_list_id when calling v1DeleteModifierList');
+            throw new \InvalidArgumentException('Missing the required parameter $modifier_list_id when calling deleteModifierList');
         }
   
         // parse inputs
@@ -1831,7 +1831,7 @@ class ItemsApi
         }
     }
     /**
-     * v1DeleteModifierOption
+     * deleteModifierOption
      *
      * Deletes an existing item modifier option from a modifier list.
      *
@@ -1841,15 +1841,15 @@ class ItemsApi
      * @return \SquareConnect\Model\V1ModifierOption
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1DeleteModifierOption($location_id, $modifier_list_id, $modifier_option_id)
+    public function deleteModifierOption($location_id, $modifier_list_id, $modifier_option_id)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1DeleteModifierOptionWithHttpInfo ($location_id, $modifier_list_id, $modifier_option_id);
+        list($response, $statusCode, $httpHeader) = $this->deleteModifierOptionWithHttpInfo ($location_id, $modifier_list_id, $modifier_option_id);
         return $response; 
     }
 
 
     /**
-     * v1DeleteModifierOptionWithHttpInfo
+     * deleteModifierOptionWithHttpInfo
      *
      * Deletes an existing item modifier option from a modifier list.
      *
@@ -1859,20 +1859,20 @@ class ItemsApi
      * @return Array of \SquareConnect\Model\V1ModifierOption, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1DeleteModifierOptionWithHttpInfo($location_id, $modifier_list_id, $modifier_option_id)
+    public function deleteModifierOptionWithHttpInfo($location_id, $modifier_list_id, $modifier_option_id)
     {
         
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1DeleteModifierOption');
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling deleteModifierOption');
         }
         // verify the required parameter 'modifier_list_id' is set
         if ($modifier_list_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $modifier_list_id when calling v1DeleteModifierOption');
+            throw new \InvalidArgumentException('Missing the required parameter $modifier_list_id when calling deleteModifierOption');
         }
         // verify the required parameter 'modifier_option_id' is set
         if ($modifier_option_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $modifier_option_id when calling v1DeleteModifierOption');
+            throw new \InvalidArgumentException('Missing the required parameter $modifier_option_id when calling deleteModifierOption');
         }
   
         // parse inputs
@@ -1952,7 +1952,7 @@ class ItemsApi
         }
     }
     /**
-     * v1DeletePage
+     * deletePage
      *
      * Deletes an existing Favorites page and all of its cells.
      *
@@ -1961,15 +1961,15 @@ class ItemsApi
      * @return \SquareConnect\Model\V1Page
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1DeletePage($location_id, $page_id)
+    public function deletePage($location_id, $page_id)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1DeletePageWithHttpInfo ($location_id, $page_id);
+        list($response, $statusCode, $httpHeader) = $this->deletePageWithHttpInfo ($location_id, $page_id);
         return $response; 
     }
 
 
     /**
-     * v1DeletePageWithHttpInfo
+     * deletePageWithHttpInfo
      *
      * Deletes an existing Favorites page and all of its cells.
      *
@@ -1978,16 +1978,16 @@ class ItemsApi
      * @return Array of \SquareConnect\Model\V1Page, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1DeletePageWithHttpInfo($location_id, $page_id)
+    public function deletePageWithHttpInfo($location_id, $page_id)
     {
         
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1DeletePage');
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling deletePage');
         }
         // verify the required parameter 'page_id' is set
         if ($page_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $page_id when calling v1DeletePage');
+            throw new \InvalidArgumentException('Missing the required parameter $page_id when calling deletePage');
         }
   
         // parse inputs
@@ -2060,7 +2060,7 @@ class ItemsApi
         }
     }
     /**
-     * v1DeletePageCell
+     * deletePageCell
      *
      * Deletes a cell from a Favorites page in Square Register.
      *
@@ -2071,15 +2071,15 @@ class ItemsApi
      * @return \SquareConnect\Model\V1Page
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1DeletePageCell($location_id, $page_id, $row = null, $column = null)
+    public function deletePageCell($location_id, $page_id, $row = null, $column = null)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1DeletePageCellWithHttpInfo ($location_id, $page_id, $row, $column);
+        list($response, $statusCode, $httpHeader) = $this->deletePageCellWithHttpInfo ($location_id, $page_id, $row, $column);
         return $response; 
     }
 
 
     /**
-     * v1DeletePageCellWithHttpInfo
+     * deletePageCellWithHttpInfo
      *
      * Deletes a cell from a Favorites page in Square Register.
      *
@@ -2090,16 +2090,16 @@ class ItemsApi
      * @return Array of \SquareConnect\Model\V1Page, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1DeletePageCellWithHttpInfo($location_id, $page_id, $row = null, $column = null)
+    public function deletePageCellWithHttpInfo($location_id, $page_id, $row = null, $column = null)
     {
         
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1DeletePageCell');
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling deletePageCell');
         }
         // verify the required parameter 'page_id' is set
         if ($page_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $page_id when calling v1DeletePageCell');
+            throw new \InvalidArgumentException('Missing the required parameter $page_id when calling deletePageCell');
         }
   
         // parse inputs
@@ -2178,7 +2178,7 @@ class ItemsApi
         }
     }
     /**
-     * v1DeleteVariation
+     * deleteVariation
      *
      * Deletes an existing item variation from an item.
      *
@@ -2188,15 +2188,15 @@ class ItemsApi
      * @return \SquareConnect\Model\V1Variation
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1DeleteVariation($location_id, $item_id, $variation_id)
+    public function deleteVariation($location_id, $item_id, $variation_id)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1DeleteVariationWithHttpInfo ($location_id, $item_id, $variation_id);
+        list($response, $statusCode, $httpHeader) = $this->deleteVariationWithHttpInfo ($location_id, $item_id, $variation_id);
         return $response; 
     }
 
 
     /**
-     * v1DeleteVariationWithHttpInfo
+     * deleteVariationWithHttpInfo
      *
      * Deletes an existing item variation from an item.
      *
@@ -2206,20 +2206,20 @@ class ItemsApi
      * @return Array of \SquareConnect\Model\V1Variation, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1DeleteVariationWithHttpInfo($location_id, $item_id, $variation_id)
+    public function deleteVariationWithHttpInfo($location_id, $item_id, $variation_id)
     {
         
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1DeleteVariation');
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling deleteVariation');
         }
         // verify the required parameter 'item_id' is set
         if ($item_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $item_id when calling v1DeleteVariation');
+            throw new \InvalidArgumentException('Missing the required parameter $item_id when calling deleteVariation');
         }
         // verify the required parameter 'variation_id' is set
         if ($variation_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $variation_id when calling v1DeleteVariation');
+            throw new \InvalidArgumentException('Missing the required parameter $variation_id when calling deleteVariation');
         }
   
         // parse inputs
@@ -2299,7 +2299,7 @@ class ItemsApi
         }
     }
     /**
-     * v1ListCategories
+     * listCategories
      *
      * Lists all of a location's item categories.
      *
@@ -2307,15 +2307,15 @@ class ItemsApi
      * @return \SquareConnect\Model\V1Category[]
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1ListCategories($location_id)
+    public function listCategories($location_id)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1ListCategoriesWithHttpInfo ($location_id);
+        list($response, $statusCode, $httpHeader) = $this->listCategoriesWithHttpInfo ($location_id);
         return $response; 
     }
 
 
     /**
-     * v1ListCategoriesWithHttpInfo
+     * listCategoriesWithHttpInfo
      *
      * Lists all of a location's item categories.
      *
@@ -2323,12 +2323,12 @@ class ItemsApi
      * @return Array of \SquareConnect\Model\V1Category[], HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1ListCategoriesWithHttpInfo($location_id)
+    public function listCategoriesWithHttpInfo($location_id)
     {
         
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1ListCategories');
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling listCategories');
         }
   
         // parse inputs
@@ -2394,7 +2394,7 @@ class ItemsApi
         }
     }
     /**
-     * v1ListDiscounts
+     * listDiscounts
      *
      * Lists all of a location's discounts.
      *
@@ -2402,15 +2402,15 @@ class ItemsApi
      * @return \SquareConnect\Model\V1Discount[]
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1ListDiscounts($location_id)
+    public function listDiscounts($location_id)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1ListDiscountsWithHttpInfo ($location_id);
+        list($response, $statusCode, $httpHeader) = $this->listDiscountsWithHttpInfo ($location_id);
         return $response; 
     }
 
 
     /**
-     * v1ListDiscountsWithHttpInfo
+     * listDiscountsWithHttpInfo
      *
      * Lists all of a location's discounts.
      *
@@ -2418,12 +2418,12 @@ class ItemsApi
      * @return Array of \SquareConnect\Model\V1Discount[], HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1ListDiscountsWithHttpInfo($location_id)
+    public function listDiscountsWithHttpInfo($location_id)
     {
         
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1ListDiscounts');
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling listDiscounts');
         }
   
         // parse inputs
@@ -2489,7 +2489,7 @@ class ItemsApi
         }
     }
     /**
-     * v1ListFees
+     * listFees
      *
      * Lists all of a location's fees (taxes).
      *
@@ -2497,15 +2497,15 @@ class ItemsApi
      * @return \SquareConnect\Model\V1Fee[]
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1ListFees($location_id)
+    public function listFees($location_id)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1ListFeesWithHttpInfo ($location_id);
+        list($response, $statusCode, $httpHeader) = $this->listFeesWithHttpInfo ($location_id);
         return $response; 
     }
 
 
     /**
-     * v1ListFeesWithHttpInfo
+     * listFeesWithHttpInfo
      *
      * Lists all of a location's fees (taxes).
      *
@@ -2513,12 +2513,12 @@ class ItemsApi
      * @return Array of \SquareConnect\Model\V1Fee[], HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1ListFeesWithHttpInfo($location_id)
+    public function listFeesWithHttpInfo($location_id)
     {
         
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1ListFees');
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling listFees');
         }
   
         // parse inputs
@@ -2584,7 +2584,7 @@ class ItemsApi
         }
     }
     /**
-     * v1ListInventory
+     * listInventory
      *
      * Provides inventory information for all of a merchant's inventory-enabled item variations.
      *
@@ -2593,15 +2593,15 @@ class ItemsApi
      * @return \SquareConnect\Model\V1InventoryEntry[]
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1ListInventory($location_id, $limit = null)
+    public function listInventory($location_id, $limit = null)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1ListInventoryWithHttpInfo ($location_id, $limit);
+        list($response, $statusCode, $httpHeader) = $this->listInventoryWithHttpInfo ($location_id, $limit);
         return $response; 
     }
 
 
     /**
-     * v1ListInventoryWithHttpInfo
+     * listInventoryWithHttpInfo
      *
      * Provides inventory information for all of a merchant's inventory-enabled item variations.
      *
@@ -2610,12 +2610,12 @@ class ItemsApi
      * @return Array of \SquareConnect\Model\V1InventoryEntry[], HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1ListInventoryWithHttpInfo($location_id, $limit = null)
+    public function listInventoryWithHttpInfo($location_id, $limit = null)
     {
         
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1ListInventory');
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling listInventory');
         }
   
         // parse inputs
@@ -2684,7 +2684,7 @@ class ItemsApi
         }
     }
     /**
-     * v1ListItems
+     * listItems
      *
      * Provides summary information for all of a location's items.
      *
@@ -2692,15 +2692,15 @@ class ItemsApi
      * @return \SquareConnect\Model\V1Item[]
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1ListItems($location_id)
+    public function listItems($location_id)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1ListItemsWithHttpInfo ($location_id);
+        list($response, $statusCode, $httpHeader) = $this->listItemsWithHttpInfo ($location_id);
         return $response; 
     }
 
 
     /**
-     * v1ListItemsWithHttpInfo
+     * listItemsWithHttpInfo
      *
      * Provides summary information for all of a location's items.
      *
@@ -2708,12 +2708,12 @@ class ItemsApi
      * @return Array of \SquareConnect\Model\V1Item[], HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1ListItemsWithHttpInfo($location_id)
+    public function listItemsWithHttpInfo($location_id)
     {
         
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1ListItems');
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling listItems');
         }
   
         // parse inputs
@@ -2779,7 +2779,7 @@ class ItemsApi
         }
     }
     /**
-     * v1ListModifierLists
+     * listModifierLists
      *
      * Lists all of a location's modifier lists.
      *
@@ -2787,15 +2787,15 @@ class ItemsApi
      * @return \SquareConnect\Model\V1ModifierList[]
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1ListModifierLists($location_id)
+    public function listModifierLists($location_id)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1ListModifierListsWithHttpInfo ($location_id);
+        list($response, $statusCode, $httpHeader) = $this->listModifierListsWithHttpInfo ($location_id);
         return $response; 
     }
 
 
     /**
-     * v1ListModifierListsWithHttpInfo
+     * listModifierListsWithHttpInfo
      *
      * Lists all of a location's modifier lists.
      *
@@ -2803,12 +2803,12 @@ class ItemsApi
      * @return Array of \SquareConnect\Model\V1ModifierList[], HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1ListModifierListsWithHttpInfo($location_id)
+    public function listModifierListsWithHttpInfo($location_id)
     {
         
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1ListModifierLists');
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling listModifierLists');
         }
   
         // parse inputs
@@ -2874,7 +2874,7 @@ class ItemsApi
         }
     }
     /**
-     * v1ListPages
+     * listPages
      *
      * Lists all of a location's Favorites pages in Square Register.
      *
@@ -2882,15 +2882,15 @@ class ItemsApi
      * @return \SquareConnect\Model\V1Page[]
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1ListPages($location_id)
+    public function listPages($location_id)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1ListPagesWithHttpInfo ($location_id);
+        list($response, $statusCode, $httpHeader) = $this->listPagesWithHttpInfo ($location_id);
         return $response; 
     }
 
 
     /**
-     * v1ListPagesWithHttpInfo
+     * listPagesWithHttpInfo
      *
      * Lists all of a location's Favorites pages in Square Register.
      *
@@ -2898,12 +2898,12 @@ class ItemsApi
      * @return Array of \SquareConnect\Model\V1Page[], HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1ListPagesWithHttpInfo($location_id)
+    public function listPagesWithHttpInfo($location_id)
     {
         
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1ListPages');
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling listPages');
         }
   
         // parse inputs
@@ -2969,7 +2969,7 @@ class ItemsApi
         }
     }
     /**
-     * v1RemoveFee
+     * removeFee
      *
      * Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register.
      *
@@ -2979,15 +2979,15 @@ class ItemsApi
      * @return \SquareConnect\Model\V1Item
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1RemoveFee($location_id, $item_id, $fee_id)
+    public function removeFee($location_id, $item_id, $fee_id)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1RemoveFeeWithHttpInfo ($location_id, $item_id, $fee_id);
+        list($response, $statusCode, $httpHeader) = $this->removeFeeWithHttpInfo ($location_id, $item_id, $fee_id);
         return $response; 
     }
 
 
     /**
-     * v1RemoveFeeWithHttpInfo
+     * removeFeeWithHttpInfo
      *
      * Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register.
      *
@@ -2997,20 +2997,20 @@ class ItemsApi
      * @return Array of \SquareConnect\Model\V1Item, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1RemoveFeeWithHttpInfo($location_id, $item_id, $fee_id)
+    public function removeFeeWithHttpInfo($location_id, $item_id, $fee_id)
     {
         
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1RemoveFee');
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling removeFee');
         }
         // verify the required parameter 'item_id' is set
         if ($item_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $item_id when calling v1RemoveFee');
+            throw new \InvalidArgumentException('Missing the required parameter $item_id when calling removeFee');
         }
         // verify the required parameter 'fee_id' is set
         if ($fee_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fee_id when calling v1RemoveFee');
+            throw new \InvalidArgumentException('Missing the required parameter $fee_id when calling removeFee');
         }
   
         // parse inputs
@@ -3090,7 +3090,7 @@ class ItemsApi
         }
     }
     /**
-     * v1RemoveModifierList
+     * removeModifierList
      *
      * Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item.
      *
@@ -3100,15 +3100,15 @@ class ItemsApi
      * @return \SquareConnect\Model\V1Item
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1RemoveModifierList($location_id, $modifier_list_id, $item_id)
+    public function removeModifierList($location_id, $modifier_list_id, $item_id)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1RemoveModifierListWithHttpInfo ($location_id, $modifier_list_id, $item_id);
+        list($response, $statusCode, $httpHeader) = $this->removeModifierListWithHttpInfo ($location_id, $modifier_list_id, $item_id);
         return $response; 
     }
 
 
     /**
-     * v1RemoveModifierListWithHttpInfo
+     * removeModifierListWithHttpInfo
      *
      * Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item.
      *
@@ -3118,20 +3118,20 @@ class ItemsApi
      * @return Array of \SquareConnect\Model\V1Item, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1RemoveModifierListWithHttpInfo($location_id, $modifier_list_id, $item_id)
+    public function removeModifierListWithHttpInfo($location_id, $modifier_list_id, $item_id)
     {
         
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1RemoveModifierList');
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling removeModifierList');
         }
         // verify the required parameter 'modifier_list_id' is set
         if ($modifier_list_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $modifier_list_id when calling v1RemoveModifierList');
+            throw new \InvalidArgumentException('Missing the required parameter $modifier_list_id when calling removeModifierList');
         }
         // verify the required parameter 'item_id' is set
         if ($item_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $item_id when calling v1RemoveModifierList');
+            throw new \InvalidArgumentException('Missing the required parameter $item_id when calling removeModifierList');
         }
   
         // parse inputs
@@ -3211,7 +3211,7 @@ class ItemsApi
         }
     }
     /**
-     * v1RetrieveItem
+     * retrieveItem
      *
      * Provides the details for a single item, including associated modifier lists and fees.
      *
@@ -3220,15 +3220,15 @@ class ItemsApi
      * @return \SquareConnect\Model\V1Item
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1RetrieveItem($location_id, $item_id)
+    public function retrieveItem($location_id, $item_id)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1RetrieveItemWithHttpInfo ($location_id, $item_id);
+        list($response, $statusCode, $httpHeader) = $this->retrieveItemWithHttpInfo ($location_id, $item_id);
         return $response; 
     }
 
 
     /**
-     * v1RetrieveItemWithHttpInfo
+     * retrieveItemWithHttpInfo
      *
      * Provides the details for a single item, including associated modifier lists and fees.
      *
@@ -3237,16 +3237,16 @@ class ItemsApi
      * @return Array of \SquareConnect\Model\V1Item, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1RetrieveItemWithHttpInfo($location_id, $item_id)
+    public function retrieveItemWithHttpInfo($location_id, $item_id)
     {
         
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1RetrieveItem');
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling retrieveItem');
         }
         // verify the required parameter 'item_id' is set
         if ($item_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $item_id when calling v1RetrieveItem');
+            throw new \InvalidArgumentException('Missing the required parameter $item_id when calling retrieveItem');
         }
   
         // parse inputs
@@ -3319,7 +3319,7 @@ class ItemsApi
         }
     }
     /**
-     * v1RetrieveModifierList
+     * retrieveModifierList
      *
      * Provides the details for a single modifier list.
      *
@@ -3328,15 +3328,15 @@ class ItemsApi
      * @return \SquareConnect\Model\V1ModifierList
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1RetrieveModifierList($location_id, $modifier_list_id)
+    public function retrieveModifierList($location_id, $modifier_list_id)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1RetrieveModifierListWithHttpInfo ($location_id, $modifier_list_id);
+        list($response, $statusCode, $httpHeader) = $this->retrieveModifierListWithHttpInfo ($location_id, $modifier_list_id);
         return $response; 
     }
 
 
     /**
-     * v1RetrieveModifierListWithHttpInfo
+     * retrieveModifierListWithHttpInfo
      *
      * Provides the details for a single modifier list.
      *
@@ -3345,16 +3345,16 @@ class ItemsApi
      * @return Array of \SquareConnect\Model\V1ModifierList, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1RetrieveModifierListWithHttpInfo($location_id, $modifier_list_id)
+    public function retrieveModifierListWithHttpInfo($location_id, $modifier_list_id)
     {
         
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1RetrieveModifierList');
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling retrieveModifierList');
         }
         // verify the required parameter 'modifier_list_id' is set
         if ($modifier_list_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $modifier_list_id when calling v1RetrieveModifierList');
+            throw new \InvalidArgumentException('Missing the required parameter $modifier_list_id when calling retrieveModifierList');
         }
   
         // parse inputs
@@ -3427,7 +3427,7 @@ class ItemsApi
         }
     }
     /**
-     * v1UpdateCategory
+     * updateCategory
      *
      * Modifies the details of an existing item category.
      *
@@ -3437,15 +3437,15 @@ class ItemsApi
      * @return \SquareConnect\Model\V1Category
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1UpdateCategory($location_id, $category_id, $body)
+    public function updateCategory($location_id, $category_id, $body)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1UpdateCategoryWithHttpInfo ($location_id, $category_id, $body);
+        list($response, $statusCode, $httpHeader) = $this->updateCategoryWithHttpInfo ($location_id, $category_id, $body);
         return $response; 
     }
 
 
     /**
-     * v1UpdateCategoryWithHttpInfo
+     * updateCategoryWithHttpInfo
      *
      * Modifies the details of an existing item category.
      *
@@ -3455,20 +3455,20 @@ class ItemsApi
      * @return Array of \SquareConnect\Model\V1Category, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1UpdateCategoryWithHttpInfo($location_id, $category_id, $body)
+    public function updateCategoryWithHttpInfo($location_id, $category_id, $body)
     {
         
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1UpdateCategory');
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling updateCategory');
         }
         // verify the required parameter 'category_id' is set
         if ($category_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $category_id when calling v1UpdateCategory');
+            throw new \InvalidArgumentException('Missing the required parameter $category_id when calling updateCategory');
         }
         // verify the required parameter 'body' is set
         if ($body === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $body when calling v1UpdateCategory');
+            throw new \InvalidArgumentException('Missing the required parameter $body when calling updateCategory');
         }
   
         // parse inputs
@@ -3545,7 +3545,7 @@ class ItemsApi
         }
     }
     /**
-     * v1UpdateDiscount
+     * updateDiscount
      *
      * Modifies the details of an existing discount.
      *
@@ -3555,15 +3555,15 @@ class ItemsApi
      * @return \SquareConnect\Model\V1Discount
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1UpdateDiscount($location_id, $discount_id, $body)
+    public function updateDiscount($location_id, $discount_id, $body)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1UpdateDiscountWithHttpInfo ($location_id, $discount_id, $body);
+        list($response, $statusCode, $httpHeader) = $this->updateDiscountWithHttpInfo ($location_id, $discount_id, $body);
         return $response; 
     }
 
 
     /**
-     * v1UpdateDiscountWithHttpInfo
+     * updateDiscountWithHttpInfo
      *
      * Modifies the details of an existing discount.
      *
@@ -3573,20 +3573,20 @@ class ItemsApi
      * @return Array of \SquareConnect\Model\V1Discount, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1UpdateDiscountWithHttpInfo($location_id, $discount_id, $body)
+    public function updateDiscountWithHttpInfo($location_id, $discount_id, $body)
     {
         
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1UpdateDiscount');
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling updateDiscount');
         }
         // verify the required parameter 'discount_id' is set
         if ($discount_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $discount_id when calling v1UpdateDiscount');
+            throw new \InvalidArgumentException('Missing the required parameter $discount_id when calling updateDiscount');
         }
         // verify the required parameter 'body' is set
         if ($body === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $body when calling v1UpdateDiscount');
+            throw new \InvalidArgumentException('Missing the required parameter $body when calling updateDiscount');
         }
   
         // parse inputs
@@ -3663,7 +3663,7 @@ class ItemsApi
         }
     }
     /**
-     * v1UpdateFee
+     * updateFee
      *
      * Modifies the details of an existing fee (tax).
      *
@@ -3673,15 +3673,15 @@ class ItemsApi
      * @return \SquareConnect\Model\V1Fee
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1UpdateFee($location_id, $fee_id, $body)
+    public function updateFee($location_id, $fee_id, $body)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1UpdateFeeWithHttpInfo ($location_id, $fee_id, $body);
+        list($response, $statusCode, $httpHeader) = $this->updateFeeWithHttpInfo ($location_id, $fee_id, $body);
         return $response; 
     }
 
 
     /**
-     * v1UpdateFeeWithHttpInfo
+     * updateFeeWithHttpInfo
      *
      * Modifies the details of an existing fee (tax).
      *
@@ -3691,20 +3691,20 @@ class ItemsApi
      * @return Array of \SquareConnect\Model\V1Fee, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1UpdateFeeWithHttpInfo($location_id, $fee_id, $body)
+    public function updateFeeWithHttpInfo($location_id, $fee_id, $body)
     {
         
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1UpdateFee');
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling updateFee');
         }
         // verify the required parameter 'fee_id' is set
         if ($fee_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fee_id when calling v1UpdateFee');
+            throw new \InvalidArgumentException('Missing the required parameter $fee_id when calling updateFee');
         }
         // verify the required parameter 'body' is set
         if ($body === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $body when calling v1UpdateFee');
+            throw new \InvalidArgumentException('Missing the required parameter $body when calling updateFee');
         }
   
         // parse inputs
@@ -3781,7 +3781,7 @@ class ItemsApi
         }
     }
     /**
-     * v1UpdateItem
+     * updateItem
      *
      * Modifies the core details of an existing item.
      *
@@ -3791,15 +3791,15 @@ class ItemsApi
      * @return \SquareConnect\Model\V1Item
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1UpdateItem($location_id, $item_id, $body)
+    public function updateItem($location_id, $item_id, $body)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1UpdateItemWithHttpInfo ($location_id, $item_id, $body);
+        list($response, $statusCode, $httpHeader) = $this->updateItemWithHttpInfo ($location_id, $item_id, $body);
         return $response; 
     }
 
 
     /**
-     * v1UpdateItemWithHttpInfo
+     * updateItemWithHttpInfo
      *
      * Modifies the core details of an existing item.
      *
@@ -3809,20 +3809,20 @@ class ItemsApi
      * @return Array of \SquareConnect\Model\V1Item, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1UpdateItemWithHttpInfo($location_id, $item_id, $body)
+    public function updateItemWithHttpInfo($location_id, $item_id, $body)
     {
         
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1UpdateItem');
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling updateItem');
         }
         // verify the required parameter 'item_id' is set
         if ($item_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $item_id when calling v1UpdateItem');
+            throw new \InvalidArgumentException('Missing the required parameter $item_id when calling updateItem');
         }
         // verify the required parameter 'body' is set
         if ($body === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $body when calling v1UpdateItem');
+            throw new \InvalidArgumentException('Missing the required parameter $body when calling updateItem');
         }
   
         // parse inputs
@@ -3899,7 +3899,7 @@ class ItemsApi
         }
     }
     /**
-     * v1UpdateModifierList
+     * updateModifierList
      *
      * Modifies the details of an existing item modifier list.
      *
@@ -3909,15 +3909,15 @@ class ItemsApi
      * @return \SquareConnect\Model\V1ModifierList
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1UpdateModifierList($location_id, $modifier_list_id, $body)
+    public function updateModifierList($location_id, $modifier_list_id, $body)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1UpdateModifierListWithHttpInfo ($location_id, $modifier_list_id, $body);
+        list($response, $statusCode, $httpHeader) = $this->updateModifierListWithHttpInfo ($location_id, $modifier_list_id, $body);
         return $response; 
     }
 
 
     /**
-     * v1UpdateModifierListWithHttpInfo
+     * updateModifierListWithHttpInfo
      *
      * Modifies the details of an existing item modifier list.
      *
@@ -3927,20 +3927,20 @@ class ItemsApi
      * @return Array of \SquareConnect\Model\V1ModifierList, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1UpdateModifierListWithHttpInfo($location_id, $modifier_list_id, $body)
+    public function updateModifierListWithHttpInfo($location_id, $modifier_list_id, $body)
     {
         
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1UpdateModifierList');
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling updateModifierList');
         }
         // verify the required parameter 'modifier_list_id' is set
         if ($modifier_list_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $modifier_list_id when calling v1UpdateModifierList');
+            throw new \InvalidArgumentException('Missing the required parameter $modifier_list_id when calling updateModifierList');
         }
         // verify the required parameter 'body' is set
         if ($body === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $body when calling v1UpdateModifierList');
+            throw new \InvalidArgumentException('Missing the required parameter $body when calling updateModifierList');
         }
   
         // parse inputs
@@ -4017,7 +4017,7 @@ class ItemsApi
         }
     }
     /**
-     * v1UpdateModifierOption
+     * updateModifierOption
      *
      * Modifies the details of an existing item modifier option.
      *
@@ -4028,15 +4028,15 @@ class ItemsApi
      * @return \SquareConnect\Model\V1ModifierOption
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1UpdateModifierOption($location_id, $modifier_list_id, $modifier_option_id, $body)
+    public function updateModifierOption($location_id, $modifier_list_id, $modifier_option_id, $body)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1UpdateModifierOptionWithHttpInfo ($location_id, $modifier_list_id, $modifier_option_id, $body);
+        list($response, $statusCode, $httpHeader) = $this->updateModifierOptionWithHttpInfo ($location_id, $modifier_list_id, $modifier_option_id, $body);
         return $response; 
     }
 
 
     /**
-     * v1UpdateModifierOptionWithHttpInfo
+     * updateModifierOptionWithHttpInfo
      *
      * Modifies the details of an existing item modifier option.
      *
@@ -4047,24 +4047,24 @@ class ItemsApi
      * @return Array of \SquareConnect\Model\V1ModifierOption, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1UpdateModifierOptionWithHttpInfo($location_id, $modifier_list_id, $modifier_option_id, $body)
+    public function updateModifierOptionWithHttpInfo($location_id, $modifier_list_id, $modifier_option_id, $body)
     {
         
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1UpdateModifierOption');
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling updateModifierOption');
         }
         // verify the required parameter 'modifier_list_id' is set
         if ($modifier_list_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $modifier_list_id when calling v1UpdateModifierOption');
+            throw new \InvalidArgumentException('Missing the required parameter $modifier_list_id when calling updateModifierOption');
         }
         // verify the required parameter 'modifier_option_id' is set
         if ($modifier_option_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $modifier_option_id when calling v1UpdateModifierOption');
+            throw new \InvalidArgumentException('Missing the required parameter $modifier_option_id when calling updateModifierOption');
         }
         // verify the required parameter 'body' is set
         if ($body === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $body when calling v1UpdateModifierOption');
+            throw new \InvalidArgumentException('Missing the required parameter $body when calling updateModifierOption');
         }
   
         // parse inputs
@@ -4148,7 +4148,7 @@ class ItemsApi
         }
     }
     /**
-     * v1UpdatePage
+     * updatePage
      *
      * Modifies the details of a Favorites page in Square Register.
      *
@@ -4158,15 +4158,15 @@ class ItemsApi
      * @return \SquareConnect\Model\V1Page
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1UpdatePage($location_id, $page_id, $body)
+    public function updatePage($location_id, $page_id, $body)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1UpdatePageWithHttpInfo ($location_id, $page_id, $body);
+        list($response, $statusCode, $httpHeader) = $this->updatePageWithHttpInfo ($location_id, $page_id, $body);
         return $response; 
     }
 
 
     /**
-     * v1UpdatePageWithHttpInfo
+     * updatePageWithHttpInfo
      *
      * Modifies the details of a Favorites page in Square Register.
      *
@@ -4176,20 +4176,20 @@ class ItemsApi
      * @return Array of \SquareConnect\Model\V1Page, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1UpdatePageWithHttpInfo($location_id, $page_id, $body)
+    public function updatePageWithHttpInfo($location_id, $page_id, $body)
     {
         
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1UpdatePage');
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling updatePage');
         }
         // verify the required parameter 'page_id' is set
         if ($page_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $page_id when calling v1UpdatePage');
+            throw new \InvalidArgumentException('Missing the required parameter $page_id when calling updatePage');
         }
         // verify the required parameter 'body' is set
         if ($body === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $body when calling v1UpdatePage');
+            throw new \InvalidArgumentException('Missing the required parameter $body when calling updatePage');
         }
   
         // parse inputs
@@ -4266,7 +4266,7 @@ class ItemsApi
         }
     }
     /**
-     * v1UpdatePageCell
+     * updatePageCell
      *
      * Modifies a cell of a Favorites page in Square Register.
      *
@@ -4276,15 +4276,15 @@ class ItemsApi
      * @return \SquareConnect\Model\V1Page
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1UpdatePageCell($location_id, $page_id, $body)
+    public function updatePageCell($location_id, $page_id, $body)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1UpdatePageCellWithHttpInfo ($location_id, $page_id, $body);
+        list($response, $statusCode, $httpHeader) = $this->updatePageCellWithHttpInfo ($location_id, $page_id, $body);
         return $response; 
     }
 
 
     /**
-     * v1UpdatePageCellWithHttpInfo
+     * updatePageCellWithHttpInfo
      *
      * Modifies a cell of a Favorites page in Square Register.
      *
@@ -4294,20 +4294,20 @@ class ItemsApi
      * @return Array of \SquareConnect\Model\V1Page, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1UpdatePageCellWithHttpInfo($location_id, $page_id, $body)
+    public function updatePageCellWithHttpInfo($location_id, $page_id, $body)
     {
         
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1UpdatePageCell');
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling updatePageCell');
         }
         // verify the required parameter 'page_id' is set
         if ($page_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $page_id when calling v1UpdatePageCell');
+            throw new \InvalidArgumentException('Missing the required parameter $page_id when calling updatePageCell');
         }
         // verify the required parameter 'body' is set
         if ($body === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $body when calling v1UpdatePageCell');
+            throw new \InvalidArgumentException('Missing the required parameter $body when calling updatePageCell');
         }
   
         // parse inputs
@@ -4384,7 +4384,7 @@ class ItemsApi
         }
     }
     /**
-     * v1UpdateVariation
+     * updateVariation
      *
      * Modifies the details of an existing item variation.
      *
@@ -4395,15 +4395,15 @@ class ItemsApi
      * @return \SquareConnect\Model\V1Variation
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1UpdateVariation($location_id, $item_id, $variation_id, $body)
+    public function updateVariation($location_id, $item_id, $variation_id, $body)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1UpdateVariationWithHttpInfo ($location_id, $item_id, $variation_id, $body);
+        list($response, $statusCode, $httpHeader) = $this->updateVariationWithHttpInfo ($location_id, $item_id, $variation_id, $body);
         return $response; 
     }
 
 
     /**
-     * v1UpdateVariationWithHttpInfo
+     * updateVariationWithHttpInfo
      *
      * Modifies the details of an existing item variation.
      *
@@ -4414,24 +4414,24 @@ class ItemsApi
      * @return Array of \SquareConnect\Model\V1Variation, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1UpdateVariationWithHttpInfo($location_id, $item_id, $variation_id, $body)
+    public function updateVariationWithHttpInfo($location_id, $item_id, $variation_id, $body)
     {
         
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1UpdateVariation');
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling updateVariation');
         }
         // verify the required parameter 'item_id' is set
         if ($item_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $item_id when calling v1UpdateVariation');
+            throw new \InvalidArgumentException('Missing the required parameter $item_id when calling updateVariation');
         }
         // verify the required parameter 'variation_id' is set
         if ($variation_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $variation_id when calling v1UpdateVariation');
+            throw new \InvalidArgumentException('Missing the required parameter $variation_id when calling updateVariation');
         }
         // verify the required parameter 'body' is set
         if ($body === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $body when calling v1UpdateVariation');
+            throw new \InvalidArgumentException('Missing the required parameter $body when calling updateVariation');
         }
   
         // parse inputs

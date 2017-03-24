@@ -13,7 +13,7 @@ use \SquareConnect\ApiException;
 use \SquareConnect\ObjectSerializer;
 
 /**
- * EmployeesApi Class Doc Comment
+ * V1EmployeesApi Class Doc Comment
  *
  * @category Class
  * @package  SquareConnect
@@ -21,7 +21,7 @@ use \SquareConnect\ObjectSerializer;
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://squareup.com/developers
  */
-class EmployeesApi
+class V1EmployeesApi
 {
 
     /**
@@ -56,7 +56,7 @@ class EmployeesApi
     /**
      * Set the API client
      * @param \SquareConnect\ApiClient $apiClient set the API client
-     * @return EmployeesApi
+     * @return V1EmployeesApi
      */
     public function setApiClient(ApiClient $apiClient)
     {
@@ -65,7 +65,7 @@ class EmployeesApi
     }
   
     /**
-     * v1CreateEmployee
+     * createEmployee
      *
      * Creates an employee for a business.
      *
@@ -73,15 +73,15 @@ class EmployeesApi
      * @return \SquareConnect\Model\V1Employee
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1CreateEmployee($body)
+    public function createEmployee($body)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1CreateEmployeeWithHttpInfo ($body);
+        list($response, $statusCode, $httpHeader) = $this->createEmployeeWithHttpInfo ($body);
         return $response; 
     }
 
 
     /**
-     * v1CreateEmployeeWithHttpInfo
+     * createEmployeeWithHttpInfo
      *
      * Creates an employee for a business.
      *
@@ -89,12 +89,12 @@ class EmployeesApi
      * @return Array of \SquareConnect\Model\V1Employee, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1CreateEmployeeWithHttpInfo($body)
+    public function createEmployeeWithHttpInfo($body)
     {
         
         // verify the required parameter 'body' is set
         if ($body === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $body when calling v1CreateEmployee');
+            throw new \InvalidArgumentException('Missing the required parameter $body when calling createEmployee');
         }
   
         // parse inputs
@@ -157,7 +157,7 @@ class EmployeesApi
         }
     }
     /**
-     * v1CreateEmployeeRole
+     * createEmployeeRole
      *
      * Creates an employee role you can then assign to employees.
      *
@@ -165,15 +165,15 @@ class EmployeesApi
      * @return \SquareConnect\Model\V1EmployeeRole
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1CreateEmployeeRole($employee_role)
+    public function createEmployeeRole($employee_role)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1CreateEmployeeRoleWithHttpInfo ($employee_role);
+        list($response, $statusCode, $httpHeader) = $this->createEmployeeRoleWithHttpInfo ($employee_role);
         return $response; 
     }
 
 
     /**
-     * v1CreateEmployeeRoleWithHttpInfo
+     * createEmployeeRoleWithHttpInfo
      *
      * Creates an employee role you can then assign to employees.
      *
@@ -181,12 +181,12 @@ class EmployeesApi
      * @return Array of \SquareConnect\Model\V1EmployeeRole, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1CreateEmployeeRoleWithHttpInfo($employee_role)
+    public function createEmployeeRoleWithHttpInfo($employee_role)
     {
         
         // verify the required parameter 'employee_role' is set
         if ($employee_role === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $employee_role when calling v1CreateEmployeeRole');
+            throw new \InvalidArgumentException('Missing the required parameter $employee_role when calling createEmployeeRole');
         }
   
         // parse inputs
@@ -249,7 +249,7 @@ class EmployeesApi
         }
     }
     /**
-     * v1CreateTimecard
+     * createTimecard
      *
      * Creates a timecard for an employee. Each timecard corresponds to a single shift.
      *
@@ -257,15 +257,15 @@ class EmployeesApi
      * @return \SquareConnect\Model\V1Timecard
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1CreateTimecard($body)
+    public function createTimecard($body)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1CreateTimecardWithHttpInfo ($body);
+        list($response, $statusCode, $httpHeader) = $this->createTimecardWithHttpInfo ($body);
         return $response; 
     }
 
 
     /**
-     * v1CreateTimecardWithHttpInfo
+     * createTimecardWithHttpInfo
      *
      * Creates a timecard for an employee. Each timecard corresponds to a single shift.
      *
@@ -273,12 +273,12 @@ class EmployeesApi
      * @return Array of \SquareConnect\Model\V1Timecard, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1CreateTimecardWithHttpInfo($body)
+    public function createTimecardWithHttpInfo($body)
     {
         
         // verify the required parameter 'body' is set
         if ($body === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $body when calling v1CreateTimecard');
+            throw new \InvalidArgumentException('Missing the required parameter $body when calling createTimecard');
         }
   
         // parse inputs
@@ -341,7 +341,7 @@ class EmployeesApi
         }
     }
     /**
-     * v1DeleteTimecard
+     * deleteTimecard
      *
      * Deletes a timecard. Deleted timecards are still accessible from Connect API endpoints, but the value of their deleted field is set to true. See Handling deleted timecards for more information.
      *
@@ -349,15 +349,15 @@ class EmployeesApi
      * @return object
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1DeleteTimecard($timecard_id)
+    public function deleteTimecard($timecard_id)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1DeleteTimecardWithHttpInfo ($timecard_id);
+        list($response, $statusCode, $httpHeader) = $this->deleteTimecardWithHttpInfo ($timecard_id);
         return $response; 
     }
 
 
     /**
-     * v1DeleteTimecardWithHttpInfo
+     * deleteTimecardWithHttpInfo
      *
      * Deletes a timecard. Deleted timecards are still accessible from Connect API endpoints, but the value of their deleted field is set to true. See Handling deleted timecards for more information.
      *
@@ -365,12 +365,12 @@ class EmployeesApi
      * @return Array of object, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1DeleteTimecardWithHttpInfo($timecard_id)
+    public function deleteTimecardWithHttpInfo($timecard_id)
     {
         
         // verify the required parameter 'timecard_id' is set
         if ($timecard_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $timecard_id when calling v1DeleteTimecard');
+            throw new \InvalidArgumentException('Missing the required parameter $timecard_id when calling deleteTimecard');
         }
   
         // parse inputs
@@ -436,7 +436,7 @@ class EmployeesApi
         }
     }
     /**
-     * v1ListCashDrawerShifts
+     * listCashDrawerShifts
      *
      * Provides the details for all of a location's cash drawer shifts during a date range. The date range you specify cannot exceed 90 days.
      *
@@ -447,15 +447,15 @@ class EmployeesApi
      * @return \SquareConnect\Model\V1CashDrawerShift[]
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1ListCashDrawerShifts($location_id, $order = null, $begin_time = null, $end_time = null)
+    public function listCashDrawerShifts($location_id, $order = null, $begin_time = null, $end_time = null)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1ListCashDrawerShiftsWithHttpInfo ($location_id, $order, $begin_time, $end_time);
+        list($response, $statusCode, $httpHeader) = $this->listCashDrawerShiftsWithHttpInfo ($location_id, $order, $begin_time, $end_time);
         return $response; 
     }
 
 
     /**
-     * v1ListCashDrawerShiftsWithHttpInfo
+     * listCashDrawerShiftsWithHttpInfo
      *
      * Provides the details for all of a location's cash drawer shifts during a date range. The date range you specify cannot exceed 90 days.
      *
@@ -466,12 +466,12 @@ class EmployeesApi
      * @return Array of \SquareConnect\Model\V1CashDrawerShift[], HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1ListCashDrawerShiftsWithHttpInfo($location_id, $order = null, $begin_time = null, $end_time = null)
+    public function listCashDrawerShiftsWithHttpInfo($location_id, $order = null, $begin_time = null, $end_time = null)
     {
         
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1ListCashDrawerShifts');
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling listCashDrawerShifts');
         }
   
         // parse inputs
@@ -546,7 +546,7 @@ class EmployeesApi
         }
     }
     /**
-     * v1ListEmployeeRoles
+     * listEmployeeRoles
      *
      * Provides summary information for all of a business's employee roles.
      *
@@ -556,15 +556,15 @@ class EmployeesApi
      * @return \SquareConnect\Model\V1EmployeeRole[]
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1ListEmployeeRoles($order = null, $limit = null, $cursor = null)
+    public function listEmployeeRoles($order = null, $limit = null, $cursor = null)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1ListEmployeeRolesWithHttpInfo ($order, $limit, $cursor);
+        list($response, $statusCode, $httpHeader) = $this->listEmployeeRolesWithHttpInfo ($order, $limit, $cursor);
         return $response; 
     }
 
 
     /**
-     * v1ListEmployeeRolesWithHttpInfo
+     * listEmployeeRolesWithHttpInfo
      *
      * Provides summary information for all of a business's employee roles.
      *
@@ -574,7 +574,7 @@ class EmployeesApi
      * @return Array of \SquareConnect\Model\V1EmployeeRole[], HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1ListEmployeeRolesWithHttpInfo($order = null, $limit = null, $cursor = null)
+    public function listEmployeeRolesWithHttpInfo($order = null, $limit = null, $cursor = null)
     {
         
   
@@ -643,7 +643,7 @@ class EmployeesApi
         }
     }
     /**
-     * v1ListEmployees
+     * listEmployees
      *
      * Provides summary information for all of a business's employees.
      *
@@ -658,15 +658,15 @@ class EmployeesApi
      * @return \SquareConnect\Model\V1Employee[]
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1ListEmployees($order = null, $begin_updated_at = null, $end_updated_at = null, $begin_created_at = null, $end_created_at = null, $status = null, $external_id = null, $limit = null)
+    public function listEmployees($order = null, $begin_updated_at = null, $end_updated_at = null, $begin_created_at = null, $end_created_at = null, $status = null, $external_id = null, $limit = null)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1ListEmployeesWithHttpInfo ($order, $begin_updated_at, $end_updated_at, $begin_created_at, $end_created_at, $status, $external_id, $limit);
+        list($response, $statusCode, $httpHeader) = $this->listEmployeesWithHttpInfo ($order, $begin_updated_at, $end_updated_at, $begin_created_at, $end_created_at, $status, $external_id, $limit);
         return $response; 
     }
 
 
     /**
-     * v1ListEmployeesWithHttpInfo
+     * listEmployeesWithHttpInfo
      *
      * Provides summary information for all of a business's employees.
      *
@@ -681,7 +681,7 @@ class EmployeesApi
      * @return Array of \SquareConnect\Model\V1Employee[], HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1ListEmployeesWithHttpInfo($order = null, $begin_updated_at = null, $end_updated_at = null, $begin_created_at = null, $end_created_at = null, $status = null, $external_id = null, $limit = null)
+    public function listEmployeesWithHttpInfo($order = null, $begin_updated_at = null, $end_updated_at = null, $begin_created_at = null, $end_created_at = null, $status = null, $external_id = null, $limit = null)
     {
         
   
@@ -765,7 +765,7 @@ class EmployeesApi
         }
     }
     /**
-     * v1ListTimecardEvents
+     * listTimecardEvents
      *
      * Provides summary information for all events associated with a particular timecard.
      *
@@ -773,15 +773,15 @@ class EmployeesApi
      * @return \SquareConnect\Model\V1TimecardEvent[]
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1ListTimecardEvents($timecard_id)
+    public function listTimecardEvents($timecard_id)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1ListTimecardEventsWithHttpInfo ($timecard_id);
+        list($response, $statusCode, $httpHeader) = $this->listTimecardEventsWithHttpInfo ($timecard_id);
         return $response; 
     }
 
 
     /**
-     * v1ListTimecardEventsWithHttpInfo
+     * listTimecardEventsWithHttpInfo
      *
      * Provides summary information for all events associated with a particular timecard.
      *
@@ -789,12 +789,12 @@ class EmployeesApi
      * @return Array of \SquareConnect\Model\V1TimecardEvent[], HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1ListTimecardEventsWithHttpInfo($timecard_id)
+    public function listTimecardEventsWithHttpInfo($timecard_id)
     {
         
         // verify the required parameter 'timecard_id' is set
         if ($timecard_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $timecard_id when calling v1ListTimecardEvents');
+            throw new \InvalidArgumentException('Missing the required parameter $timecard_id when calling listTimecardEvents');
         }
   
         // parse inputs
@@ -860,7 +860,7 @@ class EmployeesApi
         }
     }
     /**
-     * v1ListTimecards
+     * listTimecards
      *
      * Provides summary information for all of a business's employee timecards.
      *
@@ -878,15 +878,15 @@ class EmployeesApi
      * @return \SquareConnect\Model\V1Timecard[]
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1ListTimecards($order = null, $employee_id = null, $begin_clockin_time = null, $end_clockin_time = null, $begin_clockout_time = null, $end_clockout_time = null, $begin_updated_at = null, $end_updated_at = null, $deleted = null, $limit = null, $cursor = null)
+    public function listTimecards($order = null, $employee_id = null, $begin_clockin_time = null, $end_clockin_time = null, $begin_clockout_time = null, $end_clockout_time = null, $begin_updated_at = null, $end_updated_at = null, $deleted = null, $limit = null, $cursor = null)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1ListTimecardsWithHttpInfo ($order, $employee_id, $begin_clockin_time, $end_clockin_time, $begin_clockout_time, $end_clockout_time, $begin_updated_at, $end_updated_at, $deleted, $limit, $cursor);
+        list($response, $statusCode, $httpHeader) = $this->listTimecardsWithHttpInfo ($order, $employee_id, $begin_clockin_time, $end_clockin_time, $begin_clockout_time, $end_clockout_time, $begin_updated_at, $end_updated_at, $deleted, $limit, $cursor);
         return $response; 
     }
 
 
     /**
-     * v1ListTimecardsWithHttpInfo
+     * listTimecardsWithHttpInfo
      *
      * Provides summary information for all of a business's employee timecards.
      *
@@ -904,7 +904,7 @@ class EmployeesApi
      * @return Array of \SquareConnect\Model\V1Timecard[], HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1ListTimecardsWithHttpInfo($order = null, $employee_id = null, $begin_clockin_time = null, $end_clockin_time = null, $begin_clockout_time = null, $end_clockout_time = null, $begin_updated_at = null, $end_updated_at = null, $deleted = null, $limit = null, $cursor = null)
+    public function listTimecardsWithHttpInfo($order = null, $employee_id = null, $begin_clockin_time = null, $end_clockin_time = null, $begin_clockout_time = null, $end_clockout_time = null, $begin_updated_at = null, $end_updated_at = null, $deleted = null, $limit = null, $cursor = null)
     {
         
   
@@ -997,7 +997,7 @@ class EmployeesApi
         }
     }
     /**
-     * v1RetrieveCashDrawerShift
+     * retrieveCashDrawerShift
      *
      * Provides the details for a single cash drawer shift, including all events that occurred during the shift.
      *
@@ -1006,15 +1006,15 @@ class EmployeesApi
      * @return \SquareConnect\Model\V1CashDrawerShift
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1RetrieveCashDrawerShift($location_id, $shift_id)
+    public function retrieveCashDrawerShift($location_id, $shift_id)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1RetrieveCashDrawerShiftWithHttpInfo ($location_id, $shift_id);
+        list($response, $statusCode, $httpHeader) = $this->retrieveCashDrawerShiftWithHttpInfo ($location_id, $shift_id);
         return $response; 
     }
 
 
     /**
-     * v1RetrieveCashDrawerShiftWithHttpInfo
+     * retrieveCashDrawerShiftWithHttpInfo
      *
      * Provides the details for a single cash drawer shift, including all events that occurred during the shift.
      *
@@ -1023,16 +1023,16 @@ class EmployeesApi
      * @return Array of \SquareConnect\Model\V1CashDrawerShift, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1RetrieveCashDrawerShiftWithHttpInfo($location_id, $shift_id)
+    public function retrieveCashDrawerShiftWithHttpInfo($location_id, $shift_id)
     {
         
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1RetrieveCashDrawerShift');
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling retrieveCashDrawerShift');
         }
         // verify the required parameter 'shift_id' is set
         if ($shift_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $shift_id when calling v1RetrieveCashDrawerShift');
+            throw new \InvalidArgumentException('Missing the required parameter $shift_id when calling retrieveCashDrawerShift');
         }
   
         // parse inputs
@@ -1105,7 +1105,7 @@ class EmployeesApi
         }
     }
     /**
-     * v1RetrieveEmployee
+     * retrieveEmployee
      *
      * Provides the details for a single employee.
      *
@@ -1113,15 +1113,15 @@ class EmployeesApi
      * @return \SquareConnect\Model\V1Employee
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1RetrieveEmployee($employee_id)
+    public function retrieveEmployee($employee_id)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1RetrieveEmployeeWithHttpInfo ($employee_id);
+        list($response, $statusCode, $httpHeader) = $this->retrieveEmployeeWithHttpInfo ($employee_id);
         return $response; 
     }
 
 
     /**
-     * v1RetrieveEmployeeWithHttpInfo
+     * retrieveEmployeeWithHttpInfo
      *
      * Provides the details for a single employee.
      *
@@ -1129,12 +1129,12 @@ class EmployeesApi
      * @return Array of \SquareConnect\Model\V1Employee, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1RetrieveEmployeeWithHttpInfo($employee_id)
+    public function retrieveEmployeeWithHttpInfo($employee_id)
     {
         
         // verify the required parameter 'employee_id' is set
         if ($employee_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $employee_id when calling v1RetrieveEmployee');
+            throw new \InvalidArgumentException('Missing the required parameter $employee_id when calling retrieveEmployee');
         }
   
         // parse inputs
@@ -1200,7 +1200,7 @@ class EmployeesApi
         }
     }
     /**
-     * v1RetrieveEmployeeRole
+     * retrieveEmployeeRole
      *
      * Provides the details for a single employee role.
      *
@@ -1208,15 +1208,15 @@ class EmployeesApi
      * @return \SquareConnect\Model\V1EmployeeRole
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1RetrieveEmployeeRole($role_id)
+    public function retrieveEmployeeRole($role_id)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1RetrieveEmployeeRoleWithHttpInfo ($role_id);
+        list($response, $statusCode, $httpHeader) = $this->retrieveEmployeeRoleWithHttpInfo ($role_id);
         return $response; 
     }
 
 
     /**
-     * v1RetrieveEmployeeRoleWithHttpInfo
+     * retrieveEmployeeRoleWithHttpInfo
      *
      * Provides the details for a single employee role.
      *
@@ -1224,12 +1224,12 @@ class EmployeesApi
      * @return Array of \SquareConnect\Model\V1EmployeeRole, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1RetrieveEmployeeRoleWithHttpInfo($role_id)
+    public function retrieveEmployeeRoleWithHttpInfo($role_id)
     {
         
         // verify the required parameter 'role_id' is set
         if ($role_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $role_id when calling v1RetrieveEmployeeRole');
+            throw new \InvalidArgumentException('Missing the required parameter $role_id when calling retrieveEmployeeRole');
         }
   
         // parse inputs
@@ -1295,7 +1295,7 @@ class EmployeesApi
         }
     }
     /**
-     * v1RetrieveTimecard
+     * retrieveTimecard
      *
      * Provides the details for a single timecard.
      *
@@ -1303,15 +1303,15 @@ class EmployeesApi
      * @return \SquareConnect\Model\V1Timecard
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1RetrieveTimecard($timecard_id)
+    public function retrieveTimecard($timecard_id)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1RetrieveTimecardWithHttpInfo ($timecard_id);
+        list($response, $statusCode, $httpHeader) = $this->retrieveTimecardWithHttpInfo ($timecard_id);
         return $response; 
     }
 
 
     /**
-     * v1RetrieveTimecardWithHttpInfo
+     * retrieveTimecardWithHttpInfo
      *
      * Provides the details for a single timecard.
      *
@@ -1319,12 +1319,12 @@ class EmployeesApi
      * @return Array of \SquareConnect\Model\V1Timecard, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1RetrieveTimecardWithHttpInfo($timecard_id)
+    public function retrieveTimecardWithHttpInfo($timecard_id)
     {
         
         // verify the required parameter 'timecard_id' is set
         if ($timecard_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $timecard_id when calling v1RetrieveTimecard');
+            throw new \InvalidArgumentException('Missing the required parameter $timecard_id when calling retrieveTimecard');
         }
   
         // parse inputs
@@ -1390,42 +1390,42 @@ class EmployeesApi
         }
     }
     /**
-     * v1UpdateEmployee
+     * updateEmployee
      *
-     * v1UpdateEmployee
+     * V1 UpdateEmployee
      *
      * @param string $employee_id The ID of the role to modify. (required)
      * @param \SquareConnect\Model\V1Employee $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
      * @return \SquareConnect\Model\V1Employee
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1UpdateEmployee($employee_id, $body)
+    public function updateEmployee($employee_id, $body)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1UpdateEmployeeWithHttpInfo ($employee_id, $body);
+        list($response, $statusCode, $httpHeader) = $this->updateEmployeeWithHttpInfo ($employee_id, $body);
         return $response; 
     }
 
 
     /**
-     * v1UpdateEmployeeWithHttpInfo
+     * updateEmployeeWithHttpInfo
      *
-     * v1UpdateEmployee
+     * V1 UpdateEmployee
      *
      * @param string $employee_id The ID of the role to modify. (required)
      * @param \SquareConnect\Model\V1Employee $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
      * @return Array of \SquareConnect\Model\V1Employee, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1UpdateEmployeeWithHttpInfo($employee_id, $body)
+    public function updateEmployeeWithHttpInfo($employee_id, $body)
     {
         
         // verify the required parameter 'employee_id' is set
         if ($employee_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $employee_id when calling v1UpdateEmployee');
+            throw new \InvalidArgumentException('Missing the required parameter $employee_id when calling updateEmployee');
         }
         // verify the required parameter 'body' is set
         if ($body === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $body when calling v1UpdateEmployee');
+            throw new \InvalidArgumentException('Missing the required parameter $body when calling updateEmployee');
         }
   
         // parse inputs
@@ -1495,7 +1495,7 @@ class EmployeesApi
         }
     }
     /**
-     * v1UpdateEmployeeRole
+     * updateEmployeeRole
      *
      * Modifies the details of an employee role.
      *
@@ -1504,15 +1504,15 @@ class EmployeesApi
      * @return \SquareConnect\Model\V1EmployeeRole
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1UpdateEmployeeRole($role_id, $body)
+    public function updateEmployeeRole($role_id, $body)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1UpdateEmployeeRoleWithHttpInfo ($role_id, $body);
+        list($response, $statusCode, $httpHeader) = $this->updateEmployeeRoleWithHttpInfo ($role_id, $body);
         return $response; 
     }
 
 
     /**
-     * v1UpdateEmployeeRoleWithHttpInfo
+     * updateEmployeeRoleWithHttpInfo
      *
      * Modifies the details of an employee role.
      *
@@ -1521,16 +1521,16 @@ class EmployeesApi
      * @return Array of \SquareConnect\Model\V1EmployeeRole, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1UpdateEmployeeRoleWithHttpInfo($role_id, $body)
+    public function updateEmployeeRoleWithHttpInfo($role_id, $body)
     {
         
         // verify the required parameter 'role_id' is set
         if ($role_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $role_id when calling v1UpdateEmployeeRole');
+            throw new \InvalidArgumentException('Missing the required parameter $role_id when calling updateEmployeeRole');
         }
         // verify the required parameter 'body' is set
         if ($body === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $body when calling v1UpdateEmployeeRole');
+            throw new \InvalidArgumentException('Missing the required parameter $body when calling updateEmployeeRole');
         }
   
         // parse inputs
@@ -1600,7 +1600,7 @@ class EmployeesApi
         }
     }
     /**
-     * v1UpdateTimecard
+     * updateTimecard
      *
      * Modifies a timecard's details. This creates an API_EDIT event for the timecard. You can view a timecard's event history with the List Timecard Events endpoint.
      *
@@ -1609,15 +1609,15 @@ class EmployeesApi
      * @return \SquareConnect\Model\V1Timecard
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1UpdateTimecard($timecard_id, $body)
+    public function updateTimecard($timecard_id, $body)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1UpdateTimecardWithHttpInfo ($timecard_id, $body);
+        list($response, $statusCode, $httpHeader) = $this->updateTimecardWithHttpInfo ($timecard_id, $body);
         return $response; 
     }
 
 
     /**
-     * v1UpdateTimecardWithHttpInfo
+     * updateTimecardWithHttpInfo
      *
      * Modifies a timecard's details. This creates an API_EDIT event for the timecard. You can view a timecard's event history with the List Timecard Events endpoint.
      *
@@ -1626,16 +1626,16 @@ class EmployeesApi
      * @return Array of \SquareConnect\Model\V1Timecard, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1UpdateTimecardWithHttpInfo($timecard_id, $body)
+    public function updateTimecardWithHttpInfo($timecard_id, $body)
     {
         
         // verify the required parameter 'timecard_id' is set
         if ($timecard_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $timecard_id when calling v1UpdateTimecard');
+            throw new \InvalidArgumentException('Missing the required parameter $timecard_id when calling updateTimecard');
         }
         // verify the required parameter 'body' is set
         if ($body === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $body when calling v1UpdateTimecard');
+            throw new \InvalidArgumentException('Missing the required parameter $body when calling updateTimecard');
         }
   
         // parse inputs

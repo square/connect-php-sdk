@@ -13,7 +13,7 @@ use \SquareConnect\ApiException;
 use \SquareConnect\ObjectSerializer;
 
 /**
- * LocationApi Class Doc Comment
+ * V1LocationApi Class Doc Comment
  *
  * @category Class
  * @package  SquareConnect
@@ -21,7 +21,7 @@ use \SquareConnect\ObjectSerializer;
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://squareup.com/developers
  */
-class LocationApi
+class V1LocationApi
 {
 
     /**
@@ -56,7 +56,7 @@ class LocationApi
     /**
      * Set the API client
      * @param \SquareConnect\ApiClient $apiClient set the API client
-     * @return LocationApi
+     * @return V1LocationApi
      */
     public function setApiClient(ApiClient $apiClient)
     {
@@ -67,9 +67,9 @@ class LocationApi
     /**
      * listLocations
      *
-     * ListLocations
+     * Provides details for a business's locations, including their IDs.
      *
-     * @return \SquareConnect\Model\ListLocationsResponse
+     * @return \SquareConnect\Model\V1Merchant[]
      * @throws \SquareConnect\ApiException on non-2xx response
      */
     public function listLocations()
@@ -82,94 +82,12 @@ class LocationApi
     /**
      * listLocationsWithHttpInfo
      *
-     * ListLocations
-     *
-     * @return Array of \SquareConnect\Model\ListLocationsResponse, HTTP status code, HTTP response headers (array of strings)
-     * @throws \SquareConnect\ApiException on non-2xx response
-     */
-    public function listLocationsWithHttpInfo()
-    {
-        
-  
-        // parse inputs
-        $resourcePath = "/v2/locations";
-        $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = ApiClient::selectHeaderAccept(array('application/json'));
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-  
-        
-        
-        
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        
-        
-  
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath, 'GET',
-                $queryParams, $httpBody,
-                $headerParams, '\SquareConnect\Model\ListLocationsResponse'
-            );
-            if (!$response) {
-                return array(null, $statusCode, $httpHeader);
-            }
-
-            return array(\SquareConnect\ObjectSerializer::deserialize($response, '\SquareConnect\Model\ListLocationsResponse', $httpHeader), $statusCode, $httpHeader);
-                    } catch (ApiException $e) {
-            switch ($e->getCode()) { 
-            case 200:
-                $data = \SquareConnect\ObjectSerializer::deserialize($e->getResponseBody(), '\SquareConnect\Model\ListLocationsResponse', $e->getResponseHeaders());
-                $e->setResponseObject($data);
-                break;
-            }
-  
-            throw $e;
-        }
-    }
-    /**
-     * v1ListLocations
-     *
-     * Provides details for a business's locations, including their IDs.
-     *
-     * @return \SquareConnect\Model\V1Merchant[]
-     * @throws \SquareConnect\ApiException on non-2xx response
-     */
-    public function v1ListLocations()
-    {
-        list($response, $statusCode, $httpHeader) = $this->v1ListLocationsWithHttpInfo ();
-        return $response; 
-    }
-
-
-    /**
-     * v1ListLocationsWithHttpInfo
-     *
      * Provides details for a business's locations, including their IDs.
      *
      * @return Array of \SquareConnect\Model\V1Merchant[], HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1ListLocationsWithHttpInfo()
+    public function listLocationsWithHttpInfo()
     {
         
   
@@ -229,29 +147,29 @@ class LocationApi
         }
     }
     /**
-     * v1RetrieveBusiness
+     * retrieveBusiness
      *
      * Get a business's information.
      *
      * @return \SquareConnect\Model\V1Merchant
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1RetrieveBusiness()
+    public function retrieveBusiness()
     {
-        list($response, $statusCode, $httpHeader) = $this->v1RetrieveBusinessWithHttpInfo ();
+        list($response, $statusCode, $httpHeader) = $this->retrieveBusinessWithHttpInfo ();
         return $response; 
     }
 
 
     /**
-     * v1RetrieveBusinessWithHttpInfo
+     * retrieveBusinessWithHttpInfo
      *
      * Get a business's information.
      *
      * @return Array of \SquareConnect\Model\V1Merchant, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1RetrieveBusinessWithHttpInfo()
+    public function retrieveBusinessWithHttpInfo()
     {
         
   
