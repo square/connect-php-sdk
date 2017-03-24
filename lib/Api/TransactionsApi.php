@@ -65,46 +65,154 @@ class TransactionsApi
     }
   
     /**
-     * v1CreateRefund
+     * captureTransaction
      *
-     * Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.
+     * CaptureTransaction
      *
-     * @param string $location_id The ID of the original payment&#39;s associated location. (required)
-     * @param \SquareConnect\Model\V1CreateRefundRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
-     * @return \SquareConnect\Model\V1Refund
+     * @param string $location_id  (required)
+     * @param string $transaction_id  (required)
+     * @return \SquareConnect\Model\CaptureTransactionResponse
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1CreateRefund($location_id, $body)
+    public function captureTransaction($location_id, $transaction_id)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1CreateRefundWithHttpInfo ($location_id, $body);
+        list($response, $statusCode, $httpHeader) = $this->captureTransactionWithHttpInfo ($location_id, $transaction_id);
         return $response; 
     }
 
 
     /**
-     * v1CreateRefundWithHttpInfo
+     * captureTransactionWithHttpInfo
      *
-     * Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.
+     * CaptureTransaction
      *
-     * @param string $location_id The ID of the original payment&#39;s associated location. (required)
-     * @param \SquareConnect\Model\V1CreateRefundRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
-     * @return Array of \SquareConnect\Model\V1Refund, HTTP status code, HTTP response headers (array of strings)
+     * @param string $location_id  (required)
+     * @param string $transaction_id  (required)
+     * @return Array of \SquareConnect\Model\CaptureTransactionResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1CreateRefundWithHttpInfo($location_id, $body)
+    public function captureTransactionWithHttpInfo($location_id, $transaction_id)
     {
         
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1CreateRefund');
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling captureTransaction');
         }
-        // verify the required parameter 'body' is set
-        if ($body === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $body when calling v1CreateRefund');
+        // verify the required parameter 'transaction_id' is set
+        if ($transaction_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $transaction_id when calling captureTransaction');
         }
   
         // parse inputs
-        $resourcePath = "/v1/{location_id}/refunds";
+        $resourcePath = "/v2/locations/{location_id}/transactions/{transaction_id}/capture";
+        $httpBody = '';
+        $queryParams = array();
+        $headerParams = array();
+        $formParams = array();
+        $_header_accept = ApiClient::selectHeaderAccept(array('application/json'));
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+  
+        
+        
+        // path params
+        if ($location_id !== null) {
+            $resourcePath = str_replace(
+                "{" . "location_id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($location_id),
+                $resourcePath
+            );
+        }// path params
+        if ($transaction_id !== null) {
+            $resourcePath = str_replace(
+                "{" . "transaction_id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($transaction_id),
+                $resourcePath
+            );
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        
+  
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath, 'POST',
+                $queryParams, $httpBody,
+                $headerParams, '\SquareConnect\Model\CaptureTransactionResponse'
+            );
+            if (!$response) {
+                return array(null, $statusCode, $httpHeader);
+            }
+
+            return array(\SquareConnect\ObjectSerializer::deserialize($response, '\SquareConnect\Model\CaptureTransactionResponse', $httpHeader), $statusCode, $httpHeader);
+                    } catch (ApiException $e) {
+            switch ($e->getCode()) { 
+            case 200:
+                $data = \SquareConnect\ObjectSerializer::deserialize($e->getResponseBody(), '\SquareConnect\Model\CaptureTransactionResponse', $e->getResponseHeaders());
+                $e->setResponseObject($data);
+                break;
+            }
+  
+            throw $e;
+        }
+    }
+    /**
+     * charge
+     *
+     * Charge
+     *
+     * @param string $location_id The ID of the location to associate the created transaction with. (required)
+     * @param \SquareConnect\Model\ChargeRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
+     * @return \SquareConnect\Model\ChargeResponse
+     * @throws \SquareConnect\ApiException on non-2xx response
+     */
+    public function charge($location_id, $body)
+    {
+        list($response, $statusCode, $httpHeader) = $this->chargeWithHttpInfo ($location_id, $body);
+        return $response; 
+    }
+
+
+    /**
+     * chargeWithHttpInfo
+     *
+     * Charge
+     *
+     * @param string $location_id The ID of the location to associate the created transaction with. (required)
+     * @param \SquareConnect\Model\ChargeRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
+     * @return Array of \SquareConnect\Model\ChargeResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws \SquareConnect\ApiException on non-2xx response
+     */
+    public function chargeWithHttpInfo($location_id, $body)
+    {
+        
+        // verify the required parameter 'location_id' is set
+        if ($location_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling charge');
+        }
+        // verify the required parameter 'body' is set
+        if ($body === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $body when calling charge');
+        }
+  
+        // parse inputs
+        $resourcePath = "/v2/locations/{location_id}/transactions";
         $httpBody = '';
         $queryParams = array();
         $headerParams = array();
@@ -151,17 +259,17 @@ class TransactionsApi
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath, 'POST',
                 $queryParams, $httpBody,
-                $headerParams, '\SquareConnect\Model\V1Refund'
+                $headerParams, '\SquareConnect\Model\ChargeResponse'
             );
             if (!$response) {
                 return array(null, $statusCode, $httpHeader);
             }
 
-            return array(\SquareConnect\ObjectSerializer::deserialize($response, '\SquareConnect\Model\V1Refund', $httpHeader), $statusCode, $httpHeader);
+            return array(\SquareConnect\ObjectSerializer::deserialize($response, '\SquareConnect\Model\ChargeResponse', $httpHeader), $statusCode, $httpHeader);
                     } catch (ApiException $e) {
             switch ($e->getCode()) { 
             case 200:
-                $data = \SquareConnect\ObjectSerializer::deserialize($e->getResponseBody(), '\SquareConnect\Model\V1Refund', $e->getResponseHeaders());
+                $data = \SquareConnect\ObjectSerializer::deserialize($e->getResponseBody(), '\SquareConnect\Model\ChargeResponse', $e->getResponseHeaders());
                 $e->setResponseObject($data);
                 break;
             }
@@ -170,1034 +278,52 @@ class TransactionsApi
         }
     }
     /**
-     * v1ListBankAccounts
+     * createRefund
      *
-     * Provides non-confidential details for all of a location's associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+     * CreateRefund
      *
-     * @param string $location_id The ID of the location to list bank accounts for. (required)
-     * @return \SquareConnect\Model\V1BankAccount[]
+     * @param string $location_id The ID of the original transaction&#39;s associated location. (required)
+     * @param string $transaction_id The ID of the original transaction that includes the tender to refund. (required)
+     * @param \SquareConnect\Model\CreateRefundRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
+     * @return \SquareConnect\Model\CreateRefundResponse
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1ListBankAccounts($location_id)
+    public function createRefund($location_id, $transaction_id, $body)
     {
-        list($response, $statusCode, $httpHeader) = $this->v1ListBankAccountsWithHttpInfo ($location_id);
+        list($response, $statusCode, $httpHeader) = $this->createRefundWithHttpInfo ($location_id, $transaction_id, $body);
         return $response; 
     }
 
 
     /**
-     * v1ListBankAccountsWithHttpInfo
+     * createRefundWithHttpInfo
      *
-     * Provides non-confidential details for all of a location's associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+     * CreateRefund
      *
-     * @param string $location_id The ID of the location to list bank accounts for. (required)
-     * @return Array of \SquareConnect\Model\V1BankAccount[], HTTP status code, HTTP response headers (array of strings)
+     * @param string $location_id The ID of the original transaction&#39;s associated location. (required)
+     * @param string $transaction_id The ID of the original transaction that includes the tender to refund. (required)
+     * @param \SquareConnect\Model\CreateRefundRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
+     * @return Array of \SquareConnect\Model\CreateRefundResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function v1ListBankAccountsWithHttpInfo($location_id)
+    public function createRefundWithHttpInfo($location_id, $transaction_id, $body)
     {
         
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1ListBankAccounts');
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling createRefund');
         }
-  
-        // parse inputs
-        $resourcePath = "/v1/{location_id}/bank-accounts";
-        $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = ApiClient::selectHeaderAccept(array('application/json'));
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-  
-        
-        
-        // path params
-        if ($location_id !== null) {
-            $resourcePath = str_replace(
-                "{" . "location_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($location_id),
-                $resourcePath
-            );
-        }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        
-        
-  
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath, 'GET',
-                $queryParams, $httpBody,
-                $headerParams, '\SquareConnect\Model\V1BankAccount[]'
-            );
-            if (!$response) {
-                return array(null, $statusCode, $httpHeader);
-            }
-
-            return array(\SquareConnect\ObjectSerializer::deserialize($response, '\SquareConnect\Model\V1BankAccount[]', $httpHeader), $statusCode, $httpHeader);
-                    } catch (ApiException $e) {
-            switch ($e->getCode()) { 
-            case 200:
-                $data = \SquareConnect\ObjectSerializer::deserialize($e->getResponseBody(), '\SquareConnect\Model\V1BankAccount[]', $e->getResponseHeaders());
-                $e->setResponseObject($data);
-                break;
-            }
-  
-            throw $e;
-        }
-    }
-    /**
-     * v1ListOrders
-     *
-     * Provides summary information for a merchant's online store orders.
-     *
-     * @param string $location_id The ID of the location to list online store orders for. (required)
-     * @param string $order TThe order in which payments are listed in the response. (optional)
-     * @param int $limit The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)
-     * @return \SquareConnect\Model\V1Order[]
-     * @throws \SquareConnect\ApiException on non-2xx response
-     */
-    public function v1ListOrders($location_id, $order = null, $limit = null)
-    {
-        list($response, $statusCode, $httpHeader) = $this->v1ListOrdersWithHttpInfo ($location_id, $order, $limit);
-        return $response; 
-    }
-
-
-    /**
-     * v1ListOrdersWithHttpInfo
-     *
-     * Provides summary information for a merchant's online store orders.
-     *
-     * @param string $location_id The ID of the location to list online store orders for. (required)
-     * @param string $order TThe order in which payments are listed in the response. (optional)
-     * @param int $limit The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)
-     * @return Array of \SquareConnect\Model\V1Order[], HTTP status code, HTTP response headers (array of strings)
-     * @throws \SquareConnect\ApiException on non-2xx response
-     */
-    public function v1ListOrdersWithHttpInfo($location_id, $order = null, $limit = null)
-    {
-        
-        // verify the required parameter 'location_id' is set
-        if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1ListOrders');
-        }
-  
-        // parse inputs
-        $resourcePath = "/v1/{location_id}/orders";
-        $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = ApiClient::selectHeaderAccept(array('application/json'));
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-  
-        // query params
-        if ($order !== null) {
-            $queryParams['order'] = $this->apiClient->getSerializer()->toQueryValue($order);
-        }// query params
-        if ($limit !== null) {
-            $queryParams['limit'] = $this->apiClient->getSerializer()->toQueryValue($limit);
-        }
-        
-        // path params
-        if ($location_id !== null) {
-            $resourcePath = str_replace(
-                "{" . "location_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($location_id),
-                $resourcePath
-            );
-        }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        
-        
-  
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath, 'GET',
-                $queryParams, $httpBody,
-                $headerParams, '\SquareConnect\Model\V1Order[]'
-            );
-            if (!$response) {
-                return array(null, $statusCode, $httpHeader);
-            }
-
-            return array(\SquareConnect\ObjectSerializer::deserialize($response, '\SquareConnect\Model\V1Order[]', $httpHeader), $statusCode, $httpHeader);
-                    } catch (ApiException $e) {
-            switch ($e->getCode()) { 
-            case 200:
-                $data = \SquareConnect\ObjectSerializer::deserialize($e->getResponseBody(), '\SquareConnect\Model\V1Order[]', $e->getResponseHeaders());
-                $e->setResponseObject($data);
-                break;
-            }
-  
-            throw $e;
-        }
-    }
-    /**
-     * v1ListPayments
-     *
-     * Provides summary information for all payments taken by a merchant or any of the merchant's mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
-     *
-     * @param string $location_id The ID of the location to list payments for. If you specify me, this endpoint returns payments aggregated from all of the business&#39;s locations. (required)
-     * @param string $order The order in which payments are listed in the response. (optional)
-     * @param string $begin_time The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)
-     * @param string $end_time The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)
-     * @param int $limit The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)
-     * @return \SquareConnect\Model\V1Payment[]
-     * @throws \SquareConnect\ApiException on non-2xx response
-     */
-    public function v1ListPayments($location_id, $order = null, $begin_time = null, $end_time = null, $limit = null)
-    {
-        list($response, $statusCode, $httpHeader) = $this->v1ListPaymentsWithHttpInfo ($location_id, $order, $begin_time, $end_time, $limit);
-        return $response; 
-    }
-
-
-    /**
-     * v1ListPaymentsWithHttpInfo
-     *
-     * Provides summary information for all payments taken by a merchant or any of the merchant's mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
-     *
-     * @param string $location_id The ID of the location to list payments for. If you specify me, this endpoint returns payments aggregated from all of the business&#39;s locations. (required)
-     * @param string $order The order in which payments are listed in the response. (optional)
-     * @param string $begin_time The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)
-     * @param string $end_time The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)
-     * @param int $limit The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)
-     * @return Array of \SquareConnect\Model\V1Payment[], HTTP status code, HTTP response headers (array of strings)
-     * @throws \SquareConnect\ApiException on non-2xx response
-     */
-    public function v1ListPaymentsWithHttpInfo($location_id, $order = null, $begin_time = null, $end_time = null, $limit = null)
-    {
-        
-        // verify the required parameter 'location_id' is set
-        if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1ListPayments');
-        }
-  
-        // parse inputs
-        $resourcePath = "/v1/{location_id}/payments";
-        $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = ApiClient::selectHeaderAccept(array('application/json'));
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-  
-        // query params
-        if ($order !== null) {
-            $queryParams['order'] = $this->apiClient->getSerializer()->toQueryValue($order);
-        }// query params
-        if ($begin_time !== null) {
-            $queryParams['begin_time'] = $this->apiClient->getSerializer()->toQueryValue($begin_time);
-        }// query params
-        if ($end_time !== null) {
-            $queryParams['end_time'] = $this->apiClient->getSerializer()->toQueryValue($end_time);
-        }// query params
-        if ($limit !== null) {
-            $queryParams['limit'] = $this->apiClient->getSerializer()->toQueryValue($limit);
-        }
-        
-        // path params
-        if ($location_id !== null) {
-            $resourcePath = str_replace(
-                "{" . "location_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($location_id),
-                $resourcePath
-            );
-        }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        
-        
-  
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath, 'GET',
-                $queryParams, $httpBody,
-                $headerParams, '\SquareConnect\Model\V1Payment[]'
-            );
-            if (!$response) {
-                return array(null, $statusCode, $httpHeader);
-            }
-
-            return array(\SquareConnect\ObjectSerializer::deserialize($response, '\SquareConnect\Model\V1Payment[]', $httpHeader), $statusCode, $httpHeader);
-                    } catch (ApiException $e) {
-            switch ($e->getCode()) { 
-            case 200:
-                $data = \SquareConnect\ObjectSerializer::deserialize($e->getResponseBody(), '\SquareConnect\Model\V1Payment[]', $e->getResponseHeaders());
-                $e->setResponseObject($data);
-                break;
-            }
-  
-            throw $e;
-        }
-    }
-    /**
-     * v1ListRefunds
-     *
-     * Provides the details for all refunds initiated by a merchant or any of the merchant's mobile staff during a date range. Date ranges cannot exceed one year in length.
-     *
-     * @param string $location_id The ID of the location to list refunds for. (required)
-     * @param string $order TThe order in which payments are listed in the response. (optional)
-     * @param string $begin_time The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)
-     * @param string $end_time The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)
-     * @param int $limit The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)
-     * @return \SquareConnect\Model\V1Refund[]
-     * @throws \SquareConnect\ApiException on non-2xx response
-     */
-    public function v1ListRefunds($location_id, $order = null, $begin_time = null, $end_time = null, $limit = null)
-    {
-        list($response, $statusCode, $httpHeader) = $this->v1ListRefundsWithHttpInfo ($location_id, $order, $begin_time, $end_time, $limit);
-        return $response; 
-    }
-
-
-    /**
-     * v1ListRefundsWithHttpInfo
-     *
-     * Provides the details for all refunds initiated by a merchant or any of the merchant's mobile staff during a date range. Date ranges cannot exceed one year in length.
-     *
-     * @param string $location_id The ID of the location to list refunds for. (required)
-     * @param string $order TThe order in which payments are listed in the response. (optional)
-     * @param string $begin_time The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)
-     * @param string $end_time The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)
-     * @param int $limit The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)
-     * @return Array of \SquareConnect\Model\V1Refund[], HTTP status code, HTTP response headers (array of strings)
-     * @throws \SquareConnect\ApiException on non-2xx response
-     */
-    public function v1ListRefundsWithHttpInfo($location_id, $order = null, $begin_time = null, $end_time = null, $limit = null)
-    {
-        
-        // verify the required parameter 'location_id' is set
-        if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1ListRefunds');
-        }
-  
-        // parse inputs
-        $resourcePath = "/v1/{location_id}/refunds";
-        $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = ApiClient::selectHeaderAccept(array('application/json'));
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-  
-        // query params
-        if ($order !== null) {
-            $queryParams['order'] = $this->apiClient->getSerializer()->toQueryValue($order);
-        }// query params
-        if ($begin_time !== null) {
-            $queryParams['begin_time'] = $this->apiClient->getSerializer()->toQueryValue($begin_time);
-        }// query params
-        if ($end_time !== null) {
-            $queryParams['end_time'] = $this->apiClient->getSerializer()->toQueryValue($end_time);
-        }// query params
-        if ($limit !== null) {
-            $queryParams['limit'] = $this->apiClient->getSerializer()->toQueryValue($limit);
-        }
-        
-        // path params
-        if ($location_id !== null) {
-            $resourcePath = str_replace(
-                "{" . "location_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($location_id),
-                $resourcePath
-            );
-        }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        
-        
-  
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath, 'GET',
-                $queryParams, $httpBody,
-                $headerParams, '\SquareConnect\Model\V1Refund[]'
-            );
-            if (!$response) {
-                return array(null, $statusCode, $httpHeader);
-            }
-
-            return array(\SquareConnect\ObjectSerializer::deserialize($response, '\SquareConnect\Model\V1Refund[]', $httpHeader), $statusCode, $httpHeader);
-                    } catch (ApiException $e) {
-            switch ($e->getCode()) { 
-            case 200:
-                $data = \SquareConnect\ObjectSerializer::deserialize($e->getResponseBody(), '\SquareConnect\Model\V1Refund[]', $e->getResponseHeaders());
-                $e->setResponseObject($data);
-                break;
-            }
-  
-            throw $e;
-        }
-    }
-    /**
-     * v1ListSettlements
-     *
-     * Provides summary information for all deposits and withdrawals initiated by Square to a merchant's bank account during a date range. Date ranges cannot exceed one year in length.
-     *
-     * @param string $location_id The ID of the location to list settlements for. If you specify me, this endpoint returns payments aggregated from all of the business&#39;s locations. (required)
-     * @param string $order TThe order in which payments are listed in the response. (optional)
-     * @param string $begin_time The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)
-     * @param string $end_time The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)
-     * @param int $limit The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)
-     * @param string $status Provide this parameter to retrieve only settlements with a particular status (SENT or FAILED). (optional)
-     * @return \SquareConnect\Model\V1Settlement[]
-     * @throws \SquareConnect\ApiException on non-2xx response
-     */
-    public function v1ListSettlements($location_id, $order = null, $begin_time = null, $end_time = null, $limit = null, $status = null)
-    {
-        list($response, $statusCode, $httpHeader) = $this->v1ListSettlementsWithHttpInfo ($location_id, $order, $begin_time, $end_time, $limit, $status);
-        return $response; 
-    }
-
-
-    /**
-     * v1ListSettlementsWithHttpInfo
-     *
-     * Provides summary information for all deposits and withdrawals initiated by Square to a merchant's bank account during a date range. Date ranges cannot exceed one year in length.
-     *
-     * @param string $location_id The ID of the location to list settlements for. If you specify me, this endpoint returns payments aggregated from all of the business&#39;s locations. (required)
-     * @param string $order TThe order in which payments are listed in the response. (optional)
-     * @param string $begin_time The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)
-     * @param string $end_time The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)
-     * @param int $limit The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)
-     * @param string $status Provide this parameter to retrieve only settlements with a particular status (SENT or FAILED). (optional)
-     * @return Array of \SquareConnect\Model\V1Settlement[], HTTP status code, HTTP response headers (array of strings)
-     * @throws \SquareConnect\ApiException on non-2xx response
-     */
-    public function v1ListSettlementsWithHttpInfo($location_id, $order = null, $begin_time = null, $end_time = null, $limit = null, $status = null)
-    {
-        
-        // verify the required parameter 'location_id' is set
-        if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1ListSettlements');
-        }
-  
-        // parse inputs
-        $resourcePath = "/v1/{location_id}/settlements";
-        $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = ApiClient::selectHeaderAccept(array('application/json'));
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-  
-        // query params
-        if ($order !== null) {
-            $queryParams['order'] = $this->apiClient->getSerializer()->toQueryValue($order);
-        }// query params
-        if ($begin_time !== null) {
-            $queryParams['begin_time'] = $this->apiClient->getSerializer()->toQueryValue($begin_time);
-        }// query params
-        if ($end_time !== null) {
-            $queryParams['end_time'] = $this->apiClient->getSerializer()->toQueryValue($end_time);
-        }// query params
-        if ($limit !== null) {
-            $queryParams['limit'] = $this->apiClient->getSerializer()->toQueryValue($limit);
-        }// query params
-        if ($status !== null) {
-            $queryParams['status'] = $this->apiClient->getSerializer()->toQueryValue($status);
-        }
-        
-        // path params
-        if ($location_id !== null) {
-            $resourcePath = str_replace(
-                "{" . "location_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($location_id),
-                $resourcePath
-            );
-        }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        
-        
-  
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath, 'GET',
-                $queryParams, $httpBody,
-                $headerParams, '\SquareConnect\Model\V1Settlement[]'
-            );
-            if (!$response) {
-                return array(null, $statusCode, $httpHeader);
-            }
-
-            return array(\SquareConnect\ObjectSerializer::deserialize($response, '\SquareConnect\Model\V1Settlement[]', $httpHeader), $statusCode, $httpHeader);
-                    } catch (ApiException $e) {
-            switch ($e->getCode()) { 
-            case 200:
-                $data = \SquareConnect\ObjectSerializer::deserialize($e->getResponseBody(), '\SquareConnect\Model\V1Settlement[]', $e->getResponseHeaders());
-                $e->setResponseObject($data);
-                break;
-            }
-  
-            throw $e;
-        }
-    }
-    /**
-     * v1RetrieveBankAccount
-     *
-     * Provides non-confidential details for a merchant's associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
-     *
-     * @param string $location_id The ID of the bank account&#39;s associated location. (required)
-     * @param string $bank_account_id The bank account&#39;s Square-issued ID. You obtain this value from Settlement objects returned. (required)
-     * @return \SquareConnect\Model\V1BankAccount
-     * @throws \SquareConnect\ApiException on non-2xx response
-     */
-    public function v1RetrieveBankAccount($location_id, $bank_account_id)
-    {
-        list($response, $statusCode, $httpHeader) = $this->v1RetrieveBankAccountWithHttpInfo ($location_id, $bank_account_id);
-        return $response; 
-    }
-
-
-    /**
-     * v1RetrieveBankAccountWithHttpInfo
-     *
-     * Provides non-confidential details for a merchant's associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
-     *
-     * @param string $location_id The ID of the bank account&#39;s associated location. (required)
-     * @param string $bank_account_id The bank account&#39;s Square-issued ID. You obtain this value from Settlement objects returned. (required)
-     * @return Array of \SquareConnect\Model\V1BankAccount, HTTP status code, HTTP response headers (array of strings)
-     * @throws \SquareConnect\ApiException on non-2xx response
-     */
-    public function v1RetrieveBankAccountWithHttpInfo($location_id, $bank_account_id)
-    {
-        
-        // verify the required parameter 'location_id' is set
-        if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1RetrieveBankAccount');
-        }
-        // verify the required parameter 'bank_account_id' is set
-        if ($bank_account_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $bank_account_id when calling v1RetrieveBankAccount');
-        }
-  
-        // parse inputs
-        $resourcePath = "/v1/{location_id}/bank-accounts/{bank_account_id}";
-        $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = ApiClient::selectHeaderAccept(array('application/json'));
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-  
-        
-        
-        // path params
-        if ($location_id !== null) {
-            $resourcePath = str_replace(
-                "{" . "location_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($location_id),
-                $resourcePath
-            );
-        }// path params
-        if ($bank_account_id !== null) {
-            $resourcePath = str_replace(
-                "{" . "bank_account_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($bank_account_id),
-                $resourcePath
-            );
-        }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        
-        
-  
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath, 'GET',
-                $queryParams, $httpBody,
-                $headerParams, '\SquareConnect\Model\V1BankAccount'
-            );
-            if (!$response) {
-                return array(null, $statusCode, $httpHeader);
-            }
-
-            return array(\SquareConnect\ObjectSerializer::deserialize($response, '\SquareConnect\Model\V1BankAccount', $httpHeader), $statusCode, $httpHeader);
-                    } catch (ApiException $e) {
-            switch ($e->getCode()) { 
-            case 200:
-                $data = \SquareConnect\ObjectSerializer::deserialize($e->getResponseBody(), '\SquareConnect\Model\V1BankAccount', $e->getResponseHeaders());
-                $e->setResponseObject($data);
-                break;
-            }
-  
-            throw $e;
-        }
-    }
-    /**
-     * v1RetrieveOrder
-     *
-     * Provides comprehensive information for a single online store order, including the order's history.
-     *
-     * @param string $location_id The ID of the order&#39;s associated location. (required)
-     * @param string $order_id The order&#39;s Square-issued ID. You obtain this value from Order objects returned by the List Orders endpoint (required)
-     * @return \SquareConnect\Model\V1Order
-     * @throws \SquareConnect\ApiException on non-2xx response
-     */
-    public function v1RetrieveOrder($location_id, $order_id)
-    {
-        list($response, $statusCode, $httpHeader) = $this->v1RetrieveOrderWithHttpInfo ($location_id, $order_id);
-        return $response; 
-    }
-
-
-    /**
-     * v1RetrieveOrderWithHttpInfo
-     *
-     * Provides comprehensive information for a single online store order, including the order's history.
-     *
-     * @param string $location_id The ID of the order&#39;s associated location. (required)
-     * @param string $order_id The order&#39;s Square-issued ID. You obtain this value from Order objects returned by the List Orders endpoint (required)
-     * @return Array of \SquareConnect\Model\V1Order, HTTP status code, HTTP response headers (array of strings)
-     * @throws \SquareConnect\ApiException on non-2xx response
-     */
-    public function v1RetrieveOrderWithHttpInfo($location_id, $order_id)
-    {
-        
-        // verify the required parameter 'location_id' is set
-        if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1RetrieveOrder');
-        }
-        // verify the required parameter 'order_id' is set
-        if ($order_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $order_id when calling v1RetrieveOrder');
-        }
-  
-        // parse inputs
-        $resourcePath = "/v1/{location_id}/orders/{order_id}";
-        $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = ApiClient::selectHeaderAccept(array('application/json'));
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-  
-        
-        
-        // path params
-        if ($location_id !== null) {
-            $resourcePath = str_replace(
-                "{" . "location_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($location_id),
-                $resourcePath
-            );
-        }// path params
-        if ($order_id !== null) {
-            $resourcePath = str_replace(
-                "{" . "order_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($order_id),
-                $resourcePath
-            );
-        }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        
-        
-  
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath, 'GET',
-                $queryParams, $httpBody,
-                $headerParams, '\SquareConnect\Model\V1Order'
-            );
-            if (!$response) {
-                return array(null, $statusCode, $httpHeader);
-            }
-
-            return array(\SquareConnect\ObjectSerializer::deserialize($response, '\SquareConnect\Model\V1Order', $httpHeader), $statusCode, $httpHeader);
-                    } catch (ApiException $e) {
-            switch ($e->getCode()) { 
-            case 200:
-                $data = \SquareConnect\ObjectSerializer::deserialize($e->getResponseBody(), '\SquareConnect\Model\V1Order', $e->getResponseHeaders());
-                $e->setResponseObject($data);
-                break;
-            }
-  
-            throw $e;
-        }
-    }
-    /**
-     * v1RetrievePayment
-     *
-     * Provides comprehensive information for a single payment.
-     *
-     * @param string $location_id The ID of the payment&#39;s associated location. (required)
-     * @param string $payment_id The payment&#39;s Square-issued ID. You obtain this value from Payment objects returned by the List Payments endpoint, or Settlement objects returned by the List Settlements endpoint. (required)
-     * @return \SquareConnect\Model\V1Payment
-     * @throws \SquareConnect\ApiException on non-2xx response
-     */
-    public function v1RetrievePayment($location_id, $payment_id)
-    {
-        list($response, $statusCode, $httpHeader) = $this->v1RetrievePaymentWithHttpInfo ($location_id, $payment_id);
-        return $response; 
-    }
-
-
-    /**
-     * v1RetrievePaymentWithHttpInfo
-     *
-     * Provides comprehensive information for a single payment.
-     *
-     * @param string $location_id The ID of the payment&#39;s associated location. (required)
-     * @param string $payment_id The payment&#39;s Square-issued ID. You obtain this value from Payment objects returned by the List Payments endpoint, or Settlement objects returned by the List Settlements endpoint. (required)
-     * @return Array of \SquareConnect\Model\V1Payment, HTTP status code, HTTP response headers (array of strings)
-     * @throws \SquareConnect\ApiException on non-2xx response
-     */
-    public function v1RetrievePaymentWithHttpInfo($location_id, $payment_id)
-    {
-        
-        // verify the required parameter 'location_id' is set
-        if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1RetrievePayment');
-        }
-        // verify the required parameter 'payment_id' is set
-        if ($payment_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $payment_id when calling v1RetrievePayment');
-        }
-  
-        // parse inputs
-        $resourcePath = "/v1/{location_id}/payments/{payment_id}";
-        $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = ApiClient::selectHeaderAccept(array('application/json'));
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-  
-        
-        
-        // path params
-        if ($location_id !== null) {
-            $resourcePath = str_replace(
-                "{" . "location_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($location_id),
-                $resourcePath
-            );
-        }// path params
-        if ($payment_id !== null) {
-            $resourcePath = str_replace(
-                "{" . "payment_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($payment_id),
-                $resourcePath
-            );
-        }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        
-        
-  
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath, 'GET',
-                $queryParams, $httpBody,
-                $headerParams, '\SquareConnect\Model\V1Payment'
-            );
-            if (!$response) {
-                return array(null, $statusCode, $httpHeader);
-            }
-
-            return array(\SquareConnect\ObjectSerializer::deserialize($response, '\SquareConnect\Model\V1Payment', $httpHeader), $statusCode, $httpHeader);
-                    } catch (ApiException $e) {
-            switch ($e->getCode()) { 
-            case 200:
-                $data = \SquareConnect\ObjectSerializer::deserialize($e->getResponseBody(), '\SquareConnect\Model\V1Payment', $e->getResponseHeaders());
-                $e->setResponseObject($data);
-                break;
-            }
-  
-            throw $e;
-        }
-    }
-    /**
-     * v1RetrieveSettlement
-     *
-     * Provides comprehensive information for a single settlement, including the entries that contribute to the settlement's total.
-     *
-     * @param string $location_id The ID of the settlements&#39;s associated location. (required)
-     * @param string $settlement_id The settlement&#39;s Square-issued ID. You obtain this value from Settlement objects returned by the List Settlements endpoint. (required)
-     * @return \SquareConnect\Model\V1Settlement
-     * @throws \SquareConnect\ApiException on non-2xx response
-     */
-    public function v1RetrieveSettlement($location_id, $settlement_id)
-    {
-        list($response, $statusCode, $httpHeader) = $this->v1RetrieveSettlementWithHttpInfo ($location_id, $settlement_id);
-        return $response; 
-    }
-
-
-    /**
-     * v1RetrieveSettlementWithHttpInfo
-     *
-     * Provides comprehensive information for a single settlement, including the entries that contribute to the settlement's total.
-     *
-     * @param string $location_id The ID of the settlements&#39;s associated location. (required)
-     * @param string $settlement_id The settlement&#39;s Square-issued ID. You obtain this value from Settlement objects returned by the List Settlements endpoint. (required)
-     * @return Array of \SquareConnect\Model\V1Settlement, HTTP status code, HTTP response headers (array of strings)
-     * @throws \SquareConnect\ApiException on non-2xx response
-     */
-    public function v1RetrieveSettlementWithHttpInfo($location_id, $settlement_id)
-    {
-        
-        // verify the required parameter 'location_id' is set
-        if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1RetrieveSettlement');
-        }
-        // verify the required parameter 'settlement_id' is set
-        if ($settlement_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $settlement_id when calling v1RetrieveSettlement');
-        }
-  
-        // parse inputs
-        $resourcePath = "/v1/{location_id}/settlements/{settlement_id}";
-        $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = ApiClient::selectHeaderAccept(array('application/json'));
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-  
-        
-        
-        // path params
-        if ($location_id !== null) {
-            $resourcePath = str_replace(
-                "{" . "location_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($location_id),
-                $resourcePath
-            );
-        }// path params
-        if ($settlement_id !== null) {
-            $resourcePath = str_replace(
-                "{" . "settlement_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($settlement_id),
-                $resourcePath
-            );
-        }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        
-        
-  
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        
-        // this endpoint requires OAuth (access token)
-        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
-            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath, 'GET',
-                $queryParams, $httpBody,
-                $headerParams, '\SquareConnect\Model\V1Settlement'
-            );
-            if (!$response) {
-                return array(null, $statusCode, $httpHeader);
-            }
-
-            return array(\SquareConnect\ObjectSerializer::deserialize($response, '\SquareConnect\Model\V1Settlement', $httpHeader), $statusCode, $httpHeader);
-                    } catch (ApiException $e) {
-            switch ($e->getCode()) { 
-            case 200:
-                $data = \SquareConnect\ObjectSerializer::deserialize($e->getResponseBody(), '\SquareConnect\Model\V1Settlement', $e->getResponseHeaders());
-                $e->setResponseObject($data);
-                break;
-            }
-  
-            throw $e;
-        }
-    }
-    /**
-     * v1UpdateOrder
-     *
-     * Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions:
-     *
-     * @param string $location_id The ID of the order&#39;s associated location. (required)
-     * @param string $order_id The order&#39;s Square-issued ID. You obtain this value from Order objects returned by the List Orders endpoint (required)
-     * @param \SquareConnect\Model\V1UpdateOrderRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
-     * @return \SquareConnect\Model\V1Order
-     * @throws \SquareConnect\ApiException on non-2xx response
-     */
-    public function v1UpdateOrder($location_id, $order_id, $body)
-    {
-        list($response, $statusCode, $httpHeader) = $this->v1UpdateOrderWithHttpInfo ($location_id, $order_id, $body);
-        return $response; 
-    }
-
-
-    /**
-     * v1UpdateOrderWithHttpInfo
-     *
-     * Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions:
-     *
-     * @param string $location_id The ID of the order&#39;s associated location. (required)
-     * @param string $order_id The order&#39;s Square-issued ID. You obtain this value from Order objects returned by the List Orders endpoint (required)
-     * @param \SquareConnect\Model\V1UpdateOrderRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
-     * @return Array of \SquareConnect\Model\V1Order, HTTP status code, HTTP response headers (array of strings)
-     * @throws \SquareConnect\ApiException on non-2xx response
-     */
-    public function v1UpdateOrderWithHttpInfo($location_id, $order_id, $body)
-    {
-        
-        // verify the required parameter 'location_id' is set
-        if ($location_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling v1UpdateOrder');
-        }
-        // verify the required parameter 'order_id' is set
-        if ($order_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $order_id when calling v1UpdateOrder');
+        // verify the required parameter 'transaction_id' is set
+        if ($transaction_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $transaction_id when calling createRefund');
         }
         // verify the required parameter 'body' is set
         if ($body === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $body when calling v1UpdateOrder');
+            throw new \InvalidArgumentException('Missing the required parameter $body when calling createRefund');
         }
   
         // parse inputs
-        $resourcePath = "/v1/{location_id}/orders/{order_id}";
+        $resourcePath = "/v2/locations/{location_id}/transactions/{transaction_id}/refund";
         $httpBody = '';
         $queryParams = array();
         $headerParams = array();
@@ -1218,10 +344,10 @@ class TransactionsApi
                 $resourcePath
             );
         }// path params
-        if ($order_id !== null) {
+        if ($transaction_id !== null) {
             $resourcePath = str_replace(
-                "{" . "order_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($order_id),
+                "{" . "transaction_id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($transaction_id),
                 $resourcePath
             );
         }
@@ -1249,19 +375,465 @@ class TransactionsApi
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath, 'PUT',
+                $resourcePath, 'POST',
                 $queryParams, $httpBody,
-                $headerParams, '\SquareConnect\Model\V1Order'
+                $headerParams, '\SquareConnect\Model\CreateRefundResponse'
             );
             if (!$response) {
                 return array(null, $statusCode, $httpHeader);
             }
 
-            return array(\SquareConnect\ObjectSerializer::deserialize($response, '\SquareConnect\Model\V1Order', $httpHeader), $statusCode, $httpHeader);
+            return array(\SquareConnect\ObjectSerializer::deserialize($response, '\SquareConnect\Model\CreateRefundResponse', $httpHeader), $statusCode, $httpHeader);
                     } catch (ApiException $e) {
             switch ($e->getCode()) { 
             case 200:
-                $data = \SquareConnect\ObjectSerializer::deserialize($e->getResponseBody(), '\SquareConnect\Model\V1Order', $e->getResponseHeaders());
+                $data = \SquareConnect\ObjectSerializer::deserialize($e->getResponseBody(), '\SquareConnect\Model\CreateRefundResponse', $e->getResponseHeaders());
+                $e->setResponseObject($data);
+                break;
+            }
+  
+            throw $e;
+        }
+    }
+    /**
+     * listRefunds
+     *
+     * ListRefunds
+     *
+     * @param string $location_id The ID of the location to list refunds for. (required)
+     * @param string $begin_time The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)
+     * @param string $end_time The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)
+     * @param string $sort_order The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)
+     * @param string $cursor A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)
+     * @return \SquareConnect\Model\ListRefundsResponse
+     * @throws \SquareConnect\ApiException on non-2xx response
+     */
+    public function listRefunds($location_id, $begin_time = null, $end_time = null, $sort_order = null, $cursor = null)
+    {
+        list($response, $statusCode, $httpHeader) = $this->listRefundsWithHttpInfo ($location_id, $begin_time, $end_time, $sort_order, $cursor);
+        return $response; 
+    }
+
+
+    /**
+     * listRefundsWithHttpInfo
+     *
+     * ListRefunds
+     *
+     * @param string $location_id The ID of the location to list refunds for. (required)
+     * @param string $begin_time The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)
+     * @param string $end_time The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)
+     * @param string $sort_order The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)
+     * @param string $cursor A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)
+     * @return Array of \SquareConnect\Model\ListRefundsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws \SquareConnect\ApiException on non-2xx response
+     */
+    public function listRefundsWithHttpInfo($location_id, $begin_time = null, $end_time = null, $sort_order = null, $cursor = null)
+    {
+        
+        // verify the required parameter 'location_id' is set
+        if ($location_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling listRefunds');
+        }
+  
+        // parse inputs
+        $resourcePath = "/v2/locations/{location_id}/refunds";
+        $httpBody = '';
+        $queryParams = array();
+        $headerParams = array();
+        $formParams = array();
+        $_header_accept = ApiClient::selectHeaderAccept(array('application/json'));
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+  
+        // query params
+        if ($begin_time !== null) {
+            $queryParams['begin_time'] = $this->apiClient->getSerializer()->toQueryValue($begin_time);
+        }// query params
+        if ($end_time !== null) {
+            $queryParams['end_time'] = $this->apiClient->getSerializer()->toQueryValue($end_time);
+        }// query params
+        if ($sort_order !== null) {
+            $queryParams['sort_order'] = $this->apiClient->getSerializer()->toQueryValue($sort_order);
+        }// query params
+        if ($cursor !== null) {
+            $queryParams['cursor'] = $this->apiClient->getSerializer()->toQueryValue($cursor);
+        }
+        
+        // path params
+        if ($location_id !== null) {
+            $resourcePath = str_replace(
+                "{" . "location_id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($location_id),
+                $resourcePath
+            );
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        
+  
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath, 'GET',
+                $queryParams, $httpBody,
+                $headerParams, '\SquareConnect\Model\ListRefundsResponse'
+            );
+            if (!$response) {
+                return array(null, $statusCode, $httpHeader);
+            }
+
+            return array(\SquareConnect\ObjectSerializer::deserialize($response, '\SquareConnect\Model\ListRefundsResponse', $httpHeader), $statusCode, $httpHeader);
+                    } catch (ApiException $e) {
+            switch ($e->getCode()) { 
+            case 200:
+                $data = \SquareConnect\ObjectSerializer::deserialize($e->getResponseBody(), '\SquareConnect\Model\ListRefundsResponse', $e->getResponseHeaders());
+                $e->setResponseObject($data);
+                break;
+            }
+  
+            throw $e;
+        }
+    }
+    /**
+     * listTransactions
+     *
+     * ListTransactions
+     *
+     * @param string $location_id The ID of the location to list transactions for. (required)
+     * @param string $begin_time The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)
+     * @param string $end_time The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)
+     * @param string $sort_order The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)
+     * @param string $cursor A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)
+     * @return \SquareConnect\Model\ListTransactionsResponse
+     * @throws \SquareConnect\ApiException on non-2xx response
+     */
+    public function listTransactions($location_id, $begin_time = null, $end_time = null, $sort_order = null, $cursor = null)
+    {
+        list($response, $statusCode, $httpHeader) = $this->listTransactionsWithHttpInfo ($location_id, $begin_time, $end_time, $sort_order, $cursor);
+        return $response; 
+    }
+
+
+    /**
+     * listTransactionsWithHttpInfo
+     *
+     * ListTransactions
+     *
+     * @param string $location_id The ID of the location to list transactions for. (required)
+     * @param string $begin_time The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. (optional)
+     * @param string $end_time The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. (optional)
+     * @param string $sort_order The order in which results are listed in the response (&#x60;ASC&#x60; for oldest first, &#x60;DESC&#x60; for newest first).  Default value: &#x60;DESC&#x60; (optional)
+     * @param string $cursor A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)
+     * @return Array of \SquareConnect\Model\ListTransactionsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws \SquareConnect\ApiException on non-2xx response
+     */
+    public function listTransactionsWithHttpInfo($location_id, $begin_time = null, $end_time = null, $sort_order = null, $cursor = null)
+    {
+        
+        // verify the required parameter 'location_id' is set
+        if ($location_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling listTransactions');
+        }
+  
+        // parse inputs
+        $resourcePath = "/v2/locations/{location_id}/transactions";
+        $httpBody = '';
+        $queryParams = array();
+        $headerParams = array();
+        $formParams = array();
+        $_header_accept = ApiClient::selectHeaderAccept(array('application/json'));
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+  
+        // query params
+        if ($begin_time !== null) {
+            $queryParams['begin_time'] = $this->apiClient->getSerializer()->toQueryValue($begin_time);
+        }// query params
+        if ($end_time !== null) {
+            $queryParams['end_time'] = $this->apiClient->getSerializer()->toQueryValue($end_time);
+        }// query params
+        if ($sort_order !== null) {
+            $queryParams['sort_order'] = $this->apiClient->getSerializer()->toQueryValue($sort_order);
+        }// query params
+        if ($cursor !== null) {
+            $queryParams['cursor'] = $this->apiClient->getSerializer()->toQueryValue($cursor);
+        }
+        
+        // path params
+        if ($location_id !== null) {
+            $resourcePath = str_replace(
+                "{" . "location_id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($location_id),
+                $resourcePath
+            );
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        
+  
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath, 'GET',
+                $queryParams, $httpBody,
+                $headerParams, '\SquareConnect\Model\ListTransactionsResponse'
+            );
+            if (!$response) {
+                return array(null, $statusCode, $httpHeader);
+            }
+
+            return array(\SquareConnect\ObjectSerializer::deserialize($response, '\SquareConnect\Model\ListTransactionsResponse', $httpHeader), $statusCode, $httpHeader);
+                    } catch (ApiException $e) {
+            switch ($e->getCode()) { 
+            case 200:
+                $data = \SquareConnect\ObjectSerializer::deserialize($e->getResponseBody(), '\SquareConnect\Model\ListTransactionsResponse', $e->getResponseHeaders());
+                $e->setResponseObject($data);
+                break;
+            }
+  
+            throw $e;
+        }
+    }
+    /**
+     * retrieveTransaction
+     *
+     * RetrieveTransaction
+     *
+     * @param string $location_id The ID of the transaction&#39;s associated location. (required)
+     * @param string $transaction_id The ID of the transaction to retrieve. (required)
+     * @return \SquareConnect\Model\RetrieveTransactionResponse
+     * @throws \SquareConnect\ApiException on non-2xx response
+     */
+    public function retrieveTransaction($location_id, $transaction_id)
+    {
+        list($response, $statusCode, $httpHeader) = $this->retrieveTransactionWithHttpInfo ($location_id, $transaction_id);
+        return $response; 
+    }
+
+
+    /**
+     * retrieveTransactionWithHttpInfo
+     *
+     * RetrieveTransaction
+     *
+     * @param string $location_id The ID of the transaction&#39;s associated location. (required)
+     * @param string $transaction_id The ID of the transaction to retrieve. (required)
+     * @return Array of \SquareConnect\Model\RetrieveTransactionResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws \SquareConnect\ApiException on non-2xx response
+     */
+    public function retrieveTransactionWithHttpInfo($location_id, $transaction_id)
+    {
+        
+        // verify the required parameter 'location_id' is set
+        if ($location_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling retrieveTransaction');
+        }
+        // verify the required parameter 'transaction_id' is set
+        if ($transaction_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $transaction_id when calling retrieveTransaction');
+        }
+  
+        // parse inputs
+        $resourcePath = "/v2/locations/{location_id}/transactions/{transaction_id}";
+        $httpBody = '';
+        $queryParams = array();
+        $headerParams = array();
+        $formParams = array();
+        $_header_accept = ApiClient::selectHeaderAccept(array('application/json'));
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+  
+        
+        
+        // path params
+        if ($location_id !== null) {
+            $resourcePath = str_replace(
+                "{" . "location_id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($location_id),
+                $resourcePath
+            );
+        }// path params
+        if ($transaction_id !== null) {
+            $resourcePath = str_replace(
+                "{" . "transaction_id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($transaction_id),
+                $resourcePath
+            );
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        
+  
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath, 'GET',
+                $queryParams, $httpBody,
+                $headerParams, '\SquareConnect\Model\RetrieveTransactionResponse'
+            );
+            if (!$response) {
+                return array(null, $statusCode, $httpHeader);
+            }
+
+            return array(\SquareConnect\ObjectSerializer::deserialize($response, '\SquareConnect\Model\RetrieveTransactionResponse', $httpHeader), $statusCode, $httpHeader);
+                    } catch (ApiException $e) {
+            switch ($e->getCode()) { 
+            case 200:
+                $data = \SquareConnect\ObjectSerializer::deserialize($e->getResponseBody(), '\SquareConnect\Model\RetrieveTransactionResponse', $e->getResponseHeaders());
+                $e->setResponseObject($data);
+                break;
+            }
+  
+            throw $e;
+        }
+    }
+    /**
+     * voidTransaction
+     *
+     * VoidTransaction
+     *
+     * @param string $location_id  (required)
+     * @param string $transaction_id  (required)
+     * @return \SquareConnect\Model\VoidTransactionResponse
+     * @throws \SquareConnect\ApiException on non-2xx response
+     */
+    public function voidTransaction($location_id, $transaction_id)
+    {
+        list($response, $statusCode, $httpHeader) = $this->voidTransactionWithHttpInfo ($location_id, $transaction_id);
+        return $response; 
+    }
+
+
+    /**
+     * voidTransactionWithHttpInfo
+     *
+     * VoidTransaction
+     *
+     * @param string $location_id  (required)
+     * @param string $transaction_id  (required)
+     * @return Array of \SquareConnect\Model\VoidTransactionResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws \SquareConnect\ApiException on non-2xx response
+     */
+    public function voidTransactionWithHttpInfo($location_id, $transaction_id)
+    {
+        
+        // verify the required parameter 'location_id' is set
+        if ($location_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling voidTransaction');
+        }
+        // verify the required parameter 'transaction_id' is set
+        if ($transaction_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $transaction_id when calling voidTransaction');
+        }
+  
+        // parse inputs
+        $resourcePath = "/v2/locations/{location_id}/transactions/{transaction_id}/void";
+        $httpBody = '';
+        $queryParams = array();
+        $headerParams = array();
+        $formParams = array();
+        $_header_accept = ApiClient::selectHeaderAccept(array('application/json'));
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+  
+        
+        
+        // path params
+        if ($location_id !== null) {
+            $resourcePath = str_replace(
+                "{" . "location_id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($location_id),
+                $resourcePath
+            );
+        }// path params
+        if ($transaction_id !== null) {
+            $resourcePath = str_replace(
+                "{" . "transaction_id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($transaction_id),
+                $resourcePath
+            );
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        
+  
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath, 'POST',
+                $queryParams, $httpBody,
+                $headerParams, '\SquareConnect\Model\VoidTransactionResponse'
+            );
+            if (!$response) {
+                return array(null, $statusCode, $httpHeader);
+            }
+
+            return array(\SquareConnect\ObjectSerializer::deserialize($response, '\SquareConnect\Model\VoidTransactionResponse', $httpHeader), $statusCode, $httpHeader);
+                    } catch (ApiException $e) {
+            switch ($e->getCode()) { 
+            case 200:
+                $data = \SquareConnect\ObjectSerializer::deserialize($e->getResponseBody(), '\SquareConnect\Model\VoidTransactionResponse', $e->getResponseHeaders());
                 $e->setResponseObject($data);
                 break;
             }

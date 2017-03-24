@@ -112,7 +112,7 @@ class ChargeRequest implements ArrayAccess
       */
     protected $customer_card_id;
     /**
-      * $delay_capture If `true`, the request will only perform an Auth on the provided card. You can then later perform either a Capture (with the [CaptureTransaction](#endpoint-capturetransaction) endpoint) or a Void (with the [VoidTransation](#endpoint-voidtransaction) endpoint).  Default value: `false`
+      * $delay_capture If `true`, the request will only perform an Auth on the provided card. You can then later perform either a Capture (with the [CaptureTransaction](#endpoint-capturetransaction) endpoint) or a Void (with the [VoidTransaction](#endpoint-voidtransaction) endpoint).  Default value: `false`
       * @var bool
       */
     protected $delay_capture;
@@ -254,7 +254,7 @@ class ChargeRequest implements ArrayAccess
   
     /**
      * Sets delay_capture
-     * @param bool $delay_capture If `true`, the request will only perform an Auth on the provided card. You can then later perform either a Capture (with the [CaptureTransaction](#endpoint-capturetransaction) endpoint) or a Void (with the [VoidTransation](#endpoint-voidtransaction) endpoint).  Default value: `false`
+     * @param bool $delay_capture If `true`, the request will only perform an Auth on the provided card. You can then later perform either a Capture (with the [CaptureTransaction](#endpoint-capturetransaction) endpoint) or a Void (with the [VoidTransaction](#endpoint-voidtransaction) endpoint).  Default value: `false`
      * @return $this
      */
     public function setDelayCapture($delay_capture)
