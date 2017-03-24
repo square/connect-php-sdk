@@ -13,7 +13,7 @@ use \SquareConnect\ApiException;
 use \SquareConnect\ObjectSerializer;
 
 /**
- * CustomerCardApiTest Class Doc Comment
+ * CustomersApiTest Class Doc Comment
  *
  * @category Class
  * @package  SquareConnect
@@ -21,7 +21,7 @@ use \SquareConnect\ObjectSerializer;
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://squareup.com/developers
  */
-class CustomerCardApiTest extends \PHPUnit_Framework_TestCase
+class CustomersApiTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -39,6 +39,15 @@ class CustomerCardApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for createCustomer
+     *
+     * CreateCustomer
+     *
+     */
+    public function test_createCustomer() {
+
+    }
+    /**
      * Test case for createCustomerCard
      *
      * CreateCustomerCard
@@ -48,12 +57,48 @@ class CustomerCardApiTest extends \PHPUnit_Framework_TestCase
 
     }
     /**
+     * Test case for deleteCustomer
+     *
+     * DeleteCustomer
+     *
+     */
+    public function test_deleteCustomer() {
+
+    }
+    /**
      * Test case for deleteCustomerCard
      *
      * DeleteCustomerCard
      *
      */
     public function test_deleteCustomerCard() {
+
+    }
+    /**
+     * Test case for listCustomers
+     *
+     * ListCustomers
+     *
+     */
+    public function test_listCustomers() {
+
+    }
+    /**
+     * Test case for retrieveCustomer
+     *
+     * RetrieveCustomer
+     *
+     */
+    public function test_retrieveCustomer() {
+
+    }
+    /**
+     * Test case for updateCustomer
+     *
+     * UpdateCustomer
+     *
+     */
+    public function test_updateCustomer() {
 
     }
 }

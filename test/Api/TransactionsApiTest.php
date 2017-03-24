@@ -13,7 +13,7 @@ use \SquareConnect\ApiException;
 use \SquareConnect\ObjectSerializer;
 
 /**
- * TransactionApiTest Class Doc Comment
+ * TransactionsApiTest Class Doc Comment
  *
  * @category Class
  * @package  SquareConnect
@@ -21,7 +21,7 @@ use \SquareConnect\ObjectSerializer;
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://squareup.com/developers
  */
-class TransactionApiTest extends \PHPUnit_Framework_TestCase
+class TransactionsApiTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -54,6 +54,24 @@ class TransactionApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function test_charge() {
+
+    }
+    /**
+     * Test case for createRefund
+     *
+     * CreateRefund
+     *
+     */
+    public function test_createRefund() {
+
+    }
+    /**
+     * Test case for listRefunds
+     *
+     * ListRefunds
+     *
+     */
+    public function test_listRefunds() {
 
     }
     /**
