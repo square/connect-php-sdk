@@ -1,7 +1,7 @@
-Connect v2 PHP SDK [![Build Status](https://travis-ci.org/square/connect-php-sdk.svg?branch=master)](https://travis-ci.org/square/connect-php-sdk)
+Square Connect PHP SDK [![Build Status](https://travis-ci.org/square/connect-php-sdk.svg?branch=master)](https://travis-ci.org/square/connect-php-sdk)
 ==================
 
-This repository contains a generated PHP client SDK for the Square Connect APIs v2. Check out our [API
+This repository contains a generated PHP client SDK for the Square Connect APIs. Check out our [API
 specification repository](https://github.com/square/connect-api-specification)
 for the specification and template files we used to generate this.
 
