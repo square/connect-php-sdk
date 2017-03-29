@@ -21,7 +21,7 @@ use \SquareConnect\ObjectSerializer;
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://squareup.com/developers
  */
-class V1LocationApiTest extends \PHPUnit_Framework_TestCase
+class V1LocationsApiTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
