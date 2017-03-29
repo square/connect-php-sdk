@@ -13,7 +13,7 @@ use \SquareConnect\ApiException;
 use \SquareConnect\ObjectSerializer;
 
 /**
- * V1LocationApi Class Doc Comment
+ * V1LocationsApi Class Doc Comment
  *
  * @category Class
  * @package  SquareConnect
@@ -21,7 +21,7 @@ use \SquareConnect\ObjectSerializer;
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://squareup.com/developers
  */
-class V1LocationApi
+class V1LocationsApi
 {
 
     /**
@@ -56,7 +56,7 @@ class V1LocationApi
     /**
      * Set the API client
      * @param \SquareConnect\ApiClient $apiClient set the API client
-     * @return V1LocationApi
+     * @return V1LocationsApi
      */
     public function setApiClient(ApiClient $apiClient)
     {
