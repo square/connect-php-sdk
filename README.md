@@ -148,8 +148,8 @@ Class | Method | HTTP request | Description
 *V1ItemsApi* | [**updatePage**](docs/Api/V1ItemsApi.md#updatepage) | **PUT** /v1/{location_id}/pages/{page_id} | Modifies the details of a Favorites page in Square Register.
 *V1ItemsApi* | [**updatePageCell**](docs/Api/V1ItemsApi.md#updatepagecell) | **PUT** /v1/{location_id}/pages/{page_id}/cells | Modifies a cell of a Favorites page in Square Register.
 *V1ItemsApi* | [**updateVariation**](docs/Api/V1ItemsApi.md#updatevariation) | **PUT** /v1/{location_id}/items/{item_id}/variations/{variation_id} | Modifies the details of an existing item variation.
-*V1LocationApi* | [**listLocations**](docs/Api/V1LocationApi.md#listlocations) | **GET** /v1/me/locations | Provides details for a business&#39;s locations, including their IDs.
-*V1LocationApi* | [**retrieveBusiness**](docs/Api/V1LocationApi.md#retrievebusiness) | **GET** /v1/me | Get a business&#39;s information.
+*V1LocationsApi* | [**listLocations**](docs/Api/V1LocationsApi.md#listlocations) | **GET** /v1/me/locations | Provides details for a business&#39;s locations, including their IDs.
+*V1LocationsApi* | [**retrieveBusiness**](docs/Api/V1LocationsApi.md#retrievebusiness) | **GET** /v1/me | Get a business&#39;s information.
 *V1TransactionsApi* | [**createRefund**](docs/Api/V1TransactionsApi.md#createrefund) | **POST** /v1/{location_id}/refunds | Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.
 *V1TransactionsApi* | [**listBankAccounts**](docs/Api/V1TransactionsApi.md#listbankaccounts) | **GET** /v1/{location_id}/bank-accounts | Provides non-confidential details for all of a location&#39;s associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
 *V1TransactionsApi* | [**listOrders**](docs/Api/V1TransactionsApi.md#listorders) | **GET** /v1/{location_id}/orders | Provides summary information for a merchant&#39;s online store orders.
