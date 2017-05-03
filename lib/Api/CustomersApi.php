@@ -69,14 +69,13 @@ class CustomersApi
      *
      * CreateCustomer
      *
-     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @param \SquareConnect\Model\CreateCustomerRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
      * @return \SquareConnect\Model\CreateCustomerResponse
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function createCustomer($authorization, $body)
+    public function createCustomer($body)
     {
-        list($response, $statusCode, $httpHeader) = $this->createCustomerWithHttpInfo ($authorization, $body);
+        list($response, $statusCode, $httpHeader) = $this->createCustomerWithHttpInfo ($body);
         return $response; 
     }
 
@@ -86,18 +85,13 @@ class CustomersApi
      *
      * CreateCustomer
      *
-     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @param \SquareConnect\Model\CreateCustomerRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
      * @return Array of \SquareConnect\Model\CreateCustomerResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function createCustomerWithHttpInfo($authorization, $body)
+    public function createCustomerWithHttpInfo($body)
     {
         
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $authorization when calling createCustomer');
-        }
         // verify the required parameter 'body' is set
         if ($body === null) {
             throw new \InvalidArgumentException('Missing the required parameter $body when calling createCustomer');
@@ -116,10 +110,7 @@ class CustomersApi
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
   
         
-        // header params
-        if ($authorization !== null) {
-            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
-        }
+        
         
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
@@ -137,7 +128,12 @@ class CustomersApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-                // make the API Call
+        
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath, 'POST',
@@ -165,15 +161,14 @@ class CustomersApi
      *
      * CreateCustomerCard
      *
-     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @param string $customer_id The ID of the customer to link the card on file to. (required)
      * @param \SquareConnect\Model\CreateCustomerCardRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
      * @return \SquareConnect\Model\CreateCustomerCardResponse
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function createCustomerCard($authorization, $customer_id, $body)
+    public function createCustomerCard($customer_id, $body)
     {
-        list($response, $statusCode, $httpHeader) = $this->createCustomerCardWithHttpInfo ($authorization, $customer_id, $body);
+        list($response, $statusCode, $httpHeader) = $this->createCustomerCardWithHttpInfo ($customer_id, $body);
         return $response; 
     }
 
@@ -183,19 +178,14 @@ class CustomersApi
      *
      * CreateCustomerCard
      *
-     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @param string $customer_id The ID of the customer to link the card on file to. (required)
      * @param \SquareConnect\Model\CreateCustomerCardRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
      * @return Array of \SquareConnect\Model\CreateCustomerCardResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function createCustomerCardWithHttpInfo($authorization, $customer_id, $body)
+    public function createCustomerCardWithHttpInfo($customer_id, $body)
     {
         
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $authorization when calling createCustomerCard');
-        }
         // verify the required parameter 'customer_id' is set
         if ($customer_id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $customer_id when calling createCustomerCard');
@@ -218,10 +208,7 @@ class CustomersApi
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
   
         
-        // header params
-        if ($authorization !== null) {
-            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
-        }
+        
         // path params
         if ($customer_id !== null) {
             $resourcePath = str_replace(
@@ -246,7 +233,12 @@ class CustomersApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-                // make the API Call
+        
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath, 'POST',
@@ -274,14 +266,13 @@ class CustomersApi
      *
      * DeleteCustomer
      *
-     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @param string $customer_id The ID of the customer to delete. (required)
      * @return \SquareConnect\Model\DeleteCustomerResponse
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function deleteCustomer($authorization, $customer_id)
+    public function deleteCustomer($customer_id)
     {
-        list($response, $statusCode, $httpHeader) = $this->deleteCustomerWithHttpInfo ($authorization, $customer_id);
+        list($response, $statusCode, $httpHeader) = $this->deleteCustomerWithHttpInfo ($customer_id);
         return $response; 
     }
 
@@ -291,18 +282,13 @@ class CustomersApi
      *
      * DeleteCustomer
      *
-     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @param string $customer_id The ID of the customer to delete. (required)
      * @return Array of \SquareConnect\Model\DeleteCustomerResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function deleteCustomerWithHttpInfo($authorization, $customer_id)
+    public function deleteCustomerWithHttpInfo($customer_id)
     {
         
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $authorization when calling deleteCustomer');
-        }
         // verify the required parameter 'customer_id' is set
         if ($customer_id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $customer_id when calling deleteCustomer');
@@ -321,10 +307,7 @@ class CustomersApi
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
   
         
-        // header params
-        if ($authorization !== null) {
-            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
-        }
+        
         // path params
         if ($customer_id !== null) {
             $resourcePath = str_replace(
@@ -345,7 +328,12 @@ class CustomersApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-                // make the API Call
+        
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath, 'DELETE',
@@ -373,15 +361,14 @@ class CustomersApi
      *
      * DeleteCustomerCard
      *
-     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @param string $customer_id The ID of the customer that the card on file belongs to. (required)
      * @param string $card_id The ID of the card on file to delete. (required)
      * @return \SquareConnect\Model\DeleteCustomerCardResponse
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function deleteCustomerCard($authorization, $customer_id, $card_id)
+    public function deleteCustomerCard($customer_id, $card_id)
     {
-        list($response, $statusCode, $httpHeader) = $this->deleteCustomerCardWithHttpInfo ($authorization, $customer_id, $card_id);
+        list($response, $statusCode, $httpHeader) = $this->deleteCustomerCardWithHttpInfo ($customer_id, $card_id);
         return $response; 
     }
 
@@ -391,19 +378,14 @@ class CustomersApi
      *
      * DeleteCustomerCard
      *
-     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @param string $customer_id The ID of the customer that the card on file belongs to. (required)
      * @param string $card_id The ID of the card on file to delete. (required)
      * @return Array of \SquareConnect\Model\DeleteCustomerCardResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function deleteCustomerCardWithHttpInfo($authorization, $customer_id, $card_id)
+    public function deleteCustomerCardWithHttpInfo($customer_id, $card_id)
     {
         
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $authorization when calling deleteCustomerCard');
-        }
         // verify the required parameter 'customer_id' is set
         if ($customer_id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $customer_id when calling deleteCustomerCard');
@@ -426,10 +408,7 @@ class CustomersApi
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
   
         
-        // header params
-        if ($authorization !== null) {
-            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
-        }
+        
         // path params
         if ($customer_id !== null) {
             $resourcePath = str_replace(
@@ -457,7 +436,12 @@ class CustomersApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-                // make the API Call
+        
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath, 'DELETE',
@@ -485,14 +469,13 @@ class CustomersApi
      *
      * ListCustomers
      *
-     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @param string $cursor A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)
      * @return \SquareConnect\Model\ListCustomersResponse
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function listCustomers($authorization, $cursor = null)
+    public function listCustomers($cursor = null)
     {
-        list($response, $statusCode, $httpHeader) = $this->listCustomersWithHttpInfo ($authorization, $cursor);
+        list($response, $statusCode, $httpHeader) = $this->listCustomersWithHttpInfo ($cursor);
         return $response; 
     }
 
@@ -502,18 +485,13 @@ class CustomersApi
      *
      * ListCustomers
      *
-     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @param string $cursor A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)
      * @return Array of \SquareConnect\Model\ListCustomersResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function listCustomersWithHttpInfo($authorization, $cursor = null)
+    public function listCustomersWithHttpInfo($cursor = null)
     {
         
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $authorization when calling listCustomers');
-        }
   
         // parse inputs
         $resourcePath = "/v2/customers";
@@ -531,10 +509,7 @@ class CustomersApi
         if ($cursor !== null) {
             $queryParams['cursor'] = $this->apiClient->getSerializer()->toQueryValue($cursor);
         }
-        // header params
-        if ($authorization !== null) {
-            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
-        }
+        
         
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
@@ -548,7 +523,12 @@ class CustomersApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-                // make the API Call
+        
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath, 'GET',
@@ -576,14 +556,13 @@ class CustomersApi
      *
      * RetrieveCustomer
      *
-     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @param string $customer_id The ID of the customer to retrieve. (required)
      * @return \SquareConnect\Model\RetrieveCustomerResponse
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function retrieveCustomer($authorization, $customer_id)
+    public function retrieveCustomer($customer_id)
     {
-        list($response, $statusCode, $httpHeader) = $this->retrieveCustomerWithHttpInfo ($authorization, $customer_id);
+        list($response, $statusCode, $httpHeader) = $this->retrieveCustomerWithHttpInfo ($customer_id);
         return $response; 
     }
 
@@ -593,18 +572,13 @@ class CustomersApi
      *
      * RetrieveCustomer
      *
-     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @param string $customer_id The ID of the customer to retrieve. (required)
      * @return Array of \SquareConnect\Model\RetrieveCustomerResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function retrieveCustomerWithHttpInfo($authorization, $customer_id)
+    public function retrieveCustomerWithHttpInfo($customer_id)
     {
         
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $authorization when calling retrieveCustomer');
-        }
         // verify the required parameter 'customer_id' is set
         if ($customer_id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $customer_id when calling retrieveCustomer');
@@ -623,10 +597,7 @@ class CustomersApi
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
   
         
-        // header params
-        if ($authorization !== null) {
-            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
-        }
+        
         // path params
         if ($customer_id !== null) {
             $resourcePath = str_replace(
@@ -647,7 +618,12 @@ class CustomersApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-                // make the API Call
+        
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath, 'GET',
@@ -675,15 +651,14 @@ class CustomersApi
      *
      * UpdateCustomer
      *
-     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @param string $customer_id The ID of the customer to update. (required)
      * @param \SquareConnect\Model\UpdateCustomerRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
      * @return \SquareConnect\Model\UpdateCustomerResponse
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function updateCustomer($authorization, $customer_id, $body)
+    public function updateCustomer($customer_id, $body)
     {
-        list($response, $statusCode, $httpHeader) = $this->updateCustomerWithHttpInfo ($authorization, $customer_id, $body);
+        list($response, $statusCode, $httpHeader) = $this->updateCustomerWithHttpInfo ($customer_id, $body);
         return $response; 
     }
 
@@ -693,19 +668,14 @@ class CustomersApi
      *
      * UpdateCustomer
      *
-     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @param string $customer_id The ID of the customer to update. (required)
      * @param \SquareConnect\Model\UpdateCustomerRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
      * @return Array of \SquareConnect\Model\UpdateCustomerResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function updateCustomerWithHttpInfo($authorization, $customer_id, $body)
+    public function updateCustomerWithHttpInfo($customer_id, $body)
     {
         
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $authorization when calling updateCustomer');
-        }
         // verify the required parameter 'customer_id' is set
         if ($customer_id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $customer_id when calling updateCustomer');
@@ -728,10 +698,7 @@ class CustomersApi
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
   
         
-        // header params
-        if ($authorization !== null) {
-            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
-        }
+        
         // path params
         if ($customer_id !== null) {
             $resourcePath = str_replace(
@@ -756,7 +723,12 @@ class CustomersApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-                // make the API Call
+        
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath, 'PUT',

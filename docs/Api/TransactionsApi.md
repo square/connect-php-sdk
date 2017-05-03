@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **captureTransaction**
-> \SquareConnect\Model\CaptureTransactionResponse captureTransaction($authorization, $location_id, $transaction_id)
+> \SquareConnect\Model\CaptureTransactionResponse captureTransaction($location_id, $transaction_id)
 
 CaptureTransaction
 
@@ -25,13 +25,15 @@ Captures a transaction that was created with the [Charge](#endpoint-charge) endp
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure OAuth2 access token for authorization: oauth2
+SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 $api_instance = new SquareConnect\Api\TransactionsApi();
-$authorization = "authorization_example"; // string | The value to provide in the Authorization header of your request. This value should follow the format `Bearer YOUR_ACCESS_TOKEN_HERE`.
 $location_id = "location_id_example"; // string | 
 $transaction_id = "transaction_id_example"; // string | 
 
 try {
-    $result = $api_instance->captureTransaction($authorization, $location_id, $transaction_id);
+    $result = $api_instance->captureTransaction($location_id, $transaction_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionsApi->captureTransaction: ', $e->getMessage(), PHP_EOL;
@@ -43,7 +45,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. |
  **location_id** | **string**|  |
  **transaction_id** | **string**|  |
 
@@ -53,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2](../../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -63,7 +64,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **charge**
-> \SquareConnect\Model\ChargeResponse charge($authorization, $location_id, $body)
+> \SquareConnect\Model\ChargeResponse charge($location_id, $body)
 
 Charge
 
@@ -74,13 +75,15 @@ Charges a card represented by a card nonce or a customer's card on file.  Your r
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure OAuth2 access token for authorization: oauth2
+SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 $api_instance = new SquareConnect\Api\TransactionsApi();
-$authorization = "authorization_example"; // string | The value to provide in the Authorization header of your request. This value should follow the format `Bearer YOUR_ACCESS_TOKEN_HERE`.
 $location_id = "location_id_example"; // string | The ID of the location to associate the created transaction with.
 $body = new \SquareConnect\Model\ChargeRequest(); // \SquareConnect\Model\ChargeRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->charge($authorization, $location_id, $body);
+    $result = $api_instance->charge($location_id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionsApi->charge: ', $e->getMessage(), PHP_EOL;
@@ -92,7 +95,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. |
  **location_id** | **string**| The ID of the location to associate the created transaction with. |
  **body** | [**\SquareConnect\Model\ChargeRequest**](../Model/\SquareConnect\Model\ChargeRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
@@ -102,7 +104,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2](../../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -112,7 +114,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createRefund**
-> \SquareConnect\Model\CreateRefundResponse createRefund($authorization, $location_id, $transaction_id, $body)
+> \SquareConnect\Model\CreateRefundResponse createRefund($location_id, $transaction_id, $body)
 
 CreateRefund
 
@@ -123,14 +125,16 @@ Initiates a refund for a previously charged tender.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure OAuth2 access token for authorization: oauth2
+SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 $api_instance = new SquareConnect\Api\TransactionsApi();
-$authorization = "authorization_example"; // string | The value to provide in the Authorization header of your request. This value should follow the format `Bearer YOUR_ACCESS_TOKEN_HERE`.
 $location_id = "location_id_example"; // string | The ID of the original transaction's associated location.
 $transaction_id = "transaction_id_example"; // string | The ID of the original transaction that includes the tender to refund.
 $body = new \SquareConnect\Model\CreateRefundRequest(); // \SquareConnect\Model\CreateRefundRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->createRefund($authorization, $location_id, $transaction_id, $body);
+    $result = $api_instance->createRefund($location_id, $transaction_id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionsApi->createRefund: ', $e->getMessage(), PHP_EOL;
@@ -142,7 +146,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. |
  **location_id** | **string**| The ID of the original transaction&#39;s associated location. |
  **transaction_id** | **string**| The ID of the original transaction that includes the tender to refund. |
  **body** | [**\SquareConnect\Model\CreateRefundRequest**](../Model/\SquareConnect\Model\CreateRefundRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
@@ -153,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2](../../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -163,7 +166,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listRefunds**
-> \SquareConnect\Model\ListRefundsResponse listRefunds($authorization, $location_id, $begin_time, $end_time, $sort_order, $cursor)
+> \SquareConnect\Model\ListRefundsResponse listRefunds($location_id, $begin_time, $end_time, $sort_order, $cursor)
 
 ListRefunds
 
@@ -174,8 +177,10 @@ Lists refunds for one of a business's locations.  Refunds with a `status` of `PE
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure OAuth2 access token for authorization: oauth2
+SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 $api_instance = new SquareConnect\Api\TransactionsApi();
-$authorization = "authorization_example"; // string | The value to provide in the Authorization header of your request. This value should follow the format `Bearer YOUR_ACCESS_TOKEN_HERE`.
 $location_id = "location_id_example"; // string | The ID of the location to list refunds for.
 $begin_time = "begin_time_example"; // string | The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year.
 $end_time = "end_time_example"; // string | The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time.
@@ -183,7 +188,7 @@ $sort_order = "sort_order_example"; // string | The order in which results are l
 $cursor = "cursor_example"; // string | A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information.
 
 try {
-    $result = $api_instance->listRefunds($authorization, $location_id, $begin_time, $end_time, $sort_order, $cursor);
+    $result = $api_instance->listRefunds($location_id, $begin_time, $end_time, $sort_order, $cursor);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionsApi->listRefunds: ', $e->getMessage(), PHP_EOL;
@@ -195,7 +200,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. |
  **location_id** | **string**| The ID of the location to list refunds for. |
  **begin_time** | **string**| The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. | [optional]
  **end_time** | **string**| The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. | [optional]
@@ -208,7 +212,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2](../../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -218,7 +222,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listTransactions**
-> \SquareConnect\Model\ListTransactionsResponse listTransactions($authorization, $location_id, $begin_time, $end_time, $sort_order, $cursor)
+> \SquareConnect\Model\ListTransactionsResponse listTransactions($location_id, $begin_time, $end_time, $sort_order, $cursor)
 
 ListTransactions
 
@@ -229,8 +233,10 @@ Lists transactions for a particular location.  Max results per [page](#paginatin
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure OAuth2 access token for authorization: oauth2
+SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 $api_instance = new SquareConnect\Api\TransactionsApi();
-$authorization = "authorization_example"; // string | The value to provide in the Authorization header of your request. This value should follow the format `Bearer YOUR_ACCESS_TOKEN_HERE`.
 $location_id = "location_id_example"; // string | The ID of the location to list transactions for.
 $begin_time = "begin_time_example"; // string | The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year.
 $end_time = "end_time_example"; // string | The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time.
@@ -238,7 +244,7 @@ $sort_order = "sort_order_example"; // string | The order in which results are l
 $cursor = "cursor_example"; // string | A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information.
 
 try {
-    $result = $api_instance->listTransactions($authorization, $location_id, $begin_time, $end_time, $sort_order, $cursor);
+    $result = $api_instance->listTransactions($location_id, $begin_time, $end_time, $sort_order, $cursor);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionsApi->listTransactions: ', $e->getMessage(), PHP_EOL;
@@ -250,7 +256,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. |
  **location_id** | **string**| The ID of the location to list transactions for. |
  **begin_time** | **string**| The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year. | [optional]
  **end_time** | **string**| The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time. | [optional]
@@ -263,7 +268,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2](../../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -273,7 +278,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **retrieveTransaction**
-> \SquareConnect\Model\RetrieveTransactionResponse retrieveTransaction($authorization, $location_id, $transaction_id)
+> \SquareConnect\Model\RetrieveTransactionResponse retrieveTransaction($location_id, $transaction_id)
 
 RetrieveTransaction
 
@@ -284,13 +289,15 @@ Retrieves details for a single transaction.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure OAuth2 access token for authorization: oauth2
+SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 $api_instance = new SquareConnect\Api\TransactionsApi();
-$authorization = "authorization_example"; // string | The value to provide in the Authorization header of your request. This value should follow the format `Bearer YOUR_ACCESS_TOKEN_HERE`.
 $location_id = "location_id_example"; // string | The ID of the transaction's associated location.
 $transaction_id = "transaction_id_example"; // string | The ID of the transaction to retrieve.
 
 try {
-    $result = $api_instance->retrieveTransaction($authorization, $location_id, $transaction_id);
+    $result = $api_instance->retrieveTransaction($location_id, $transaction_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionsApi->retrieveTransaction: ', $e->getMessage(), PHP_EOL;
@@ -302,7 +309,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. |
  **location_id** | **string**| The ID of the transaction&#39;s associated location. |
  **transaction_id** | **string**| The ID of the transaction to retrieve. |
 
@@ -312,7 +318,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2](../../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -322,7 +328,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **voidTransaction**
-> \SquareConnect\Model\VoidTransactionResponse voidTransaction($authorization, $location_id, $transaction_id)
+> \SquareConnect\Model\VoidTransactionResponse voidTransaction($location_id, $transaction_id)
 
 VoidTransaction
 
@@ -333,13 +339,15 @@ Cancels a transaction that was created with the [Charge](#endpoint-charge) endpo
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure OAuth2 access token for authorization: oauth2
+SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 $api_instance = new SquareConnect\Api\TransactionsApi();
-$authorization = "authorization_example"; // string | The value to provide in the Authorization header of your request. This value should follow the format `Bearer YOUR_ACCESS_TOKEN_HERE`.
 $location_id = "location_id_example"; // string | 
 $transaction_id = "transaction_id_example"; // string | 
 
 try {
-    $result = $api_instance->voidTransaction($authorization, $location_id, $transaction_id);
+    $result = $api_instance->voidTransaction($location_id, $transaction_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionsApi->voidTransaction: ', $e->getMessage(), PHP_EOL;
@@ -351,7 +359,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. |
  **location_id** | **string**|  |
  **transaction_id** | **string**|  |
 
@@ -361,7 +368,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2](../../README.md#oauth2)
 
 ### HTTP request headers
 

@@ -32,7 +32,7 @@ class Transaction implements ArrayAccess
         'reference_id' => 'string',
         'product' => 'string',
         'client_id' => 'string',
-        'order' => '\SquareConnect\Model\Order',
+        'order' => '\SquareConnect\Model\Squareupconnectv2ordersOrder',
         'shipping_address' => '\SquareConnect\Model\Address'
     );
   
@@ -129,7 +129,7 @@ class Transaction implements ArrayAccess
     protected $client_id;
     /**
       * $order The order associated with this transaction, if any.
-      * @var \SquareConnect\Model\Order
+      * @var \SquareConnect\Model\Squareupconnectv2ordersOrder
       */
     protected $order;
     /**
@@ -311,7 +311,7 @@ class Transaction implements ArrayAccess
     }
     /**
      * Gets order
-     * @return \SquareConnect\Model\Order
+     * @return \SquareConnect\Model\Squareupconnectv2ordersOrder
      */
     public function getOrder()
     {
@@ -320,7 +320,7 @@ class Transaction implements ArrayAccess
   
     /**
      * Sets order
-     * @param \SquareConnect\Model\Order $order The order associated with this transaction, if any.
+     * @param \SquareConnect\Model\Squareupconnectv2ordersOrder $order The order associated with this transaction, if any.
      * @return $this
      */
     public function setOrder($order)

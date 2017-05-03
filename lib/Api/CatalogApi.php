@@ -69,14 +69,13 @@ class CatalogApi
      *
      * BatchDeleteCatalogObjects
      *
-     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @param \SquareConnect\Model\BatchDeleteCatalogObjectsRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
      * @return \SquareConnect\Model\BatchDeleteCatalogObjectsResponse
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function batchDeleteCatalogObjects($authorization, $body)
+    public function batchDeleteCatalogObjects($body)
     {
-        list($response, $statusCode, $httpHeader) = $this->batchDeleteCatalogObjectsWithHttpInfo ($authorization, $body);
+        list($response, $statusCode, $httpHeader) = $this->batchDeleteCatalogObjectsWithHttpInfo ($body);
         return $response; 
     }
 
@@ -86,18 +85,13 @@ class CatalogApi
      *
      * BatchDeleteCatalogObjects
      *
-     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @param \SquareConnect\Model\BatchDeleteCatalogObjectsRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
      * @return Array of \SquareConnect\Model\BatchDeleteCatalogObjectsResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function batchDeleteCatalogObjectsWithHttpInfo($authorization, $body)
+    public function batchDeleteCatalogObjectsWithHttpInfo($body)
     {
         
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $authorization when calling batchDeleteCatalogObjects');
-        }
         // verify the required parameter 'body' is set
         if ($body === null) {
             throw new \InvalidArgumentException('Missing the required parameter $body when calling batchDeleteCatalogObjects');
@@ -116,10 +110,7 @@ class CatalogApi
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
   
         
-        // header params
-        if ($authorization !== null) {
-            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
-        }
+        
         
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
@@ -137,7 +128,12 @@ class CatalogApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-                // make the API Call
+        
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath, 'POST',
@@ -165,14 +161,13 @@ class CatalogApi
      *
      * BatchRetrieveCatalogObjects
      *
-     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @param \SquareConnect\Model\BatchRetrieveCatalogObjectsRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
      * @return \SquareConnect\Model\BatchRetrieveCatalogObjectsResponse
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function batchRetrieveCatalogObjects($authorization, $body)
+    public function batchRetrieveCatalogObjects($body)
     {
-        list($response, $statusCode, $httpHeader) = $this->batchRetrieveCatalogObjectsWithHttpInfo ($authorization, $body);
+        list($response, $statusCode, $httpHeader) = $this->batchRetrieveCatalogObjectsWithHttpInfo ($body);
         return $response; 
     }
 
@@ -182,18 +177,13 @@ class CatalogApi
      *
      * BatchRetrieveCatalogObjects
      *
-     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @param \SquareConnect\Model\BatchRetrieveCatalogObjectsRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
      * @return Array of \SquareConnect\Model\BatchRetrieveCatalogObjectsResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function batchRetrieveCatalogObjectsWithHttpInfo($authorization, $body)
+    public function batchRetrieveCatalogObjectsWithHttpInfo($body)
     {
         
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $authorization when calling batchRetrieveCatalogObjects');
-        }
         // verify the required parameter 'body' is set
         if ($body === null) {
             throw new \InvalidArgumentException('Missing the required parameter $body when calling batchRetrieveCatalogObjects');
@@ -212,10 +202,7 @@ class CatalogApi
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
   
         
-        // header params
-        if ($authorization !== null) {
-            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
-        }
+        
         
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
@@ -233,7 +220,12 @@ class CatalogApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-                // make the API Call
+        
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath, 'POST',
@@ -261,14 +253,13 @@ class CatalogApi
      *
      * BatchUpsertCatalogObjects
      *
-     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @param \SquareConnect\Model\BatchUpsertCatalogObjectsRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
      * @return \SquareConnect\Model\BatchUpsertCatalogObjectsResponse
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function batchUpsertCatalogObjects($authorization, $body)
+    public function batchUpsertCatalogObjects($body)
     {
-        list($response, $statusCode, $httpHeader) = $this->batchUpsertCatalogObjectsWithHttpInfo ($authorization, $body);
+        list($response, $statusCode, $httpHeader) = $this->batchUpsertCatalogObjectsWithHttpInfo ($body);
         return $response; 
     }
 
@@ -278,18 +269,13 @@ class CatalogApi
      *
      * BatchUpsertCatalogObjects
      *
-     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @param \SquareConnect\Model\BatchUpsertCatalogObjectsRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
      * @return Array of \SquareConnect\Model\BatchUpsertCatalogObjectsResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function batchUpsertCatalogObjectsWithHttpInfo($authorization, $body)
+    public function batchUpsertCatalogObjectsWithHttpInfo($body)
     {
         
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $authorization when calling batchUpsertCatalogObjects');
-        }
         // verify the required parameter 'body' is set
         if ($body === null) {
             throw new \InvalidArgumentException('Missing the required parameter $body when calling batchUpsertCatalogObjects');
@@ -308,10 +294,7 @@ class CatalogApi
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
   
         
-        // header params
-        if ($authorization !== null) {
-            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
-        }
+        
         
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
@@ -329,7 +312,12 @@ class CatalogApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-                // make the API Call
+        
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath, 'POST',
@@ -357,13 +345,12 @@ class CatalogApi
      *
      * CatalogInfo
      *
-     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @return \SquareConnect\Model\CatalogInfoResponse
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function catalogInfo($authorization)
+    public function catalogInfo()
     {
-        list($response, $statusCode, $httpHeader) = $this->catalogInfoWithHttpInfo ($authorization);
+        list($response, $statusCode, $httpHeader) = $this->catalogInfoWithHttpInfo ();
         return $response; 
     }
 
@@ -373,17 +360,12 @@ class CatalogApi
      *
      * CatalogInfo
      *
-     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @return Array of \SquareConnect\Model\CatalogInfoResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function catalogInfoWithHttpInfo($authorization)
+    public function catalogInfoWithHttpInfo()
     {
         
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $authorization when calling catalogInfo');
-        }
   
         // parse inputs
         $resourcePath = "/v2/catalog/info";
@@ -398,10 +380,7 @@ class CatalogApi
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
   
         
-        // header params
-        if ($authorization !== null) {
-            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
-        }
+        
         
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
@@ -415,7 +394,12 @@ class CatalogApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-                // make the API Call
+        
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath, 'GET',
@@ -443,14 +427,13 @@ class CatalogApi
      *
      * DeleteCatalogObject
      *
-     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @param string $object_id The ID of the [CatalogObject](#type-catalogobject) to be deleted. When an object is deleted, other objects in the graph that depend on that object will be deleted as well (for example, deleting a [CatalogItem](#type-catalogitem) will delete its [CatalogItemVariation](#type-catalogitemvariation)s). (required)
      * @return \SquareConnect\Model\DeleteCatalogObjectResponse
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function deleteCatalogObject($authorization, $object_id)
+    public function deleteCatalogObject($object_id)
     {
-        list($response, $statusCode, $httpHeader) = $this->deleteCatalogObjectWithHttpInfo ($authorization, $object_id);
+        list($response, $statusCode, $httpHeader) = $this->deleteCatalogObjectWithHttpInfo ($object_id);
         return $response; 
     }
 
@@ -460,18 +443,13 @@ class CatalogApi
      *
      * DeleteCatalogObject
      *
-     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @param string $object_id The ID of the [CatalogObject](#type-catalogobject) to be deleted. When an object is deleted, other objects in the graph that depend on that object will be deleted as well (for example, deleting a [CatalogItem](#type-catalogitem) will delete its [CatalogItemVariation](#type-catalogitemvariation)s). (required)
      * @return Array of \SquareConnect\Model\DeleteCatalogObjectResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function deleteCatalogObjectWithHttpInfo($authorization, $object_id)
+    public function deleteCatalogObjectWithHttpInfo($object_id)
     {
         
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $authorization when calling deleteCatalogObject');
-        }
         // verify the required parameter 'object_id' is set
         if ($object_id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $object_id when calling deleteCatalogObject');
@@ -493,10 +471,7 @@ class CatalogApi
         if ($object_id !== null) {
             $queryParams['object_id'] = $this->apiClient->getSerializer()->toQueryValue($object_id);
         }
-        // header params
-        if ($authorization !== null) {
-            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
-        }
+        
         
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
@@ -510,7 +485,12 @@ class CatalogApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-                // make the API Call
+        
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath, 'DELETE',
@@ -538,15 +518,14 @@ class CatalogApi
      *
      * ListCatalog
      *
-     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @param string $cursor The pagination cursor returned in the previous response. Leave unset for an initial request. See [Paginating results](#paginatingresults) for more information. (optional)
      * @param string $types An optional case-insensitive, comma-separated list of object types to retrieve, for example &#x60;ITEM,ITEM_VARIATION,CATEGORY&#x60;.  The legal values are taken from the [CatalogObjectType](#type-catalogobjecttype) enumeration, namely &#x60;\&quot;ITEM\&quot;&#x60;, &#x60;\&quot;ITEM_VARIATION\&quot;&#x60;, &#x60;\&quot;CATEGORY\&quot;&#x60;, &#x60;\&quot;DISCOUNT\&quot;&#x60;, &#x60;\&quot;TAX\&quot;&#x60;, &#x60;\&quot;MODIFIER\&quot;&#x60;, or &#x60;\&quot;MODIFIER_LIST\&quot;&#x60;. (optional)
      * @return \SquareConnect\Model\ListCatalogResponse
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function listCatalog($authorization, $cursor = null, $types = null)
+    public function listCatalog($cursor = null, $types = null)
     {
-        list($response, $statusCode, $httpHeader) = $this->listCatalogWithHttpInfo ($authorization, $cursor, $types);
+        list($response, $statusCode, $httpHeader) = $this->listCatalogWithHttpInfo ($cursor, $types);
         return $response; 
     }
 
@@ -556,19 +535,14 @@ class CatalogApi
      *
      * ListCatalog
      *
-     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @param string $cursor The pagination cursor returned in the previous response. Leave unset for an initial request. See [Paginating results](#paginatingresults) for more information. (optional)
      * @param string $types An optional case-insensitive, comma-separated list of object types to retrieve, for example &#x60;ITEM,ITEM_VARIATION,CATEGORY&#x60;.  The legal values are taken from the [CatalogObjectType](#type-catalogobjecttype) enumeration, namely &#x60;\&quot;ITEM\&quot;&#x60;, &#x60;\&quot;ITEM_VARIATION\&quot;&#x60;, &#x60;\&quot;CATEGORY\&quot;&#x60;, &#x60;\&quot;DISCOUNT\&quot;&#x60;, &#x60;\&quot;TAX\&quot;&#x60;, &#x60;\&quot;MODIFIER\&quot;&#x60;, or &#x60;\&quot;MODIFIER_LIST\&quot;&#x60;. (optional)
      * @return Array of \SquareConnect\Model\ListCatalogResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function listCatalogWithHttpInfo($authorization, $cursor = null, $types = null)
+    public function listCatalogWithHttpInfo($cursor = null, $types = null)
     {
         
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $authorization when calling listCatalog');
-        }
   
         // parse inputs
         $resourcePath = "/v2/catalog/list";
@@ -589,10 +563,7 @@ class CatalogApi
         if ($types !== null) {
             $queryParams['types'] = $this->apiClient->getSerializer()->toQueryValue($types);
         }
-        // header params
-        if ($authorization !== null) {
-            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
-        }
+        
         
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
@@ -606,7 +577,12 @@ class CatalogApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-                // make the API Call
+        
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath, 'GET',
@@ -634,15 +610,14 @@ class CatalogApi
      *
      * RetrieveCatalogObject
      *
-     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @param string $object_id The object ID of any type of [CatalogObject](#type-catalogobject)s to be retrieved. (required)
      * @param bool $include_related_objects If &#x60;true&#x60;, the response will include additional objects that are related to the requested object, as follows:  If the &#x60;object&#x60; field of the response contains a [CatalogItem](#type-catalogitem), its associated [CatalogCategory](#type-catalogcategory), [CatalogTax](#type-catalogtax)es, and [CatalogModifierList](#type-catalogmodifierlist)s will be returned in the &#x60;related_objects&#x60; field of the response. If the &#x60;object&#x60; field of the response contains a [CatalogItemVariation](#type-catalogitemvariation), its parent [CatalogItem](#type-catalogitem) will be returned in the &#x60;related_objects&#x60; field of the response. (optional)
      * @return \SquareConnect\Model\RetrieveCatalogObjectResponse
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function retrieveCatalogObject($authorization, $object_id, $include_related_objects = null)
+    public function retrieveCatalogObject($object_id, $include_related_objects = null)
     {
-        list($response, $statusCode, $httpHeader) = $this->retrieveCatalogObjectWithHttpInfo ($authorization, $object_id, $include_related_objects);
+        list($response, $statusCode, $httpHeader) = $this->retrieveCatalogObjectWithHttpInfo ($object_id, $include_related_objects);
         return $response; 
     }
 
@@ -652,19 +627,14 @@ class CatalogApi
      *
      * RetrieveCatalogObject
      *
-     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @param string $object_id The object ID of any type of [CatalogObject](#type-catalogobject)s to be retrieved. (required)
      * @param bool $include_related_objects If &#x60;true&#x60;, the response will include additional objects that are related to the requested object, as follows:  If the &#x60;object&#x60; field of the response contains a [CatalogItem](#type-catalogitem), its associated [CatalogCategory](#type-catalogcategory), [CatalogTax](#type-catalogtax)es, and [CatalogModifierList](#type-catalogmodifierlist)s will be returned in the &#x60;related_objects&#x60; field of the response. If the &#x60;object&#x60; field of the response contains a [CatalogItemVariation](#type-catalogitemvariation), its parent [CatalogItem](#type-catalogitem) will be returned in the &#x60;related_objects&#x60; field of the response. (optional)
      * @return Array of \SquareConnect\Model\RetrieveCatalogObjectResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function retrieveCatalogObjectWithHttpInfo($authorization, $object_id, $include_related_objects = null)
+    public function retrieveCatalogObjectWithHttpInfo($object_id, $include_related_objects = null)
     {
         
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $authorization when calling retrieveCatalogObject');
-        }
         // verify the required parameter 'object_id' is set
         if ($object_id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $object_id when calling retrieveCatalogObject');
@@ -689,10 +659,7 @@ class CatalogApi
         if ($include_related_objects !== null) {
             $queryParams['include_related_objects'] = $this->apiClient->getSerializer()->toQueryValue($include_related_objects);
         }
-        // header params
-        if ($authorization !== null) {
-            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
-        }
+        
         
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
@@ -706,7 +673,12 @@ class CatalogApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-                // make the API Call
+        
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath, 'GET',
@@ -734,14 +706,13 @@ class CatalogApi
      *
      * SearchCatalogObjects
      *
-     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @param \SquareConnect\Model\SearchCatalogObjectsRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
      * @return \SquareConnect\Model\SearchCatalogObjectsResponse
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function searchCatalogObjects($authorization, $body)
+    public function searchCatalogObjects($body)
     {
-        list($response, $statusCode, $httpHeader) = $this->searchCatalogObjectsWithHttpInfo ($authorization, $body);
+        list($response, $statusCode, $httpHeader) = $this->searchCatalogObjectsWithHttpInfo ($body);
         return $response; 
     }
 
@@ -751,18 +722,13 @@ class CatalogApi
      *
      * SearchCatalogObjects
      *
-     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @param \SquareConnect\Model\SearchCatalogObjectsRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
      * @return Array of \SquareConnect\Model\SearchCatalogObjectsResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function searchCatalogObjectsWithHttpInfo($authorization, $body)
+    public function searchCatalogObjectsWithHttpInfo($body)
     {
         
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $authorization when calling searchCatalogObjects');
-        }
         // verify the required parameter 'body' is set
         if ($body === null) {
             throw new \InvalidArgumentException('Missing the required parameter $body when calling searchCatalogObjects');
@@ -781,10 +747,7 @@ class CatalogApi
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
   
         
-        // header params
-        if ($authorization !== null) {
-            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
-        }
+        
         
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
@@ -802,7 +765,12 @@ class CatalogApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-                // make the API Call
+        
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath, 'POST',
@@ -830,14 +798,13 @@ class CatalogApi
      *
      * UpdateItemModifierLists
      *
-     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @param \SquareConnect\Model\UpdateItemModifierListsRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
      * @return \SquareConnect\Model\UpdateItemModifierListsResponse
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function updateItemModifierLists($authorization, $body)
+    public function updateItemModifierLists($body)
     {
-        list($response, $statusCode, $httpHeader) = $this->updateItemModifierListsWithHttpInfo ($authorization, $body);
+        list($response, $statusCode, $httpHeader) = $this->updateItemModifierListsWithHttpInfo ($body);
         return $response; 
     }
 
@@ -847,18 +814,13 @@ class CatalogApi
      *
      * UpdateItemModifierLists
      *
-     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @param \SquareConnect\Model\UpdateItemModifierListsRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
      * @return Array of \SquareConnect\Model\UpdateItemModifierListsResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function updateItemModifierListsWithHttpInfo($authorization, $body)
+    public function updateItemModifierListsWithHttpInfo($body)
     {
         
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $authorization when calling updateItemModifierLists');
-        }
         // verify the required parameter 'body' is set
         if ($body === null) {
             throw new \InvalidArgumentException('Missing the required parameter $body when calling updateItemModifierLists');
@@ -877,10 +839,7 @@ class CatalogApi
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
   
         
-        // header params
-        if ($authorization !== null) {
-            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
-        }
+        
         
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
@@ -898,7 +857,12 @@ class CatalogApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-                // make the API Call
+        
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath, 'POST',
@@ -926,14 +890,13 @@ class CatalogApi
      *
      * UpdateItemTaxes
      *
-     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @param \SquareConnect\Model\UpdateItemTaxesRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
      * @return \SquareConnect\Model\UpdateItemTaxesResponse
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function updateItemTaxes($authorization, $body)
+    public function updateItemTaxes($body)
     {
-        list($response, $statusCode, $httpHeader) = $this->updateItemTaxesWithHttpInfo ($authorization, $body);
+        list($response, $statusCode, $httpHeader) = $this->updateItemTaxesWithHttpInfo ($body);
         return $response; 
     }
 
@@ -943,18 +906,13 @@ class CatalogApi
      *
      * UpdateItemTaxes
      *
-     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @param \SquareConnect\Model\UpdateItemTaxesRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
      * @return Array of \SquareConnect\Model\UpdateItemTaxesResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function updateItemTaxesWithHttpInfo($authorization, $body)
+    public function updateItemTaxesWithHttpInfo($body)
     {
         
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $authorization when calling updateItemTaxes');
-        }
         // verify the required parameter 'body' is set
         if ($body === null) {
             throw new \InvalidArgumentException('Missing the required parameter $body when calling updateItemTaxes');
@@ -973,10 +931,7 @@ class CatalogApi
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
   
         
-        // header params
-        if ($authorization !== null) {
-            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
-        }
+        
         
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
@@ -994,7 +949,12 @@ class CatalogApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-                // make the API Call
+        
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath, 'POST',
@@ -1022,14 +982,13 @@ class CatalogApi
      *
      * UpsertCatalogObject
      *
-     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @param \SquareConnect\Model\UpsertCatalogObjectRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
      * @return \SquareConnect\Model\UpsertCatalogObjectResponse
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function upsertCatalogObject($authorization, $body)
+    public function upsertCatalogObject($body)
     {
-        list($response, $statusCode, $httpHeader) = $this->upsertCatalogObjectWithHttpInfo ($authorization, $body);
+        list($response, $statusCode, $httpHeader) = $this->upsertCatalogObjectWithHttpInfo ($body);
         return $response; 
     }
 
@@ -1039,18 +998,13 @@ class CatalogApi
      *
      * UpsertCatalogObject
      *
-     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @param \SquareConnect\Model\UpsertCatalogObjectRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
      * @return Array of \SquareConnect\Model\UpsertCatalogObjectResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function upsertCatalogObjectWithHttpInfo($authorization, $body)
+    public function upsertCatalogObjectWithHttpInfo($body)
     {
         
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $authorization when calling upsertCatalogObject');
-        }
         // verify the required parameter 'body' is set
         if ($body === null) {
             throw new \InvalidArgumentException('Missing the required parameter $body when calling upsertCatalogObject');
@@ -1069,10 +1023,7 @@ class CatalogApi
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
   
         
-        // header params
-        if ($authorization !== null) {
-            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
-        }
+        
         
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
@@ -1090,7 +1041,12 @@ class CatalogApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-                // make the API Call
+        
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath, 'POST',

@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 
 # **batchDeleteCatalogObjects**
-> \SquareConnect\Model\BatchDeleteCatalogObjectsResponse batchDeleteCatalogObjects($authorization, $body)
+> \SquareConnect\Model\BatchDeleteCatalogObjectsResponse batchDeleteCatalogObjects($body)
 
 BatchDeleteCatalogObjects
 
@@ -29,12 +29,14 @@ Deletes a set of [CatalogItem](#type-catalogitem)s based on the provided list of
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure OAuth2 access token for authorization: oauth2
+SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 $api_instance = new SquareConnect\Api\CatalogApi();
-$authorization = "authorization_example"; // string | The value to provide in the Authorization header of your request. This value should follow the format `Bearer YOUR_ACCESS_TOKEN_HERE`.
 $body = new \SquareConnect\Model\BatchDeleteCatalogObjectsRequest(); // \SquareConnect\Model\BatchDeleteCatalogObjectsRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->batchDeleteCatalogObjects($authorization, $body);
+    $result = $api_instance->batchDeleteCatalogObjects($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CatalogApi->batchDeleteCatalogObjects: ', $e->getMessage(), PHP_EOL;
@@ -46,7 +48,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. |
  **body** | [**\SquareConnect\Model\BatchDeleteCatalogObjectsRequest**](../Model/\SquareConnect\Model\BatchDeleteCatalogObjectsRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
@@ -55,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2](../../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -65,7 +66,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **batchRetrieveCatalogObjects**
-> \SquareConnect\Model\BatchRetrieveCatalogObjectsResponse batchRetrieveCatalogObjects($authorization, $body)
+> \SquareConnect\Model\BatchRetrieveCatalogObjectsResponse batchRetrieveCatalogObjects($body)
 
 BatchRetrieveCatalogObjects
 
@@ -76,12 +77,14 @@ Returns a set of objects based on the provided ID. [CatalogItem](#type-catalogit
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure OAuth2 access token for authorization: oauth2
+SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 $api_instance = new SquareConnect\Api\CatalogApi();
-$authorization = "authorization_example"; // string | The value to provide in the Authorization header of your request. This value should follow the format `Bearer YOUR_ACCESS_TOKEN_HERE`.
 $body = new \SquareConnect\Model\BatchRetrieveCatalogObjectsRequest(); // \SquareConnect\Model\BatchRetrieveCatalogObjectsRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->batchRetrieveCatalogObjects($authorization, $body);
+    $result = $api_instance->batchRetrieveCatalogObjects($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CatalogApi->batchRetrieveCatalogObjects: ', $e->getMessage(), PHP_EOL;
@@ -93,7 +96,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. |
  **body** | [**\SquareConnect\Model\BatchRetrieveCatalogObjectsRequest**](../Model/\SquareConnect\Model\BatchRetrieveCatalogObjectsRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
@@ -102,7 +104,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2](../../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -112,7 +114,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **batchUpsertCatalogObjects**
-> \SquareConnect\Model\BatchUpsertCatalogObjectsResponse batchUpsertCatalogObjects($authorization, $body)
+> \SquareConnect\Model\BatchUpsertCatalogObjectsResponse batchUpsertCatalogObjects($body)
 
 BatchUpsertCatalogObjects
 
@@ -123,12 +125,14 @@ Creates or updates up to 10,000 target objects based on the provided list of obj
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure OAuth2 access token for authorization: oauth2
+SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 $api_instance = new SquareConnect\Api\CatalogApi();
-$authorization = "authorization_example"; // string | The value to provide in the Authorization header of your request. This value should follow the format `Bearer YOUR_ACCESS_TOKEN_HERE`.
 $body = new \SquareConnect\Model\BatchUpsertCatalogObjectsRequest(); // \SquareConnect\Model\BatchUpsertCatalogObjectsRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->batchUpsertCatalogObjects($authorization, $body);
+    $result = $api_instance->batchUpsertCatalogObjects($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CatalogApi->batchUpsertCatalogObjects: ', $e->getMessage(), PHP_EOL;
@@ -140,7 +144,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. |
  **body** | [**\SquareConnect\Model\BatchUpsertCatalogObjectsRequest**](../Model/\SquareConnect\Model\BatchUpsertCatalogObjectsRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
@@ -149,7 +152,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2](../../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -159,7 +162,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **catalogInfo**
-> \SquareConnect\Model\CatalogInfoResponse catalogInfo($authorization)
+> \SquareConnect\Model\CatalogInfoResponse catalogInfo()
 
 CatalogInfo
 
@@ -170,11 +173,13 @@ Returns information about the Square Catalog API, such as batch size limits for 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure OAuth2 access token for authorization: oauth2
+SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 $api_instance = new SquareConnect\Api\CatalogApi();
-$authorization = "authorization_example"; // string | The value to provide in the Authorization header of your request. This value should follow the format `Bearer YOUR_ACCESS_TOKEN_HERE`.
 
 try {
-    $result = $api_instance->catalogInfo($authorization);
+    $result = $api_instance->catalogInfo();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CatalogApi->catalogInfo: ', $e->getMessage(), PHP_EOL;
@@ -183,10 +188,7 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **authorization** | **string**| The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -194,7 +196,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2](../../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -204,7 +206,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteCatalogObject**
-> \SquareConnect\Model\DeleteCatalogObjectResponse deleteCatalogObject($authorization, $object_id)
+> \SquareConnect\Model\DeleteCatalogObjectResponse deleteCatalogObject($object_id)
 
 DeleteCatalogObject
 
@@ -215,12 +217,14 @@ Deletes a single [CatalogObject](#type-catalogobject) based on the provided ID a
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure OAuth2 access token for authorization: oauth2
+SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 $api_instance = new SquareConnect\Api\CatalogApi();
-$authorization = "authorization_example"; // string | The value to provide in the Authorization header of your request. This value should follow the format `Bearer YOUR_ACCESS_TOKEN_HERE`.
 $object_id = "object_id_example"; // string | The ID of the [CatalogObject](#type-catalogobject) to be deleted. When an object is deleted, other objects in the graph that depend on that object will be deleted as well (for example, deleting a [CatalogItem](#type-catalogitem) will delete its [CatalogItemVariation](#type-catalogitemvariation)s).
 
 try {
-    $result = $api_instance->deleteCatalogObject($authorization, $object_id);
+    $result = $api_instance->deleteCatalogObject($object_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CatalogApi->deleteCatalogObject: ', $e->getMessage(), PHP_EOL;
@@ -232,7 +236,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. |
  **object_id** | **string**| The ID of the [CatalogObject](#type-catalogobject) to be deleted. When an object is deleted, other objects in the graph that depend on that object will be deleted as well (for example, deleting a [CatalogItem](#type-catalogitem) will delete its [CatalogItemVariation](#type-catalogitemvariation)s). |
 
 ### Return type
@@ -241,7 +244,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2](../../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -251,7 +254,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listCatalog**
-> \SquareConnect\Model\ListCatalogResponse listCatalog($authorization, $cursor, $types)
+> \SquareConnect\Model\ListCatalogResponse listCatalog($cursor, $types)
 
 ListCatalog
 
@@ -262,13 +265,15 @@ Returns a list of [CatalogObject](#type-catalogobject)s that includes all object
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure OAuth2 access token for authorization: oauth2
+SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 $api_instance = new SquareConnect\Api\CatalogApi();
-$authorization = "authorization_example"; // string | The value to provide in the Authorization header of your request. This value should follow the format `Bearer YOUR_ACCESS_TOKEN_HERE`.
 $cursor = "cursor_example"; // string | The pagination cursor returned in the previous response. Leave unset for an initial request. See [Paginating results](#paginatingresults) for more information.
 $types = "types_example"; // string | An optional case-insensitive, comma-separated list of object types to retrieve, for example `ITEM,ITEM_VARIATION,CATEGORY`.  The legal values are taken from the [CatalogObjectType](#type-catalogobjecttype) enumeration, namely `\"ITEM\"`, `\"ITEM_VARIATION\"`, `\"CATEGORY\"`, `\"DISCOUNT\"`, `\"TAX\"`, `\"MODIFIER\"`, or `\"MODIFIER_LIST\"`.
 
 try {
-    $result = $api_instance->listCatalog($authorization, $cursor, $types);
+    $result = $api_instance->listCatalog($cursor, $types);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CatalogApi->listCatalog: ', $e->getMessage(), PHP_EOL;
@@ -280,7 +285,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. |
  **cursor** | **string**| The pagination cursor returned in the previous response. Leave unset for an initial request. See [Paginating results](#paginatingresults) for more information. | [optional]
  **types** | **string**| An optional case-insensitive, comma-separated list of object types to retrieve, for example &#x60;ITEM,ITEM_VARIATION,CATEGORY&#x60;.  The legal values are taken from the [CatalogObjectType](#type-catalogobjecttype) enumeration, namely &#x60;\&quot;ITEM\&quot;&#x60;, &#x60;\&quot;ITEM_VARIATION\&quot;&#x60;, &#x60;\&quot;CATEGORY\&quot;&#x60;, &#x60;\&quot;DISCOUNT\&quot;&#x60;, &#x60;\&quot;TAX\&quot;&#x60;, &#x60;\&quot;MODIFIER\&quot;&#x60;, or &#x60;\&quot;MODIFIER_LIST\&quot;&#x60;. | [optional]
 
@@ -290,7 +294,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2](../../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -300,7 +304,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **retrieveCatalogObject**
-> \SquareConnect\Model\RetrieveCatalogObjectResponse retrieveCatalogObject($authorization, $object_id, $include_related_objects)
+> \SquareConnect\Model\RetrieveCatalogObjectResponse retrieveCatalogObject($object_id, $include_related_objects)
 
 RetrieveCatalogObject
 
@@ -311,13 +315,15 @@ Returns a single [CatalogItem](#type-catalogitem) as a [CatalogObject](#type-cat
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure OAuth2 access token for authorization: oauth2
+SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 $api_instance = new SquareConnect\Api\CatalogApi();
-$authorization = "authorization_example"; // string | The value to provide in the Authorization header of your request. This value should follow the format `Bearer YOUR_ACCESS_TOKEN_HERE`.
 $object_id = "object_id_example"; // string | The object ID of any type of [CatalogObject](#type-catalogobject)s to be retrieved.
 $include_related_objects = true; // bool | If `true`, the response will include additional objects that are related to the requested object, as follows:  If the `object` field of the response contains a [CatalogItem](#type-catalogitem), its associated [CatalogCategory](#type-catalogcategory), [CatalogTax](#type-catalogtax)es, and [CatalogModifierList](#type-catalogmodifierlist)s will be returned in the `related_objects` field of the response. If the `object` field of the response contains a [CatalogItemVariation](#type-catalogitemvariation), its parent [CatalogItem](#type-catalogitem) will be returned in the `related_objects` field of the response.
 
 try {
-    $result = $api_instance->retrieveCatalogObject($authorization, $object_id, $include_related_objects);
+    $result = $api_instance->retrieveCatalogObject($object_id, $include_related_objects);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CatalogApi->retrieveCatalogObject: ', $e->getMessage(), PHP_EOL;
@@ -329,7 +335,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. |
  **object_id** | **string**| The object ID of any type of [CatalogObject](#type-catalogobject)s to be retrieved. |
  **include_related_objects** | **bool**| If &#x60;true&#x60;, the response will include additional objects that are related to the requested object, as follows:  If the &#x60;object&#x60; field of the response contains a [CatalogItem](#type-catalogitem), its associated [CatalogCategory](#type-catalogcategory), [CatalogTax](#type-catalogtax)es, and [CatalogModifierList](#type-catalogmodifierlist)s will be returned in the &#x60;related_objects&#x60; field of the response. If the &#x60;object&#x60; field of the response contains a [CatalogItemVariation](#type-catalogitemvariation), its parent [CatalogItem](#type-catalogitem) will be returned in the &#x60;related_objects&#x60; field of the response. | [optional]
 
@@ -339,7 +344,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2](../../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -349,7 +354,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **searchCatalogObjects**
-> \SquareConnect\Model\SearchCatalogObjectsResponse searchCatalogObjects($authorization, $body)
+> \SquareConnect\Model\SearchCatalogObjectsResponse searchCatalogObjects($body)
 
 SearchCatalogObjects
 
@@ -360,12 +365,14 @@ Queries the targeted catalog using a variety of query types ([CatalogQuerySorted
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure OAuth2 access token for authorization: oauth2
+SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 $api_instance = new SquareConnect\Api\CatalogApi();
-$authorization = "authorization_example"; // string | The value to provide in the Authorization header of your request. This value should follow the format `Bearer YOUR_ACCESS_TOKEN_HERE`.
 $body = new \SquareConnect\Model\SearchCatalogObjectsRequest(); // \SquareConnect\Model\SearchCatalogObjectsRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->searchCatalogObjects($authorization, $body);
+    $result = $api_instance->searchCatalogObjects($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CatalogApi->searchCatalogObjects: ', $e->getMessage(), PHP_EOL;
@@ -377,7 +384,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. |
  **body** | [**\SquareConnect\Model\SearchCatalogObjectsRequest**](../Model/\SquareConnect\Model\SearchCatalogObjectsRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
@@ -386,7 +392,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2](../../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -396,7 +402,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateItemModifierLists**
-> \SquareConnect\Model\UpdateItemModifierListsResponse updateItemModifierLists($authorization, $body)
+> \SquareConnect\Model\UpdateItemModifierListsResponse updateItemModifierLists($body)
 
 UpdateItemModifierLists
 
@@ -407,12 +413,14 @@ Updates the [CatalogModifierList](#type-catalogmodifierlist) objects that apply 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure OAuth2 access token for authorization: oauth2
+SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 $api_instance = new SquareConnect\Api\CatalogApi();
-$authorization = "authorization_example"; // string | The value to provide in the Authorization header of your request. This value should follow the format `Bearer YOUR_ACCESS_TOKEN_HERE`.
 $body = new \SquareConnect\Model\UpdateItemModifierListsRequest(); // \SquareConnect\Model\UpdateItemModifierListsRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->updateItemModifierLists($authorization, $body);
+    $result = $api_instance->updateItemModifierLists($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CatalogApi->updateItemModifierLists: ', $e->getMessage(), PHP_EOL;
@@ -424,7 +432,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. |
  **body** | [**\SquareConnect\Model\UpdateItemModifierListsRequest**](../Model/\SquareConnect\Model\UpdateItemModifierListsRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
@@ -433,7 +440,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2](../../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -443,7 +450,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateItemTaxes**
-> \SquareConnect\Model\UpdateItemTaxesResponse updateItemTaxes($authorization, $body)
+> \SquareConnect\Model\UpdateItemTaxesResponse updateItemTaxes($body)
 
 UpdateItemTaxes
 
@@ -454,12 +461,14 @@ Updates the [CatalogTax](#type-catalogtax) objects that apply to the targeted [C
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure OAuth2 access token for authorization: oauth2
+SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 $api_instance = new SquareConnect\Api\CatalogApi();
-$authorization = "authorization_example"; // string | The value to provide in the Authorization header of your request. This value should follow the format `Bearer YOUR_ACCESS_TOKEN_HERE`.
 $body = new \SquareConnect\Model\UpdateItemTaxesRequest(); // \SquareConnect\Model\UpdateItemTaxesRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->updateItemTaxes($authorization, $body);
+    $result = $api_instance->updateItemTaxes($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CatalogApi->updateItemTaxes: ', $e->getMessage(), PHP_EOL;
@@ -471,7 +480,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. |
  **body** | [**\SquareConnect\Model\UpdateItemTaxesRequest**](../Model/\SquareConnect\Model\UpdateItemTaxesRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
@@ -480,7 +488,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2](../../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -490,7 +498,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **upsertCatalogObject**
-> \SquareConnect\Model\UpsertCatalogObjectResponse upsertCatalogObject($authorization, $body)
+> \SquareConnect\Model\UpsertCatalogObjectResponse upsertCatalogObject($body)
 
 UpsertCatalogObject
 
@@ -501,12 +509,14 @@ Creates or updates the target [CatalogObject](#type-catalogobject).
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure OAuth2 access token for authorization: oauth2
+SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 $api_instance = new SquareConnect\Api\CatalogApi();
-$authorization = "authorization_example"; // string | The value to provide in the Authorization header of your request. This value should follow the format `Bearer YOUR_ACCESS_TOKEN_HERE`.
 $body = new \SquareConnect\Model\UpsertCatalogObjectRequest(); // \SquareConnect\Model\UpsertCatalogObjectRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->upsertCatalogObject($authorization, $body);
+    $result = $api_instance->upsertCatalogObject($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CatalogApi->upsertCatalogObject: ', $e->getMessage(), PHP_EOL;
@@ -518,7 +528,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. |
  **body** | [**\SquareConnect\Model\UpsertCatalogObjectRequest**](../Model/\SquareConnect\Model\UpsertCatalogObjectRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
@@ -527,7 +536,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2](../../README.md#oauth2)
 
 ### HTTP request headers
 
