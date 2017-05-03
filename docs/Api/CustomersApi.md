@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **createCustomer**
-> \SquareConnect\Model\CreateCustomerResponse createCustomer($body)
+> \SquareConnect\Model\CreateCustomerResponse createCustomer($authorization, $body)
 
 CreateCustomer
 
@@ -25,14 +25,12 @@ Creates a new customer for a business, which can have associated cards on file. 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2
-SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 $api_instance = new SquareConnect\Api\CustomersApi();
+$authorization = "authorization_example"; // string | The value to provide in the Authorization header of your request. This value should follow the format `Bearer YOUR_ACCESS_TOKEN_HERE`.
 $body = new \SquareConnect\Model\CreateCustomerRequest(); // \SquareConnect\Model\CreateCustomerRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->createCustomer($body);
+    $result = $api_instance->createCustomer($authorization, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomersApi->createCustomer: ', $e->getMessage(), PHP_EOL;
@@ -44,6 +42,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **authorization** | **string**| The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. |
  **body** | [**\SquareConnect\Model\CreateCustomerRequest**](../Model/\SquareConnect\Model\CreateCustomerRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
@@ -52,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2](../../README.md#oauth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -62,7 +61,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createCustomerCard**
-> \SquareConnect\Model\CreateCustomerCardResponse createCustomerCard($customer_id, $body)
+> \SquareConnect\Model\CreateCustomerCardResponse createCustomerCard($authorization, $customer_id, $body)
 
 CreateCustomerCard
 
@@ -73,15 +72,13 @@ Adds a card on file to an existing customer.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2
-SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 $api_instance = new SquareConnect\Api\CustomersApi();
+$authorization = "authorization_example"; // string | The value to provide in the Authorization header of your request. This value should follow the format `Bearer YOUR_ACCESS_TOKEN_HERE`.
 $customer_id = "customer_id_example"; // string | The ID of the customer to link the card on file to.
 $body = new \SquareConnect\Model\CreateCustomerCardRequest(); // \SquareConnect\Model\CreateCustomerCardRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->createCustomerCard($customer_id, $body);
+    $result = $api_instance->createCustomerCard($authorization, $customer_id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomersApi->createCustomerCard: ', $e->getMessage(), PHP_EOL;
@@ -93,6 +90,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **authorization** | **string**| The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. |
  **customer_id** | **string**| The ID of the customer to link the card on file to. |
  **body** | [**\SquareConnect\Model\CreateCustomerCardRequest**](../Model/\SquareConnect\Model\CreateCustomerCardRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
@@ -102,7 +100,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2](../../README.md#oauth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -112,7 +110,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteCustomer**
-> \SquareConnect\Model\DeleteCustomerResponse deleteCustomer($customer_id)
+> \SquareConnect\Model\DeleteCustomerResponse deleteCustomer($authorization, $customer_id)
 
 DeleteCustomer
 
@@ -123,14 +121,12 @@ Deletes a customer from a business, along with any linked cards on file.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2
-SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 $api_instance = new SquareConnect\Api\CustomersApi();
+$authorization = "authorization_example"; // string | The value to provide in the Authorization header of your request. This value should follow the format `Bearer YOUR_ACCESS_TOKEN_HERE`.
 $customer_id = "customer_id_example"; // string | The ID of the customer to delete.
 
 try {
-    $result = $api_instance->deleteCustomer($customer_id);
+    $result = $api_instance->deleteCustomer($authorization, $customer_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomersApi->deleteCustomer: ', $e->getMessage(), PHP_EOL;
@@ -142,6 +138,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **authorization** | **string**| The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. |
  **customer_id** | **string**| The ID of the customer to delete. |
 
 ### Return type
@@ -150,7 +147,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2](../../README.md#oauth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -160,7 +157,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteCustomerCard**
-> \SquareConnect\Model\DeleteCustomerCardResponse deleteCustomerCard($customer_id, $card_id)
+> \SquareConnect\Model\DeleteCustomerCardResponse deleteCustomerCard($authorization, $customer_id, $card_id)
 
 DeleteCustomerCard
 
@@ -171,15 +168,13 @@ Removes a card on file from a customer.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2
-SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 $api_instance = new SquareConnect\Api\CustomersApi();
+$authorization = "authorization_example"; // string | The value to provide in the Authorization header of your request. This value should follow the format `Bearer YOUR_ACCESS_TOKEN_HERE`.
 $customer_id = "customer_id_example"; // string | The ID of the customer that the card on file belongs to.
 $card_id = "card_id_example"; // string | The ID of the card on file to delete.
 
 try {
-    $result = $api_instance->deleteCustomerCard($customer_id, $card_id);
+    $result = $api_instance->deleteCustomerCard($authorization, $customer_id, $card_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomersApi->deleteCustomerCard: ', $e->getMessage(), PHP_EOL;
@@ -191,6 +186,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **authorization** | **string**| The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. |
  **customer_id** | **string**| The ID of the customer that the card on file belongs to. |
  **card_id** | **string**| The ID of the card on file to delete. |
 
@@ -200,7 +196,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2](../../README.md#oauth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -210,7 +206,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listCustomers**
-> \SquareConnect\Model\ListCustomersResponse listCustomers($cursor)
+> \SquareConnect\Model\ListCustomersResponse listCustomers($authorization, $cursor)
 
 ListCustomers
 
@@ -221,14 +217,12 @@ Lists a business's customers.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2
-SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 $api_instance = new SquareConnect\Api\CustomersApi();
+$authorization = "authorization_example"; // string | The value to provide in the Authorization header of your request. This value should follow the format `Bearer YOUR_ACCESS_TOKEN_HERE`.
 $cursor = "cursor_example"; // string | A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information.
 
 try {
-    $result = $api_instance->listCustomers($cursor);
+    $result = $api_instance->listCustomers($authorization, $cursor);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomersApi->listCustomers: ', $e->getMessage(), PHP_EOL;
@@ -240,6 +234,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **authorization** | **string**| The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. |
  **cursor** | **string**| A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. | [optional]
 
 ### Return type
@@ -248,7 +243,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2](../../README.md#oauth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -258,7 +253,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **retrieveCustomer**
-> \SquareConnect\Model\RetrieveCustomerResponse retrieveCustomer($customer_id)
+> \SquareConnect\Model\RetrieveCustomerResponse retrieveCustomer($authorization, $customer_id)
 
 RetrieveCustomer
 
@@ -269,14 +264,12 @@ Returns details for a single customer.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2
-SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 $api_instance = new SquareConnect\Api\CustomersApi();
+$authorization = "authorization_example"; // string | The value to provide in the Authorization header of your request. This value should follow the format `Bearer YOUR_ACCESS_TOKEN_HERE`.
 $customer_id = "customer_id_example"; // string | The ID of the customer to retrieve.
 
 try {
-    $result = $api_instance->retrieveCustomer($customer_id);
+    $result = $api_instance->retrieveCustomer($authorization, $customer_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomersApi->retrieveCustomer: ', $e->getMessage(), PHP_EOL;
@@ -288,6 +281,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **authorization** | **string**| The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. |
  **customer_id** | **string**| The ID of the customer to retrieve. |
 
 ### Return type
@@ -296,7 +290,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2](../../README.md#oauth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -306,7 +300,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateCustomer**
-> \SquareConnect\Model\UpdateCustomerResponse updateCustomer($customer_id, $body)
+> \SquareConnect\Model\UpdateCustomerResponse updateCustomer($authorization, $customer_id, $body)
 
 UpdateCustomer
 
@@ -317,15 +311,13 @@ Updates the details of an existing customer.  You cannot edit a customer's cards
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure OAuth2 access token for authorization: oauth2
-SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 $api_instance = new SquareConnect\Api\CustomersApi();
+$authorization = "authorization_example"; // string | The value to provide in the Authorization header of your request. This value should follow the format `Bearer YOUR_ACCESS_TOKEN_HERE`.
 $customer_id = "customer_id_example"; // string | The ID of the customer to update.
 $body = new \SquareConnect\Model\UpdateCustomerRequest(); // \SquareConnect\Model\UpdateCustomerRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->updateCustomer($customer_id, $body);
+    $result = $api_instance->updateCustomer($authorization, $customer_id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomersApi->updateCustomer: ', $e->getMessage(), PHP_EOL;
@@ -337,6 +329,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **authorization** | **string**| The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. |
  **customer_id** | **string**| The ID of the customer to update. |
  **body** | [**\SquareConnect\Model\UpdateCustomerRequest**](../Model/\SquareConnect\Model\UpdateCustomerRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
@@ -346,7 +339,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2](../../README.md#oauth2)
+No authorization required
 
 ### HTTP request headers
 
