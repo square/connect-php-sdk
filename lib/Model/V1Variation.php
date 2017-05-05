@@ -27,7 +27,7 @@ class V1Variation implements ArrayAccess
         'id' => 'string',
         'name' => 'string',
         'item_id' => 'string',
-        'ordinal' => 'string',
+        'ordinal' => 'int',
         'pricing_type' => 'string',
         'price_money' => '\SquareConnect\Model\V1Money',
         'sku' => 'string',
@@ -108,7 +108,7 @@ class V1Variation implements ArrayAccess
     protected $item_id;
     /**
       * $ordinal ndicates the variation's list position when displayed in Square Register and the merchant dashboard. If more than one variation for the same item has the same ordinal value, those variations are displayed in alphabetical order
-      * @var string
+      * @var int
       */
     protected $ordinal;
     /**
@@ -226,7 +226,7 @@ class V1Variation implements ArrayAccess
     }
     /**
      * Gets ordinal
-     * @return string
+     * @return int
      */
     public function getOrdinal()
     {
@@ -235,7 +235,7 @@ class V1Variation implements ArrayAccess
   
     /**
      * Sets ordinal
-     * @param string $ordinal ndicates the variation's list position when displayed in Square Register and the merchant dashboard. If more than one variation for the same item has the same ordinal value, those variations are displayed in alphabetical order
+     * @param int $ordinal ndicates the variation's list position when displayed in Square Register and the merchant dashboard. If more than one variation for the same item has the same ordinal value, those variations are displayed in alphabetical order
      * @return $this
      */
     public function setOrdinal($ordinal)

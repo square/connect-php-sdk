@@ -31,7 +31,7 @@ class V1Item implements ArrayAccess
         'color' => 'string',
         'abbreviation' => 'string',
         'visibility' => 'string',
-        'available_online' => 'string',
+        'available_online' => 'bool',
         'master_image' => '\SquareConnect\Model\V1ItemImage',
         'category' => '\SquareConnect\Model\V1Category',
         'variations' => '\SquareConnect\Model\V1Variation[]',
@@ -140,7 +140,7 @@ class V1Item implements ArrayAccess
     protected $visibility;
     /**
       * $available_online If true, the item can be added to shipping orders from the merchant's online store.
-      * @var string
+      * @var bool
       */
     protected $available_online;
     /**
@@ -332,7 +332,7 @@ class V1Item implements ArrayAccess
     }
     /**
      * Gets available_online
-     * @return string
+     * @return bool
      */
     public function getAvailableOnline()
     {
@@ -341,7 +341,7 @@ class V1Item implements ArrayAccess
   
     /**
      * Sets available_online
-     * @param string $available_online If true, the item can be added to shipping orders from the merchant's online store.
+     * @param bool $available_online If true, the item can be added to shipping orders from the merchant's online store.
      * @return $this
      */
     public function setAvailableOnline($available_online)
