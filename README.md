@@ -9,6 +9,13 @@ If you are looking for a sample e-commerce application using these APIs, check o
 
 To learn more about the Square APIs in general, head on over to the [Square API documentation](https://docs.connect.squareup.com/)
 
+Join the 2.1 Beta!
+------------------
+Square is currently beta testing a new version of this SDK. Version 2.1 includes several usability improvements, but is incompatible with code that uses version <=2.0. You can read more about the changes on [The Corner](https://medium.com/square-corner-blog/announcing-our-new-versions-of-our-client-sdks-1336d26e8099), as well as detailed [installation guides for each language](https://medium.com/square-corner-blog/how-to-install-the-beta-sdks-b746503515d9). 
+
+**If you have feedback about the new SDKs, or just want to talk to other Square Developers, request an invite to the new [slack community for Square Developers](https://docs.google.com/forms/d/e/1FAIpQLSfAZGIEZoNs-XryKqUoW3atFQHdQw5UqXLMOVPq3V4DEq-AJw/viewform?usp=sf_link#response=ACYDBNj5LFgPy8Tcac2gSgv_IjXvgWsPy2CO2xTXwnc0OSSxCvWFgc7SCDHvVQ)**
+
+
 Requirements
 ------------
 * `PHP >= 5.4.0`
