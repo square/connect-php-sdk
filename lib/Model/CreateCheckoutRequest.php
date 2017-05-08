@@ -25,7 +25,7 @@ class CreateCheckoutRequest implements ArrayAccess
       */
     static $swaggerTypes = array(
         'idempotency_key' => 'string',
-        'order' => '\SquareConnect\Model\Squareupconnectv2ordersserviceCreateOrderRequestOrder',
+        'order' => '\SquareConnect\Model\CreateOrderRequestOrder',
         'ask_for_shipping_address' => 'bool',
         'merchant_support_email' => 'string',
         'pre_populate_buyer_email' => 'string',
@@ -82,7 +82,7 @@ class CreateCheckoutRequest implements ArrayAccess
     protected $idempotency_key;
     /**
       * $order The order including line items to be checked out.
-      * @var \SquareConnect\Model\Squareupconnectv2ordersserviceCreateOrderRequestOrder
+      * @var \SquareConnect\Model\CreateOrderRequestOrder
       */
     protected $order;
     /**
@@ -148,7 +148,7 @@ class CreateCheckoutRequest implements ArrayAccess
     }
     /**
      * Gets order
-     * @return \SquareConnect\Model\Squareupconnectv2ordersserviceCreateOrderRequestOrder
+     * @return \SquareConnect\Model\CreateOrderRequestOrder
      */
     public function getOrder()
     {
@@ -157,7 +157,7 @@ class CreateCheckoutRequest implements ArrayAccess
   
     /**
      * Sets order
-     * @param \SquareConnect\Model\Squareupconnectv2ordersserviceCreateOrderRequestOrder $order The order including line items to be checked out.
+     * @param \SquareConnect\Model\CreateOrderRequestOrder $order The order including line items to be checked out.
      * @return $this
      */
     public function setOrder($order)

@@ -31,7 +31,7 @@ class Checkout implements ArrayAccess
         'pre_populate_buyer_email' => 'string',
         'pre_populate_shipping_address' => '\SquareConnect\Model\Address',
         'redirect_url' => 'string',
-        'order' => '\SquareConnect\Model\Squareupconnectv2ordersOrder',
+        'order' => '\SquareConnect\Model\Order',
         'created_at' => 'string'
     );
   
@@ -120,7 +120,7 @@ class Checkout implements ArrayAccess
     protected $redirect_url;
     /**
       * $order Order to be checked out.
-      * @var \SquareConnect\Model\Squareupconnectv2ordersOrder
+      * @var \SquareConnect\Model\Order
       */
     protected $order;
     /**
@@ -282,7 +282,7 @@ class Checkout implements ArrayAccess
     }
     /**
      * Gets order
-     * @return \SquareConnect\Model\Squareupconnectv2ordersOrder
+     * @return \SquareConnect\Model\Order
      */
     public function getOrder()
     {
@@ -291,7 +291,7 @@ class Checkout implements ArrayAccess
   
     /**
      * Sets order
-     * @param \SquareConnect\Model\Squareupconnectv2ordersOrder $order Order to be checked out.
+     * @param \SquareConnect\Model\Order $order Order to be checked out.
      * @return $this
      */
     public function setOrder($order)
