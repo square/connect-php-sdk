@@ -467,12 +467,16 @@ class CatalogApi
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
   
-        // query params
+        
+        
+        // path params
         if ($object_id !== null) {
-            $queryParams['object_id'] = $this->apiClient->getSerializer()->toQueryValue($object_id);
+            $resourcePath = str_replace(
+                "{" . "object_id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($object_id),
+                $resourcePath
+            );
         }
-        
-        
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
@@ -653,14 +657,18 @@ class CatalogApi
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
   
         // query params
-        if ($object_id !== null) {
-            $queryParams['object_id'] = $this->apiClient->getSerializer()->toQueryValue($object_id);
-        }// query params
         if ($include_related_objects !== null) {
             $queryParams['include_related_objects'] = $this->apiClient->getSerializer()->toQueryValue($include_related_objects);
         }
         
-        
+        // path params
+        if ($object_id !== null) {
+            $resourcePath = str_replace(
+                "{" . "object_id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($object_id),
+                $resourcePath
+            );
+        }
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 

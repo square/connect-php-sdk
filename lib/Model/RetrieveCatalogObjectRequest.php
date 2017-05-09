@@ -24,7 +24,6 @@ class RetrieveCatalogObjectRequest implements ArrayAccess
       * @var string[]
       */
     static $swaggerTypes = array(
-        'object_id' => 'string',
         'include_related_objects' => 'bool'
     );
   
@@ -33,7 +32,6 @@ class RetrieveCatalogObjectRequest implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
-        'object_id' => 'object_id',
         'include_related_objects' => 'include_related_objects'
     );
   
@@ -42,7 +40,6 @@ class RetrieveCatalogObjectRequest implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
-        'object_id' => 'setObjectId',
         'include_related_objects' => 'setIncludeRelatedObjects'
     );
   
@@ -51,15 +48,9 @@ class RetrieveCatalogObjectRequest implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
-        'object_id' => 'getObjectId',
         'include_related_objects' => 'getIncludeRelatedObjects'
     );
   
-    /**
-      * $object_id The object ID of any type of [CatalogObject](#type-catalogobject)s to be retrieved.
-      * @var string
-      */
-    protected $object_id;
     /**
       * $include_related_objects If `true`, the response will include additional objects that are related to the requested object, as follows:  If the `object` field of the response contains a [CatalogItem](#type-catalogitem), its associated [CatalogCategory](#type-catalogcategory), [CatalogTax](#type-catalogtax)es, and [CatalogModifierList](#type-catalogmodifierlist)s will be returned in the `related_objects` field of the response. If the `object` field of the response contains a [CatalogItemVariation](#type-catalogitemvariation), its parent [CatalogItem](#type-catalogitem) will be returned in the `related_objects` field of the response.
       * @var bool
@@ -73,28 +64,8 @@ class RetrieveCatalogObjectRequest implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->object_id = $data["object_id"];
             $this->include_related_objects = $data["include_related_objects"];
         }
-    }
-    /**
-     * Gets object_id
-     * @return string
-     */
-    public function getObjectId()
-    {
-        return $this->object_id;
-    }
-  
-    /**
-     * Sets object_id
-     * @param string $object_id The object ID of any type of [CatalogObject](#type-catalogobject)s to be retrieved.
-     * @return $this
-     */
-    public function setObjectId($object_id)
-    {
-        $this->object_id = $object_id;
-        return $this;
     }
     /**
      * Gets include_related_objects

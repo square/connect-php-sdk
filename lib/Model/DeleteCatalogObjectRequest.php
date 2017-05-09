@@ -24,7 +24,7 @@ class DeleteCatalogObjectRequest implements ArrayAccess
       * @var string[]
       */
     static $swaggerTypes = array(
-        'object_id' => 'string'
+        
     );
   
     /** 
@@ -32,7 +32,7 @@ class DeleteCatalogObjectRequest implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
-        'object_id' => 'object_id'
+        
     );
   
     /**
@@ -40,7 +40,7 @@ class DeleteCatalogObjectRequest implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
-        'object_id' => 'setObjectId'
+        
     );
   
     /**
@@ -48,14 +48,9 @@ class DeleteCatalogObjectRequest implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
-        'object_id' => 'getObjectId'
+        
     );
   
-    /**
-      * $object_id The ID of the [CatalogObject](#type-catalogobject) to be deleted. When an object is deleted, other objects in the graph that depend on that object will be deleted as well (for example, deleting a [CatalogItem](#type-catalogitem) will delete its [CatalogItemVariation](#type-catalogitemvariation)s).
-      * @var string
-      */
-    protected $object_id;
 
     /**
      * Constructor
@@ -64,27 +59,8 @@ class DeleteCatalogObjectRequest implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->object_id = $data["object_id"];
+            
         }
-    }
-    /**
-     * Gets object_id
-     * @return string
-     */
-    public function getObjectId()
-    {
-        return $this->object_id;
-    }
-  
-    /**
-     * Sets object_id
-     * @param string $object_id The ID of the [CatalogObject](#type-catalogobject) to be deleted. When an object is deleted, other objects in the graph that depend on that object will be deleted as well (for example, deleting a [CatalogItem](#type-catalogitem) will delete its [CatalogItemVariation](#type-catalogitemvariation)s).
-     * @return $this
-     */
-    public function setObjectId($object_id)
-    {
-        $this->object_id = $object_id;
-        return $this;
     }
     /**
      * Returns true if offset exists. False otherwise.
