@@ -195,6 +195,7 @@ class CatalogApiTest extends \PHPUnit_Framework_TestCase
      * Setup before running each test case
      */
     public static function setUpBeforeClass() {
+      // error_reporting(E_ALL & ~E_NOTICE);
       self::$api = new \SquareConnect\Api\CatalogApi();
       self::$test_accounts = new \SquareConnect\TestAccounts();
       // Configure OAuth2 access token for authorization: oauth2

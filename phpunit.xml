@@ -5,9 +5,9 @@
          backupStaticAttributes="false"
          cacheTokens="false"
          colors="false"
-         convertErrorsToExceptions="true"
+         convertErrorsToExceptions="false"
          convertNoticesToExceptions="false"
-         convertWarningsToExceptions="true"
+         convertWarningsToExceptions="false"
          forceCoversAnnotation="false"
          mapTestClassNameToCoveredClassName="false"
          printerClass="PHPUnit_TextUI_ResultPrinter"
@@ -21,5 +21,5 @@
          timeoutForSmallTests="1"
          timeoutForMediumTests="10"
          timeoutForLargeTests="60"
-         verbose="true">
+         verbose="false">
 </phpunit>
