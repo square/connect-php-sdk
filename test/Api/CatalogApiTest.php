@@ -515,7 +515,6 @@ class CatalogApiTest extends \PHPUnit_Framework_TestCase
       $this->assertEquals("Small", $response->getObjects()[0]->getItemVariationData()->getName());
       $this->assertEquals("ITEM_VARIATION", $response->getObjects()[1]->getType());
       $this->assertEquals("Small", $response->getObjects()[1]->getItemVariationData()->getName());
-
     }
 
     /**
@@ -552,7 +551,6 @@ class CatalogApiTest extends \PHPUnit_Framework_TestCase
         return
           $object->getItemData()->getName() == "Tea";
       }));
-
     }
     /**
      * Test case for updateItemModifierLists
