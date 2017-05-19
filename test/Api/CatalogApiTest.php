@@ -23,179 +23,185 @@ use \SquareConnect\Model\UpsertCatalogObjectRequest;
  */
 class CatalogApiTest extends \PHPUnit_Framework_TestCase
 {
+
+    const COFFEE_CLIENT_ID = "#Coffee";
+    const BEVERAGES_CLIENT_ID = "#Beverages";
+    const SMALL_COFFEE_CLIENT_ID = "#SmallCoffee";
+    const LARGE_COFFEE_CLIENT_ID = "#LargeCoffee";
+    const SMALL_TEA_CLIENT_ID = "#SmallTea";
+    const SALES_TAX_CLIENT_ID = "#SalesTax";
+    const MILKS_CLIENT_ID = "#Milks";
+
     private static $api;
     private static $test_accounts;
-    private $objects = array();
-    private $idMap = array();
-    private $beverages = array(
+    private $objects = [];
+    private $idMap = [];
+    private $beverages = [
       "type" => "CATEGORY",
-      "id" => "#Beverages",
-      "category_data" => array(
+      "id" => self::BEVERAGES_CLIENT_ID,
+      "category_data" => [
         "name" => "Beverages"
-      )
-    );
-    private $milks = array(
+      ]
+    ];
+    private $milks = [
       "type" => "MODIFIER_LIST",
-      "id" => "#Milks",
-      "modifier_list_data" => array(
+      "id" => self::MILKS_CLIENT_ID,
+      "modifier_list_data" => [
         "name" => "Milks",
-        "modifiers" => array(
-          array(
+        "modifiers" => [
+          [
             "type" => "MODIFIER",
             "id" => "#WholeMilk",
-            "modifier_data" => array(
-              "name" => "Whole Milk")),
-          array(
+            "modifier_data" => [
+              "name" => "Whole Milk"]],
+          [
             "type" => 'MODIFIER',
             "id" => "#SkimMilk",
-            "modifier_data" => array(
-              "name" => "Skim Milk")),
-          array(
+            "modifier_data" => [
+              "name" => "Skim Milk"]],
+          [
             "type" => "MODIFIER",
             "id" => "#SoyMilk",
-            "modifier_data" => array(
+            "modifier_data" => [
               "name" => "SoyMilk",
-              "price_money" => array(
+              "price_money" => [
                 "amount" => 50.0,
                 "currency" => "USD"
-              )
-            )
-          )
-        )
-      )
-    );
+              ]
+            ]
+          ]
+        ]
+      ]
+    ];
 
-    private $syrups = array(
+    private $syrups = [
       "type" => "MODIFIER_LIST",
       "id" => "#Syrups",
-      "modifier_list_data" => array(
+      "modifier_list_data" => [
         "name" => "Syrups",
-        "modifiers" => array(
-          array(
+        "modifiers" => [
+          [
             "type" => "MODIFIER",
             "id" => "#Hazelnut",
-            "modifier_data" => array(
+            "modifier_data" => [
               "name" => "Hazelnut"
-            )
-          ),
-          array(
+            ]
+          ],
+          [
             "type" => "MODIFIER",
             "id" => "#Vanilla",
-            "modifier_data" => array(
+            "modifier_data" => [
               "name" => "Vanilla"
-            )
-          ),
-          array(
+            ]
+          ],
+          [
             "type" => "MODIFIER",
             "id" => "#Chocolate",
-            "modifier_data" => array(
+            "modifier_data" => [
               "name" => "Chocolate"
-            )
-          )
-        )
-      )
-    );
-    private $coffee = array(
+            ]
+          ]
+        ]
+      ]
+    ];
+    private $coffee = [
       "type" => "ITEM",
-      "id" => "#Coffee",
-      "item_data" => array(
+      "id" => self::COFFEE_CLIENT_ID,
+      "item_data" => [
         "name" => "Coffee",
         "description" => "Hot bean juice",
         "abbreviation" => "Co",
-        "category_id" => "#Beverages",
-        "modifier_list_info" => array(array("modifier_list_id" => "#Milks")),
-        "tax_ids" => array("#SalesTax"),
-        "variations" => array(
-          array(
+        "category_id" => self::BEVERAGES_CLIENT_ID,
+        "modifier_list_info" => [["modifier_list_id" => self::MILKS_CLIENT_ID]],
+        "tax_ids" => [self::SALES_TAX_CLIENT_ID],
+        "variations" => [
+          [
             "type" => "ITEM_VARIATION",
-            "id" => "#SmallCoffee",
-            "item_variation_data" => array(
+            "id" => self::SMALL_COFFEE_CLIENT_ID,
+            "item_variation_data" => [
               "name" => "Small",
-              "item_id" => "#Coffee",
+              "item_id" => self::COFFEE_CLIENT_ID,
               "pricing_type" => "FIXED_PRICING",
-              "price_money" => array(
+              "price_money" => [
                 "amount" => 195.0,
                 "currency" => "USD"
-              )
-            )
-          ),
-          array(
+              ]
+            ]
+          ],
+          [
             "type" => "ITEM_VARIATION",
-            "id" => "#LargeCoffee",
-            "item_variation_data" => array(
+            "id" => self::LARGE_COFFEE_CLIENT_ID,
+            "item_variation_data" => [
               "name" => "Large",
-              "item_id" => "#Coffee",
+              "item_id" => self::COFFEE_CLIENT_ID,
               "pricing_type" => "FIXED_PRICING",
-              "price_money" => array(
+              "price_money" => [
                 "amount" => 255.0,
                 "currency" => "USD"
-              )
-            )
-          )
-        )
-      )
-    );
-    private $tea = array(
+              ]
+            ]
+          ]
+        ]
+      ]
+    ];
+    private $tea = [
       "type" => "ITEM",
       "id" => "#Tea",
-      "item_data" => array(
+      "item_data" => [
         "name" => "Tea",
         "description" => "Hot leaf juice",
         "abbreviation" => "Te",
-        "category_id" => "#Beverages",
-        "modifier_list_info" => array(array("modifier_list_id" => "#Milks")),
-        "tax_ids" => array("#SalesTax"),
-        "variations" => array(
-          array(
+        "category_id" => self::BEVERAGES_CLIENT_ID,
+        "modifier_list_info" => [["modifier_list_id" => self::MILKS_CLIENT_ID]],
+        "tax_ids" => [self::SALES_TAX_CLIENT_ID],
+        "variations" => [
+          [
             "type" => "ITEM_VARIATION",
-            "id" => "#SmallTea",
-            "item_variation_data" => array(
+            "id" => self::SMALL_TEA_CLIENT_ID,
+            "item_variation_data" => [
               "name" => "Small",
               "item_id" => "#Tea",
               "pricing_type" => "FIXED_PRICING",
-              "price_money" => array(
+              "price_money" => [
                 "amount" => 150.0,
                 "currency" => "USD"
-              )
-            )
-          ),
-          array(
+              ]
+            ]
+          ],
+          [
             "type" => "ITEM_VARIATION",
             "id" => "#LargeTea",
-            "item_variation_data" => array(
+            "item_variation_data" => [
               "name" => "Large",
               "item_id" => "#Tea",
               "pricing_type" => "FIXED_PRICING",
-              "price_money" => array(
+              "price_money" => [
                 "amount" => 200.0,
                 "currency" => "USD"
-              )
-            )
-          )
-        )
-      )
-    );
-    private $sales_tax = array(
+              ]
+            ]
+          ]
+        ]
+      ]
+    ];
+    private $sales_tax = [
       "type" => "TAX",
       "id" => '#SalesTax',
       "present_at_all_locations" => true,
-      "tax_data" => array(
+      "tax_data" => [
         "name" => "Sales Tax",
         "calculation_phase" => "TAX_SUBTOTAL_PHASE",
         "inclusion_type" => "ADDITIVE",
         "percentage" => '5.0',
         "applies_to_custom_amounts" => true,
         "enabled" => true
-      )
-    );
-
-
+      ]
+    ];
 
     /**
      * Setup before running each test case
      */
     public static function setUpBeforeClass() {
-      // error_reporting(E_ALL & ~E_NOTICE);
       self::$api = new \SquareConnect\Api\CatalogApi();
       self::$test_accounts = new \SquareConnect\TestAccounts();
       // Configure OAuth2 access token for authorization: oauth2
@@ -205,8 +211,8 @@ class CatalogApiTest extends \PHPUnit_Framework_TestCase
     }
 
     protected function setUp() {
-      $this->objects = array($this->beverages, $this->milks, $this->syrups, $this->coffee, $this->tea, $this->sales_tax);
-      $this->idMap = array();
+      $this->objects = [$this->beverages, $this->milks, $this->syrups, $this->coffee, $this->tea, $this->sales_tax];
+      $this->idMap = [];
       $this->buildTestCatalog();
     }
 
@@ -215,14 +221,15 @@ class CatalogApiTest extends \PHPUnit_Framework_TestCase
     }
 
     protected function buildTestCatalog() {
-      $body = new \SquareConnect\Model\BatchUpsertCatalogObjectsRequest(array(
+      $body = new \SquareConnect\Model\BatchUpsertCatalogObjectsRequest([
         "idempotency_key" => uniqid(),
-        "batches" => array(
-          array(
+        "batches" => [
+          [
             "objects" => $this->objects
-          )
-        )
-      ));
+          ]
+        ]
+      ]);
+
       $response = self::$api->batchUpsertCatalogObjects($body);
 
       foreach($response->getIdMappings() as $mapping) {
@@ -231,7 +238,7 @@ class CatalogApiTest extends \PHPUnit_Framework_TestCase
     }
 
     protected function deleteTestCatalog() {
-        $objectIds = array();
+        $objectIds = [];
         $cursor = "";
         do {
           $response = self::$api->listCatalog($cursor, null);
@@ -243,16 +250,13 @@ class CatalogApiTest extends \PHPUnit_Framework_TestCase
 
         while(!empty($objectIds)) {
           $toRemove = array_splice($objectIds, 0, 200);
-          $request = new \SquareConnect\Model\BatchDeleteCatalogObjectsRequest(array(
+          $request = new \SquareConnect\Model\BatchDeleteCatalogObjectsRequest([
             "object_ids" => $toRemove
-          ));
+          ]);
           self::$api->batchDeleteCatalogObjects($request);
         }
     }
 
-    public function test_clean() {
-
-    }
     /**
      * Test case for batchDeleteCatalogObjects
      *
@@ -260,22 +264,21 @@ class CatalogApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function test_batchDeleteCatalogObjects() {
-      $coffeeId = $this->idMap["#Coffee"];
-      $smallCoffeeId = $this->idMap["#SmallCoffee"];
-      $largeCoffeeId = $this->idMap["#LargeCoffee"];
-      $smallTeaId = $this->idMap["#SmallTea"];
+      $coffeeId = $this->idMap[self::COFFEE_CLIENT_ID];
+      $smallCoffeeId = $this->idMap[self::SMALL_COFFEE_CLIENT_ID];
+      $largeCoffeeId = $this->idMap[self::LARGE_COFFEE_CLIENT_ID];
+      $smallTeaId = $this->idMap[self::SMALL_TEA_CLIENT_ID];
 
-      $request = new \SquareConnect\Model\BatchDeleteCatalogObjectsRequest(array(
-        "object_ids" => array($coffeeId, $smallTeaId)
-      ));
+      $request = new \SquareConnect\Model\BatchDeleteCatalogObjectsRequest([
+        "object_ids" => [$coffeeId, $smallTeaId]
+      ]);
       $response = self::$api->batchDeleteCatalogObjects($request);
 
-      $this->assertEquals(4, count($response->getDeletedObjectIds()));
-      $this->assertTrue(in_array($coffeeId, $response->getDeletedObjectIds()));
-      $this->assertTrue(in_array($smallCoffeeId, $response->getDeletedObjectIds()));
-      $this->assertTrue(in_array($largeCoffeeId, $response->getDeletedObjectIds()));
-      $this->assertTrue(in_array($smallTeaId, $response->getDeletedObjectIds()));
-
+      $this->assertCount(4, $response->getDeletedObjectIds());
+      $this->assertContains($coffeeId, $response->getDeletedObjectIds());
+      $this->assertContains($smallCoffeeId, $response->getDeletedObjectIds());
+      $this->assertContains($largeCoffeeId, $response->getDeletedObjectIds());
+      $this->assertContains($smallTeaId, $response->getDeletedObjectIds());
     }
     /**
      * Test case for batchRetrieveCatalogObjects
@@ -284,18 +287,18 @@ class CatalogApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function test_batchRetrieveCatalogObjects() {
-      $coffeeId = $this->idMap["#Coffee"];
-      $salesTaxId = $this->idMap["#SalesTax"];
-      $beveragesId = $this->idMap["#Beverages"];
-      $milksId = $this->idMap["#Milks"];
+      $coffeeId = $this->idMap[self::COFFEE_CLIENT_ID];
+      $salesTaxId = $this->idMap[self::SALES_TAX_CLIENT_ID];
+      $beveragesId = $this->idMap[self::BEVERAGES_CLIENT_ID];
+      $milksId = $this->idMap[self::MILKS_CLIENT_ID];
 
-      $request = new \SquareConnect\Model\BatchRetrieveCatalogObjectsRequest(array(
-        "object_ids" => array($coffeeId, $salesTaxId)
-      ));
+      $request = new \SquareConnect\Model\BatchRetrieveCatalogObjectsRequest([
+        "object_ids" => [$coffeeId, $salesTaxId]
+      ]);
 
       $response = self::$api->batchRetrieveCatalogObjects($request);
 
-      $this->assertEquals(2, count($response->getObjects()));
+      $this->assertCount(2, $response->getObjects());
       $coffee = $response->getObjects()[0];
       $this->assertEquals("ITEM", $coffee->getType());
       $this->assertEquals($coffeeId, $coffee->getId());
@@ -303,7 +306,6 @@ class CatalogApiTest extends \PHPUnit_Framework_TestCase
       $this->assertTrue($coffee->getVersion() != 0);
       $this->assertFalse($coffee->getIsDeleted());
       $this->assertEmpty($coffee->getCatalogV1Ids());
-      // $this->asserTrue($coffee->getPresentAtAllLocations());
       $this->assertEmpty($coffee->getPresentAtLocationIds());
       $this->assertEmpty($coffee->getAbsentAtLocationIds());
 
@@ -356,45 +358,44 @@ class CatalogApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function test_batchUpsertCatalogObjects() {
-
-      $batches = array();
+      $batches = [];
 
       $numObjects = 0;
       // TODO s/$batchNum < 1/$batchNum < 3/
       for ($batchNum = 0; $batchNum < 1; $batchNum++) {
-        $batch = array();
+        $batch = [];
 
         for($i = 0; $i < 100; $i++) {
           $itemId = sprintf("Item-%d-%d", $batchNum, $i);
 
           $variationId = sprintf("#ItemVariation-%d-%d", $batchNum, $i);
-          array_push($batch, new \SquareConnect\Model\CatalogObject(array(
+          array_push($batch, new \SquareConnect\Model\CatalogObject([
             "type" => "ITEM",
             "id" => "#" . $itemId,
-            "item_data" => array(
+            "item_data" => [
               "name" => $itemId,
-              "variations" => array(
-                array(
+              "variations" => [
+                [
                   "type" => "ITEM_VARIATION",
                   "id" => $variationId,
-                  "item_variation_data" => array(
+                  "item_variation_data" => [
                     "name" => "Regular",
                     "item_id" => "#" . $itemId,
                     "pricing_type" => "VARIABLE_PRICING"
-                  )
-                )
-              )
-            )
-          )));
+                  ]
+                ]
+              ]
+            ]
+          ]));
           $numObjects++;
         }
-        array_push($batches, array("objects" => $batch));
+        array_push($batches, ["objects" => $batch]);
       }
 
-      $request = new \SquareConnect\Model\BatchUpsertCatalogObjectsRequest(array(
+      $request = new \SquareConnect\Model\BatchUpsertCatalogObjectsRequest([
         "idempotency_key" =>  uniqid(),
         "batches" => $batches
-      ));
+      ]);
       $response = self::$api->batchUpsertCatalogObjects($request);
 
       $this->assertCount($numObjects, $response->getObjects());
@@ -418,7 +419,6 @@ class CatalogApiTest extends \PHPUnit_Framework_TestCase
       $this->assertEquals(1000, $response->getLimits()->getUpdateItemModifierListsMaxItemIds());
       $this->assertEquals(1000, $response->getLimits()->getUpdateItemModifierListsMaxModifierListsToEnable());
       $this->assertEquals(1000, $response->getLimits()->getUpdateItemModifierListsMaxModifierListsToDisable());
-
     }
 
     /**
@@ -428,9 +428,9 @@ class CatalogApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function test_deleteCatalogObject() {
-      $coffeeId = $this->idMap["#Coffee"];
-      $smallCoffeeId = $this->idMap["#SmallCoffee"];
-      $largeCoffeeId = $this->idMap["#LargeCoffee"];
+      $coffeeId = $this->idMap[self::COFFEE_CLIENT_ID];
+      $smallCoffeeId = $this->idMap[self::SMALL_COFFEE_CLIENT_ID];
+      $largeCoffeeId = $this->idMap[self::LARGE_COFFEE_CLIENT_ID];
       $response = self::$api->deleteCatalogObject($coffeeId);
 
       $this->assertCount(3, $response->getDeletedObjectIds());
@@ -446,8 +446,7 @@ class CatalogApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function test_listCatalog() {
-
-      $objects = array();
+      $objects = [];
       $cursor = "";
       do {
         $response = self::$api->listCatalog($cursor, null);
@@ -464,7 +463,7 @@ class CatalogApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function test_retrieveCatalogObject() {
-      $coffeeId = $this->idMap["#Coffee"];
+      $coffeeId = $this->idMap[self::COFFEE_CLIENT_ID];
       $response = self::$api->retrieveCatalogObject($coffeeId, true);
 
       $this->assertEmpty($response->getErrors());
@@ -498,16 +497,16 @@ class CatalogApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function test_searchCatalogObjectsWithPrefixQuery() {
-      $query = new \SquareConnect\Model\SearchCatalogObjectsRequest(array(
-        "query" => array(
-          "prefix_query" => array(
+      $query = new \SquareConnect\Model\SearchCatalogObjectsRequest([
+        "query" => [
+          "prefix_query" => [
             "attribute_name" => "name",
             "attribute_prefix" => "Sm"
-          )
-        ),
+          ]
+        ],
         "include_deleted_objects" => false,
         "include_related_objects" => false,
-      ));
+      ]);
 
       $response = self::$api->searchCatalogObjects($query);
       $this->assertCount(2, $response->getObjects());
@@ -525,17 +524,17 @@ class CatalogApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function test_searchCatalogObjectsWithTaxQuery() {
-      $query = new \SquareConnect\Model\SearchCatalogObjectsRequest(array(
-        "query" => array(
-          "items_for_tax_query" => array(
-            "tax_ids" => array(
-              $this->idMap["#SalesTax"]
-            )
-          )
-        ),
+      $query = new \SquareConnect\Model\SearchCatalogObjectsRequest([
+        "query" => [
+          "items_for_tax_query" => [
+            "tax_ids" => [
+              $this->idMap[self::SALES_TAX_CLIENT_ID]
+            ]
+          ]
+        ],
         "include_deleted_objects" => false,
         "include_related_objects" => false,
-      ));
+      ]);
 
       $response = self::$api->searchCatalogObjects($query);
       $this->assertCount(2, $response->getObjects());
@@ -560,8 +559,8 @@ class CatalogApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function test_updateItemModifierLists() {
-      $coffeeId = $this->idMap["#Coffee"];
-      $milksId = $this->idMap["#Milks"];
+      $coffeeId = $this->idMap[self::COFFEE_CLIENT_ID];
+      $milksId = $this->idMap[self::MILKS_CLIENT_ID];
       $syrupsId = $this->idMap["#Syrups"];
 
       $beforeUpdate = self::$api->retrieveCatalogObject($coffeeId, false);
@@ -570,11 +569,11 @@ class CatalogApiTest extends \PHPUnit_Framework_TestCase
       $this->assertEquals($milksId,
         $beforeUpdate->getObject()->getItemData()->getModifierListInfo()[0]->getModifierListId());
 
-      $request = new \SquareConnect\Model\UpdateItemModifierListsRequest(array(
-        "item_ids" => array($coffeeId),
-        "modifier_lists_to_enable" => array($syrupsId),
-        "modifier_lists_to_disable" => array($milksId),
-      ));
+      $request = new \SquareConnect\Model\UpdateItemModifierListsRequest([
+        "item_ids" => [$coffeeId],
+        "modifier_lists_to_enable" => [$syrupsId],
+        "modifier_lists_to_disable" => [$milksId],
+      ]);
       $response = self::$api->updateItemModifierLists($request);
 
       $afterUpdate = self::$api->retrieveCatalogObject($coffeeId, false);
@@ -590,16 +589,16 @@ class CatalogApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function test_updateItemTaxes() {
-      $coffeeId = $this->idMap["#Coffee"];
-      $salesTaxId = $this->idMap["#SalesTax"];
+      $coffeeId = $this->idMap[self::COFFEE_CLIENT_ID];
+      $salesTaxId = $this->idMap[self::SALES_TAX_CLIENT_ID];
 
       $beforeUpdate = self::$api->retrieveCatalogObject($coffeeId, false);
       $this->assertCount(1, $beforeUpdate->getObject()->getItemData()->getTaxIds());
 
-      $request = new \SquareConnect\Model\UpdateItemTaxesRequest(array(
-        "item_ids" => array($coffeeId),
-        "taxes_to_disable" => array($salesTaxId)
-      ));
+      $request = new \SquareConnect\Model\UpdateItemTaxesRequest([
+        "item_ids" => [$coffeeId],
+        "taxes_to_disable" => [$salesTaxId]
+      ]);
 
       self::$api->updateItemTaxes($request);
 
@@ -613,17 +612,17 @@ class CatalogApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function test_upsertCatalogObject() {
-      $request = new \SquareConnect\Model\UpsertCatalogObjectRequest(array(
+      $request = new \SquareConnect\Model\UpsertCatalogObjectRequest([
         "idempotency_key" => uniqid(),
-        "object" => array(
+        "object" => [
           "type" => "DISCOUNT",
           "id" => "#Discount",
-          "discount_data" => array(
+          "discount_data" => [
             "name" => "Half off",
             "percentage" => "50.0"
-          )
-         )
-      ));
+          ]
+        ]
+      ]);
 
       $response = self::$api->upsertCatalogObject($request);
 
