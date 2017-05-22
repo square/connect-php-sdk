@@ -136,15 +136,51 @@ class UpdateCustomerRequest implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->given_name = $data["given_name"];
-            $this->family_name = $data["family_name"];
-            $this->company_name = $data["company_name"];
-            $this->nickname = $data["nickname"];
-            $this->email_address = $data["email_address"];
-            $this->address = $data["address"];
-            $this->phone_number = $data["phone_number"];
-            $this->reference_id = $data["reference_id"];
-            $this->note = $data["note"];
+            if (isset($data["given_name"])) {
+              $this->given_name = $data["given_name"];
+            } else {
+              $this->given_name = null;
+            }
+            if (isset($data["family_name"])) {
+              $this->family_name = $data["family_name"];
+            } else {
+              $this->family_name = null;
+            }
+            if (isset($data["company_name"])) {
+              $this->company_name = $data["company_name"];
+            } else {
+              $this->company_name = null;
+            }
+            if (isset($data["nickname"])) {
+              $this->nickname = $data["nickname"];
+            } else {
+              $this->nickname = null;
+            }
+            if (isset($data["email_address"])) {
+              $this->email_address = $data["email_address"];
+            } else {
+              $this->email_address = null;
+            }
+            if (isset($data["address"])) {
+              $this->address = $data["address"];
+            } else {
+              $this->address = null;
+            }
+            if (isset($data["phone_number"])) {
+              $this->phone_number = $data["phone_number"];
+            } else {
+              $this->phone_number = null;
+            }
+            if (isset($data["reference_id"])) {
+              $this->reference_id = $data["reference_id"];
+            } else {
+              $this->reference_id = null;
+            }
+            if (isset($data["note"])) {
+              $this->note = $data["note"];
+            } else {
+              $this->note = null;
+            }
         }
     }
     /**

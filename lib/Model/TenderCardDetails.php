@@ -82,9 +82,21 @@ class TenderCardDetails implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->status = $data["status"];
-            $this->card = $data["card"];
-            $this->entry_method = $data["entry_method"];
+            if (isset($data["status"])) {
+              $this->status = $data["status"];
+            } else {
+              $this->status = null;
+            }
+            if (isset($data["card"])) {
+              $this->card = $data["card"];
+            } else {
+              $this->card = null;
+            }
+            if (isset($data["entry_method"])) {
+              $this->entry_method = $data["entry_method"];
+            } else {
+              $this->entry_method = null;
+            }
         }
     }
     /**

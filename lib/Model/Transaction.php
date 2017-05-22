@@ -145,16 +145,56 @@ class Transaction implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->id = $data["id"];
-            $this->location_id = $data["location_id"];
-            $this->created_at = $data["created_at"];
-            $this->tenders = $data["tenders"];
-            $this->refunds = $data["refunds"];
-            $this->reference_id = $data["reference_id"];
-            $this->product = $data["product"];
-            $this->client_id = $data["client_id"];
-            $this->order = $data["order"];
-            $this->shipping_address = $data["shipping_address"];
+            if (isset($data["id"])) {
+              $this->id = $data["id"];
+            } else {
+              $this->id = null;
+            }
+            if (isset($data["location_id"])) {
+              $this->location_id = $data["location_id"];
+            } else {
+              $this->location_id = null;
+            }
+            if (isset($data["created_at"])) {
+              $this->created_at = $data["created_at"];
+            } else {
+              $this->created_at = null;
+            }
+            if (isset($data["tenders"])) {
+              $this->tenders = $data["tenders"];
+            } else {
+              $this->tenders = null;
+            }
+            if (isset($data["refunds"])) {
+              $this->refunds = $data["refunds"];
+            } else {
+              $this->refunds = null;
+            }
+            if (isset($data["reference_id"])) {
+              $this->reference_id = $data["reference_id"];
+            } else {
+              $this->reference_id = null;
+            }
+            if (isset($data["product"])) {
+              $this->product = $data["product"];
+            } else {
+              $this->product = null;
+            }
+            if (isset($data["client_id"])) {
+              $this->client_id = $data["client_id"];
+            } else {
+              $this->client_id = null;
+            }
+            if (isset($data["order"])) {
+              $this->order = $data["order"];
+            } else {
+              $this->order = null;
+            }
+            if (isset($data["shipping_address"])) {
+              $this->shipping_address = $data["shipping_address"];
+            } else {
+              $this->shipping_address = null;
+            }
         }
     }
     /**

@@ -136,15 +136,51 @@ class Refund implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->id = $data["id"];
-            $this->location_id = $data["location_id"];
-            $this->transaction_id = $data["transaction_id"];
-            $this->tender_id = $data["tender_id"];
-            $this->created_at = $data["created_at"];
-            $this->reason = $data["reason"];
-            $this->amount_money = $data["amount_money"];
-            $this->status = $data["status"];
-            $this->processing_fee_money = $data["processing_fee_money"];
+            if (isset($data["id"])) {
+              $this->id = $data["id"];
+            } else {
+              $this->id = null;
+            }
+            if (isset($data["location_id"])) {
+              $this->location_id = $data["location_id"];
+            } else {
+              $this->location_id = null;
+            }
+            if (isset($data["transaction_id"])) {
+              $this->transaction_id = $data["transaction_id"];
+            } else {
+              $this->transaction_id = null;
+            }
+            if (isset($data["tender_id"])) {
+              $this->tender_id = $data["tender_id"];
+            } else {
+              $this->tender_id = null;
+            }
+            if (isset($data["created_at"])) {
+              $this->created_at = $data["created_at"];
+            } else {
+              $this->created_at = null;
+            }
+            if (isset($data["reason"])) {
+              $this->reason = $data["reason"];
+            } else {
+              $this->reason = null;
+            }
+            if (isset($data["amount_money"])) {
+              $this->amount_money = $data["amount_money"];
+            } else {
+              $this->amount_money = null;
+            }
+            if (isset($data["status"])) {
+              $this->status = $data["status"];
+            } else {
+              $this->status = null;
+            }
+            if (isset($data["processing_fee_money"])) {
+              $this->processing_fee_money = $data["processing_fee_money"];
+            } else {
+              $this->processing_fee_money = null;
+            }
         }
     }
     /**

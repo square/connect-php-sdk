@@ -73,8 +73,16 @@ class CreateOrderRequest implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->idempotency_key = $data["idempotency_key"];
-            $this->order = $data["order"];
+            if (isset($data["idempotency_key"])) {
+              $this->idempotency_key = $data["idempotency_key"];
+            } else {
+              $this->idempotency_key = null;
+            }
+            if (isset($data["order"])) {
+              $this->order = $data["order"];
+            } else {
+              $this->order = null;
+            }
         }
     }
     /**

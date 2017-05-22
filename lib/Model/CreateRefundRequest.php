@@ -91,10 +91,26 @@ class CreateRefundRequest implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->idempotency_key = $data["idempotency_key"];
-            $this->tender_id = $data["tender_id"];
-            $this->reason = $data["reason"];
-            $this->amount_money = $data["amount_money"];
+            if (isset($data["idempotency_key"])) {
+              $this->idempotency_key = $data["idempotency_key"];
+            } else {
+              $this->idempotency_key = null;
+            }
+            if (isset($data["tender_id"])) {
+              $this->tender_id = $data["tender_id"];
+            } else {
+              $this->tender_id = null;
+            }
+            if (isset($data["reason"])) {
+              $this->reason = $data["reason"];
+            } else {
+              $this->reason = null;
+            }
+            if (isset($data["amount_money"])) {
+              $this->amount_money = $data["amount_money"];
+            } else {
+              $this->amount_money = null;
+            }
         }
     }
     /**

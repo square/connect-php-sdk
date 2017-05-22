@@ -73,8 +73,16 @@ class CustomerGroupInfo implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->id = $data["id"];
-            $this->name = $data["name"];
+            if (isset($data["id"])) {
+              $this->id = $data["id"];
+            } else {
+              $this->id = null;
+            }
+            if (isset($data["name"])) {
+              $this->name = $data["name"];
+            } else {
+              $this->name = null;
+            }
         }
     }
     /**

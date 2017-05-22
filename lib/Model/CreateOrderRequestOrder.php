@@ -73,8 +73,16 @@ class CreateOrderRequestOrder implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->reference_id = $data["reference_id"];
-            $this->line_items = $data["line_items"];
+            if (isset($data["reference_id"])) {
+              $this->reference_id = $data["reference_id"];
+            } else {
+              $this->reference_id = null;
+            }
+            if (isset($data["line_items"])) {
+              $this->line_items = $data["line_items"];
+            } else {
+              $this->line_items = null;
+            }
         }
     }
     /**

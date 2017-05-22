@@ -136,15 +136,51 @@ class Checkout implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->id = $data["id"];
-            $this->checkout_page_url = $data["checkout_page_url"];
-            $this->ask_for_shipping_address = $data["ask_for_shipping_address"];
-            $this->merchant_support_email = $data["merchant_support_email"];
-            $this->pre_populate_buyer_email = $data["pre_populate_buyer_email"];
-            $this->pre_populate_shipping_address = $data["pre_populate_shipping_address"];
-            $this->redirect_url = $data["redirect_url"];
-            $this->order = $data["order"];
-            $this->created_at = $data["created_at"];
+            if (isset($data["id"])) {
+              $this->id = $data["id"];
+            } else {
+              $this->id = null;
+            }
+            if (isset($data["checkout_page_url"])) {
+              $this->checkout_page_url = $data["checkout_page_url"];
+            } else {
+              $this->checkout_page_url = null;
+            }
+            if (isset($data["ask_for_shipping_address"])) {
+              $this->ask_for_shipping_address = $data["ask_for_shipping_address"];
+            } else {
+              $this->ask_for_shipping_address = null;
+            }
+            if (isset($data["merchant_support_email"])) {
+              $this->merchant_support_email = $data["merchant_support_email"];
+            } else {
+              $this->merchant_support_email = null;
+            }
+            if (isset($data["pre_populate_buyer_email"])) {
+              $this->pre_populate_buyer_email = $data["pre_populate_buyer_email"];
+            } else {
+              $this->pre_populate_buyer_email = null;
+            }
+            if (isset($data["pre_populate_shipping_address"])) {
+              $this->pre_populate_shipping_address = $data["pre_populate_shipping_address"];
+            } else {
+              $this->pre_populate_shipping_address = null;
+            }
+            if (isset($data["redirect_url"])) {
+              $this->redirect_url = $data["redirect_url"];
+            } else {
+              $this->redirect_url = null;
+            }
+            if (isset($data["order"])) {
+              $this->order = $data["order"];
+            } else {
+              $this->order = null;
+            }
+            if (isset($data["created_at"])) {
+              $this->created_at = $data["created_at"];
+            } else {
+              $this->created_at = null;
+            }
         }
     }
     /**

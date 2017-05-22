@@ -73,8 +73,16 @@ class TenderCashDetails implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->buyer_tendered_money = $data["buyer_tendered_money"];
-            $this->change_back_money = $data["change_back_money"];
+            if (isset($data["buyer_tendered_money"])) {
+              $this->buyer_tendered_money = $data["buyer_tendered_money"];
+            } else {
+              $this->buyer_tendered_money = null;
+            }
+            if (isset($data["change_back_money"])) {
+              $this->change_back_money = $data["change_back_money"];
+            } else {
+              $this->change_back_money = null;
+            }
         }
     }
     /**

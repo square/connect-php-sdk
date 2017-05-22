@@ -73,8 +73,16 @@ class CreateCustomerCardResponse implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->errors = $data["errors"];
-            $this->card = $data["card"];
+            if (isset($data["errors"])) {
+              $this->errors = $data["errors"];
+            } else {
+              $this->errors = null;
+            }
+            if (isset($data["card"])) {
+              $this->card = $data["card"];
+            } else {
+              $this->card = null;
+            }
         }
     }
     /**

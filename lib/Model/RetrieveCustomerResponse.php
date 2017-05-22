@@ -73,8 +73,16 @@ class RetrieveCustomerResponse implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->errors = $data["errors"];
-            $this->customer = $data["customer"];
+            if (isset($data["errors"])) {
+              $this->errors = $data["errors"];
+            } else {
+              $this->errors = null;
+            }
+            if (isset($data["customer"])) {
+              $this->customer = $data["customer"];
+            } else {
+              $this->customer = null;
+            }
         }
     }
     /**

@@ -118,13 +118,41 @@ class CreateCheckoutRequest implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->idempotency_key = $data["idempotency_key"];
-            $this->order = $data["order"];
-            $this->ask_for_shipping_address = $data["ask_for_shipping_address"];
-            $this->merchant_support_email = $data["merchant_support_email"];
-            $this->pre_populate_buyer_email = $data["pre_populate_buyer_email"];
-            $this->pre_populate_shipping_address = $data["pre_populate_shipping_address"];
-            $this->redirect_url = $data["redirect_url"];
+            if (isset($data["idempotency_key"])) {
+              $this->idempotency_key = $data["idempotency_key"];
+            } else {
+              $this->idempotency_key = null;
+            }
+            if (isset($data["order"])) {
+              $this->order = $data["order"];
+            } else {
+              $this->order = null;
+            }
+            if (isset($data["ask_for_shipping_address"])) {
+              $this->ask_for_shipping_address = $data["ask_for_shipping_address"];
+            } else {
+              $this->ask_for_shipping_address = null;
+            }
+            if (isset($data["merchant_support_email"])) {
+              $this->merchant_support_email = $data["merchant_support_email"];
+            } else {
+              $this->merchant_support_email = null;
+            }
+            if (isset($data["pre_populate_buyer_email"])) {
+              $this->pre_populate_buyer_email = $data["pre_populate_buyer_email"];
+            } else {
+              $this->pre_populate_buyer_email = null;
+            }
+            if (isset($data["pre_populate_shipping_address"])) {
+              $this->pre_populate_shipping_address = $data["pre_populate_shipping_address"];
+            } else {
+              $this->pre_populate_shipping_address = null;
+            }
+            if (isset($data["redirect_url"])) {
+              $this->redirect_url = $data["redirect_url"];
+            } else {
+              $this->redirect_url = null;
+            }
         }
     }
     /**

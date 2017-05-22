@@ -100,11 +100,31 @@ class Location implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->id = $data["id"];
-            $this->name = $data["name"];
-            $this->address = $data["address"];
-            $this->timezone = $data["timezone"];
-            $this->capabilities = $data["capabilities"];
+            if (isset($data["id"])) {
+              $this->id = $data["id"];
+            } else {
+              $this->id = null;
+            }
+            if (isset($data["name"])) {
+              $this->name = $data["name"];
+            } else {
+              $this->name = null;
+            }
+            if (isset($data["address"])) {
+              $this->address = $data["address"];
+            } else {
+              $this->address = null;
+            }
+            if (isset($data["timezone"])) {
+              $this->timezone = $data["timezone"];
+            } else {
+              $this->timezone = null;
+            }
+            if (isset($data["capabilities"])) {
+              $this->capabilities = $data["capabilities"];
+            } else {
+              $this->capabilities = null;
+            }
         }
     }
     /**

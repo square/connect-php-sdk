@@ -91,10 +91,26 @@ class ListTransactionsRequest implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->begin_time = $data["begin_time"];
-            $this->end_time = $data["end_time"];
-            $this->sort_order = $data["sort_order"];
-            $this->cursor = $data["cursor"];
+            if (isset($data["begin_time"])) {
+              $this->begin_time = $data["begin_time"];
+            } else {
+              $this->begin_time = null;
+            }
+            if (isset($data["end_time"])) {
+              $this->end_time = $data["end_time"];
+            } else {
+              $this->end_time = null;
+            }
+            if (isset($data["sort_order"])) {
+              $this->sort_order = $data["sort_order"];
+            } else {
+              $this->sort_order = null;
+            }
+            if (isset($data["cursor"])) {
+              $this->cursor = $data["cursor"];
+            } else {
+              $this->cursor = null;
+            }
         }
     }
     /**

@@ -190,21 +190,81 @@ class Customer implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->id = $data["id"];
-            $this->created_at = $data["created_at"];
-            $this->updated_at = $data["updated_at"];
-            $this->cards = $data["cards"];
-            $this->given_name = $data["given_name"];
-            $this->family_name = $data["family_name"];
-            $this->nickname = $data["nickname"];
-            $this->company_name = $data["company_name"];
-            $this->email_address = $data["email_address"];
-            $this->address = $data["address"];
-            $this->phone_number = $data["phone_number"];
-            $this->reference_id = $data["reference_id"];
-            $this->note = $data["note"];
-            $this->preferences = $data["preferences"];
-            $this->groups = $data["groups"];
+            if (isset($data["id"])) {
+              $this->id = $data["id"];
+            } else {
+              $this->id = null;
+            }
+            if (isset($data["created_at"])) {
+              $this->created_at = $data["created_at"];
+            } else {
+              $this->created_at = null;
+            }
+            if (isset($data["updated_at"])) {
+              $this->updated_at = $data["updated_at"];
+            } else {
+              $this->updated_at = null;
+            }
+            if (isset($data["cards"])) {
+              $this->cards = $data["cards"];
+            } else {
+              $this->cards = null;
+            }
+            if (isset($data["given_name"])) {
+              $this->given_name = $data["given_name"];
+            } else {
+              $this->given_name = null;
+            }
+            if (isset($data["family_name"])) {
+              $this->family_name = $data["family_name"];
+            } else {
+              $this->family_name = null;
+            }
+            if (isset($data["nickname"])) {
+              $this->nickname = $data["nickname"];
+            } else {
+              $this->nickname = null;
+            }
+            if (isset($data["company_name"])) {
+              $this->company_name = $data["company_name"];
+            } else {
+              $this->company_name = null;
+            }
+            if (isset($data["email_address"])) {
+              $this->email_address = $data["email_address"];
+            } else {
+              $this->email_address = null;
+            }
+            if (isset($data["address"])) {
+              $this->address = $data["address"];
+            } else {
+              $this->address = null;
+            }
+            if (isset($data["phone_number"])) {
+              $this->phone_number = $data["phone_number"];
+            } else {
+              $this->phone_number = null;
+            }
+            if (isset($data["reference_id"])) {
+              $this->reference_id = $data["reference_id"];
+            } else {
+              $this->reference_id = null;
+            }
+            if (isset($data["note"])) {
+              $this->note = $data["note"];
+            } else {
+              $this->note = null;
+            }
+            if (isset($data["preferences"])) {
+              $this->preferences = $data["preferences"];
+            } else {
+              $this->preferences = null;
+            }
+            if (isset($data["groups"])) {
+              $this->groups = $data["groups"];
+            } else {
+              $this->groups = null;
+            }
         }
     }
     /**
