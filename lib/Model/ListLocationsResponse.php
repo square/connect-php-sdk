@@ -73,8 +73,16 @@ class ListLocationsResponse implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->errors = $data["errors"];
-            $this->locations = $data["locations"];
+            if (isset($data["errors"])) {
+              $this->errors = $data["errors"];
+            } else {
+              $this->errors = null;
+            }
+            if (isset($data["locations"])) {
+              $this->locations = $data["locations"];
+            } else {
+              $this->locations = null;
+            }
         }
     }
     /**

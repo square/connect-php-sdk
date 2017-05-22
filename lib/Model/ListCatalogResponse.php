@@ -82,9 +82,21 @@ class ListCatalogResponse implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->errors = $data["errors"];
-            $this->cursor = $data["cursor"];
-            $this->objects = $data["objects"];
+            if (isset($data["errors"])) {
+              $this->errors = $data["errors"];
+            } else {
+              $this->errors = null;
+            }
+            if (isset($data["cursor"])) {
+              $this->cursor = $data["cursor"];
+            } else {
+              $this->cursor = null;
+            }
+            if (isset($data["objects"])) {
+              $this->objects = $data["objects"];
+            } else {
+              $this->objects = null;
+            }
         }
     }
     /**

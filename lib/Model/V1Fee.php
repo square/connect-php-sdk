@@ -136,15 +136,51 @@ class V1Fee implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->id = $data["id"];
-            $this->name = $data["name"];
-            $this->rate = $data["rate"];
-            $this->calculation_phase = $data["calculation_phase"];
-            $this->adjustment_type = $data["adjustment_type"];
-            $this->applies_to_custom_amounts = $data["applies_to_custom_amounts"];
-            $this->enabled = $data["enabled"];
-            $this->inclusion_type = $data["inclusion_type"];
-            $this->type = $data["type"];
+            if (isset($data["id"])) {
+              $this->id = $data["id"];
+            } else {
+              $this->id = null;
+            }
+            if (isset($data["name"])) {
+              $this->name = $data["name"];
+            } else {
+              $this->name = null;
+            }
+            if (isset($data["rate"])) {
+              $this->rate = $data["rate"];
+            } else {
+              $this->rate = null;
+            }
+            if (isset($data["calculation_phase"])) {
+              $this->calculation_phase = $data["calculation_phase"];
+            } else {
+              $this->calculation_phase = null;
+            }
+            if (isset($data["adjustment_type"])) {
+              $this->adjustment_type = $data["adjustment_type"];
+            } else {
+              $this->adjustment_type = null;
+            }
+            if (isset($data["applies_to_custom_amounts"])) {
+              $this->applies_to_custom_amounts = $data["applies_to_custom_amounts"];
+            } else {
+              $this->applies_to_custom_amounts = null;
+            }
+            if (isset($data["enabled"])) {
+              $this->enabled = $data["enabled"];
+            } else {
+              $this->enabled = null;
+            }
+            if (isset($data["inclusion_type"])) {
+              $this->inclusion_type = $data["inclusion_type"];
+            } else {
+              $this->inclusion_type = null;
+            }
+            if (isset($data["type"])) {
+              $this->type = $data["type"];
+            } else {
+              $this->type = null;
+            }
         }
     }
     /**

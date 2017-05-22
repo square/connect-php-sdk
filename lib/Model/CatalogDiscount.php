@@ -109,12 +109,36 @@ class CatalogDiscount implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->name = $data["name"];
-            $this->discount_type = $data["discount_type"];
-            $this->percentage = $data["percentage"];
-            $this->amount_money = $data["amount_money"];
-            $this->pin_required = $data["pin_required"];
-            $this->label_color = $data["label_color"];
+            if (isset($data["name"])) {
+              $this->name = $data["name"];
+            } else {
+              $this->name = null;
+            }
+            if (isset($data["discount_type"])) {
+              $this->discount_type = $data["discount_type"];
+            } else {
+              $this->discount_type = null;
+            }
+            if (isset($data["percentage"])) {
+              $this->percentage = $data["percentage"];
+            } else {
+              $this->percentage = null;
+            }
+            if (isset($data["amount_money"])) {
+              $this->amount_money = $data["amount_money"];
+            } else {
+              $this->amount_money = null;
+            }
+            if (isset($data["pin_required"])) {
+              $this->pin_required = $data["pin_required"];
+            } else {
+              $this->pin_required = null;
+            }
+            if (isset($data["label_color"])) {
+              $this->label_color = $data["label_color"];
+            } else {
+              $this->label_color = null;
+            }
         }
     }
     /**

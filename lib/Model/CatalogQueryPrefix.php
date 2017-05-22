@@ -73,8 +73,16 @@ class CatalogQueryPrefix implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->attribute_name = $data["attribute_name"];
-            $this->attribute_prefix = $data["attribute_prefix"];
+            if (isset($data["attribute_name"])) {
+              $this->attribute_name = $data["attribute_name"];
+            } else {
+              $this->attribute_name = null;
+            }
+            if (isset($data["attribute_prefix"])) {
+              $this->attribute_prefix = $data["attribute_prefix"];
+            } else {
+              $this->attribute_prefix = null;
+            }
         }
     }
     /**

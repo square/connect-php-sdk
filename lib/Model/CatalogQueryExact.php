@@ -73,8 +73,16 @@ class CatalogQueryExact implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->attribute_name = $data["attribute_name"];
-            $this->attribute_value = $data["attribute_value"];
+            if (isset($data["attribute_name"])) {
+              $this->attribute_name = $data["attribute_name"];
+            } else {
+              $this->attribute_name = null;
+            }
+            if (isset($data["attribute_value"])) {
+              $this->attribute_value = $data["attribute_value"];
+            } else {
+              $this->attribute_value = null;
+            }
         }
     }
     /**

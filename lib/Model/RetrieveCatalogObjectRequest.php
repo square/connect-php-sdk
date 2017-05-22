@@ -64,7 +64,11 @@ class RetrieveCatalogObjectRequest implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->include_related_objects = $data["include_related_objects"];
+            if (isset($data["include_related_objects"])) {
+              $this->include_related_objects = $data["include_related_objects"];
+            } else {
+              $this->include_related_objects = null;
+            }
         }
     }
     /**

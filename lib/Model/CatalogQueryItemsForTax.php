@@ -64,7 +64,11 @@ class CatalogQueryItemsForTax implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->tax_ids = $data["tax_ids"];
+            if (isset($data["tax_ids"])) {
+              $this->tax_ids = $data["tax_ids"];
+            } else {
+              $this->tax_ids = null;
+            }
         }
     }
     /**

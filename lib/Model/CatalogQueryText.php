@@ -64,7 +64,11 @@ class CatalogQueryText implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->keywords = $data["keywords"];
+            if (isset($data["keywords"])) {
+              $this->keywords = $data["keywords"];
+            } else {
+              $this->keywords = null;
+            }
         }
     }
     /**

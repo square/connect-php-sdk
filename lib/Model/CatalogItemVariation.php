@@ -163,18 +163,66 @@ class CatalogItemVariation implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->item_id = $data["item_id"];
-            $this->name = $data["name"];
-            $this->sku = $data["sku"];
-            $this->upc = $data["upc"];
-            $this->pricing_type = $data["pricing_type"];
-            $this->price_money = $data["price_money"];
-            $this->location_overrides = $data["location_overrides"];
-            $this->track_inventory = $data["track_inventory"];
-            $this->inventory_alert_type = $data["inventory_alert_type"];
-            $this->inventory_alert_threshold = $data["inventory_alert_threshold"];
-            $this->user_data = $data["user_data"];
-            $this->service_duration = $data["service_duration"];
+            if (isset($data["item_id"])) {
+              $this->item_id = $data["item_id"];
+            } else {
+              $this->item_id = null;
+            }
+            if (isset($data["name"])) {
+              $this->name = $data["name"];
+            } else {
+              $this->name = null;
+            }
+            if (isset($data["sku"])) {
+              $this->sku = $data["sku"];
+            } else {
+              $this->sku = null;
+            }
+            if (isset($data["upc"])) {
+              $this->upc = $data["upc"];
+            } else {
+              $this->upc = null;
+            }
+            if (isset($data["pricing_type"])) {
+              $this->pricing_type = $data["pricing_type"];
+            } else {
+              $this->pricing_type = null;
+            }
+            if (isset($data["price_money"])) {
+              $this->price_money = $data["price_money"];
+            } else {
+              $this->price_money = null;
+            }
+            if (isset($data["location_overrides"])) {
+              $this->location_overrides = $data["location_overrides"];
+            } else {
+              $this->location_overrides = null;
+            }
+            if (isset($data["track_inventory"])) {
+              $this->track_inventory = $data["track_inventory"];
+            } else {
+              $this->track_inventory = null;
+            }
+            if (isset($data["inventory_alert_type"])) {
+              $this->inventory_alert_type = $data["inventory_alert_type"];
+            } else {
+              $this->inventory_alert_type = null;
+            }
+            if (isset($data["inventory_alert_threshold"])) {
+              $this->inventory_alert_threshold = $data["inventory_alert_threshold"];
+            } else {
+              $this->inventory_alert_threshold = null;
+            }
+            if (isset($data["user_data"])) {
+              $this->user_data = $data["user_data"];
+            } else {
+              $this->user_data = null;
+            }
+            if (isset($data["service_duration"])) {
+              $this->service_duration = $data["service_duration"];
+            } else {
+              $this->service_duration = null;
+            }
         }
     }
     /**

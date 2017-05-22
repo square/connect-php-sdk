@@ -109,12 +109,36 @@ class CatalogTax implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->name = $data["name"];
-            $this->calculation_phase = $data["calculation_phase"];
-            $this->inclusion_type = $data["inclusion_type"];
-            $this->percentage = $data["percentage"];
-            $this->applies_to_custom_amounts = $data["applies_to_custom_amounts"];
-            $this->enabled = $data["enabled"];
+            if (isset($data["name"])) {
+              $this->name = $data["name"];
+            } else {
+              $this->name = null;
+            }
+            if (isset($data["calculation_phase"])) {
+              $this->calculation_phase = $data["calculation_phase"];
+            } else {
+              $this->calculation_phase = null;
+            }
+            if (isset($data["inclusion_type"])) {
+              $this->inclusion_type = $data["inclusion_type"];
+            } else {
+              $this->inclusion_type = null;
+            }
+            if (isset($data["percentage"])) {
+              $this->percentage = $data["percentage"];
+            } else {
+              $this->percentage = null;
+            }
+            if (isset($data["applies_to_custom_amounts"])) {
+              $this->applies_to_custom_amounts = $data["applies_to_custom_amounts"];
+            } else {
+              $this->applies_to_custom_amounts = null;
+            }
+            if (isset($data["enabled"])) {
+              $this->enabled = $data["enabled"];
+            } else {
+              $this->enabled = null;
+            }
         }
     }
     /**

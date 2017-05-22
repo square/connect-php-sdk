@@ -100,11 +100,31 @@ class OrderLineItem implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->id = $data["id"];
-            $this->name = $data["name"];
-            $this->quantity = $data["quantity"];
-            $this->base_price_money = $data["base_price_money"];
-            $this->total_money = $data["total_money"];
+            if (isset($data["id"])) {
+              $this->id = $data["id"];
+            } else {
+              $this->id = null;
+            }
+            if (isset($data["name"])) {
+              $this->name = $data["name"];
+            } else {
+              $this->name = null;
+            }
+            if (isset($data["quantity"])) {
+              $this->quantity = $data["quantity"];
+            } else {
+              $this->quantity = null;
+            }
+            if (isset($data["base_price_money"])) {
+              $this->base_price_money = $data["base_price_money"];
+            } else {
+              $this->base_price_money = null;
+            }
+            if (isset($data["total_money"])) {
+              $this->total_money = $data["total_money"];
+            } else {
+              $this->total_money = null;
+            }
         }
     }
     /**

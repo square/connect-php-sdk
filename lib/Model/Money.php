@@ -73,8 +73,16 @@ class Money implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->amount = $data["amount"];
-            $this->currency = $data["currency"];
+            if (isset($data["amount"])) {
+              $this->amount = $data["amount"];
+            } else {
+              $this->amount = null;
+            }
+            if (isset($data["currency"])) {
+              $this->currency = $data["currency"];
+            } else {
+              $this->currency = null;
+            }
         }
     }
     /**

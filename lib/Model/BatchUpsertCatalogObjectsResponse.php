@@ -91,10 +91,26 @@ class BatchUpsertCatalogObjectsResponse implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->errors = $data["errors"];
-            $this->objects = $data["objects"];
-            $this->updated_at = $data["updated_at"];
-            $this->id_mappings = $data["id_mappings"];
+            if (isset($data["errors"])) {
+              $this->errors = $data["errors"];
+            } else {
+              $this->errors = null;
+            }
+            if (isset($data["objects"])) {
+              $this->objects = $data["objects"];
+            } else {
+              $this->objects = null;
+            }
+            if (isset($data["updated_at"])) {
+              $this->updated_at = $data["updated_at"];
+            } else {
+              $this->updated_at = null;
+            }
+            if (isset($data["id_mappings"])) {
+              $this->id_mappings = $data["id_mappings"];
+            } else {
+              $this->id_mappings = null;
+            }
         }
     }
     /**

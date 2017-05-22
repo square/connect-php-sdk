@@ -100,11 +100,31 @@ class CatalogItemModifierListInfo implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->modifier_list_id = $data["modifier_list_id"];
-            $this->modifier_overrides = $data["modifier_overrides"];
-            $this->min_selected_modifiers = $data["min_selected_modifiers"];
-            $this->max_selected_modifiers = $data["max_selected_modifiers"];
-            $this->enabled = $data["enabled"];
+            if (isset($data["modifier_list_id"])) {
+              $this->modifier_list_id = $data["modifier_list_id"];
+            } else {
+              $this->modifier_list_id = null;
+            }
+            if (isset($data["modifier_overrides"])) {
+              $this->modifier_overrides = $data["modifier_overrides"];
+            } else {
+              $this->modifier_overrides = null;
+            }
+            if (isset($data["min_selected_modifiers"])) {
+              $this->min_selected_modifiers = $data["min_selected_modifiers"];
+            } else {
+              $this->min_selected_modifiers = null;
+            }
+            if (isset($data["max_selected_modifiers"])) {
+              $this->max_selected_modifiers = $data["max_selected_modifiers"];
+            } else {
+              $this->max_selected_modifiers = null;
+            }
+            if (isset($data["enabled"])) {
+              $this->enabled = $data["enabled"];
+            } else {
+              $this->enabled = null;
+            }
         }
     }
     /**

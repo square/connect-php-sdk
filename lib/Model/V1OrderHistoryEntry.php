@@ -73,8 +73,16 @@ class V1OrderHistoryEntry implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->action = $data["action"];
-            $this->created_at = $data["created_at"];
+            if (isset($data["action"])) {
+              $this->action = $data["action"];
+            } else {
+              $this->action = null;
+            }
+            if (isset($data["created_at"])) {
+              $this->created_at = $data["created_at"];
+            } else {
+              $this->created_at = null;
+            }
         }
     }
     /**

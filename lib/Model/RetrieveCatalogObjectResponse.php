@@ -82,9 +82,21 @@ class RetrieveCatalogObjectResponse implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->errors = $data["errors"];
-            $this->object = $data["object"];
-            $this->related_objects = $data["related_objects"];
+            if (isset($data["errors"])) {
+              $this->errors = $data["errors"];
+            } else {
+              $this->errors = null;
+            }
+            if (isset($data["object"])) {
+              $this->object = $data["object"];
+            } else {
+              $this->object = null;
+            }
+            if (isset($data["related_objects"])) {
+              $this->related_objects = $data["related_objects"];
+            } else {
+              $this->related_objects = null;
+            }
         }
     }
     /**

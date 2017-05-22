@@ -127,14 +127,46 @@ class V1BankAccount implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->id = $data["id"];
-            $this->merchant_id = $data["merchant_id"];
-            $this->bank_name = $data["bank_name"];
-            $this->name = $data["name"];
-            $this->routing_number = $data["routing_number"];
-            $this->account_number_suffix = $data["account_number_suffix"];
-            $this->currency_code = $data["currency_code"];
-            $this->type = $data["type"];
+            if (isset($data["id"])) {
+              $this->id = $data["id"];
+            } else {
+              $this->id = null;
+            }
+            if (isset($data["merchant_id"])) {
+              $this->merchant_id = $data["merchant_id"];
+            } else {
+              $this->merchant_id = null;
+            }
+            if (isset($data["bank_name"])) {
+              $this->bank_name = $data["bank_name"];
+            } else {
+              $this->bank_name = null;
+            }
+            if (isset($data["name"])) {
+              $this->name = $data["name"];
+            } else {
+              $this->name = null;
+            }
+            if (isset($data["routing_number"])) {
+              $this->routing_number = $data["routing_number"];
+            } else {
+              $this->routing_number = null;
+            }
+            if (isset($data["account_number_suffix"])) {
+              $this->account_number_suffix = $data["account_number_suffix"];
+            } else {
+              $this->account_number_suffix = null;
+            }
+            if (isset($data["currency_code"])) {
+              $this->currency_code = $data["currency_code"];
+            } else {
+              $this->currency_code = null;
+            }
+            if (isset($data["type"])) {
+              $this->type = $data["type"];
+            } else {
+              $this->type = null;
+            }
         }
     }
     /**

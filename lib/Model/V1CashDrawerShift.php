@@ -226,25 +226,101 @@ class V1CashDrawerShift implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->id = $data["id"];
-            $this->event_type = $data["event_type"];
-            $this->opened_at = $data["opened_at"];
-            $this->ended_at = $data["ended_at"];
-            $this->closed_at = $data["closed_at"];
-            $this->employee_ids = $data["employee_ids"];
-            $this->opening_employee_id = $data["opening_employee_id"];
-            $this->ending_employee_id = $data["ending_employee_id"];
-            $this->closing_employee_id = $data["closing_employee_id"];
-            $this->description = $data["description"];
-            $this->starting_cash_money = $data["starting_cash_money"];
-            $this->cash_payment_money = $data["cash_payment_money"];
-            $this->cash_refunds_money = $data["cash_refunds_money"];
-            $this->cash_paid_in_money = $data["cash_paid_in_money"];
-            $this->cash_paid_out_money = $data["cash_paid_out_money"];
-            $this->expected_cash_money = $data["expected_cash_money"];
-            $this->closed_cash_money = $data["closed_cash_money"];
-            $this->device = $data["device"];
-            $this->events = $data["events"];
+            if (isset($data["id"])) {
+              $this->id = $data["id"];
+            } else {
+              $this->id = null;
+            }
+            if (isset($data["event_type"])) {
+              $this->event_type = $data["event_type"];
+            } else {
+              $this->event_type = null;
+            }
+            if (isset($data["opened_at"])) {
+              $this->opened_at = $data["opened_at"];
+            } else {
+              $this->opened_at = null;
+            }
+            if (isset($data["ended_at"])) {
+              $this->ended_at = $data["ended_at"];
+            } else {
+              $this->ended_at = null;
+            }
+            if (isset($data["closed_at"])) {
+              $this->closed_at = $data["closed_at"];
+            } else {
+              $this->closed_at = null;
+            }
+            if (isset($data["employee_ids"])) {
+              $this->employee_ids = $data["employee_ids"];
+            } else {
+              $this->employee_ids = null;
+            }
+            if (isset($data["opening_employee_id"])) {
+              $this->opening_employee_id = $data["opening_employee_id"];
+            } else {
+              $this->opening_employee_id = null;
+            }
+            if (isset($data["ending_employee_id"])) {
+              $this->ending_employee_id = $data["ending_employee_id"];
+            } else {
+              $this->ending_employee_id = null;
+            }
+            if (isset($data["closing_employee_id"])) {
+              $this->closing_employee_id = $data["closing_employee_id"];
+            } else {
+              $this->closing_employee_id = null;
+            }
+            if (isset($data["description"])) {
+              $this->description = $data["description"];
+            } else {
+              $this->description = null;
+            }
+            if (isset($data["starting_cash_money"])) {
+              $this->starting_cash_money = $data["starting_cash_money"];
+            } else {
+              $this->starting_cash_money = null;
+            }
+            if (isset($data["cash_payment_money"])) {
+              $this->cash_payment_money = $data["cash_payment_money"];
+            } else {
+              $this->cash_payment_money = null;
+            }
+            if (isset($data["cash_refunds_money"])) {
+              $this->cash_refunds_money = $data["cash_refunds_money"];
+            } else {
+              $this->cash_refunds_money = null;
+            }
+            if (isset($data["cash_paid_in_money"])) {
+              $this->cash_paid_in_money = $data["cash_paid_in_money"];
+            } else {
+              $this->cash_paid_in_money = null;
+            }
+            if (isset($data["cash_paid_out_money"])) {
+              $this->cash_paid_out_money = $data["cash_paid_out_money"];
+            } else {
+              $this->cash_paid_out_money = null;
+            }
+            if (isset($data["expected_cash_money"])) {
+              $this->expected_cash_money = $data["expected_cash_money"];
+            } else {
+              $this->expected_cash_money = null;
+            }
+            if (isset($data["closed_cash_money"])) {
+              $this->closed_cash_money = $data["closed_cash_money"];
+            } else {
+              $this->closed_cash_money = null;
+            }
+            if (isset($data["device"])) {
+              $this->device = $data["device"];
+            } else {
+              $this->device = null;
+            }
+            if (isset($data["events"])) {
+              $this->events = $data["events"];
+            } else {
+              $this->events = null;
+            }
         }
     }
     /**

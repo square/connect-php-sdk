@@ -118,13 +118,41 @@ class SearchCatalogObjectsRequest implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->cursor = $data["cursor"];
-            $this->object_types = $data["object_types"];
-            $this->include_deleted_objects = $data["include_deleted_objects"];
-            $this->include_related_objects = $data["include_related_objects"];
-            $this->begin_time = $data["begin_time"];
-            $this->query = $data["query"];
-            $this->limit = $data["limit"];
+            if (isset($data["cursor"])) {
+              $this->cursor = $data["cursor"];
+            } else {
+              $this->cursor = null;
+            }
+            if (isset($data["object_types"])) {
+              $this->object_types = $data["object_types"];
+            } else {
+              $this->object_types = null;
+            }
+            if (isset($data["include_deleted_objects"])) {
+              $this->include_deleted_objects = $data["include_deleted_objects"];
+            } else {
+              $this->include_deleted_objects = null;
+            }
+            if (isset($data["include_related_objects"])) {
+              $this->include_related_objects = $data["include_related_objects"];
+            } else {
+              $this->include_related_objects = null;
+            }
+            if (isset($data["begin_time"])) {
+              $this->begin_time = $data["begin_time"];
+            } else {
+              $this->begin_time = null;
+            }
+            if (isset($data["query"])) {
+              $this->query = $data["query"];
+            } else {
+              $this->query = null;
+            }
+            if (isset($data["limit"])) {
+              $this->limit = $data["limit"];
+            } else {
+              $this->limit = null;
+            }
         }
     }
     /**

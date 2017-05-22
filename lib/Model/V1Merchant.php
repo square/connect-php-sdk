@@ -190,21 +190,81 @@ class V1Merchant implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->id = $data["id"];
-            $this->name = $data["name"];
-            $this->email = $data["email"];
-            $this->account_type = $data["account_type"];
-            $this->account_capabilities = $data["account_capabilities"];
-            $this->country_code = $data["country_code"];
-            $this->language_code = $data["language_code"];
-            $this->currency_code = $data["currency_code"];
-            $this->business_name = $data["business_name"];
-            $this->business_address = $data["business_address"];
-            $this->business_phone = $data["business_phone"];
-            $this->business_type = $data["business_type"];
-            $this->shipping_address_ = $data["shipping_address_"];
-            $this->location_details = $data["location_details"];
-            $this->market_url = $data["market_url"];
+            if (isset($data["id"])) {
+              $this->id = $data["id"];
+            } else {
+              $this->id = null;
+            }
+            if (isset($data["name"])) {
+              $this->name = $data["name"];
+            } else {
+              $this->name = null;
+            }
+            if (isset($data["email"])) {
+              $this->email = $data["email"];
+            } else {
+              $this->email = null;
+            }
+            if (isset($data["account_type"])) {
+              $this->account_type = $data["account_type"];
+            } else {
+              $this->account_type = null;
+            }
+            if (isset($data["account_capabilities"])) {
+              $this->account_capabilities = $data["account_capabilities"];
+            } else {
+              $this->account_capabilities = null;
+            }
+            if (isset($data["country_code"])) {
+              $this->country_code = $data["country_code"];
+            } else {
+              $this->country_code = null;
+            }
+            if (isset($data["language_code"])) {
+              $this->language_code = $data["language_code"];
+            } else {
+              $this->language_code = null;
+            }
+            if (isset($data["currency_code"])) {
+              $this->currency_code = $data["currency_code"];
+            } else {
+              $this->currency_code = null;
+            }
+            if (isset($data["business_name"])) {
+              $this->business_name = $data["business_name"];
+            } else {
+              $this->business_name = null;
+            }
+            if (isset($data["business_address"])) {
+              $this->business_address = $data["business_address"];
+            } else {
+              $this->business_address = null;
+            }
+            if (isset($data["business_phone"])) {
+              $this->business_phone = $data["business_phone"];
+            } else {
+              $this->business_phone = null;
+            }
+            if (isset($data["business_type"])) {
+              $this->business_type = $data["business_type"];
+            } else {
+              $this->business_type = null;
+            }
+            if (isset($data["shipping_address_"])) {
+              $this->shipping_address_ = $data["shipping_address_"];
+            } else {
+              $this->shipping_address_ = null;
+            }
+            if (isset($data["location_details"])) {
+              $this->location_details = $data["location_details"];
+            } else {
+              $this->location_details = null;
+            }
+            if (isset($data["market_url"])) {
+              $this->market_url = $data["market_url"];
+            } else {
+              $this->market_url = null;
+            }
         }
     }
     /**

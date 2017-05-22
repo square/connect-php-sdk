@@ -154,17 +154,61 @@ class CatalogInfoResponseLimits implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->batch_upsert_max_objects_per_batch = $data["batch_upsert_max_objects_per_batch"];
-            $this->batch_upsert_max_total_objects = $data["batch_upsert_max_total_objects"];
-            $this->batch_retrieve_max_object_ids = $data["batch_retrieve_max_object_ids"];
-            $this->search_max_page_limit = $data["search_max_page_limit"];
-            $this->batch_delete_max_object_ids = $data["batch_delete_max_object_ids"];
-            $this->update_item_taxes_max_item_ids = $data["update_item_taxes_max_item_ids"];
-            $this->update_item_taxes_max_taxes_to_enable = $data["update_item_taxes_max_taxes_to_enable"];
-            $this->update_item_taxes_max_taxes_to_disable = $data["update_item_taxes_max_taxes_to_disable"];
-            $this->update_item_modifier_lists_max_item_ids = $data["update_item_modifier_lists_max_item_ids"];
-            $this->update_item_modifier_lists_max_modifier_lists_to_enable = $data["update_item_modifier_lists_max_modifier_lists_to_enable"];
-            $this->update_item_modifier_lists_max_modifier_lists_to_disable = $data["update_item_modifier_lists_max_modifier_lists_to_disable"];
+            if (isset($data["batch_upsert_max_objects_per_batch"])) {
+              $this->batch_upsert_max_objects_per_batch = $data["batch_upsert_max_objects_per_batch"];
+            } else {
+              $this->batch_upsert_max_objects_per_batch = null;
+            }
+            if (isset($data["batch_upsert_max_total_objects"])) {
+              $this->batch_upsert_max_total_objects = $data["batch_upsert_max_total_objects"];
+            } else {
+              $this->batch_upsert_max_total_objects = null;
+            }
+            if (isset($data["batch_retrieve_max_object_ids"])) {
+              $this->batch_retrieve_max_object_ids = $data["batch_retrieve_max_object_ids"];
+            } else {
+              $this->batch_retrieve_max_object_ids = null;
+            }
+            if (isset($data["search_max_page_limit"])) {
+              $this->search_max_page_limit = $data["search_max_page_limit"];
+            } else {
+              $this->search_max_page_limit = null;
+            }
+            if (isset($data["batch_delete_max_object_ids"])) {
+              $this->batch_delete_max_object_ids = $data["batch_delete_max_object_ids"];
+            } else {
+              $this->batch_delete_max_object_ids = null;
+            }
+            if (isset($data["update_item_taxes_max_item_ids"])) {
+              $this->update_item_taxes_max_item_ids = $data["update_item_taxes_max_item_ids"];
+            } else {
+              $this->update_item_taxes_max_item_ids = null;
+            }
+            if (isset($data["update_item_taxes_max_taxes_to_enable"])) {
+              $this->update_item_taxes_max_taxes_to_enable = $data["update_item_taxes_max_taxes_to_enable"];
+            } else {
+              $this->update_item_taxes_max_taxes_to_enable = null;
+            }
+            if (isset($data["update_item_taxes_max_taxes_to_disable"])) {
+              $this->update_item_taxes_max_taxes_to_disable = $data["update_item_taxes_max_taxes_to_disable"];
+            } else {
+              $this->update_item_taxes_max_taxes_to_disable = null;
+            }
+            if (isset($data["update_item_modifier_lists_max_item_ids"])) {
+              $this->update_item_modifier_lists_max_item_ids = $data["update_item_modifier_lists_max_item_ids"];
+            } else {
+              $this->update_item_modifier_lists_max_item_ids = null;
+            }
+            if (isset($data["update_item_modifier_lists_max_modifier_lists_to_enable"])) {
+              $this->update_item_modifier_lists_max_modifier_lists_to_enable = $data["update_item_modifier_lists_max_modifier_lists_to_enable"];
+            } else {
+              $this->update_item_modifier_lists_max_modifier_lists_to_enable = null;
+            }
+            if (isset($data["update_item_modifier_lists_max_modifier_lists_to_disable"])) {
+              $this->update_item_modifier_lists_max_modifier_lists_to_disable = $data["update_item_modifier_lists_max_modifier_lists_to_disable"];
+            } else {
+              $this->update_item_modifier_lists_max_modifier_lists_to_disable = null;
+            }
         }
     }
     /**

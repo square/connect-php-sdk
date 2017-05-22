@@ -181,20 +181,76 @@ class CatalogItem implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->name = $data["name"];
-            $this->description = $data["description"];
-            $this->abbreviation = $data["abbreviation"];
-            $this->label_color = $data["label_color"];
-            $this->available_online = $data["available_online"];
-            $this->available_for_pickup = $data["available_for_pickup"];
-            $this->available_electronically = $data["available_electronically"];
-            $this->category_id = $data["category_id"];
-            $this->tax_ids = $data["tax_ids"];
-            $this->modifier_list_info = $data["modifier_list_info"];
-            $this->image_url = $data["image_url"];
-            $this->variations = $data["variations"];
-            $this->product_type = $data["product_type"];
-            $this->skip_modifier_screen = $data["skip_modifier_screen"];
+            if (isset($data["name"])) {
+              $this->name = $data["name"];
+            } else {
+              $this->name = null;
+            }
+            if (isset($data["description"])) {
+              $this->description = $data["description"];
+            } else {
+              $this->description = null;
+            }
+            if (isset($data["abbreviation"])) {
+              $this->abbreviation = $data["abbreviation"];
+            } else {
+              $this->abbreviation = null;
+            }
+            if (isset($data["label_color"])) {
+              $this->label_color = $data["label_color"];
+            } else {
+              $this->label_color = null;
+            }
+            if (isset($data["available_online"])) {
+              $this->available_online = $data["available_online"];
+            } else {
+              $this->available_online = null;
+            }
+            if (isset($data["available_for_pickup"])) {
+              $this->available_for_pickup = $data["available_for_pickup"];
+            } else {
+              $this->available_for_pickup = null;
+            }
+            if (isset($data["available_electronically"])) {
+              $this->available_electronically = $data["available_electronically"];
+            } else {
+              $this->available_electronically = null;
+            }
+            if (isset($data["category_id"])) {
+              $this->category_id = $data["category_id"];
+            } else {
+              $this->category_id = null;
+            }
+            if (isset($data["tax_ids"])) {
+              $this->tax_ids = $data["tax_ids"];
+            } else {
+              $this->tax_ids = null;
+            }
+            if (isset($data["modifier_list_info"])) {
+              $this->modifier_list_info = $data["modifier_list_info"];
+            } else {
+              $this->modifier_list_info = null;
+            }
+            if (isset($data["image_url"])) {
+              $this->image_url = $data["image_url"];
+            } else {
+              $this->image_url = null;
+            }
+            if (isset($data["variations"])) {
+              $this->variations = $data["variations"];
+            } else {
+              $this->variations = null;
+            }
+            if (isset($data["product_type"])) {
+              $this->product_type = $data["product_type"];
+            } else {
+              $this->product_type = null;
+            }
+            if (isset($data["skip_modifier_screen"])) {
+              $this->skip_modifier_screen = $data["skip_modifier_screen"];
+            } else {
+              $this->skip_modifier_screen = null;
+            }
         }
     }
     /**

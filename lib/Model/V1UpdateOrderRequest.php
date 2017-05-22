@@ -100,11 +100,31 @@ class V1UpdateOrderRequest implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->action = $data["action"];
-            $this->shipped_tracking_number = $data["shipped_tracking_number"];
-            $this->completed_note = $data["completed_note"];
-            $this->refunded_note = $data["refunded_note"];
-            $this->canceled_note = $data["canceled_note"];
+            if (isset($data["action"])) {
+              $this->action = $data["action"];
+            } else {
+              $this->action = null;
+            }
+            if (isset($data["shipped_tracking_number"])) {
+              $this->shipped_tracking_number = $data["shipped_tracking_number"];
+            } else {
+              $this->shipped_tracking_number = null;
+            }
+            if (isset($data["completed_note"])) {
+              $this->completed_note = $data["completed_note"];
+            } else {
+              $this->completed_note = null;
+            }
+            if (isset($data["refunded_note"])) {
+              $this->refunded_note = $data["refunded_note"];
+            } else {
+              $this->refunded_note = null;
+            }
+            if (isset($data["canceled_note"])) {
+              $this->canceled_note = $data["canceled_note"];
+            } else {
+              $this->canceled_note = null;
+            }
         }
     }
     /**

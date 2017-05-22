@@ -145,16 +145,56 @@ class V1Variation implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->id = $data["id"];
-            $this->name = $data["name"];
-            $this->item_id = $data["item_id"];
-            $this->pricing_type = $data["pricing_type"];
-            $this->price_money = $data["price_money"];
-            $this->sku = $data["sku"];
-            $this->track_inventory = $data["track_inventory"];
-            $this->inventory_alert_type = $data["inventory_alert_type"];
-            $this->inventory_alert_threshold = $data["inventory_alert_threshold"];
-            $this->user_data = $data["user_data"];
+            if (isset($data["id"])) {
+              $this->id = $data["id"];
+            } else {
+              $this->id = null;
+            }
+            if (isset($data["name"])) {
+              $this->name = $data["name"];
+            } else {
+              $this->name = null;
+            }
+            if (isset($data["item_id"])) {
+              $this->item_id = $data["item_id"];
+            } else {
+              $this->item_id = null;
+            }
+            if (isset($data["pricing_type"])) {
+              $this->pricing_type = $data["pricing_type"];
+            } else {
+              $this->pricing_type = null;
+            }
+            if (isset($data["price_money"])) {
+              $this->price_money = $data["price_money"];
+            } else {
+              $this->price_money = null;
+            }
+            if (isset($data["sku"])) {
+              $this->sku = $data["sku"];
+            } else {
+              $this->sku = null;
+            }
+            if (isset($data["track_inventory"])) {
+              $this->track_inventory = $data["track_inventory"];
+            } else {
+              $this->track_inventory = null;
+            }
+            if (isset($data["inventory_alert_type"])) {
+              $this->inventory_alert_type = $data["inventory_alert_type"];
+            } else {
+              $this->inventory_alert_type = null;
+            }
+            if (isset($data["inventory_alert_threshold"])) {
+              $this->inventory_alert_threshold = $data["inventory_alert_threshold"];
+            } else {
+              $this->inventory_alert_threshold = null;
+            }
+            if (isset($data["user_data"])) {
+              $this->user_data = $data["user_data"];
+            } else {
+              $this->user_data = null;
+            }
         }
     }
     /**

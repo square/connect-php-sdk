@@ -82,9 +82,21 @@ class UpdateItemTaxesRequest implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->item_ids = $data["item_ids"];
-            $this->taxes_to_enable = $data["taxes_to_enable"];
-            $this->taxes_to_disable = $data["taxes_to_disable"];
+            if (isset($data["item_ids"])) {
+              $this->item_ids = $data["item_ids"];
+            } else {
+              $this->item_ids = null;
+            }
+            if (isset($data["taxes_to_enable"])) {
+              $this->taxes_to_enable = $data["taxes_to_enable"];
+            } else {
+              $this->taxes_to_enable = null;
+            }
+            if (isset($data["taxes_to_disable"])) {
+              $this->taxes_to_disable = $data["taxes_to_disable"];
+            } else {
+              $this->taxes_to_disable = null;
+            }
         }
     }
     /**

@@ -109,12 +109,36 @@ class V1CashDrawerEvent implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->id = $data["id"];
-            $this->employee_id = $data["employee_id"];
-            $this->event_type = $data["event_type"];
-            $this->event_money = $data["event_money"];
-            $this->created_at = $data["created_at"];
-            $this->description = $data["description"];
+            if (isset($data["id"])) {
+              $this->id = $data["id"];
+            } else {
+              $this->id = null;
+            }
+            if (isset($data["employee_id"])) {
+              $this->employee_id = $data["employee_id"];
+            } else {
+              $this->employee_id = null;
+            }
+            if (isset($data["event_type"])) {
+              $this->event_type = $data["event_type"];
+            } else {
+              $this->event_type = null;
+            }
+            if (isset($data["event_money"])) {
+              $this->event_money = $data["event_money"];
+            } else {
+              $this->event_money = null;
+            }
+            if (isset($data["created_at"])) {
+              $this->created_at = $data["created_at"];
+            } else {
+              $this->created_at = null;
+            }
+            if (isset($data["description"])) {
+              $this->description = $data["description"];
+            } else {
+              $this->description = null;
+            }
         }
     }
     /**

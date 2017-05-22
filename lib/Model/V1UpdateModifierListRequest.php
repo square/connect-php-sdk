@@ -73,8 +73,16 @@ class V1UpdateModifierListRequest implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->name = $data["name"];
-            $this->selection_type = $data["selection_type"];
+            if (isset($data["name"])) {
+              $this->name = $data["name"];
+            } else {
+              $this->name = null;
+            }
+            if (isset($data["selection_type"])) {
+              $this->selection_type = $data["selection_type"];
+            } else {
+              $this->selection_type = null;
+            }
         }
     }
     /**

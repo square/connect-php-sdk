@@ -82,9 +82,21 @@ class CatalogQuerySortedAttribute implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->attribute_name = $data["attribute_name"];
-            $this->initial_attribute_value = $data["initial_attribute_value"];
-            $this->sort_order = $data["sort_order"];
+            if (isset($data["attribute_name"])) {
+              $this->attribute_name = $data["attribute_name"];
+            } else {
+              $this->attribute_name = null;
+            }
+            if (isset($data["initial_attribute_value"])) {
+              $this->initial_attribute_value = $data["initial_attribute_value"];
+            } else {
+              $this->initial_attribute_value = null;
+            }
+            if (isset($data["sort_order"])) {
+              $this->sort_order = $data["sort_order"];
+            } else {
+              $this->sort_order = null;
+            }
         }
     }
     /**

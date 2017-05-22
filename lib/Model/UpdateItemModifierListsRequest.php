@@ -82,9 +82,21 @@ class UpdateItemModifierListsRequest implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->item_ids = $data["item_ids"];
-            $this->modifier_lists_to_enable = $data["modifier_lists_to_enable"];
-            $this->modifier_lists_to_disable = $data["modifier_lists_to_disable"];
+            if (isset($data["item_ids"])) {
+              $this->item_ids = $data["item_ids"];
+            } else {
+              $this->item_ids = null;
+            }
+            if (isset($data["modifier_lists_to_enable"])) {
+              $this->modifier_lists_to_enable = $data["modifier_lists_to_enable"];
+            } else {
+              $this->modifier_lists_to_enable = null;
+            }
+            if (isset($data["modifier_lists_to_disable"])) {
+              $this->modifier_lists_to_disable = $data["modifier_lists_to_disable"];
+            } else {
+              $this->modifier_lists_to_disable = null;
+            }
         }
     }
     /**

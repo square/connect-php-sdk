@@ -82,9 +82,21 @@ class CatalogModifierList implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->name = $data["name"];
-            $this->selection_type = $data["selection_type"];
-            $this->modifiers = $data["modifiers"];
+            if (isset($data["name"])) {
+              $this->name = $data["name"];
+            } else {
+              $this->name = null;
+            }
+            if (isset($data["selection_type"])) {
+              $this->selection_type = $data["selection_type"];
+            } else {
+              $this->selection_type = null;
+            }
+            if (isset($data["modifiers"])) {
+              $this->modifiers = $data["modifiers"];
+            } else {
+              $this->modifiers = null;
+            }
         }
     }
     /**

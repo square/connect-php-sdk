@@ -82,9 +82,21 @@ class BatchDeleteCatalogObjectsResponse implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->errors = $data["errors"];
-            $this->deleted_object_ids = $data["deleted_object_ids"];
-            $this->deleted_at = $data["deleted_at"];
+            if (isset($data["errors"])) {
+              $this->errors = $data["errors"];
+            } else {
+              $this->errors = null;
+            }
+            if (isset($data["deleted_object_ids"])) {
+              $this->deleted_object_ids = $data["deleted_object_ids"];
+            } else {
+              $this->deleted_object_ids = null;
+            }
+            if (isset($data["deleted_at"])) {
+              $this->deleted_at = $data["deleted_at"];
+            } else {
+              $this->deleted_at = null;
+            }
         }
     }
     /**

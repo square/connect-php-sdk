@@ -145,16 +145,56 @@ class V1Employee implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->id = $data["id"];
-            $this->first_name = $data["first_name"];
-            $this->last_name = $data["last_name"];
-            $this->role_ids = $data["role_ids"];
-            $this->authorized_location_ids = $data["authorized_location_ids"];
-            $this->email = $data["email"];
-            $this->status = $data["status"];
-            $this->external_id = $data["external_id"];
-            $this->created_at = $data["created_at"];
-            $this->updated_at = $data["updated_at"];
+            if (isset($data["id"])) {
+              $this->id = $data["id"];
+            } else {
+              $this->id = null;
+            }
+            if (isset($data["first_name"])) {
+              $this->first_name = $data["first_name"];
+            } else {
+              $this->first_name = null;
+            }
+            if (isset($data["last_name"])) {
+              $this->last_name = $data["last_name"];
+            } else {
+              $this->last_name = null;
+            }
+            if (isset($data["role_ids"])) {
+              $this->role_ids = $data["role_ids"];
+            } else {
+              $this->role_ids = null;
+            }
+            if (isset($data["authorized_location_ids"])) {
+              $this->authorized_location_ids = $data["authorized_location_ids"];
+            } else {
+              $this->authorized_location_ids = null;
+            }
+            if (isset($data["email"])) {
+              $this->email = $data["email"];
+            } else {
+              $this->email = null;
+            }
+            if (isset($data["status"])) {
+              $this->status = $data["status"];
+            } else {
+              $this->status = null;
+            }
+            if (isset($data["external_id"])) {
+              $this->external_id = $data["external_id"];
+            } else {
+              $this->external_id = null;
+            }
+            if (isset($data["created_at"])) {
+              $this->created_at = $data["created_at"];
+            } else {
+              $this->created_at = null;
+            }
+            if (isset($data["updated_at"])) {
+              $this->updated_at = $data["updated_at"];
+            } else {
+              $this->updated_at = null;
+            }
         }
     }
     /**

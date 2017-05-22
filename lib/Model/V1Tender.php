@@ -172,19 +172,71 @@ class V1Tender implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->id = $data["id"];
-            $this->type = $data["type"];
-            $this->name = $data["name"];
-            $this->employee_id = $data["employee_id"];
-            $this->receipt_url = $data["receipt_url"];
-            $this->card_brand = $data["card_brand"];
-            $this->pan_suffix = $data["pan_suffix"];
-            $this->entry_method = $data["entry_method"];
-            $this->payment_note = $data["payment_note"];
-            $this->total_money = $data["total_money"];
-            $this->tendered_money = $data["tendered_money"];
-            $this->change_back_money = $data["change_back_money"];
-            $this->refunded_money = $data["refunded_money"];
+            if (isset($data["id"])) {
+              $this->id = $data["id"];
+            } else {
+              $this->id = null;
+            }
+            if (isset($data["type"])) {
+              $this->type = $data["type"];
+            } else {
+              $this->type = null;
+            }
+            if (isset($data["name"])) {
+              $this->name = $data["name"];
+            } else {
+              $this->name = null;
+            }
+            if (isset($data["employee_id"])) {
+              $this->employee_id = $data["employee_id"];
+            } else {
+              $this->employee_id = null;
+            }
+            if (isset($data["receipt_url"])) {
+              $this->receipt_url = $data["receipt_url"];
+            } else {
+              $this->receipt_url = null;
+            }
+            if (isset($data["card_brand"])) {
+              $this->card_brand = $data["card_brand"];
+            } else {
+              $this->card_brand = null;
+            }
+            if (isset($data["pan_suffix"])) {
+              $this->pan_suffix = $data["pan_suffix"];
+            } else {
+              $this->pan_suffix = null;
+            }
+            if (isset($data["entry_method"])) {
+              $this->entry_method = $data["entry_method"];
+            } else {
+              $this->entry_method = null;
+            }
+            if (isset($data["payment_note"])) {
+              $this->payment_note = $data["payment_note"];
+            } else {
+              $this->payment_note = null;
+            }
+            if (isset($data["total_money"])) {
+              $this->total_money = $data["total_money"];
+            } else {
+              $this->total_money = null;
+            }
+            if (isset($data["tendered_money"])) {
+              $this->tendered_money = $data["tendered_money"];
+            } else {
+              $this->tendered_money = null;
+            }
+            if (isset($data["change_back_money"])) {
+              $this->change_back_money = $data["change_back_money"];
+            } else {
+              $this->change_back_money = null;
+            }
+            if (isset($data["refunded_money"])) {
+              $this->refunded_money = $data["refunded_money"];
+            } else {
+              $this->refunded_money = null;
+            }
         }
     }
     /**

@@ -109,12 +109,36 @@ class ItemVariationLocationOverrides implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->location_id = $data["location_id"];
-            $this->price_money = $data["price_money"];
-            $this->pricing_type = $data["pricing_type"];
-            $this->track_inventory = $data["track_inventory"];
-            $this->inventory_alert_type = $data["inventory_alert_type"];
-            $this->inventory_alert_threshold = $data["inventory_alert_threshold"];
+            if (isset($data["location_id"])) {
+              $this->location_id = $data["location_id"];
+            } else {
+              $this->location_id = null;
+            }
+            if (isset($data["price_money"])) {
+              $this->price_money = $data["price_money"];
+            } else {
+              $this->price_money = null;
+            }
+            if (isset($data["pricing_type"])) {
+              $this->pricing_type = $data["pricing_type"];
+            } else {
+              $this->pricing_type = null;
+            }
+            if (isset($data["track_inventory"])) {
+              $this->track_inventory = $data["track_inventory"];
+            } else {
+              $this->track_inventory = null;
+            }
+            if (isset($data["inventory_alert_type"])) {
+              $this->inventory_alert_type = $data["inventory_alert_type"];
+            } else {
+              $this->inventory_alert_type = null;
+            }
+            if (isset($data["inventory_alert_threshold"])) {
+              $this->inventory_alert_threshold = $data["inventory_alert_threshold"];
+            } else {
+              $this->inventory_alert_threshold = null;
+            }
         }
     }
     /**

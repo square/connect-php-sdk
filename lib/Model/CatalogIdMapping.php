@@ -73,8 +73,16 @@ class CatalogIdMapping implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->client_object_id = $data["client_object_id"];
-            $this->object_id = $data["object_id"];
+            if (isset($data["client_object_id"])) {
+              $this->client_object_id = $data["client_object_id"];
+            } else {
+              $this->client_object_id = null;
+            }
+            if (isset($data["object_id"])) {
+              $this->object_id = $data["object_id"];
+            } else {
+              $this->object_id = null;
+            }
         }
     }
     /**

@@ -73,8 +73,16 @@ class ListCatalogRequest implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->cursor = $data["cursor"];
-            $this->types = $data["types"];
+            if (isset($data["cursor"])) {
+              $this->cursor = $data["cursor"];
+            } else {
+              $this->cursor = null;
+            }
+            if (isset($data["types"])) {
+              $this->types = $data["types"];
+            } else {
+              $this->types = null;
+            }
         }
     }
     /**

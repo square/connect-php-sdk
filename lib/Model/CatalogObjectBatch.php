@@ -64,7 +64,11 @@ class CatalogObjectBatch implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->objects = $data["objects"];
+            if (isset($data["objects"])) {
+              $this->objects = $data["objects"];
+            } else {
+              $this->objects = null;
+            }
         }
     }
     /**

@@ -181,20 +181,76 @@ class V1Item implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->id = $data["id"];
-            $this->name = $data["name"];
-            $this->description = $data["description"];
-            $this->type = $data["type"];
-            $this->color = $data["color"];
-            $this->abbreviation = $data["abbreviation"];
-            $this->visibility = $data["visibility"];
-            $this->available_online = $data["available_online"];
-            $this->master_image = $data["master_image"];
-            $this->category = $data["category"];
-            $this->variations = $data["variations"];
-            $this->modifier_lists = $data["modifier_lists"];
-            $this->fees = $data["fees"];
-            $this->taxable = $data["taxable"];
+            if (isset($data["id"])) {
+              $this->id = $data["id"];
+            } else {
+              $this->id = null;
+            }
+            if (isset($data["name"])) {
+              $this->name = $data["name"];
+            } else {
+              $this->name = null;
+            }
+            if (isset($data["description"])) {
+              $this->description = $data["description"];
+            } else {
+              $this->description = null;
+            }
+            if (isset($data["type"])) {
+              $this->type = $data["type"];
+            } else {
+              $this->type = null;
+            }
+            if (isset($data["color"])) {
+              $this->color = $data["color"];
+            } else {
+              $this->color = null;
+            }
+            if (isset($data["abbreviation"])) {
+              $this->abbreviation = $data["abbreviation"];
+            } else {
+              $this->abbreviation = null;
+            }
+            if (isset($data["visibility"])) {
+              $this->visibility = $data["visibility"];
+            } else {
+              $this->visibility = null;
+            }
+            if (isset($data["available_online"])) {
+              $this->available_online = $data["available_online"];
+            } else {
+              $this->available_online = null;
+            }
+            if (isset($data["master_image"])) {
+              $this->master_image = $data["master_image"];
+            } else {
+              $this->master_image = null;
+            }
+            if (isset($data["category"])) {
+              $this->category = $data["category"];
+            } else {
+              $this->category = null;
+            }
+            if (isset($data["variations"])) {
+              $this->variations = $data["variations"];
+            } else {
+              $this->variations = null;
+            }
+            if (isset($data["modifier_lists"])) {
+              $this->modifier_lists = $data["modifier_lists"];
+            } else {
+              $this->modifier_lists = null;
+            }
+            if (isset($data["fees"])) {
+              $this->fees = $data["fees"];
+            } else {
+              $this->fees = null;
+            }
+            if (isset($data["taxable"])) {
+              $this->taxable = $data["taxable"];
+            } else {
+              $this->taxable = null;
+            }
         }
     }
     /**

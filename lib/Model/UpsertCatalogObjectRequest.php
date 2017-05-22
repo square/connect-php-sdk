@@ -73,8 +73,16 @@ class UpsertCatalogObjectRequest implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->idempotency_key = $data["idempotency_key"];
-            $this->object = $data["object"];
+            if (isset($data["idempotency_key"])) {
+              $this->idempotency_key = $data["idempotency_key"];
+            } else {
+              $this->idempotency_key = null;
+            }
+            if (isset($data["object"])) {
+              $this->object = $data["object"];
+            } else {
+              $this->object = null;
+            }
         }
     }
     /**

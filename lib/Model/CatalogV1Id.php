@@ -73,8 +73,16 @@ class CatalogV1Id implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->catalog_v1_id = $data["catalog_v1_id"];
-            $this->location_id = $data["location_id"];
+            if (isset($data["catalog_v1_id"])) {
+              $this->catalog_v1_id = $data["catalog_v1_id"];
+            } else {
+              $this->catalog_v1_id = null;
+            }
+            if (isset($data["location_id"])) {
+              $this->location_id = $data["location_id"];
+            } else {
+              $this->location_id = null;
+            }
         }
     }
     /**

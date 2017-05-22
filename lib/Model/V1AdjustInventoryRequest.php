@@ -82,9 +82,21 @@ class V1AdjustInventoryRequest implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->quantity_delta = $data["quantity_delta"];
-            $this->adjustment_type = $data["adjustment_type"];
-            $this->memo = $data["memo"];
+            if (isset($data["quantity_delta"])) {
+              $this->quantity_delta = $data["quantity_delta"];
+            } else {
+              $this->quantity_delta = null;
+            }
+            if (isset($data["adjustment_type"])) {
+              $this->adjustment_type = $data["adjustment_type"];
+            } else {
+              $this->adjustment_type = null;
+            }
+            if (isset($data["memo"])) {
+              $this->memo = $data["memo"];
+            } else {
+              $this->memo = null;
+            }
         }
     }
     /**

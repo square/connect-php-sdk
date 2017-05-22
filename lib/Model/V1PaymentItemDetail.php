@@ -91,10 +91,26 @@ class V1PaymentItemDetail implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->category_name = $data["category_name"];
-            $this->sku = $data["sku"];
-            $this->item_id = $data["item_id"];
-            $this->item_variation_id = $data["item_variation_id"];
+            if (isset($data["category_name"])) {
+              $this->category_name = $data["category_name"];
+            } else {
+              $this->category_name = null;
+            }
+            if (isset($data["sku"])) {
+              $this->sku = $data["sku"];
+            } else {
+              $this->sku = null;
+            }
+            if (isset($data["item_id"])) {
+              $this->item_id = $data["item_id"];
+            } else {
+              $this->item_id = null;
+            }
+            if (isset($data["item_variation_id"])) {
+              $this->item_variation_id = $data["item_variation_id"];
+            } else {
+              $this->item_variation_id = null;
+            }
         }
     }
     /**

@@ -64,7 +64,11 @@ class BatchDeleteCatalogObjectsRequest implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->object_ids = $data["object_ids"];
+            if (isset($data["object_ids"])) {
+              $this->object_ids = $data["object_ids"];
+            } else {
+              $this->object_ids = null;
+            }
         }
     }
     /**

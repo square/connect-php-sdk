@@ -73,8 +73,16 @@ class CatalogModifierOverride implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->modifier_id = $data["modifier_id"];
-            $this->on_by_default = $data["on_by_default"];
+            if (isset($data["modifier_id"])) {
+              $this->modifier_id = $data["modifier_id"];
+            } else {
+              $this->modifier_id = null;
+            }
+            if (isset($data["on_by_default"])) {
+              $this->on_by_default = $data["on_by_default"];
+            } else {
+              $this->on_by_default = null;
+            }
         }
     }
     /**

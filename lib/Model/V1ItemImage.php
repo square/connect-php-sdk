@@ -73,8 +73,16 @@ class V1ItemImage implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->id = $data["id"];
-            $this->url = $data["url"];
+            if (isset($data["id"])) {
+              $this->id = $data["id"];
+            } else {
+              $this->id = null;
+            }
+            if (isset($data["url"])) {
+              $this->url = $data["url"];
+            } else {
+              $this->url = null;
+            }
         }
     }
     /**

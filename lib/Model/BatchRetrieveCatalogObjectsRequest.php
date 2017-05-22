@@ -73,8 +73,16 @@ class BatchRetrieveCatalogObjectsRequest implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->object_ids = $data["object_ids"];
-            $this->include_related_objects = $data["include_related_objects"];
+            if (isset($data["object_ids"])) {
+              $this->object_ids = $data["object_ids"];
+            } else {
+              $this->object_ids = null;
+            }
+            if (isset($data["include_related_objects"])) {
+              $this->include_related_objects = $data["include_related_objects"];
+            } else {
+              $this->include_related_objects = null;
+            }
         }
     }
     /**

@@ -118,13 +118,41 @@ class CatalogQuery implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->sorted_attribute_query = $data["sorted_attribute_query"];
-            $this->exact_query = $data["exact_query"];
-            $this->prefix_query = $data["prefix_query"];
-            $this->range_query = $data["range_query"];
-            $this->text_query = $data["text_query"];
-            $this->items_for_tax_query = $data["items_for_tax_query"];
-            $this->items_for_modifier_list_query = $data["items_for_modifier_list_query"];
+            if (isset($data["sorted_attribute_query"])) {
+              $this->sorted_attribute_query = $data["sorted_attribute_query"];
+            } else {
+              $this->sorted_attribute_query = null;
+            }
+            if (isset($data["exact_query"])) {
+              $this->exact_query = $data["exact_query"];
+            } else {
+              $this->exact_query = null;
+            }
+            if (isset($data["prefix_query"])) {
+              $this->prefix_query = $data["prefix_query"];
+            } else {
+              $this->prefix_query = null;
+            }
+            if (isset($data["range_query"])) {
+              $this->range_query = $data["range_query"];
+            } else {
+              $this->range_query = null;
+            }
+            if (isset($data["text_query"])) {
+              $this->text_query = $data["text_query"];
+            } else {
+              $this->text_query = null;
+            }
+            if (isset($data["items_for_tax_query"])) {
+              $this->items_for_tax_query = $data["items_for_tax_query"];
+            } else {
+              $this->items_for_tax_query = null;
+            }
+            if (isset($data["items_for_modifier_list_query"])) {
+              $this->items_for_modifier_list_query = $data["items_for_modifier_list_query"];
+            } else {
+              $this->items_for_modifier_list_query = null;
+            }
         }
     }
     /**

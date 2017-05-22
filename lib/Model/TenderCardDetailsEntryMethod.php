@@ -59,7 +59,6 @@ class TenderCardDetailsEntryMethod implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            
         }
     }
     /**

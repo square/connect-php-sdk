@@ -82,9 +82,21 @@ class CatalogQueryRange implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->attribute_name = $data["attribute_name"];
-            $this->attribute_min_value = $data["attribute_min_value"];
-            $this->attribute_max_value = $data["attribute_max_value"];
+            if (isset($data["attribute_name"])) {
+              $this->attribute_name = $data["attribute_name"];
+            } else {
+              $this->attribute_name = null;
+            }
+            if (isset($data["attribute_min_value"])) {
+              $this->attribute_min_value = $data["attribute_min_value"];
+            } else {
+              $this->attribute_min_value = null;
+            }
+            if (isset($data["attribute_max_value"])) {
+              $this->attribute_max_value = $data["attribute_max_value"];
+            } else {
+              $this->attribute_max_value = null;
+            }
         }
     }
     /**

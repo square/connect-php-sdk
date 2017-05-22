@@ -73,8 +73,16 @@ class V1Money implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->amount = $data["amount"];
-            $this->currency_code = $data["currency_code"];
+            if (isset($data["amount"])) {
+              $this->amount = $data["amount"];
+            } else {
+              $this->amount = null;
+            }
+            if (isset($data["currency_code"])) {
+              $this->currency_code = $data["currency_code"];
+            } else {
+              $this->currency_code = null;
+            }
         }
     }
     /**

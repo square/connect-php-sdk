@@ -73,8 +73,16 @@ class BatchUpsertCatalogObjectsRequest implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->idempotency_key = $data["idempotency_key"];
-            $this->batches = $data["batches"];
+            if (isset($data["idempotency_key"])) {
+              $this->idempotency_key = $data["idempotency_key"];
+            } else {
+              $this->idempotency_key = null;
+            }
+            if (isset($data["batches"])) {
+              $this->batches = $data["batches"];
+            } else {
+              $this->batches = null;
+            }
         }
     }
     /**

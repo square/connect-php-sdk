@@ -82,9 +82,21 @@ class UpsertCatalogObjectResponse implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->errors = $data["errors"];
-            $this->catalog_object = $data["catalog_object"];
-            $this->id_mappings = $data["id_mappings"];
+            if (isset($data["errors"])) {
+              $this->errors = $data["errors"];
+            } else {
+              $this->errors = null;
+            }
+            if (isset($data["catalog_object"])) {
+              $this->catalog_object = $data["catalog_object"];
+            } else {
+              $this->catalog_object = null;
+            }
+            if (isset($data["id_mappings"])) {
+              $this->id_mappings = $data["id_mappings"];
+            } else {
+              $this->id_mappings = null;
+            }
         }
     }
     /**

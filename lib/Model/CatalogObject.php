@@ -199,22 +199,86 @@ class CatalogObject implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->type = $data["type"];
-            $this->id = $data["id"];
-            $this->updated_at = $data["updated_at"];
-            $this->version = $data["version"];
-            $this->is_deleted = $data["is_deleted"];
-            $this->catalog_v1_ids = $data["catalog_v1_ids"];
-            $this->present_at_all_locations = $data["present_at_all_locations"];
-            $this->present_at_location_ids = $data["present_at_location_ids"];
-            $this->absent_at_location_ids = $data["absent_at_location_ids"];
-            $this->item_data = $data["item_data"];
-            $this->category_data = $data["category_data"];
-            $this->item_variation_data = $data["item_variation_data"];
-            $this->tax_data = $data["tax_data"];
-            $this->discount_data = $data["discount_data"];
-            $this->modifier_list_data = $data["modifier_list_data"];
-            $this->modifier_data = $data["modifier_data"];
+            if (isset($data["type"])) {
+              $this->type = $data["type"];
+            } else {
+              $this->type = null;
+            }
+            if (isset($data["id"])) {
+              $this->id = $data["id"];
+            } else {
+              $this->id = null;
+            }
+            if (isset($data["updated_at"])) {
+              $this->updated_at = $data["updated_at"];
+            } else {
+              $this->updated_at = null;
+            }
+            if (isset($data["version"])) {
+              $this->version = $data["version"];
+            } else {
+              $this->version = null;
+            }
+            if (isset($data["is_deleted"])) {
+              $this->is_deleted = $data["is_deleted"];
+            } else {
+              $this->is_deleted = null;
+            }
+            if (isset($data["catalog_v1_ids"])) {
+              $this->catalog_v1_ids = $data["catalog_v1_ids"];
+            } else {
+              $this->catalog_v1_ids = null;
+            }
+            if (isset($data["present_at_all_locations"])) {
+              $this->present_at_all_locations = $data["present_at_all_locations"];
+            } else {
+              $this->present_at_all_locations = null;
+            }
+            if (isset($data["present_at_location_ids"])) {
+              $this->present_at_location_ids = $data["present_at_location_ids"];
+            } else {
+              $this->present_at_location_ids = null;
+            }
+            if (isset($data["absent_at_location_ids"])) {
+              $this->absent_at_location_ids = $data["absent_at_location_ids"];
+            } else {
+              $this->absent_at_location_ids = null;
+            }
+            if (isset($data["item_data"])) {
+              $this->item_data = $data["item_data"];
+            } else {
+              $this->item_data = null;
+            }
+            if (isset($data["category_data"])) {
+              $this->category_data = $data["category_data"];
+            } else {
+              $this->category_data = null;
+            }
+            if (isset($data["item_variation_data"])) {
+              $this->item_variation_data = $data["item_variation_data"];
+            } else {
+              $this->item_variation_data = null;
+            }
+            if (isset($data["tax_data"])) {
+              $this->tax_data = $data["tax_data"];
+            } else {
+              $this->tax_data = null;
+            }
+            if (isset($data["discount_data"])) {
+              $this->discount_data = $data["discount_data"];
+            } else {
+              $this->discount_data = null;
+            }
+            if (isset($data["modifier_list_data"])) {
+              $this->modifier_list_data = $data["modifier_list_data"];
+            } else {
+              $this->modifier_list_data = null;
+            }
+            if (isset($data["modifier_data"])) {
+              $this->modifier_data = $data["modifier_data"];
+            } else {
+              $this->modifier_data = null;
+            }
         }
     }
     /**
