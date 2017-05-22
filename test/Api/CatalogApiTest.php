@@ -12,8 +12,6 @@ use \SquareConnect\Model\UpdateItemTaxesRequest;
 use \SquareConnect\Model\UpsertCatalogObjectRequest;
 
 
-error_reporting(E_ALL & ~E_NOTICE);
-
 /**
  * CatalogApiTest Class Doc Comment
  *
