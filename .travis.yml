@@ -13,6 +13,5 @@ before_install:
 - composer install
 install:
 - openssl aes-256-cbc -K $encrypted_c2c0feadb429_key -iv $encrypted_c2c0feadb429_iv -in ./travis-ci/accounts.enc -out ./travis-ci/accounts.json -d
-script: 
+script:
 - vendor/bin/phpunit test
-
