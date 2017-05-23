@@ -9,7 +9,7 @@ namespace SquareConnect\Model;
 
 use \ArrayAccess;
 /**
- * CreateOrderRequest Class Doc Comment
+ * CatalogCategory Class Doc Comment
  *
  * @category Class
  * @package  SquareConnect
@@ -17,15 +17,14 @@ use \ArrayAccess;
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://squareup.com/developers
  */
-class CreateOrderRequest implements ArrayAccess
+class CatalogCategory implements ArrayAccess
 {
     /**
       * Array of property to type mappings. Used for (de)serialization 
       * @var string[]
       */
     static $swaggerTypes = array(
-        'idempotency_key' => 'string',
-        'order' => '\SquareConnect\Model\Order'
+        'name' => 'string'
     );
   
     /** 
@@ -33,8 +32,7 @@ class CreateOrderRequest implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
-        'idempotency_key' => 'idempotency_key',
-        'order' => 'order'
+        'name' => 'name'
     );
   
     /**
@@ -42,8 +40,7 @@ class CreateOrderRequest implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
-        'idempotency_key' => 'setIdempotencyKey',
-        'order' => 'setOrder'
+        'name' => 'setName'
     );
   
     /**
@@ -51,20 +48,14 @@ class CreateOrderRequest implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
-        'idempotency_key' => 'getIdempotencyKey',
-        'order' => 'getOrder'
+        'name' => 'getName'
     );
   
     /**
-      * $idempotency_key A value you specify that uniquely identifies this order among orders you've created.  If you're unsure whether a particular order was created successfully, you can reattempt it with the same idempotency key without worrying about creating duplicate orders.  See [Idempotency keys](#idempotencykeys) for more information.
+      * $name The category's name. Searchable.
       * @var string
       */
-    protected $idempotency_key;
-    /**
-      * $order The order to be created.
-      * @var \SquareConnect\Model\Order
-      */
-    protected $order;
+    protected $name;
 
     /**
      * Constructor
@@ -73,46 +64,30 @@ class CreateOrderRequest implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->idempotency_key = $data["idempotency_key"];
-            $this->order = $data["order"];
+            if (isset($data["name"])) {
+              $this->name = $data["name"];
+            } else {
+              $this->name = null;
+            }
         }
     }
     /**
-     * Gets idempotency_key
+     * Gets name
      * @return string
      */
-    public function getIdempotencyKey()
+    public function getName()
     {
-        return $this->idempotency_key;
+        return $this->name;
     }
   
     /**
-     * Sets idempotency_key
-     * @param string $idempotency_key A value you specify that uniquely identifies this order among orders you've created.  If you're unsure whether a particular order was created successfully, you can reattempt it with the same idempotency key without worrying about creating duplicate orders.  See [Idempotency keys](#idempotencykeys) for more information.
+     * Sets name
+     * @param string $name The category's name. Searchable.
      * @return $this
      */
-    public function setIdempotencyKey($idempotency_key)
+    public function setName($name)
     {
-        $this->idempotency_key = $idempotency_key;
-        return $this;
-    }
-    /**
-     * Gets order
-     * @return \SquareConnect\Model\Order
-     */
-    public function getOrder()
-    {
-        return $this->order;
-    }
-  
-    /**
-     * Sets order
-     * @param \SquareConnect\Model\Order $order The order to be created.
-     * @return $this
-     */
-    public function setOrder($order)
-    {
-        $this->order = $order;
+        $this->name = $name;
         return $this;
     }
     /**

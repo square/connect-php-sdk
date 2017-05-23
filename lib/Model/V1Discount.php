@@ -118,13 +118,41 @@ class V1Discount implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->id = $data["id"];
-            $this->name = $data["name"];
-            $this->rate = $data["rate"];
-            $this->amount_money = $data["amount_money"];
-            $this->discount_type = $data["discount_type"];
-            $this->pin_required = $data["pin_required"];
-            $this->color = $data["color"];
+            if (isset($data["id"])) {
+              $this->id = $data["id"];
+            } else {
+              $this->id = null;
+            }
+            if (isset($data["name"])) {
+              $this->name = $data["name"];
+            } else {
+              $this->name = null;
+            }
+            if (isset($data["rate"])) {
+              $this->rate = $data["rate"];
+            } else {
+              $this->rate = null;
+            }
+            if (isset($data["amount_money"])) {
+              $this->amount_money = $data["amount_money"];
+            } else {
+              $this->amount_money = null;
+            }
+            if (isset($data["discount_type"])) {
+              $this->discount_type = $data["discount_type"];
+            } else {
+              $this->discount_type = null;
+            }
+            if (isset($data["pin_required"])) {
+              $this->pin_required = $data["pin_required"];
+            } else {
+              $this->pin_required = null;
+            }
+            if (isset($data["color"])) {
+              $this->color = $data["color"];
+            } else {
+              $this->color = null;
+            }
         }
     }
     /**

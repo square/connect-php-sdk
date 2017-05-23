@@ -109,12 +109,36 @@ class V1PaymentTax implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->errors = $data["errors"];
-            $this->name = $data["name"];
-            $this->applied_money = $data["applied_money"];
-            $this->rate = $data["rate"];
-            $this->inclusion_type = $data["inclusion_type"];
-            $this->fee_id = $data["fee_id"];
+            if (isset($data["errors"])) {
+              $this->errors = $data["errors"];
+            } else {
+              $this->errors = null;
+            }
+            if (isset($data["name"])) {
+              $this->name = $data["name"];
+            } else {
+              $this->name = null;
+            }
+            if (isset($data["applied_money"])) {
+              $this->applied_money = $data["applied_money"];
+            } else {
+              $this->applied_money = null;
+            }
+            if (isset($data["rate"])) {
+              $this->rate = $data["rate"];
+            } else {
+              $this->rate = null;
+            }
+            if (isset($data["inclusion_type"])) {
+              $this->inclusion_type = $data["inclusion_type"];
+            } else {
+              $this->inclusion_type = null;
+            }
+            if (isset($data["fee_id"])) {
+              $this->fee_id = $data["fee_id"];
+            } else {
+              $this->fee_id = null;
+            }
         }
     }
     /**

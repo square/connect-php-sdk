@@ -118,13 +118,41 @@ class V1Refund implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->type = $data["type"];
-            $this->reason = $data["reason"];
-            $this->refunded_money = $data["refunded_money"];
-            $this->created_at = $data["created_at"];
-            $this->processed_at = $data["processed_at"];
-            $this->payment_id = $data["payment_id"];
-            $this->merchant_id = $data["merchant_id"];
+            if (isset($data["type"])) {
+              $this->type = $data["type"];
+            } else {
+              $this->type = null;
+            }
+            if (isset($data["reason"])) {
+              $this->reason = $data["reason"];
+            } else {
+              $this->reason = null;
+            }
+            if (isset($data["refunded_money"])) {
+              $this->refunded_money = $data["refunded_money"];
+            } else {
+              $this->refunded_money = null;
+            }
+            if (isset($data["created_at"])) {
+              $this->created_at = $data["created_at"];
+            } else {
+              $this->created_at = null;
+            }
+            if (isset($data["processed_at"])) {
+              $this->processed_at = $data["processed_at"];
+            } else {
+              $this->processed_at = null;
+            }
+            if (isset($data["payment_id"])) {
+              $this->payment_id = $data["payment_id"];
+            } else {
+              $this->payment_id = null;
+            }
+            if (isset($data["merchant_id"])) {
+              $this->merchant_id = $data["merchant_id"];
+            } else {
+              $this->merchant_id = null;
+            }
         }
     }
     /**

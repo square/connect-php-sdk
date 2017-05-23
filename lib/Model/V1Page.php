@@ -91,10 +91,26 @@ class V1Page implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->id = $data["id"];
-            $this->name = $data["name"];
-            $this->page_index = $data["page_index"];
-            $this->cells = $data["cells"];
+            if (isset($data["id"])) {
+              $this->id = $data["id"];
+            } else {
+              $this->id = null;
+            }
+            if (isset($data["name"])) {
+              $this->name = $data["name"];
+            } else {
+              $this->name = null;
+            }
+            if (isset($data["page_index"])) {
+              $this->page_index = $data["page_index"];
+            } else {
+              $this->page_index = null;
+            }
+            if (isset($data["cells"])) {
+              $this->cells = $data["cells"];
+            } else {
+              $this->cells = null;
+            }
         }
     }
     /**

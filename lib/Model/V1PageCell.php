@@ -109,12 +109,36 @@ class V1PageCell implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->page_id = $data["page_id"];
-            $this->row = $data["row"];
-            $this->column = $data["column"];
-            $this->object_type = $data["object_type"];
-            $this->object_id = $data["object_id"];
-            $this->placeholder_type = $data["placeholder_type"];
+            if (isset($data["page_id"])) {
+              $this->page_id = $data["page_id"];
+            } else {
+              $this->page_id = null;
+            }
+            if (isset($data["row"])) {
+              $this->row = $data["row"];
+            } else {
+              $this->row = null;
+            }
+            if (isset($data["column"])) {
+              $this->column = $data["column"];
+            } else {
+              $this->column = null;
+            }
+            if (isset($data["object_type"])) {
+              $this->object_type = $data["object_type"];
+            } else {
+              $this->object_type = null;
+            }
+            if (isset($data["object_id"])) {
+              $this->object_id = $data["object_id"];
+            } else {
+              $this->object_id = null;
+            }
+            if (isset($data["placeholder_type"])) {
+              $this->placeholder_type = $data["placeholder_type"];
+            } else {
+              $this->placeholder_type = null;
+            }
         }
     }
     /**

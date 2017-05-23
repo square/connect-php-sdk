@@ -64,7 +64,11 @@ class V1MerchantLocationDetails implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->nickname = $data["nickname"];
+            if (isset($data["nickname"])) {
+              $this->nickname = $data["nickname"];
+            } else {
+              $this->nickname = null;
+            }
         }
     }
     /**

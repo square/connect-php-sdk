@@ -109,12 +109,36 @@ class V1EmployeeRole implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->id = $data["id"];
-            $this->name = $data["name"];
-            $this->permissions = $data["permissions"];
-            $this->is_owner = $data["is_owner"];
-            $this->created_at = $data["created_at"];
-            $this->updated_at = $data["updated_at"];
+            if (isset($data["id"])) {
+              $this->id = $data["id"];
+            } else {
+              $this->id = null;
+            }
+            if (isset($data["name"])) {
+              $this->name = $data["name"];
+            } else {
+              $this->name = null;
+            }
+            if (isset($data["permissions"])) {
+              $this->permissions = $data["permissions"];
+            } else {
+              $this->permissions = null;
+            }
+            if (isset($data["is_owner"])) {
+              $this->is_owner = $data["is_owner"];
+            } else {
+              $this->is_owner = null;
+            }
+            if (isset($data["created_at"])) {
+              $this->created_at = $data["created_at"];
+            } else {
+              $this->created_at = null;
+            }
+            if (isset($data["updated_at"])) {
+              $this->updated_at = $data["updated_at"];
+            } else {
+              $this->updated_at = null;
+            }
         }
     }
     /**

@@ -271,30 +271,126 @@ class V1Payment implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->id = $data["id"];
-            $this->merchant_id = $data["merchant_id"];
-            $this->created_at = $data["created_at"];
-            $this->creator_id = $data["creator_id"];
-            $this->device = $data["device"];
-            $this->payment_url = $data["payment_url"];
-            $this->receipt_url = $data["receipt_url"];
-            $this->inclusive_tax_money = $data["inclusive_tax_money"];
-            $this->additive_tax_money = $data["additive_tax_money"];
-            $this->tax_money = $data["tax_money"];
-            $this->tip_money = $data["tip_money"];
-            $this->discount_money = $data["discount_money"];
-            $this->total_collected_money = $data["total_collected_money"];
-            $this->processing_fee_money = $data["processing_fee_money"];
-            $this->net_total_money = $data["net_total_money"];
-            $this->refunded_money = $data["refunded_money"];
-            $this->swedish_rounding_money = $data["swedish_rounding_money"];
-            $this->gross_sales_money = $data["gross_sales_money"];
-            $this->net_sales_money = $data["net_sales_money"];
-            $this->inclusive_tax = $data["inclusive_tax"];
-            $this->additive_tax = $data["additive_tax"];
-            $this->tender = $data["tender"];
-            $this->refunds = $data["refunds"];
-            $this->itemizations = $data["itemizations"];
+            if (isset($data["id"])) {
+              $this->id = $data["id"];
+            } else {
+              $this->id = null;
+            }
+            if (isset($data["merchant_id"])) {
+              $this->merchant_id = $data["merchant_id"];
+            } else {
+              $this->merchant_id = null;
+            }
+            if (isset($data["created_at"])) {
+              $this->created_at = $data["created_at"];
+            } else {
+              $this->created_at = null;
+            }
+            if (isset($data["creator_id"])) {
+              $this->creator_id = $data["creator_id"];
+            } else {
+              $this->creator_id = null;
+            }
+            if (isset($data["device"])) {
+              $this->device = $data["device"];
+            } else {
+              $this->device = null;
+            }
+            if (isset($data["payment_url"])) {
+              $this->payment_url = $data["payment_url"];
+            } else {
+              $this->payment_url = null;
+            }
+            if (isset($data["receipt_url"])) {
+              $this->receipt_url = $data["receipt_url"];
+            } else {
+              $this->receipt_url = null;
+            }
+            if (isset($data["inclusive_tax_money"])) {
+              $this->inclusive_tax_money = $data["inclusive_tax_money"];
+            } else {
+              $this->inclusive_tax_money = null;
+            }
+            if (isset($data["additive_tax_money"])) {
+              $this->additive_tax_money = $data["additive_tax_money"];
+            } else {
+              $this->additive_tax_money = null;
+            }
+            if (isset($data["tax_money"])) {
+              $this->tax_money = $data["tax_money"];
+            } else {
+              $this->tax_money = null;
+            }
+            if (isset($data["tip_money"])) {
+              $this->tip_money = $data["tip_money"];
+            } else {
+              $this->tip_money = null;
+            }
+            if (isset($data["discount_money"])) {
+              $this->discount_money = $data["discount_money"];
+            } else {
+              $this->discount_money = null;
+            }
+            if (isset($data["total_collected_money"])) {
+              $this->total_collected_money = $data["total_collected_money"];
+            } else {
+              $this->total_collected_money = null;
+            }
+            if (isset($data["processing_fee_money"])) {
+              $this->processing_fee_money = $data["processing_fee_money"];
+            } else {
+              $this->processing_fee_money = null;
+            }
+            if (isset($data["net_total_money"])) {
+              $this->net_total_money = $data["net_total_money"];
+            } else {
+              $this->net_total_money = null;
+            }
+            if (isset($data["refunded_money"])) {
+              $this->refunded_money = $data["refunded_money"];
+            } else {
+              $this->refunded_money = null;
+            }
+            if (isset($data["swedish_rounding_money"])) {
+              $this->swedish_rounding_money = $data["swedish_rounding_money"];
+            } else {
+              $this->swedish_rounding_money = null;
+            }
+            if (isset($data["gross_sales_money"])) {
+              $this->gross_sales_money = $data["gross_sales_money"];
+            } else {
+              $this->gross_sales_money = null;
+            }
+            if (isset($data["net_sales_money"])) {
+              $this->net_sales_money = $data["net_sales_money"];
+            } else {
+              $this->net_sales_money = null;
+            }
+            if (isset($data["inclusive_tax"])) {
+              $this->inclusive_tax = $data["inclusive_tax"];
+            } else {
+              $this->inclusive_tax = null;
+            }
+            if (isset($data["additive_tax"])) {
+              $this->additive_tax = $data["additive_tax"];
+            } else {
+              $this->additive_tax = null;
+            }
+            if (isset($data["tender"])) {
+              $this->tender = $data["tender"];
+            } else {
+              $this->tender = null;
+            }
+            if (isset($data["refunds"])) {
+              $this->refunds = $data["refunds"];
+            } else {
+              $this->refunds = null;
+            }
+            if (isset($data["itemizations"])) {
+              $this->itemizations = $data["itemizations"];
+            } else {
+              $this->itemizations = null;
+            }
         }
     }
     /**

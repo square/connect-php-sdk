@@ -73,8 +73,16 @@ class CreateCheckoutResponse implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->checkout = $data["checkout"];
-            $this->errors = $data["errors"];
+            if (isset($data["checkout"])) {
+              $this->checkout = $data["checkout"];
+            } else {
+              $this->checkout = null;
+            }
+            if (isset($data["errors"])) {
+              $this->errors = $data["errors"];
+            } else {
+              $this->errors = null;
+            }
         }
     }
     /**

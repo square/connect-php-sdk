@@ -181,20 +181,76 @@ class V1PaymentItemization implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->name = $data["name"];
-            $this->quantity = $data["quantity"];
-            $this->itemization_type = $data["itemization_type"];
-            $this->item_detail = $data["item_detail"];
-            $this->notes = $data["notes"];
-            $this->item_variation_name = $data["item_variation_name"];
-            $this->total_money = $data["total_money"];
-            $this->single_quantity_money = $data["single_quantity_money"];
-            $this->gross_sales_money = $data["gross_sales_money"];
-            $this->discount_money = $data["discount_money"];
-            $this->net_sales_money = $data["net_sales_money"];
-            $this->taxes = $data["taxes"];
-            $this->discounts = $data["discounts"];
-            $this->modifiers = $data["modifiers"];
+            if (isset($data["name"])) {
+              $this->name = $data["name"];
+            } else {
+              $this->name = null;
+            }
+            if (isset($data["quantity"])) {
+              $this->quantity = $data["quantity"];
+            } else {
+              $this->quantity = null;
+            }
+            if (isset($data["itemization_type"])) {
+              $this->itemization_type = $data["itemization_type"];
+            } else {
+              $this->itemization_type = null;
+            }
+            if (isset($data["item_detail"])) {
+              $this->item_detail = $data["item_detail"];
+            } else {
+              $this->item_detail = null;
+            }
+            if (isset($data["notes"])) {
+              $this->notes = $data["notes"];
+            } else {
+              $this->notes = null;
+            }
+            if (isset($data["item_variation_name"])) {
+              $this->item_variation_name = $data["item_variation_name"];
+            } else {
+              $this->item_variation_name = null;
+            }
+            if (isset($data["total_money"])) {
+              $this->total_money = $data["total_money"];
+            } else {
+              $this->total_money = null;
+            }
+            if (isset($data["single_quantity_money"])) {
+              $this->single_quantity_money = $data["single_quantity_money"];
+            } else {
+              $this->single_quantity_money = null;
+            }
+            if (isset($data["gross_sales_money"])) {
+              $this->gross_sales_money = $data["gross_sales_money"];
+            } else {
+              $this->gross_sales_money = null;
+            }
+            if (isset($data["discount_money"])) {
+              $this->discount_money = $data["discount_money"];
+            } else {
+              $this->discount_money = null;
+            }
+            if (isset($data["net_sales_money"])) {
+              $this->net_sales_money = $data["net_sales_money"];
+            } else {
+              $this->net_sales_money = null;
+            }
+            if (isset($data["taxes"])) {
+              $this->taxes = $data["taxes"];
+            } else {
+              $this->taxes = null;
+            }
+            if (isset($data["discounts"])) {
+              $this->discounts = $data["discounts"];
+            } else {
+              $this->discounts = null;
+            }
+            if (isset($data["modifiers"])) {
+              $this->modifiers = $data["modifiers"];
+            } else {
+              $this->modifiers = null;
+            }
         }
     }
     /**

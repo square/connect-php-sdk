@@ -82,9 +82,21 @@ class ListTransactionsResponse implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->errors = $data["errors"];
-            $this->transactions = $data["transactions"];
-            $this->cursor = $data["cursor"];
+            if (isset($data["errors"])) {
+              $this->errors = $data["errors"];
+            } else {
+              $this->errors = null;
+            }
+            if (isset($data["transactions"])) {
+              $this->transactions = $data["transactions"];
+            } else {
+              $this->transactions = null;
+            }
+            if (isset($data["cursor"])) {
+              $this->cursor = $data["cursor"];
+            } else {
+              $this->cursor = null;
+            }
         }
     }
     /**

@@ -1,6 +1,8 @@
 Square Connect PHP SDK [![Build Status](https://travis-ci.org/square/connect-php-sdk.svg?branch=master)](https://travis-ci.org/square/connect-php-sdk)
 ==================
 
+**If you have feedback about the new SDKs, or just want to talk to other Square Developers, request an invite to the new [slack community for Square Developers](https://docs.google.com/forms/d/e/1FAIpQLSfAZGIEZoNs-XryKqUoW3atFQHdQw5UqXLMOVPq3V4DEq-AJw/viewform?usp=sf_link#response=ACYDBNj5LFgPy8Tcac2gSgv_IjXvgWsPy2CO2xTXwnc0OSSxCvWFgc7SCDHvVQ)**
+
 This repository contains a generated PHP client SDK for the Square Connect APIs. Check out our [API
 specification repository](https://github.com/square/connect-api-specification)
 for the specification and template files we used to generate this.
@@ -8,13 +10,6 @@ for the specification and template files we used to generate this.
 If you are looking for a sample e-commerce application using these APIs, check out the [`connect-api-examples`](https://github.com/square/connect-api-examples/tree/master/connect-examples/v2/php_payment) repository. 
 
 To learn more about the Square APIs in general, head on over to the [Square API documentation](https://docs.connect.squareup.com/)
-
-Join the 2.1 Beta!
-------------------
-Square is currently beta testing a new version of this SDK. Version 2.1 includes several usability improvements, but is incompatible with code that uses version <=2.0. You can read more about the changes on [The Corner](https://medium.com/square-corner-blog/announcing-our-new-versions-of-our-client-sdks-1336d26e8099), as well as detailed [installation guides for each language](https://medium.com/square-corner-blog/how-to-install-the-beta-sdks-b746503515d9). 
-
-**If you have feedback about the new SDKs, or just want to talk to other Square Developers, request an invite to the new [slack community for Square Developers](https://docs.google.com/forms/d/e/1FAIpQLSfAZGIEZoNs-XryKqUoW3atFQHdQw5UqXLMOVPq3V4DEq-AJw/viewform?usp=sf_link#response=ACYDBNj5LFgPy8Tcac2gSgv_IjXvgWsPy2CO2xTXwnc0OSSxCvWFgc7SCDHvVQ)**
-
 
 Requirements
 ------------
@@ -63,15 +58,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\CheckoutApi();
-$location_id = "location_id_example"; // string | The ID of the business location to associate the checkout with.
-$body = new \SquareConnect\Model\CreateCheckoutRequest(); // \SquareConnect\Model\CreateCheckoutRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
+$api_instance = new SquareConnect\Api\CatalogApi();
+$body = new \SquareConnect\Model\BatchDeleteCatalogObjectsRequest(); // \SquareConnect\Model\BatchDeleteCatalogObjectsRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->createCheckout($location_id, $body);
+    $result = $api_instance->batchDeleteCatalogObjects($body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CheckoutApi->createCheckout: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CatalogApi->batchDeleteCatalogObjects: ', $e->getMessage(), PHP_EOL;
 }
 
 ?>
@@ -83,6 +77,17 @@ All URIs are relative to *https://connect.squareup.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*CatalogApi* | [**batchDeleteCatalogObjects**](docs/Api/CatalogApi.md#batchdeletecatalogobjects) | **POST** /v2/catalog/batch-delete | BatchDeleteCatalogObjects
+*CatalogApi* | [**batchRetrieveCatalogObjects**](docs/Api/CatalogApi.md#batchretrievecatalogobjects) | **POST** /v2/catalog/batch-retrieve | BatchRetrieveCatalogObjects
+*CatalogApi* | [**batchUpsertCatalogObjects**](docs/Api/CatalogApi.md#batchupsertcatalogobjects) | **POST** /v2/catalog/batch-upsert | BatchUpsertCatalogObjects
+*CatalogApi* | [**catalogInfo**](docs/Api/CatalogApi.md#cataloginfo) | **GET** /v2/catalog/info | CatalogInfo
+*CatalogApi* | [**deleteCatalogObject**](docs/Api/CatalogApi.md#deletecatalogobject) | **DELETE** /v2/catalog/object/{object_id} | DeleteCatalogObject
+*CatalogApi* | [**listCatalog**](docs/Api/CatalogApi.md#listcatalog) | **GET** /v2/catalog/list | ListCatalog
+*CatalogApi* | [**retrieveCatalogObject**](docs/Api/CatalogApi.md#retrievecatalogobject) | **GET** /v2/catalog/object/{object_id} | RetrieveCatalogObject
+*CatalogApi* | [**searchCatalogObjects**](docs/Api/CatalogApi.md#searchcatalogobjects) | **POST** /v2/catalog/search | SearchCatalogObjects
+*CatalogApi* | [**updateItemModifierLists**](docs/Api/CatalogApi.md#updateitemmodifierlists) | **POST** /v2/catalog/update-item-modifier-lists | UpdateItemModifierLists
+*CatalogApi* | [**updateItemTaxes**](docs/Api/CatalogApi.md#updateitemtaxes) | **POST** /v2/catalog/update-item-taxes | UpdateItemTaxes
+*CatalogApi* | [**upsertCatalogObject**](docs/Api/CatalogApi.md#upsertcatalogobject) | **POST** /v2/catalog/object | UpsertCatalogObject
 *CheckoutApi* | [**createCheckout**](docs/Api/CheckoutApi.md#createcheckout) | **POST** /v2/locations/{location_id}/checkouts | CreateCheckout
 *CustomersApi* | [**createCustomer**](docs/Api/CustomersApi.md#createcustomer) | **POST** /v2/customers | CreateCustomer
 *CustomersApi* | [**createCustomerCard**](docs/Api/CustomersApi.md#createcustomercard) | **POST** /v2/customers/{customer_id}/cards | CreateCustomerCard
@@ -173,10 +178,45 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [Address](docs/Model/Address.md)
+ - [BatchDeleteCatalogObjectsRequest](docs/Model/BatchDeleteCatalogObjectsRequest.md)
+ - [BatchDeleteCatalogObjectsResponse](docs/Model/BatchDeleteCatalogObjectsResponse.md)
+ - [BatchRetrieveCatalogObjectsRequest](docs/Model/BatchRetrieveCatalogObjectsRequest.md)
+ - [BatchRetrieveCatalogObjectsResponse](docs/Model/BatchRetrieveCatalogObjectsResponse.md)
+ - [BatchUpsertCatalogObjectsRequest](docs/Model/BatchUpsertCatalogObjectsRequest.md)
+ - [BatchUpsertCatalogObjectsResponse](docs/Model/BatchUpsertCatalogObjectsResponse.md)
  - [CaptureTransactionRequest](docs/Model/CaptureTransactionRequest.md)
  - [CaptureTransactionResponse](docs/Model/CaptureTransactionResponse.md)
  - [Card](docs/Model/Card.md)
  - [CardBrand](docs/Model/CardBrand.md)
+ - [CatalogCategory](docs/Model/CatalogCategory.md)
+ - [CatalogDiscount](docs/Model/CatalogDiscount.md)
+ - [CatalogDiscountType](docs/Model/CatalogDiscountType.md)
+ - [CatalogIdMapping](docs/Model/CatalogIdMapping.md)
+ - [CatalogInfoRequest](docs/Model/CatalogInfoRequest.md)
+ - [CatalogInfoResponse](docs/Model/CatalogInfoResponse.md)
+ - [CatalogInfoResponseLimits](docs/Model/CatalogInfoResponseLimits.md)
+ - [CatalogItem](docs/Model/CatalogItem.md)
+ - [CatalogItemModifierListInfo](docs/Model/CatalogItemModifierListInfo.md)
+ - [CatalogItemProductType](docs/Model/CatalogItemProductType.md)
+ - [CatalogItemVariation](docs/Model/CatalogItemVariation.md)
+ - [CatalogModifier](docs/Model/CatalogModifier.md)
+ - [CatalogModifierList](docs/Model/CatalogModifierList.md)
+ - [CatalogModifierListSelectionType](docs/Model/CatalogModifierListSelectionType.md)
+ - [CatalogModifierOverride](docs/Model/CatalogModifierOverride.md)
+ - [CatalogObject](docs/Model/CatalogObject.md)
+ - [CatalogObjectBatch](docs/Model/CatalogObjectBatch.md)
+ - [CatalogObjectType](docs/Model/CatalogObjectType.md)
+ - [CatalogPricingType](docs/Model/CatalogPricingType.md)
+ - [CatalogQuery](docs/Model/CatalogQuery.md)
+ - [CatalogQueryExact](docs/Model/CatalogQueryExact.md)
+ - [CatalogQueryItemsForModifierList](docs/Model/CatalogQueryItemsForModifierList.md)
+ - [CatalogQueryItemsForTax](docs/Model/CatalogQueryItemsForTax.md)
+ - [CatalogQueryPrefix](docs/Model/CatalogQueryPrefix.md)
+ - [CatalogQueryRange](docs/Model/CatalogQueryRange.md)
+ - [CatalogQuerySortedAttribute](docs/Model/CatalogQuerySortedAttribute.md)
+ - [CatalogQueryText](docs/Model/CatalogQueryText.md)
+ - [CatalogTax](docs/Model/CatalogTax.md)
+ - [CatalogV1Id](docs/Model/CatalogV1Id.md)
  - [ChargeRequest](docs/Model/ChargeRequest.md)
  - [ChargeResponse](docs/Model/ChargeResponse.md)
  - [Checkout](docs/Model/Checkout.md)
@@ -187,7 +227,6 @@ Class | Method | HTTP request | Description
  - [CreateCustomerCardResponse](docs/Model/CreateCustomerCardResponse.md)
  - [CreateCustomerRequest](docs/Model/CreateCustomerRequest.md)
  - [CreateCustomerResponse](docs/Model/CreateCustomerResponse.md)
- - [CreateOrderRequest](docs/Model/CreateOrderRequest.md)
  - [CreateOrderRequestLineItem](docs/Model/CreateOrderRequestLineItem.md)
  - [CreateOrderRequestOrder](docs/Model/CreateOrderRequestOrder.md)
  - [CreateRefundRequest](docs/Model/CreateRefundRequest.md)
@@ -196,6 +235,8 @@ Class | Method | HTTP request | Description
  - [Customer](docs/Model/Customer.md)
  - [CustomerGroupInfo](docs/Model/CustomerGroupInfo.md)
  - [CustomerPreferences](docs/Model/CustomerPreferences.md)
+ - [DeleteCatalogObjectRequest](docs/Model/DeleteCatalogObjectRequest.md)
+ - [DeleteCatalogObjectResponse](docs/Model/DeleteCatalogObjectResponse.md)
  - [DeleteCustomerCardRequest](docs/Model/DeleteCustomerCardRequest.md)
  - [DeleteCustomerCardResponse](docs/Model/DeleteCustomerCardResponse.md)
  - [DeleteCustomerRequest](docs/Model/DeleteCustomerRequest.md)
@@ -204,6 +245,10 @@ Class | Method | HTTP request | Description
  - [Error](docs/Model/Error.md)
  - [ErrorCategory](docs/Model/ErrorCategory.md)
  - [ErrorCode](docs/Model/ErrorCode.md)
+ - [InventoryAlertType](docs/Model/InventoryAlertType.md)
+ - [ItemVariationLocationOverrides](docs/Model/ItemVariationLocationOverrides.md)
+ - [ListCatalogRequest](docs/Model/ListCatalogRequest.md)
+ - [ListCatalogResponse](docs/Model/ListCatalogResponse.md)
  - [ListCustomersRequest](docs/Model/ListCustomersRequest.md)
  - [ListCustomersResponse](docs/Model/ListCustomersResponse.md)
  - [ListLocationsRequest](docs/Model/ListLocationsRequest.md)
@@ -219,11 +264,17 @@ Class | Method | HTTP request | Description
  - [OrderLineItem](docs/Model/OrderLineItem.md)
  - [Refund](docs/Model/Refund.md)
  - [RefundStatus](docs/Model/RefundStatus.md)
+ - [RetrieveCatalogObjectRequest](docs/Model/RetrieveCatalogObjectRequest.md)
+ - [RetrieveCatalogObjectResponse](docs/Model/RetrieveCatalogObjectResponse.md)
  - [RetrieveCustomerRequest](docs/Model/RetrieveCustomerRequest.md)
  - [RetrieveCustomerResponse](docs/Model/RetrieveCustomerResponse.md)
  - [RetrieveTransactionRequest](docs/Model/RetrieveTransactionRequest.md)
  - [RetrieveTransactionResponse](docs/Model/RetrieveTransactionResponse.md)
+ - [SearchCatalogObjectsRequest](docs/Model/SearchCatalogObjectsRequest.md)
+ - [SearchCatalogObjectsResponse](docs/Model/SearchCatalogObjectsResponse.md)
  - [SortOrder](docs/Model/SortOrder.md)
+ - [TaxCalculationPhase](docs/Model/TaxCalculationPhase.md)
+ - [TaxInclusionType](docs/Model/TaxInclusionType.md)
  - [Tender](docs/Model/Tender.md)
  - [TenderCardDetails](docs/Model/TenderCardDetails.md)
  - [TenderCardDetailsEntryMethod](docs/Model/TenderCardDetailsEntryMethod.md)
@@ -234,6 +285,12 @@ Class | Method | HTTP request | Description
  - [TransactionProduct](docs/Model/TransactionProduct.md)
  - [UpdateCustomerRequest](docs/Model/UpdateCustomerRequest.md)
  - [UpdateCustomerResponse](docs/Model/UpdateCustomerResponse.md)
+ - [UpdateItemModifierListsRequest](docs/Model/UpdateItemModifierListsRequest.md)
+ - [UpdateItemModifierListsResponse](docs/Model/UpdateItemModifierListsResponse.md)
+ - [UpdateItemTaxesRequest](docs/Model/UpdateItemTaxesRequest.md)
+ - [UpdateItemTaxesResponse](docs/Model/UpdateItemTaxesResponse.md)
+ - [UpsertCatalogObjectRequest](docs/Model/UpsertCatalogObjectRequest.md)
+ - [UpsertCatalogObjectResponse](docs/Model/UpsertCatalogObjectResponse.md)
  - [V1AdjustInventoryRequest](docs/Model/V1AdjustInventoryRequest.md)
  - [V1BankAccount](docs/Model/V1BankAccount.md)
  - [V1CashDrawerEvent](docs/Model/V1CashDrawerEvent.md)

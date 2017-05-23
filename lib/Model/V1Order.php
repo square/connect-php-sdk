@@ -280,31 +280,131 @@ class V1Order implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->errors = $data["errors"];
-            $this->id = $data["id"];
-            $this->buyer_email = $data["buyer_email"];
-            $this->recipient_name = $data["recipient_name"];
-            $this->recipient_phone_number = $data["recipient_phone_number"];
-            $this->state = $data["state"];
-            $this->shipping_address = $data["shipping_address"];
-            $this->subtotal_money = $data["subtotal_money"];
-            $this->total_shipping_money = $data["total_shipping_money"];
-            $this->total_tax_money = $data["total_tax_money"];
-            $this->total_price_money = $data["total_price_money"];
-            $this->total_discount_money = $data["total_discount_money"];
-            $this->created_at = $data["created_at"];
-            $this->updated_at = $data["updated_at"];
-            $this->expires_at = $data["expires_at"];
-            $this->payment_id = $data["payment_id"];
-            $this->buyer_note = $data["buyer_note"];
-            $this->completed_note = $data["completed_note"];
-            $this->refunded_note = $data["refunded_note"];
-            $this->canceled_note = $data["canceled_note"];
-            $this->tender = $data["tender"];
-            $this->order_history = $data["order_history"];
-            $this->promo_code = $data["promo_code"];
-            $this->btc_receive_address = $data["btc_receive_address"];
-            $this->btc_price_satoshi = $data["btc_price_satoshi"];
+            if (isset($data["errors"])) {
+              $this->errors = $data["errors"];
+            } else {
+              $this->errors = null;
+            }
+            if (isset($data["id"])) {
+              $this->id = $data["id"];
+            } else {
+              $this->id = null;
+            }
+            if (isset($data["buyer_email"])) {
+              $this->buyer_email = $data["buyer_email"];
+            } else {
+              $this->buyer_email = null;
+            }
+            if (isset($data["recipient_name"])) {
+              $this->recipient_name = $data["recipient_name"];
+            } else {
+              $this->recipient_name = null;
+            }
+            if (isset($data["recipient_phone_number"])) {
+              $this->recipient_phone_number = $data["recipient_phone_number"];
+            } else {
+              $this->recipient_phone_number = null;
+            }
+            if (isset($data["state"])) {
+              $this->state = $data["state"];
+            } else {
+              $this->state = null;
+            }
+            if (isset($data["shipping_address"])) {
+              $this->shipping_address = $data["shipping_address"];
+            } else {
+              $this->shipping_address = null;
+            }
+            if (isset($data["subtotal_money"])) {
+              $this->subtotal_money = $data["subtotal_money"];
+            } else {
+              $this->subtotal_money = null;
+            }
+            if (isset($data["total_shipping_money"])) {
+              $this->total_shipping_money = $data["total_shipping_money"];
+            } else {
+              $this->total_shipping_money = null;
+            }
+            if (isset($data["total_tax_money"])) {
+              $this->total_tax_money = $data["total_tax_money"];
+            } else {
+              $this->total_tax_money = null;
+            }
+            if (isset($data["total_price_money"])) {
+              $this->total_price_money = $data["total_price_money"];
+            } else {
+              $this->total_price_money = null;
+            }
+            if (isset($data["total_discount_money"])) {
+              $this->total_discount_money = $data["total_discount_money"];
+            } else {
+              $this->total_discount_money = null;
+            }
+            if (isset($data["created_at"])) {
+              $this->created_at = $data["created_at"];
+            } else {
+              $this->created_at = null;
+            }
+            if (isset($data["updated_at"])) {
+              $this->updated_at = $data["updated_at"];
+            } else {
+              $this->updated_at = null;
+            }
+            if (isset($data["expires_at"])) {
+              $this->expires_at = $data["expires_at"];
+            } else {
+              $this->expires_at = null;
+            }
+            if (isset($data["payment_id"])) {
+              $this->payment_id = $data["payment_id"];
+            } else {
+              $this->payment_id = null;
+            }
+            if (isset($data["buyer_note"])) {
+              $this->buyer_note = $data["buyer_note"];
+            } else {
+              $this->buyer_note = null;
+            }
+            if (isset($data["completed_note"])) {
+              $this->completed_note = $data["completed_note"];
+            } else {
+              $this->completed_note = null;
+            }
+            if (isset($data["refunded_note"])) {
+              $this->refunded_note = $data["refunded_note"];
+            } else {
+              $this->refunded_note = null;
+            }
+            if (isset($data["canceled_note"])) {
+              $this->canceled_note = $data["canceled_note"];
+            } else {
+              $this->canceled_note = null;
+            }
+            if (isset($data["tender"])) {
+              $this->tender = $data["tender"];
+            } else {
+              $this->tender = null;
+            }
+            if (isset($data["order_history"])) {
+              $this->order_history = $data["order_history"];
+            } else {
+              $this->order_history = null;
+            }
+            if (isset($data["promo_code"])) {
+              $this->promo_code = $data["promo_code"];
+            } else {
+              $this->promo_code = null;
+            }
+            if (isset($data["btc_receive_address"])) {
+              $this->btc_receive_address = $data["btc_receive_address"];
+            } else {
+              $this->btc_receive_address = null;
+            }
+            if (isset($data["btc_price_satoshi"])) {
+              $this->btc_price_satoshi = $data["btc_price_satoshi"];
+            } else {
+              $this->btc_price_satoshi = null;
+            }
         }
     }
     /**

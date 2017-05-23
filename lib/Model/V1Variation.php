@@ -27,7 +27,6 @@ class V1Variation implements ArrayAccess
         'id' => 'string',
         'name' => 'string',
         'item_id' => 'string',
-        'ordinal' => 'int',
         'pricing_type' => 'string',
         'price_money' => '\SquareConnect\Model\V1Money',
         'sku' => 'string',
@@ -45,7 +44,6 @@ class V1Variation implements ArrayAccess
         'id' => 'id',
         'name' => 'name',
         'item_id' => 'item_id',
-        'ordinal' => 'ordinal',
         'pricing_type' => 'pricing_type',
         'price_money' => 'price_money',
         'sku' => 'sku',
@@ -63,7 +61,6 @@ class V1Variation implements ArrayAccess
         'id' => 'setId',
         'name' => 'setName',
         'item_id' => 'setItemId',
-        'ordinal' => 'setOrdinal',
         'pricing_type' => 'setPricingType',
         'price_money' => 'setPriceMoney',
         'sku' => 'setSku',
@@ -81,7 +78,6 @@ class V1Variation implements ArrayAccess
         'id' => 'getId',
         'name' => 'getName',
         'item_id' => 'getItemId',
-        'ordinal' => 'getOrdinal',
         'pricing_type' => 'getPricingType',
         'price_money' => 'getPriceMoney',
         'sku' => 'getSku',
@@ -106,11 +102,6 @@ class V1Variation implements ArrayAccess
       * @var string
       */
     protected $item_id;
-    /**
-      * $ordinal ndicates the variation's list position when displayed in Square Register and the merchant dashboard. If more than one variation for the same item has the same ordinal value, those variations are displayed in alphabetical order
-      * @var int
-      */
-    protected $ordinal;
     /**
       * $pricing_type Indicates whether the item variation's price is fixed or determined at the time of sale.
       * @var string
@@ -154,17 +145,56 @@ class V1Variation implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->id = $data["id"];
-            $this->name = $data["name"];
-            $this->item_id = $data["item_id"];
-            $this->ordinal = $data["ordinal"];
-            $this->pricing_type = $data["pricing_type"];
-            $this->price_money = $data["price_money"];
-            $this->sku = $data["sku"];
-            $this->track_inventory = $data["track_inventory"];
-            $this->inventory_alert_type = $data["inventory_alert_type"];
-            $this->inventory_alert_threshold = $data["inventory_alert_threshold"];
-            $this->user_data = $data["user_data"];
+            if (isset($data["id"])) {
+              $this->id = $data["id"];
+            } else {
+              $this->id = null;
+            }
+            if (isset($data["name"])) {
+              $this->name = $data["name"];
+            } else {
+              $this->name = null;
+            }
+            if (isset($data["item_id"])) {
+              $this->item_id = $data["item_id"];
+            } else {
+              $this->item_id = null;
+            }
+            if (isset($data["pricing_type"])) {
+              $this->pricing_type = $data["pricing_type"];
+            } else {
+              $this->pricing_type = null;
+            }
+            if (isset($data["price_money"])) {
+              $this->price_money = $data["price_money"];
+            } else {
+              $this->price_money = null;
+            }
+            if (isset($data["sku"])) {
+              $this->sku = $data["sku"];
+            } else {
+              $this->sku = null;
+            }
+            if (isset($data["track_inventory"])) {
+              $this->track_inventory = $data["track_inventory"];
+            } else {
+              $this->track_inventory = null;
+            }
+            if (isset($data["inventory_alert_type"])) {
+              $this->inventory_alert_type = $data["inventory_alert_type"];
+            } else {
+              $this->inventory_alert_type = null;
+            }
+            if (isset($data["inventory_alert_threshold"])) {
+              $this->inventory_alert_threshold = $data["inventory_alert_threshold"];
+            } else {
+              $this->inventory_alert_threshold = null;
+            }
+            if (isset($data["user_data"])) {
+              $this->user_data = $data["user_data"];
+            } else {
+              $this->user_data = null;
+            }
         }
     }
     /**
@@ -222,25 +252,6 @@ class V1Variation implements ArrayAccess
     public function setItemId($item_id)
     {
         $this->item_id = $item_id;
-        return $this;
-    }
-    /**
-     * Gets ordinal
-     * @return int
-     */
-    public function getOrdinal()
-    {
-        return $this->ordinal;
-    }
-  
-    /**
-     * Sets ordinal
-     * @param int $ordinal ndicates the variation's list position when displayed in Square Register and the merchant dashboard. If more than one variation for the same item has the same ordinal value, those variations are displayed in alphabetical order
-     * @return $this
-     */
-    public function setOrdinal($ordinal)
-    {
-        $this->ordinal = $ordinal;
         return $this;
     }
     /**

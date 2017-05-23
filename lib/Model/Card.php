@@ -118,13 +118,41 @@ class Card implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->id = $data["id"];
-            $this->card_brand = $data["card_brand"];
-            $this->last_4 = $data["last_4"];
-            $this->exp_month = $data["exp_month"];
-            $this->exp_year = $data["exp_year"];
-            $this->cardholder_name = $data["cardholder_name"];
-            $this->billing_address = $data["billing_address"];
+            if (isset($data["id"])) {
+              $this->id = $data["id"];
+            } else {
+              $this->id = null;
+            }
+            if (isset($data["card_brand"])) {
+              $this->card_brand = $data["card_brand"];
+            } else {
+              $this->card_brand = null;
+            }
+            if (isset($data["last_4"])) {
+              $this->last_4 = $data["last_4"];
+            } else {
+              $this->last_4 = null;
+            }
+            if (isset($data["exp_month"])) {
+              $this->exp_month = $data["exp_month"];
+            } else {
+              $this->exp_month = null;
+            }
+            if (isset($data["exp_year"])) {
+              $this->exp_year = $data["exp_year"];
+            } else {
+              $this->exp_year = null;
+            }
+            if (isset($data["cardholder_name"])) {
+              $this->cardholder_name = $data["cardholder_name"];
+            } else {
+              $this->cardholder_name = null;
+            }
+            if (isset($data["billing_address"])) {
+              $this->billing_address = $data["billing_address"];
+            } else {
+              $this->billing_address = null;
+            }
         }
     }
     /**

@@ -190,21 +190,81 @@ class Address implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->address_line_1 = $data["address_line_1"];
-            $this->address_line_2 = $data["address_line_2"];
-            $this->address_line_3 = $data["address_line_3"];
-            $this->locality = $data["locality"];
-            $this->sublocality = $data["sublocality"];
-            $this->sublocality_2 = $data["sublocality_2"];
-            $this->sublocality_3 = $data["sublocality_3"];
-            $this->administrative_district_level_1 = $data["administrative_district_level_1"];
-            $this->administrative_district_level_2 = $data["administrative_district_level_2"];
-            $this->administrative_district_level_3 = $data["administrative_district_level_3"];
-            $this->postal_code = $data["postal_code"];
-            $this->country = $data["country"];
-            $this->first_name = $data["first_name"];
-            $this->last_name = $data["last_name"];
-            $this->organization = $data["organization"];
+            if (isset($data["address_line_1"])) {
+              $this->address_line_1 = $data["address_line_1"];
+            } else {
+              $this->address_line_1 = null;
+            }
+            if (isset($data["address_line_2"])) {
+              $this->address_line_2 = $data["address_line_2"];
+            } else {
+              $this->address_line_2 = null;
+            }
+            if (isset($data["address_line_3"])) {
+              $this->address_line_3 = $data["address_line_3"];
+            } else {
+              $this->address_line_3 = null;
+            }
+            if (isset($data["locality"])) {
+              $this->locality = $data["locality"];
+            } else {
+              $this->locality = null;
+            }
+            if (isset($data["sublocality"])) {
+              $this->sublocality = $data["sublocality"];
+            } else {
+              $this->sublocality = null;
+            }
+            if (isset($data["sublocality_2"])) {
+              $this->sublocality_2 = $data["sublocality_2"];
+            } else {
+              $this->sublocality_2 = null;
+            }
+            if (isset($data["sublocality_3"])) {
+              $this->sublocality_3 = $data["sublocality_3"];
+            } else {
+              $this->sublocality_3 = null;
+            }
+            if (isset($data["administrative_district_level_1"])) {
+              $this->administrative_district_level_1 = $data["administrative_district_level_1"];
+            } else {
+              $this->administrative_district_level_1 = null;
+            }
+            if (isset($data["administrative_district_level_2"])) {
+              $this->administrative_district_level_2 = $data["administrative_district_level_2"];
+            } else {
+              $this->administrative_district_level_2 = null;
+            }
+            if (isset($data["administrative_district_level_3"])) {
+              $this->administrative_district_level_3 = $data["administrative_district_level_3"];
+            } else {
+              $this->administrative_district_level_3 = null;
+            }
+            if (isset($data["postal_code"])) {
+              $this->postal_code = $data["postal_code"];
+            } else {
+              $this->postal_code = null;
+            }
+            if (isset($data["country"])) {
+              $this->country = $data["country"];
+            } else {
+              $this->country = null;
+            }
+            if (isset($data["first_name"])) {
+              $this->first_name = $data["first_name"];
+            } else {
+              $this->first_name = null;
+            }
+            if (isset($data["last_name"])) {
+              $this->last_name = $data["last_name"];
+            } else {
+              $this->last_name = null;
+            }
+            if (isset($data["organization"])) {
+              $this->organization = $data["organization"];
+            } else {
+              $this->organization = null;
+            }
         }
     }
     /**

@@ -64,7 +64,11 @@ class CustomerPreferences implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->email_unsubscribed = $data["email_unsubscribed"];
+            if (isset($data["email_unsubscribed"])) {
+              $this->email_unsubscribed = $data["email_unsubscribed"];
+            } else {
+              $this->email_unsubscribed = null;
+            }
         }
     }
     /**

@@ -94,22 +94,22 @@ class Checkout implements ArrayAccess
       */
     protected $checkout_page_url;
     /**
-      * $ask_for_shipping_address If `true`, Square Checkout will collect shipping information on your behalf and store that information with the transaction information in your Square Dashboard.  Default is `false`.
+      * $ask_for_shipping_address If `true`, Square Checkout will collect shipping information on your behalf and store that information with the transaction information in your Square Dashboard.  Default: `false`.
       * @var bool
       */
     protected $ask_for_shipping_address;
     /**
-      * $merchant_support_email The email address to display on the Square Checkout confirmation page and confirmation email that the buyer can use to contact the merchant.  If this value is not set, the confirmation page and email will display the primary email address associated with the merchant's Square account.  Default is unset.
+      * $merchant_support_email The email address to display on the Square Checkout confirmation page and confirmation email that the buyer can use to contact the merchant.  If this value is not set, the confirmation page and email will display the primary email address associated with the merchant's Square account.  Default: none; only exists if explicitly set.
       * @var string
       */
     protected $merchant_support_email;
     /**
-      * $pre_populate_buyer_email If provided, the buyer's email is pre-populated on the checkout page as an editable text field.  Default is unset.
+      * $pre_populate_buyer_email If provided, the buyer's email is pre-populated on the checkout page as an editable text field.  Default: none; only exists if explicitly set.
       * @var string
       */
     protected $pre_populate_buyer_email;
     /**
-      * $pre_populate_shipping_address If provided, the buyer's shipping info is pre-populated on the checkout page as editable text fields.  Default is unset.
+      * $pre_populate_shipping_address If provided, the buyer's shipping info is pre-populated on the checkout page as editable text fields.  Default: none; only exists if explicitly set.
       * @var \SquareConnect\Model\Address
       */
     protected $pre_populate_shipping_address;
@@ -136,15 +136,51 @@ class Checkout implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->id = $data["id"];
-            $this->checkout_page_url = $data["checkout_page_url"];
-            $this->ask_for_shipping_address = $data["ask_for_shipping_address"];
-            $this->merchant_support_email = $data["merchant_support_email"];
-            $this->pre_populate_buyer_email = $data["pre_populate_buyer_email"];
-            $this->pre_populate_shipping_address = $data["pre_populate_shipping_address"];
-            $this->redirect_url = $data["redirect_url"];
-            $this->order = $data["order"];
-            $this->created_at = $data["created_at"];
+            if (isset($data["id"])) {
+              $this->id = $data["id"];
+            } else {
+              $this->id = null;
+            }
+            if (isset($data["checkout_page_url"])) {
+              $this->checkout_page_url = $data["checkout_page_url"];
+            } else {
+              $this->checkout_page_url = null;
+            }
+            if (isset($data["ask_for_shipping_address"])) {
+              $this->ask_for_shipping_address = $data["ask_for_shipping_address"];
+            } else {
+              $this->ask_for_shipping_address = null;
+            }
+            if (isset($data["merchant_support_email"])) {
+              $this->merchant_support_email = $data["merchant_support_email"];
+            } else {
+              $this->merchant_support_email = null;
+            }
+            if (isset($data["pre_populate_buyer_email"])) {
+              $this->pre_populate_buyer_email = $data["pre_populate_buyer_email"];
+            } else {
+              $this->pre_populate_buyer_email = null;
+            }
+            if (isset($data["pre_populate_shipping_address"])) {
+              $this->pre_populate_shipping_address = $data["pre_populate_shipping_address"];
+            } else {
+              $this->pre_populate_shipping_address = null;
+            }
+            if (isset($data["redirect_url"])) {
+              $this->redirect_url = $data["redirect_url"];
+            } else {
+              $this->redirect_url = null;
+            }
+            if (isset($data["order"])) {
+              $this->order = $data["order"];
+            } else {
+              $this->order = null;
+            }
+            if (isset($data["created_at"])) {
+              $this->created_at = $data["created_at"];
+            } else {
+              $this->created_at = null;
+            }
         }
     }
     /**
@@ -196,7 +232,7 @@ class Checkout implements ArrayAccess
   
     /**
      * Sets ask_for_shipping_address
-     * @param bool $ask_for_shipping_address If `true`, Square Checkout will collect shipping information on your behalf and store that information with the transaction information in your Square Dashboard.  Default is `false`.
+     * @param bool $ask_for_shipping_address If `true`, Square Checkout will collect shipping information on your behalf and store that information with the transaction information in your Square Dashboard.  Default: `false`.
      * @return $this
      */
     public function setAskForShippingAddress($ask_for_shipping_address)
@@ -215,7 +251,7 @@ class Checkout implements ArrayAccess
   
     /**
      * Sets merchant_support_email
-     * @param string $merchant_support_email The email address to display on the Square Checkout confirmation page and confirmation email that the buyer can use to contact the merchant.  If this value is not set, the confirmation page and email will display the primary email address associated with the merchant's Square account.  Default is unset.
+     * @param string $merchant_support_email The email address to display on the Square Checkout confirmation page and confirmation email that the buyer can use to contact the merchant.  If this value is not set, the confirmation page and email will display the primary email address associated with the merchant's Square account.  Default: none; only exists if explicitly set.
      * @return $this
      */
     public function setMerchantSupportEmail($merchant_support_email)
@@ -234,7 +270,7 @@ class Checkout implements ArrayAccess
   
     /**
      * Sets pre_populate_buyer_email
-     * @param string $pre_populate_buyer_email If provided, the buyer's email is pre-populated on the checkout page as an editable text field.  Default is unset.
+     * @param string $pre_populate_buyer_email If provided, the buyer's email is pre-populated on the checkout page as an editable text field.  Default: none; only exists if explicitly set.
      * @return $this
      */
     public function setPrePopulateBuyerEmail($pre_populate_buyer_email)
@@ -253,7 +289,7 @@ class Checkout implements ArrayAccess
   
     /**
      * Sets pre_populate_shipping_address
-     * @param \SquareConnect\Model\Address $pre_populate_shipping_address If provided, the buyer's shipping info is pre-populated on the checkout page as editable text fields.  Default is unset.
+     * @param \SquareConnect\Model\Address $pre_populate_shipping_address If provided, the buyer's shipping info is pre-populated on the checkout page as editable text fields.  Default: none; only exists if explicitly set.
      * @return $this
      */
     public function setPrePopulateShippingAddress($pre_populate_shipping_address)

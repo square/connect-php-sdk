@@ -136,15 +136,51 @@ class V1Timecard implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->id = $data["id"];
-            $this->employee_id = $data["employee_id"];
-            $this->deleted = $data["deleted"];
-            $this->clockin_time = $data["clockin_time"];
-            $this->clockout_time = $data["clockout_time"];
-            $this->clockin_location_id = $data["clockin_location_id"];
-            $this->clockout_location_id = $data["clockout_location_id"];
-            $this->created_at = $data["created_at"];
-            $this->updated_at = $data["updated_at"];
+            if (isset($data["id"])) {
+              $this->id = $data["id"];
+            } else {
+              $this->id = null;
+            }
+            if (isset($data["employee_id"])) {
+              $this->employee_id = $data["employee_id"];
+            } else {
+              $this->employee_id = null;
+            }
+            if (isset($data["deleted"])) {
+              $this->deleted = $data["deleted"];
+            } else {
+              $this->deleted = null;
+            }
+            if (isset($data["clockin_time"])) {
+              $this->clockin_time = $data["clockin_time"];
+            } else {
+              $this->clockin_time = null;
+            }
+            if (isset($data["clockout_time"])) {
+              $this->clockout_time = $data["clockout_time"];
+            } else {
+              $this->clockout_time = null;
+            }
+            if (isset($data["clockin_location_id"])) {
+              $this->clockin_location_id = $data["clockin_location_id"];
+            } else {
+              $this->clockin_location_id = null;
+            }
+            if (isset($data["clockout_location_id"])) {
+              $this->clockout_location_id = $data["clockout_location_id"];
+            } else {
+              $this->clockout_location_id = null;
+            }
+            if (isset($data["created_at"])) {
+              $this->created_at = $data["created_at"];
+            } else {
+              $this->created_at = null;
+            }
+            if (isset($data["updated_at"])) {
+              $this->updated_at = $data["updated_at"];
+            } else {
+              $this->updated_at = null;
+            }
         }
     }
     /**

@@ -109,12 +109,36 @@ class V1ModifierOption implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->id = $data["id"];
-            $this->name = $data["name"];
-            $this->price_money = $data["price_money"];
-            $this->on_by_default = $data["on_by_default"];
-            $this->ordinal = $data["ordinal"];
-            $this->modifier_list_id = $data["modifier_list_id"];
+            if (isset($data["id"])) {
+              $this->id = $data["id"];
+            } else {
+              $this->id = null;
+            }
+            if (isset($data["name"])) {
+              $this->name = $data["name"];
+            } else {
+              $this->name = null;
+            }
+            if (isset($data["price_money"])) {
+              $this->price_money = $data["price_money"];
+            } else {
+              $this->price_money = null;
+            }
+            if (isset($data["on_by_default"])) {
+              $this->on_by_default = $data["on_by_default"];
+            } else {
+              $this->on_by_default = null;
+            }
+            if (isset($data["ordinal"])) {
+              $this->ordinal = $data["ordinal"];
+            } else {
+              $this->ordinal = null;
+            }
+            if (isset($data["modifier_list_id"])) {
+              $this->modifier_list_id = $data["modifier_list_id"];
+            } else {
+              $this->modifier_list_id = null;
+            }
         }
     }
     /**

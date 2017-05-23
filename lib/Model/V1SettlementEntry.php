@@ -91,10 +91,26 @@ class V1SettlementEntry implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->payment_id = $data["payment_id"];
-            $this->type = $data["type"];
-            $this->amount_money = $data["amount_money"];
-            $this->fee_money = $data["fee_money"];
+            if (isset($data["payment_id"])) {
+              $this->payment_id = $data["payment_id"];
+            } else {
+              $this->payment_id = null;
+            }
+            if (isset($data["type"])) {
+              $this->type = $data["type"];
+            } else {
+              $this->type = null;
+            }
+            if (isset($data["amount_money"])) {
+              $this->amount_money = $data["amount_money"];
+            } else {
+              $this->amount_money = null;
+            }
+            if (isset($data["fee_money"])) {
+              $this->fee_money = $data["fee_money"];
+            } else {
+              $this->fee_money = null;
+            }
         }
     }
     /**

@@ -73,8 +73,16 @@ class V1InventoryEntry implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->variation_id = $data["variation_id"];
-            $this->quantity_on_hand = $data["quantity_on_hand"];
+            if (isset($data["variation_id"])) {
+              $this->variation_id = $data["variation_id"];
+            } else {
+              $this->variation_id = null;
+            }
+            if (isset($data["quantity_on_hand"])) {
+              $this->quantity_on_hand = $data["quantity_on_hand"];
+            } else {
+              $this->quantity_on_hand = null;
+            }
         }
     }
     /**

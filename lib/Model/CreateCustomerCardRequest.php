@@ -82,9 +82,21 @@ class CreateCustomerCardRequest implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->card_nonce = $data["card_nonce"];
-            $this->billing_address = $data["billing_address"];
-            $this->cardholder_name = $data["cardholder_name"];
+            if (isset($data["card_nonce"])) {
+              $this->card_nonce = $data["card_nonce"];
+            } else {
+              $this->card_nonce = null;
+            }
+            if (isset($data["billing_address"])) {
+              $this->billing_address = $data["billing_address"];
+            } else {
+              $this->billing_address = null;
+            }
+            if (isset($data["cardholder_name"])) {
+              $this->cardholder_name = $data["cardholder_name"];
+            } else {
+              $this->cardholder_name = null;
+            }
         }
     }
     /**

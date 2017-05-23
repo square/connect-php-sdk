@@ -73,8 +73,16 @@ class V1PhoneNumber implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->calling_code = $data["calling_code"];
-            $this->number = $data["number"];
+            if (isset($data["calling_code"])) {
+              $this->calling_code = $data["calling_code"];
+            } else {
+              $this->calling_code = null;
+            }
+            if (isset($data["number"])) {
+              $this->number = $data["number"];
+            } else {
+              $this->number = null;
+            }
         }
     }
     /**

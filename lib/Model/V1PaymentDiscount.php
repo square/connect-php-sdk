@@ -82,9 +82,21 @@ class V1PaymentDiscount implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->name = $data["name"];
-            $this->applied_money = $data["applied_money"];
-            $this->discount_id = $data["discount_id"];
+            if (isset($data["name"])) {
+              $this->name = $data["name"];
+            } else {
+              $this->name = null;
+            }
+            if (isset($data["applied_money"])) {
+              $this->applied_money = $data["applied_money"];
+            } else {
+              $this->applied_money = null;
+            }
+            if (isset($data["discount_id"])) {
+              $this->discount_id = $data["discount_id"];
+            } else {
+              $this->discount_id = null;
+            }
         }
     }
     /**

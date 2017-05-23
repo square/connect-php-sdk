@@ -100,11 +100,31 @@ class V1CreateRefundRequest implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->payment_id = $data["payment_id"];
-            $this->type = $data["type"];
-            $this->reason = $data["reason"];
-            $this->refunded_money = $data["refunded_money"];
-            $this->request_idempotence_key = $data["request_idempotence_key"];
+            if (isset($data["payment_id"])) {
+              $this->payment_id = $data["payment_id"];
+            } else {
+              $this->payment_id = null;
+            }
+            if (isset($data["type"])) {
+              $this->type = $data["type"];
+            } else {
+              $this->type = null;
+            }
+            if (isset($data["reason"])) {
+              $this->reason = $data["reason"];
+            } else {
+              $this->reason = null;
+            }
+            if (isset($data["refunded_money"])) {
+              $this->refunded_money = $data["refunded_money"];
+            } else {
+              $this->refunded_money = null;
+            }
+            if (isset($data["request_idempotence_key"])) {
+              $this->request_idempotence_key = $data["request_idempotence_key"];
+            } else {
+              $this->request_idempotence_key = null;
+            }
         }
     }
     /**

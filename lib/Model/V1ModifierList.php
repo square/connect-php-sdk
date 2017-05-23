@@ -91,10 +91,26 @@ class V1ModifierList implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->id = $data["id"];
-            $this->name = $data["name"];
-            $this->selection_type = $data["selection_type"];
-            $this->modifier_options = $data["modifier_options"];
+            if (isset($data["id"])) {
+              $this->id = $data["id"];
+            } else {
+              $this->id = null;
+            }
+            if (isset($data["name"])) {
+              $this->name = $data["name"];
+            } else {
+              $this->name = null;
+            }
+            if (isset($data["selection_type"])) {
+              $this->selection_type = $data["selection_type"];
+            } else {
+              $this->selection_type = null;
+            }
+            if (isset($data["modifier_options"])) {
+              $this->modifier_options = $data["modifier_options"];
+            } else {
+              $this->modifier_options = null;
+            }
         }
     }
     /**

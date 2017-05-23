@@ -109,12 +109,36 @@ class V1Settlement implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->id = $data["id"];
-            $this->status = $data["status"];
-            $this->total_money = $data["total_money"];
-            $this->initiated_at = $data["initiated_at"];
-            $this->bank_account_id = $data["bank_account_id"];
-            $this->entries = $data["entries"];
+            if (isset($data["id"])) {
+              $this->id = $data["id"];
+            } else {
+              $this->id = null;
+            }
+            if (isset($data["status"])) {
+              $this->status = $data["status"];
+            } else {
+              $this->status = null;
+            }
+            if (isset($data["total_money"])) {
+              $this->total_money = $data["total_money"];
+            } else {
+              $this->total_money = null;
+            }
+            if (isset($data["initiated_at"])) {
+              $this->initiated_at = $data["initiated_at"];
+            } else {
+              $this->initiated_at = null;
+            }
+            if (isset($data["bank_account_id"])) {
+              $this->bank_account_id = $data["bank_account_id"];
+            } else {
+              $this->bank_account_id = null;
+            }
+            if (isset($data["entries"])) {
+              $this->entries = $data["entries"];
+            } else {
+              $this->entries = null;
+            }
         }
     }
     /**
