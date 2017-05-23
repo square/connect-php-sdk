@@ -69,15 +69,14 @@ class CheckoutApi
      *
      * CreateCheckout
      *
-     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @param string $location_id The ID of the business location to associate the checkout with. (required)
      * @param \SquareConnect\Model\CreateCheckoutRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
      * @return \SquareConnect\Model\CreateCheckoutResponse
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function createCheckout($authorization, $location_id, $body)
+    public function createCheckout($location_id, $body)
     {
-        list($response, $statusCode, $httpHeader) = $this->createCheckoutWithHttpInfo ($authorization, $location_id, $body);
+        list($response, $statusCode, $httpHeader) = $this->createCheckoutWithHttpInfo ($location_id, $body);
         return $response; 
     }
 
@@ -87,19 +86,14 @@ class CheckoutApi
      *
      * CreateCheckout
      *
-     * @param string $authorization The value to provide in the Authorization header of your request. This value should follow the format &#x60;Bearer YOUR_ACCESS_TOKEN_HERE&#x60;. (required)
      * @param string $location_id The ID of the business location to associate the checkout with. (required)
      * @param \SquareConnect\Model\CreateCheckoutRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
      * @return Array of \SquareConnect\Model\CreateCheckoutResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function createCheckoutWithHttpInfo($authorization, $location_id, $body)
+    public function createCheckoutWithHttpInfo($location_id, $body)
     {
         
-        // verify the required parameter 'authorization' is set
-        if ($authorization === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $authorization when calling createCheckout');
-        }
         // verify the required parameter 'location_id' is set
         if ($location_id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $location_id when calling createCheckout');
@@ -122,10 +116,7 @@ class CheckoutApi
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
   
         
-        // header params
-        if ($authorization !== null) {
-            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
-        }
+        
         // path params
         if ($location_id !== null) {
             $resourcePath = str_replace(
@@ -150,7 +141,12 @@ class CheckoutApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-                // make the API Call
+        
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath, 'POST',

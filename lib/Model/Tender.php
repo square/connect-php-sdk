@@ -154,17 +154,61 @@ class Tender implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->id = $data["id"];
-            $this->location_id = $data["location_id"];
-            $this->transaction_id = $data["transaction_id"];
-            $this->created_at = $data["created_at"];
-            $this->note = $data["note"];
-            $this->amount_money = $data["amount_money"];
-            $this->processing_fee_money = $data["processing_fee_money"];
-            $this->customer_id = $data["customer_id"];
-            $this->type = $data["type"];
-            $this->card_details = $data["card_details"];
-            $this->cash_details = $data["cash_details"];
+            if (isset($data["id"])) {
+              $this->id = $data["id"];
+            } else {
+              $this->id = null;
+            }
+            if (isset($data["location_id"])) {
+              $this->location_id = $data["location_id"];
+            } else {
+              $this->location_id = null;
+            }
+            if (isset($data["transaction_id"])) {
+              $this->transaction_id = $data["transaction_id"];
+            } else {
+              $this->transaction_id = null;
+            }
+            if (isset($data["created_at"])) {
+              $this->created_at = $data["created_at"];
+            } else {
+              $this->created_at = null;
+            }
+            if (isset($data["note"])) {
+              $this->note = $data["note"];
+            } else {
+              $this->note = null;
+            }
+            if (isset($data["amount_money"])) {
+              $this->amount_money = $data["amount_money"];
+            } else {
+              $this->amount_money = null;
+            }
+            if (isset($data["processing_fee_money"])) {
+              $this->processing_fee_money = $data["processing_fee_money"];
+            } else {
+              $this->processing_fee_money = null;
+            }
+            if (isset($data["customer_id"])) {
+              $this->customer_id = $data["customer_id"];
+            } else {
+              $this->customer_id = null;
+            }
+            if (isset($data["type"])) {
+              $this->type = $data["type"];
+            } else {
+              $this->type = null;
+            }
+            if (isset($data["card_details"])) {
+              $this->card_details = $data["card_details"];
+            } else {
+              $this->card_details = null;
+            }
+            if (isset($data["cash_details"])) {
+              $this->cash_details = $data["cash_details"];
+            } else {
+              $this->cash_details = null;
+            }
         }
     }
     /**

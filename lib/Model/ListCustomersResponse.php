@@ -82,9 +82,21 @@ class ListCustomersResponse implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->errors = $data["errors"];
-            $this->customers = $data["customers"];
-            $this->cursor = $data["cursor"];
+            if (isset($data["errors"])) {
+              $this->errors = $data["errors"];
+            } else {
+              $this->errors = null;
+            }
+            if (isset($data["customers"])) {
+              $this->customers = $data["customers"];
+            } else {
+              $this->customers = null;
+            }
+            if (isset($data["cursor"])) {
+              $this->cursor = $data["cursor"];
+            } else {
+              $this->cursor = null;
+            }
         }
     }
     /**

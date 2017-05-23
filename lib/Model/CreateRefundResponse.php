@@ -73,8 +73,16 @@ class CreateRefundResponse implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->errors = $data["errors"];
-            $this->refund = $data["refund"];
+            if (isset($data["errors"])) {
+              $this->errors = $data["errors"];
+            } else {
+              $this->errors = null;
+            }
+            if (isset($data["refund"])) {
+              $this->refund = $data["refund"];
+            } else {
+              $this->refund = null;
+            }
         }
     }
     /**

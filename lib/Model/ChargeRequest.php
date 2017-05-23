@@ -112,7 +112,7 @@ class ChargeRequest implements ArrayAccess
       */
     protected $customer_card_id;
     /**
-      * $delay_capture If `true`, the request will only perform an Auth on the provided card. You can then later perform either a Capture (with the [CaptureTransaction](#endpoint-capturetransaction) endpoint) or a Void (with the [VoidTransation](#endpoint-voidtransaction) endpoint).  Default value: `false`
+      * $delay_capture If `true`, the request will only perform an Auth on the provided card. You can then later perform either a Capture (with the [CaptureTransaction](#endpoint-capturetransaction) endpoint) or a Void (with the [VoidTransaction](#endpoint-voidtransaction) endpoint).  Default value: `false`
       * @var bool
       */
     protected $delay_capture;
@@ -154,17 +154,61 @@ class ChargeRequest implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->idempotency_key = $data["idempotency_key"];
-            $this->amount_money = $data["amount_money"];
-            $this->card_nonce = $data["card_nonce"];
-            $this->customer_card_id = $data["customer_card_id"];
-            $this->delay_capture = $data["delay_capture"];
-            $this->reference_id = $data["reference_id"];
-            $this->note = $data["note"];
-            $this->customer_id = $data["customer_id"];
-            $this->billing_address = $data["billing_address"];
-            $this->shipping_address = $data["shipping_address"];
-            $this->buyer_email_address = $data["buyer_email_address"];
+            if (isset($data["idempotency_key"])) {
+              $this->idempotency_key = $data["idempotency_key"];
+            } else {
+              $this->idempotency_key = null;
+            }
+            if (isset($data["amount_money"])) {
+              $this->amount_money = $data["amount_money"];
+            } else {
+              $this->amount_money = null;
+            }
+            if (isset($data["card_nonce"])) {
+              $this->card_nonce = $data["card_nonce"];
+            } else {
+              $this->card_nonce = null;
+            }
+            if (isset($data["customer_card_id"])) {
+              $this->customer_card_id = $data["customer_card_id"];
+            } else {
+              $this->customer_card_id = null;
+            }
+            if (isset($data["delay_capture"])) {
+              $this->delay_capture = $data["delay_capture"];
+            } else {
+              $this->delay_capture = null;
+            }
+            if (isset($data["reference_id"])) {
+              $this->reference_id = $data["reference_id"];
+            } else {
+              $this->reference_id = null;
+            }
+            if (isset($data["note"])) {
+              $this->note = $data["note"];
+            } else {
+              $this->note = null;
+            }
+            if (isset($data["customer_id"])) {
+              $this->customer_id = $data["customer_id"];
+            } else {
+              $this->customer_id = null;
+            }
+            if (isset($data["billing_address"])) {
+              $this->billing_address = $data["billing_address"];
+            } else {
+              $this->billing_address = null;
+            }
+            if (isset($data["shipping_address"])) {
+              $this->shipping_address = $data["shipping_address"];
+            } else {
+              $this->shipping_address = null;
+            }
+            if (isset($data["buyer_email_address"])) {
+              $this->buyer_email_address = $data["buyer_email_address"];
+            } else {
+              $this->buyer_email_address = null;
+            }
         }
     }
     /**
@@ -254,7 +298,7 @@ class ChargeRequest implements ArrayAccess
   
     /**
      * Sets delay_capture
-     * @param bool $delay_capture If `true`, the request will only perform an Auth on the provided card. You can then later perform either a Capture (with the [CaptureTransaction](#endpoint-capturetransaction) endpoint) or a Void (with the [VoidTransation](#endpoint-voidtransaction) endpoint).  Default value: `false`
+     * @param bool $delay_capture If `true`, the request will only perform an Auth on the provided card. You can then later perform either a Capture (with the [CaptureTransaction](#endpoint-capturetransaction) endpoint) or a Void (with the [VoidTransaction](#endpoint-voidtransaction) endpoint).  Default value: `false`
      * @return $this
      */
     public function setDelayCapture($delay_capture)

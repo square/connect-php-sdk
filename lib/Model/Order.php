@@ -100,11 +100,31 @@ class Order implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->id = $data["id"];
-            $this->location_id = $data["location_id"];
-            $this->reference_id = $data["reference_id"];
-            $this->line_items = $data["line_items"];
-            $this->total_money = $data["total_money"];
+            if (isset($data["id"])) {
+              $this->id = $data["id"];
+            } else {
+              $this->id = null;
+            }
+            if (isset($data["location_id"])) {
+              $this->location_id = $data["location_id"];
+            } else {
+              $this->location_id = null;
+            }
+            if (isset($data["reference_id"])) {
+              $this->reference_id = $data["reference_id"];
+            } else {
+              $this->reference_id = null;
+            }
+            if (isset($data["line_items"])) {
+              $this->line_items = $data["line_items"];
+            } else {
+              $this->line_items = null;
+            }
+            if (isset($data["total_money"])) {
+              $this->total_money = $data["total_money"];
+            } else {
+              $this->total_money = null;
+            }
         }
     }
     /**

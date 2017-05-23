@@ -82,9 +82,21 @@ class CreateOrderRequestLineItem implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->name = $data["name"];
-            $this->quantity = $data["quantity"];
-            $this->base_price_money = $data["base_price_money"];
+            if (isset($data["name"])) {
+              $this->name = $data["name"];
+            } else {
+              $this->name = null;
+            }
+            if (isset($data["quantity"])) {
+              $this->quantity = $data["quantity"];
+            } else {
+              $this->quantity = null;
+            }
+            if (isset($data["base_price_money"])) {
+              $this->base_price_money = $data["base_price_money"];
+            } else {
+              $this->base_price_money = null;
+            }
         }
     }
     /**

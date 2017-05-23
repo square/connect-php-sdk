@@ -91,10 +91,26 @@ class Error implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->category = $data["category"];
-            $this->code = $data["code"];
-            $this->detail = $data["detail"];
-            $this->field = $data["field"];
+            if (isset($data["category"])) {
+              $this->category = $data["category"];
+            } else {
+              $this->category = null;
+            }
+            if (isset($data["code"])) {
+              $this->code = $data["code"];
+            } else {
+              $this->code = null;
+            }
+            if (isset($data["detail"])) {
+              $this->detail = $data["detail"];
+            } else {
+              $this->detail = null;
+            }
+            if (isset($data["field"])) {
+              $this->field = $data["field"];
+            } else {
+              $this->field = null;
+            }
         }
     }
     /**

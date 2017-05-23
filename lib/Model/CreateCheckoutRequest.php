@@ -86,27 +86,27 @@ class CreateCheckoutRequest implements ArrayAccess
       */
     protected $order;
     /**
-      * $ask_for_shipping_address If `true`, Square Checkout will collect shipping information on your behalf and store that information with the transaction information in your Square Dashboard.  Default is `false`.
+      * $ask_for_shipping_address If `true`, Square Checkout will collect shipping information on your behalf and store that information with the transaction information in your Square Dashboard.  Default: `false`.
       * @var bool
       */
     protected $ask_for_shipping_address;
     /**
-      * $merchant_support_email The email address to display on the Square Checkout confirmation page and confirmation email that the buyer can use to contact the merchant.  If this value is not set, the confirmation page and email will display the primary email address associated with the merchant's Square account.  Default is unset.
+      * $merchant_support_email The email address to display on the Square Checkout confirmation page and confirmation email that the buyer can use to contact the merchant.  If this value is not set, the confirmation page and email will display the primary email address associated with the merchant's Square account.  Default: none; only exists if explicitly set.
       * @var string
       */
     protected $merchant_support_email;
     /**
-      * $pre_populate_buyer_email If provided, the buyer's email is pre-populated on the checkout page as an editable text field.  Default is unset.
+      * $pre_populate_buyer_email If provided, the buyer's email is pre-populated on the checkout page as an editable text field.  Default: none; only exists if explicitly set.
       * @var string
       */
     protected $pre_populate_buyer_email;
     /**
-      * $pre_populate_shipping_address If provided, the buyer's shipping info is pre-populated on the checkout page as editable text fields.  Default is unset.
+      * $pre_populate_shipping_address If provided, the buyer's shipping info is pre-populated on the checkout page as editable text fields.  Default: none; only exists if explicitly set.
       * @var \SquareConnect\Model\Address
       */
     protected $pre_populate_shipping_address;
     /**
-      * $redirect_url The URL to redirect to after checkout is completed with `checkoutId`, Square's `orderId`, `transactionId`, and `referenceId` appended as URL parameters. For example, if the provided redirect_url is `http://www.example.com/order-complete`, a successful transaction redirects the customer to:  `http://www.example.com/order-complete?checkoutId=xxxxxx&orderId=xxxxxx&referenceId=xxxxxx&transactionId=xxxxxx`  If you do not provide a redirect URL, Square Checkout will display an order confirmation page on your behalf; however Square strongly recommends that you provide a redirect URL so you can verify the transaction results and finalize the order through your existing/normal confirmation workflow.  Default is unset.
+      * $redirect_url The URL to redirect to after checkout is completed with `checkoutId`, Square's `orderId`, `transactionId`, and `referenceId` appended as URL parameters. For example, if the provided redirect_url is `http://www.example.com/order-complete`, a successful transaction redirects the customer to:  `http://www.example.com/order-complete?checkoutId=xxxxxx&orderId=xxxxxx&referenceId=xxxxxx&transactionId=xxxxxx`  If you do not provide a redirect URL, Square Checkout will display an order confirmation page on your behalf; however Square strongly recommends that you provide a redirect URL so you can verify the transaction results and finalize the order through your existing/normal confirmation workflow.  Default: none; only exists if explicitly set.
       * @var string
       */
     protected $redirect_url;
@@ -118,13 +118,41 @@ class CreateCheckoutRequest implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            $this->idempotency_key = $data["idempotency_key"];
-            $this->order = $data["order"];
-            $this->ask_for_shipping_address = $data["ask_for_shipping_address"];
-            $this->merchant_support_email = $data["merchant_support_email"];
-            $this->pre_populate_buyer_email = $data["pre_populate_buyer_email"];
-            $this->pre_populate_shipping_address = $data["pre_populate_shipping_address"];
-            $this->redirect_url = $data["redirect_url"];
+            if (isset($data["idempotency_key"])) {
+              $this->idempotency_key = $data["idempotency_key"];
+            } else {
+              $this->idempotency_key = null;
+            }
+            if (isset($data["order"])) {
+              $this->order = $data["order"];
+            } else {
+              $this->order = null;
+            }
+            if (isset($data["ask_for_shipping_address"])) {
+              $this->ask_for_shipping_address = $data["ask_for_shipping_address"];
+            } else {
+              $this->ask_for_shipping_address = null;
+            }
+            if (isset($data["merchant_support_email"])) {
+              $this->merchant_support_email = $data["merchant_support_email"];
+            } else {
+              $this->merchant_support_email = null;
+            }
+            if (isset($data["pre_populate_buyer_email"])) {
+              $this->pre_populate_buyer_email = $data["pre_populate_buyer_email"];
+            } else {
+              $this->pre_populate_buyer_email = null;
+            }
+            if (isset($data["pre_populate_shipping_address"])) {
+              $this->pre_populate_shipping_address = $data["pre_populate_shipping_address"];
+            } else {
+              $this->pre_populate_shipping_address = null;
+            }
+            if (isset($data["redirect_url"])) {
+              $this->redirect_url = $data["redirect_url"];
+            } else {
+              $this->redirect_url = null;
+            }
         }
     }
     /**
@@ -176,7 +204,7 @@ class CreateCheckoutRequest implements ArrayAccess
   
     /**
      * Sets ask_for_shipping_address
-     * @param bool $ask_for_shipping_address If `true`, Square Checkout will collect shipping information on your behalf and store that information with the transaction information in your Square Dashboard.  Default is `false`.
+     * @param bool $ask_for_shipping_address If `true`, Square Checkout will collect shipping information on your behalf and store that information with the transaction information in your Square Dashboard.  Default: `false`.
      * @return $this
      */
     public function setAskForShippingAddress($ask_for_shipping_address)
@@ -195,7 +223,7 @@ class CreateCheckoutRequest implements ArrayAccess
   
     /**
      * Sets merchant_support_email
-     * @param string $merchant_support_email The email address to display on the Square Checkout confirmation page and confirmation email that the buyer can use to contact the merchant.  If this value is not set, the confirmation page and email will display the primary email address associated with the merchant's Square account.  Default is unset.
+     * @param string $merchant_support_email The email address to display on the Square Checkout confirmation page and confirmation email that the buyer can use to contact the merchant.  If this value is not set, the confirmation page and email will display the primary email address associated with the merchant's Square account.  Default: none; only exists if explicitly set.
      * @return $this
      */
     public function setMerchantSupportEmail($merchant_support_email)
@@ -214,7 +242,7 @@ class CreateCheckoutRequest implements ArrayAccess
   
     /**
      * Sets pre_populate_buyer_email
-     * @param string $pre_populate_buyer_email If provided, the buyer's email is pre-populated on the checkout page as an editable text field.  Default is unset.
+     * @param string $pre_populate_buyer_email If provided, the buyer's email is pre-populated on the checkout page as an editable text field.  Default: none; only exists if explicitly set.
      * @return $this
      */
     public function setPrePopulateBuyerEmail($pre_populate_buyer_email)
@@ -233,7 +261,7 @@ class CreateCheckoutRequest implements ArrayAccess
   
     /**
      * Sets pre_populate_shipping_address
-     * @param \SquareConnect\Model\Address $pre_populate_shipping_address If provided, the buyer's shipping info is pre-populated on the checkout page as editable text fields.  Default is unset.
+     * @param \SquareConnect\Model\Address $pre_populate_shipping_address If provided, the buyer's shipping info is pre-populated on the checkout page as editable text fields.  Default: none; only exists if explicitly set.
      * @return $this
      */
     public function setPrePopulateShippingAddress($pre_populate_shipping_address)
@@ -252,7 +280,7 @@ class CreateCheckoutRequest implements ArrayAccess
   
     /**
      * Sets redirect_url
-     * @param string $redirect_url The URL to redirect to after checkout is completed with `checkoutId`, Square's `orderId`, `transactionId`, and `referenceId` appended as URL parameters. For example, if the provided redirect_url is `http://www.example.com/order-complete`, a successful transaction redirects the customer to:  `http://www.example.com/order-complete?checkoutId=xxxxxx&orderId=xxxxxx&referenceId=xxxxxx&transactionId=xxxxxx`  If you do not provide a redirect URL, Square Checkout will display an order confirmation page on your behalf; however Square strongly recommends that you provide a redirect URL so you can verify the transaction results and finalize the order through your existing/normal confirmation workflow.  Default is unset.
+     * @param string $redirect_url The URL to redirect to after checkout is completed with `checkoutId`, Square's `orderId`, `transactionId`, and `referenceId` appended as URL parameters. For example, if the provided redirect_url is `http://www.example.com/order-complete`, a successful transaction redirects the customer to:  `http://www.example.com/order-complete?checkoutId=xxxxxx&orderId=xxxxxx&referenceId=xxxxxx&transactionId=xxxxxx`  If you do not provide a redirect URL, Square Checkout will display an order confirmation page on your behalf; however Square strongly recommends that you provide a redirect URL so you can verify the transaction results and finalize the order through your existing/normal confirmation workflow.  Default: none; only exists if explicitly set.
      * @return $this
      */
     public function setRedirectUrl($redirect_url)
