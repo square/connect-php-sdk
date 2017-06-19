@@ -27,7 +27,7 @@ class V1Payment implements ArrayAccess
         'id' => 'string',
         'merchant_id' => 'string',
         'created_at' => 'string',
-        'creator_id' => 'bool',
+        'creator_id' => 'string',
         'device' => '\SquareConnect\Model\Device',
         'payment_url' => 'string',
         'receipt_url' => 'string',
@@ -160,7 +160,7 @@ class V1Payment implements ArrayAccess
     protected $created_at;
     /**
       * $creator_id The unique identifier of the Square account that took the payment.
-      * @var bool
+      * @var string
       */
     protected $creator_id;
     /**
@@ -452,7 +452,7 @@ class V1Payment implements ArrayAccess
     }
     /**
      * Gets creator_id
-     * @return bool
+     * @return string
      */
     public function getCreatorId()
     {
@@ -461,7 +461,7 @@ class V1Payment implements ArrayAccess
   
     /**
      * Sets creator_id
-     * @param bool $creator_id The unique identifier of the Square account that took the payment.
+     * @param string $creator_id The unique identifier of the Square account that took the payment.
      * @return $this
      */
     public function setCreatorId($creator_id)

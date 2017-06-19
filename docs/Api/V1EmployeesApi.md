@@ -38,7 +38,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $api_instance = new SquareConnect\Api\V1EmployeesApi();
-$body = new \SquareConnect\Model\v1Employee(); // \SquareConnect\Model\V1Employee | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
+$body = new \SquareConnect\Model\V1Employee(); // \SquareConnect\Model\V1Employee | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
     $result = $api_instance->createEmployee($body);
@@ -53,7 +53,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\SquareConnect\Model\V1Employee**](../Model/v1Employee.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Employee**](../Model/\SquareConnect\Model\V1Employee.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -86,7 +86,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $api_instance = new SquareConnect\Api\V1EmployeesApi();
-$employee_role = new \SquareConnect\Model\v1EmployeeRole(); // \SquareConnect\Model\V1EmployeeRole | An EmployeeRole object with a name and permissions, and an optional owner flag.
+$employee_role = new \SquareConnect\Model\V1EmployeeRole(); // \SquareConnect\Model\V1EmployeeRole | An EmployeeRole object with a name and permissions, and an optional owner flag.
 
 try {
     $result = $api_instance->createEmployeeRole($employee_role);
@@ -101,7 +101,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **employee_role** | [**\SquareConnect\Model\V1EmployeeRole**](../Model/v1EmployeeRole.md)| An EmployeeRole object with a name and permissions, and an optional owner flag. |
+ **employee_role** | [**\SquareConnect\Model\V1EmployeeRole**](../Model/\SquareConnect\Model\V1EmployeeRole.md)| An EmployeeRole object with a name and permissions, and an optional owner flag. |
 
 ### Return type
 
@@ -134,7 +134,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $api_instance = new SquareConnect\Api\V1EmployeesApi();
-$body = new \SquareConnect\Model\v1Timecard(); // \SquareConnect\Model\V1Timecard | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
+$body = new \SquareConnect\Model\V1Timecard(); // \SquareConnect\Model\V1Timecard | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
     $result = $api_instance->createTimecard($body);
@@ -149,7 +149,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\SquareConnect\Model\V1Timecard**](../Model/v1Timecard.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Timecard**](../Model/\SquareConnect\Model\V1Timecard.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -707,7 +707,7 @@ SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACC
 
 $api_instance = new SquareConnect\Api\V1EmployeesApi();
 $employee_id = "employee_id_example"; // string | The ID of the role to modify.
-$body = new \SquareConnect\Model\v1Employee(); // \SquareConnect\Model\V1Employee | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
+$body = new \SquareConnect\Model\V1Employee(); // \SquareConnect\Model\V1Employee | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
     $result = $api_instance->updateEmployee($employee_id, $body);
@@ -723,7 +723,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **employee_id** | **string**| The ID of the role to modify. |
- **body** | [**\SquareConnect\Model\V1Employee**](../Model/v1Employee.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Employee**](../Model/\SquareConnect\Model\V1Employee.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -757,7 +757,7 @@ SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACC
 
 $api_instance = new SquareConnect\Api\V1EmployeesApi();
 $role_id = "role_id_example"; // string | The ID of the role to modify.
-$body = new \SquareConnect\Model\v1EmployeeRole(); // \SquareConnect\Model\V1EmployeeRole | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
+$body = new \SquareConnect\Model\V1EmployeeRole(); // \SquareConnect\Model\V1EmployeeRole | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
     $result = $api_instance->updateEmployeeRole($role_id, $body);
@@ -773,7 +773,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **role_id** | **string**| The ID of the role to modify. |
- **body** | [**\SquareConnect\Model\V1EmployeeRole**](../Model/v1EmployeeRole.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1EmployeeRole**](../Model/\SquareConnect\Model\V1EmployeeRole.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -807,7 +807,7 @@ SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACC
 
 $api_instance = new SquareConnect\Api\V1EmployeesApi();
 $timecard_id = "timecard_id_example"; // string | TThe ID of the timecard to modify.
-$body = new \SquareConnect\Model\v1Timecard(); // \SquareConnect\Model\V1Timecard | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
+$body = new \SquareConnect\Model\V1Timecard(); // \SquareConnect\Model\V1Timecard | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
     $result = $api_instance->updateTimecard($timecard_id, $body);
@@ -823,7 +823,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **timecard_id** | **string**| TThe ID of the timecard to modify. |
- **body** | [**\SquareConnect\Model\V1Timecard**](../Model/v1Timecard.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Timecard**](../Model/\SquareConnect\Model\V1Timecard.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 

@@ -40,7 +40,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the business location to associate the checkout with. |
- **body** | [**\SquareConnect\Model\CreateCheckoutRequest**](../Model/CreateCheckoutRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\CreateCheckoutRequest**](../Model/\SquareConnect\Model\CreateCheckoutRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
