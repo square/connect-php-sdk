@@ -14,7 +14,7 @@ use \ArrayAccess;
  * @category Class
  * @package  SquareConnect
  * @author   Square Inc.
- * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://squareup.com/developers
  */
 class CatalogObject implements ArrayAccess
@@ -194,7 +194,7 @@ class CatalogObject implements ArrayAccess
 
     /**
      * Constructor
-     * @param mixed[] $data Associated array of property value initalizing the model
+     * @param mixed[] $data Associated array of property value initializing the model
      */
     public function __construct(array $data = null)
     {
