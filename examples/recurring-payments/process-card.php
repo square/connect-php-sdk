@@ -10,7 +10,7 @@ var_dump($_POST);
 $first_name = $_POST['fname'];
 $last_name = $_POST['lname'];
 $postal_code = $_POST['postal-code'];
-$location_id = 'CBASELVV0B_aG7ksORk9vMjMHqo';
+$location_id = '';
 
 
 // configure the SDK with your access token, and create a new api instance
@@ -69,6 +69,3 @@ try {
 	echo 'Exception when calling TransactionsApi->charge: ', $e->getMessage(), PHP_EOL;
 }
 ?>
-
-
-

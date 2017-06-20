@@ -11,7 +11,7 @@
     // Initializes the payment form. See the documentation for descriptions of
     // each of these parameters.
     var paymentForm = new SqPaymentForm({
-      applicationId: 'sandbox-sq0idp-gbQhcOCpmb2X4W1588Ky7A',
+      applicationId: '',
       inputClass: 'sq-input',
       cardNumber: {
         elementId: 'sq-card-number',
