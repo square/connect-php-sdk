@@ -14,7 +14,7 @@ use \ArrayAccess;
  * @category Class
  * @package  SquareConnect
  * @author   Square Inc.
- * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://squareup.com/developers
  */
 class ItemVariationLocationOverrides implements ArrayAccess
@@ -72,22 +72,22 @@ class ItemVariationLocationOverrides implements ArrayAccess
     );
   
     /**
-      * $location_id The ID of the location.
+      * $location_id The ID of the [location][#type-location].
       * @var string
       */
     protected $location_id;
     /**
-      * $price_money The price of the [CatalogItemVariation](#type-catalogitemvariation) at the given location, or blank for variable pricing.
+      * $price_money The price of the [CatalogItemVariation](#type-catalogitemvariation) at the given [location][#type-location], or blank for variable pricing.
       * @var \SquareConnect\Model\Money
       */
     protected $price_money;
     /**
-      * $pricing_type The pricing type (fixed or variable) for the [CatalogItemVariation](#type-catalogitemvariation) at the given location. See [CatalogPricingType](#type-catalogpricingtype) for all possible values.
+      * $pricing_type The pricing type (fixed or variable) for the [CatalogItemVariation](#type-catalogitemvariation) at the given [location][#type-location]. See [CatalogPricingType](#type-catalogpricingtype) for all possible values.
       * @var string
       */
     protected $pricing_type;
     /**
-      * $track_inventory If `true`, inventory tracking is active for the [CatalogItemVariation](#type-catalogitemvariation) at this location.
+      * $track_inventory If `true`, inventory tracking is active for the [CatalogItemVariation](#type-catalogitemvariation) at this [location][#type-location].
       * @var bool
       */
     protected $track_inventory;
@@ -104,7 +104,7 @@ class ItemVariationLocationOverrides implements ArrayAccess
 
     /**
      * Constructor
-     * @param mixed[] $data Associated array of property value initalizing the model
+     * @param mixed[] $data Associated array of property value initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -152,7 +152,7 @@ class ItemVariationLocationOverrides implements ArrayAccess
   
     /**
      * Sets location_id
-     * @param string $location_id The ID of the location.
+     * @param string $location_id The ID of the [location][#type-location].
      * @return $this
      */
     public function setLocationId($location_id)
@@ -171,7 +171,7 @@ class ItemVariationLocationOverrides implements ArrayAccess
   
     /**
      * Sets price_money
-     * @param \SquareConnect\Model\Money $price_money The price of the [CatalogItemVariation](#type-catalogitemvariation) at the given location, or blank for variable pricing.
+     * @param \SquareConnect\Model\Money $price_money The price of the [CatalogItemVariation](#type-catalogitemvariation) at the given [location][#type-location], or blank for variable pricing.
      * @return $this
      */
     public function setPriceMoney($price_money)
@@ -190,7 +190,7 @@ class ItemVariationLocationOverrides implements ArrayAccess
   
     /**
      * Sets pricing_type
-     * @param string $pricing_type The pricing type (fixed or variable) for the [CatalogItemVariation](#type-catalogitemvariation) at the given location. See [CatalogPricingType](#type-catalogpricingtype) for all possible values.
+     * @param string $pricing_type The pricing type (fixed or variable) for the [CatalogItemVariation](#type-catalogitemvariation) at the given [location][#type-location]. See [CatalogPricingType](#type-catalogpricingtype) for all possible values.
      * @return $this
      */
     public function setPricingType($pricing_type)
@@ -209,7 +209,7 @@ class ItemVariationLocationOverrides implements ArrayAccess
   
     /**
      * Sets track_inventory
-     * @param bool $track_inventory If `true`, inventory tracking is active for the [CatalogItemVariation](#type-catalogitemvariation) at this location.
+     * @param bool $track_inventory If `true`, inventory tracking is active for the [CatalogItemVariation](#type-catalogitemvariation) at this [location][#type-location].
      * @return $this
      */
     public function setTrackInventory($track_inventory)

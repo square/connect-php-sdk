@@ -14,7 +14,7 @@ use \ArrayAccess;
  * @category Class
  * @package  SquareConnect
  * @author   Square Inc.
- * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://squareup.com/developers
  */
 class SearchCatalogObjectsRequest implements ArrayAccess
@@ -96,7 +96,7 @@ class SearchCatalogObjectsRequest implements ArrayAccess
       */
     protected $include_related_objects;
     /**
-      * $begin_time Return only objects that have been modified after this [timestamp](#workingwithdates) (in RFC 3339 format, e.g., \"2016-09-04T23:59:33.123Z\").
+      * $begin_time Return only objects that have been modified after this [timestamp](#workingwithdates) (in RFC 3339 format, e.g., \"2016-09-04T23:59:33.123Z\"). The timestamp is exclusive - objects whose timestamp is equal to `begin_time` will not be included in the response.
       * @var string
       */
     protected $begin_time;
@@ -113,7 +113,7 @@ class SearchCatalogObjectsRequest implements ArrayAccess
 
     /**
      * Constructor
-     * @param mixed[] $data Associated array of property value initalizing the model
+     * @param mixed[] $data Associated array of property value initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -242,7 +242,7 @@ class SearchCatalogObjectsRequest implements ArrayAccess
   
     /**
      * Sets begin_time
-     * @param string $begin_time Return only objects that have been modified after this [timestamp](#workingwithdates) (in RFC 3339 format, e.g., \"2016-09-04T23:59:33.123Z\").
+     * @param string $begin_time Return only objects that have been modified after this [timestamp](#workingwithdates) (in RFC 3339 format, e.g., \"2016-09-04T23:59:33.123Z\"). The timestamp is exclusive - objects whose timestamp is equal to `begin_time` will not be included in the response.
      * @return $this
      */
     public function setBeginTime($begin_time)

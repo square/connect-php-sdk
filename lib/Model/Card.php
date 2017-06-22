@@ -14,7 +14,7 @@ use \ArrayAccess;
  * @category Class
  * @package  SquareConnect
  * @author   Square Inc.
- * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://squareup.com/developers
  */
 class Card implements ArrayAccess
@@ -30,7 +30,8 @@ class Card implements ArrayAccess
         'exp_month' => 'int',
         'exp_year' => 'int',
         'cardholder_name' => 'string',
-        'billing_address' => '\SquareConnect\Model\Address'
+        'billing_address' => '\SquareConnect\Model\Address',
+        'fingerprint' => 'string'
     );
   
     /** 
@@ -44,7 +45,8 @@ class Card implements ArrayAccess
         'exp_month' => 'exp_month',
         'exp_year' => 'exp_year',
         'cardholder_name' => 'cardholder_name',
-        'billing_address' => 'billing_address'
+        'billing_address' => 'billing_address',
+        'fingerprint' => 'fingerprint'
     );
   
     /**
@@ -58,7 +60,8 @@ class Card implements ArrayAccess
         'exp_month' => 'setExpMonth',
         'exp_year' => 'setExpYear',
         'cardholder_name' => 'setCardholderName',
-        'billing_address' => 'setBillingAddress'
+        'billing_address' => 'setBillingAddress',
+        'fingerprint' => 'setFingerprint'
     );
   
     /**
@@ -72,7 +75,8 @@ class Card implements ArrayAccess
         'exp_month' => 'getExpMonth',
         'exp_year' => 'getExpYear',
         'cardholder_name' => 'getCardholderName',
-        'billing_address' => 'getBillingAddress'
+        'billing_address' => 'getBillingAddress',
+        'fingerprint' => 'getFingerprint'
     );
   
     /**
@@ -110,10 +114,15 @@ class Card implements ArrayAccess
       * @var \SquareConnect\Model\Address
       */
     protected $billing_address;
+    /**
+      * $fingerprint The unique string fingerprint for the card.  The fingerprint is based on the credit card number and is unique to the merchant.  If a card is used at multiple locations for the same merchant, it will have the same fingerprint in each case. Note: Fingerprint may not exist on old transactions.
+      * @var string
+      */
+    protected $fingerprint;
 
     /**
      * Constructor
-     * @param mixed[] $data Associated array of property value initalizing the model
+     * @param mixed[] $data Associated array of property value initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -152,6 +161,11 @@ class Card implements ArrayAccess
               $this->billing_address = $data["billing_address"];
             } else {
               $this->billing_address = null;
+            }
+            if (isset($data["fingerprint"])) {
+              $this->fingerprint = $data["fingerprint"];
+            } else {
+              $this->fingerprint = null;
             }
         }
     }
@@ -286,6 +300,25 @@ class Card implements ArrayAccess
     public function setBillingAddress($billing_address)
     {
         $this->billing_address = $billing_address;
+        return $this;
+    }
+    /**
+     * Gets fingerprint
+     * @return string
+     */
+    public function getFingerprint()
+    {
+        return $this->fingerprint;
+    }
+  
+    /**
+     * Sets fingerprint
+     * @param string $fingerprint The unique string fingerprint for the card.  The fingerprint is based on the credit card number and is unique to the merchant.  If a card is used at multiple locations for the same merchant, it will have the same fingerprint in each case. Note: Fingerprint may not exist on old transactions.
+     * @return $this
+     */
+    public function setFingerprint($fingerprint)
+    {
+        $this->fingerprint = $fingerprint;
         return $this;
     }
     /**

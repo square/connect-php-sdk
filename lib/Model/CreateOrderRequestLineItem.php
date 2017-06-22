@@ -14,7 +14,7 @@ use \ArrayAccess;
  * @category Class
  * @package  SquareConnect
  * @author   Square Inc.
- * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://squareup.com/developers
  */
 class CreateOrderRequestLineItem implements ArrayAccess
@@ -26,7 +26,9 @@ class CreateOrderRequestLineItem implements ArrayAccess
     static $swaggerTypes = array(
         'name' => 'string',
         'quantity' => 'string',
-        'base_price_money' => '\SquareConnect\Model\Money'
+        'base_price_money' => '\SquareConnect\Model\Money',
+        'taxes' => '\SquareConnect\Model\CreateOrderRequestTax[]',
+        'discounts' => '\SquareConnect\Model\CreateOrderRequestDiscount[]'
     );
   
     /** 
@@ -36,7 +38,9 @@ class CreateOrderRequestLineItem implements ArrayAccess
     static $attributeMap = array(
         'name' => 'name',
         'quantity' => 'quantity',
-        'base_price_money' => 'base_price_money'
+        'base_price_money' => 'base_price_money',
+        'taxes' => 'taxes',
+        'discounts' => 'discounts'
     );
   
     /**
@@ -46,7 +50,9 @@ class CreateOrderRequestLineItem implements ArrayAccess
     static $setters = array(
         'name' => 'setName',
         'quantity' => 'setQuantity',
-        'base_price_money' => 'setBasePriceMoney'
+        'base_price_money' => 'setBasePriceMoney',
+        'taxes' => 'setTaxes',
+        'discounts' => 'setDiscounts'
     );
   
     /**
@@ -56,7 +62,9 @@ class CreateOrderRequestLineItem implements ArrayAccess
     static $getters = array(
         'name' => 'getName',
         'quantity' => 'getQuantity',
-        'base_price_money' => 'getBasePriceMoney'
+        'base_price_money' => 'getBasePriceMoney',
+        'taxes' => 'getTaxes',
+        'discounts' => 'getDiscounts'
     );
   
     /**
@@ -74,10 +82,20 @@ class CreateOrderRequestLineItem implements ArrayAccess
       * @var \SquareConnect\Model\Money
       */
     protected $base_price_money;
+    /**
+      * $taxes The taxes include the custom taxes.
+      * @var \SquareConnect\Model\CreateOrderRequestTax[]
+      */
+    protected $taxes;
+    /**
+      * $discounts The discounts include the custom discounts.
+      * @var \SquareConnect\Model\CreateOrderRequestDiscount[]
+      */
+    protected $discounts;
 
     /**
      * Constructor
-     * @param mixed[] $data Associated array of property value initalizing the model
+     * @param mixed[] $data Associated array of property value initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -96,6 +114,16 @@ class CreateOrderRequestLineItem implements ArrayAccess
               $this->base_price_money = $data["base_price_money"];
             } else {
               $this->base_price_money = null;
+            }
+            if (isset($data["taxes"])) {
+              $this->taxes = $data["taxes"];
+            } else {
+              $this->taxes = null;
+            }
+            if (isset($data["discounts"])) {
+              $this->discounts = $data["discounts"];
+            } else {
+              $this->discounts = null;
             }
         }
     }
@@ -154,6 +182,44 @@ class CreateOrderRequestLineItem implements ArrayAccess
     public function setBasePriceMoney($base_price_money)
     {
         $this->base_price_money = $base_price_money;
+        return $this;
+    }
+    /**
+     * Gets taxes
+     * @return \SquareConnect\Model\CreateOrderRequestTax[]
+     */
+    public function getTaxes()
+    {
+        return $this->taxes;
+    }
+  
+    /**
+     * Sets taxes
+     * @param \SquareConnect\Model\CreateOrderRequestTax[] $taxes The taxes include the custom taxes.
+     * @return $this
+     */
+    public function setTaxes($taxes)
+    {
+        $this->taxes = $taxes;
+        return $this;
+    }
+    /**
+     * Gets discounts
+     * @return \SquareConnect\Model\CreateOrderRequestDiscount[]
+     */
+    public function getDiscounts()
+    {
+        return $this->discounts;
+    }
+  
+    /**
+     * Sets discounts
+     * @param \SquareConnect\Model\CreateOrderRequestDiscount[] $discounts The discounts include the custom discounts.
+     * @return $this
+     */
+    public function setDiscounts($discounts)
+    {
+        $this->discounts = $discounts;
         return $this;
     }
     /**

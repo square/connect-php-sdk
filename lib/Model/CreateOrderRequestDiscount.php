@@ -9,23 +9,24 @@ namespace SquareConnect\Model;
 
 use \ArrayAccess;
 /**
- * CreateOrderRequestOrder Class Doc Comment
+ * CreateOrderRequestDiscount Class Doc Comment
  *
  * @category Class
  * @package  SquareConnect
  * @author   Square Inc.
- * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://squareup.com/developers
  */
-class CreateOrderRequestOrder implements ArrayAccess
+class CreateOrderRequestDiscount implements ArrayAccess
 {
     /**
       * Array of property to type mappings. Used for (de)serialization 
       * @var string[]
       */
     static $swaggerTypes = array(
-        'reference_id' => 'string',
-        'line_items' => '\SquareConnect\Model\CreateOrderRequestLineItem[]'
+        'name' => 'string',
+        'percentage' => 'string',
+        'amount_money' => '\SquareConnect\Model\Money'
     );
   
     /** 
@@ -33,8 +34,9 @@ class CreateOrderRequestOrder implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
-        'reference_id' => 'reference_id',
-        'line_items' => 'line_items'
+        'name' => 'name',
+        'percentage' => 'percentage',
+        'amount_money' => 'amount_money'
     );
   
     /**
@@ -42,8 +44,9 @@ class CreateOrderRequestOrder implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
-        'reference_id' => 'setReferenceId',
-        'line_items' => 'setLineItems'
+        'name' => 'setName',
+        'percentage' => 'setPercentage',
+        'amount_money' => 'setAmountMoney'
     );
   
     /**
@@ -51,76 +54,106 @@ class CreateOrderRequestOrder implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
-        'reference_id' => 'getReferenceId',
-        'line_items' => 'getLineItems'
+        'name' => 'getName',
+        'percentage' => 'getPercentage',
+        'amount_money' => 'getAmountMoney'
     );
   
     /**
-      * $reference_id An optional ID you can associate with the order for your own purposes (such as to associate the order with an entity ID in your own database).  This value cannot exceed 40 characters.
+      * $name The discount's name.
       * @var string
       */
-    protected $reference_id;
+    protected $name;
     /**
-      * $line_items The line items to associate with this order.  Each line item represents a different product (or a custom monetary amount) to include in a purchase.
-      * @var \SquareConnect\Model\CreateOrderRequestLineItem[]
+      * $percentage The percentage of the discount, as a string representation of a decimal number.  A value of `7.25` corresponds to a percentage of 7.25%. This value range between 0.0 up to 100.0
+      * @var string
       */
-    protected $line_items;
+    protected $percentage;
+    /**
+      * $amount_money The monetary amount of the discount.
+      * @var \SquareConnect\Model\Money
+      */
+    protected $amount_money;
 
     /**
      * Constructor
-     * @param mixed[] $data Associated array of property value initalizing the model
+     * @param mixed[] $data Associated array of property value initializing the model
      */
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            if (isset($data["reference_id"])) {
-              $this->reference_id = $data["reference_id"];
+            if (isset($data["name"])) {
+              $this->name = $data["name"];
             } else {
-              $this->reference_id = null;
+              $this->name = null;
             }
-            if (isset($data["line_items"])) {
-              $this->line_items = $data["line_items"];
+            if (isset($data["percentage"])) {
+              $this->percentage = $data["percentage"];
             } else {
-              $this->line_items = null;
+              $this->percentage = null;
+            }
+            if (isset($data["amount_money"])) {
+              $this->amount_money = $data["amount_money"];
+            } else {
+              $this->amount_money = null;
             }
         }
     }
     /**
-     * Gets reference_id
+     * Gets name
      * @return string
      */
-    public function getReferenceId()
+    public function getName()
     {
-        return $this->reference_id;
+        return $this->name;
     }
   
     /**
-     * Sets reference_id
-     * @param string $reference_id An optional ID you can associate with the order for your own purposes (such as to associate the order with an entity ID in your own database).  This value cannot exceed 40 characters.
+     * Sets name
+     * @param string $name The discount's name.
      * @return $this
      */
-    public function setReferenceId($reference_id)
+    public function setName($name)
     {
-        $this->reference_id = $reference_id;
+        $this->name = $name;
         return $this;
     }
     /**
-     * Gets line_items
-     * @return \SquareConnect\Model\CreateOrderRequestLineItem[]
+     * Gets percentage
+     * @return string
      */
-    public function getLineItems()
+    public function getPercentage()
     {
-        return $this->line_items;
+        return $this->percentage;
     }
   
     /**
-     * Sets line_items
-     * @param \SquareConnect\Model\CreateOrderRequestLineItem[] $line_items The line items to associate with this order.  Each line item represents a different product (or a custom monetary amount) to include in a purchase.
+     * Sets percentage
+     * @param string $percentage The percentage of the discount, as a string representation of a decimal number.  A value of `7.25` corresponds to a percentage of 7.25%. This value range between 0.0 up to 100.0
      * @return $this
      */
-    public function setLineItems($line_items)
+    public function setPercentage($percentage)
     {
-        $this->line_items = $line_items;
+        $this->percentage = $percentage;
+        return $this;
+    }
+    /**
+     * Gets amount_money
+     * @return \SquareConnect\Model\Money
+     */
+    public function getAmountMoney()
+    {
+        return $this->amount_money;
+    }
+  
+    /**
+     * Sets amount_money
+     * @param \SquareConnect\Model\Money $amount_money The monetary amount of the discount.
+     * @return $this
+     */
+    public function setAmountMoney($amount_money)
+    {
+        $this->amount_money = $amount_money;
         return $this;
     }
     /**

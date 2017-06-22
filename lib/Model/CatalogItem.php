@@ -14,7 +14,7 @@ use \ArrayAccess;
  * @category Class
  * @package  SquareConnect
  * @author   Square Inc.
- * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://squareup.com/developers
  */
 class CatalogItem implements ArrayAccess
@@ -119,7 +119,7 @@ class CatalogItem implements ArrayAccess
       */
     protected $abbreviation;
     /**
-      * $label_color The color of the item's display label in the Square Point of Sale app.  Searchable.
+      * $label_color The color of the item's display label in the Square Point of Sale app.
       * @var string
       */
     protected $label_color;
@@ -176,7 +176,7 @@ class CatalogItem implements ArrayAccess
 
     /**
      * Constructor
-     * @param mixed[] $data Associated array of property value initalizing the model
+     * @param mixed[] $data Associated array of property value initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -321,7 +321,7 @@ class CatalogItem implements ArrayAccess
   
     /**
      * Sets label_color
-     * @param string $label_color The color of the item's display label in the Square Point of Sale app.  Searchable.
+     * @param string $label_color The color of the item's display label in the Square Point of Sale app.
      * @return $this
      */
     public function setLabelColor($label_color)
