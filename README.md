@@ -227,8 +227,10 @@ Class | Method | HTTP request | Description
  - [CreateCustomerCardResponse](docs/Model/CreateCustomerCardResponse.md)
  - [CreateCustomerRequest](docs/Model/CreateCustomerRequest.md)
  - [CreateCustomerResponse](docs/Model/CreateCustomerResponse.md)
+ - [CreateOrderRequest](docs/Model/CreateOrderRequest.md)
+ - [CreateOrderRequestDiscount](docs/Model/CreateOrderRequestDiscount.md)
  - [CreateOrderRequestLineItem](docs/Model/CreateOrderRequestLineItem.md)
- - [CreateOrderRequestOrder](docs/Model/CreateOrderRequestOrder.md)
+ - [CreateOrderRequestTax](docs/Model/CreateOrderRequestTax.md)
  - [CreateRefundRequest](docs/Model/CreateRefundRequest.md)
  - [CreateRefundResponse](docs/Model/CreateRefundResponse.md)
  - [Currency](docs/Model/Currency.md)
@@ -262,6 +264,11 @@ Class | Method | HTTP request | Description
  - [Money](docs/Model/Money.md)
  - [Order](docs/Model/Order.md)
  - [OrderLineItem](docs/Model/OrderLineItem.md)
+ - [OrderLineItemDiscount](docs/Model/OrderLineItemDiscount.md)
+ - [OrderLineItemDiscountScope](docs/Model/OrderLineItemDiscountScope.md)
+ - [OrderLineItemDiscountType](docs/Model/OrderLineItemDiscountType.md)
+ - [OrderLineItemTax](docs/Model/OrderLineItemTax.md)
+ - [OrderLineItemTaxType](docs/Model/OrderLineItemTaxType.md)
  - [Refund](docs/Model/Refund.md)
  - [RefundStatus](docs/Model/RefundStatus.md)
  - [RetrieveCatalogObjectRequest](docs/Model/RetrieveCatalogObjectRequest.md)
@@ -350,8 +357,8 @@ Class | Method | HTTP request | Description
  - **BANK_ACCOUNTS_READ**: GET endpoints related to a merchant's bank accounts
  - **ITEMS_READ**: GET endpoints related to a merchant's item library
  - **ITEMS_WRITE**: POST, PUT, and DELETE endpoints related to a merchant's item library
- - **ORDERS_READ**: GET endpoints related to a merchant's Square online store.
- - **ORDERS_WRITE**: POST, PUT, and DELETE endpoints related to a merchant's Square online store
+ - **ORDERS_READ**: GET endpoints related to a merchant's orders
+ - **ORDERS_WRITE**: POST, PUT, and DELETE endpoints related to a merchant's orders
  - **EMPLOYEES_READ**: GET endpoints related to employee management
  - **EMPLOYEES_WRITE**: POST, PUT, and DELETE endpoints related to employee management
  - **TIMECARDS_READ**: GET endpoints related to employee timecards

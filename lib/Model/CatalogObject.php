@@ -14,7 +14,7 @@ use \ArrayAccess;
  * @category Class
  * @package  SquareConnect
  * @author   Square Inc.
- * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://squareup.com/developers
  */
 class CatalogObject implements ArrayAccess
@@ -117,7 +117,7 @@ class CatalogObject implements ArrayAccess
       */
     protected $type;
     /**
-      * $id A unique Square-assigned identifier to reference this object in the catalog.
+      * $id An identifier to reference this object in the catalog. When a new CatalogObject is inserted, the client should set the id to a temporary identifier starting with a `'#'` character. Other objects being inserted or updated within the same request may use this identifier to refer to the new object.  When the server receives the new object, it will supply a unique identifier that replaces the temporary identifier for all future references.
       * @var string
       */
     protected $id;
@@ -132,12 +132,12 @@ class CatalogObject implements ArrayAccess
       */
     protected $version;
     /**
-      * $is_deleted If `true`, the object has been deleted from the database. Must be `false` for new objects being inserted. When deleted, the `updated_at` field will equal the deletion time. being inserted. When deleted, the `updated_at` field will equal the deletion time.
+      * $is_deleted If `true`, the object has been deleted from the database. Must be `false` for new objects being inserted. When deleted, the `updated_at` field will equal the deletion time.
       * @var bool
       */
     protected $is_deleted;
     /**
-      * $catalog_v1_ids The Connect V1 IDs for this object at each location where it is present, where they differ from the object's Connect V2 ID. The field will only be present for objects that have been created or modified by legacy APIs.
+      * $catalog_v1_ids The Connect V1 IDs for this object at each [location][#type-location] where it is present, where they differ from the object's Connect V2 ID. The field will only be present for objects that have been created or modified by legacy APIs.
       * @var \SquareConnect\Model\CatalogV1Id[]
       */
     protected $catalog_v1_ids;
@@ -194,7 +194,7 @@ class CatalogObject implements ArrayAccess
 
     /**
      * Constructor
-     * @param mixed[] $data Associated array of property value initalizing the model
+     * @param mixed[] $data Associated array of property value initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -311,7 +311,7 @@ class CatalogObject implements ArrayAccess
   
     /**
      * Sets id
-     * @param string $id A unique Square-assigned identifier to reference this object in the catalog.
+     * @param string $id An identifier to reference this object in the catalog. When a new CatalogObject is inserted, the client should set the id to a temporary identifier starting with a `'#'` character. Other objects being inserted or updated within the same request may use this identifier to refer to the new object.  When the server receives the new object, it will supply a unique identifier that replaces the temporary identifier for all future references.
      * @return $this
      */
     public function setId($id)
@@ -368,7 +368,7 @@ class CatalogObject implements ArrayAccess
   
     /**
      * Sets is_deleted
-     * @param bool $is_deleted If `true`, the object has been deleted from the database. Must be `false` for new objects being inserted. When deleted, the `updated_at` field will equal the deletion time. being inserted. When deleted, the `updated_at` field will equal the deletion time.
+     * @param bool $is_deleted If `true`, the object has been deleted from the database. Must be `false` for new objects being inserted. When deleted, the `updated_at` field will equal the deletion time.
      * @return $this
      */
     public function setIsDeleted($is_deleted)
@@ -387,7 +387,7 @@ class CatalogObject implements ArrayAccess
   
     /**
      * Sets catalog_v1_ids
-     * @param \SquareConnect\Model\CatalogV1Id[] $catalog_v1_ids The Connect V1 IDs for this object at each location where it is present, where they differ from the object's Connect V2 ID. The field will only be present for objects that have been created or modified by legacy APIs.
+     * @param \SquareConnect\Model\CatalogV1Id[] $catalog_v1_ids The Connect V1 IDs for this object at each [location][#type-location] where it is present, where they differ from the object's Connect V2 ID. The field will only be present for objects that have been created or modified by legacy APIs.
      * @return $this
      */
     public function setCatalogV1Ids($catalog_v1_ids)

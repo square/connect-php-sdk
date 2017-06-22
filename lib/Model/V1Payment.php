@@ -14,7 +14,7 @@ use \ArrayAccess;
  * @category Class
  * @package  SquareConnect
  * @author   Square Inc.
- * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
+ * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://squareup.com/developers
  */
 class V1Payment implements ArrayAccess
@@ -27,7 +27,7 @@ class V1Payment implements ArrayAccess
         'id' => 'string',
         'merchant_id' => 'string',
         'created_at' => 'string',
-        'creator_id' => 'bool',
+        'creator_id' => 'string',
         'device' => '\SquareConnect\Model\Device',
         'payment_url' => 'string',
         'receipt_url' => 'string',
@@ -160,7 +160,7 @@ class V1Payment implements ArrayAccess
     protected $created_at;
     /**
       * $creator_id The unique identifier of the Square account that took the payment.
-      * @var bool
+      * @var string
       */
     protected $creator_id;
     /**
@@ -266,7 +266,7 @@ class V1Payment implements ArrayAccess
 
     /**
      * Constructor
-     * @param mixed[] $data Associated array of property value initalizing the model
+     * @param mixed[] $data Associated array of property value initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -452,7 +452,7 @@ class V1Payment implements ArrayAccess
     }
     /**
      * Gets creator_id
-     * @return bool
+     * @return string
      */
     public function getCreatorId()
     {
@@ -461,7 +461,7 @@ class V1Payment implements ArrayAccess
   
     /**
      * Sets creator_id
-     * @param bool $creator_id The unique identifier of the Square account that took the payment.
+     * @param string $creator_id The unique identifier of the Square account that took the payment.
      * @return $this
      */
     public function setCreatorId($creator_id)
