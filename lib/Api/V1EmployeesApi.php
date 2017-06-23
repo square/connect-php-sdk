@@ -254,12 +254,13 @@ class V1EmployeesApi
      * Creates a timecard for an employee. Each timecard corresponds to a single shift.
      *
      * @param \SquareConnect\Model\V1Timecard $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
+     * @param string $batch_token A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)
      * @return \SquareConnect\Model\V1Timecard
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function createTimecard($body)
+    public function createTimecard($body, $batch_token = null)
     {
-        list($response, $statusCode, $httpHeader) = $this->createTimecardWithHttpInfo ($body);
+        list($response, $statusCode, $httpHeader) = $this->createTimecardWithHttpInfo ($body, $batch_token);
         return $response; 
     }
 
@@ -270,10 +271,11 @@ class V1EmployeesApi
      * Creates a timecard for an employee. Each timecard corresponds to a single shift.
      *
      * @param \SquareConnect\Model\V1Timecard $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
+     * @param string $batch_token A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)
      * @return Array of \SquareConnect\Model\V1Timecard, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function createTimecardWithHttpInfo($body)
+    public function createTimecardWithHttpInfo($body, $batch_token = null)
     {
         
         // verify the required parameter 'body' is set
@@ -293,7 +295,10 @@ class V1EmployeesApi
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
   
-        
+        // query params
+        if ($batch_token !== null) {
+            $queryParams['batch_token'] = $this->apiClient->getSerializer()->toQueryValue($batch_token);
+        }
         
         
         // default format to json
@@ -552,13 +557,13 @@ class V1EmployeesApi
      *
      * @param string $order The order in which employees are listed in the response, based on their created_at field.Default value: ASC (optional)
      * @param int $limit The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)
-     * @param string $cursor A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)
+     * @param string $batch_token A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)
      * @return \SquareConnect\Model\V1EmployeeRole[]
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function listEmployeeRoles($order = null, $limit = null, $cursor = null)
+    public function listEmployeeRoles($order = null, $limit = null, $batch_token = null)
     {
-        list($response, $statusCode, $httpHeader) = $this->listEmployeeRolesWithHttpInfo ($order, $limit, $cursor);
+        list($response, $statusCode, $httpHeader) = $this->listEmployeeRolesWithHttpInfo ($order, $limit, $batch_token);
         return $response; 
     }
 
@@ -570,11 +575,11 @@ class V1EmployeesApi
      *
      * @param string $order The order in which employees are listed in the response, based on their created_at field.Default value: ASC (optional)
      * @param int $limit The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)
-     * @param string $cursor A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)
+     * @param string $batch_token A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)
      * @return Array of \SquareConnect\Model\V1EmployeeRole[], HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function listEmployeeRolesWithHttpInfo($order = null, $limit = null, $cursor = null)
+    public function listEmployeeRolesWithHttpInfo($order = null, $limit = null, $batch_token = null)
     {
         
   
@@ -597,8 +602,8 @@ class V1EmployeesApi
         if ($limit !== null) {
             $queryParams['limit'] = $this->apiClient->getSerializer()->toQueryValue($limit);
         }// query params
-        if ($cursor !== null) {
-            $queryParams['cursor'] = $this->apiClient->getSerializer()->toQueryValue($cursor);
+        if ($batch_token !== null) {
+            $queryParams['batch_token'] = $this->apiClient->getSerializer()->toQueryValue($batch_token);
         }
         
         
@@ -655,12 +660,13 @@ class V1EmployeesApi
      * @param string $status If provided, the endpoint returns only employee entities with the specified status (ACTIVE or INACTIVE). (optional)
      * @param string $external_id If provided, the endpoint returns only employee entities with the specified external_id. (optional)
      * @param int $limit The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)
+     * @param string $batch_token A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)
      * @return \SquareConnect\Model\V1Employee[]
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function listEmployees($order = null, $begin_updated_at = null, $end_updated_at = null, $begin_created_at = null, $end_created_at = null, $status = null, $external_id = null, $limit = null)
+    public function listEmployees($order = null, $begin_updated_at = null, $end_updated_at = null, $begin_created_at = null, $end_created_at = null, $status = null, $external_id = null, $limit = null, $batch_token = null)
     {
-        list($response, $statusCode, $httpHeader) = $this->listEmployeesWithHttpInfo ($order, $begin_updated_at, $end_updated_at, $begin_created_at, $end_created_at, $status, $external_id, $limit);
+        list($response, $statusCode, $httpHeader) = $this->listEmployeesWithHttpInfo ($order, $begin_updated_at, $end_updated_at, $begin_created_at, $end_created_at, $status, $external_id, $limit, $batch_token);
         return $response; 
     }
 
@@ -678,10 +684,11 @@ class V1EmployeesApi
      * @param string $status If provided, the endpoint returns only employee entities with the specified status (ACTIVE or INACTIVE). (optional)
      * @param string $external_id If provided, the endpoint returns only employee entities with the specified external_id. (optional)
      * @param int $limit The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. (optional)
+     * @param string $batch_token A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)
      * @return Array of \SquareConnect\Model\V1Employee[], HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function listEmployeesWithHttpInfo($order = null, $begin_updated_at = null, $end_updated_at = null, $begin_created_at = null, $end_created_at = null, $status = null, $external_id = null, $limit = null)
+    public function listEmployeesWithHttpInfo($order = null, $begin_updated_at = null, $end_updated_at = null, $begin_created_at = null, $end_created_at = null, $status = null, $external_id = null, $limit = null, $batch_token = null)
     {
         
   
@@ -721,6 +728,9 @@ class V1EmployeesApi
         }// query params
         if ($limit !== null) {
             $queryParams['limit'] = $this->apiClient->getSerializer()->toQueryValue($limit);
+        }// query params
+        if ($batch_token !== null) {
+            $queryParams['batch_token'] = $this->apiClient->getSerializer()->toQueryValue($batch_token);
         }
         
         

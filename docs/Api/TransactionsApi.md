@@ -96,7 +96,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the location to associate the created transaction with. |
- **body** | [**\SquareConnect\Model\ChargeRequest**](../Model/ChargeRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\ChargeRequest**](../Model/\SquareConnect\Model\ChargeRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -148,7 +148,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the original transaction&#39;s associated location. |
  **transaction_id** | **string**| The ID of the original transaction that includes the tender to refund. |
- **body** | [**\SquareConnect\Model\CreateRefundRequest**](../Model/CreateRefundRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\CreateRefundRequest**](../Model/\SquareConnect\Model\CreateRefundRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
