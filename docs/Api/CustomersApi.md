@@ -44,7 +44,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\SquareConnect\Model\CreateCustomerRequest**](../Model/CreateCustomerRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\CreateCustomerRequest**](../Model/\SquareConnect\Model\CreateCustomerRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -94,7 +94,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customer_id** | **string**| The ID of the customer to link the card on file to. |
- **body** | [**\SquareConnect\Model\CreateCustomerCardRequest**](../Model/CreateCustomerCardRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\CreateCustomerCardRequest**](../Model/\SquareConnect\Model\CreateCustomerCardRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -338,7 +338,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customer_id** | **string**| The ID of the customer to update. |
- **body** | [**\SquareConnect\Model\UpdateCustomerRequest**](../Model/UpdateCustomerRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\UpdateCustomerRequest**](../Model/\SquareConnect\Model\UpdateCustomerRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 

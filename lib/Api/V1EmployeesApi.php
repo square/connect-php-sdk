@@ -254,12 +254,13 @@ class V1EmployeesApi
      * Creates a timecard for an employee. Each timecard corresponds to a single shift.
      *
      * @param \SquareConnect\Model\V1Timecard $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
+     * @param string $batch_token A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)
      * @return \SquareConnect\Model\V1Timecard
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function createTimecard($body)
+    public function createTimecard($body, $batch_token = null)
     {
-        list($response, $statusCode, $httpHeader) = $this->createTimecardWithHttpInfo ($body);
+        list($response, $statusCode, $httpHeader) = $this->createTimecardWithHttpInfo ($body, $batch_token);
         return $response; 
     }
 
@@ -270,10 +271,11 @@ class V1EmployeesApi
      * Creates a timecard for an employee. Each timecard corresponds to a single shift.
      *
      * @param \SquareConnect\Model\V1Timecard $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
+     * @param string $batch_token A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)
      * @return Array of \SquareConnect\Model\V1Timecard, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function createTimecardWithHttpInfo($body)
+    public function createTimecardWithHttpInfo($body, $batch_token = null)
     {
         
         // verify the required parameter 'body' is set
@@ -293,7 +295,10 @@ class V1EmployeesApi
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
   
-        
+        // query params
+        if ($batch_token !== null) {
+            $queryParams['batch_token'] = $this->apiClient->getSerializer()->toQueryValue($batch_token);
+        }
         
         
         // default format to json

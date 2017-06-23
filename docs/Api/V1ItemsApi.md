@@ -353,7 +353,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createItem**
-> \SquareConnect\Model\V1Item createItem($location_id, $body)
+> \SquareConnect\Model\V1Item createItem($location_id, $body, $batch_token)
 
 Creates an item and at least one variation for it.
 
@@ -370,9 +370,10 @@ SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACC
 $api_instance = new SquareConnect\Api\V1ItemsApi();
 $location_id = "location_id_example"; // string | The ID of the location to create an item for.
 $body = new \SquareConnect\Model\V1Item(); // \SquareConnect\Model\V1Item | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
+$batch_token = "batch_token_example"; // string | A pagination cursor to retrieve the next set of results for your original query to the endpoint.
 
 try {
-    $result = $api_instance->createItem($location_id, $body);
+    $result = $api_instance->createItem($location_id, $body, $batch_token);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling V1ItemsApi->createItem: ', $e->getMessage(), PHP_EOL;

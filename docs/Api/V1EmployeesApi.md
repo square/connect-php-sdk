@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createTimecard**
-> \SquareConnect\Model\V1Timecard createTimecard($body)
+> \SquareConnect\Model\V1Timecard createTimecard($body, $batch_token)
 
 Creates a timecard for an employee. Each timecard corresponds to a single shift.
 
@@ -135,9 +135,10 @@ SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACC
 
 $api_instance = new SquareConnect\Api\V1EmployeesApi();
 $body = new \SquareConnect\Model\V1Timecard(); // \SquareConnect\Model\V1Timecard | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
+$batch_token = "batch_token_example"; // string | A pagination cursor to retrieve the next set of results for your original query to the endpoint.
 
 try {
-    $result = $api_instance->createTimecard($body);
+    $result = $api_instance->createTimecard($body, $batch_token);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling V1EmployeesApi->createTimecard: ', $e->getMessage(), PHP_EOL;
