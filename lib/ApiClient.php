@@ -277,6 +277,35 @@ class ApiClient
         }
     }
 
+    /**
+     * Return a batch_token if present on the Link header or null if no token
+     * is present
+     *
+     * @param string[] Array of HTTP response heaers
+     *
+     * @return
+     */
+    public static function getV1BatchTokenFromHeaders($http_headers) {
+        if (is_array($http_headers) && isset($http_headers['Link']))
+        {
+            $links = \phpish\link_header\parse($http_headers['Link']);
+            if (isset($links['next']) && !empty($links['next']) && isset($links['next'][0]['uri']))
+            {
+                $link_uri = $links['next'][0]['uri'];
+                if ($query = parse_url($link_uri, PHP_URL_QUERY))
+                {
+                    parse_str($query, $query_params);
+                    if ($query_params && isset($query_params['batch_token']))
+                    {
+                        return $query_params['batch_token'];
+                    }
+                }
+            }
+        }
+
+        return null;
+    }
+
    /**
     * Return an array of HTTP response headers
     *
