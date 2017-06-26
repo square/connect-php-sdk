@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createTimecard**
-> \SquareConnect\Model\V1Timecard createTimecard($body, $batch_token)
+> \SquareConnect\Model\V1Timecard createTimecard($body)
 
 Creates a timecard for an employee. Each timecard corresponds to a single shift.
 
@@ -135,10 +135,9 @@ SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACC
 
 $api_instance = new SquareConnect\Api\V1EmployeesApi();
 $body = new \SquareConnect\Model\V1Timecard(); // \SquareConnect\Model\V1Timecard | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
-$batch_token = "batch_token_example"; // string | A pagination cursor to retrieve the next set of results for your original query to the endpoint.
 
 try {
-    $result = $api_instance->createTimecard($body, $batch_token);
+    $result = $api_instance->createTimecard($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling V1EmployeesApi->createTimecard: ', $e->getMessage(), PHP_EOL;
@@ -151,7 +150,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**\SquareConnect\Model\V1Timecard**](../Model/\SquareConnect\Model\V1Timecard.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
- **batch_token** | **string**| A pagination cursor to retrieve the next set of results for your original query to the endpoint. | [optional]
 
 ### Return type
 
@@ -435,7 +433,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listTimecards**
-> \SquareConnect\Model\V1Timecard[] listTimecards($order, $employee_id, $begin_clockin_time, $end_clockin_time, $begin_clockout_time, $end_clockout_time, $begin_updated_at, $end_updated_at, $deleted, $limit, $cursor)
+> \SquareConnect\Model\V1Timecard[] listTimecards($order, $employee_id, $begin_clockin_time, $end_clockin_time, $begin_clockout_time, $end_clockout_time, $begin_updated_at, $end_updated_at, $deleted, $limit, $batch_token)
 
 Provides summary information for all of a business's employee timecards.
 
@@ -460,10 +458,10 @@ $begin_updated_at = "begin_updated_at_example"; // string | If filtering results
 $end_updated_at = "end_updated_at_example"; // string | If filtering results by their updated_at field, the end of the requested reporting period, in ISO 8601 format.
 $deleted = true; // bool | If true, only deleted timecards are returned. If false, only valid timecards are returned.If you don't provide this parameter, both valid and deleted timecards are returned.
 $limit = 56; // int | The maximum integer number of employee entities to return in a single response. Default 100, maximum 200.
-$cursor = "cursor_example"; // string | A pagination cursor to retrieve the next set of results for your original query to the endpoint.
+$batch_token = "batch_token_example"; // string | A pagination cursor to retrieve the next set of results for your original query to the endpoint.
 
 try {
-    $result = $api_instance->listTimecards($order, $employee_id, $begin_clockin_time, $end_clockin_time, $begin_clockout_time, $end_clockout_time, $begin_updated_at, $end_updated_at, $deleted, $limit, $cursor);
+    $result = $api_instance->listTimecards($order, $employee_id, $begin_clockin_time, $end_clockin_time, $begin_clockout_time, $end_clockout_time, $begin_updated_at, $end_updated_at, $deleted, $limit, $batch_token);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling V1EmployeesApi->listTimecards: ', $e->getMessage(), PHP_EOL;
@@ -485,7 +483,7 @@ Name | Type | Description  | Notes
  **end_updated_at** | **string**| If filtering results by their updated_at field, the end of the requested reporting period, in ISO 8601 format. | [optional]
  **deleted** | **bool**| If true, only deleted timecards are returned. If false, only valid timecards are returned.If you don&#39;t provide this parameter, both valid and deleted timecards are returned. | [optional]
  **limit** | **int**| The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. | [optional]
- **cursor** | **string**| A pagination cursor to retrieve the next set of results for your original query to the endpoint. | [optional]
+ **batch_token** | **string**| A pagination cursor to retrieve the next set of results for your original query to the endpoint. | [optional]
 
 ### Return type
 

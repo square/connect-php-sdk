@@ -353,7 +353,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createItem**
-> \SquareConnect\Model\V1Item createItem($location_id, $body, $batch_token)
+> \SquareConnect\Model\V1Item createItem($location_id, $body)
 
 Creates an item and at least one variation for it.
 
@@ -370,10 +370,9 @@ SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACC
 $api_instance = new SquareConnect\Api\V1ItemsApi();
 $location_id = "location_id_example"; // string | The ID of the location to create an item for.
 $body = new \SquareConnect\Model\V1Item(); // \SquareConnect\Model\V1Item | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
-$batch_token = "batch_token_example"; // string | A pagination cursor to retrieve the next set of results for your original query to the endpoint.
 
 try {
-    $result = $api_instance->createItem($location_id, $body, $batch_token);
+    $result = $api_instance->createItem($location_id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling V1ItemsApi->createItem: ', $e->getMessage(), PHP_EOL;
@@ -387,7 +386,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the location to create an item for. |
  **body** | [**\SquareConnect\Model\V1Item**](../Model/\SquareConnect\Model\V1Item.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
- **batch_token** | **string**| A pagination cursor to retrieve the next set of results for your original query to the endpoint. | [optional]
 
 ### Return type
 
@@ -1263,7 +1261,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listItems**
-> \SquareConnect\Model\V1Item[] listItems($location_id)
+> \SquareConnect\Model\V1Item[] listItems($location_id, $batch_token)
 
 Provides summary information for all of a location's items.
 
@@ -1279,9 +1277,10 @@ SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACC
 
 $api_instance = new SquareConnect\Api\V1ItemsApi();
 $location_id = "location_id_example"; // string | The ID of the location to list items for.
+$batch_token = "batch_token_example"; // string | A pagination cursor to retrieve the next set of results for your original query to the endpoint.
 
 try {
-    $result = $api_instance->listItems($location_id);
+    $result = $api_instance->listItems($location_id, $batch_token);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling V1ItemsApi->listItems: ', $e->getMessage(), PHP_EOL;
@@ -1294,6 +1293,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the location to list items for. |
+ **batch_token** | **string**| A pagination cursor to retrieve the next set of results for your original query to the endpoint. | [optional]
 
 ### Return type
 
