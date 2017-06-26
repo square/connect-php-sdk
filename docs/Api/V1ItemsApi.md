@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the item&#39;s associated location. |
  **variation_id** | **string**| The ID of the variation to adjust inventory information for. |
- **body** | [**\SquareConnect\Model\V1AdjustInventoryRequest**](../Model/v1AdjustInventoryRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1AdjustInventoryRequest**](../Model/\SquareConnect\Model\V1AdjustInventoryRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -235,7 +235,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the location to create an item for. |
- **body** | [**\SquareConnect\Model\V1Category**](../Model/v1Category.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Category**](../Model/\SquareConnect\Model\V1Category.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -285,7 +285,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the location to create an item for. |
- **body** | [**\SquareConnect\Model\V1Discount**](../Model/v1Discount.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Discount**](../Model/\SquareConnect\Model\V1Discount.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -335,7 +335,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the location to create a fee for. |
- **body** | [**\SquareConnect\Model\V1Fee**](../Model/v1Fee.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Fee**](../Model/\SquareConnect\Model\V1Fee.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -385,7 +385,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the location to create an item for. |
- **body** | [**\SquareConnect\Model\V1Item**](../Model/v1Item.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Item**](../Model/\SquareConnect\Model\V1Item.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -435,7 +435,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the location to create a modifier list for. |
- **body** | [**\SquareConnect\Model\V1ModifierList**](../Model/v1ModifierList.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1ModifierList**](../Model/\SquareConnect\Model\V1ModifierList.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -487,7 +487,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the item&#39;s associated location. |
  **modifier_list_id** | **string**| The ID of the modifier list to edit. |
- **body** | [**\SquareConnect\Model\V1ModifierOption**](../Model/v1ModifierOption.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1ModifierOption**](../Model/\SquareConnect\Model\V1ModifierOption.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -537,7 +537,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the location to create an item for. |
- **body** | [**\SquareConnect\Model\V1Page**](../Model/v1Page.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Page**](../Model/\SquareConnect\Model\V1Page.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -589,7 +589,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the item&#39;s associated location. |
  **item_id** | **string**| The item&#39;s ID. |
- **body** | [**\SquareConnect\Model\V1Variation**](../Model/v1Variation.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Variation**](../Model/\SquareConnect\Model\V1Variation.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -1641,7 +1641,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the category&#39;s associated location. |
  **category_id** | **string**| The ID of the category to edit. |
- **body** | [**\SquareConnect\Model\V1Category**](../Model/v1Category.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Category**](../Model/\SquareConnect\Model\V1Category.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -1693,7 +1693,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the category&#39;s associated location. |
  **discount_id** | **string**| The ID of the discount to edit. |
- **body** | [**\SquareConnect\Model\V1Discount**](../Model/v1Discount.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Discount**](../Model/\SquareConnect\Model\V1Discount.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -1745,7 +1745,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the fee&#39;s associated location. |
  **fee_id** | **string**| The ID of the fee to edit. |
- **body** | [**\SquareConnect\Model\V1Fee**](../Model/v1Fee.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Fee**](../Model/\SquareConnect\Model\V1Fee.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -1797,7 +1797,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the item&#39;s associated location. |
  **item_id** | **string**| The ID of the item to modify. |
- **body** | [**\SquareConnect\Model\V1Item**](../Model/v1Item.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Item**](../Model/\SquareConnect\Model\V1Item.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -1849,7 +1849,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the item&#39;s associated location. |
  **modifier_list_id** | **string**| The ID of the modifier list to edit. |
- **body** | [**\SquareConnect\Model\V1UpdateModifierListRequest**](../Model/v1UpdateModifierListRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1UpdateModifierListRequest**](../Model/\SquareConnect\Model\V1UpdateModifierListRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -1903,7 +1903,7 @@ Name | Type | Description  | Notes
  **location_id** | **string**| The ID of the item&#39;s associated location. |
  **modifier_list_id** | **string**| The ID of the modifier list to edit. |
  **modifier_option_id** | **string**| The ID of the modifier list to edit. |
- **body** | [**\SquareConnect\Model\V1ModifierOption**](../Model/v1ModifierOption.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1ModifierOption**](../Model/\SquareConnect\Model\V1ModifierOption.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -1955,7 +1955,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the Favorites page&#39;s associated location |
  **page_id** | **string**| The ID of the page to modify. |
- **body** | [**\SquareConnect\Model\V1Page**](../Model/v1Page.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Page**](../Model/\SquareConnect\Model\V1Page.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -2007,7 +2007,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the Favorites page&#39;s associated location. |
  **page_id** | **string**| The ID of the page the cell belongs to. |
- **body** | [**\SquareConnect\Model\V1PageCell**](../Model/v1PageCell.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1PageCell**](../Model/\SquareConnect\Model\V1PageCell.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -2061,7 +2061,7 @@ Name | Type | Description  | Notes
  **location_id** | **string**| The ID of the item&#39;s associated location. |
  **item_id** | **string**| The ID of the item to modify. |
  **variation_id** | **string**| The ID of the variation to modify. |
- **body** | [**\SquareConnect\Model\V1Variation**](../Model/v1Variation.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Variation**](../Model/\SquareConnect\Model\V1Variation.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 

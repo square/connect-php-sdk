@@ -50,7 +50,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the original payment&#39;s associated location. |
- **body** | [**\SquareConnect\Model\V1CreateRefundRequest**](../Model/v1CreateRefundRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1CreateRefundRequest**](../Model/\SquareConnect\Model\V1CreateRefundRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -572,7 +572,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the order&#39;s associated location. |
  **order_id** | **string**| The order&#39;s Square-issued ID. You obtain this value from Order objects returned by the List Orders endpoint |
- **body** | [**\SquareConnect\Model\V1UpdateOrderRequest**](../Model/v1UpdateOrderRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1UpdateOrderRequest**](../Model/\SquareConnect\Model\V1UpdateOrderRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 

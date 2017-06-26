@@ -53,7 +53,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\SquareConnect\Model\V1Employee**](../Model/v1Employee.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Employee**](../Model/\SquareConnect\Model\V1Employee.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -101,7 +101,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **employee_role** | [**\SquareConnect\Model\V1EmployeeRole**](../Model/v1EmployeeRole.md)| An EmployeeRole object with a name and permissions, and an optional owner flag. |
+ **employee_role** | [**\SquareConnect\Model\V1EmployeeRole**](../Model/\SquareConnect\Model\V1EmployeeRole.md)| An EmployeeRole object with a name and permissions, and an optional owner flag. |
 
 ### Return type
 
@@ -149,7 +149,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\SquareConnect\Model\V1Timecard**](../Model/v1Timecard.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Timecard**](../Model/\SquareConnect\Model\V1Timecard.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -723,7 +723,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **employee_id** | **string**| The ID of the role to modify. |
- **body** | [**\SquareConnect\Model\V1Employee**](../Model/v1Employee.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Employee**](../Model/\SquareConnect\Model\V1Employee.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -773,7 +773,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **role_id** | **string**| The ID of the role to modify. |
- **body** | [**\SquareConnect\Model\V1EmployeeRole**](../Model/v1EmployeeRole.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1EmployeeRole**](../Model/\SquareConnect\Model\V1EmployeeRole.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -823,7 +823,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **timecard_id** | **string**| TThe ID of the timecard to modify. |
- **body** | [**\SquareConnect\Model\V1Timecard**](../Model/v1Timecard.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Timecard**](../Model/\SquareConnect\Model\V1Timecard.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
