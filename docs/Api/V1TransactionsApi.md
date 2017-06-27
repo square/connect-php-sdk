@@ -34,7 +34,7 @@ SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACC
 
 $api_instance = new SquareConnect\Api\V1TransactionsApi();
 $location_id = "location_id_example"; // string | The ID of the original payment's associated location.
-$body = new \SquareConnect\Model\v1CreateRefundRequest(); // \SquareConnect\Model\V1CreateRefundRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
+$body = new \SquareConnect\Model\V1CreateRefundRequest(); // \SquareConnect\Model\V1CreateRefundRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
     $result = $api_instance->createRefund($location_id, $body);
@@ -563,7 +563,7 @@ SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACC
 $api_instance = new SquareConnect\Api\V1TransactionsApi();
 $location_id = "location_id_example"; // string | The ID of the order's associated location.
 $order_id = "order_id_example"; // string | The order's Square-issued ID. You obtain this value from Order objects returned by the List Orders endpoint
-$body = new \SquareConnect\Model\v1UpdateOrderRequest(); // \SquareConnect\Model\V1UpdateOrderRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
+$body = new \SquareConnect\Model\V1UpdateOrderRequest(); // \SquareConnect\Model\V1UpdateOrderRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
     $result = $api_instance->updateOrder($location_id, $order_id, $body);
