@@ -19,7 +19,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "git@github.com:phpish/link_header.git"
+            "url": "https://github.com/phpish/link_header.git"
         }
     ],
     "require": {
