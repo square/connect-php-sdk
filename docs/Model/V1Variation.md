@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **id** | **string** | The item variation&#39;s unique ID. | [optional] 
 **name** | **string** | The item variation&#39;s name. | [optional] 
 **item_id** | **string** | The ID of the variation&#39;s associated item. | [optional] 
+**ordinal** | **int** | Indicates the variation&#39;s list position when displayed in Square Register and the merchant dashboard. If more than one variation for the same item has the same ordinal value, those variations are displayed in alphabetical order | [optional] 
 **pricing_type** | **string** | Indicates whether the item variation&#39;s price is fixed or determined at the time of sale. | [optional] 
 **price_money** | [**\SquareConnect\Model\V1Money**](V1Money.md) | The item variation&#39;s price, if any. | [optional] 
 **sku** | **string** | The item variation&#39;s SKU, if any. | [optional] 
