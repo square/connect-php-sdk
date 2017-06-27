@@ -64,7 +64,7 @@ SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACC
 $api_instance = new SquareConnect\Api\V1ItemsApi();
 $location_id = "location_id_example"; // string | The ID of the item's associated location.
 $variation_id = "variation_id_example"; // string | The ID of the variation to adjust inventory information for.
-$body = new \SquareConnect\Model\v1AdjustInventoryRequest(); // \SquareConnect\Model\V1AdjustInventoryRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
+$body = new \SquareConnect\Model\V1AdjustInventoryRequest(); // \SquareConnect\Model\V1AdjustInventoryRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
     $result = $api_instance->adjustInventory($location_id, $variation_id, $body);
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the item&#39;s associated location. |
  **variation_id** | **string**| The ID of the variation to adjust inventory information for. |
- **body** | [**\SquareConnect\Model\V1AdjustInventoryRequest**](../Model/v1AdjustInventoryRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1AdjustInventoryRequest**](../Model/V1AdjustInventoryRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -219,7 +219,7 @@ SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACC
 
 $api_instance = new SquareConnect\Api\V1ItemsApi();
 $location_id = "location_id_example"; // string | The ID of the location to create an item for.
-$body = new \SquareConnect\Model\v1Category(); // \SquareConnect\Model\V1Category | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
+$body = new \SquareConnect\Model\V1Category(); // \SquareConnect\Model\V1Category | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
     $result = $api_instance->createCategory($location_id, $body);
@@ -235,7 +235,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the location to create an item for. |
- **body** | [**\SquareConnect\Model\V1Category**](../Model/v1Category.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Category**](../Model/V1Category.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -269,7 +269,7 @@ SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACC
 
 $api_instance = new SquareConnect\Api\V1ItemsApi();
 $location_id = "location_id_example"; // string | The ID of the location to create an item for.
-$body = new \SquareConnect\Model\v1Discount(); // \SquareConnect\Model\V1Discount | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
+$body = new \SquareConnect\Model\V1Discount(); // \SquareConnect\Model\V1Discount | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
     $result = $api_instance->createDiscount($location_id, $body);
@@ -285,7 +285,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the location to create an item for. |
- **body** | [**\SquareConnect\Model\V1Discount**](../Model/v1Discount.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Discount**](../Model/V1Discount.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -319,7 +319,7 @@ SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACC
 
 $api_instance = new SquareConnect\Api\V1ItemsApi();
 $location_id = "location_id_example"; // string | The ID of the location to create a fee for.
-$body = new \SquareConnect\Model\v1Fee(); // \SquareConnect\Model\V1Fee | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
+$body = new \SquareConnect\Model\V1Fee(); // \SquareConnect\Model\V1Fee | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
     $result = $api_instance->createFee($location_id, $body);
@@ -335,7 +335,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the location to create a fee for. |
- **body** | [**\SquareConnect\Model\V1Fee**](../Model/v1Fee.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Fee**](../Model/V1Fee.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -369,7 +369,7 @@ SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACC
 
 $api_instance = new SquareConnect\Api\V1ItemsApi();
 $location_id = "location_id_example"; // string | The ID of the location to create an item for.
-$body = new \SquareConnect\Model\v1Item(); // \SquareConnect\Model\V1Item | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
+$body = new \SquareConnect\Model\V1Item(); // \SquareConnect\Model\V1Item | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
     $result = $api_instance->createItem($location_id, $body);
@@ -385,7 +385,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the location to create an item for. |
- **body** | [**\SquareConnect\Model\V1Item**](../Model/v1Item.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Item**](../Model/V1Item.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -419,7 +419,7 @@ SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACC
 
 $api_instance = new SquareConnect\Api\V1ItemsApi();
 $location_id = "location_id_example"; // string | The ID of the location to create a modifier list for.
-$body = new \SquareConnect\Model\v1ModifierList(); // \SquareConnect\Model\V1ModifierList | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
+$body = new \SquareConnect\Model\V1ModifierList(); // \SquareConnect\Model\V1ModifierList | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
     $result = $api_instance->createModifierList($location_id, $body);
@@ -435,7 +435,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the location to create a modifier list for. |
- **body** | [**\SquareConnect\Model\V1ModifierList**](../Model/v1ModifierList.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1ModifierList**](../Model/V1ModifierList.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -470,7 +470,7 @@ SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACC
 $api_instance = new SquareConnect\Api\V1ItemsApi();
 $location_id = "location_id_example"; // string | The ID of the item's associated location.
 $modifier_list_id = "modifier_list_id_example"; // string | The ID of the modifier list to edit.
-$body = new \SquareConnect\Model\v1ModifierOption(); // \SquareConnect\Model\V1ModifierOption | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
+$body = new \SquareConnect\Model\V1ModifierOption(); // \SquareConnect\Model\V1ModifierOption | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
     $result = $api_instance->createModifierOption($location_id, $modifier_list_id, $body);
@@ -487,7 +487,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the item&#39;s associated location. |
  **modifier_list_id** | **string**| The ID of the modifier list to edit. |
- **body** | [**\SquareConnect\Model\V1ModifierOption**](../Model/v1ModifierOption.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1ModifierOption**](../Model/V1ModifierOption.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -521,7 +521,7 @@ SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACC
 
 $api_instance = new SquareConnect\Api\V1ItemsApi();
 $location_id = "location_id_example"; // string | The ID of the location to create an item for.
-$body = new \SquareConnect\Model\v1Page(); // \SquareConnect\Model\V1Page | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
+$body = new \SquareConnect\Model\V1Page(); // \SquareConnect\Model\V1Page | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
     $result = $api_instance->createPage($location_id, $body);
@@ -537,7 +537,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the location to create an item for. |
- **body** | [**\SquareConnect\Model\V1Page**](../Model/v1Page.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Page**](../Model/V1Page.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -572,7 +572,7 @@ SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACC
 $api_instance = new SquareConnect\Api\V1ItemsApi();
 $location_id = "location_id_example"; // string | The ID of the item's associated location.
 $item_id = "item_id_example"; // string | The item's ID.
-$body = new \SquareConnect\Model\v1Variation(); // \SquareConnect\Model\V1Variation | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
+$body = new \SquareConnect\Model\V1Variation(); // \SquareConnect\Model\V1Variation | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
     $result = $api_instance->createVariation($location_id, $item_id, $body);
@@ -589,7 +589,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the item&#39;s associated location. |
  **item_id** | **string**| The item&#39;s ID. |
- **body** | [**\SquareConnect\Model\V1Variation**](../Model/v1Variation.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Variation**](../Model/V1Variation.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -1628,7 +1628,7 @@ SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACC
 $api_instance = new SquareConnect\Api\V1ItemsApi();
 $location_id = "location_id_example"; // string | The ID of the category's associated location.
 $category_id = "category_id_example"; // string | The ID of the category to edit.
-$body = new \SquareConnect\Model\v1Category(); // \SquareConnect\Model\V1Category | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
+$body = new \SquareConnect\Model\V1Category(); // \SquareConnect\Model\V1Category | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
     $result = $api_instance->updateCategory($location_id, $category_id, $body);
@@ -1645,7 +1645,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the category&#39;s associated location. |
  **category_id** | **string**| The ID of the category to edit. |
- **body** | [**\SquareConnect\Model\V1Category**](../Model/v1Category.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Category**](../Model/V1Category.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -1680,7 +1680,7 @@ SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACC
 $api_instance = new SquareConnect\Api\V1ItemsApi();
 $location_id = "location_id_example"; // string | The ID of the category's associated location.
 $discount_id = "discount_id_example"; // string | The ID of the discount to edit.
-$body = new \SquareConnect\Model\v1Discount(); // \SquareConnect\Model\V1Discount | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
+$body = new \SquareConnect\Model\V1Discount(); // \SquareConnect\Model\V1Discount | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
     $result = $api_instance->updateDiscount($location_id, $discount_id, $body);
@@ -1697,7 +1697,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the category&#39;s associated location. |
  **discount_id** | **string**| The ID of the discount to edit. |
- **body** | [**\SquareConnect\Model\V1Discount**](../Model/v1Discount.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Discount**](../Model/V1Discount.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -1732,7 +1732,7 @@ SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACC
 $api_instance = new SquareConnect\Api\V1ItemsApi();
 $location_id = "location_id_example"; // string | The ID of the fee's associated location.
 $fee_id = "fee_id_example"; // string | The ID of the fee to edit.
-$body = new \SquareConnect\Model\v1Fee(); // \SquareConnect\Model\V1Fee | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
+$body = new \SquareConnect\Model\V1Fee(); // \SquareConnect\Model\V1Fee | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
     $result = $api_instance->updateFee($location_id, $fee_id, $body);
@@ -1749,7 +1749,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the fee&#39;s associated location. |
  **fee_id** | **string**| The ID of the fee to edit. |
- **body** | [**\SquareConnect\Model\V1Fee**](../Model/v1Fee.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Fee**](../Model/V1Fee.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -1784,7 +1784,7 @@ SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACC
 $api_instance = new SquareConnect\Api\V1ItemsApi();
 $location_id = "location_id_example"; // string | The ID of the item's associated location.
 $item_id = "item_id_example"; // string | The ID of the item to modify.
-$body = new \SquareConnect\Model\v1Item(); // \SquareConnect\Model\V1Item | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
+$body = new \SquareConnect\Model\V1Item(); // \SquareConnect\Model\V1Item | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
     $result = $api_instance->updateItem($location_id, $item_id, $body);
@@ -1801,7 +1801,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the item&#39;s associated location. |
  **item_id** | **string**| The ID of the item to modify. |
- **body** | [**\SquareConnect\Model\V1Item**](../Model/v1Item.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Item**](../Model/V1Item.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -1836,7 +1836,7 @@ SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACC
 $api_instance = new SquareConnect\Api\V1ItemsApi();
 $location_id = "location_id_example"; // string | The ID of the item's associated location.
 $modifier_list_id = "modifier_list_id_example"; // string | The ID of the modifier list to edit.
-$body = new \SquareConnect\Model\v1UpdateModifierListRequest(); // \SquareConnect\Model\V1UpdateModifierListRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
+$body = new \SquareConnect\Model\V1UpdateModifierListRequest(); // \SquareConnect\Model\V1UpdateModifierListRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
     $result = $api_instance->updateModifierList($location_id, $modifier_list_id, $body);
@@ -1853,7 +1853,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the item&#39;s associated location. |
  **modifier_list_id** | **string**| The ID of the modifier list to edit. |
- **body** | [**\SquareConnect\Model\V1UpdateModifierListRequest**](../Model/v1UpdateModifierListRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1UpdateModifierListRequest**](../Model/V1UpdateModifierListRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -1889,7 +1889,7 @@ $api_instance = new SquareConnect\Api\V1ItemsApi();
 $location_id = "location_id_example"; // string | The ID of the item's associated location.
 $modifier_list_id = "modifier_list_id_example"; // string | The ID of the modifier list to edit.
 $modifier_option_id = "modifier_option_id_example"; // string | The ID of the modifier list to edit.
-$body = new \SquareConnect\Model\v1ModifierOption(); // \SquareConnect\Model\V1ModifierOption | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
+$body = new \SquareConnect\Model\V1ModifierOption(); // \SquareConnect\Model\V1ModifierOption | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
     $result = $api_instance->updateModifierOption($location_id, $modifier_list_id, $modifier_option_id, $body);
@@ -1907,7 +1907,7 @@ Name | Type | Description  | Notes
  **location_id** | **string**| The ID of the item&#39;s associated location. |
  **modifier_list_id** | **string**| The ID of the modifier list to edit. |
  **modifier_option_id** | **string**| The ID of the modifier list to edit. |
- **body** | [**\SquareConnect\Model\V1ModifierOption**](../Model/v1ModifierOption.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1ModifierOption**](../Model/V1ModifierOption.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -1942,7 +1942,7 @@ SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACC
 $api_instance = new SquareConnect\Api\V1ItemsApi();
 $location_id = "location_id_example"; // string | The ID of the Favorites page's associated location
 $page_id = "page_id_example"; // string | The ID of the page to modify.
-$body = new \SquareConnect\Model\v1Page(); // \SquareConnect\Model\V1Page | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
+$body = new \SquareConnect\Model\V1Page(); // \SquareConnect\Model\V1Page | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
     $result = $api_instance->updatePage($location_id, $page_id, $body);
@@ -1959,7 +1959,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the Favorites page&#39;s associated location |
  **page_id** | **string**| The ID of the page to modify. |
- **body** | [**\SquareConnect\Model\V1Page**](../Model/v1Page.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Page**](../Model/V1Page.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -1994,7 +1994,7 @@ SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACC
 $api_instance = new SquareConnect\Api\V1ItemsApi();
 $location_id = "location_id_example"; // string | The ID of the Favorites page's associated location.
 $page_id = "page_id_example"; // string | The ID of the page the cell belongs to.
-$body = new \SquareConnect\Model\v1PageCell(); // \SquareConnect\Model\V1PageCell | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
+$body = new \SquareConnect\Model\V1PageCell(); // \SquareConnect\Model\V1PageCell | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
     $result = $api_instance->updatePageCell($location_id, $page_id, $body);
@@ -2011,7 +2011,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the Favorites page&#39;s associated location. |
  **page_id** | **string**| The ID of the page the cell belongs to. |
- **body** | [**\SquareConnect\Model\V1PageCell**](../Model/v1PageCell.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1PageCell**](../Model/V1PageCell.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -2047,7 +2047,7 @@ $api_instance = new SquareConnect\Api\V1ItemsApi();
 $location_id = "location_id_example"; // string | The ID of the item's associated location.
 $item_id = "item_id_example"; // string | The ID of the item to modify.
 $variation_id = "variation_id_example"; // string | The ID of the variation to modify.
-$body = new \SquareConnect\Model\v1Variation(); // \SquareConnect\Model\V1Variation | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
+$body = new \SquareConnect\Model\V1Variation(); // \SquareConnect\Model\V1Variation | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
     $result = $api_instance->updateVariation($location_id, $item_id, $variation_id, $body);
@@ -2065,7 +2065,7 @@ Name | Type | Description  | Notes
  **location_id** | **string**| The ID of the item&#39;s associated location. |
  **item_id** | **string**| The ID of the item to modify. |
  **variation_id** | **string**| The ID of the variation to modify. |
- **body** | [**\SquareConnect\Model\V1Variation**](../Model/v1Variation.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Variation**](../Model/V1Variation.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
