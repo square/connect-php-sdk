@@ -46,7 +46,12 @@ Clone this repository, or download the zip into your project's folder and then a
 require('connect-php-sdk/autoload.php');
 ```
 *Note: you might have to change the path depending on your project's folder structure.*
-
+##### Without Command Line Access
+If you cannot access the command line for your server, you can also install the SDK from github. Download the SDK from github with [this link](https://github.com/square/connect-php-sdk/archive/master.zip), unzip it and add the following line to your php files that will need to access the SDK:
+```
+require('connect-php-sdk-master/autoload.php');
+```
+*Note: you might have to change the path depending on where you place the SDK in relation to your other `php` files.*
 ## Getting Started
 
 Please follow the [installation procedure](#installation--usage) and then run the following:
