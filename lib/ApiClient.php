@@ -288,10 +288,10 @@ class ApiClient
     public static function getV1BatchTokenFromHeaders($http_headers) {
         if (is_array($http_headers) && isset($http_headers['Link']))
         {
-            $links = \phpish\link_header\parse($http_headers['Link']);
-            if (isset($links['next']) && !empty($links['next']) && isset($links['next'][0]['uri']))
+            $connect_link_regexp = "/^<([^>]+)>;rel='next'$/";
+            if (preg_match($connect_link_regexp, $http_headers['Link'], $match) === 1)
             {
-                $link_uri = $links['next'][0]['uri'];
+                $link_uri = $match[1];
                 if ($query = parse_url($link_uri, PHP_URL_QUERY))
                 {
                     parse_str($query, $query_params);
