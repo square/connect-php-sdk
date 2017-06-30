@@ -96,7 +96,7 @@ class CatalogQuery implements ArrayAccess
       */
     protected $range_query;
     /**
-      * $text_query A query that returns only objects whose searchable attributes contain all of the given keywords as prefixes. For example, if a [CatalogItem](#type-catalogitem) contains attributes `{\"name\": \"t-shirt\"}` and `{\"description\": \"Small, Red\"}`, it will be matched by the query `{\"keywords\": [\"shirt\", \"sm\", \"re\"]}`.
+      * $text_query A query that returns only objects whose searchable attributes contain all of the given keywords as prefixes. For example, if a [CatalogItem](#type-catalogitem) contains attributes `{\"name\": \"t-shirt\"}` and `{\"description\": \"Small, Purple\"}`, it will be matched by the query `{\"keywords\": [\"shirt\", \"sma\", \"purp\"]}`.
       * @var \SquareConnect\Model\CatalogQueryText
       */
     protected $text_query;
@@ -242,7 +242,7 @@ class CatalogQuery implements ArrayAccess
   
     /**
      * Sets text_query
-     * @param \SquareConnect\Model\CatalogQueryText $text_query A query that returns only objects whose searchable attributes contain all of the given keywords as prefixes. For example, if a [CatalogItem](#type-catalogitem) contains attributes `{\"name\": \"t-shirt\"}` and `{\"description\": \"Small, Red\"}`, it will be matched by the query `{\"keywords\": [\"shirt\", \"sm\", \"re\"]}`.
+     * @param \SquareConnect\Model\CatalogQueryText $text_query A query that returns only objects whose searchable attributes contain all of the given keywords as prefixes. For example, if a [CatalogItem](#type-catalogitem) contains attributes `{\"name\": \"t-shirt\"}` and `{\"description\": \"Small, Purple\"}`, it will be matched by the query `{\"keywords\": [\"shirt\", \"sma\", \"purp\"]}`.
      * @return $this
      */
     public function setTextQuery($text_query)

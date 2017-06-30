@@ -87,7 +87,7 @@ class CatalogTax implements ArrayAccess
       */
     protected $inclusion_type;
     /**
-      * $percentage The percentage of the tax in decimal form, using a '.' as the decimal separator and without a '%' sign. A value of `7.5` corresponds to 7.5%.
+      * $percentage The percentage of the tax in decimal form, using a `'.'` as the decimal separator and without a `'%'` sign. A value of `7.5` corresponds to 7.5%.
       * @var string
       */
     protected $percentage;
@@ -209,7 +209,7 @@ class CatalogTax implements ArrayAccess
   
     /**
      * Sets percentage
-     * @param string $percentage The percentage of the tax in decimal form, using a '.' as the decimal separator and without a '%' sign. A value of `7.5` corresponds to 7.5%.
+     * @param string $percentage The percentage of the tax in decimal form, using a `'.'` as the decimal separator and without a `'%'` sign. A value of `7.5` corresponds to 7.5%.
      * @return $this
      */
     public function setPercentage($percentage)
