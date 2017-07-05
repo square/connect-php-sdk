@@ -367,7 +367,7 @@ Class | Method | HTTP request | Description
 
 ## Pagination of V1 Endpoints
 
-V1 Endpoints return pagination information via http headers. In order to obtain
+V1 Endpoints return pagination information via HTTP headers. In order to obtain
 response headers and extract the `batch_token` parameter you will need to follow
 the following steps:
 
