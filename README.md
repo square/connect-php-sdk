@@ -7,7 +7,7 @@ This repository contains a generated PHP client SDK for the Square Connect APIs.
 specification repository](https://github.com/square/connect-api-specification)
 for the specification and template files we used to generate this.
 
-If you are looking for a sample e-commerce application using these APIs, check out the [`connect-api-examples`](https://github.com/square/connect-api-examples/tree/master/connect-examples/v2/php_payment) repository. 
+If you are looking for a sample e-commerce application using these APIs, check out the [`connect-api-examples`](https://github.com/square/connect-api-examples/tree/master/connect-examples/v2/php_payment) repository.
 
 To learn more about the Square APIs in general, head on over to the [Square API documentation](https://docs.connect.squareup.com/)
 
@@ -36,7 +36,7 @@ Or add this line under `"require"` to your composer.json:
     ...
 }
 ```
-And then install your composer dependencies with 
+And then install your composer dependencies with
 ```
 $ php composer.phar install
 ```
@@ -370,12 +370,51 @@ Class | Method | HTTP request | Description
  - **TIMECARDS_WRITE**: POST, PUT, and DELETE endpoints related to employee timecards
 
 
+## Pagination of V1 Endpoints
+
+V1 Endpoints return pagination information via HTTP headers. In order to obtain
+response headers and extract the `batch_token` parameter you will need to follow
+the following steps:
+
+1. Use the full information endpoint methods of each API to get the response HTTP
+Headers. They are named as their simple counterpart with a `WithHttpInfo` suffix.
+Hence `listEmployeeRoles` would be called `listEmployeeRolesWithHttpInfo`. This
+method returns an array with 3 parameters: `$response`, `$http_status`, and
+`$http_headers`.
+2. Use `$batch_token = \SquareConnect\ApiClient::getV1BatchTokenFromHeaders($http_headers)`
+to extract the token and proceed to get the following page if a token is present.
+
+### Example
+
+```php
+<?php
+...
+$api_instance = new SquareConnect\Api\V1EmployeesApi();
+$order = null;
+$limit = 20;
+$batch_token = null;
+$roles = array();
+
+try {
+    do {
+        list($result, $status, $headers) = $api_instance->listEmployeeRolesWithHttpInfo($order, $limit, $batch_token);
+        $batch_token = \SquareConnect\ApiClient::getV1BatchTokenFromHeaders($headers);
+        $roles = array_merge($roles, $result);
+    } while (!is_null($batch_token));
+    print_r($roles);
+} catch (Exception $e) {
+    echo 'Exception when calling V1EmployeesApi->listEmployeeRolesWithHttpInfo: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+
 Contributing
 ------------
 
 Send bug reports, feature requests, and code contributions to the [API
 specifications repository](https://github.com/square/connect-api-specification),
-as this repository contains only the generated SDK code. If you notice something wrong about this SDK in particular, feel free to raise an issue [here](https://github.com/square/connect-php-sdk/issues). 
+as this repository contains only the generated SDK code. If you notice something wrong about this SDK in particular, feel free to raise an issue [here](https://github.com/square/connect-php-sdk/issues).
 
 License
 -------
