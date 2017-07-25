@@ -13,7 +13,7 @@ use \SquareConnect\ApiException;
 use \SquareConnect\ObjectSerializer;
 
 /**
- * OrderApi Class Doc Comment
+ * OrdersApi Class Doc Comment
  *
  * @category Class
  * @package  SquareConnect
@@ -21,7 +21,7 @@ use \SquareConnect\ObjectSerializer;
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://squareup.com/developers
  */
-class OrderApi
+class OrdersApi
 {
 
     /**
@@ -56,7 +56,7 @@ class OrderApi
     /**
      * Set the API client
      * @param \SquareConnect\ApiClient $apiClient set the API client
-     * @return OrderApi
+     * @return OrdersApi
      */
     public function setApiClient(ApiClient $apiClient)
     {

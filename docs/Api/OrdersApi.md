@@ -1,10 +1,10 @@
-# SquareConnect\OrderApi
+# SquareConnect\OrdersApi
 
 All URIs are relative to *https://connect.squareup.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createOrder**](OrderApi.md#createOrder) | **POST** /v2/locations/{location_id}/orders | CreateOrder
+[**createOrder**](OrdersApi.md#createOrder) | **POST** /v2/locations/{location_id}/orders | CreateOrder
 
 
 # **createOrder**
@@ -22,7 +22,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\OrderApi();
+$api_instance = new SquareConnect\Api\OrdersApi();
 $location_id = "location_id_example"; // string | The ID of the business location to associate the order with.
 $body = new \SquareConnect\Model\CreateOrderRequest(); // \SquareConnect\Model\CreateOrderRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
@@ -30,7 +30,7 @@ try {
     $result = $api_instance->createOrder($location_id, $body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OrderApi->createOrder: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrdersApi->createOrder: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
