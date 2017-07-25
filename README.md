@@ -102,6 +102,7 @@ Class | Method | HTTP request | Description
 *CustomersApi* | [**retrieveCustomer**](docs/Api/CustomersApi.md#retrievecustomer) | **GET** /v2/customers/{customer_id} | RetrieveCustomer
 *CustomersApi* | [**updateCustomer**](docs/Api/CustomersApi.md#updatecustomer) | **PUT** /v2/customers/{customer_id} | UpdateCustomer
 *LocationsApi* | [**listLocations**](docs/Api/LocationsApi.md#listlocations) | **GET** /v2/locations | ListLocations
+*OrderApi* | [**createOrder**](docs/Api/OrderApi.md#createorder) | **POST** /v2/locations/{location_id}/orders | CreateOrder
 *TransactionsApi* | [**captureTransaction**](docs/Api/TransactionsApi.md#capturetransaction) | **POST** /v2/locations/{location_id}/transactions/{transaction_id}/capture | CaptureTransaction
 *TransactionsApi* | [**charge**](docs/Api/TransactionsApi.md#charge) | **POST** /v2/locations/{location_id}/transactions | Charge
 *TransactionsApi* | [**createRefund**](docs/Api/TransactionsApi.md#createrefund) | **POST** /v2/locations/{location_id}/transactions/{transaction_id}/refund | CreateRefund
@@ -235,7 +236,9 @@ Class | Method | HTTP request | Description
  - [CreateOrderRequest](docs/Model/CreateOrderRequest.md)
  - [CreateOrderRequestDiscount](docs/Model/CreateOrderRequestDiscount.md)
  - [CreateOrderRequestLineItem](docs/Model/CreateOrderRequestLineItem.md)
+ - [CreateOrderRequestModifier](docs/Model/CreateOrderRequestModifier.md)
  - [CreateOrderRequestTax](docs/Model/CreateOrderRequestTax.md)
+ - [CreateOrderResponse](docs/Model/CreateOrderResponse.md)
  - [CreateRefundRequest](docs/Model/CreateRefundRequest.md)
  - [CreateRefundResponse](docs/Model/CreateRefundResponse.md)
  - [Currency](docs/Model/Currency.md)
@@ -266,12 +269,14 @@ Class | Method | HTTP request | Description
  - [ListTransactionsResponse](docs/Model/ListTransactionsResponse.md)
  - [Location](docs/Model/Location.md)
  - [LocationCapability](docs/Model/LocationCapability.md)
+ - [LocationStatus](docs/Model/LocationStatus.md)
  - [Money](docs/Model/Money.md)
  - [Order](docs/Model/Order.md)
  - [OrderLineItem](docs/Model/OrderLineItem.md)
  - [OrderLineItemDiscount](docs/Model/OrderLineItemDiscount.md)
  - [OrderLineItemDiscountScope](docs/Model/OrderLineItemDiscountScope.md)
  - [OrderLineItemDiscountType](docs/Model/OrderLineItemDiscountType.md)
+ - [OrderLineItemModifier](docs/Model/OrderLineItemModifier.md)
  - [OrderLineItemTax](docs/Model/OrderLineItemTax.md)
  - [OrderLineItemTaxType](docs/Model/OrderLineItemTaxType.md)
  - [Refund](docs/Model/Refund.md)

@@ -24,6 +24,7 @@ class CreateOrderRequestDiscount implements ArrayAccess
       * @var string[]
       */
     static $swaggerTypes = array(
+        'catalog_object_id' => 'string',
         'name' => 'string',
         'percentage' => 'string',
         'amount_money' => '\SquareConnect\Model\Money'
@@ -34,6 +35,7 @@ class CreateOrderRequestDiscount implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
+        'catalog_object_id' => 'catalog_object_id',
         'name' => 'name',
         'percentage' => 'percentage',
         'amount_money' => 'amount_money'
@@ -44,6 +46,7 @@ class CreateOrderRequestDiscount implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
+        'catalog_object_id' => 'setCatalogObjectId',
         'name' => 'setName',
         'percentage' => 'setPercentage',
         'amount_money' => 'setAmountMoney'
@@ -54,11 +57,17 @@ class CreateOrderRequestDiscount implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
+        'catalog_object_id' => 'getCatalogObjectId',
         'name' => 'getName',
         'percentage' => 'getPercentage',
         'amount_money' => 'getAmountMoney'
     );
   
+    /**
+      * $catalog_object_id The catalog object id from exsiting [CatalogDiscount](#type-catalogdiscount).  Do not provide a value for this field if you provide values in other fields for a custom discount.
+      * @var string
+      */
+    protected $catalog_object_id;
     /**
       * $name The discount's name.
       * @var string
@@ -82,6 +91,11 @@ class CreateOrderRequestDiscount implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
+            if (isset($data["catalog_object_id"])) {
+              $this->catalog_object_id = $data["catalog_object_id"];
+            } else {
+              $this->catalog_object_id = null;
+            }
             if (isset($data["name"])) {
               $this->name = $data["name"];
             } else {
@@ -98,6 +112,25 @@ class CreateOrderRequestDiscount implements ArrayAccess
               $this->amount_money = null;
             }
         }
+    }
+    /**
+     * Gets catalog_object_id
+     * @return string
+     */
+    public function getCatalogObjectId()
+    {
+        return $this->catalog_object_id;
+    }
+  
+    /**
+     * Sets catalog_object_id
+     * @param string $catalog_object_id The catalog object id from exsiting [CatalogDiscount](#type-catalogdiscount).  Do not provide a value for this field if you provide values in other fields for a custom discount.
+     * @return $this
+     */
+    public function setCatalogObjectId($catalog_object_id)
+    {
+        $this->catalog_object_id = $catalog_object_id;
+        return $this;
     }
     /**
      * Gets name

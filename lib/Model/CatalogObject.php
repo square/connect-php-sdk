@@ -137,7 +137,7 @@ class CatalogObject implements ArrayAccess
       */
     protected $is_deleted;
     /**
-      * $catalog_v1_ids The Connect V1 IDs for this object at each [location][#type-location] where it is present, where they differ from the object's Connect V2 ID. The field will only be present for objects that have been created or modified by legacy APIs.
+      * $catalog_v1_ids The Connect V1 IDs for this object at each [location](#type-location) where it is present, where they differ from the object's Connect V2 ID. The field will only be present for objects that have been created or modified by legacy APIs.
       * @var \SquareConnect\Model\CatalogV1Id[]
       */
     protected $catalog_v1_ids;
@@ -387,7 +387,7 @@ class CatalogObject implements ArrayAccess
   
     /**
      * Sets catalog_v1_ids
-     * @param \SquareConnect\Model\CatalogV1Id[] $catalog_v1_ids The Connect V1 IDs for this object at each [location][#type-location] where it is present, where they differ from the object's Connect V2 ID. The field will only be present for objects that have been created or modified by legacy APIs.
+     * @param \SquareConnect\Model\CatalogV1Id[] $catalog_v1_ids The Connect V1 IDs for this object at each [location](#type-location) where it is present, where they differ from the object's Connect V2 ID. The field will only be present for objects that have been created or modified by legacy APIs.
      * @return $this
      */
     public function setCatalogV1Ids($catalog_v1_ids)

@@ -126,7 +126,7 @@ class CatalogItemVariation implements ArrayAccess
       */
     protected $price_money;
     /**
-      * $location_overrides Per-[location][#type-location] price and inventory overrides.
+      * $location_overrides Per-[location](#type-location) price and inventory overrides.
       * @var \SquareConnect\Model\ItemVariationLocationOverrides[]
       */
     protected $location_overrides;
@@ -350,7 +350,7 @@ class CatalogItemVariation implements ArrayAccess
   
     /**
      * Sets location_overrides
-     * @param \SquareConnect\Model\ItemVariationLocationOverrides[] $location_overrides Per-[location][#type-location] price and inventory overrides.
+     * @param \SquareConnect\Model\ItemVariationLocationOverrides[] $location_overrides Per-[location](#type-location) price and inventory overrides.
      * @return $this
      */
     public function setLocationOverrides($location_overrides)

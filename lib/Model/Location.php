@@ -28,7 +28,8 @@ class Location implements ArrayAccess
         'name' => 'string',
         'address' => '\SquareConnect\Model\Address',
         'timezone' => 'string',
-        'capabilities' => 'string[]'
+        'capabilities' => 'string[]',
+        'status' => 'string'
     );
   
     /** 
@@ -40,7 +41,8 @@ class Location implements ArrayAccess
         'name' => 'name',
         'address' => 'address',
         'timezone' => 'timezone',
-        'capabilities' => 'capabilities'
+        'capabilities' => 'capabilities',
+        'status' => 'status'
     );
   
     /**
@@ -52,7 +54,8 @@ class Location implements ArrayAccess
         'name' => 'setName',
         'address' => 'setAddress',
         'timezone' => 'setTimezone',
-        'capabilities' => 'setCapabilities'
+        'capabilities' => 'setCapabilities',
+        'status' => 'setStatus'
     );
   
     /**
@@ -64,7 +67,8 @@ class Location implements ArrayAccess
         'name' => 'getName',
         'address' => 'getAddress',
         'timezone' => 'getTimezone',
-        'capabilities' => 'getCapabilities'
+        'capabilities' => 'getCapabilities',
+        'status' => 'getStatus'
     );
   
     /**
@@ -92,6 +96,11 @@ class Location implements ArrayAccess
       * @var string[]
       */
     protected $capabilities;
+    /**
+      * $status The location's status  See [LocationStatus](#type-locationstatus) for possible values.
+      * @var string
+      */
+    protected $status;
 
     /**
      * Constructor
@@ -124,6 +133,11 @@ class Location implements ArrayAccess
               $this->capabilities = $data["capabilities"];
             } else {
               $this->capabilities = null;
+            }
+            if (isset($data["status"])) {
+              $this->status = $data["status"];
+            } else {
+              $this->status = null;
             }
         }
     }
@@ -220,6 +234,25 @@ class Location implements ArrayAccess
     public function setCapabilities($capabilities)
     {
         $this->capabilities = $capabilities;
+        return $this;
+    }
+    /**
+     * Gets status
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+  
+    /**
+     * Sets status
+     * @param string $status The location's status  See [LocationStatus](#type-locationstatus) for possible values.
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
         return $this;
     }
     /**

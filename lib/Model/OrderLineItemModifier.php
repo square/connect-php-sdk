@@ -9,7 +9,7 @@ namespace SquareConnect\Model;
 
 use \ArrayAccess;
 /**
- * CreateOrderRequestTax Class Doc Comment
+ * OrderLineItemModifier Class Doc Comment
  *
  * @category Class
  * @package  SquareConnect
@@ -17,7 +17,7 @@ use \ArrayAccess;
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://squareup.com/developers
  */
-class CreateOrderRequestTax implements ArrayAccess
+class OrderLineItemModifier implements ArrayAccess
 {
     /**
       * Array of property to type mappings. Used for (de)serialization 
@@ -26,8 +26,8 @@ class CreateOrderRequestTax implements ArrayAccess
     static $swaggerTypes = array(
         'catalog_object_id' => 'string',
         'name' => 'string',
-        'type' => 'string',
-        'percentage' => 'string'
+        'base_price_money' => '\SquareConnect\Model\Money',
+        'total_price_money' => '\SquareConnect\Model\Money'
     );
   
     /** 
@@ -37,8 +37,8 @@ class CreateOrderRequestTax implements ArrayAccess
     static $attributeMap = array(
         'catalog_object_id' => 'catalog_object_id',
         'name' => 'name',
-        'type' => 'type',
-        'percentage' => 'percentage'
+        'base_price_money' => 'base_price_money',
+        'total_price_money' => 'total_price_money'
     );
   
     /**
@@ -48,8 +48,8 @@ class CreateOrderRequestTax implements ArrayAccess
     static $setters = array(
         'catalog_object_id' => 'setCatalogObjectId',
         'name' => 'setName',
-        'type' => 'setType',
-        'percentage' => 'setPercentage'
+        'base_price_money' => 'setBasePriceMoney',
+        'total_price_money' => 'setTotalPriceMoney'
     );
   
     /**
@@ -59,30 +59,30 @@ class CreateOrderRequestTax implements ArrayAccess
     static $getters = array(
         'catalog_object_id' => 'getCatalogObjectId',
         'name' => 'getName',
-        'type' => 'getType',
-        'percentage' => 'getPercentage'
+        'base_price_money' => 'getBasePriceMoney',
+        'total_price_money' => 'getTotalPriceMoney'
     );
   
     /**
-      * $catalog_object_id The catalog object id from existing [CatalogTax](#type-catalogtax).  Do not provide a value for this field if you provide values in other fields for a custom tax.
+      * $catalog_object_id The catalog object id referencing [CatalogModifier](#type-catalogmodifier).
       * @var string
       */
     protected $catalog_object_id;
     /**
-      * $name The tax's name.
+      * $name The name of the item modifier.
       * @var string
       */
     protected $name;
     /**
-      * $type Indicates the calculation method used to apply the line item tax.  Default: `ADDITIVE`; See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values.
-      * @var string
+      * $base_price_money The base price of the item modifier.
+      * @var \SquareConnect\Model\Money
       */
-    protected $type;
+    protected $base_price_money;
     /**
-      * $percentage The percentage of the tax, as a string representation of a decimal number.  A value of `7.25` corresponds to a percentage of 7.25%. This value range between 0.0 up to 100.0
-      * @var string
+      * $total_price_money The total price of the item modifier for its line item. This is the modifier's base_price_money multiplied by the line item's quantity.
+      * @var \SquareConnect\Model\Money
       */
-    protected $percentage;
+    protected $total_price_money;
 
     /**
      * Constructor
@@ -101,15 +101,15 @@ class CreateOrderRequestTax implements ArrayAccess
             } else {
               $this->name = null;
             }
-            if (isset($data["type"])) {
-              $this->type = $data["type"];
+            if (isset($data["base_price_money"])) {
+              $this->base_price_money = $data["base_price_money"];
             } else {
-              $this->type = null;
+              $this->base_price_money = null;
             }
-            if (isset($data["percentage"])) {
-              $this->percentage = $data["percentage"];
+            if (isset($data["total_price_money"])) {
+              $this->total_price_money = $data["total_price_money"];
             } else {
-              $this->percentage = null;
+              $this->total_price_money = null;
             }
         }
     }
@@ -124,7 +124,7 @@ class CreateOrderRequestTax implements ArrayAccess
   
     /**
      * Sets catalog_object_id
-     * @param string $catalog_object_id The catalog object id from existing [CatalogTax](#type-catalogtax).  Do not provide a value for this field if you provide values in other fields for a custom tax.
+     * @param string $catalog_object_id The catalog object id referencing [CatalogModifier](#type-catalogmodifier).
      * @return $this
      */
     public function setCatalogObjectId($catalog_object_id)
@@ -143,7 +143,7 @@ class CreateOrderRequestTax implements ArrayAccess
   
     /**
      * Sets name
-     * @param string $name The tax's name.
+     * @param string $name The name of the item modifier.
      * @return $this
      */
     public function setName($name)
@@ -152,41 +152,41 @@ class CreateOrderRequestTax implements ArrayAccess
         return $this;
     }
     /**
-     * Gets type
-     * @return string
+     * Gets base_price_money
+     * @return \SquareConnect\Model\Money
      */
-    public function getType()
+    public function getBasePriceMoney()
     {
-        return $this->type;
+        return $this->base_price_money;
     }
   
     /**
-     * Sets type
-     * @param string $type Indicates the calculation method used to apply the line item tax.  Default: `ADDITIVE`; See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values.
+     * Sets base_price_money
+     * @param \SquareConnect\Model\Money $base_price_money The base price of the item modifier.
      * @return $this
      */
-    public function setType($type)
+    public function setBasePriceMoney($base_price_money)
     {
-        $this->type = $type;
+        $this->base_price_money = $base_price_money;
         return $this;
     }
     /**
-     * Gets percentage
-     * @return string
+     * Gets total_price_money
+     * @return \SquareConnect\Model\Money
      */
-    public function getPercentage()
+    public function getTotalPriceMoney()
     {
-        return $this->percentage;
+        return $this->total_price_money;
     }
   
     /**
-     * Sets percentage
-     * @param string $percentage The percentage of the tax, as a string representation of a decimal number.  A value of `7.25` corresponds to a percentage of 7.25%. This value range between 0.0 up to 100.0
+     * Sets total_price_money
+     * @param \SquareConnect\Model\Money $total_price_money The total price of the item modifier for its line item. This is the modifier's base_price_money multiplied by the line item's quantity.
      * @return $this
      */
-    public function setPercentage($percentage)
+    public function setTotalPriceMoney($total_price_money)
     {
-        $this->percentage = $percentage;
+        $this->total_price_money = $total_price_money;
         return $this;
     }
     /**
