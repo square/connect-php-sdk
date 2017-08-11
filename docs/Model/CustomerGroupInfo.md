@@ -1,11 +1,12 @@
 # CustomerGroupInfo
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **string** | The ID of the customer group. | 
-**name** | **string** | The name of the customer group. | 
+Name | Getter | Setter | Type | Description | Notes
+------------ | ------------- | ------------- | ------------- | ------------- | -------------
+**id** | getId() | setId($value) | **string** | The ID of the customer group. | 
+**name** | getName() | setName($value) | **string** | The name of the customer group. | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+Note: All properties are protected and only accessed via getters and setters.
 
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

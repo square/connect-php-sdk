@@ -50,7 +50,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the original payment&#39;s associated location. |
- **body** | [**\SquareConnect\Model\V1CreateRefundRequest**](../Model/v1CreateRefundRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1CreateRefundRequest**](../Model/V1CreateRefundRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -116,7 +116,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listOrders**
-> \SquareConnect\Model\V1Order[] listOrders($location_id, $order, $limit)
+> \SquareConnect\Model\V1Order[] listOrders($location_id, $order, $limit, $batch_token)
 
 Provides summary information for a merchant's online store orders.
 
@@ -134,9 +134,10 @@ $api_instance = new SquareConnect\Api\V1TransactionsApi();
 $location_id = "location_id_example"; // string | The ID of the location to list online store orders for.
 $order = "order_example"; // string | TThe order in which payments are listed in the response.
 $limit = 56; // int | The maximum number of payments to return in a single response. This value cannot exceed 200.
+$batch_token = "batch_token_example"; // string | A pagination cursor to retrieve the next set of results for your original query to the endpoint.
 
 try {
-    $result = $api_instance->listOrders($location_id, $order, $limit);
+    $result = $api_instance->listOrders($location_id, $order, $limit, $batch_token);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling V1TransactionsApi->listOrders: ', $e->getMessage(), PHP_EOL;
@@ -151,6 +152,7 @@ Name | Type | Description  | Notes
  **location_id** | **string**| The ID of the location to list online store orders for. |
  **order** | **string**| TThe order in which payments are listed in the response. | [optional]
  **limit** | **int**| The maximum number of payments to return in a single response. This value cannot exceed 200. | [optional]
+ **batch_token** | **string**| A pagination cursor to retrieve the next set of results for your original query to the endpoint. | [optional]
 
 ### Return type
 
@@ -168,7 +170,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listPayments**
-> \SquareConnect\Model\V1Payment[] listPayments($location_id, $order, $begin_time, $end_time, $limit)
+> \SquareConnect\Model\V1Payment[] listPayments($location_id, $order, $begin_time, $end_time, $limit, $batch_token)
 
 Provides summary information for all payments taken by a merchant or any of the merchant's mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
 
@@ -188,9 +190,10 @@ $order = "order_example"; // string | The order in which payments are listed in 
 $begin_time = "begin_time_example"; // string | The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year.
 $end_time = "end_time_example"; // string | The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time.
 $limit = 56; // int | The maximum number of payments to return in a single response. This value cannot exceed 200.
+$batch_token = "batch_token_example"; // string | A pagination cursor to retrieve the next set of results for your original query to the endpoint.
 
 try {
-    $result = $api_instance->listPayments($location_id, $order, $begin_time, $end_time, $limit);
+    $result = $api_instance->listPayments($location_id, $order, $begin_time, $end_time, $limit, $batch_token);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling V1TransactionsApi->listPayments: ', $e->getMessage(), PHP_EOL;
@@ -207,6 +210,7 @@ Name | Type | Description  | Notes
  **begin_time** | **string**| The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. | [optional]
  **end_time** | **string**| The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. | [optional]
  **limit** | **int**| The maximum number of payments to return in a single response. This value cannot exceed 200. | [optional]
+ **batch_token** | **string**| A pagination cursor to retrieve the next set of results for your original query to the endpoint. | [optional]
 
 ### Return type
 
@@ -224,7 +228,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listRefunds**
-> \SquareConnect\Model\V1Refund[] listRefunds($location_id, $order, $begin_time, $end_time, $limit)
+> \SquareConnect\Model\V1Refund[] listRefunds($location_id, $order, $begin_time, $end_time, $limit, $batch_token)
 
 Provides the details for all refunds initiated by a merchant or any of the merchant's mobile staff during a date range. Date ranges cannot exceed one year in length.
 
@@ -244,9 +248,10 @@ $order = "order_example"; // string | TThe order in which payments are listed in
 $begin_time = "begin_time_example"; // string | The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year.
 $end_time = "end_time_example"; // string | The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time.
 $limit = 56; // int | The maximum number of payments to return in a single response. This value cannot exceed 200.
+$batch_token = "batch_token_example"; // string | A pagination cursor to retrieve the next set of results for your original query to the endpoint.
 
 try {
-    $result = $api_instance->listRefunds($location_id, $order, $begin_time, $end_time, $limit);
+    $result = $api_instance->listRefunds($location_id, $order, $begin_time, $end_time, $limit, $batch_token);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling V1TransactionsApi->listRefunds: ', $e->getMessage(), PHP_EOL;
@@ -263,6 +268,7 @@ Name | Type | Description  | Notes
  **begin_time** | **string**| The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. | [optional]
  **end_time** | **string**| The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. | [optional]
  **limit** | **int**| The maximum number of payments to return in a single response. This value cannot exceed 200. | [optional]
+ **batch_token** | **string**| A pagination cursor to retrieve the next set of results for your original query to the endpoint. | [optional]
 
 ### Return type
 
@@ -280,7 +286,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listSettlements**
-> \SquareConnect\Model\V1Settlement[] listSettlements($location_id, $order, $begin_time, $end_time, $limit, $status)
+> \SquareConnect\Model\V1Settlement[] listSettlements($location_id, $order, $begin_time, $end_time, $limit, $status, $batch_token)
 
 Provides summary information for all deposits and withdrawals initiated by Square to a merchant's bank account during a date range. Date ranges cannot exceed one year in length.
 
@@ -301,9 +307,10 @@ $begin_time = "begin_time_example"; // string | The beginning of the requested r
 $end_time = "end_time_example"; // string | The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time.
 $limit = 56; // int | The maximum number of payments to return in a single response. This value cannot exceed 200.
 $status = "status_example"; // string | Provide this parameter to retrieve only settlements with a particular status (SENT or FAILED).
+$batch_token = "batch_token_example"; // string | A pagination cursor to retrieve the next set of results for your original query to the endpoint.
 
 try {
-    $result = $api_instance->listSettlements($location_id, $order, $begin_time, $end_time, $limit, $status);
+    $result = $api_instance->listSettlements($location_id, $order, $begin_time, $end_time, $limit, $status, $batch_token);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling V1TransactionsApi->listSettlements: ', $e->getMessage(), PHP_EOL;
@@ -321,6 +328,7 @@ Name | Type | Description  | Notes
  **end_time** | **string**| The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. | [optional]
  **limit** | **int**| The maximum number of payments to return in a single response. This value cannot exceed 200. | [optional]
  **status** | **string**| Provide this parameter to retrieve only settlements with a particular status (SENT or FAILED). | [optional]
+ **batch_token** | **string**| A pagination cursor to retrieve the next set of results for your original query to the endpoint. | [optional]
 
 ### Return type
 
@@ -572,7 +580,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the order&#39;s associated location. |
  **order_id** | **string**| The order&#39;s Square-issued ID. You obtain this value from Order objects returned by the List Orders endpoint |
- **body** | [**\SquareConnect\Model\V1UpdateOrderRequest**](../Model/v1UpdateOrderRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1UpdateOrderRequest**](../Model/V1UpdateOrderRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
