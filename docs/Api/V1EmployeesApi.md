@@ -53,7 +53,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\SquareConnect\Model\V1Employee**](../Model/v1Employee.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Employee**](../Model/V1Employee.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -101,7 +101,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **employee_role** | [**\SquareConnect\Model\V1EmployeeRole**](../Model/v1EmployeeRole.md)| An EmployeeRole object with a name and permissions, and an optional owner flag. |
+ **employee_role** | [**\SquareConnect\Model\V1EmployeeRole**](../Model/V1EmployeeRole.md)| An EmployeeRole object with a name and permissions, and an optional owner flag. |
 
 ### Return type
 
@@ -149,7 +149,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\SquareConnect\Model\V1Timecard**](../Model/v1Timecard.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Timecard**](../Model/V1Timecard.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -269,7 +269,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listEmployeeRoles**
-> \SquareConnect\Model\V1EmployeeRole[] listEmployeeRoles($order, $limit, $cursor)
+> \SquareConnect\Model\V1EmployeeRole[] listEmployeeRoles($order, $limit, $batch_token)
 
 Provides summary information for all of a business's employee roles.
 
@@ -286,10 +286,10 @@ SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACC
 $api_instance = new SquareConnect\Api\V1EmployeesApi();
 $order = "order_example"; // string | The order in which employees are listed in the response, based on their created_at field.Default value: ASC
 $limit = 56; // int | The maximum integer number of employee entities to return in a single response. Default 100, maximum 200.
-$cursor = "cursor_example"; // string | A pagination cursor to retrieve the next set of results for your original query to the endpoint.
+$batch_token = "batch_token_example"; // string | A pagination cursor to retrieve the next set of results for your original query to the endpoint.
 
 try {
-    $result = $api_instance->listEmployeeRoles($order, $limit, $cursor);
+    $result = $api_instance->listEmployeeRoles($order, $limit, $batch_token);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling V1EmployeesApi->listEmployeeRoles: ', $e->getMessage(), PHP_EOL;
@@ -303,7 +303,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **order** | **string**| The order in which employees are listed in the response, based on their created_at field.Default value: ASC | [optional]
  **limit** | **int**| The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. | [optional]
- **cursor** | **string**| A pagination cursor to retrieve the next set of results for your original query to the endpoint. | [optional]
+ **batch_token** | **string**| A pagination cursor to retrieve the next set of results for your original query to the endpoint. | [optional]
 
 ### Return type
 
@@ -321,7 +321,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listEmployees**
-> \SquareConnect\Model\V1Employee[] listEmployees($order, $begin_updated_at, $end_updated_at, $begin_created_at, $end_created_at, $status, $external_id, $limit)
+> \SquareConnect\Model\V1Employee[] listEmployees($order, $begin_updated_at, $end_updated_at, $begin_created_at, $end_created_at, $status, $external_id, $limit, $batch_token)
 
 Provides summary information for all of a business's employees.
 
@@ -344,9 +344,10 @@ $end_created_at = "end_created_at_example"; // string | If filtering results by 
 $status = "status_example"; // string | If provided, the endpoint returns only employee entities with the specified status (ACTIVE or INACTIVE).
 $external_id = "external_id_example"; // string | If provided, the endpoint returns only employee entities with the specified external_id.
 $limit = 56; // int | The maximum integer number of employee entities to return in a single response. Default 100, maximum 200.
+$batch_token = "batch_token_example"; // string | A pagination cursor to retrieve the next set of results for your original query to the endpoint.
 
 try {
-    $result = $api_instance->listEmployees($order, $begin_updated_at, $end_updated_at, $begin_created_at, $end_created_at, $status, $external_id, $limit);
+    $result = $api_instance->listEmployees($order, $begin_updated_at, $end_updated_at, $begin_created_at, $end_created_at, $status, $external_id, $limit, $batch_token);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling V1EmployeesApi->listEmployees: ', $e->getMessage(), PHP_EOL;
@@ -366,6 +367,7 @@ Name | Type | Description  | Notes
  **status** | **string**| If provided, the endpoint returns only employee entities with the specified status (ACTIVE or INACTIVE). | [optional]
  **external_id** | **string**| If provided, the endpoint returns only employee entities with the specified external_id. | [optional]
  **limit** | **int**| The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. | [optional]
+ **batch_token** | **string**| A pagination cursor to retrieve the next set of results for your original query to the endpoint. | [optional]
 
 ### Return type
 
@@ -431,7 +433,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listTimecards**
-> \SquareConnect\Model\V1Timecard[] listTimecards($order, $employee_id, $begin_clockin_time, $end_clockin_time, $begin_clockout_time, $end_clockout_time, $begin_updated_at, $end_updated_at, $deleted, $limit, $cursor)
+> \SquareConnect\Model\V1Timecard[] listTimecards($order, $employee_id, $begin_clockin_time, $end_clockin_time, $begin_clockout_time, $end_clockout_time, $begin_updated_at, $end_updated_at, $deleted, $limit, $batch_token)
 
 Provides summary information for all of a business's employee timecards.
 
@@ -456,10 +458,10 @@ $begin_updated_at = "begin_updated_at_example"; // string | If filtering results
 $end_updated_at = "end_updated_at_example"; // string | If filtering results by their updated_at field, the end of the requested reporting period, in ISO 8601 format.
 $deleted = true; // bool | If true, only deleted timecards are returned. If false, only valid timecards are returned.If you don't provide this parameter, both valid and deleted timecards are returned.
 $limit = 56; // int | The maximum integer number of employee entities to return in a single response. Default 100, maximum 200.
-$cursor = "cursor_example"; // string | A pagination cursor to retrieve the next set of results for your original query to the endpoint.
+$batch_token = "batch_token_example"; // string | A pagination cursor to retrieve the next set of results for your original query to the endpoint.
 
 try {
-    $result = $api_instance->listTimecards($order, $employee_id, $begin_clockin_time, $end_clockin_time, $begin_clockout_time, $end_clockout_time, $begin_updated_at, $end_updated_at, $deleted, $limit, $cursor);
+    $result = $api_instance->listTimecards($order, $employee_id, $begin_clockin_time, $end_clockin_time, $begin_clockout_time, $end_clockout_time, $begin_updated_at, $end_updated_at, $deleted, $limit, $batch_token);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling V1EmployeesApi->listTimecards: ', $e->getMessage(), PHP_EOL;
@@ -481,7 +483,7 @@ Name | Type | Description  | Notes
  **end_updated_at** | **string**| If filtering results by their updated_at field, the end of the requested reporting period, in ISO 8601 format. | [optional]
  **deleted** | **bool**| If true, only deleted timecards are returned. If false, only valid timecards are returned.If you don&#39;t provide this parameter, both valid and deleted timecards are returned. | [optional]
  **limit** | **int**| The maximum integer number of employee entities to return in a single response. Default 100, maximum 200. | [optional]
- **cursor** | **string**| A pagination cursor to retrieve the next set of results for your original query to the endpoint. | [optional]
+ **batch_token** | **string**| A pagination cursor to retrieve the next set of results for your original query to the endpoint. | [optional]
 
 ### Return type
 
@@ -723,7 +725,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **employee_id** | **string**| The ID of the role to modify. |
- **body** | [**\SquareConnect\Model\V1Employee**](../Model/v1Employee.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Employee**](../Model/V1Employee.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -773,7 +775,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **role_id** | **string**| The ID of the role to modify. |
- **body** | [**\SquareConnect\Model\V1EmployeeRole**](../Model/v1EmployeeRole.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1EmployeeRole**](../Model/V1EmployeeRole.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -823,7 +825,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **timecard_id** | **string**| TThe ID of the timecard to modify. |
- **body** | [**\SquareConnect\Model\V1Timecard**](../Model/v1Timecard.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Timecard**](../Model/V1Timecard.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
