@@ -1209,7 +1209,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listInventory**
-> \SquareConnect\Model\V1InventoryEntry[] listInventory($location_id, $limit)
+> \SquareConnect\Model\V1InventoryEntry[] listInventory($location_id, $limit, $batch_token)
 
 Provides inventory information for all of a merchant's inventory-enabled item variations.
 
@@ -1226,9 +1226,10 @@ SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACC
 $api_instance = new SquareConnect\Api\V1ItemsApi();
 $location_id = "location_id_example"; // string | The ID of the item's associated location.
 $limit = 56; // int | The maximum number of inventory entries to return in a single response. This value cannot exceed 1000.
+$batch_token = "batch_token_example"; // string | A pagination cursor to retrieve the next set of results for your original query to the endpoint.
 
 try {
-    $result = $api_instance->listInventory($location_id, $limit);
+    $result = $api_instance->listInventory($location_id, $limit, $batch_token);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling V1ItemsApi->listInventory: ', $e->getMessage(), PHP_EOL;
@@ -1242,6 +1243,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the item&#39;s associated location. |
  **limit** | **int**| The maximum number of inventory entries to return in a single response. This value cannot exceed 1000. | [optional]
+ **batch_token** | **string**| A pagination cursor to retrieve the next set of results for your original query to the endpoint. | [optional]
 
 ### Return type
 
@@ -1259,7 +1261,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listItems**
-> \SquareConnect\Model\V1Item[] listItems($location_id)
+> \SquareConnect\Model\V1Item[] listItems($location_id, $batch_token)
 
 Provides summary information for all of a location's items.
 
@@ -1275,9 +1277,10 @@ SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACC
 
 $api_instance = new SquareConnect\Api\V1ItemsApi();
 $location_id = "location_id_example"; // string | The ID of the location to list items for.
+$batch_token = "batch_token_example"; // string | A pagination cursor to retrieve the next set of results for your original query to the endpoint.
 
 try {
-    $result = $api_instance->listItems($location_id);
+    $result = $api_instance->listItems($location_id, $batch_token);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling V1ItemsApi->listItems: ', $e->getMessage(), PHP_EOL;
@@ -1290,6 +1293,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the location to list items for. |
+ **batch_token** | **string**| A pagination cursor to retrieve the next set of results for your original query to the endpoint. | [optional]
 
 ### Return type
 
