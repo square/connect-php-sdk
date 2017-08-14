@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the item&#39;s associated location. |
  **variation_id** | **string**| The ID of the variation to adjust inventory information for. |
- **body** | [**\SquareConnect\Model\V1AdjustInventoryRequest**](../Model/v1AdjustInventoryRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1AdjustInventoryRequest**](../Model/V1AdjustInventoryRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -235,7 +235,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the location to create an item for. |
- **body** | [**\SquareConnect\Model\V1Category**](../Model/v1Category.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Category**](../Model/V1Category.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -285,7 +285,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the location to create an item for. |
- **body** | [**\SquareConnect\Model\V1Discount**](../Model/v1Discount.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Discount**](../Model/V1Discount.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -335,7 +335,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the location to create a fee for. |
- **body** | [**\SquareConnect\Model\V1Fee**](../Model/v1Fee.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Fee**](../Model/V1Fee.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -385,7 +385,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the location to create an item for. |
- **body** | [**\SquareConnect\Model\V1Item**](../Model/v1Item.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Item**](../Model/V1Item.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -435,7 +435,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the location to create a modifier list for. |
- **body** | [**\SquareConnect\Model\V1ModifierList**](../Model/v1ModifierList.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1ModifierList**](../Model/V1ModifierList.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -487,7 +487,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the item&#39;s associated location. |
  **modifier_list_id** | **string**| The ID of the modifier list to edit. |
- **body** | [**\SquareConnect\Model\V1ModifierOption**](../Model/v1ModifierOption.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1ModifierOption**](../Model/V1ModifierOption.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -537,7 +537,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the location to create an item for. |
- **body** | [**\SquareConnect\Model\V1Page**](../Model/v1Page.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Page**](../Model/V1Page.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -589,7 +589,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the item&#39;s associated location. |
  **item_id** | **string**| The item&#39;s ID. |
- **body** | [**\SquareConnect\Model\V1Variation**](../Model/v1Variation.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Variation**](../Model/V1Variation.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -1209,7 +1209,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listInventory**
-> \SquareConnect\Model\V1InventoryEntry[] listInventory($location_id, $limit)
+> \SquareConnect\Model\V1InventoryEntry[] listInventory($location_id, $limit, $batch_token)
 
 Provides inventory information for all of a merchant's inventory-enabled item variations.
 
@@ -1226,9 +1226,10 @@ SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACC
 $api_instance = new SquareConnect\Api\V1ItemsApi();
 $location_id = "location_id_example"; // string | The ID of the item's associated location.
 $limit = 56; // int | The maximum number of inventory entries to return in a single response. This value cannot exceed 1000.
+$batch_token = "batch_token_example"; // string | A pagination cursor to retrieve the next set of results for your original query to the endpoint.
 
 try {
-    $result = $api_instance->listInventory($location_id, $limit);
+    $result = $api_instance->listInventory($location_id, $limit, $batch_token);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling V1ItemsApi->listInventory: ', $e->getMessage(), PHP_EOL;
@@ -1242,6 +1243,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the item&#39;s associated location. |
  **limit** | **int**| The maximum number of inventory entries to return in a single response. This value cannot exceed 1000. | [optional]
+ **batch_token** | **string**| A pagination cursor to retrieve the next set of results for your original query to the endpoint. | [optional]
 
 ### Return type
 
@@ -1259,7 +1261,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listItems**
-> \SquareConnect\Model\V1Item[] listItems($location_id)
+> \SquareConnect\Model\V1Item[] listItems($location_id, $batch_token)
 
 Provides summary information for all of a location's items.
 
@@ -1275,9 +1277,10 @@ SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACC
 
 $api_instance = new SquareConnect\Api\V1ItemsApi();
 $location_id = "location_id_example"; // string | The ID of the location to list items for.
+$batch_token = "batch_token_example"; // string | A pagination cursor to retrieve the next set of results for your original query to the endpoint.
 
 try {
-    $result = $api_instance->listItems($location_id);
+    $result = $api_instance->listItems($location_id, $batch_token);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling V1ItemsApi->listItems: ', $e->getMessage(), PHP_EOL;
@@ -1290,6 +1293,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the location to list items for. |
+ **batch_token** | **string**| A pagination cursor to retrieve the next set of results for your original query to the endpoint. | [optional]
 
 ### Return type
 
@@ -1641,7 +1645,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the category&#39;s associated location. |
  **category_id** | **string**| The ID of the category to edit. |
- **body** | [**\SquareConnect\Model\V1Category**](../Model/v1Category.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Category**](../Model/V1Category.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -1693,7 +1697,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the category&#39;s associated location. |
  **discount_id** | **string**| The ID of the discount to edit. |
- **body** | [**\SquareConnect\Model\V1Discount**](../Model/v1Discount.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Discount**](../Model/V1Discount.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -1745,7 +1749,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the fee&#39;s associated location. |
  **fee_id** | **string**| The ID of the fee to edit. |
- **body** | [**\SquareConnect\Model\V1Fee**](../Model/v1Fee.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Fee**](../Model/V1Fee.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -1797,7 +1801,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the item&#39;s associated location. |
  **item_id** | **string**| The ID of the item to modify. |
- **body** | [**\SquareConnect\Model\V1Item**](../Model/v1Item.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Item**](../Model/V1Item.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -1849,7 +1853,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the item&#39;s associated location. |
  **modifier_list_id** | **string**| The ID of the modifier list to edit. |
- **body** | [**\SquareConnect\Model\V1UpdateModifierListRequest**](../Model/v1UpdateModifierListRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1UpdateModifierListRequest**](../Model/V1UpdateModifierListRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -1903,7 +1907,7 @@ Name | Type | Description  | Notes
  **location_id** | **string**| The ID of the item&#39;s associated location. |
  **modifier_list_id** | **string**| The ID of the modifier list to edit. |
  **modifier_option_id** | **string**| The ID of the modifier list to edit. |
- **body** | [**\SquareConnect\Model\V1ModifierOption**](../Model/v1ModifierOption.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1ModifierOption**](../Model/V1ModifierOption.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -1955,7 +1959,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the Favorites page&#39;s associated location |
  **page_id** | **string**| The ID of the page to modify. |
- **body** | [**\SquareConnect\Model\V1Page**](../Model/v1Page.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Page**](../Model/V1Page.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -2007,7 +2011,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the Favorites page&#39;s associated location. |
  **page_id** | **string**| The ID of the page the cell belongs to. |
- **body** | [**\SquareConnect\Model\V1PageCell**](../Model/v1PageCell.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1PageCell**](../Model/V1PageCell.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
@@ -2061,7 +2065,7 @@ Name | Type | Description  | Notes
  **location_id** | **string**| The ID of the item&#39;s associated location. |
  **item_id** | **string**| The ID of the item to modify. |
  **variation_id** | **string**| The ID of the variation to modify. |
- **body** | [**\SquareConnect\Model\V1Variation**](../Model/v1Variation.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+ **body** | [**\SquareConnect\Model\V1Variation**](../Model/V1Variation.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 

@@ -1,5 +1,12 @@
 # Change Log
 
+## Version 2.2.1 (2017-08-11)
+
+* Documentation style and links fixes
+* Document Getters and Setters for protected properties
+* Support for pagination on V1 endpoints
+* Include refund detail fields on V1 Refund model
+
 ### Version 2.0.2 (2017-01-20)
 
 * Bug Fixes for List Locations endpiont.
