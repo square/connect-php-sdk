@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 
 CreateRefund
 
-Initiates a refund for a previously charged tender.  You must issue a refund within 120 days of the associated payment. See (this article)[https://squareup.com/help/us/en/article/5060] for more information on refund behavior.
+Initiates a refund for a previously charged tender.  You must issue a refund within 120 days of the associated payment. See [this article](https://squareup.com/help/us/en/article/5060) for more information on refund behavior.
 
 ### Example
 ```php
