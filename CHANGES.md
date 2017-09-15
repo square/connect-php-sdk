@@ -1,5 +1,11 @@
 # Change Log
 
+## Version 2.3.1 (2017-09-15)
+
+### New features: Charge Orders
+
+* `Charge` endpoint can charge a specific Order.
+
 ## Version 2.3.0 (2017-09-13)
 
 ### New features: Orders API
