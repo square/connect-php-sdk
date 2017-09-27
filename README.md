@@ -52,29 +52,69 @@ If you cannot access the command line for your server, you can also install the 
 require('connect-php-sdk-master/autoload.php');
 ```
 *Note: you might have to change the path depending on where you place the SDK in relation to your other `php` files.*
+
 ## Getting Started
 
-Please follow the [installation procedure](#installation--usage) and then run the following:
+Please follow the [installation procedure](#installation--usage):
 
+
+### Retrieve your location IDs
 ```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require 'vendor/autoload.php';
 
-// Configure OAuth2 access token for authorization: oauth2
-SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-$api_instance = new SquareConnect\Api\ApplePayApi();
-$body = new \SquareConnect\Model\RegisterDomainRequest(); // \SquareConnect\Model\RegisterDomainRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
+# setup authorization
+\SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken($access_token);
+# create an instance of the Location API $locations_api = new \SquareConnect\Api\LocationsApi();
 
 try {
-    $result = $api_instance->registerDomain($body);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ApplePayApi->registerDomain: ', $e->getMessage(), PHP_EOL;
+  $locations = $locations_api->listLocations();
+  print_r($locations->getLocations());
+} catch (\SquareConnect\ApiException $e) {
+  echo "Caught exception!<br/>";
+  print_r("<strong>Response body:</strong><br/>");
+  echo "<pre>"; var_dump($e->getResponseBody()); echo "</pre>";
+  echo "<br/><strong>Response headers:</strong><br/>";
+  echo "<pre>"; var_dump($e->getResponseHeaders()); echo "</pre>";
+  exit(1);
 }
-
-?>
 ```
+
+### Charge the card nonce
+```php
+require 'vendor/autoload.php';
+
+
+# setup authorization
+\SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken($access_token);
+# create an instance of the Transaction API class
+$transactions_api = new \SquareConnect\Api\TransactionsApi();
+$location_id = 'YOUR_LOCATION_ID'
+$nonce = 'YOUR_NONCE'
+
+$request_body = array (
+    "card_nonce" => $nonce,
+    # Monetary amounts are specified in the smallest unit of the applicable currency.
+    # This amount is in cents. It's also hard-coded for $1.00, which isn't very useful.
+    "amount_money" => array (
+        "amount" => 100,
+        "currency" => "USD"
+    ),
+    # Every payment you process with the SDK must have a unique idempotency key.
+    # If you're unsure whether a particular payment succeeded, you can reattempt
+    # it with the same idempotency key without worrying about double charging
+    # the buyer.
+    "idempotency_key" => uniqid()
+);
+
+try {
+    $result = $transactions_api-charge($location_id,  $request_body);
+    print_r($result);
+} catch (\SquareConnect\ApiException $e) {
+    echo "Exception when calling TransactionApi->charge:";
+    var_dump($e->getResponseBody());
+}
+```
+
 
 ## Documentation for API Endpoints
 
