@@ -142,7 +142,7 @@ class CatalogObject implements ArrayAccess
       */
     protected $catalog_v1_ids;
     /**
-      * $present_at_all_locations If `true`, this object is present at all locations (including future locations), except where specified in the `absent_at_location_ids` field. If `false`, this object is not present at any locations (including future locations), except where specified in the `present_at_location_ids` field.
+      * $present_at_all_locations If `true`, this object is present at all locations (including future locations), except where specified in the `absent_at_location_ids` field. If `false`, this object is not present at any locations (including future locations), except where specified in the `present_at_location_ids` field. If not specified, defaults to `true`.
       * @var bool
       */
     protected $present_at_all_locations;
@@ -406,7 +406,7 @@ class CatalogObject implements ArrayAccess
   
     /**
      * Sets present_at_all_locations
-     * @param bool $present_at_all_locations If `true`, this object is present at all locations (including future locations), except where specified in the `absent_at_location_ids` field. If `false`, this object is not present at any locations (including future locations), except where specified in the `present_at_location_ids` field.
+     * @param bool $present_at_all_locations If `true`, this object is present at all locations (including future locations), except where specified in the `absent_at_location_ids` field. If `false`, this object is not present at any locations (including future locations), except where specified in the `present_at_location_ids` field. If not specified, defaults to `true`.
      * @return $this
      */
     public function setPresentAtAllLocations($present_at_all_locations)

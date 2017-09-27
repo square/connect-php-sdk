@@ -4,7 +4,7 @@
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------
 **id** | getId() | setId($value) | **string** | The location&#39;s unique ID. | [optional] 
-**name** | getName() | setName($value) | **string** | The location&#39;s name. Location names are set by the location owner and displayed in the dashboard as the location&#39;s nickname | [optional] 
+**name** | getName() | setName($value) | **string** | The location&#39;s name. Location names are set by the account owner and displayed in the dashboard as the location&#39;s nickname | [optional] 
 **address** | getAddress() | setAddress($value) | [**\SquareConnect\Model\Address**](Address.md) | The location&#39;s physical address. | [optional] 
 **timezone** | getTimezone() | setTimezone($value) | **string** | The [IANA Timezone Database](https://www.iana.org/time-zones) identifier for the location&#39;s timezone. | [optional] 
 **capabilities** | getCapabilities() | setCapabilities($value) | **string[]** | Indicates which Square features are enabled for the location.  See [LocationCapability](#type-locationcapability) for possible values. | [optional] 
@@ -16,6 +16,7 @@ Name | Getter | Setter | Type | Description | Notes
 **currency** | getCurrency() | setCurrency($value) | **string** | The currency used for all transactions at this location, specified in __ISO 4217 format__. For example, the currency for a location processing transactions in the United States is &#39;USD&#39;.  See [Currency](#type-currency) for possible values. | [optional] 
 **phone_number** | getPhoneNumber() | setPhoneNumber($value) | **string** | The location&#39;s phone_number. | [optional] 
 **business_name** | getBusinessName() | setBusinessName($value) | **string** | The location&#39;s business_name which is shown to its customers. For example, this is the name printed on its customer&#39;s receipts. | [optional] 
+**type** | getType() | setType($value) | **string** | The location&#39;s type, as set by the account owner in the Square dashboard. Typically used to indicate whether or not the location object represents a physical space like a building or mall space.  See [LocationType](#type-locationtype) for possible values. | [optional] 
 
 Note: All properties are protected and only accessed via getters and setters.
 
