@@ -36,7 +36,8 @@ class Location implements ArrayAccess
         'language_code' => 'string',
         'currency' => 'string',
         'phone_number' => 'string',
-        'business_name' => 'string'
+        'business_name' => 'string',
+        'type' => 'string'
     );
   
     /** 
@@ -56,7 +57,8 @@ class Location implements ArrayAccess
         'language_code' => 'language_code',
         'currency' => 'currency',
         'phone_number' => 'phone_number',
-        'business_name' => 'business_name'
+        'business_name' => 'business_name',
+        'type' => 'type'
     );
   
     /**
@@ -76,7 +78,8 @@ class Location implements ArrayAccess
         'language_code' => 'setLanguageCode',
         'currency' => 'setCurrency',
         'phone_number' => 'setPhoneNumber',
-        'business_name' => 'setBusinessName'
+        'business_name' => 'setBusinessName',
+        'type' => 'setType'
     );
   
     /**
@@ -96,7 +99,8 @@ class Location implements ArrayAccess
         'language_code' => 'getLanguageCode',
         'currency' => 'getCurrency',
         'phone_number' => 'getPhoneNumber',
-        'business_name' => 'getBusinessName'
+        'business_name' => 'getBusinessName',
+        'type' => 'getType'
     );
   
     /**
@@ -105,7 +109,7 @@ class Location implements ArrayAccess
       */
     protected $id;
     /**
-      * $name The location's name. Location names are set by the location owner and displayed in the dashboard as the location's nickname
+      * $name The location's name. Location names are set by the account owner and displayed in the dashboard as the location's nickname
       * @var string
       */
     protected $name;
@@ -164,6 +168,11 @@ class Location implements ArrayAccess
       * @var string
       */
     protected $business_name;
+    /**
+      * $type The location's type, as set by the account owner in the Square dashboard. Typically used to indicate whether or not the location object represents a physical space like a building or mall space.  See [LocationType](#type-locationtype) for possible values.
+      * @var string
+      */
+    protected $type;
 
     /**
      * Constructor
@@ -237,6 +246,11 @@ class Location implements ArrayAccess
             } else {
               $this->business_name = null;
             }
+            if (isset($data["type"])) {
+              $this->type = $data["type"];
+            } else {
+              $this->type = null;
+            }
         }
     }
     /**
@@ -269,7 +283,7 @@ class Location implements ArrayAccess
   
     /**
      * Sets name
-     * @param string $name The location's name. Location names are set by the location owner and displayed in the dashboard as the location's nickname
+     * @param string $name The location's name. Location names are set by the account owner and displayed in the dashboard as the location's nickname
      * @return $this
      */
     public function setName($name)
@@ -484,6 +498,25 @@ class Location implements ArrayAccess
     public function setBusinessName($business_name)
     {
         $this->business_name = $business_name;
+        return $this;
+    }
+    /**
+     * Gets type
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+  
+    /**
+     * Sets type
+     * @param string $type The location's type, as set by the account owner in the Square dashboard. Typically used to indicate whether or not the location object represents a physical space like a building or mall space.  See [LocationType](#type-locationtype) for possible values.
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
         return $this;
     }
     /**

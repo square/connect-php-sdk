@@ -63,14 +63,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\CatalogApi();
-$body = new \SquareConnect\Model\BatchDeleteCatalogObjectsRequest(); // \SquareConnect\Model\BatchDeleteCatalogObjectsRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
+$api_instance = new SquareConnect\Api\ApplePayApi();
+$body = new \SquareConnect\Model\RegisterDomainRequest(); // \SquareConnect\Model\RegisterDomainRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->batchDeleteCatalogObjects($body);
+    $result = $api_instance->registerDomain($body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CatalogApi->batchDeleteCatalogObjects: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ApplePayApi->registerDomain: ', $e->getMessage(), PHP_EOL;
 }
 
 ?>
@@ -82,6 +82,7 @@ All URIs are relative to *https://connect.squareup.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*ApplePayApi* | [**registerDomain**](docs/Api/ApplePayApi.md#registerdomain) | **POST** /v2/apple-pay/domains | RegisterDomain
 *CatalogApi* | [**batchDeleteCatalogObjects**](docs/Api/CatalogApi.md#batchdeletecatalogobjects) | **POST** /v2/catalog/batch-delete | BatchDeleteCatalogObjects
 *CatalogApi* | [**batchRetrieveCatalogObjects**](docs/Api/CatalogApi.md#batchretrievecatalogobjects) | **POST** /v2/catalog/batch-retrieve | BatchRetrieveCatalogObjects
 *CatalogApi* | [**batchUpsertCatalogObjects**](docs/Api/CatalogApi.md#batchupsertcatalogobjects) | **POST** /v2/catalog/batch-upsert | BatchUpsertCatalogObjects
@@ -273,6 +274,7 @@ Class | Method | HTTP request | Description
  - [Location](docs/Model/Location.md)
  - [LocationCapability](docs/Model/LocationCapability.md)
  - [LocationStatus](docs/Model/LocationStatus.md)
+ - [LocationType](docs/Model/LocationType.md)
  - [Money](docs/Model/Money.md)
  - [Order](docs/Model/Order.md)
  - [OrderLineItem](docs/Model/OrderLineItem.md)
@@ -284,6 +286,9 @@ Class | Method | HTTP request | Description
  - [OrderLineItemTaxType](docs/Model/OrderLineItemTaxType.md)
  - [Refund](docs/Model/Refund.md)
  - [RefundStatus](docs/Model/RefundStatus.md)
+ - [RegisterDomainRequest](docs/Model/RegisterDomainRequest.md)
+ - [RegisterDomainResponse](docs/Model/RegisterDomainResponse.md)
+ - [RegisterDomainResponseStatus](docs/Model/RegisterDomainResponseStatus.md)
  - [RetrieveCatalogObjectRequest](docs/Model/RetrieveCatalogObjectRequest.md)
  - [RetrieveCatalogObjectResponse](docs/Model/RetrieveCatalogObjectResponse.md)
  - [RetrieveCustomerRequest](docs/Model/RetrieveCustomerRequest.md)

@@ -1,5 +1,15 @@
 # Change Log
 
+## Version 2.4 (2017-09-27)
+
+### New features: Register Domain for Apple Pay
+
+* `RegisterDomain` endpoint activates a domain for use with Web Apple Pay.
+
+### Other Changes
+
+* `Location.type` used to indicate whether or not the location object represents a physical space.
+
 ## Version 2.3.1 (2017-09-15)
 
 ### New features: Charge Orders
