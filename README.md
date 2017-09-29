@@ -107,7 +107,7 @@ $request_body = array (
 );
 
 try {
-    $result = $transactions_api-charge($location_id,  $request_body);
+    $result = $transactions_api->charge($location_id,  $request_body);
     print_r($result);
 } catch (\SquareConnect\ApiException $e) {
     echo "Exception when calling TransactionApi->charge:";
