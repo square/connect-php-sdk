@@ -14,6 +14,7 @@ Name | Getter | Setter | Type | Description | Notes
 **type** | getType() | setType($value) | **string** | The type of tender, such as &#x60;CARD&#x60; or &#x60;CASH&#x60;. | 
 **card_details** | getCardDetails() | setCardDetails($value) | [**\SquareConnect\Model\TenderCardDetails**](TenderCardDetails.md) | The details of the card tender.  This value is present only if the value of &#x60;type&#x60; is &#x60;CARD&#x60;. | [optional] 
 **cash_details** | getCashDetails() | setCashDetails($value) | [**\SquareConnect\Model\TenderCashDetails**](TenderCashDetails.md) | The details of the cash tender.  This value is present only if the value of &#x60;type&#x60; is &#x60;CASH&#x60;. | [optional] 
+**additional_recipients** | getAdditionalRecipients() | setAdditionalRecipients($value) | [**\SquareConnect\Model\AdditionalRecipient[]**](AdditionalRecipient.md) | Additional recipients (other than the merchant) receiving a portion of this tender. For example, fees assessed on the purchase by a third party integration. | [optional] 
 
 Note: All properties are protected and only accessed via getters and setters.
 

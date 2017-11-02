@@ -1,5 +1,26 @@
 # Change Log
 
+## Version 2.5 (2017-11-02)
+
+### New features: Transaction API and Reporting API
+
+The Transaction API now supports the following request objects:
+
+* `additional_recipients` &mdash; data type representing an additional recipient
+  (in other words, a recipient other than the merchant or Square) receiving a
+  portion of a tender.
+
+The new Reporting API includes two endpoints that let you pull information about distributions you have received as an additional recipient:
+
+* `AdditionalRecipientReceivables` &mdash; returns a list of receivables (across
+  all source locations) representing monies credited to the given location ID by
+  another Square account using the `additional_recipients` field in a transaction.
+
+* `AdditionalRecipientReceivablesRefunds` &mdash; returns a list of refunded
+  transactions (across all source locations) related to monies credited to the
+  given location ID by another Square account using the `additional_recipients`
+  field in a transaction.
+
 ## Version 2.4 (2017-09-27)
 
 ### New features: Register Domain for Apple Pay

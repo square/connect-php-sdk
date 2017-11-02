@@ -19,11 +19,13 @@ namespace SquareConnect\Model;
 class TenderTest extends \PHPUnit_Framework_TestCase
 {
 
+    private static $tender;
+
     /**
      * Setup before running each test case
      */
     public static function setUpBeforeClass() {
-
+        self::$tender = new \SquareConnect\Model\Tender();
     }
 
     /**
@@ -38,6 +40,22 @@ class TenderTest extends \PHPUnit_Framework_TestCase
      */
     public function testTender() {
 
+    }
+
+    /**
+     * Test AdditionalRecipients
+     */
+    public function testAdditionalRecipients() {
+        $recipient = [
+            "location_id" => "location",
+            "description" => "description",
+            "amount_money" => [
+              "amount" => 1,
+              "currency" => "USD"
+            ]
+        ];
+        self::$tender->setAdditionalRecipients([$recipient]);
+        $this->assertContains($recipient, self::$tender->getAdditionalRecipients());
     }
 
 }
