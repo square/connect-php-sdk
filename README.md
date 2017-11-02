@@ -145,6 +145,8 @@ Class | Method | HTTP request | Description
 *LocationsApi* | [**listLocations**](docs/Api/LocationsApi.md#listlocations) | **GET** /v2/locations | ListLocations
 *OrdersApi* | [**batchRetrieveOrders**](docs/Api/OrdersApi.md#batchretrieveorders) | **POST** /v2/locations/{location_id}/orders/batch-retrieve | BatchRetrieveOrders
 *OrdersApi* | [**createOrder**](docs/Api/OrdersApi.md#createorder) | **POST** /v2/locations/{location_id}/orders | CreateOrder
+*ReportingApi* | [**listAdditionalRecipientReceivableRefunds**](docs/Api/ReportingApi.md#listadditionalrecipientreceivablerefunds) | **GET** /v2/locations/{location_id}/additional-recipient-receivable-refunds | ListAdditionalRecipientReceivableRefunds
+*ReportingApi* | [**listAdditionalRecipientReceivables**](docs/Api/ReportingApi.md#listadditionalrecipientreceivables) | **GET** /v2/locations/{location_id}/additional-recipient-receivables | ListAdditionalRecipientReceivables
 *TransactionsApi* | [**captureTransaction**](docs/Api/TransactionsApi.md#capturetransaction) | **POST** /v2/locations/{location_id}/transactions/{transaction_id}/capture | CaptureTransaction
 *TransactionsApi* | [**charge**](docs/Api/TransactionsApi.md#charge) | **POST** /v2/locations/{location_id}/transactions | Charge
 *TransactionsApi* | [**createRefund**](docs/Api/TransactionsApi.md#createrefund) | **POST** /v2/locations/{location_id}/transactions/{transaction_id}/refund | CreateRefund
@@ -225,6 +227,9 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [AdditionalRecipient](docs/Model/AdditionalRecipient.md)
+ - [AdditionalRecipientReceivable](docs/Model/AdditionalRecipientReceivable.md)
+ - [AdditionalRecipientReceivableRefund](docs/Model/AdditionalRecipientReceivableRefund.md)
  - [Address](docs/Model/Address.md)
  - [BatchDeleteCatalogObjectsRequest](docs/Model/BatchDeleteCatalogObjectsRequest.md)
  - [BatchDeleteCatalogObjectsResponse](docs/Model/BatchDeleteCatalogObjectsResponse.md)
@@ -268,6 +273,7 @@ Class | Method | HTTP request | Description
  - [CatalogTax](docs/Model/CatalogTax.md)
  - [CatalogV1Id](docs/Model/CatalogV1Id.md)
  - [ChargeRequest](docs/Model/ChargeRequest.md)
+ - [ChargeRequestAdditionalRecipient](docs/Model/ChargeRequestAdditionalRecipient.md)
  - [ChargeResponse](docs/Model/ChargeResponse.md)
  - [Checkout](docs/Model/Checkout.md)
  - [Country](docs/Model/Country.md)
@@ -301,6 +307,10 @@ Class | Method | HTTP request | Description
  - [ErrorCode](docs/Model/ErrorCode.md)
  - [InventoryAlertType](docs/Model/InventoryAlertType.md)
  - [ItemVariationLocationOverrides](docs/Model/ItemVariationLocationOverrides.md)
+ - [ListAdditionalRecipientReceivableRefundsRequest](docs/Model/ListAdditionalRecipientReceivableRefundsRequest.md)
+ - [ListAdditionalRecipientReceivableRefundsResponse](docs/Model/ListAdditionalRecipientReceivableRefundsResponse.md)
+ - [ListAdditionalRecipientReceivablesRequest](docs/Model/ListAdditionalRecipientReceivablesRequest.md)
+ - [ListAdditionalRecipientReceivablesResponse](docs/Model/ListAdditionalRecipientReceivablesResponse.md)
  - [ListCatalogRequest](docs/Model/ListCatalogRequest.md)
  - [ListCatalogResponse](docs/Model/ListCatalogResponse.md)
  - [ListCustomersRequest](docs/Model/ListCustomersRequest.md)

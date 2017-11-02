@@ -6,6 +6,9 @@
  */
 
 namespace SquareConnect\Model;
+use SquareConnect\Model\Money;
+use SquareConnect\Model\AdditionalRecipient;
+use SquareConnect\Model\AdditionalRecipientTest;
 
 /**
  * RefundTest Class Doc Comment
@@ -19,11 +22,13 @@ namespace SquareConnect\Model;
 class RefundTest extends \PHPUnit_Framework_TestCase
 {
 
+    private static $refund;
+
     /**
      * Setup before running each test case
      */
     public static function setUpBeforeClass() {
-
+        self::$refund = new \SquareConnect\Model\Refund();
     }
 
     /**
@@ -38,6 +43,22 @@ class RefundTest extends \PHPUnit_Framework_TestCase
      */
     public function testRefund() {
 
+    }
+
+    /**
+     * Test AdditionalRecipients
+     */
+    public function testAdditionalRecipients() {
+        $recipient = [
+            "location_id" => "location",
+            "description" => "description",
+            "amount_money" => [
+              "amount" => 1,
+              "currency" => "USD"
+            ]
+        ];
+        self::$refund->setAdditionalRecipients([$recipient]);
+        $this->assertContains($recipient, self::$refund->getAdditionalRecipients());
     }
 
 }

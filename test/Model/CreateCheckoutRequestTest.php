@@ -6,6 +6,7 @@
  */
 
 namespace SquareConnect\Model;
+use SquareConnect\Model\CreateCheckoutRequest;
 
 /**
  * CreateCheckoutRequestTest Class Doc Comment
@@ -19,11 +20,13 @@ namespace SquareConnect\Model;
 class CreateCheckoutRequestTest extends \PHPUnit_Framework_TestCase
 {
 
+    private static $checkoutRequest;
+
     /**
      * Setup before running each test case
      */
     public static function setUpBeforeClass() {
-
+        self::$checkoutRequest = new \SquareConnect\Model\CreateCheckoutRequest();
     }
 
     /**
@@ -38,6 +41,22 @@ class CreateCheckoutRequestTest extends \PHPUnit_Framework_TestCase
      */
     public function testCreateCheckoutRequest() {
 
+    }
+
+    /**
+     * Test AdditionalRecipients
+     */
+    public function testAdditionalRecipients() {
+        $recipient = [
+            "location_id" => "location",
+            "description" => "description",
+            "amount_money" => [
+              "amount" => 1,
+              "currency" => "USD"
+            ]
+        ];
+        self::$checkoutRequest->setAdditionalRecipients([$recipient]);
+        $this->assertContains($recipient, self::$checkoutRequest->getAdditionalRecipients());
     }
 
 }

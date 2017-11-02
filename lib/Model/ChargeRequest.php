@@ -35,7 +35,8 @@ class ChargeRequest implements ArrayAccess
         'billing_address' => '\SquareConnect\Model\Address',
         'shipping_address' => '\SquareConnect\Model\Address',
         'buyer_email_address' => 'string',
-        'order_id' => 'string'
+        'order_id' => 'string',
+        'additional_recipients' => '\SquareConnect\Model\AdditionalRecipient[]'
     );
   
     /** 
@@ -54,7 +55,8 @@ class ChargeRequest implements ArrayAccess
         'billing_address' => 'billing_address',
         'shipping_address' => 'shipping_address',
         'buyer_email_address' => 'buyer_email_address',
-        'order_id' => 'order_id'
+        'order_id' => 'order_id',
+        'additional_recipients' => 'additional_recipients'
     );
   
     /**
@@ -73,7 +75,8 @@ class ChargeRequest implements ArrayAccess
         'billing_address' => 'setBillingAddress',
         'shipping_address' => 'setShippingAddress',
         'buyer_email_address' => 'setBuyerEmailAddress',
-        'order_id' => 'setOrderId'
+        'order_id' => 'setOrderId',
+        'additional_recipients' => 'setAdditionalRecipients'
     );
   
     /**
@@ -92,7 +95,8 @@ class ChargeRequest implements ArrayAccess
         'billing_address' => 'getBillingAddress',
         'shipping_address' => 'getShippingAddress',
         'buyer_email_address' => 'getBuyerEmailAddress',
-        'order_id' => 'getOrderId'
+        'order_id' => 'getOrderId',
+        'additional_recipients' => 'getAdditionalRecipients'
     );
   
     /**
@@ -155,6 +159,11 @@ class ChargeRequest implements ArrayAccess
       * @var string
       */
     protected $order_id;
+    /**
+      * $additional_recipients The basic primitive of multi party settlement. The value is optional. The transation facilitated by you can be splited from here.  If you provide this value, the `amount_money` value in your additional_recipients must not be more than 90% of the `amount_money` value in you charge's request. The `location_id` must be the valid location of the app owner merchant.  This field is currently not supported in sandbox.
+      * @var \SquareConnect\Model\AdditionalRecipient[]
+      */
+    protected $additional_recipients;
 
     /**
      * Constructor
@@ -222,6 +231,11 @@ class ChargeRequest implements ArrayAccess
               $this->order_id = $data["order_id"];
             } else {
               $this->order_id = null;
+            }
+            if (isset($data["additional_recipients"])) {
+              $this->additional_recipients = $data["additional_recipients"];
+            } else {
+              $this->additional_recipients = null;
             }
         }
     }
@@ -451,6 +465,25 @@ class ChargeRequest implements ArrayAccess
     public function setOrderId($order_id)
     {
         $this->order_id = $order_id;
+        return $this;
+    }
+    /**
+     * Gets additional_recipients
+     * @return \SquareConnect\Model\AdditionalRecipient[]
+     */
+    public function getAdditionalRecipients()
+    {
+        return $this->additional_recipients;
+    }
+  
+    /**
+     * Sets additional_recipients
+     * @param \SquareConnect\Model\AdditionalRecipient[] $additional_recipients The basic primitive of multi party settlement. The value is optional. The transation facilitated by you can be splited from here.  If you provide this value, the `amount_money` value in your additional_recipients must not be more than 90% of the `amount_money` value in you charge's request. The `location_id` must be the valid location of the app owner merchant.  This field is currently not supported in sandbox.
+     * @return $this
+     */
+    public function setAdditionalRecipients($additional_recipients)
+    {
+        $this->additional_recipients = $additional_recipients;
         return $this;
     }
     /**

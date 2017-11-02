@@ -34,7 +34,8 @@ class Tender implements ArrayAccess
         'customer_id' => 'string',
         'type' => 'string',
         'card_details' => '\SquareConnect\Model\TenderCardDetails',
-        'cash_details' => '\SquareConnect\Model\TenderCashDetails'
+        'cash_details' => '\SquareConnect\Model\TenderCashDetails',
+        'additional_recipients' => '\SquareConnect\Model\AdditionalRecipient[]'
     );
   
     /** 
@@ -52,7 +53,8 @@ class Tender implements ArrayAccess
         'customer_id' => 'customer_id',
         'type' => 'type',
         'card_details' => 'card_details',
-        'cash_details' => 'cash_details'
+        'cash_details' => 'cash_details',
+        'additional_recipients' => 'additional_recipients'
     );
   
     /**
@@ -70,7 +72,8 @@ class Tender implements ArrayAccess
         'customer_id' => 'setCustomerId',
         'type' => 'setType',
         'card_details' => 'setCardDetails',
-        'cash_details' => 'setCashDetails'
+        'cash_details' => 'setCashDetails',
+        'additional_recipients' => 'setAdditionalRecipients'
     );
   
     /**
@@ -88,7 +91,8 @@ class Tender implements ArrayAccess
         'customer_id' => 'getCustomerId',
         'type' => 'getType',
         'card_details' => 'getCardDetails',
-        'cash_details' => 'getCashDetails'
+        'cash_details' => 'getCashDetails',
+        'additional_recipients' => 'getAdditionalRecipients'
     );
   
     /**
@@ -146,6 +150,11 @@ class Tender implements ArrayAccess
       * @var \SquareConnect\Model\TenderCashDetails
       */
     protected $cash_details;
+    /**
+      * $additional_recipients Additional recipients (other than the merchant) receiving a portion of this tender. For example, fees assessed on the purchase by a third party integration.
+      * @var \SquareConnect\Model\AdditionalRecipient[]
+      */
+    protected $additional_recipients;
 
     /**
      * Constructor
@@ -208,6 +217,11 @@ class Tender implements ArrayAccess
               $this->cash_details = $data["cash_details"];
             } else {
               $this->cash_details = null;
+            }
+            if (isset($data["additional_recipients"])) {
+              $this->additional_recipients = $data["additional_recipients"];
+            } else {
+              $this->additional_recipients = null;
             }
         }
     }
@@ -418,6 +432,25 @@ class Tender implements ArrayAccess
     public function setCashDetails($cash_details)
     {
         $this->cash_details = $cash_details;
+        return $this;
+    }
+    /**
+     * Gets additional_recipients
+     * @return \SquareConnect\Model\AdditionalRecipient[]
+     */
+    public function getAdditionalRecipients()
+    {
+        return $this->additional_recipients;
+    }
+  
+    /**
+     * Sets additional_recipients
+     * @param \SquareConnect\Model\AdditionalRecipient[] $additional_recipients Additional recipients (other than the merchant) receiving a portion of this tender. For example, fees assessed on the purchase by a third party integration.
+     * @return $this
+     */
+    public function setAdditionalRecipients($additional_recipients)
+    {
+        $this->additional_recipients = $additional_recipients;
         return $this;
     }
     /**
