@@ -37,7 +37,8 @@ class Location implements ArrayAccess
         'currency' => 'string',
         'phone_number' => 'string',
         'business_name' => 'string',
-        'type' => 'string'
+        'type' => 'string',
+        'website_url' => 'string'
     );
   
     /** 
@@ -58,7 +59,8 @@ class Location implements ArrayAccess
         'currency' => 'currency',
         'phone_number' => 'phone_number',
         'business_name' => 'business_name',
-        'type' => 'type'
+        'type' => 'type',
+        'website_url' => 'website_url'
     );
   
     /**
@@ -79,7 +81,8 @@ class Location implements ArrayAccess
         'currency' => 'setCurrency',
         'phone_number' => 'setPhoneNumber',
         'business_name' => 'setBusinessName',
-        'type' => 'setType'
+        'type' => 'setType',
+        'website_url' => 'setWebsiteUrl'
     );
   
     /**
@@ -100,7 +103,8 @@ class Location implements ArrayAccess
         'currency' => 'getCurrency',
         'phone_number' => 'getPhoneNumber',
         'business_name' => 'getBusinessName',
-        'type' => 'getType'
+        'type' => 'getType',
+        'website_url' => 'getWebsiteUrl'
     );
   
     /**
@@ -173,6 +177,11 @@ class Location implements ArrayAccess
       * @var string
       */
     protected $type;
+    /**
+      * $website_url The location's website, as set by the account owner in the Square dashboard.  Default: none; only exists if explicitly set.
+      * @var string
+      */
+    protected $website_url;
 
     /**
      * Constructor
@@ -250,6 +259,11 @@ class Location implements ArrayAccess
               $this->type = $data["type"];
             } else {
               $this->type = null;
+            }
+            if (isset($data["website_url"])) {
+              $this->website_url = $data["website_url"];
+            } else {
+              $this->website_url = null;
             }
         }
     }
@@ -517,6 +531,25 @@ class Location implements ArrayAccess
     public function setType($type)
     {
         $this->type = $type;
+        return $this;
+    }
+    /**
+     * Gets website_url
+     * @return string
+     */
+    public function getWebsiteUrl()
+    {
+        return $this->website_url;
+    }
+  
+    /**
+     * Sets website_url
+     * @param string $website_url The location's website, as set by the account owner in the Square dashboard.  Default: none; only exists if explicitly set.
+     * @return $this
+     */
+    public function setWebsiteUrl($website_url)
+    {
+        $this->website_url = $website_url;
         return $this;
     }
     /**

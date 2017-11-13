@@ -30,6 +30,7 @@ class Tender implements ArrayAccess
         'created_at' => 'string',
         'note' => 'string',
         'amount_money' => '\SquareConnect\Model\Money',
+        'tip_money' => '\SquareConnect\Model\Money',
         'processing_fee_money' => '\SquareConnect\Model\Money',
         'customer_id' => 'string',
         'type' => 'string',
@@ -49,6 +50,7 @@ class Tender implements ArrayAccess
         'created_at' => 'created_at',
         'note' => 'note',
         'amount_money' => 'amount_money',
+        'tip_money' => 'tip_money',
         'processing_fee_money' => 'processing_fee_money',
         'customer_id' => 'customer_id',
         'type' => 'type',
@@ -68,6 +70,7 @@ class Tender implements ArrayAccess
         'created_at' => 'setCreatedAt',
         'note' => 'setNote',
         'amount_money' => 'setAmountMoney',
+        'tip_money' => 'setTipMoney',
         'processing_fee_money' => 'setProcessingFeeMoney',
         'customer_id' => 'setCustomerId',
         'type' => 'setType',
@@ -87,6 +90,7 @@ class Tender implements ArrayAccess
         'created_at' => 'getCreatedAt',
         'note' => 'getNote',
         'amount_money' => 'getAmountMoney',
+        'tip_money' => 'getTipMoney',
         'processing_fee_money' => 'getProcessingFeeMoney',
         'customer_id' => 'getCustomerId',
         'type' => 'getType',
@@ -125,6 +129,11 @@ class Tender implements ArrayAccess
       * @var \SquareConnect\Model\Money
       */
     protected $amount_money;
+    /**
+      * $tip_money The tip's amount of the tender.
+      * @var \SquareConnect\Model\Money
+      */
+    protected $tip_money;
     /**
       * $processing_fee_money The amount of any Square processing fees applied to the tender.  This field is not immediately populated when a new transaction is created. It is usually available after about ten seconds.
       * @var \SquareConnect\Model\Money
@@ -192,6 +201,11 @@ class Tender implements ArrayAccess
               $this->amount_money = $data["amount_money"];
             } else {
               $this->amount_money = null;
+            }
+            if (isset($data["tip_money"])) {
+              $this->tip_money = $data["tip_money"];
+            } else {
+              $this->tip_money = null;
             }
             if (isset($data["processing_fee_money"])) {
               $this->processing_fee_money = $data["processing_fee_money"];
@@ -337,6 +351,25 @@ class Tender implements ArrayAccess
     public function setAmountMoney($amount_money)
     {
         $this->amount_money = $amount_money;
+        return $this;
+    }
+    /**
+     * Gets tip_money
+     * @return \SquareConnect\Model\Money
+     */
+    public function getTipMoney()
+    {
+        return $this->tip_money;
+    }
+  
+    /**
+     * Sets tip_money
+     * @param \SquareConnect\Model\Money $tip_money The tip's amount of the tender.
+     * @return $this
+     */
+    public function setTipMoney($tip_money)
+    {
+        $this->tip_money = $tip_money;
         return $this;
     }
     /**

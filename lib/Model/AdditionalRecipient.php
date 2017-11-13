@@ -79,7 +79,7 @@ class AdditionalRecipient implements ArrayAccess
       */
     protected $amount_money;
     /**
-      * $receivable_id The unique ID for this [AdditionalRecipientReceivable](#type-additionalrecipientreceivable), assigned by the server. TODO(botros): add required annotations on this, SETL-7263
+      * $receivable_id The unique ID for this [AdditionalRecipientReceivable](#type-additionalrecipientreceivable), assigned by the server.
       * @var string
       */
     protected $receivable_id;
@@ -181,7 +181,7 @@ class AdditionalRecipient implements ArrayAccess
   
     /**
      * Sets receivable_id
-     * @param string $receivable_id The unique ID for this [AdditionalRecipientReceivable](#type-additionalrecipientreceivable), assigned by the server. TODO(botros): add required annotations on this, SETL-7263
+     * @param string $receivable_id The unique ID for this [AdditionalRecipientReceivable](#type-additionalrecipientreceivable), assigned by the server.
      * @return $this
      */
     public function setReceivableId($receivable_id)
