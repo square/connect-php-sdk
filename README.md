@@ -409,7 +409,6 @@ Class | Method | HTTP request | Description
 
 
 ## Documentation For Authorization
-## Documentation For Authorization
 
 ## oauth2
 
