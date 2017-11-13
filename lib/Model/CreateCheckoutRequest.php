@@ -115,7 +115,7 @@ class CreateCheckoutRequest implements ArrayAccess
       */
     protected $redirect_url;
     /**
-      * $additional_recipients The basic primitive of multi party settlement. The value is optional. The transation facilitated by you can be splited from here.  If you provide this value, the `amount_money` value in your additional_recipients must not be more than 90% of the `total_money` calcualted by Square for your order. The `location_id` must be the valid location of the app owner merchant.  This field is currently not supported in sandbox.
+      * $additional_recipients The basic primitive of multi-party transaction. The value is optional. The transaction facilitated by you can be split from here.  If you provide this value, the `amount_money` value in your additional_recipients must not be more than 90% of the `total_money` calculated by Square for your order. The `location_id` must be the valid location of the app owner merchant.  This field requires `PAYMENTS_WRITE_ADDITIONAL_RECIPIENTS` OAuth permission.  This field is currently not supported in sandbox.
       * @var \SquareConnect\Model\ChargeRequestAdditionalRecipient[]
       */
     protected $additional_recipients;
@@ -313,7 +313,7 @@ class CreateCheckoutRequest implements ArrayAccess
   
     /**
      * Sets additional_recipients
-     * @param \SquareConnect\Model\ChargeRequestAdditionalRecipient[] $additional_recipients The basic primitive of multi party settlement. The value is optional. The transation facilitated by you can be splited from here.  If you provide this value, the `amount_money` value in your additional_recipients must not be more than 90% of the `total_money` calcualted by Square for your order. The `location_id` must be the valid location of the app owner merchant.  This field is currently not supported in sandbox.
+     * @param \SquareConnect\Model\ChargeRequestAdditionalRecipient[] $additional_recipients The basic primitive of multi-party transaction. The value is optional. The transaction facilitated by you can be split from here.  If you provide this value, the `amount_money` value in your additional_recipients must not be more than 90% of the `total_money` calculated by Square for your order. The `location_id` must be the valid location of the app owner merchant.  This field requires `PAYMENTS_WRITE_ADDITIONAL_RECIPIENTS` OAuth permission.  This field is currently not supported in sandbox.
      * @return $this
      */
     public function setAdditionalRecipients($additional_recipients)

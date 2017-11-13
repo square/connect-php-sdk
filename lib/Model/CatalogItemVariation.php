@@ -28,6 +28,7 @@ class CatalogItemVariation implements ArrayAccess
         'name' => 'string',
         'sku' => 'string',
         'upc' => 'string',
+        'ordinal' => 'int',
         'pricing_type' => 'string',
         'price_money' => '\SquareConnect\Model\Money',
         'location_overrides' => '\SquareConnect\Model\ItemVariationLocationOverrides[]',
@@ -47,6 +48,7 @@ class CatalogItemVariation implements ArrayAccess
         'name' => 'name',
         'sku' => 'sku',
         'upc' => 'upc',
+        'ordinal' => 'ordinal',
         'pricing_type' => 'pricing_type',
         'price_money' => 'price_money',
         'location_overrides' => 'location_overrides',
@@ -66,6 +68,7 @@ class CatalogItemVariation implements ArrayAccess
         'name' => 'setName',
         'sku' => 'setSku',
         'upc' => 'setUpc',
+        'ordinal' => 'setOrdinal',
         'pricing_type' => 'setPricingType',
         'price_money' => 'setPriceMoney',
         'location_overrides' => 'setLocationOverrides',
@@ -85,6 +88,7 @@ class CatalogItemVariation implements ArrayAccess
         'name' => 'getName',
         'sku' => 'getSku',
         'upc' => 'getUpc',
+        'ordinal' => 'getOrdinal',
         'pricing_type' => 'getPricingType',
         'price_money' => 'getPriceMoney',
         'location_overrides' => 'getLocationOverrides',
@@ -115,6 +119,11 @@ class CatalogItemVariation implements ArrayAccess
       * @var string
       */
     protected $upc;
+    /**
+      * $ordinal The order in which this item variation should be displayed. This value is read-only. On writes, the ordinal for each item variation within a parent [CatalogItem](#type-catalogitem) is set according to the item variations's position. On reads, the value is not guaranteed to be sequential or unique.
+      * @var int
+      */
+    protected $ordinal;
     /**
       * $pricing_type Indicates whether the item variation's price is fixed or determined at the time of sale. See [CatalogPricingType](#type-catalogpricingtype) for all possible values.
       * @var string
@@ -182,6 +191,11 @@ class CatalogItemVariation implements ArrayAccess
               $this->upc = $data["upc"];
             } else {
               $this->upc = null;
+            }
+            if (isset($data["ordinal"])) {
+              $this->ordinal = $data["ordinal"];
+            } else {
+              $this->ordinal = null;
             }
             if (isset($data["pricing_type"])) {
               $this->pricing_type = $data["pricing_type"];
@@ -299,6 +313,25 @@ class CatalogItemVariation implements ArrayAccess
     public function setUpc($upc)
     {
         $this->upc = $upc;
+        return $this;
+    }
+    /**
+     * Gets ordinal
+     * @return int
+     */
+    public function getOrdinal()
+    {
+        return $this->ordinal;
+    }
+  
+    /**
+     * Sets ordinal
+     * @param int $ordinal The order in which this item variation should be displayed. This value is read-only. On writes, the ordinal for each item variation within a parent [CatalogItem](#type-catalogitem) is set according to the item variations's position. On reads, the value is not guaranteed to be sequential or unique.
+     * @return $this
+     */
+    public function setOrdinal($ordinal)
+    {
+        $this->ordinal = $ordinal;
         return $this;
     }
     /**

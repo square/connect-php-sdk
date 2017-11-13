@@ -409,6 +409,7 @@ Class | Method | HTTP request | Description
 
 
 ## Documentation For Authorization
+## Documentation For Authorization
 
 ## oauth2
 
@@ -431,6 +432,13 @@ Class | Method | HTTP request | Description
  - **EMPLOYEES_WRITE**: POST, PUT, and DELETE endpoints related to employee management
  - **TIMECARDS_READ**: GET endpoints related to employee timecards
  - **TIMECARDS_WRITE**: POST, PUT, and DELETE endpoints related to employee timecards
+ - **PAYMENTS_WRITE_ADDITIONAL_RECIPIENTS**: Allow third party applications to deduct a portion of each transaction amount.
+
+## oauth2ClientSecret
+
+- **Type**: API key
+- **API key parameter name**: Authorization
+- **Location**: HTTP header
 
 
 ## Pagination of V1 Endpoints

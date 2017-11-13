@@ -1,5 +1,12 @@
 # Change Log
 
+## Version 2.5.1 (2017-11-10)
+
+* `ordinal` is added to `CatalogItemVariation`
+* `website_url` is added to `Location`
+* `tip_money` is added to `Tender`
+* Changed `object_type` and `placeholder_type` from lists to single values in `V1PageCell` to mirror data model
+
 ## Version 2.5 (2017-11-02)
 
 ### New features: Transaction API and Reporting API

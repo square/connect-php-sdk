@@ -7,6 +7,7 @@ Name | Getter | Setter | Type | Description | Notes
 **name** | getName() | setName($value) | **string** | The item variation&#39;s name. Searchable. | [optional] 
 **sku** | getSku() | setSku($value) | **string** | The item variation&#39;s SKU, if any. Searchable. | [optional] 
 **upc** | getUpc() | setUpc($value) | **string** | The item variation&#39;s UPC, if any. Searchable. | [optional] 
+**ordinal** | getOrdinal() | setOrdinal($value) | **int** | The order in which this item variation should be displayed. This value is read-only. On writes, the ordinal for each item variation within a parent [CatalogItem](#type-catalogitem) is set according to the item variations&#39;s position. On reads, the value is not guaranteed to be sequential or unique. | [optional] 
 **pricing_type** | getPricingType() | setPricingType($value) | **string** | Indicates whether the item variation&#39;s price is fixed or determined at the time of sale. See [CatalogPricingType](#type-catalogpricingtype) for all possible values. | [optional] 
 **price_money** | getPriceMoney() | setPriceMoney($value) | [**\SquareConnect\Model\Money**](Money.md) | The item variation&#39;s price, if fixed pricing is used. | [optional] 
 **location_overrides** | getLocationOverrides() | setLocationOverrides($value) | [**\SquareConnect\Model\ItemVariationLocationOverrides[]**](ItemVariationLocationOverrides.md) | Per-[location](#type-location) price and inventory overrides. | [optional] 
