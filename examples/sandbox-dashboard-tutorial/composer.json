@@ -1,0 +1,5 @@
+{
+    "require": {
+        "square/connect": "dev-release/2.1.0"
+    }
+}
