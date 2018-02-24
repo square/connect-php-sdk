@@ -64,7 +64,8 @@ require 'vendor/autoload.php';
 
 # setup authorization
 \SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken($access_token);
-# create an instance of the Location API $locations_api = new \SquareConnect\Api\LocationsApi();
+# create an instance of the Location API
+$locations_api = new \SquareConnect\Api\LocationsApi();
 
 try {
   $locations = $locations_api->listLocations();
