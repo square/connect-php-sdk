@@ -9,7 +9,7 @@
         "api"
     ],
     "homepage": "https://github.com/square/connect-php-sdk",
-    "license": "Apache v2",
+    "license": "Apache-2.0",
     "authors": [
         {
             "name": "Square, Inc.",
