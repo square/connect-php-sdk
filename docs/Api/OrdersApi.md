@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 BatchRetrieveOrders
 
-Retrieves a set of [Order](#type-order)s by their IDs.  If a provided Order ID does not exist, it is ignored instead of resulting in an error.
+Retrieves a set of [Order](#type-order)s by their IDs.  If a given Order ID does not exist, the ID is ignored instead of generating an error.
 
 ### Example
 ```php
