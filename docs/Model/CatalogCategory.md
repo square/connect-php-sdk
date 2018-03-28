@@ -3,7 +3,7 @@
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------
-**name** | getName() | setName($value) | **string** | The category&#39;s name. Searchable. | 
+**name** | getName() | setName($value) | **string** | The category&#39;s name. Searchable. | [optional] 
 
 Note: All properties are protected and only accessed via getters and setters.
 

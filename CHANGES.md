@@ -1,5 +1,17 @@
 # Change Log
 
+## Version 2.6.0 (2018-03-27)
+
+### Improvements: Orders API
+
+* `BatchRetrieveOrders` will now return uncharged orders.
+
+### New features: Orders API
+
+* For Catalog-backed line items, setting `CreateOrderRequestLineItem.base_price_money` will now override 
+  the catalog item variation's price.  
+* `CreateOrderRequestModifier`s may now be created ad hoc using the new `name` and `base_price_money` fields.
+
 ## Version 2.5.1 (2017-11-10)
 
 * `ordinal` is added to `CatalogItemVariation`
