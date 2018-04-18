@@ -254,7 +254,7 @@ class V1Payment implements ArrayAccess
       */
     protected $tender;
     /**
-      * $refunds All of the refunds applied to the payment.
+      * $refunds All of the refunds applied to the payment. Note that the value of all refunds on a payment can exceed the value of all tenders if a merchant chooses to refund money to a tender after previously accepting returned goods as part of an exchange.
       * @var \SquareConnect\Model\V1Refund[]
       */
     protected $refunds;
@@ -822,7 +822,7 @@ class V1Payment implements ArrayAccess
   
     /**
      * Sets refunds
-     * @param \SquareConnect\Model\V1Refund[] $refunds All of the refunds applied to the payment.
+     * @param \SquareConnect\Model\V1Refund[] $refunds All of the refunds applied to the payment. Note that the value of all refunds on a payment can exceed the value of all tenders if a merchant chooses to refund money to a tender after previously accepting returned goods as part of an exchange.
      * @return $this
      */
     public function setRefunds($refunds)
