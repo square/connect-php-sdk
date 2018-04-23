@@ -1,5 +1,27 @@
 # Change Log
 
+## Version 2.7.0 (2018-04-26)
+
+### New features: Transactions API and Payments API
+
+The Transactions API in Connect v2 now includes payment and refund information from exchanges.
+
+* `ListTransactions` now includes payment information from sales and exchanges and refund
+information from returns and exchanges.
+* `ListRefunds` now includes refunds that result from exchanges in addition to partial refunds and
+itemized returns through Square's Point of Sale applications.
+
+The Payments API in Connect v1 now includes payment and refund information from exchanges.
+
+* `ListPayments` now includes refunds that are generated from exchanges to account for the
+value of returned goods.
+* `ListRefunds` now returns an approximate number of refunds (default: 100, max: 200).
+The response may contain more results than the prescribed limit when refunds are made
+simultaneously to multiple tenders in a payment or when refunds are generated from exchanges
+to account for the value of returned goods.
+* `is_exchange` is added to `V1Refund` and `V1Tender`. Refunds and tenders marked in this way
+represent the value of returned goods in an exchange, rather than actual money movement.
+
 ## Version 2.6.1 (2018-03-28)
 
 * Updates user-agent header
