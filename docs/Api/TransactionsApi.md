@@ -170,7 +170,7 @@ Name | Type | Description  | Notes
 
 ListRefunds
 
-Lists refunds for one of a business's locations.  Refunds with a `status` of `PENDING` are not currently included in this endpoint's response.  Max results per [page](#paginatingresults): 50
+Lists refunds for one of a business's locations.  In addition to full or partial tender refunds processed through Square APIs, refunds may result from itemized returns or exchanges through Square's Point of Sale applications.  Refunds with a `status` of `PENDING` are not currently included in this endpoint's response.  Max results per [page](#paginatingresults): 50
 
 ### Example
 ```php
@@ -226,7 +226,7 @@ Name | Type | Description  | Notes
 
 ListTransactions
 
-Lists transactions for a particular location.  Max results per [page](#paginatingresults): 50
+Lists transactions for a particular location.  Transactions include payment information from sales and exchanges and refund information from returns and exchanges.  Max results per [page](#paginatingresults): 50
 
 ### Example
 ```php

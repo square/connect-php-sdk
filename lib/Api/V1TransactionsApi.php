@@ -503,7 +503,7 @@ class V1TransactionsApi
      * @param string $order TThe order in which payments are listed in the response. (optional)
      * @param string $begin_time The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)
      * @param string $end_time The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)
-     * @param int $limit The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)
+     * @param int $limit The approximate number of refunds to return in a single response. Default: 100. Max: 200. Response may contain more results than the prescribed limit when refunds are made simultaneously to multiple tenders in a payment or when refunds are generated in an exchange to account for the value of returned goods. (optional)
      * @param string $batch_token A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)
      * @return \SquareConnect\Model\V1Refund[]
      * @throws \SquareConnect\ApiException on non-2xx response
@@ -524,7 +524,7 @@ class V1TransactionsApi
      * @param string $order TThe order in which payments are listed in the response. (optional)
      * @param string $begin_time The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. (optional)
      * @param string $end_time The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)
-     * @param int $limit The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)
+     * @param int $limit The approximate number of refunds to return in a single response. Default: 100. Max: 200. Response may contain more results than the prescribed limit when refunds are made simultaneously to multiple tenders in a payment or when refunds are generated in an exchange to account for the value of returned goods. (optional)
      * @param string $batch_token A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)
      * @return Array of \SquareConnect\Model\V1Refund[], HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
@@ -961,7 +961,7 @@ class V1TransactionsApi
      * Provides comprehensive information for a single payment.
      *
      * @param string $location_id The ID of the payment&#39;s associated location. (required)
-     * @param string $payment_id The payment&#39;s Square-issued ID. You obtain this value from Payment objects returned by the List Payments endpoint, or Settlement objects returned by the List Settlements endpoint. (required)
+     * @param string $payment_id The Square-issued payment ID. payment_id comes from Payment objects returned by the List Payments endpoint, Settlement objects returned by the List Settlements endpoint, or Refund objects returned by the List Refunds endpoint. (required)
      * @return \SquareConnect\Model\V1Payment
      * @throws \SquareConnect\ApiException on non-2xx response
      */
@@ -978,7 +978,7 @@ class V1TransactionsApi
      * Provides comprehensive information for a single payment.
      *
      * @param string $location_id The ID of the payment&#39;s associated location. (required)
-     * @param string $payment_id The payment&#39;s Square-issued ID. You obtain this value from Payment objects returned by the List Payments endpoint, or Settlement objects returned by the List Settlements endpoint. (required)
+     * @param string $payment_id The Square-issued payment ID. payment_id comes from Payment objects returned by the List Payments endpoint, Settlement objects returned by the List Settlements endpoint, or Refund objects returned by the List Refunds endpoint. (required)
      * @return Array of \SquareConnect\Model\V1Payment, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */

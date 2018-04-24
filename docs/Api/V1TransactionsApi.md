@@ -247,7 +247,7 @@ $location_id = "location_id_example"; // string | The ID of the location to list
 $order = "order_example"; // string | TThe order in which payments are listed in the response.
 $begin_time = "begin_time_example"; // string | The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year.
 $end_time = "end_time_example"; // string | The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time.
-$limit = 56; // int | The maximum number of payments to return in a single response. This value cannot exceed 200.
+$limit = 56; // int | The approximate number of refunds to return in a single response. Default: 100. Max: 200. Response may contain more results than the prescribed limit when refunds are made simultaneously to multiple tenders in a payment or when refunds are generated in an exchange to account for the value of returned goods.
 $batch_token = "batch_token_example"; // string | A pagination cursor to retrieve the next set of results for your original query to the endpoint.
 
 try {
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
  **order** | **string**| TThe order in which payments are listed in the response. | [optional]
  **begin_time** | **string**| The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. | [optional]
  **end_time** | **string**| The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. | [optional]
- **limit** | **int**| The maximum number of payments to return in a single response. This value cannot exceed 200. | [optional]
+ **limit** | **int**| The approximate number of refunds to return in a single response. Default: 100. Max: 200. Response may contain more results than the prescribed limit when refunds are made simultaneously to multiple tenders in a payment or when refunds are generated in an exchange to account for the value of returned goods. | [optional]
  **batch_token** | **string**| A pagination cursor to retrieve the next set of results for your original query to the endpoint. | [optional]
 
 ### Return type
@@ -462,7 +462,7 @@ SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACC
 
 $api_instance = new SquareConnect\Api\V1TransactionsApi();
 $location_id = "location_id_example"; // string | The ID of the payment's associated location.
-$payment_id = "payment_id_example"; // string | The payment's Square-issued ID. You obtain this value from Payment objects returned by the List Payments endpoint, or Settlement objects returned by the List Settlements endpoint.
+$payment_id = "payment_id_example"; // string | The Square-issued payment ID. payment_id comes from Payment objects returned by the List Payments endpoint, Settlement objects returned by the List Settlements endpoint, or Refund objects returned by the List Refunds endpoint.
 
 try {
     $result = $api_instance->retrievePayment($location_id, $payment_id);
@@ -478,7 +478,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **location_id** | **string**| The ID of the payment&#39;s associated location. |
- **payment_id** | **string**| The payment&#39;s Square-issued ID. You obtain this value from Payment objects returned by the List Payments endpoint, or Settlement objects returned by the List Settlements endpoint. |
+ **payment_id** | **string**| The Square-issued payment ID. payment_id comes from Payment objects returned by the List Payments endpoint, Settlement objects returned by the List Settlements endpoint, or Refund objects returned by the List Refunds endpoint. |
 
 ### Return type
 
