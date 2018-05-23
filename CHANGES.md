@@ -1,5 +1,43 @@
 # Change Log
 
+## Version 2.8.0 (2018-05-24)
+
+We have added sorting functionality to the Connect v2 Customer API, updated
+the Connect v1 Payments API to include information about surcharges and
+improvements to the Item data type.
+
+### New feature: Customer API (Connect v2)
+
+* **ListCustomers** endpoint &mdash; now provides the ability to sort
+  customers by their creation date using the `sort_field` and
+  `sort_order` parameters.
+
+### New features: Payments API (Connect v1)
+
+The Payments API now returns information about surcharges applied to payments.
+The new functionality introduces the following new data types:
+
+* **SurchargeMoney** datatype &mdash; The total of all surcharges applied
+  to the payment.
+* **Surcharges** datatype &mdash; A list of all surcharges associated with
+  the payment.
+* **Surcharge** datatype &mdash; A surcharge that is applied to the payment.
+  One example of a surcharge is auto-gratuity, which is a fixed-rate surcharge
+  applied to every payment, often based on party size.
+
+We are constantly evaluating new languages to add. In the meantime, if the
+language you need is not supported, you can use our
+[Swagger pipeline](<%= articles__client_libraries_path%>#generatingwithswagger)
+to generate a custom SDK or continue sending JSON to the endpoint URLs directly.
+
+### Improvement: Item (Connect v1)
+
+**Item** will now provide two new properties:
+
+* `category_id` &mdash; indicates if an item can be added to pickup orders
+  from the merchant's online store
+* `available_for_pickup` &mdash; indicates the item's category (if any).
+
 ## Version 2.7.0 (2018-04-26)
 
 ### New features: Transactions API and Payments API

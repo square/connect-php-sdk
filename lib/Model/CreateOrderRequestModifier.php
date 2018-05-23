@@ -70,7 +70,7 @@ class CreateOrderRequestModifier implements ArrayAccess
       */
     protected $name;
     /**
-      * $base_price_money Only used for ad hoc modifiers. The base price for the modifier.  Do not provide a value for `base_price_money` if you provide a value for `catalog_object_id`.
+      * $base_price_money The base price for the modifier.  `base_price_money` is required for ad hoc modifiers. If both `catalog_object_id` and `base_price_money` are set, `base_price_money` will override the predefined [CatalogModifier](#type-catalogmodifier) price.
       * @var \SquareConnect\Model\Money
       */
     protected $base_price_money;
@@ -148,7 +148,7 @@ class CreateOrderRequestModifier implements ArrayAccess
   
     /**
      * Sets base_price_money
-     * @param \SquareConnect\Model\Money $base_price_money Only used for ad hoc modifiers. The base price for the modifier.  Do not provide a value for `base_price_money` if you provide a value for `catalog_object_id`.
+     * @param \SquareConnect\Model\Money $base_price_money The base price for the modifier.  `base_price_money` is required for ad hoc modifiers. If both `catalog_object_id` and `base_price_money` are set, `base_price_money` will override the predefined [CatalogModifier](#type-catalogmodifier) price.
      * @return $this
      */
     public function setBasePriceMoney($base_price_money)

@@ -17,6 +17,8 @@ Name | Getter | Setter | Type | Description | Notes
 **modifier_lists** | getModifierLists() | setModifierLists($value) | [**\SquareConnect\Model\V1Variation[]**](V1Variation.md) | The modifier lists that apply to the item, if any. | [optional] 
 **fees** | getFees() | setFees($value) | [**\SquareConnect\Model\V1Fee[]**](V1Fee.md) | The fees that apply to the item, if any. | [optional] 
 **taxable** | getTaxable() | setTaxable($value) | **bool** | Deprecated. This field is not used. | [optional] 
+**category_id** | getCategoryId() | setCategoryId($value) | **string** | The ID of the item&#39;s category, if any. | [optional] 
+**available_for_pickup** | getAvailableForPickup() | setAvailableForPickup($value) | **bool** | If true, the item can be added to pickup orders from the merchant&#39;s online store. Default value: false | [optional] 
 
 Note: All properties are protected and only accessed via getters and setters.
 
