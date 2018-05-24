@@ -49,7 +49,7 @@ class V1Payment implements ArrayAccess
         'refunds' => '\SquareConnect\Model\V1Refund[]',
         'itemizations' => '\SquareConnect\Model\V1PaymentItemization[]',
         'surcharge_money' => '\SquareConnect\Model\V1Money',
-        'surcharges' => '\SquareConnect\Model\DefinitionsV1PaymentSurcharge[]'
+        'surcharges' => '\SquareConnect\Model\V1PaymentSurcharge[]'
     );
   
     /** 
@@ -278,7 +278,7 @@ class V1Payment implements ArrayAccess
     protected $surcharge_money;
     /**
       * $surcharges A list of all surcharges associated with the payment.
-      * @var \SquareConnect\Model\DefinitionsV1PaymentSurcharge[]
+      * @var \SquareConnect\Model\V1PaymentSurcharge[]
       */
     protected $surcharges;
 
@@ -898,7 +898,7 @@ class V1Payment implements ArrayAccess
     }
     /**
      * Gets surcharges
-     * @return \SquareConnect\Model\DefinitionsV1PaymentSurcharge[]
+     * @return \SquareConnect\Model\V1PaymentSurcharge[]
      */
     public function getSurcharges()
     {
@@ -907,7 +907,7 @@ class V1Payment implements ArrayAccess
   
     /**
      * Sets surcharges
-     * @param \SquareConnect\Model\DefinitionsV1PaymentSurcharge[] $surcharges A list of all surcharges associated with the payment.
+     * @param \SquareConnect\Model\V1PaymentSurcharge[] $surcharges A list of all surcharges associated with the payment.
      * @return $this
      */
     public function setSurcharges($surcharges)
