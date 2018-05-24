@@ -104,7 +104,7 @@ class CreateOrderRequestLineItem implements ArrayAccess
       */
     protected $variation_name;
     /**
-      * $note The note of the line item. This value cannot exceed 50 characters.
+      * $note The note of the line item. This value cannot exceed 500 characters.
       * @var string
       */
     protected $note;
@@ -270,7 +270,7 @@ class CreateOrderRequestLineItem implements ArrayAccess
   
     /**
      * Sets note
-     * @param string $note The note of the line item. This value cannot exceed 50 characters.
+     * @param string $note The note of the line item. This value cannot exceed 500 characters.
      * @return $this
      */
     public function setNote($note)

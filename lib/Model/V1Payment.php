@@ -47,7 +47,9 @@ class V1Payment implements ArrayAccess
         'additive_tax' => '\SquareConnect\Model\V1PaymentTax[]',
         'tender' => '\SquareConnect\Model\V1Tender[]',
         'refunds' => '\SquareConnect\Model\V1Refund[]',
-        'itemizations' => '\SquareConnect\Model\V1PaymentItemization[]'
+        'itemizations' => '\SquareConnect\Model\V1PaymentItemization[]',
+        'surcharge_money' => '\SquareConnect\Model\V1Money',
+        'surcharges' => '\SquareConnect\Model\V1PaymentSurcharge[]'
     );
   
     /** 
@@ -78,7 +80,9 @@ class V1Payment implements ArrayAccess
         'additive_tax' => 'additive_tax',
         'tender' => 'tender',
         'refunds' => 'refunds',
-        'itemizations' => 'itemizations'
+        'itemizations' => 'itemizations',
+        'surcharge_money' => 'surcharge_money',
+        'surcharges' => 'surcharges'
     );
   
     /**
@@ -109,7 +113,9 @@ class V1Payment implements ArrayAccess
         'additive_tax' => 'setAdditiveTax',
         'tender' => 'setTender',
         'refunds' => 'setRefunds',
-        'itemizations' => 'setItemizations'
+        'itemizations' => 'setItemizations',
+        'surcharge_money' => 'setSurchargeMoney',
+        'surcharges' => 'setSurcharges'
     );
   
     /**
@@ -140,7 +146,9 @@ class V1Payment implements ArrayAccess
         'additive_tax' => 'getAdditiveTax',
         'tender' => 'getTender',
         'refunds' => 'getRefunds',
-        'itemizations' => 'getItemizations'
+        'itemizations' => 'getItemizations',
+        'surcharge_money' => 'getSurchargeMoney',
+        'surcharges' => 'getSurcharges'
     );
   
     /**
@@ -263,6 +271,16 @@ class V1Payment implements ArrayAccess
       * @var \SquareConnect\Model\V1PaymentItemization[]
       */
     protected $itemizations;
+    /**
+      * $surcharge_money The total of all surcharges applied to the payment.
+      * @var \SquareConnect\Model\V1Money
+      */
+    protected $surcharge_money;
+    /**
+      * $surcharges A list of all surcharges associated with the payment.
+      * @var \SquareConnect\Model\V1PaymentSurcharge[]
+      */
+    protected $surcharges;
 
     /**
      * Constructor
@@ -390,6 +408,16 @@ class V1Payment implements ArrayAccess
               $this->itemizations = $data["itemizations"];
             } else {
               $this->itemizations = null;
+            }
+            if (isset($data["surcharge_money"])) {
+              $this->surcharge_money = $data["surcharge_money"];
+            } else {
+              $this->surcharge_money = null;
+            }
+            if (isset($data["surcharges"])) {
+              $this->surcharges = $data["surcharges"];
+            } else {
+              $this->surcharges = null;
             }
         }
     }
@@ -847,6 +875,44 @@ class V1Payment implements ArrayAccess
     public function setItemizations($itemizations)
     {
         $this->itemizations = $itemizations;
+        return $this;
+    }
+    /**
+     * Gets surcharge_money
+     * @return \SquareConnect\Model\V1Money
+     */
+    public function getSurchargeMoney()
+    {
+        return $this->surcharge_money;
+    }
+  
+    /**
+     * Sets surcharge_money
+     * @param \SquareConnect\Model\V1Money $surcharge_money The total of all surcharges applied to the payment.
+     * @return $this
+     */
+    public function setSurchargeMoney($surcharge_money)
+    {
+        $this->surcharge_money = $surcharge_money;
+        return $this;
+    }
+    /**
+     * Gets surcharges
+     * @return \SquareConnect\Model\V1PaymentSurcharge[]
+     */
+    public function getSurcharges()
+    {
+        return $this->surcharges;
+    }
+  
+    /**
+     * Sets surcharges
+     * @param \SquareConnect\Model\V1PaymentSurcharge[] $surcharges A list of all surcharges associated with the payment.
+     * @return $this
+     */
+    public function setSurcharges($surcharges)
+    {
+        $this->surcharges = $surcharges;
         return $this;
     }
     /**

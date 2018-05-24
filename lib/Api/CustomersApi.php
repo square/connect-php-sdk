@@ -470,12 +470,14 @@ class CustomersApi
      * ListCustomers
      *
      * @param string $cursor A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)
+     * @param string $sort_field Indicates how Customers should be sorted. Default: &#x60;DEFAULT&#x60;. (optional)
+     * @param string $sort_order Indicates whether Customers should be sorted in ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) order. Default: &#x60;ASC&#x60;. (optional)
      * @return \SquareConnect\Model\ListCustomersResponse
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function listCustomers($cursor = null)
+    public function listCustomers($cursor = null, $sort_field = null, $sort_order = null)
     {
-        list($response, $statusCode, $httpHeader) = $this->listCustomersWithHttpInfo ($cursor);
+        list($response, $statusCode, $httpHeader) = $this->listCustomersWithHttpInfo ($cursor, $sort_field, $sort_order);
         return $response; 
     }
 
@@ -486,10 +488,12 @@ class CustomersApi
      * ListCustomers
      *
      * @param string $cursor A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)
+     * @param string $sort_field Indicates how Customers should be sorted. Default: &#x60;DEFAULT&#x60;. (optional)
+     * @param string $sort_order Indicates whether Customers should be sorted in ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) order. Default: &#x60;ASC&#x60;. (optional)
      * @return Array of \SquareConnect\Model\ListCustomersResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function listCustomersWithHttpInfo($cursor = null)
+    public function listCustomersWithHttpInfo($cursor = null, $sort_field = null, $sort_order = null)
     {
         
   
@@ -508,6 +512,12 @@ class CustomersApi
         // query params
         if ($cursor !== null) {
             $queryParams['cursor'] = $this->apiClient->getSerializer()->toQueryValue($cursor);
+        }// query params
+        if ($sort_field !== null) {
+            $queryParams['sort_field'] = $this->apiClient->getSerializer()->toQueryValue($sort_field);
+        }// query params
+        if ($sort_order !== null) {
+            $queryParams['sort_order'] = $this->apiClient->getSerializer()->toQueryValue($sort_order);
         }
         
         
