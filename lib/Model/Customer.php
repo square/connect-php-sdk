@@ -38,7 +38,8 @@ class Customer implements ArrayAccess
         'reference_id' => 'string',
         'note' => 'string',
         'preferences' => '\SquareConnect\Model\CustomerPreferences',
-        'groups' => '\SquareConnect\Model\CustomerGroupInfo[]'
+        'groups' => '\SquareConnect\Model\CustomerGroupInfo[]',
+        'creation_source' => 'string'
     );
   
     /** 
@@ -60,7 +61,8 @@ class Customer implements ArrayAccess
         'reference_id' => 'reference_id',
         'note' => 'note',
         'preferences' => 'preferences',
-        'groups' => 'groups'
+        'groups' => 'groups',
+        'creation_source' => 'creation_source'
     );
   
     /**
@@ -82,7 +84,8 @@ class Customer implements ArrayAccess
         'reference_id' => 'setReferenceId',
         'note' => 'setNote',
         'preferences' => 'setPreferences',
-        'groups' => 'setGroups'
+        'groups' => 'setGroups',
+        'creation_source' => 'setCreationSource'
     );
   
     /**
@@ -104,7 +107,8 @@ class Customer implements ArrayAccess
         'reference_id' => 'getReferenceId',
         'note' => 'getNote',
         'preferences' => 'getPreferences',
-        'groups' => 'getGroups'
+        'groups' => 'getGroups',
+        'creation_source' => 'getCreationSource'
     );
   
     /**
@@ -182,6 +186,11 @@ class Customer implements ArrayAccess
       * @var \SquareConnect\Model\CustomerGroupInfo[]
       */
     protected $groups;
+    /**
+      * $creation_source A creation source represents the method used to create the customer profile.
+      * @var string
+      */
+    protected $creation_source;
 
     /**
      * Constructor
@@ -264,6 +273,11 @@ class Customer implements ArrayAccess
               $this->groups = $data["groups"];
             } else {
               $this->groups = null;
+            }
+            if (isset($data["creation_source"])) {
+              $this->creation_source = $data["creation_source"];
+            } else {
+              $this->creation_source = null;
             }
         }
     }
@@ -550,6 +564,25 @@ class Customer implements ArrayAccess
     public function setGroups($groups)
     {
         $this->groups = $groups;
+        return $this;
+    }
+    /**
+     * Gets creation_source
+     * @return string
+     */
+    public function getCreationSource()
+    {
+        return $this->creation_source;
+    }
+  
+    /**
+     * Sets creation_source
+     * @param string $creation_source A creation source represents the method used to create the customer profile.
+     * @return $this
+     */
+    public function setCreationSource($creation_source)
+    {
+        $this->creation_source = $creation_source;
         return $this;
     }
     /**

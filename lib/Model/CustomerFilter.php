@@ -9,7 +9,7 @@ namespace SquareConnect\Model;
 
 use \ArrayAccess;
 /**
- * V1AdjustInventoryRequest Class Doc Comment
+ * CustomerFilter Class Doc Comment
  *
  * @category Class
  * @package  SquareConnect
@@ -17,16 +17,16 @@ use \ArrayAccess;
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://squareup.com/developers
  */
-class V1AdjustInventoryRequest implements ArrayAccess
+class CustomerFilter implements ArrayAccess
 {
     /**
       * Array of property to type mappings. Used for (de)serialization 
       * @var string[]
       */
     static $swaggerTypes = array(
-        'quantity_delta' => 'float',
-        'adjustment_type' => 'string',
-        'memo' => 'string'
+        'creation_source' => '\SquareConnect\Model\CustomerCreationSourceFilter',
+        'created_at' => '\SquareConnect\Model\TimeRange',
+        'updated_at' => '\SquareConnect\Model\TimeRange'
     );
   
     /** 
@@ -34,9 +34,9 @@ class V1AdjustInventoryRequest implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
-        'quantity_delta' => 'quantity_delta',
-        'adjustment_type' => 'adjustment_type',
-        'memo' => 'memo'
+        'creation_source' => 'creation_source',
+        'created_at' => 'created_at',
+        'updated_at' => 'updated_at'
     );
   
     /**
@@ -44,9 +44,9 @@ class V1AdjustInventoryRequest implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
-        'quantity_delta' => 'setQuantityDelta',
-        'adjustment_type' => 'setAdjustmentType',
-        'memo' => 'setMemo'
+        'creation_source' => 'setCreationSource',
+        'created_at' => 'setCreatedAt',
+        'updated_at' => 'setUpdatedAt'
     );
   
     /**
@@ -54,26 +54,26 @@ class V1AdjustInventoryRequest implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
-        'quantity_delta' => 'getQuantityDelta',
-        'adjustment_type' => 'getAdjustmentType',
-        'memo' => 'getMemo'
+        'creation_source' => 'getCreationSource',
+        'created_at' => 'getCreatedAt',
+        'updated_at' => 'getUpdatedAt'
     );
   
     /**
-      * $quantity_delta The number to adjust the variation's quantity by.
-      * @var float
+      * $creation_source A filter to select customers based on their creation source.
+      * @var \SquareConnect\Model\CustomerCreationSourceFilter
       */
-    protected $quantity_delta;
+    protected $creation_source;
     /**
-      * $adjustment_type The reason for the inventory adjustment.
-      * @var string
+      * $created_at A filter to select customers based on when they were created.
+      * @var \SquareConnect\Model\TimeRange
       */
-    protected $adjustment_type;
+    protected $created_at;
     /**
-      * $memo A note about the inventory adjustment.
-      * @var string
+      * $updated_at A filter to select customers based on when they were updated.
+      * @var \SquareConnect\Model\TimeRange
       */
-    protected $memo;
+    protected $updated_at;
 
     /**
      * Constructor
@@ -82,78 +82,78 @@ class V1AdjustInventoryRequest implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            if (isset($data["quantity_delta"])) {
-              $this->quantity_delta = $data["quantity_delta"];
+            if (isset($data["creation_source"])) {
+              $this->creation_source = $data["creation_source"];
             } else {
-              $this->quantity_delta = null;
+              $this->creation_source = null;
             }
-            if (isset($data["adjustment_type"])) {
-              $this->adjustment_type = $data["adjustment_type"];
+            if (isset($data["created_at"])) {
+              $this->created_at = $data["created_at"];
             } else {
-              $this->adjustment_type = null;
+              $this->created_at = null;
             }
-            if (isset($data["memo"])) {
-              $this->memo = $data["memo"];
+            if (isset($data["updated_at"])) {
+              $this->updated_at = $data["updated_at"];
             } else {
-              $this->memo = null;
+              $this->updated_at = null;
             }
         }
     }
     /**
-     * Gets quantity_delta
-     * @return float
+     * Gets creation_source
+     * @return \SquareConnect\Model\CustomerCreationSourceFilter
      */
-    public function getQuantityDelta()
+    public function getCreationSource()
     {
-        return $this->quantity_delta;
+        return $this->creation_source;
     }
   
     /**
-     * Sets quantity_delta
-     * @param float $quantity_delta The number to adjust the variation's quantity by.
+     * Sets creation_source
+     * @param \SquareConnect\Model\CustomerCreationSourceFilter $creation_source A filter to select customers based on their creation source.
      * @return $this
      */
-    public function setQuantityDelta($quantity_delta)
+    public function setCreationSource($creation_source)
     {
-        $this->quantity_delta = $quantity_delta;
+        $this->creation_source = $creation_source;
         return $this;
     }
     /**
-     * Gets adjustment_type
-     * @return string
+     * Gets created_at
+     * @return \SquareConnect\Model\TimeRange
      */
-    public function getAdjustmentType()
+    public function getCreatedAt()
     {
-        return $this->adjustment_type;
+        return $this->created_at;
     }
   
     /**
-     * Sets adjustment_type
-     * @param string $adjustment_type The reason for the inventory adjustment.
+     * Sets created_at
+     * @param \SquareConnect\Model\TimeRange $created_at A filter to select customers based on when they were created.
      * @return $this
      */
-    public function setAdjustmentType($adjustment_type)
+    public function setCreatedAt($created_at)
     {
-        $this->adjustment_type = $adjustment_type;
+        $this->created_at = $created_at;
         return $this;
     }
     /**
-     * Gets memo
-     * @return string
+     * Gets updated_at
+     * @return \SquareConnect\Model\TimeRange
      */
-    public function getMemo()
+    public function getUpdatedAt()
     {
-        return $this->memo;
+        return $this->updated_at;
     }
   
     /**
-     * Sets memo
-     * @param string $memo A note about the inventory adjustment.
+     * Sets updated_at
+     * @param \SquareConnect\Model\TimeRange $updated_at A filter to select customers based on when they were updated.
      * @return $this
      */
-    public function setMemo($memo)
+    public function setUpdatedAt($updated_at)
     {
-        $this->memo = $memo;
+        $this->updated_at = $updated_at;
         return $this;
     }
     /**

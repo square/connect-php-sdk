@@ -143,6 +143,7 @@ Class | Method | HTTP request | Description
 *CustomersApi* | [**deleteCustomerCard**](docs/Api/CustomersApi.md#deletecustomercard) | **DELETE** /v2/customers/{customer_id}/cards/{card_id} | DeleteCustomerCard
 *CustomersApi* | [**listCustomers**](docs/Api/CustomersApi.md#listcustomers) | **GET** /v2/customers | ListCustomers
 *CustomersApi* | [**retrieveCustomer**](docs/Api/CustomersApi.md#retrievecustomer) | **GET** /v2/customers/{customer_id} | RetrieveCustomer
+*CustomersApi* | [**searchCustomers**](docs/Api/CustomersApi.md#searchcustomers) | **POST** /v2/customers/search | SearchCustomers
 *CustomersApi* | [**updateCustomer**](docs/Api/CustomersApi.md#updatecustomer) | **PUT** /v2/customers/{customer_id} | UpdateCustomer
 *LocationsApi* | [**listLocations**](docs/Api/LocationsApi.md#listlocations) | **GET** /v2/locations | ListLocations
 *OrdersApi* | [**batchRetrieveOrders**](docs/Api/OrdersApi.md#batchretrieveorders) | **POST** /v2/locations/{location_id}/orders/batch-retrieve | BatchRetrieveOrders
@@ -295,8 +296,14 @@ Class | Method | HTTP request | Description
  - [CreateRefundResponse](docs/Model/CreateRefundResponse.md)
  - [Currency](docs/Model/Currency.md)
  - [Customer](docs/Model/Customer.md)
+ - [CustomerCreationSource](docs/Model/CustomerCreationSource.md)
+ - [CustomerCreationSourceFilter](docs/Model/CustomerCreationSourceFilter.md)
+ - [CustomerFilter](docs/Model/CustomerFilter.md)
  - [CustomerGroupInfo](docs/Model/CustomerGroupInfo.md)
+ - [CustomerInclusionExclusion](docs/Model/CustomerInclusionExclusion.md)
  - [CustomerPreferences](docs/Model/CustomerPreferences.md)
+ - [CustomerQuery](docs/Model/CustomerQuery.md)
+ - [CustomerSort](docs/Model/CustomerSort.md)
  - [CustomerSortField](docs/Model/CustomerSortField.md)
  - [DeleteCatalogObjectRequest](docs/Model/DeleteCatalogObjectRequest.md)
  - [DeleteCatalogObjectResponse](docs/Model/DeleteCatalogObjectResponse.md)
@@ -350,6 +357,8 @@ Class | Method | HTTP request | Description
  - [RetrieveTransactionResponse](docs/Model/RetrieveTransactionResponse.md)
  - [SearchCatalogObjectsRequest](docs/Model/SearchCatalogObjectsRequest.md)
  - [SearchCatalogObjectsResponse](docs/Model/SearchCatalogObjectsResponse.md)
+ - [SearchCustomersRequest](docs/Model/SearchCustomersRequest.md)
+ - [SearchCustomersResponse](docs/Model/SearchCustomersResponse.md)
  - [SortOrder](docs/Model/SortOrder.md)
  - [TaxCalculationPhase](docs/Model/TaxCalculationPhase.md)
  - [TaxInclusionType](docs/Model/TaxInclusionType.md)
@@ -359,6 +368,7 @@ Class | Method | HTTP request | Description
  - [TenderCardDetailsStatus](docs/Model/TenderCardDetailsStatus.md)
  - [TenderCashDetails](docs/Model/TenderCashDetails.md)
  - [TenderType](docs/Model/TenderType.md)
+ - [TimeRange](docs/Model/TimeRange.md)
  - [Transaction](docs/Model/Transaction.md)
  - [TransactionProduct](docs/Model/TransactionProduct.md)
  - [UpdateCustomerRequest](docs/Model/UpdateCustomerRequest.md)

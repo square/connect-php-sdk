@@ -18,6 +18,7 @@ Name | Getter | Setter | Type | Description | Notes
 **note** | getNote() | setNote($value) | **string** | A note to associate with the customer. | [optional] 
 **preferences** | getPreferences() | setPreferences($value) | [**\SquareConnect\Model\CustomerPreferences**](CustomerPreferences.md) | The customer&#39;s preferences. | [optional] 
 **groups** | getGroups() | setGroups($value) | [**\SquareConnect\Model\CustomerGroupInfo[]**](CustomerGroupInfo.md) | The groups the customer belongs to. | [optional] 
+**creation_source** | getCreationSource() | setCreationSource($value) | **string** | A creation source represents the method used to create the customer profile. | [optional] 
 
 Note: All properties are protected and only accessed via getters and setters.
 

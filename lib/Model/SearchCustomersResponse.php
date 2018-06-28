@@ -9,7 +9,7 @@ namespace SquareConnect\Model;
 
 use \ArrayAccess;
 /**
- * V1AdjustInventoryRequest Class Doc Comment
+ * SearchCustomersResponse Class Doc Comment
  *
  * @category Class
  * @package  SquareConnect
@@ -17,16 +17,16 @@ use \ArrayAccess;
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://squareup.com/developers
  */
-class V1AdjustInventoryRequest implements ArrayAccess
+class SearchCustomersResponse implements ArrayAccess
 {
     /**
       * Array of property to type mappings. Used for (de)serialization 
       * @var string[]
       */
     static $swaggerTypes = array(
-        'quantity_delta' => 'float',
-        'adjustment_type' => 'string',
-        'memo' => 'string'
+        'errors' => '\SquareConnect\Model\Error[]',
+        'customers' => '\SquareConnect\Model\Customer[]',
+        'cursor' => 'string'
     );
   
     /** 
@@ -34,9 +34,9 @@ class V1AdjustInventoryRequest implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
-        'quantity_delta' => 'quantity_delta',
-        'adjustment_type' => 'adjustment_type',
-        'memo' => 'memo'
+        'errors' => 'errors',
+        'customers' => 'customers',
+        'cursor' => 'cursor'
     );
   
     /**
@@ -44,9 +44,9 @@ class V1AdjustInventoryRequest implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
-        'quantity_delta' => 'setQuantityDelta',
-        'adjustment_type' => 'setAdjustmentType',
-        'memo' => 'setMemo'
+        'errors' => 'setErrors',
+        'customers' => 'setCustomers',
+        'cursor' => 'setCursor'
     );
   
     /**
@@ -54,26 +54,26 @@ class V1AdjustInventoryRequest implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
-        'quantity_delta' => 'getQuantityDelta',
-        'adjustment_type' => 'getAdjustmentType',
-        'memo' => 'getMemo'
+        'errors' => 'getErrors',
+        'customers' => 'getCustomers',
+        'cursor' => 'getCursor'
     );
   
     /**
-      * $quantity_delta The number to adjust the variation's quantity by.
-      * @var float
+      * $errors Any errors that occurred during the request.
+      * @var \SquareConnect\Model\Error[]
       */
-    protected $quantity_delta;
+    protected $errors;
     /**
-      * $adjustment_type The reason for the inventory adjustment.
+      * $customers An array of `Customer` objects that match a query.
+      * @var \SquareConnect\Model\Customer[]
+      */
+    protected $customers;
+    /**
+      * $cursor A pagination cursor that can be used during subsequent calls to SearchCustomers to retrieve the next set of results associated with the original query. Pagination cursors are only present when a request succeeds and additional results are available.  See [Paginating results](#paginatingresults) for more information.
       * @var string
       */
-    protected $adjustment_type;
-    /**
-      * $memo A note about the inventory adjustment.
-      * @var string
-      */
-    protected $memo;
+    protected $cursor;
 
     /**
      * Constructor
@@ -82,78 +82,78 @@ class V1AdjustInventoryRequest implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            if (isset($data["quantity_delta"])) {
-              $this->quantity_delta = $data["quantity_delta"];
+            if (isset($data["errors"])) {
+              $this->errors = $data["errors"];
             } else {
-              $this->quantity_delta = null;
+              $this->errors = null;
             }
-            if (isset($data["adjustment_type"])) {
-              $this->adjustment_type = $data["adjustment_type"];
+            if (isset($data["customers"])) {
+              $this->customers = $data["customers"];
             } else {
-              $this->adjustment_type = null;
+              $this->customers = null;
             }
-            if (isset($data["memo"])) {
-              $this->memo = $data["memo"];
+            if (isset($data["cursor"])) {
+              $this->cursor = $data["cursor"];
             } else {
-              $this->memo = null;
+              $this->cursor = null;
             }
         }
     }
     /**
-     * Gets quantity_delta
-     * @return float
+     * Gets errors
+     * @return \SquareConnect\Model\Error[]
      */
-    public function getQuantityDelta()
+    public function getErrors()
     {
-        return $this->quantity_delta;
+        return $this->errors;
     }
   
     /**
-     * Sets quantity_delta
-     * @param float $quantity_delta The number to adjust the variation's quantity by.
+     * Sets errors
+     * @param \SquareConnect\Model\Error[] $errors Any errors that occurred during the request.
      * @return $this
      */
-    public function setQuantityDelta($quantity_delta)
+    public function setErrors($errors)
     {
-        $this->quantity_delta = $quantity_delta;
+        $this->errors = $errors;
         return $this;
     }
     /**
-     * Gets adjustment_type
-     * @return string
+     * Gets customers
+     * @return \SquareConnect\Model\Customer[]
      */
-    public function getAdjustmentType()
+    public function getCustomers()
     {
-        return $this->adjustment_type;
+        return $this->customers;
     }
   
     /**
-     * Sets adjustment_type
-     * @param string $adjustment_type The reason for the inventory adjustment.
+     * Sets customers
+     * @param \SquareConnect\Model\Customer[] $customers An array of `Customer` objects that match a query.
      * @return $this
      */
-    public function setAdjustmentType($adjustment_type)
+    public function setCustomers($customers)
     {
-        $this->adjustment_type = $adjustment_type;
+        $this->customers = $customers;
         return $this;
     }
     /**
-     * Gets memo
+     * Gets cursor
      * @return string
      */
-    public function getMemo()
+    public function getCursor()
     {
-        return $this->memo;
+        return $this->cursor;
     }
   
     /**
-     * Sets memo
-     * @param string $memo A note about the inventory adjustment.
+     * Sets cursor
+     * @param string $cursor A pagination cursor that can be used during subsequent calls to SearchCustomers to retrieve the next set of results associated with the original query. Pagination cursors are only present when a request succeeds and additional results are available.  See [Paginating results](#paginatingresults) for more information.
      * @return $this
      */
-    public function setMemo($memo)
+    public function setCursor($cursor)
     {
-        $this->memo = $memo;
+        $this->cursor = $cursor;
         return $this;
     }
     /**

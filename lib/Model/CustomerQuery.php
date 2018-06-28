@@ -9,7 +9,7 @@ namespace SquareConnect\Model;
 
 use \ArrayAccess;
 /**
- * V1AdjustInventoryRequest Class Doc Comment
+ * CustomerQuery Class Doc Comment
  *
  * @category Class
  * @package  SquareConnect
@@ -17,16 +17,15 @@ use \ArrayAccess;
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://squareup.com/developers
  */
-class V1AdjustInventoryRequest implements ArrayAccess
+class CustomerQuery implements ArrayAccess
 {
     /**
       * Array of property to type mappings. Used for (de)serialization 
       * @var string[]
       */
     static $swaggerTypes = array(
-        'quantity_delta' => 'float',
-        'adjustment_type' => 'string',
-        'memo' => 'string'
+        'filter' => '\SquareConnect\Model\CustomerFilter',
+        'sort' => '\SquareConnect\Model\CustomerSort'
     );
   
     /** 
@@ -34,9 +33,8 @@ class V1AdjustInventoryRequest implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
-        'quantity_delta' => 'quantity_delta',
-        'adjustment_type' => 'adjustment_type',
-        'memo' => 'memo'
+        'filter' => 'filter',
+        'sort' => 'sort'
     );
   
     /**
@@ -44,9 +42,8 @@ class V1AdjustInventoryRequest implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
-        'quantity_delta' => 'setQuantityDelta',
-        'adjustment_type' => 'setAdjustmentType',
-        'memo' => 'setMemo'
+        'filter' => 'setFilter',
+        'sort' => 'setSort'
     );
   
     /**
@@ -54,26 +51,20 @@ class V1AdjustInventoryRequest implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
-        'quantity_delta' => 'getQuantityDelta',
-        'adjustment_type' => 'getAdjustmentType',
-        'memo' => 'getMemo'
+        'filter' => 'getFilter',
+        'sort' => 'getSort'
     );
   
     /**
-      * $quantity_delta The number to adjust the variation's quantity by.
-      * @var float
+      * $filter A list of filter criteria.
+      * @var \SquareConnect\Model\CustomerFilter
       */
-    protected $quantity_delta;
+    protected $filter;
     /**
-      * $adjustment_type The reason for the inventory adjustment.
-      * @var string
+      * $sort Sort criteria for query results. The default sort behavior is to order customers alphabetically by `given_name` and `last_name`.
+      * @var \SquareConnect\Model\CustomerSort
       */
-    protected $adjustment_type;
-    /**
-      * $memo A note about the inventory adjustment.
-      * @var string
-      */
-    protected $memo;
+    protected $sort;
 
     /**
      * Constructor
@@ -82,78 +73,54 @@ class V1AdjustInventoryRequest implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            if (isset($data["quantity_delta"])) {
-              $this->quantity_delta = $data["quantity_delta"];
+            if (isset($data["filter"])) {
+              $this->filter = $data["filter"];
             } else {
-              $this->quantity_delta = null;
+              $this->filter = null;
             }
-            if (isset($data["adjustment_type"])) {
-              $this->adjustment_type = $data["adjustment_type"];
+            if (isset($data["sort"])) {
+              $this->sort = $data["sort"];
             } else {
-              $this->adjustment_type = null;
-            }
-            if (isset($data["memo"])) {
-              $this->memo = $data["memo"];
-            } else {
-              $this->memo = null;
+              $this->sort = null;
             }
         }
     }
     /**
-     * Gets quantity_delta
-     * @return float
+     * Gets filter
+     * @return \SquareConnect\Model\CustomerFilter
      */
-    public function getQuantityDelta()
+    public function getFilter()
     {
-        return $this->quantity_delta;
+        return $this->filter;
     }
   
     /**
-     * Sets quantity_delta
-     * @param float $quantity_delta The number to adjust the variation's quantity by.
+     * Sets filter
+     * @param \SquareConnect\Model\CustomerFilter $filter A list of filter criteria.
      * @return $this
      */
-    public function setQuantityDelta($quantity_delta)
+    public function setFilter($filter)
     {
-        $this->quantity_delta = $quantity_delta;
+        $this->filter = $filter;
         return $this;
     }
     /**
-     * Gets adjustment_type
-     * @return string
+     * Gets sort
+     * @return \SquareConnect\Model\CustomerSort
      */
-    public function getAdjustmentType()
+    public function getSort()
     {
-        return $this->adjustment_type;
+        return $this->sort;
     }
   
     /**
-     * Sets adjustment_type
-     * @param string $adjustment_type The reason for the inventory adjustment.
+     * Sets sort
+     * @param \SquareConnect\Model\CustomerSort $sort Sort criteria for query results. The default sort behavior is to order customers alphabetically by `given_name` and `last_name`.
      * @return $this
      */
-    public function setAdjustmentType($adjustment_type)
+    public function setSort($sort)
     {
-        $this->adjustment_type = $adjustment_type;
-        return $this;
-    }
-    /**
-     * Gets memo
-     * @return string
-     */
-    public function getMemo()
-    {
-        return $this->memo;
-    }
-  
-    /**
-     * Sets memo
-     * @param string $memo A note about the inventory adjustment.
-     * @return $this
-     */
-    public function setMemo($memo)
-    {
-        $this->memo = $memo;
+        $this->sort = $sort;
         return $this;
     }
     /**

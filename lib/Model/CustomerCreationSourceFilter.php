@@ -9,7 +9,7 @@ namespace SquareConnect\Model;
 
 use \ArrayAccess;
 /**
- * V1AdjustInventoryRequest Class Doc Comment
+ * CustomerCreationSourceFilter Class Doc Comment
  *
  * @category Class
  * @package  SquareConnect
@@ -17,16 +17,15 @@ use \ArrayAccess;
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://squareup.com/developers
  */
-class V1AdjustInventoryRequest implements ArrayAccess
+class CustomerCreationSourceFilter implements ArrayAccess
 {
     /**
       * Array of property to type mappings. Used for (de)serialization 
       * @var string[]
       */
     static $swaggerTypes = array(
-        'quantity_delta' => 'float',
-        'adjustment_type' => 'string',
-        'memo' => 'string'
+        'values' => 'string[]',
+        'rule' => 'string'
     );
   
     /** 
@@ -34,9 +33,8 @@ class V1AdjustInventoryRequest implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
-        'quantity_delta' => 'quantity_delta',
-        'adjustment_type' => 'adjustment_type',
-        'memo' => 'memo'
+        'values' => 'values',
+        'rule' => 'rule'
     );
   
     /**
@@ -44,9 +42,8 @@ class V1AdjustInventoryRequest implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
-        'quantity_delta' => 'setQuantityDelta',
-        'adjustment_type' => 'setAdjustmentType',
-        'memo' => 'setMemo'
+        'values' => 'setValues',
+        'rule' => 'setRule'
     );
   
     /**
@@ -54,26 +51,20 @@ class V1AdjustInventoryRequest implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
-        'quantity_delta' => 'getQuantityDelta',
-        'adjustment_type' => 'getAdjustmentType',
-        'memo' => 'getMemo'
+        'values' => 'getValues',
+        'rule' => 'getRule'
     );
   
     /**
-      * $quantity_delta The number to adjust the variation's quantity by.
-      * @var float
+      * $values The list of creation sources used as filtering criteria.
+      * @var string[]
       */
-    protected $quantity_delta;
+    protected $values;
     /**
-      * $adjustment_type The reason for the inventory adjustment.
+      * $rule Indicates whether a customer profile matching the filter criteria should be included in the result or excluded from the result. Default: `INCLUDE`. See [CustomerInclusionExclusion](#type-customerinclusionexclusion) for possible values.
       * @var string
       */
-    protected $adjustment_type;
-    /**
-      * $memo A note about the inventory adjustment.
-      * @var string
-      */
-    protected $memo;
+    protected $rule;
 
     /**
      * Constructor
@@ -82,78 +73,54 @@ class V1AdjustInventoryRequest implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            if (isset($data["quantity_delta"])) {
-              $this->quantity_delta = $data["quantity_delta"];
+            if (isset($data["values"])) {
+              $this->values = $data["values"];
             } else {
-              $this->quantity_delta = null;
+              $this->values = null;
             }
-            if (isset($data["adjustment_type"])) {
-              $this->adjustment_type = $data["adjustment_type"];
+            if (isset($data["rule"])) {
+              $this->rule = $data["rule"];
             } else {
-              $this->adjustment_type = null;
-            }
-            if (isset($data["memo"])) {
-              $this->memo = $data["memo"];
-            } else {
-              $this->memo = null;
+              $this->rule = null;
             }
         }
     }
     /**
-     * Gets quantity_delta
-     * @return float
+     * Gets values
+     * @return string[]
      */
-    public function getQuantityDelta()
+    public function getValues()
     {
-        return $this->quantity_delta;
+        return $this->values;
     }
   
     /**
-     * Sets quantity_delta
-     * @param float $quantity_delta The number to adjust the variation's quantity by.
+     * Sets values
+     * @param string[] $values The list of creation sources used as filtering criteria.
      * @return $this
      */
-    public function setQuantityDelta($quantity_delta)
+    public function setValues($values)
     {
-        $this->quantity_delta = $quantity_delta;
+        $this->values = $values;
         return $this;
     }
     /**
-     * Gets adjustment_type
+     * Gets rule
      * @return string
      */
-    public function getAdjustmentType()
+    public function getRule()
     {
-        return $this->adjustment_type;
+        return $this->rule;
     }
   
     /**
-     * Sets adjustment_type
-     * @param string $adjustment_type The reason for the inventory adjustment.
+     * Sets rule
+     * @param string $rule Indicates whether a customer profile matching the filter criteria should be included in the result or excluded from the result. Default: `INCLUDE`. See [CustomerInclusionExclusion](#type-customerinclusionexclusion) for possible values.
      * @return $this
      */
-    public function setAdjustmentType($adjustment_type)
+    public function setRule($rule)
     {
-        $this->adjustment_type = $adjustment_type;
-        return $this;
-    }
-    /**
-     * Gets memo
-     * @return string
-     */
-    public function getMemo()
-    {
-        return $this->memo;
-    }
-  
-    /**
-     * Sets memo
-     * @param string $memo A note about the inventory adjustment.
-     * @return $this
-     */
-    public function setMemo($memo)
-    {
-        $this->memo = $memo;
+        $this->rule = $rule;
         return $this;
     }
     /**
