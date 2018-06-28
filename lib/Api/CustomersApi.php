@@ -470,8 +470,8 @@ class CustomersApi
      * ListCustomers
      *
      * @param string $cursor A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)
-     * @param string $sort_field Indicates how Customers should be sorted. Default: &#x60;DEFAULT&#x60;. (optional)
-     * @param string $sort_order Indicates whether Customers should be sorted in ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) order. Default: &#x60;ASC&#x60;. (optional)
+     * @param string $sort_field Indicates how Customers should be sorted. Default: &#x60;DEFAULT&#x60;. See [CustomerSortField](#type-customersortfield) for possible values. (optional)
+     * @param string $sort_order Indicates whether Customers should be sorted in ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) order. Default: &#x60;ASC&#x60;. See [SortOrder](#type-sortorder) for possible values. (optional)
      * @return \SquareConnect\Model\ListCustomersResponse
      * @throws \SquareConnect\ApiException on non-2xx response
      */
@@ -488,8 +488,8 @@ class CustomersApi
      * ListCustomers
      *
      * @param string $cursor A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information. (optional)
-     * @param string $sort_field Indicates how Customers should be sorted. Default: &#x60;DEFAULT&#x60;. (optional)
-     * @param string $sort_order Indicates whether Customers should be sorted in ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) order. Default: &#x60;ASC&#x60;. (optional)
+     * @param string $sort_field Indicates how Customers should be sorted. Default: &#x60;DEFAULT&#x60;. See [CustomerSortField](#type-customersortfield) for possible values. (optional)
+     * @param string $sort_order Indicates whether Customers should be sorted in ascending (&#x60;ASC&#x60;) or descending (&#x60;DESC&#x60;) order. Default: &#x60;ASC&#x60;. See [SortOrder](#type-sortorder) for possible values. (optional)
      * @return Array of \SquareConnect\Model\ListCustomersResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
@@ -649,6 +649,98 @@ class CustomersApi
             switch ($e->getCode()) { 
             case 200:
                 $data = \SquareConnect\ObjectSerializer::deserialize($e->getResponseBody(), '\SquareConnect\Model\RetrieveCustomerResponse', $e->getResponseHeaders());
+                $e->setResponseObject($data);
+                break;
+            }
+  
+            throw $e;
+        }
+    }
+    /**
+     * searchCustomers
+     *
+     * SearchCustomers
+     *
+     * @param \SquareConnect\Model\SearchCustomersRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
+     * @return \SquareConnect\Model\SearchCustomersResponse
+     * @throws \SquareConnect\ApiException on non-2xx response
+     */
+    public function searchCustomers($body)
+    {
+        list($response, $statusCode, $httpHeader) = $this->searchCustomersWithHttpInfo ($body);
+        return $response; 
+    }
+
+
+    /**
+     * searchCustomersWithHttpInfo
+     *
+     * SearchCustomers
+     *
+     * @param \SquareConnect\Model\SearchCustomersRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
+     * @return Array of \SquareConnect\Model\SearchCustomersResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws \SquareConnect\ApiException on non-2xx response
+     */
+    public function searchCustomersWithHttpInfo($body)
+    {
+        
+        // verify the required parameter 'body' is set
+        if ($body === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $body when calling searchCustomers');
+        }
+  
+        // parse inputs
+        $resourcePath = "/v2/customers/search";
+        $httpBody = '';
+        $queryParams = array();
+        $headerParams = array();
+        $formParams = array();
+        $_header_accept = ApiClient::selectHeaderAccept(array('application/json'));
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+  
+        
+        
+        
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        // body params
+        $_tempBody = null;
+        if (isset($body)) {
+            $_tempBody = $body;
+        }
+  
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath, 'POST',
+                $queryParams, $httpBody,
+                $headerParams, '\SquareConnect\Model\SearchCustomersResponse'
+            );
+            if (!$response) {
+                return array(null, $statusCode, $httpHeader);
+            }
+
+            return array(\SquareConnect\ObjectSerializer::deserialize($response, '\SquareConnect\Model\SearchCustomersResponse', $httpHeader), $statusCode, $httpHeader);
+                    } catch (ApiException $e) {
+            switch ($e->getCode()) { 
+            case 200:
+                $data = \SquareConnect\ObjectSerializer::deserialize($e->getResponseBody(), '\SquareConnect\Model\SearchCustomersResponse', $e->getResponseHeaders());
                 $e->setResponseObject($data);
                 break;
             }

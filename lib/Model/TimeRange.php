@@ -9,7 +9,7 @@ namespace SquareConnect\Model;
 
 use \ArrayAccess;
 /**
- * V1AdjustInventoryRequest Class Doc Comment
+ * TimeRange Class Doc Comment
  *
  * @category Class
  * @package  SquareConnect
@@ -17,16 +17,15 @@ use \ArrayAccess;
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://squareup.com/developers
  */
-class V1AdjustInventoryRequest implements ArrayAccess
+class TimeRange implements ArrayAccess
 {
     /**
       * Array of property to type mappings. Used for (de)serialization 
       * @var string[]
       */
     static $swaggerTypes = array(
-        'quantity_delta' => 'float',
-        'adjustment_type' => 'string',
-        'memo' => 'string'
+        'start_at' => 'string',
+        'end_at' => 'string'
     );
   
     /** 
@@ -34,9 +33,8 @@ class V1AdjustInventoryRequest implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
-        'quantity_delta' => 'quantity_delta',
-        'adjustment_type' => 'adjustment_type',
-        'memo' => 'memo'
+        'start_at' => 'start_at',
+        'end_at' => 'end_at'
     );
   
     /**
@@ -44,9 +42,8 @@ class V1AdjustInventoryRequest implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
-        'quantity_delta' => 'setQuantityDelta',
-        'adjustment_type' => 'setAdjustmentType',
-        'memo' => 'setMemo'
+        'start_at' => 'setStartAt',
+        'end_at' => 'setEndAt'
     );
   
     /**
@@ -54,26 +51,20 @@ class V1AdjustInventoryRequest implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
-        'quantity_delta' => 'getQuantityDelta',
-        'adjustment_type' => 'getAdjustmentType',
-        'memo' => 'getMemo'
+        'start_at' => 'getStartAt',
+        'end_at' => 'getEndAt'
     );
   
     /**
-      * $quantity_delta The number to adjust the variation's quantity by.
-      * @var float
-      */
-    protected $quantity_delta;
-    /**
-      * $adjustment_type The reason for the inventory adjustment.
+      * $start_at A datetime value in RFC-3339 format indicating when the time range starts.
       * @var string
       */
-    protected $adjustment_type;
+    protected $start_at;
     /**
-      * $memo A note about the inventory adjustment.
+      * $end_at A datetime value in RFC-3339 format indicating when the time range ends.
       * @var string
       */
-    protected $memo;
+    protected $end_at;
 
     /**
      * Constructor
@@ -82,78 +73,54 @@ class V1AdjustInventoryRequest implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            if (isset($data["quantity_delta"])) {
-              $this->quantity_delta = $data["quantity_delta"];
+            if (isset($data["start_at"])) {
+              $this->start_at = $data["start_at"];
             } else {
-              $this->quantity_delta = null;
+              $this->start_at = null;
             }
-            if (isset($data["adjustment_type"])) {
-              $this->adjustment_type = $data["adjustment_type"];
+            if (isset($data["end_at"])) {
+              $this->end_at = $data["end_at"];
             } else {
-              $this->adjustment_type = null;
-            }
-            if (isset($data["memo"])) {
-              $this->memo = $data["memo"];
-            } else {
-              $this->memo = null;
+              $this->end_at = null;
             }
         }
     }
     /**
-     * Gets quantity_delta
-     * @return float
+     * Gets start_at
+     * @return string
      */
-    public function getQuantityDelta()
+    public function getStartAt()
     {
-        return $this->quantity_delta;
+        return $this->start_at;
     }
   
     /**
-     * Sets quantity_delta
-     * @param float $quantity_delta The number to adjust the variation's quantity by.
+     * Sets start_at
+     * @param string $start_at A datetime value in RFC-3339 format indicating when the time range starts.
      * @return $this
      */
-    public function setQuantityDelta($quantity_delta)
+    public function setStartAt($start_at)
     {
-        $this->quantity_delta = $quantity_delta;
+        $this->start_at = $start_at;
         return $this;
     }
     /**
-     * Gets adjustment_type
+     * Gets end_at
      * @return string
      */
-    public function getAdjustmentType()
+    public function getEndAt()
     {
-        return $this->adjustment_type;
+        return $this->end_at;
     }
   
     /**
-     * Sets adjustment_type
-     * @param string $adjustment_type The reason for the inventory adjustment.
+     * Sets end_at
+     * @param string $end_at A datetime value in RFC-3339 format indicating when the time range ends.
      * @return $this
      */
-    public function setAdjustmentType($adjustment_type)
+    public function setEndAt($end_at)
     {
-        $this->adjustment_type = $adjustment_type;
-        return $this;
-    }
-    /**
-     * Gets memo
-     * @return string
-     */
-    public function getMemo()
-    {
-        return $this->memo;
-    }
-  
-    /**
-     * Sets memo
-     * @param string $memo A note about the inventory adjustment.
-     * @return $this
-     */
-    public function setMemo($memo)
-    {
-        $this->memo = $memo;
+        $this->end_at = $end_at;
         return $this;
     }
     /**

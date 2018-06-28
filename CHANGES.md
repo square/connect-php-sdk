@@ -1,5 +1,25 @@
 # Change Log
 
+## Version 2.9.0 (2018-06-28)
+
+We have added search functionality to the Connect v2 Customer API.
+
+### New features and Improvements: Customer API (Connect v2)
+
+* `SearchCustomers` endpoint &mdash; retrieves groups of customer profiles
+  based on a related characteristic. For example, retrieving all customers
+  created in the past 24 hours.
+* `creation_source` field is now available on `Customer` entities. The creation
+  source exposes the process that created a customer profile. For example, if
+  a customer is created using the API, the creation source will be
+  `THIRD_PARTY`.
+* **Instant Profiles** are now exposed in the following endpoints:
+  `RetrieveCustomer`, `SearchCustomers`, `UpdateCustomer`, `DeleteCustomer`.
+
+### Fixes: Inventory SDK (Connect v1)
+
+* Fix SDK request property `adjustment_type` in V1 Adjust Inventory.
+
 ## Version 2.8.0 (2018-05-24)
 
 We have added sorting functionality to the Connect v2 Customer API, updated

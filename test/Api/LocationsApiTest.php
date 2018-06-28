@@ -63,7 +63,7 @@ class LocationsApiTest extends \PHPUnit_Framework_TestCase
             $first_location
         );
         $this->assertEquals(
-            'CBASEEffqN8pnVNXwoCL0dSGMVAgAQ',
+            self::$test_accounts->{'US-Prod-Sandbox'}->{'location_id'},
             $first_location->getId()
         );
     }

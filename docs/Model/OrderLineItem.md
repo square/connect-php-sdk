@@ -4,7 +4,7 @@
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------
 **name** | getName() | setName($value) | **string** | The name of the line item. | [optional] 
-**quantity** | getQuantity() | setQuantity($value) | **string** | The quantity purchased, as a string representation of a number. | 
+**quantity** | getQuantity() | setQuantity($value) | **string** | The quantity purchased, as a string representation of a number.  This string must have a positive integer value. | 
 **note** | getNote() | setNote($value) | **string** | The note of the line item. | [optional] 
 **catalog_object_id** | getCatalogObjectId() | setCatalogObjectId($value) | **string** | The [CatalogItemVariation](#type-catalogitemvariation) id applied to this line item. | [optional] 
 **variation_name** | getVariationName() | setVariationName($value) | **string** | The name of the variation applied to this line item. | [optional] 

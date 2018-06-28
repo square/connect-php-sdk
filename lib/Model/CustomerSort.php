@@ -9,7 +9,7 @@ namespace SquareConnect\Model;
 
 use \ArrayAccess;
 /**
- * V1AdjustInventoryRequest Class Doc Comment
+ * CustomerSort Class Doc Comment
  *
  * @category Class
  * @package  SquareConnect
@@ -17,16 +17,15 @@ use \ArrayAccess;
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://squareup.com/developers
  */
-class V1AdjustInventoryRequest implements ArrayAccess
+class CustomerSort implements ArrayAccess
 {
     /**
       * Array of property to type mappings. Used for (de)serialization 
       * @var string[]
       */
     static $swaggerTypes = array(
-        'quantity_delta' => 'float',
-        'adjustment_type' => 'string',
-        'memo' => 'string'
+        'field' => 'string',
+        'order' => 'string'
     );
   
     /** 
@@ -34,9 +33,8 @@ class V1AdjustInventoryRequest implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
-        'quantity_delta' => 'quantity_delta',
-        'adjustment_type' => 'adjustment_type',
-        'memo' => 'memo'
+        'field' => 'field',
+        'order' => 'order'
     );
   
     /**
@@ -44,9 +42,8 @@ class V1AdjustInventoryRequest implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
-        'quantity_delta' => 'setQuantityDelta',
-        'adjustment_type' => 'setAdjustmentType',
-        'memo' => 'setMemo'
+        'field' => 'setField',
+        'order' => 'setOrder'
     );
   
     /**
@@ -54,26 +51,20 @@ class V1AdjustInventoryRequest implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
-        'quantity_delta' => 'getQuantityDelta',
-        'adjustment_type' => 'getAdjustmentType',
-        'memo' => 'getMemo'
+        'field' => 'getField',
+        'order' => 'getOrder'
     );
   
     /**
-      * $quantity_delta The number to adjust the variation's quantity by.
-      * @var float
-      */
-    protected $quantity_delta;
-    /**
-      * $adjustment_type The reason for the inventory adjustment.
+      * $field The field to sort the results on. It could be the total money spent at the merchant, the date of the first visit (etc).  Default value: `DEFAULT`.
       * @var string
       */
-    protected $adjustment_type;
+    protected $field;
     /**
-      * $memo A note about the inventory adjustment.
+      * $order Indicates the order in which results should be displayed based on the value of the sort field. String comparisons use standard alphabetic comparison to determine order. Strings representing numbers are sorted as strings. Default value: `ASC`.
       * @var string
       */
-    protected $memo;
+    protected $order;
 
     /**
      * Constructor
@@ -82,78 +73,54 @@ class V1AdjustInventoryRequest implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            if (isset($data["quantity_delta"])) {
-              $this->quantity_delta = $data["quantity_delta"];
+            if (isset($data["field"])) {
+              $this->field = $data["field"];
             } else {
-              $this->quantity_delta = null;
+              $this->field = null;
             }
-            if (isset($data["adjustment_type"])) {
-              $this->adjustment_type = $data["adjustment_type"];
+            if (isset($data["order"])) {
+              $this->order = $data["order"];
             } else {
-              $this->adjustment_type = null;
-            }
-            if (isset($data["memo"])) {
-              $this->memo = $data["memo"];
-            } else {
-              $this->memo = null;
+              $this->order = null;
             }
         }
     }
     /**
-     * Gets quantity_delta
-     * @return float
+     * Gets field
+     * @return string
      */
-    public function getQuantityDelta()
+    public function getField()
     {
-        return $this->quantity_delta;
+        return $this->field;
     }
   
     /**
-     * Sets quantity_delta
-     * @param float $quantity_delta The number to adjust the variation's quantity by.
+     * Sets field
+     * @param string $field The field to sort the results on. It could be the total money spent at the merchant, the date of the first visit (etc).  Default value: `DEFAULT`.
      * @return $this
      */
-    public function setQuantityDelta($quantity_delta)
+    public function setField($field)
     {
-        $this->quantity_delta = $quantity_delta;
+        $this->field = $field;
         return $this;
     }
     /**
-     * Gets adjustment_type
+     * Gets order
      * @return string
      */
-    public function getAdjustmentType()
+    public function getOrder()
     {
-        return $this->adjustment_type;
+        return $this->order;
     }
   
     /**
-     * Sets adjustment_type
-     * @param string $adjustment_type The reason for the inventory adjustment.
+     * Sets order
+     * @param string $order Indicates the order in which results should be displayed based on the value of the sort field. String comparisons use standard alphabetic comparison to determine order. Strings representing numbers are sorted as strings. Default value: `ASC`.
      * @return $this
      */
-    public function setAdjustmentType($adjustment_type)
+    public function setOrder($order)
     {
-        $this->adjustment_type = $adjustment_type;
-        return $this;
-    }
-    /**
-     * Gets memo
-     * @return string
-     */
-    public function getMemo()
-    {
-        return $this->memo;
-    }
-  
-    /**
-     * Sets memo
-     * @param string $memo A note about the inventory adjustment.
-     * @return $this
-     */
-    public function setMemo($memo)
-    {
-        $this->memo = $memo;
+        $this->order = $order;
         return $this;
     }
     /**

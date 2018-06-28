@@ -9,7 +9,7 @@ namespace SquareConnect\Model;
 
 use \ArrayAccess;
 /**
- * ListCustomersRequest Class Doc Comment
+ * SearchCustomersRequest Class Doc Comment
  *
  * @category Class
  * @package  SquareConnect
@@ -17,7 +17,7 @@ use \ArrayAccess;
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://squareup.com/developers
  */
-class ListCustomersRequest implements ArrayAccess
+class SearchCustomersRequest implements ArrayAccess
 {
     /**
       * Array of property to type mappings. Used for (de)serialization 
@@ -25,8 +25,8 @@ class ListCustomersRequest implements ArrayAccess
       */
     static $swaggerTypes = array(
         'cursor' => 'string',
-        'sort_field' => 'string',
-        'sort_order' => 'string'
+        'limit' => 'int',
+        'query' => '\SquareConnect\Model\CustomerQuery'
     );
   
     /** 
@@ -35,8 +35,8 @@ class ListCustomersRequest implements ArrayAccess
       */
     static $attributeMap = array(
         'cursor' => 'cursor',
-        'sort_field' => 'sort_field',
-        'sort_order' => 'sort_order'
+        'limit' => 'limit',
+        'query' => 'query'
     );
   
     /**
@@ -45,8 +45,8 @@ class ListCustomersRequest implements ArrayAccess
       */
     static $setters = array(
         'cursor' => 'setCursor',
-        'sort_field' => 'setSortField',
-        'sort_order' => 'setSortOrder'
+        'limit' => 'setLimit',
+        'query' => 'setQuery'
     );
   
     /**
@@ -55,25 +55,25 @@ class ListCustomersRequest implements ArrayAccess
       */
     static $getters = array(
         'cursor' => 'getCursor',
-        'sort_field' => 'getSortField',
-        'sort_order' => 'getSortOrder'
+        'limit' => 'getLimit',
+        'query' => 'getQuery'
     );
   
     /**
-      * $cursor A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information.
+      * $cursor Include the pagination cursor in subsequent calls to this endpoint to retrieve the next set of results associated with the original query.  See [Paginating results](#paginatingresults) for more information.
       * @var string
       */
     protected $cursor;
     /**
-      * $sort_field Indicates how Customers should be sorted. Default: `DEFAULT`. See [CustomerSortField](#type-customersortfield) for possible values.
-      * @var string
+      * $limit A limit on the number of results to be returned in a single page. The limit is advisory - the implementation may return more or fewer results. If the supplied limit is negative, zero, or is higher than the maximum limit of 1,000, it will be ignored.
+      * @var int
       */
-    protected $sort_field;
+    protected $limit;
     /**
-      * $sort_order Indicates whether Customers should be sorted in ascending (`ASC`) or descending (`DESC`) order. Default: `ASC`. See [SortOrder](#type-sortorder) for possible values.
-      * @var string
+      * $query Query customers based on the given conditions and sort order. Calling SearchCustomers without an explicit query parameter will return all customers ordered alphabetically based on `given_name` and `family_name`.
+      * @var \SquareConnect\Model\CustomerQuery
       */
-    protected $sort_order;
+    protected $query;
 
     /**
      * Constructor
@@ -87,15 +87,15 @@ class ListCustomersRequest implements ArrayAccess
             } else {
               $this->cursor = null;
             }
-            if (isset($data["sort_field"])) {
-              $this->sort_field = $data["sort_field"];
+            if (isset($data["limit"])) {
+              $this->limit = $data["limit"];
             } else {
-              $this->sort_field = null;
+              $this->limit = null;
             }
-            if (isset($data["sort_order"])) {
-              $this->sort_order = $data["sort_order"];
+            if (isset($data["query"])) {
+              $this->query = $data["query"];
             } else {
-              $this->sort_order = null;
+              $this->query = null;
             }
         }
     }
@@ -110,7 +110,7 @@ class ListCustomersRequest implements ArrayAccess
   
     /**
      * Sets cursor
-     * @param string $cursor A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Paginating results](#paginatingresults) for more information.
+     * @param string $cursor Include the pagination cursor in subsequent calls to this endpoint to retrieve the next set of results associated with the original query.  See [Paginating results](#paginatingresults) for more information.
      * @return $this
      */
     public function setCursor($cursor)
@@ -119,41 +119,41 @@ class ListCustomersRequest implements ArrayAccess
         return $this;
     }
     /**
-     * Gets sort_field
-     * @return string
+     * Gets limit
+     * @return int
      */
-    public function getSortField()
+    public function getLimit()
     {
-        return $this->sort_field;
+        return $this->limit;
     }
   
     /**
-     * Sets sort_field
-     * @param string $sort_field Indicates how Customers should be sorted. Default: `DEFAULT`. See [CustomerSortField](#type-customersortfield) for possible values.
+     * Sets limit
+     * @param int $limit A limit on the number of results to be returned in a single page. The limit is advisory - the implementation may return more or fewer results. If the supplied limit is negative, zero, or is higher than the maximum limit of 1,000, it will be ignored.
      * @return $this
      */
-    public function setSortField($sort_field)
+    public function setLimit($limit)
     {
-        $this->sort_field = $sort_field;
+        $this->limit = $limit;
         return $this;
     }
     /**
-     * Gets sort_order
-     * @return string
+     * Gets query
+     * @return \SquareConnect\Model\CustomerQuery
      */
-    public function getSortOrder()
+    public function getQuery()
     {
-        return $this->sort_order;
+        return $this->query;
     }
   
     /**
-     * Sets sort_order
-     * @param string $sort_order Indicates whether Customers should be sorted in ascending (`ASC`) or descending (`DESC`) order. Default: `ASC`. See [SortOrder](#type-sortorder) for possible values.
+     * Sets query
+     * @param \SquareConnect\Model\CustomerQuery $query Query customers based on the given conditions and sort order. Calling SearchCustomers without an explicit query parameter will return all customers ordered alphabetically based on `given_name` and `family_name`.
      * @return $this
      */
-    public function setSortOrder($sort_order)
+    public function setQuery($query)
     {
-        $this->sort_order = $sort_order;
+        $this->query = $query;
         return $this;
     }
     /**
