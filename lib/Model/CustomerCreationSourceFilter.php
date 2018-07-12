@@ -56,7 +56,7 @@ class CustomerCreationSourceFilter implements ArrayAccess
     );
   
     /**
-      * $values The list of creation sources used as filtering criteria.
+      * $values The list of creation sources used as filtering criteria. See [CustomerCreationSource](#type-customercreationsource) for possible values.
       * @var string[]
       */
     protected $values;
@@ -96,7 +96,7 @@ class CustomerCreationSourceFilter implements ArrayAccess
   
     /**
      * Sets values
-     * @param string[] $values The list of creation sources used as filtering criteria.
+     * @param string[] $values The list of creation sources used as filtering criteria. See [CustomerCreationSource](#type-customercreationsource) for possible values.
      * @return $this
      */
     public function setValues($values)
