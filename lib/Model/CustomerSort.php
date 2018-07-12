@@ -56,12 +56,12 @@ class CustomerSort implements ArrayAccess
     );
   
     /**
-      * $field The field to sort the results on. It could be the total money spent at the merchant, the date of the first visit (etc).  Default value: `DEFAULT`.
+      * $field The field to sort the results on. It could be the total money spent at the merchant, the date of the first visit (etc). See [CustomerSortField](#type-customersortfield) for possible values. Default value: `DEFAULT`.
       * @var string
       */
     protected $field;
     /**
-      * $order Indicates the order in which results should be displayed based on the value of the sort field. String comparisons use standard alphabetic comparison to determine order. Strings representing numbers are sorted as strings. Default value: `ASC`.
+      * $order Indicates the order in which results should be displayed based on the value of the sort field. String comparisons use standard alphabetic comparison to determine order. Strings representing numbers are sorted as strings. See [SortOrder](#type-sortorder) for possible values. Default value: `ASC`.
       * @var string
       */
     protected $order;
@@ -96,7 +96,7 @@ class CustomerSort implements ArrayAccess
   
     /**
      * Sets field
-     * @param string $field The field to sort the results on. It could be the total money spent at the merchant, the date of the first visit (etc).  Default value: `DEFAULT`.
+     * @param string $field The field to sort the results on. It could be the total money spent at the merchant, the date of the first visit (etc). See [CustomerSortField](#type-customersortfield) for possible values. Default value: `DEFAULT`.
      * @return $this
      */
     public function setField($field)
@@ -115,7 +115,7 @@ class CustomerSort implements ArrayAccess
   
     /**
      * Sets order
-     * @param string $order Indicates the order in which results should be displayed based on the value of the sort field. String comparisons use standard alphabetic comparison to determine order. Strings representing numbers are sorted as strings. Default value: `ASC`.
+     * @param string $order Indicates the order in which results should be displayed based on the value of the sort field. String comparisons use standard alphabetic comparison to determine order. Strings representing numbers are sorted as strings. See [SortOrder](#type-sortorder) for possible values. Default value: `ASC`.
      * @return $this
      */
     public function setOrder($order)

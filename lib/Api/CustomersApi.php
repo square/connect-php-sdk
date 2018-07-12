@@ -108,7 +108,8 @@ class CustomersApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-  
+        $headerParams['Square-Version'] = "2018-07-12";
+
         
         
         
@@ -206,7 +207,8 @@ class CustomersApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-  
+        $headerParams['Square-Version'] = "2018-07-12";
+
         
         
         // path params
@@ -305,7 +307,8 @@ class CustomersApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-  
+        $headerParams['Square-Version'] = "2018-07-12";
+
         
         
         // path params
@@ -406,7 +409,8 @@ class CustomersApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-  
+        $headerParams['Square-Version'] = "2018-07-12";
+
         
         
         // path params
@@ -508,7 +512,8 @@ class CustomersApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-  
+        $headerParams['Square-Version'] = "2018-07-12";
+
         // query params
         if ($cursor !== null) {
             $queryParams['cursor'] = $this->apiClient->getSerializer()->toQueryValue($cursor);
@@ -605,7 +610,8 @@ class CustomersApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-  
+        $headerParams['Square-Version'] = "2018-07-12";
+
         
         
         // path params
@@ -700,7 +706,8 @@ class CustomersApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-  
+        $headerParams['Square-Version'] = "2018-07-12";
+
         
         
         
@@ -798,7 +805,8 @@ class CustomersApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-  
+        $headerParams['Square-Version'] = "2018-07-12";
+
         
         
         // path params
