@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 CaptureTransaction
 
-Captures a transaction that was created with the [Charge](#endpoint-charge) endpoint with a `delay_capture` value of `true`.  See [Delayed capture transactions](/articles/delayed-capture-transactions/) for more information.
+Captures a transaction that was created with the [Charge](#endpoint-charge) endpoint with a `delay_capture` value of `true`.  See [Delayed capture transactions](/payments/transactions/overview#delayed-capture) for more information.
 
 ### Example
 ```php
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 
 CreateRefund
 
-Initiates a refund for a previously charged tender.  You must issue a refund within 120 days of the associated payment. See [this article](https://squareup.com/help/us/en/article/5060) for more information on refund behavior.
+Initiates a refund for a previously charged tender.  You must issue a refund within 120 days of the associated payment. See [this article](https://squareup.com/help/us/en/article/5060) for more information on refund behavior.  *NOTE**: Card-present transactions with Interac credit cards **cannot be refunded using the Connect API**. Interac transactions must refunded in-person (e.g., dipping the card using POS app).
 
 ### Example
 ```php
@@ -332,7 +332,7 @@ Name | Type | Description  | Notes
 
 VoidTransaction
 
-Cancels a transaction that was created with the [Charge](#endpoint-charge) endpoint with a `delay_capture` value of `true`.  See [Delayed capture transactions](/articles/delayed-capture-transactions/) for more information.
+Cancels a transaction that was created with the [Charge](#endpoint-charge) endpoint with a `delay_capture` value of `true`.  See [Delayed capture transactions](/payments/transactions/overview#delayed-capture) for more information.
 
 ### Example
 ```php
