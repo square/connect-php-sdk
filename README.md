@@ -449,6 +449,7 @@ Class | Method | HTTP request | Description
  - **TIMECARDS_READ**: GET endpoints related to employee timecards
  - **TIMECARDS_WRITE**: POST, PUT, and DELETE endpoints related to employee timecards
  - **PAYMENTS_WRITE_ADDITIONAL_RECIPIENTS**: Allow third party applications to deduct a portion of each transaction amount.
+ - **PAYMENTS_WRITE_IN_PERSON**: POST, PUT, and DELETE endpoints. Grants write access to transaction and refunds information.
 
 ## oauth2ClientSecret
 
