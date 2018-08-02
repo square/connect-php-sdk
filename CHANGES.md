@@ -1,5 +1,13 @@
 # Change Log
 
+## Version 2.20180712.1 (2018-08-02)
+
+We have added MobileAuthorization API.
+
+### New endpoint: MobileAuthorization API
+
+* `CreateMobileAuthorizationCode` endpoint &mdash; Generate a mobile authorization code for an instance of your application. Mobile authorization credentials permit an instance of your application to accept payments for a given location using the Square Reader SDK. Mobile authorization codes are one-time-use and expire shortly after being issued.
+
 ## Version 2.20180712.0 (2018-07-12)
 
 We introduce Square API versions. `Square-Version` is 2018-07-12 for this SDK.

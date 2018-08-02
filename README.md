@@ -146,6 +146,7 @@ Class | Method | HTTP request | Description
 *CustomersApi* | [**searchCustomers**](docs/Api/CustomersApi.md#searchcustomers) | **POST** /v2/customers/search | SearchCustomers
 *CustomersApi* | [**updateCustomer**](docs/Api/CustomersApi.md#updatecustomer) | **PUT** /v2/customers/{customer_id} | UpdateCustomer
 *LocationsApi* | [**listLocations**](docs/Api/LocationsApi.md#listlocations) | **GET** /v2/locations | ListLocations
+*MobileAuthorizationApi* | [**createMobileAuthorizationCode**](docs/Api/MobileAuthorizationApi.md#createmobileauthorizationcode) | **POST** /mobile/authorization-code | CreateMobileAuthorizationCode
 *OrdersApi* | [**batchRetrieveOrders**](docs/Api/OrdersApi.md#batchretrieveorders) | **POST** /v2/locations/{location_id}/orders/batch-retrieve | BatchRetrieveOrders
 *OrdersApi* | [**createOrder**](docs/Api/OrdersApi.md#createorder) | **POST** /v2/locations/{location_id}/orders | CreateOrder
 *ReportingApi* | [**listAdditionalRecipientReceivableRefunds**](docs/Api/ReportingApi.md#listadditionalrecipientreceivablerefunds) | **GET** /v2/locations/{location_id}/additional-recipient-receivable-refunds | ListAdditionalRecipientReceivableRefunds
@@ -286,6 +287,8 @@ Class | Method | HTTP request | Description
  - [CreateCustomerCardResponse](docs/Model/CreateCustomerCardResponse.md)
  - [CreateCustomerRequest](docs/Model/CreateCustomerRequest.md)
  - [CreateCustomerResponse](docs/Model/CreateCustomerResponse.md)
+ - [CreateMobileAuthorizationCodeRequest](docs/Model/CreateMobileAuthorizationCodeRequest.md)
+ - [CreateMobileAuthorizationCodeResponse](docs/Model/CreateMobileAuthorizationCodeResponse.md)
  - [CreateOrderRequest](docs/Model/CreateOrderRequest.md)
  - [CreateOrderRequestDiscount](docs/Model/CreateOrderRequestDiscount.md)
  - [CreateOrderRequestLineItem](docs/Model/CreateOrderRequestLineItem.md)
