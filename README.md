@@ -147,6 +147,9 @@ Class | Method | HTTP request | Description
 *CustomersApi* | [**updateCustomer**](docs/Api/CustomersApi.md#updatecustomer) | **PUT** /v2/customers/{customer_id} | UpdateCustomer
 *LocationsApi* | [**listLocations**](docs/Api/LocationsApi.md#listlocations) | **GET** /v2/locations | ListLocations
 *MobileAuthorizationApi* | [**createMobileAuthorizationCode**](docs/Api/MobileAuthorizationApi.md#createmobileauthorizationcode) | **POST** /mobile/authorization-code | CreateMobileAuthorizationCode
+*OAuthApi* | [**obtainToken**](docs/Api/OAuthApi.md#obtaintoken) | **POST** /oauth2/token | ObtainToken
+*OAuthApi* | [**renewToken**](docs/Api/OAuthApi.md#renewtoken) | **POST** /oauth2/clients/{client_id}/access-token/renew | RenewToken
+*OAuthApi* | [**revokeToken**](docs/Api/OAuthApi.md#revoketoken) | **POST** /oauth2/revoke | RevokeToken
 *OrdersApi* | [**batchRetrieveOrders**](docs/Api/OrdersApi.md#batchretrieveorders) | **POST** /v2/locations/{location_id}/orders/batch-retrieve | BatchRetrieveOrders
 *OrdersApi* | [**createOrder**](docs/Api/OrdersApi.md#createorder) | **POST** /v2/locations/{location_id}/orders | CreateOrder
 *ReportingApi* | [**listAdditionalRecipientReceivableRefunds**](docs/Api/ReportingApi.md#listadditionalrecipientreceivablerefunds) | **GET** /v2/locations/{location_id}/additional-recipient-receivable-refunds | ListAdditionalRecipientReceivableRefunds
@@ -339,6 +342,8 @@ Class | Method | HTTP request | Description
  - [LocationStatus](docs/Model/LocationStatus.md)
  - [LocationType](docs/Model/LocationType.md)
  - [Money](docs/Model/Money.md)
+ - [ObtainTokenRequest](docs/Model/ObtainTokenRequest.md)
+ - [ObtainTokenResponse](docs/Model/ObtainTokenResponse.md)
  - [Order](docs/Model/Order.md)
  - [OrderLineItem](docs/Model/OrderLineItem.md)
  - [OrderLineItemDiscount](docs/Model/OrderLineItemDiscount.md)
@@ -352,12 +357,16 @@ Class | Method | HTTP request | Description
  - [RegisterDomainRequest](docs/Model/RegisterDomainRequest.md)
  - [RegisterDomainResponse](docs/Model/RegisterDomainResponse.md)
  - [RegisterDomainResponseStatus](docs/Model/RegisterDomainResponseStatus.md)
+ - [RenewTokenRequest](docs/Model/RenewTokenRequest.md)
+ - [RenewTokenResponse](docs/Model/RenewTokenResponse.md)
  - [RetrieveCatalogObjectRequest](docs/Model/RetrieveCatalogObjectRequest.md)
  - [RetrieveCatalogObjectResponse](docs/Model/RetrieveCatalogObjectResponse.md)
  - [RetrieveCustomerRequest](docs/Model/RetrieveCustomerRequest.md)
  - [RetrieveCustomerResponse](docs/Model/RetrieveCustomerResponse.md)
  - [RetrieveTransactionRequest](docs/Model/RetrieveTransactionRequest.md)
  - [RetrieveTransactionResponse](docs/Model/RetrieveTransactionResponse.md)
+ - [RevokeTokenRequest](docs/Model/RevokeTokenRequest.md)
+ - [RevokeTokenResponse](docs/Model/RevokeTokenResponse.md)
  - [SearchCatalogObjectsRequest](docs/Model/SearchCatalogObjectsRequest.md)
  - [SearchCatalogObjectsResponse](docs/Model/SearchCatalogObjectsResponse.md)
  - [SearchCustomersRequest](docs/Model/SearchCustomersRequest.md)

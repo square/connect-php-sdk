@@ -1,5 +1,16 @@
 # Change Log
 
+## Version 2.20180712.2 (2018-08-21)
+
+The Connect SDK now includes functionality for the OAuth API. The Square OAuth API lets applications request and obtain permission from a Square account to make API calls on behalf of that account. Applications can request individual permissions so that users do not need to grant full access to their Square accounts.
+
+### OAuth API
+
+* `ObtainToken` endpoint &mdash; Exchanges the authorization code for an access token.  After a merchant authorizes your application with the permissions form, an authorization code is sent to the application's redirect URL (See [Implementing OAuth](https://docs.connect.squareup.com/api/oauth#implementingoauth) for information about how to set up the redirect URL).
+
+* `RenewToken` endpoint &mdash; Renews an OAuth access token before it expires.  OAuth access tokens besides your application's personal access token expire after __30 days__. You can also renew expired tokens within __15 days__ of their expiration. You cannot renew an access token that has been expired for more than 15 days. Instead, the associated merchant must complete the [OAuth flow](https://docs.connect.squareup.com/api/oauth#implementingoauth) from the beginning.  __Important:__ The `Authorization` header you provide to this endpoint must have the following format:  ``` Authorization: Client APPLICATION_SECRET ```  Replace `APPLICATION_SECRET` with your application's secret, available from the [application dashboard](https://connect.squareup.com/apps).
+* `RevokeToken` endpoint &mdash; Revokes an access token generated with the OAuth flow.  If a merchant has more than one access token for your application, this endpoint revokes all of them, regardless of which token you specify. If you revoke a merchant's access token, all of the merchant's active subscriptions associated with your application are canceled immediately.  __Important:__ The `Authorization` header you provide to this endpoint must have the following format:  ``` Authorization: Client APPLICATION_SECRET ```  Replace `APPLICATION_SECRET` with your application's secret, available from the [application dashboard](https://connect.squareup.com/apps).
+
 ## Version 2.20180712.1 (2018-08-02)
 
 We have added MobileAuthorization API.
