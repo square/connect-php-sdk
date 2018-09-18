@@ -35,6 +35,7 @@ class Customer implements ArrayAccess
         'email_address' => 'string',
         'address' => '\SquareConnect\Model\Address',
         'phone_number' => 'string',
+        'birthday' => 'string',
         'reference_id' => 'string',
         'note' => 'string',
         'preferences' => '\SquareConnect\Model\CustomerPreferences',
@@ -58,6 +59,7 @@ class Customer implements ArrayAccess
         'email_address' => 'email_address',
         'address' => 'address',
         'phone_number' => 'phone_number',
+        'birthday' => 'birthday',
         'reference_id' => 'reference_id',
         'note' => 'note',
         'preferences' => 'preferences',
@@ -81,6 +83,7 @@ class Customer implements ArrayAccess
         'email_address' => 'setEmailAddress',
         'address' => 'setAddress',
         'phone_number' => 'setPhoneNumber',
+        'birthday' => 'setBirthday',
         'reference_id' => 'setReferenceId',
         'note' => 'setNote',
         'preferences' => 'setPreferences',
@@ -104,6 +107,7 @@ class Customer implements ArrayAccess
         'email_address' => 'getEmailAddress',
         'address' => 'getAddress',
         'phone_number' => 'getPhoneNumber',
+        'birthday' => 'getBirthday',
         'reference_id' => 'getReferenceId',
         'note' => 'getNote',
         'preferences' => 'getPreferences',
@@ -166,6 +170,11 @@ class Customer implements ArrayAccess
       * @var string
       */
     protected $phone_number;
+    /**
+      * $birthday The customer's birthday in RFC-3339 format. Year is optional, timezone and times are not allowed. Example: `0000-09-01T00:00:00-00:00` for a birthday on September 1st. `1998-09-01T00:00:00-00:00` for a birthday on September 1st 1998.
+      * @var string
+      */
+    protected $birthday;
     /**
       * $reference_id A second ID you can set to associate the customer with an entity in another system.
       * @var string
@@ -253,6 +262,11 @@ class Customer implements ArrayAccess
               $this->phone_number = $data["phone_number"];
             } else {
               $this->phone_number = null;
+            }
+            if (isset($data["birthday"])) {
+              $this->birthday = $data["birthday"];
+            } else {
+              $this->birthday = null;
             }
             if (isset($data["reference_id"])) {
               $this->reference_id = $data["reference_id"];
@@ -488,6 +502,25 @@ class Customer implements ArrayAccess
     public function setPhoneNumber($phone_number)
     {
         $this->phone_number = $phone_number;
+        return $this;
+    }
+    /**
+     * Gets birthday
+     * @return string
+     */
+    public function getBirthday()
+    {
+        return $this->birthday;
+    }
+  
+    /**
+     * Sets birthday
+     * @param string $birthday The customer's birthday in RFC-3339 format. Year is optional, timezone and times are not allowed. Example: `0000-09-01T00:00:00-00:00` for a birthday on September 1st. `1998-09-01T00:00:00-00:00` for a birthday on September 1st 1998.
+     * @return $this
+     */
+    public function setBirthday($birthday)
+    {
+        $this->birthday = $birthday;
         return $this;
     }
     /**
