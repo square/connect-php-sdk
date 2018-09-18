@@ -25,21 +25,73 @@ class InventoryApiTest extends \PHPUnit_Framework_TestCase
 {
 
     private static $api_instance;
+    private static $catalog_api_instance;
     private static $test_accounts;
     private static $location_id;
     private static $catalog_object_id;
+    private $tea = [
+      "type" => "ITEM",
+      "id" => "#Tea",
+      "item_data" => [
+        "name" => "Tea",
+        "description" => "Hot leaf juice",
+        "abbreviation" => "Te",
+        "variations" => [
+          [
+            "type" => "ITEM_VARIATION",
+            "id" => "#self::SMALL_TEA_CLIENT_ID",
+            "item_variation_data" => [
+              "name" => "Small",
+              "item_id" => "#Tea",
+              "pricing_type" => "FIXED_PRICING",
+              "price_money" => [
+                "amount" => 150.0,
+                "currency" => "USD"
+              ]
+            ]
+          ]
+        ]
+      ]
+    ];
+
     /**
      * Setup before running each test case
      */
     public static function setUpBeforeClass() {
       self::$api_instance = new \SquareConnect\Api\InventoryApi();
+      self::$catalog_api_instance = new \SquareConnect\Api\CatalogApi();
       self::$test_accounts = new \SquareConnect\TestAccounts();
       // Configure OAuth2 access token for authorization: oauth2
       $account = self::$test_accounts->{'US-Prod'};
       $access_token = $account->{'access_token'};
       self::$location_id = $account->{'location_id'};
       Configuration::getDefaultConfiguration()->setAccessToken($access_token);
+    }
 
+    protected function setUp() {
+      $response = $this->searchItemVariation();
+      if (count($response->getObjects()) == 0) {
+          $this->createTestItemVariation();
+          $response = $this->searchItemVariation();
+      }
+
+      self::$catalog_object_id = $response->getObjects()[0]->getId();
+    }
+
+    protected function createTestItemVariation() {
+      $body = new \SquareConnect\Model\BatchUpsertCatalogObjectsRequest([
+        "idempotency_key" => uniqid(),
+        "batches" => [
+          [
+            "objects" => [$this->tea]
+          ]
+        ]
+      ]);
+
+      self::$catalog_api_instance->batchUpsertCatalogObjects($body);
+    }
+
+    protected function searchItemVariation() {
       $query = new \SquareConnect\Model\SearchCatalogObjectsRequest([
         "object_types" => [
           "ITEM_VARIATION"
@@ -48,9 +100,8 @@ class InventoryApiTest extends \PHPUnit_Framework_TestCase
         "include_deleted_objects" => false,
         "include_related_objects" => false,
       ]);
-      $api = new \SquareConnect\Api\CatalogApi();
-      $response = $api->searchCatalogObjects($query);
-      self::$catalog_object_id = $response->getObjects()[0]->getId();
+
+      return self::$catalog_api_instance->searchCatalogObjects($query);
     }
 
     /**
