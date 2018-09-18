@@ -108,7 +108,7 @@ class OAuthApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2018-07-12";
+        $headerParams['Square-Version'] = "2018-09-18";
 
         
         
@@ -202,7 +202,7 @@ class OAuthApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2018-07-12";
+        $headerParams['Square-Version'] = "2018-09-18";
 
         
         
@@ -304,7 +304,7 @@ class OAuthApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2018-07-12";
+        $headerParams['Square-Version'] = "2018-09-18";
 
         
         

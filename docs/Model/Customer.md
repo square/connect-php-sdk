@@ -14,6 +14,7 @@ Name | Getter | Setter | Type | Description | Notes
 **email_address** | getEmailAddress() | setEmailAddress($value) | **string** | The customer&#39;s email address. | [optional] 
 **address** | getAddress() | setAddress($value) | [**\SquareConnect\Model\Address**](Address.md) | The customer&#39;s physical address. | [optional] 
 **phone_number** | getPhoneNumber() | setPhoneNumber($value) | **string** | The customer&#39;s phone number. | [optional] 
+**birthday** | getBirthday() | setBirthday($value) | **string** | The customer&#39;s birthday in RFC-3339 format. Year is optional, timezone and times are not allowed. Example: &#x60;0000-09-01T00:00:00-00:00&#x60; for a birthday on September 1st. &#x60;1998-09-01T00:00:00-00:00&#x60; for a birthday on September 1st 1998. | [optional] 
 **reference_id** | getReferenceId() | setReferenceId($value) | **string** | A second ID you can set to associate the customer with an entity in another system. | [optional] 
 **note** | getNote() | setNote($value) | **string** | A note to associate with the customer. | [optional] 
 **preferences** | getPreferences() | setPreferences($value) | [**\SquareConnect\Model\CustomerPreferences**](CustomerPreferences.md) | The customer&#39;s preferences. | [optional] 

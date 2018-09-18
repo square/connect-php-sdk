@@ -145,6 +145,13 @@ Class | Method | HTTP request | Description
 *CustomersApi* | [**retrieveCustomer**](docs/Api/CustomersApi.md#retrievecustomer) | **GET** /v2/customers/{customer_id} | RetrieveCustomer
 *CustomersApi* | [**searchCustomers**](docs/Api/CustomersApi.md#searchcustomers) | **POST** /v2/customers/search | SearchCustomers
 *CustomersApi* | [**updateCustomer**](docs/Api/CustomersApi.md#updatecustomer) | **PUT** /v2/customers/{customer_id} | UpdateCustomer
+*InventoryApi* | [**batchChangeInventory**](docs/Api/InventoryApi.md#batchchangeinventory) | **POST** /v2/inventory/batch-change | BatchChangeInventory
+*InventoryApi* | [**batchRetrieveInventoryChanges**](docs/Api/InventoryApi.md#batchretrieveinventorychanges) | **POST** /v2/inventory/batch-retrieve-changes | BatchRetrieveInventoryChanges
+*InventoryApi* | [**batchRetrieveInventoryCounts**](docs/Api/InventoryApi.md#batchretrieveinventorycounts) | **POST** /v2/inventory/batch-retrieve-counts | BatchRetrieveInventoryCounts
+*InventoryApi* | [**retrieveInventoryAdjustment**](docs/Api/InventoryApi.md#retrieveinventoryadjustment) | **GET** /v2/inventory/adjustment/{adjustment_id} | RetrieveInventoryAdjustment
+*InventoryApi* | [**retrieveInventoryChanges**](docs/Api/InventoryApi.md#retrieveinventorychanges) | **GET** /v2/inventory/{catalog_object_id}/changes | RetrieveInventoryChanges
+*InventoryApi* | [**retrieveInventoryCount**](docs/Api/InventoryApi.md#retrieveinventorycount) | **GET** /v2/inventory/{catalog_object_id} | RetrieveInventoryCount
+*InventoryApi* | [**retrieveInventoryPhysicalCount**](docs/Api/InventoryApi.md#retrieveinventoryphysicalcount) | **GET** /v2/inventory/physical-count/{physical_count_id} | RetrieveInventoryPhysicalCount
 *LocationsApi* | [**listLocations**](docs/Api/LocationsApi.md#listlocations) | **GET** /v2/locations | ListLocations
 *MobileAuthorizationApi* | [**createMobileAuthorizationCode**](docs/Api/MobileAuthorizationApi.md#createmobileauthorizationcode) | **POST** /mobile/authorization-code | CreateMobileAuthorizationCode
 *OAuthApi* | [**obtainToken**](docs/Api/OAuthApi.md#obtaintoken) | **POST** /oauth2/token | ObtainToken
@@ -238,10 +245,16 @@ Class | Method | HTTP request | Description
  - [AdditionalRecipientReceivable](docs/Model/AdditionalRecipientReceivable.md)
  - [AdditionalRecipientReceivableRefund](docs/Model/AdditionalRecipientReceivableRefund.md)
  - [Address](docs/Model/Address.md)
+ - [BatchChangeInventoryRequest](docs/Model/BatchChangeInventoryRequest.md)
+ - [BatchChangeInventoryResponse](docs/Model/BatchChangeInventoryResponse.md)
  - [BatchDeleteCatalogObjectsRequest](docs/Model/BatchDeleteCatalogObjectsRequest.md)
  - [BatchDeleteCatalogObjectsResponse](docs/Model/BatchDeleteCatalogObjectsResponse.md)
  - [BatchRetrieveCatalogObjectsRequest](docs/Model/BatchRetrieveCatalogObjectsRequest.md)
  - [BatchRetrieveCatalogObjectsResponse](docs/Model/BatchRetrieveCatalogObjectsResponse.md)
+ - [BatchRetrieveInventoryChangesRequest](docs/Model/BatchRetrieveInventoryChangesRequest.md)
+ - [BatchRetrieveInventoryChangesResponse](docs/Model/BatchRetrieveInventoryChangesResponse.md)
+ - [BatchRetrieveInventoryCountsRequest](docs/Model/BatchRetrieveInventoryCountsRequest.md)
+ - [BatchRetrieveInventoryCountsResponse](docs/Model/BatchRetrieveInventoryCountsResponse.md)
  - [BatchRetrieveOrdersRequest](docs/Model/BatchRetrieveOrdersRequest.md)
  - [BatchRetrieveOrdersResponse](docs/Model/BatchRetrieveOrdersResponse.md)
  - [BatchUpsertCatalogObjectsRequest](docs/Model/BatchUpsertCatalogObjectsRequest.md)
@@ -321,7 +334,14 @@ Class | Method | HTTP request | Description
  - [Error](docs/Model/Error.md)
  - [ErrorCategory](docs/Model/ErrorCategory.md)
  - [ErrorCode](docs/Model/ErrorCode.md)
+ - [InventoryAdjustment](docs/Model/InventoryAdjustment.md)
  - [InventoryAlertType](docs/Model/InventoryAlertType.md)
+ - [InventoryChange](docs/Model/InventoryChange.md)
+ - [InventoryChangeType](docs/Model/InventoryChangeType.md)
+ - [InventoryCount](docs/Model/InventoryCount.md)
+ - [InventoryPhysicalCount](docs/Model/InventoryPhysicalCount.md)
+ - [InventoryState](docs/Model/InventoryState.md)
+ - [InventoryTransfer](docs/Model/InventoryTransfer.md)
  - [ItemVariationLocationOverrides](docs/Model/ItemVariationLocationOverrides.md)
  - [ListAdditionalRecipientReceivableRefundsRequest](docs/Model/ListAdditionalRecipientReceivableRefundsRequest.md)
  - [ListAdditionalRecipientReceivableRefundsResponse](docs/Model/ListAdditionalRecipientReceivableRefundsResponse.md)
@@ -352,6 +372,7 @@ Class | Method | HTTP request | Description
  - [OrderLineItemModifier](docs/Model/OrderLineItemModifier.md)
  - [OrderLineItemTax](docs/Model/OrderLineItemTax.md)
  - [OrderLineItemTaxType](docs/Model/OrderLineItemTaxType.md)
+ - [Product](docs/Model/Product.md)
  - [Refund](docs/Model/Refund.md)
  - [RefundStatus](docs/Model/RefundStatus.md)
  - [RegisterDomainRequest](docs/Model/RegisterDomainRequest.md)
@@ -363,6 +384,14 @@ Class | Method | HTTP request | Description
  - [RetrieveCatalogObjectResponse](docs/Model/RetrieveCatalogObjectResponse.md)
  - [RetrieveCustomerRequest](docs/Model/RetrieveCustomerRequest.md)
  - [RetrieveCustomerResponse](docs/Model/RetrieveCustomerResponse.md)
+ - [RetrieveInventoryAdjustmentRequest](docs/Model/RetrieveInventoryAdjustmentRequest.md)
+ - [RetrieveInventoryAdjustmentResponse](docs/Model/RetrieveInventoryAdjustmentResponse.md)
+ - [RetrieveInventoryChangesRequest](docs/Model/RetrieveInventoryChangesRequest.md)
+ - [RetrieveInventoryChangesResponse](docs/Model/RetrieveInventoryChangesResponse.md)
+ - [RetrieveInventoryCountRequest](docs/Model/RetrieveInventoryCountRequest.md)
+ - [RetrieveInventoryCountResponse](docs/Model/RetrieveInventoryCountResponse.md)
+ - [RetrieveInventoryPhysicalCountRequest](docs/Model/RetrieveInventoryPhysicalCountRequest.md)
+ - [RetrieveInventoryPhysicalCountResponse](docs/Model/RetrieveInventoryPhysicalCountResponse.md)
  - [RetrieveTransactionRequest](docs/Model/RetrieveTransactionRequest.md)
  - [RetrieveTransactionResponse](docs/Model/RetrieveTransactionResponse.md)
  - [RevokeTokenRequest](docs/Model/RevokeTokenRequest.md)
@@ -372,6 +401,7 @@ Class | Method | HTTP request | Description
  - [SearchCustomersRequest](docs/Model/SearchCustomersRequest.md)
  - [SearchCustomersResponse](docs/Model/SearchCustomersResponse.md)
  - [SortOrder](docs/Model/SortOrder.md)
+ - [SourceApplication](docs/Model/SourceApplication.md)
  - [TaxCalculationPhase](docs/Model/TaxCalculationPhase.md)
  - [TaxInclusionType](docs/Model/TaxInclusionType.md)
  - [Tender](docs/Model/Tender.md)
@@ -459,6 +489,8 @@ Class | Method | HTTP request | Description
  - **TIMECARDS_WRITE**: POST, PUT, and DELETE endpoints related to employee timecards
  - **PAYMENTS_WRITE_ADDITIONAL_RECIPIENTS**: Allow third party applications to deduct a portion of each transaction amount.
  - **PAYMENTS_WRITE_IN_PERSON**: POST, PUT, and DELETE endpoints. Grants write access to transaction and refunds information.
+ - **INVENTORY_READ**: GET endpoints related to a merchant's inventory
+ - **INVENTORY_WRITE**: POST, PUT, and DELETE endpoints related to a merchant's inventory
 
 ## oauth2ClientSecret
 
