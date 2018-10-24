@@ -115,7 +115,7 @@ class V1PaymentSurcharge implements ArrayAccess
       */
     protected $taxes;
     /**
-      * $surcharge_id 
+      * $surcharge_id A Square-issued unique identifier associated with the surcharge.
       * @var string
       */
     protected $surcharge_id;
@@ -313,7 +313,7 @@ class V1PaymentSurcharge implements ArrayAccess
   
     /**
      * Sets surcharge_id
-     * @param string $surcharge_id 
+     * @param string $surcharge_id A Square-issued unique identifier associated with the surcharge.
      * @return $this
      */
     public function setSurchargeId($surcharge_id)

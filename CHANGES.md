@@ -1,5 +1,20 @@
 # Change Log
 
+## Version 2.20180918.1 (2018-10-24)
+
+### New feature: Support for Partial Payments in Connect v1
+
+The Connect SDK now supports partial payment functionality for the Connect v1 Transactions API with the addition of a new `Payment` field:
+* `Payment.is_partial` &mdash; Indicates whether or not the payment is only partially paid for. If `true`, the payment will have the tenders collected so far, but the itemizations will be empty until the payment is completed.
+
+`Tender` also includes 2 new fields to help resolve timing around payments with multiple tenders. Invoices that involve partial payment (e.g., requiring a deposit) may include tenders settled well before the entire payment is completed:
+* `Tender.tendered_at` &mdash; The time when the tender was accepted by the merchant.
+* `Tender.settled_at` &mdash; The time when the tender was captured, in ISO 8601 format. Typically the same as (or within moments of) `tendered_at` unless the tender was part of a delay capture transaction.
+
+The change also makes some behavioral changes to the Connect v1 Payment endpoints:
+* **Create Refunds** rejects requests for invoices that have partial payments pending.
+* **List Payments** takes a new request field, `include_partial` to indicate whether partial payments should be included in the response.
+
 ## Version 2.20180918.0 (2018-09-18)
 
 We have added Connect v2 Inventory API and birthdays in `Customer` entities.

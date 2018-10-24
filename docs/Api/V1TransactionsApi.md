@@ -170,7 +170,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listPayments**
-> \SquareConnect\Model\V1Payment[] listPayments($location_id, $order, $begin_time, $end_time, $limit, $batch_token)
+> \SquareConnect\Model\V1Payment[] listPayments($location_id, $order, $begin_time, $end_time, $limit, $batch_token, $include_partial)
 
 Provides summary information for all payments taken by a merchant or any of the merchant's mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
 
@@ -191,9 +191,10 @@ $begin_time = "begin_time_example"; // string | The beginning of the requested r
 $end_time = "end_time_example"; // string | The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time.
 $limit = 56; // int | The maximum number of payments to return in a single response. This value cannot exceed 200.
 $batch_token = "batch_token_example"; // string | A pagination cursor to retrieve the next set of results for your original query to the endpoint.
+$include_partial = true; // bool | Indicates whether or not to include partial payments in the response. Partial payments will have the tenders collected so far, but the itemizations will be empty until the payment is completed.
 
 try {
-    $result = $api_instance->listPayments($location_id, $order, $begin_time, $end_time, $limit, $batch_token);
+    $result = $api_instance->listPayments($location_id, $order, $begin_time, $end_time, $limit, $batch_token, $include_partial);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling V1TransactionsApi->listPayments: ', $e->getMessage(), PHP_EOL;
@@ -211,6 +212,7 @@ Name | Type | Description  | Notes
  **end_time** | **string**| The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. | [optional]
  **limit** | **int**| The maximum number of payments to return in a single response. This value cannot exceed 200. | [optional]
  **batch_token** | **string**| A pagination cursor to retrieve the next set of results for your original query to the endpoint. | [optional]
+ **include_partial** | **bool**| Indicates whether or not to include partial payments in the response. Partial payments will have the tenders collected so far, but the itemizations will be empty until the payment is completed. | [optional]
 
 ### Return type
 

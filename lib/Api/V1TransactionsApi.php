@@ -385,12 +385,13 @@ class V1TransactionsApi
      * @param string $end_time The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)
      * @param int $limit The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)
      * @param string $batch_token A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)
+     * @param bool $include_partial Indicates whether or not to include partial payments in the response. Partial payments will have the tenders collected so far, but the itemizations will be empty until the payment is completed. (optional)
      * @return \SquareConnect\Model\V1Payment[]
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function listPayments($location_id, $order = null, $begin_time = null, $end_time = null, $limit = null, $batch_token = null)
+    public function listPayments($location_id, $order = null, $begin_time = null, $end_time = null, $limit = null, $batch_token = null, $include_partial = null)
     {
-        list($response, $statusCode, $httpHeader) = $this->listPaymentsWithHttpInfo ($location_id, $order, $begin_time, $end_time, $limit, $batch_token);
+        list($response, $statusCode, $httpHeader) = $this->listPaymentsWithHttpInfo ($location_id, $order, $begin_time, $end_time, $limit, $batch_token, $include_partial);
         return $response; 
     }
 
@@ -406,10 +407,11 @@ class V1TransactionsApi
      * @param string $end_time The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. (optional)
      * @param int $limit The maximum number of payments to return in a single response. This value cannot exceed 200. (optional)
      * @param string $batch_token A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)
+     * @param bool $include_partial Indicates whether or not to include partial payments in the response. Partial payments will have the tenders collected so far, but the itemizations will be empty until the payment is completed. (optional)
      * @return Array of \SquareConnect\Model\V1Payment[], HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function listPaymentsWithHttpInfo($location_id, $order = null, $begin_time = null, $end_time = null, $limit = null, $batch_token = null)
+    public function listPaymentsWithHttpInfo($location_id, $order = null, $begin_time = null, $end_time = null, $limit = null, $batch_token = null, $include_partial = null)
     {
         
         // verify the required parameter 'location_id' is set
@@ -444,6 +446,9 @@ class V1TransactionsApi
         }// query params
         if ($batch_token !== null) {
             $queryParams['batch_token'] = $this->apiClient->getSerializer()->toQueryValue($batch_token);
+        }// query params
+        if ($include_partial !== null) {
+            $queryParams['include_partial'] = $this->apiClient->getSerializer()->toQueryValue($include_partial);
         }
         
         // path params
