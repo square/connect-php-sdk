@@ -1,5 +1,7 @@
 # Change Log
 
+## Version 2.20180918.1 (2018-10-24)
+
 ## Version 2.20180918.0 (2018-09-18)
 
 We have added Connect v2 Inventory API and birthdays in `Customer` entities.

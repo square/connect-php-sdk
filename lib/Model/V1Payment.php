@@ -49,7 +49,8 @@ class V1Payment implements ArrayAccess
         'refunds' => '\SquareConnect\Model\V1Refund[]',
         'itemizations' => '\SquareConnect\Model\V1PaymentItemization[]',
         'surcharge_money' => '\SquareConnect\Model\V1Money',
-        'surcharges' => '\SquareConnect\Model\V1PaymentSurcharge[]'
+        'surcharges' => '\SquareConnect\Model\V1PaymentSurcharge[]',
+        'is_partial' => 'bool'
     );
   
     /** 
@@ -82,7 +83,8 @@ class V1Payment implements ArrayAccess
         'refunds' => 'refunds',
         'itemizations' => 'itemizations',
         'surcharge_money' => 'surcharge_money',
-        'surcharges' => 'surcharges'
+        'surcharges' => 'surcharges',
+        'is_partial' => 'is_partial'
     );
   
     /**
@@ -115,7 +117,8 @@ class V1Payment implements ArrayAccess
         'refunds' => 'setRefunds',
         'itemizations' => 'setItemizations',
         'surcharge_money' => 'setSurchargeMoney',
-        'surcharges' => 'setSurcharges'
+        'surcharges' => 'setSurcharges',
+        'is_partial' => 'setIsPartial'
     );
   
     /**
@@ -148,7 +151,8 @@ class V1Payment implements ArrayAccess
         'refunds' => 'getRefunds',
         'itemizations' => 'getItemizations',
         'surcharge_money' => 'getSurchargeMoney',
-        'surcharges' => 'getSurcharges'
+        'surcharges' => 'getSurcharges',
+        'is_partial' => 'getIsPartial'
     );
   
     /**
@@ -281,6 +285,11 @@ class V1Payment implements ArrayAccess
       * @var \SquareConnect\Model\V1PaymentSurcharge[]
       */
     protected $surcharges;
+    /**
+      * $is_partial Indicates whether or not the payment is only partially paid for. If true, this payment will have the tenders collected so far, but the itemizations will be empty until the payment is completed.
+      * @var bool
+      */
+    protected $is_partial;
 
     /**
      * Constructor
@@ -418,6 +427,11 @@ class V1Payment implements ArrayAccess
               $this->surcharges = $data["surcharges"];
             } else {
               $this->surcharges = null;
+            }
+            if (isset($data["is_partial"])) {
+              $this->is_partial = $data["is_partial"];
+            } else {
+              $this->is_partial = null;
             }
         }
     }
@@ -913,6 +927,25 @@ class V1Payment implements ArrayAccess
     public function setSurcharges($surcharges)
     {
         $this->surcharges = $surcharges;
+        return $this;
+    }
+    /**
+     * Gets is_partial
+     * @return bool
+     */
+    public function getIsPartial()
+    {
+        return $this->is_partial;
+    }
+  
+    /**
+     * Sets is_partial
+     * @param bool $is_partial Indicates whether or not the payment is only partially paid for. If true, this payment will have the tenders collected so far, but the itemizations will be empty until the payment is completed.
+     * @return $this
+     */
+    public function setIsPartial($is_partial)
+    {
+        $this->is_partial = $is_partial;
         return $this;
     }
     /**

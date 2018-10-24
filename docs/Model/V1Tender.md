@@ -14,6 +14,8 @@ Name | Getter | Setter | Type | Description | Notes
 **payment_note** | getPaymentNote() | setPaymentNote($value) | **string** | Notes entered by the merchant about the tender at the time of payment, if any. Typically only present for tender with the type: OTHER. | [optional] 
 **total_money** | getTotalMoney() | setTotalMoney($value) | [**\SquareConnect\Model\V1Money**](V1Money.md) | The total amount of money provided in this form of tender. | [optional] 
 **tendered_money** | getTenderedMoney() | setTenderedMoney($value) | [**\SquareConnect\Model\V1Money**](V1Money.md) | The amount of total_money applied to the payment. | [optional] 
+**tendered_at** | getTenderedAt() | setTenderedAt($value) | **string** | The time when the tender was created, in ISO 8601 format. | [optional] 
+**settled_at** | getSettledAt() | setSettledAt($value) | **string** | The time when the tender was settled, in ISO 8601 format. | [optional] 
 **change_back_money** | getChangeBackMoney() | setChangeBackMoney($value) | [**\SquareConnect\Model\V1Money**](V1Money.md) | The amount of total_money returned to the buyer as change. | [optional] 
 **refunded_money** | getRefundedMoney() | setRefundedMoney($value) | [**\SquareConnect\Model\V1Money**](V1Money.md) | The total of all refunds applied to this tender. This amount is always negative or zero. | [optional] 
 **is_exchange** | getIsExchange() | setIsExchange($value) | **bool** | Indicates whether or not the tender is associated with an exchange. If is_exchange is true, the tender represents the value of goods returned in an exchange not the actual money paid. The exchange value reduces the tender amounts needed to pay for items purchased in the exchange. | [optional] 

@@ -10,7 +10,7 @@ Name | Getter | Setter | Type | Description | Notes
 **type** | getType() | setType($value) | **string** | Indicates the source of the surcharge. For example, if it was applied as an automatic gratuity for a large group. | [optional] 
 **taxable** | getTaxable() | setTaxable($value) | **bool** | Indicates whether the surcharge is taxable. | [optional] 
 **taxes** | getTaxes() | setTaxes($value) | [**\SquareConnect\Model\V1PaymentTax[]**](V1PaymentTax.md) | The list of taxes that should be applied to the surcharge. | [optional] 
-**surcharge_id** | getSurchargeId() | setSurchargeId($value) | **string** |  | [optional] 
+**surcharge_id** | getSurchargeId() | setSurchargeId($value) | **string** | A Square-issued unique identifier associated with the surcharge. | [optional] 
 
 Note: All properties are protected and only accessed via getters and setters.
 

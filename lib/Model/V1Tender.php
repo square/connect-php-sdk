@@ -35,6 +35,8 @@ class V1Tender implements ArrayAccess
         'payment_note' => 'string',
         'total_money' => '\SquareConnect\Model\V1Money',
         'tendered_money' => '\SquareConnect\Model\V1Money',
+        'tendered_at' => 'string',
+        'settled_at' => 'string',
         'change_back_money' => '\SquareConnect\Model\V1Money',
         'refunded_money' => '\SquareConnect\Model\V1Money',
         'is_exchange' => 'bool'
@@ -56,6 +58,8 @@ class V1Tender implements ArrayAccess
         'payment_note' => 'payment_note',
         'total_money' => 'total_money',
         'tendered_money' => 'tendered_money',
+        'tendered_at' => 'tendered_at',
+        'settled_at' => 'settled_at',
         'change_back_money' => 'change_back_money',
         'refunded_money' => 'refunded_money',
         'is_exchange' => 'is_exchange'
@@ -77,6 +81,8 @@ class V1Tender implements ArrayAccess
         'payment_note' => 'setPaymentNote',
         'total_money' => 'setTotalMoney',
         'tendered_money' => 'setTenderedMoney',
+        'tendered_at' => 'setTenderedAt',
+        'settled_at' => 'setSettledAt',
         'change_back_money' => 'setChangeBackMoney',
         'refunded_money' => 'setRefundedMoney',
         'is_exchange' => 'setIsExchange'
@@ -98,6 +104,8 @@ class V1Tender implements ArrayAccess
         'payment_note' => 'getPaymentNote',
         'total_money' => 'getTotalMoney',
         'tendered_money' => 'getTenderedMoney',
+        'tendered_at' => 'getTenderedAt',
+        'settled_at' => 'getSettledAt',
         'change_back_money' => 'getChangeBackMoney',
         'refunded_money' => 'getRefundedMoney',
         'is_exchange' => 'getIsExchange'
@@ -158,6 +166,16 @@ class V1Tender implements ArrayAccess
       * @var \SquareConnect\Model\V1Money
       */
     protected $tendered_money;
+    /**
+      * $tendered_at The time when the tender was created, in ISO 8601 format.
+      * @var string
+      */
+    protected $tendered_at;
+    /**
+      * $settled_at The time when the tender was settled, in ISO 8601 format.
+      * @var string
+      */
+    protected $settled_at;
     /**
       * $change_back_money The amount of total_money returned to the buyer as change.
       * @var \SquareConnect\Model\V1Money
@@ -235,6 +253,16 @@ class V1Tender implements ArrayAccess
               $this->tendered_money = $data["tendered_money"];
             } else {
               $this->tendered_money = null;
+            }
+            if (isset($data["tendered_at"])) {
+              $this->tendered_at = $data["tendered_at"];
+            } else {
+              $this->tendered_at = null;
+            }
+            if (isset($data["settled_at"])) {
+              $this->settled_at = $data["settled_at"];
+            } else {
+              $this->settled_at = null;
             }
             if (isset($data["change_back_money"])) {
               $this->change_back_money = $data["change_back_money"];
@@ -460,6 +488,44 @@ class V1Tender implements ArrayAccess
     public function setTenderedMoney($tendered_money)
     {
         $this->tendered_money = $tendered_money;
+        return $this;
+    }
+    /**
+     * Gets tendered_at
+     * @return string
+     */
+    public function getTenderedAt()
+    {
+        return $this->tendered_at;
+    }
+  
+    /**
+     * Sets tendered_at
+     * @param string $tendered_at The time when the tender was created, in ISO 8601 format.
+     * @return $this
+     */
+    public function setTenderedAt($tendered_at)
+    {
+        $this->tendered_at = $tendered_at;
+        return $this;
+    }
+    /**
+     * Gets settled_at
+     * @return string
+     */
+    public function getSettledAt()
+    {
+        return $this->settled_at;
+    }
+  
+    /**
+     * Sets settled_at
+     * @param string $settled_at The time when the tender was settled, in ISO 8601 format.
+     * @return $this
+     */
+    public function setSettledAt($settled_at)
+    {
+        $this->settled_at = $settled_at;
         return $this;
     }
     /**

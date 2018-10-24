@@ -29,6 +29,7 @@ Name | Getter | Setter | Type | Description | Notes
 **itemizations** | getItemizations() | setItemizations($value) | [**\SquareConnect\Model\V1PaymentItemization[]**](V1PaymentItemization.md) | The items purchased in the payment. | [optional] 
 **surcharge_money** | getSurchargeMoney() | setSurchargeMoney($value) | [**\SquareConnect\Model\V1Money**](V1Money.md) | The total of all surcharges applied to the payment. | [optional] 
 **surcharges** | getSurcharges() | setSurcharges($value) | [**\SquareConnect\Model\V1PaymentSurcharge[]**](V1PaymentSurcharge.md) | A list of all surcharges associated with the payment. | [optional] 
+**is_partial** | getIsPartial() | setIsPartial($value) | **bool** | Indicates whether or not the payment is only partially paid for. If true, this payment will have the tenders collected so far, but the itemizations will be empty until the payment is completed. | [optional] 
 
 Note: All properties are protected and only accessed via getters and setters.
 
