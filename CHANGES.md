@@ -1,5 +1,12 @@
 # Change Log
 
+## Version 2.20180918.2 (2018-12-05)
+
+## New feature: Refund Adjustment fields in Refunds in Connect v1
+
+The Connect SDK now supports refund adjustments for the Connect v1
+Refunds API with the addition of multiple new fields in the `Refund` data type
+
 ## Version 2.20180918.1 (2018-10-24)
 
 ### New feature: Support for Partial Payments in Connect v1
