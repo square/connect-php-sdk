@@ -6,7 +6,7 @@ Name | Getter | Setter | Type | Description | Notes
 **id** | getId() | setId($value) | **string** | The customer&#39;s unique ID. | 
 **created_at** | getCreatedAt() | setCreatedAt($value) | **string** | The time when the customer was created, in RFC 3339 format. | 
 **updated_at** | getUpdatedAt() | setUpdatedAt($value) | **string** | The time when the customer was last updated, in RFC 3339 format. | 
-**cards** | getCards() | setCards($value) | [**\SquareConnect\Model\Card[]**](Card.md) | The non-confidential details of the customer&#39;s cards on file. | [optional] 
+**cards** | getCards() | setCards($value) | [**\SquareConnect\Model\Card[]**](Card.md) | The payment details of the customer&#39;s cards on file. | [optional] 
 **given_name** | getGivenName() | setGivenName($value) | **string** | The customer&#39;s given (i.e., first) name. | [optional] 
 **family_name** | getFamilyName() | setFamilyName($value) | **string** | The customer&#39;s family (i.e., last) name. | [optional] 
 **nickname** | getNickname() | setNickname($value) | **string** | The customer&#39;s nickname. | [optional] 
