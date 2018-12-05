@@ -3,6 +3,7 @@
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------
+**idempotency_key** | getIdempotencyKey() | setIdempotencyKey($value) | **string** | The idempotency key for the request. See the [Idempotency](/basics/api101/idempotency) guide for more information. | [optional] 
 **given_name** | getGivenName() | setGivenName($value) | **string** | The customer&#39;s given (i.e., first) name. | [optional] 
 **family_name** | getFamilyName() | setFamilyName($value) | **string** | The customer&#39;s family (i.e., last) name. | [optional] 
 **company_name** | getCompanyName() | setCompanyName($value) | **string** | The name of the customer&#39;s company. | [optional] 
