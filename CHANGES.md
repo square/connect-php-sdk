@@ -1,5 +1,11 @@
 # Change Log
 
+## Version 2.20181212.0 (2018-12-12)
+
+## Improvement: ListCustomers return set expanded
+
+Requests to the ListCustomers endpoint now returns all available customer profiles. Previously, ListCustomers only returned customer profiles explicitly created through the Customers API or Square Point of Sale.
+
 ## Version 2.20181205.0 (2018-12-05)
 
 ## New feature: Idempotent customer profile creation in Connect v2
