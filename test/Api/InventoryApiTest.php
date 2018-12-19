@@ -179,6 +179,7 @@ class InventoryApiTest extends \PHPUnit_Framework_TestCase
       $this->assertEmpty($counts->getErrors());
       $this->assertGreaterThanOrEqual(1, count($counts->getCounts()));
       $this->assertEquals(self::$catalog_object_id, $counts->getCounts()[0]->getCatalogObjectId());
+      $this->assertEquals("testing", $counts->getCounts()[0]->getState());
     }
     /**
      * Test case for retrieveInventoryAdjustment
