@@ -147,7 +147,7 @@ class CheckoutApiTest extends \PHPUnit_Framework_TestCase
                 "first_name" => "Jane",
                 "last_name" => "Doe"
             ],
-            "redirect_url" => "https://merchant.website.com/order-confirm"
+            "redirect_url" => "https://docs.connect.squareup.com/order-confirm"
         ]);
 
         $response = self::$api->createCheckout(self::$location_id, $body);
