@@ -9,7 +9,7 @@ namespace SquareConnect\Model;
 
 use \ArrayAccess;
 /**
- * CatalogCategory Class Doc Comment
+ * OrderFulfillment Class Doc Comment
  *
  * @category Class
  * @package  SquareConnect
@@ -17,14 +17,16 @@ use \ArrayAccess;
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://squareup.com/developers
  */
-class CatalogCategory implements ArrayAccess
+class OrderFulfillment implements ArrayAccess
 {
     /**
       * Array of property to type mappings. Used for (de)serialization 
       * @var string[]
       */
     static $swaggerTypes = array(
-        'name' => 'string'
+        'type' => 'string',
+        'state' => 'string',
+        'pickup_details' => '\SquareConnect\Model\OrderFulfillmentPickupDetails'
     );
   
     /** 
@@ -32,7 +34,9 @@ class CatalogCategory implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
-        'name' => 'name'
+        'type' => 'type',
+        'state' => 'state',
+        'pickup_details' => 'pickup_details'
     );
   
     /**
@@ -40,7 +44,9 @@ class CatalogCategory implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
-        'name' => 'setName'
+        'type' => 'setType',
+        'state' => 'setState',
+        'pickup_details' => 'setPickupDetails'
     );
   
     /**
@@ -48,14 +54,26 @@ class CatalogCategory implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
-        'name' => 'getName'
+        'type' => 'getType',
+        'state' => 'getState',
+        'pickup_details' => 'getPickupDetails'
     );
   
     /**
-      * $name The category's name. Searchable. This field has max length of 255 Unicode code points.
+      * $type The type of the fulfillment.
       * @var string
       */
-    protected $name;
+    protected $type;
+    /**
+      * $state The state of the fulfillment.
+      * @var string
+      */
+    protected $state;
+    /**
+      * $pickup_details Contains pickup-specific details. Required when fulfillment type is `PICKUP`.
+      * @var \SquareConnect\Model\OrderFulfillmentPickupDetails
+      */
+    protected $pickup_details;
 
     /**
      * Constructor
@@ -64,30 +82,78 @@ class CatalogCategory implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            if (isset($data["name"])) {
-              $this->name = $data["name"];
+            if (isset($data["type"])) {
+              $this->type = $data["type"];
             } else {
-              $this->name = null;
+              $this->type = null;
+            }
+            if (isset($data["state"])) {
+              $this->state = $data["state"];
+            } else {
+              $this->state = null;
+            }
+            if (isset($data["pickup_details"])) {
+              $this->pickup_details = $data["pickup_details"];
+            } else {
+              $this->pickup_details = null;
             }
         }
     }
     /**
-     * Gets name
+     * Gets type
      * @return string
      */
-    public function getName()
+    public function getType()
     {
-        return $this->name;
+        return $this->type;
     }
   
     /**
-     * Sets name
-     * @param string $name The category's name. Searchable. This field has max length of 255 Unicode code points.
+     * Sets type
+     * @param string $type The type of the fulfillment.
      * @return $this
      */
-    public function setName($name)
+    public function setType($type)
     {
-        $this->name = $name;
+        $this->type = $type;
+        return $this;
+    }
+    /**
+     * Gets state
+     * @return string
+     */
+    public function getState()
+    {
+        return $this->state;
+    }
+  
+    /**
+     * Sets state
+     * @param string $state The state of the fulfillment.
+     * @return $this
+     */
+    public function setState($state)
+    {
+        $this->state = $state;
+        return $this;
+    }
+    /**
+     * Gets pickup_details
+     * @return \SquareConnect\Model\OrderFulfillmentPickupDetails
+     */
+    public function getPickupDetails()
+    {
+        return $this->pickup_details;
+    }
+  
+    /**
+     * Sets pickup_details
+     * @param \SquareConnect\Model\OrderFulfillmentPickupDetails $pickup_details Contains pickup-specific details. Required when fulfillment type is `PICKUP`.
+     * @return $this
+     */
+    public function setPickupDetails($pickup_details)
+    {
+        $this->pickup_details = $pickup_details;
         return $this;
     }
     /**

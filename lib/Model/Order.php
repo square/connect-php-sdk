@@ -28,6 +28,9 @@ class Order implements ArrayAccess
         'location_id' => 'string',
         'reference_id' => 'string',
         'line_items' => '\SquareConnect\Model\OrderLineItem[]',
+        'taxes' => '\SquareConnect\Model\OrderLineItemTax[]',
+        'discounts' => '\SquareConnect\Model\OrderLineItemDiscount[]',
+        'fulfillments' => '\SquareConnect\Model\OrderFulfillment[]',
         'total_money' => '\SquareConnect\Model\Money',
         'total_tax_money' => '\SquareConnect\Model\Money',
         'total_discount_money' => '\SquareConnect\Model\Money'
@@ -42,6 +45,9 @@ class Order implements ArrayAccess
         'location_id' => 'location_id',
         'reference_id' => 'reference_id',
         'line_items' => 'line_items',
+        'taxes' => 'taxes',
+        'discounts' => 'discounts',
+        'fulfillments' => 'fulfillments',
         'total_money' => 'total_money',
         'total_tax_money' => 'total_tax_money',
         'total_discount_money' => 'total_discount_money'
@@ -56,6 +62,9 @@ class Order implements ArrayAccess
         'location_id' => 'setLocationId',
         'reference_id' => 'setReferenceId',
         'line_items' => 'setLineItems',
+        'taxes' => 'setTaxes',
+        'discounts' => 'setDiscounts',
+        'fulfillments' => 'setFulfillments',
         'total_money' => 'setTotalMoney',
         'total_tax_money' => 'setTotalTaxMoney',
         'total_discount_money' => 'setTotalDiscountMoney'
@@ -70,6 +79,9 @@ class Order implements ArrayAccess
         'location_id' => 'getLocationId',
         'reference_id' => 'getReferenceId',
         'line_items' => 'getLineItems',
+        'taxes' => 'getTaxes',
+        'discounts' => 'getDiscounts',
+        'fulfillments' => 'getFulfillments',
         'total_money' => 'getTotalMoney',
         'total_tax_money' => 'getTotalTaxMoney',
         'total_discount_money' => 'getTotalDiscountMoney'
@@ -91,10 +103,25 @@ class Order implements ArrayAccess
       */
     protected $reference_id;
     /**
-      * $line_items The line items included in the order. Every order has at least one line item.
+      * $line_items The line items included in the order.
       * @var \SquareConnect\Model\OrderLineItem[]
       */
     protected $line_items;
+    /**
+      * $taxes A list of taxes applied to this order. On read or retrieve, this list includes both order-level and item-level taxes. When creating an Order, set your order-level taxes in this list.
+      * @var \SquareConnect\Model\OrderLineItemTax[]
+      */
+    protected $taxes;
+    /**
+      * $discounts A list of discounts applied to this order. On read or retrieve, this list includes both order-level and item-level discounts. When creating an Order, set your order-level discounts in this list.
+      * @var \SquareConnect\Model\OrderLineItemDiscount[]
+      */
+    protected $discounts;
+    /**
+      * $fulfillments Details on order fulfillment.  Orders can only be created with at most one fulfillment. However, orders returned by the API may contain multiple fulfillments.
+      * @var \SquareConnect\Model\OrderFulfillment[]
+      */
+    protected $fulfillments;
     /**
       * $total_money The total amount of money to collect for the order.
       * @var \SquareConnect\Model\Money
@@ -137,6 +164,21 @@ class Order implements ArrayAccess
               $this->line_items = $data["line_items"];
             } else {
               $this->line_items = null;
+            }
+            if (isset($data["taxes"])) {
+              $this->taxes = $data["taxes"];
+            } else {
+              $this->taxes = null;
+            }
+            if (isset($data["discounts"])) {
+              $this->discounts = $data["discounts"];
+            } else {
+              $this->discounts = null;
+            }
+            if (isset($data["fulfillments"])) {
+              $this->fulfillments = $data["fulfillments"];
+            } else {
+              $this->fulfillments = null;
             }
             if (isset($data["total_money"])) {
               $this->total_money = $data["total_money"];
@@ -223,12 +265,69 @@ class Order implements ArrayAccess
   
     /**
      * Sets line_items
-     * @param \SquareConnect\Model\OrderLineItem[] $line_items The line items included in the order. Every order has at least one line item.
+     * @param \SquareConnect\Model\OrderLineItem[] $line_items The line items included in the order.
      * @return $this
      */
     public function setLineItems($line_items)
     {
         $this->line_items = $line_items;
+        return $this;
+    }
+    /**
+     * Gets taxes
+     * @return \SquareConnect\Model\OrderLineItemTax[]
+     */
+    public function getTaxes()
+    {
+        return $this->taxes;
+    }
+  
+    /**
+     * Sets taxes
+     * @param \SquareConnect\Model\OrderLineItemTax[] $taxes A list of taxes applied to this order. On read or retrieve, this list includes both order-level and item-level taxes. When creating an Order, set your order-level taxes in this list.
+     * @return $this
+     */
+    public function setTaxes($taxes)
+    {
+        $this->taxes = $taxes;
+        return $this;
+    }
+    /**
+     * Gets discounts
+     * @return \SquareConnect\Model\OrderLineItemDiscount[]
+     */
+    public function getDiscounts()
+    {
+        return $this->discounts;
+    }
+  
+    /**
+     * Sets discounts
+     * @param \SquareConnect\Model\OrderLineItemDiscount[] $discounts A list of discounts applied to this order. On read or retrieve, this list includes both order-level and item-level discounts. When creating an Order, set your order-level discounts in this list.
+     * @return $this
+     */
+    public function setDiscounts($discounts)
+    {
+        $this->discounts = $discounts;
+        return $this;
+    }
+    /**
+     * Gets fulfillments
+     * @return \SquareConnect\Model\OrderFulfillment[]
+     */
+    public function getFulfillments()
+    {
+        return $this->fulfillments;
+    }
+  
+    /**
+     * Sets fulfillments
+     * @param \SquareConnect\Model\OrderFulfillment[] $fulfillments Details on order fulfillment.  Orders can only be created with at most one fulfillment. However, orders returned by the API may contain multiple fulfillments.
+     * @return $this
+     */
+    public function setFulfillments($fulfillments)
+    {
+        $this->fulfillments = $fulfillments;
         return $this;
     }
     /**

@@ -24,6 +24,7 @@ class CreateOrderRequest implements ArrayAccess
       * @var string[]
       */
     static $swaggerTypes = array(
+        'order' => '\SquareConnect\Model\Order',
         'idempotency_key' => 'string',
         'reference_id' => 'string',
         'line_items' => '\SquareConnect\Model\CreateOrderRequestLineItem[]',
@@ -36,6 +37,7 @@ class CreateOrderRequest implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
+        'order' => 'order',
         'idempotency_key' => 'idempotency_key',
         'reference_id' => 'reference_id',
         'line_items' => 'line_items',
@@ -48,6 +50,7 @@ class CreateOrderRequest implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
+        'order' => 'setOrder',
         'idempotency_key' => 'setIdempotencyKey',
         'reference_id' => 'setReferenceId',
         'line_items' => 'setLineItems',
@@ -60,6 +63,7 @@ class CreateOrderRequest implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
+        'order' => 'getOrder',
         'idempotency_key' => 'getIdempotencyKey',
         'reference_id' => 'getReferenceId',
         'line_items' => 'getLineItems',
@@ -68,27 +72,32 @@ class CreateOrderRequest implements ArrayAccess
     );
   
     /**
+      * $order The order to create. If this field is set, then the only other top-level field that can be set is the idempotency_key.
+      * @var \SquareConnect\Model\Order
+      */
+    protected $order;
+    /**
       * $idempotency_key A value you specify that uniquely identifies this order among orders you've created.  If you're unsure whether a particular order was created successfully, you can reattempt it with the same idempotency key without worrying about creating duplicate orders.  See [Idempotency keys](#idempotencykeys) for more information.
       * @var string
       */
     protected $idempotency_key;
     /**
-      * $reference_id An optional ID you can associate with the order for your own purposes (such as to associate the order with an entity ID in your own database).  This value cannot exceed 40 characters.
+      * $reference_id __Deprecated__: Please set the reference_id on the nested [order](#type-order) field instead.  An optional ID you can associate with the order for your own purposes (such as to associate the order with an entity ID in your own database).  This value cannot exceed 40 characters.
       * @var string
       */
     protected $reference_id;
     /**
-      * $line_items The line items to associate with this order.  Each line item represents a different product to include in a purchase.
+      * $line_items __Deprecated__: Please set the line_items on the nested [order](#type-order) field instead.  The line items to associate with this order.  Each line item represents a different product to include in a purchase.
       * @var \SquareConnect\Model\CreateOrderRequestLineItem[]
       */
     protected $line_items;
     /**
-      * $taxes The taxes to include on the order.
+      * $taxes __Deprecated__: Please set the taxes on the nested [order](#type-order) field instead.  The taxes to include on the order.
       * @var \SquareConnect\Model\CreateOrderRequestTax[]
       */
     protected $taxes;
     /**
-      * $discounts The discounts to include on the order.
+      * $discounts __Deprecated__: Please set the discounts on the nested [order](#type-order) field instead.  The discounts to include on the order.
       * @var \SquareConnect\Model\CreateOrderRequestDiscount[]
       */
     protected $discounts;
@@ -100,6 +109,11 @@ class CreateOrderRequest implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
+            if (isset($data["order"])) {
+              $this->order = $data["order"];
+            } else {
+              $this->order = null;
+            }
             if (isset($data["idempotency_key"])) {
               $this->idempotency_key = $data["idempotency_key"];
             } else {
@@ -126,6 +140,25 @@ class CreateOrderRequest implements ArrayAccess
               $this->discounts = null;
             }
         }
+    }
+    /**
+     * Gets order
+     * @return \SquareConnect\Model\Order
+     */
+    public function getOrder()
+    {
+        return $this->order;
+    }
+  
+    /**
+     * Sets order
+     * @param \SquareConnect\Model\Order $order The order to create. If this field is set, then the only other top-level field that can be set is the idempotency_key.
+     * @return $this
+     */
+    public function setOrder($order)
+    {
+        $this->order = $order;
+        return $this;
     }
     /**
      * Gets idempotency_key
@@ -157,7 +190,7 @@ class CreateOrderRequest implements ArrayAccess
   
     /**
      * Sets reference_id
-     * @param string $reference_id An optional ID you can associate with the order for your own purposes (such as to associate the order with an entity ID in your own database).  This value cannot exceed 40 characters.
+     * @param string $reference_id __Deprecated__: Please set the reference_id on the nested [order](#type-order) field instead.  An optional ID you can associate with the order for your own purposes (such as to associate the order with an entity ID in your own database).  This value cannot exceed 40 characters.
      * @return $this
      */
     public function setReferenceId($reference_id)
@@ -176,7 +209,7 @@ class CreateOrderRequest implements ArrayAccess
   
     /**
      * Sets line_items
-     * @param \SquareConnect\Model\CreateOrderRequestLineItem[] $line_items The line items to associate with this order.  Each line item represents a different product to include in a purchase.
+     * @param \SquareConnect\Model\CreateOrderRequestLineItem[] $line_items __Deprecated__: Please set the line_items on the nested [order](#type-order) field instead.  The line items to associate with this order.  Each line item represents a different product to include in a purchase.
      * @return $this
      */
     public function setLineItems($line_items)
@@ -195,7 +228,7 @@ class CreateOrderRequest implements ArrayAccess
   
     /**
      * Sets taxes
-     * @param \SquareConnect\Model\CreateOrderRequestTax[] $taxes The taxes to include on the order.
+     * @param \SquareConnect\Model\CreateOrderRequestTax[] $taxes __Deprecated__: Please set the taxes on the nested [order](#type-order) field instead.  The taxes to include on the order.
      * @return $this
      */
     public function setTaxes($taxes)
@@ -214,7 +247,7 @@ class CreateOrderRequest implements ArrayAccess
   
     /**
      * Sets discounts
-     * @param \SquareConnect\Model\CreateOrderRequestDiscount[] $discounts The discounts to include on the order.
+     * @param \SquareConnect\Model\CreateOrderRequestDiscount[] $discounts __Deprecated__: Please set the discounts on the nested [order](#type-order) field instead.  The discounts to include on the order.
      * @return $this
      */
     public function setDiscounts($discounts)

@@ -28,7 +28,8 @@ class OrderLineItemTax implements ArrayAccess
         'name' => 'string',
         'type' => 'string',
         'percentage' => 'string',
-        'applied_money' => '\SquareConnect\Model\Money'
+        'applied_money' => '\SquareConnect\Model\Money',
+        'scope' => 'string'
     );
   
     /** 
@@ -40,7 +41,8 @@ class OrderLineItemTax implements ArrayAccess
         'name' => 'name',
         'type' => 'type',
         'percentage' => 'percentage',
-        'applied_money' => 'applied_money'
+        'applied_money' => 'applied_money',
+        'scope' => 'scope'
     );
   
     /**
@@ -52,7 +54,8 @@ class OrderLineItemTax implements ArrayAccess
         'name' => 'setName',
         'type' => 'setType',
         'percentage' => 'setPercentage',
-        'applied_money' => 'setAppliedMoney'
+        'applied_money' => 'setAppliedMoney',
+        'scope' => 'setScope'
     );
   
     /**
@@ -64,7 +67,8 @@ class OrderLineItemTax implements ArrayAccess
         'name' => 'getName',
         'type' => 'getType',
         'percentage' => 'getPercentage',
-        'applied_money' => 'getAppliedMoney'
+        'applied_money' => 'getAppliedMoney',
+        'scope' => 'getScope'
     );
   
     /**
@@ -92,6 +96,11 @@ class OrderLineItemTax implements ArrayAccess
       * @var \SquareConnect\Model\Money
       */
     protected $applied_money;
+    /**
+      * $scope Indicates the level at which the tax applies. This field is set by the server. If set in a CreateOrder request, it will be ignored on write. See [OrderLineItemTaxScope](#type-orderlineitemtaxscope) for possible values.
+      * @var string
+      */
+    protected $scope;
 
     /**
      * Constructor
@@ -124,6 +133,11 @@ class OrderLineItemTax implements ArrayAccess
               $this->applied_money = $data["applied_money"];
             } else {
               $this->applied_money = null;
+            }
+            if (isset($data["scope"])) {
+              $this->scope = $data["scope"];
+            } else {
+              $this->scope = null;
             }
         }
     }
@@ -220,6 +234,25 @@ class OrderLineItemTax implements ArrayAccess
     public function setAppliedMoney($applied_money)
     {
         $this->applied_money = $applied_money;
+        return $this;
+    }
+    /**
+     * Gets scope
+     * @return string
+     */
+    public function getScope()
+    {
+        return $this->scope;
+    }
+  
+    /**
+     * Sets scope
+     * @param string $scope Indicates the level at which the tax applies. This field is set by the server. If set in a CreateOrder request, it will be ignored on write. See [OrderLineItemTaxScope](#type-orderlineitemtaxscope) for possible values.
+     * @return $this
+     */
+    public function setScope($scope)
+    {
+        $this->scope = $scope;
         return $this;
     }
     /**

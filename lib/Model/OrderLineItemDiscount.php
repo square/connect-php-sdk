@@ -106,7 +106,7 @@ class OrderLineItemDiscount implements ArrayAccess
       */
     protected $applied_money;
     /**
-      * $scope Indicates the level at which the discount applies. See [OrderLineItemDiscountScope](#type-orderlineitemdiscountscope) for possible values.
+      * $scope Indicates the level at which the discount applies. This field is set by the server. If set in a CreateOrder request, it will be ignored on write. See [OrderLineItemDiscountScope](#type-orderlineitemdiscountscope) for possible values.
       * @var string
       */
     protected $scope;
@@ -280,7 +280,7 @@ class OrderLineItemDiscount implements ArrayAccess
   
     /**
      * Sets scope
-     * @param string $scope Indicates the level at which the discount applies. See [OrderLineItemDiscountScope](#type-orderlineitemdiscountscope) for possible values.
+     * @param string $scope Indicates the level at which the discount applies. This field is set by the server. If set in a CreateOrder request, it will be ignored on write. See [OrderLineItemDiscountScope](#type-orderlineitemdiscountscope) for possible values.
      * @return $this
      */
     public function setScope($scope)
