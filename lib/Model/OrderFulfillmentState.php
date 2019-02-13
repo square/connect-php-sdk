@@ -9,7 +9,7 @@ namespace SquareConnect\Model;
 
 use \ArrayAccess;
 /**
- * CatalogCategory Class Doc Comment
+ * OrderFulfillmentState Class Doc Comment
  *
  * @category Class
  * @package  SquareConnect
@@ -17,14 +17,14 @@ use \ArrayAccess;
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://squareup.com/developers
  */
-class CatalogCategory implements ArrayAccess
+class OrderFulfillmentState implements ArrayAccess
 {
     /**
       * Array of property to type mappings. Used for (de)serialization 
       * @var string[]
       */
     static $swaggerTypes = array(
-        'name' => 'string'
+        
     );
   
     /** 
@@ -32,7 +32,7 @@ class CatalogCategory implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
-        'name' => 'name'
+        
     );
   
     /**
@@ -40,7 +40,7 @@ class CatalogCategory implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
-        'name' => 'setName'
+        
     );
   
     /**
@@ -48,14 +48,9 @@ class CatalogCategory implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
-        'name' => 'getName'
+        
     );
   
-    /**
-      * $name The category's name. Searchable. This field has max length of 255 Unicode code points.
-      * @var string
-      */
-    protected $name;
 
     /**
      * Constructor
@@ -64,31 +59,7 @@ class CatalogCategory implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            if (isset($data["name"])) {
-              $this->name = $data["name"];
-            } else {
-              $this->name = null;
-            }
         }
-    }
-    /**
-     * Gets name
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-  
-    /**
-     * Sets name
-     * @param string $name The category's name. Searchable. This field has max length of 255 Unicode code points.
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-        return $this;
     }
     /**
      * Returns true if offset exists. False otherwise.

@@ -104,22 +104,22 @@ class CatalogItem implements ArrayAccess
     );
   
     /**
-      * $name The item's name. Searchable.
+      * $name The item's name. Searchable. This field must not be empty. This field has max length of 512 Unicode code points.
       * @var string
       */
     protected $name;
     /**
-      * $description The item's description. Searchable.
+      * $description The item's description. Searchable. This field has max length of 4096 Unicode code points.
       * @var string
       */
     protected $description;
     /**
-      * $abbreviation The text of the item's display label in the Square Point of Sale app. Only up to the first five characters of the string are used.  Searchable.
+      * $abbreviation The text of the item's display label in the Square Point of Sale app. Only up to the first five characters of the string are used. Searchable. This field has max length of 24 Unicode code points.
       * @var string
       */
     protected $abbreviation;
     /**
-      * $label_color The color of the item's display label in the Square Point of Sale app.
+      * $label_color The color of the item's display label in the Square Point of Sale app. This must be a valid hex color code.
       * @var string
       */
     protected $label_color;
@@ -264,7 +264,7 @@ class CatalogItem implements ArrayAccess
   
     /**
      * Sets name
-     * @param string $name The item's name. Searchable.
+     * @param string $name The item's name. Searchable. This field must not be empty. This field has max length of 512 Unicode code points.
      * @return $this
      */
     public function setName($name)
@@ -283,7 +283,7 @@ class CatalogItem implements ArrayAccess
   
     /**
      * Sets description
-     * @param string $description The item's description. Searchable.
+     * @param string $description The item's description. Searchable. This field has max length of 4096 Unicode code points.
      * @return $this
      */
     public function setDescription($description)
@@ -302,7 +302,7 @@ class CatalogItem implements ArrayAccess
   
     /**
      * Sets abbreviation
-     * @param string $abbreviation The text of the item's display label in the Square Point of Sale app. Only up to the first five characters of the string are used.  Searchable.
+     * @param string $abbreviation The text of the item's display label in the Square Point of Sale app. Only up to the first five characters of the string are used. Searchable. This field has max length of 24 Unicode code points.
      * @return $this
      */
     public function setAbbreviation($abbreviation)
@@ -321,7 +321,7 @@ class CatalogItem implements ArrayAccess
   
     /**
      * Sets label_color
-     * @param string $label_color The color of the item's display label in the Square Point of Sale app.
+     * @param string $label_color The color of the item's display label in the Square Point of Sale app. This must be a valid hex color code.
      * @return $this
      */
     public function setLabelColor($label_color)

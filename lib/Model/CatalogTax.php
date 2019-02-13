@@ -72,7 +72,7 @@ class CatalogTax implements ArrayAccess
     );
   
     /**
-      * $name The tax's name. Searchable.
+      * $name The tax's name. Searchable. This field has max length of 255 Unicode code points.
       * @var string
       */
     protected $name;
@@ -152,7 +152,7 @@ class CatalogTax implements ArrayAccess
   
     /**
      * Sets name
-     * @param string $name The tax's name. Searchable.
+     * @param string $name The tax's name. Searchable. This field has max length of 255 Unicode code points.
      * @return $this
      */
     public function setName($name)

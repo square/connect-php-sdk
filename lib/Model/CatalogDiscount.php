@@ -72,7 +72,7 @@ class CatalogDiscount implements ArrayAccess
     );
   
     /**
-      * $name The discount's name. Searchable.
+      * $name The discount's name. Searchable. This field has max length of 255 Unicode code points.
       * @var string
       */
     protected $name;
@@ -97,7 +97,7 @@ class CatalogDiscount implements ArrayAccess
       */
     protected $pin_required;
     /**
-      * $label_color The color of the discount's display label in the Square Point of Sale app.
+      * $label_color The color of the discount's display label in the Square Point of Sale app. This must be a valid hex color code.
       * @var string
       */
     protected $label_color;
@@ -152,7 +152,7 @@ class CatalogDiscount implements ArrayAccess
   
     /**
      * Sets name
-     * @param string $name The discount's name. Searchable.
+     * @param string $name The discount's name. Searchable. This field has max length of 255 Unicode code points.
      * @return $this
      */
     public function setName($name)
@@ -247,7 +247,7 @@ class CatalogDiscount implements ArrayAccess
   
     /**
      * Sets label_color
-     * @param string $label_color The color of the discount's display label in the Square Point of Sale app.
+     * @param string $label_color The color of the discount's display label in the Square Point of Sale app. This must be a valid hex color code.
      * @return $this
      */
     public function setLabelColor($label_color)

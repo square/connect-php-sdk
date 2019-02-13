@@ -1,5 +1,26 @@
 # Change Log
 
+## Version 2.20190213.0 (2019-02-13)
+
+## New feature: Order fulfillment BETA
+
+The Orders API now includes beta
+functionality that supports in-person fulfillment through Square Point of Sale
+for orders placed online.
+
+## Improvement: New CreateOrder request structure
+
+The `CreateOrderRequest` datatype now groups order details under a single
+object.
+
+
+## Improvement: CreateOrder requests preserve order-level price adjustment objects
+
+The `CreateOrderResponse` datatype now retains structure of order-level
+price adjustments in addition to converting them to scoped, line-item price
+adjustments. Previously, `CreateOrderResponse` did not preserve the original
+order-level price-adjustment objects.
+
 ## Version 2.20181212.0 (2018-12-12)
 
 ## Improvement: ListCustomers return set expanded

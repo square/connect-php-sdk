@@ -127,7 +127,7 @@ class CatalogObject implements ArrayAccess
       */
     protected $updated_at;
     /**
-      * $version The version of the object. When updating an object, the version supplied by the must match the version in the database, otherwise the write will be rejected as conflicting.
+      * $version The version of the object. When updating an object, the version supplied must match the version in the database, otherwise the write will be rejected as conflicting.
       * @var int
       */
     protected $version;
@@ -349,7 +349,7 @@ class CatalogObject implements ArrayAccess
   
     /**
      * Sets version
-     * @param int $version The version of the object. When updating an object, the version supplied by the must match the version in the database, otherwise the write will be rejected as conflicting.
+     * @param int $version The version of the object. When updating an object, the version supplied must match the version in the database, otherwise the write will be rejected as conflicting.
      * @return $this
      */
     public function setVersion($version)

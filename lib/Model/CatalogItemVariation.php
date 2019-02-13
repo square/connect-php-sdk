@@ -105,7 +105,7 @@ class CatalogItemVariation implements ArrayAccess
       */
     protected $item_id;
     /**
-      * $name The item variation's name. Searchable.
+      * $name The item variation's name. Searchable. This field has max length of 255 Unicode code points.
       * @var string
       */
     protected $name;
@@ -155,7 +155,7 @@ class CatalogItemVariation implements ArrayAccess
       */
     protected $inventory_alert_threshold;
     /**
-      * $user_data Arbitrary user metadata to associate with the item variation. Cannot exceed 255 characters. Searchable.
+      * $user_data Arbitrary user metadata to associate with the item variation. Searchable. This field has max length of 255 Unicode code points.
       * @var string
       */
     protected $user_data;
@@ -269,7 +269,7 @@ class CatalogItemVariation implements ArrayAccess
   
     /**
      * Sets name
-     * @param string $name The item variation's name. Searchable.
+     * @param string $name The item variation's name. Searchable. This field has max length of 255 Unicode code points.
      * @return $this
      */
     public function setName($name)
@@ -459,7 +459,7 @@ class CatalogItemVariation implements ArrayAccess
   
     /**
      * Sets user_data
-     * @param string $user_data Arbitrary user metadata to associate with the item variation. Cannot exceed 255 characters. Searchable.
+     * @param string $user_data Arbitrary user metadata to associate with the item variation. Searchable. This field has max length of 255 Unicode code points.
      * @return $this
      */
     public function setUserData($user_data)

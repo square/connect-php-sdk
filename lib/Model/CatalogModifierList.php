@@ -60,7 +60,7 @@ class CatalogModifierList implements ArrayAccess
     );
   
     /**
-      * $name The [CatalogModifierList](#type-catalogmodifierlist)'s name. Searchable.
+      * $name The [CatalogModifierList](#type-catalogmodifierlist)'s name. Searchable. This field has max length of 255 Unicode code points.
       * @var string
       */
     protected $name;
@@ -110,7 +110,7 @@ class CatalogModifierList implements ArrayAccess
   
     /**
      * Sets name
-     * @param string $name The [CatalogModifierList](#type-catalogmodifierlist)'s name. Searchable.
+     * @param string $name The [CatalogModifierList](#type-catalogmodifierlist)'s name. Searchable. This field has max length of 255 Unicode code points.
      * @return $this
      */
     public function setName($name)

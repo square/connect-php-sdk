@@ -130,12 +130,12 @@ class OrderLineItem implements ArrayAccess
       */
     protected $modifiers;
     /**
-      * $taxes The taxes applied to this line item.
+      * $taxes A list of taxes applied to this line item. On read or retrieve, this list includes both item-level taxes and any order-level taxes apportioned to this item. When creating an Order, set your item-level taxes in this list.
       * @var \SquareConnect\Model\OrderLineItemTax[]
       */
     protected $taxes;
     /**
-      * $discounts The discounts applied to this line item.
+      * $discounts A list of discounts applied to this line item. On read or retrieve, this list includes both item-level discounts and any order-level discounts apportioned to this item. When creating an Order, set your item-level discounts in this list.
       * @var \SquareConnect\Model\OrderLineItemDiscount[]
       */
     protected $discounts;
@@ -364,7 +364,7 @@ class OrderLineItem implements ArrayAccess
   
     /**
      * Sets taxes
-     * @param \SquareConnect\Model\OrderLineItemTax[] $taxes The taxes applied to this line item.
+     * @param \SquareConnect\Model\OrderLineItemTax[] $taxes A list of taxes applied to this line item. On read or retrieve, this list includes both item-level taxes and any order-level taxes apportioned to this item. When creating an Order, set your item-level taxes in this list.
      * @return $this
      */
     public function setTaxes($taxes)
@@ -383,7 +383,7 @@ class OrderLineItem implements ArrayAccess
   
     /**
      * Sets discounts
-     * @param \SquareConnect\Model\OrderLineItemDiscount[] $discounts The discounts applied to this line item.
+     * @param \SquareConnect\Model\OrderLineItemDiscount[] $discounts A list of discounts applied to this line item. On read or retrieve, this list includes both item-level discounts and any order-level discounts apportioned to this item. When creating an Order, set your item-level discounts in this list.
      * @return $this
      */
     public function setDiscounts($discounts)
