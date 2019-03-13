@@ -1,8 +1,14 @@
 # LocationType
 
+### Description
+
+Indicates the location's type.
+
 ## Properties
-Name | Getter | Setter | Type | Description | Notes
------------- | ------------- | ------------- | ------------- | ------------- | -------------
+Name | Type
+------------ | -------------
+**PHYSICAL** | string
+**MOBILE** | string
 
 Note: All properties are protected and only accessed via getters and setters.
 

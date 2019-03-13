@@ -96,7 +96,7 @@ class V1Discount implements ArrayAccess
       */
     protected $amount_money;
     /**
-      * $discount_type Indicates whether the discount is a FIXED value or entered at the time of sale.
+      * $discount_type Indicates whether the discount is a FIXED value or entered at the time of sale. See [V1DiscountDiscountType](#type-v1discountdiscounttype) for possible values
       * @var string
       */
     protected $discount_type;
@@ -106,7 +106,7 @@ class V1Discount implements ArrayAccess
       */
     protected $pin_required;
     /**
-      * $color The color of the discount's display label in Square Register, if not the default color. The default color is 9da2a6.
+      * $color The color of the discount's display label in Square Register, if not the default color. The default color is 9da2a6. See [V1DiscountColor](#type-v1discountcolor) for possible values
       * @var string
       */
     protected $color;
@@ -242,7 +242,7 @@ class V1Discount implements ArrayAccess
   
     /**
      * Sets discount_type
-     * @param string $discount_type Indicates whether the discount is a FIXED value or entered at the time of sale.
+     * @param string $discount_type Indicates whether the discount is a FIXED value or entered at the time of sale. See [V1DiscountDiscountType](#type-v1discountdiscounttype) for possible values
      * @return $this
      */
     public function setDiscountType($discount_type)
@@ -280,7 +280,7 @@ class V1Discount implements ArrayAccess
   
     /**
      * Sets color
-     * @param string $color The color of the discount's display label in Square Register, if not the default color. The default color is 9da2a6.
+     * @param string $color The color of the discount's display label in Square Register, if not the default color. The default color is 9da2a6. See [V1DiscountColor](#type-v1discountcolor) for possible values
      * @return $this
      */
     public function setColor($color)

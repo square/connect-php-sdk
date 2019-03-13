@@ -1,8 +1,14 @@
 # OrderFulfillmentPickupDetailsScheduleType
 
+### Description
+
+The schedule type of the pickup fulfillment.
+
 ## Properties
-Name | Getter | Setter | Type | Description | Notes
------------- | ------------- | ------------- | ------------- | ------------- | -------------
+Name | Type
+------------ | -------------
+**SCHEDULED** | string
+**ASAP** | string
 
 Note: All properties are protected and only accessed via getters and setters.
 

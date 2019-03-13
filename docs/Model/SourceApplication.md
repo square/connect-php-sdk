@@ -1,5 +1,9 @@
 # SourceApplication
 
+### Description
+
+Provides information about the application used to generate an inventory change.
+
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------

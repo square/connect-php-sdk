@@ -1,5 +1,9 @@
 # InventoryTransfer
 
+### Description
+
+Represents the transfer of a quantity of product inventory at a particular time from one location to another.
+
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------

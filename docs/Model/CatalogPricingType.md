@@ -1,8 +1,14 @@
 # CatalogPricingType
 
+### Description
+
+Indicates whether the price of a [CatalogItemVariation](#type-catalogitemvariation) should be entered manually at the time of sale.
+
 ## Properties
-Name | Getter | Setter | Type | Description | Notes
------------- | ------------- | ------------- | ------------- | ------------- | -------------
+Name | Type
+------------ | -------------
+**FIXED_PRICING** | string
+**VARIABLE_PRICING** | string
 
 Note: All properties are protected and only accessed via getters and setters.
 

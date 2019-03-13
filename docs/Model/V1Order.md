@@ -1,5 +1,9 @@
 # V1Order
 
+### Description
+
+V1Order
+
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------
@@ -8,7 +12,7 @@ Name | Getter | Setter | Type | Description | Notes
 **buyer_email** | getBuyerEmail() | setBuyerEmail($value) | **string** | The email address of the order&#39;s buyer. | [optional] 
 **recipient_name** | getRecipientName() | setRecipientName($value) | **string** | The name of the order&#39;s buyer. | [optional] 
 **recipient_phone_number** | getRecipientPhoneNumber() | setRecipientPhoneNumber($value) | **string** | The phone number to use for the order&#39;s delivery. | [optional] 
-**state** | getState() | setState($value) | **string** | Whether the tax is an ADDITIVE tax or an INCLUSIVE tax. | [optional] 
+**state** | getState() | setState($value) | **string** | Whether the tax is an ADDITIVE tax or an INCLUSIVE tax. See [V1OrderState](#type-v1orderstate) for possible values | [optional] 
 **shipping_address** | getShippingAddress() | setShippingAddress($value) | [**\SquareConnect\Model\Address**](Address.md) | The address to ship the order to. | [optional] 
 **subtotal_money** | getSubtotalMoney() | setSubtotalMoney($value) | [**\SquareConnect\Model\V1Money**](V1Money.md) | The amount of all items purchased in the order, before taxes and shipping. | [optional] 
 **total_shipping_money** | getTotalShippingMoney() | setTotalShippingMoney($value) | [**\SquareConnect\Model\V1Money**](V1Money.md) | The shipping cost for the order. | [optional] 

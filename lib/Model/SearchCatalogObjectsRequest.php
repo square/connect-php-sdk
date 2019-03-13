@@ -76,7 +76,7 @@ class SearchCatalogObjectsRequest implements ArrayAccess
     );
   
     /**
-      * $cursor The pagination cursor returned in the previous response. Leave unset for an initial request. See [Paginating results](#paginatingresults) for more information.
+      * $cursor The pagination cursor returned in the previous response. Leave unset for an initial request. See [Pagination](/basics/api101/pagination) for more information.
       * @var string
       */
     protected $cursor;
@@ -166,7 +166,7 @@ class SearchCatalogObjectsRequest implements ArrayAccess
   
     /**
      * Sets cursor
-     * @param string $cursor The pagination cursor returned in the previous response. Leave unset for an initial request. See [Paginating results](#paginatingresults) for more information.
+     * @param string $cursor The pagination cursor returned in the previous response. Leave unset for an initial request. See [Pagination](/basics/api101/pagination) for more information.
      * @return $this
      */
     public function setCursor($cursor)

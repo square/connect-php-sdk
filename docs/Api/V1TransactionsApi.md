@@ -4,25 +4,25 @@ All URIs are relative to *https://connect.squareup.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createRefund**](V1TransactionsApi.md#createRefund) | **POST** /v1/{location_id}/refunds | Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.
-[**listBankAccounts**](V1TransactionsApi.md#listBankAccounts) | **GET** /v1/{location_id}/bank-accounts | Provides non-confidential details for all of a location&#39;s associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
-[**listOrders**](V1TransactionsApi.md#listOrders) | **GET** /v1/{location_id}/orders | Provides summary information for a merchant&#39;s online store orders.
-[**listPayments**](V1TransactionsApi.md#listPayments) | **GET** /v1/{location_id}/payments | Provides summary information for all payments taken by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
-[**listRefunds**](V1TransactionsApi.md#listRefunds) | **GET** /v1/{location_id}/refunds | Provides the details for all refunds initiated by a merchant or any of the merchant&#39;s mobile staff during a date range. Date ranges cannot exceed one year in length.
-[**listSettlements**](V1TransactionsApi.md#listSettlements) | **GET** /v1/{location_id}/settlements | Provides summary information for all deposits and withdrawals initiated by Square to a merchant&#39;s bank account during a date range. Date ranges cannot exceed one year in length.
-[**retrieveBankAccount**](V1TransactionsApi.md#retrieveBankAccount) | **GET** /v1/{location_id}/bank-accounts/{bank_account_id} | Provides non-confidential details for a merchant&#39;s associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
-[**retrieveOrder**](V1TransactionsApi.md#retrieveOrder) | **GET** /v1/{location_id}/orders/{order_id} | Provides comprehensive information for a single online store order, including the order&#39;s history.
-[**retrievePayment**](V1TransactionsApi.md#retrievePayment) | **GET** /v1/{location_id}/payments/{payment_id} | Provides comprehensive information for a single payment.
-[**retrieveSettlement**](V1TransactionsApi.md#retrieveSettlement) | **GET** /v1/{location_id}/settlements/{settlement_id} | Provides comprehensive information for a single settlement, including the entries that contribute to the settlement&#39;s total.
-[**updateOrder**](V1TransactionsApi.md#updateOrder) | **PUT** /v1/{location_id}/orders/{order_id} | Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions:
+[**createRefund**](V1TransactionsApi.md#createRefund) | **POST** /v1/{location_id}/refunds | CreateRefund
+[**listBankAccounts**](V1TransactionsApi.md#listBankAccounts) | **GET** /v1/{location_id}/bank-accounts | ListBankAccounts
+[**listOrders**](V1TransactionsApi.md#listOrders) | **GET** /v1/{location_id}/orders | ListOrders
+[**listPayments**](V1TransactionsApi.md#listPayments) | **GET** /v1/{location_id}/payments | ListPayments
+[**listRefunds**](V1TransactionsApi.md#listRefunds) | **GET** /v1/{location_id}/refunds | ListRefunds
+[**listSettlements**](V1TransactionsApi.md#listSettlements) | **GET** /v1/{location_id}/settlements | ListSettlements
+[**retrieveBankAccount**](V1TransactionsApi.md#retrieveBankAccount) | **GET** /v1/{location_id}/bank-accounts/{bank_account_id} | RetrieveBankAccount
+[**retrieveOrder**](V1TransactionsApi.md#retrieveOrder) | **GET** /v1/{location_id}/orders/{order_id} | RetrieveOrder
+[**retrievePayment**](V1TransactionsApi.md#retrievePayment) | **GET** /v1/{location_id}/payments/{payment_id} | RetrievePayment
+[**retrieveSettlement**](V1TransactionsApi.md#retrieveSettlement) | **GET** /v1/{location_id}/settlements/{settlement_id} | RetrieveSettlement
+[**updateOrder**](V1TransactionsApi.md#updateOrder) | **PUT** /v1/{location_id}/orders/{order_id} | UpdateOrder
 
 
 # **createRefund**
 > \SquareConnect\Model\V1Refund createRefund($location_id, $body)
 
-Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.
+CreateRefund
 
-Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.
+Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.  You cannot issue a partial refund for a split tender payment. You must instead issue a full or partial refund for a particular tender, by providing the applicable tender id to the V1CreateRefund endpoint. Issuing a full refund for a split tender payment refunds all tenders associated with the payment.  Issuing a refund for a card payment is not reversible. For development purposes, you can create fake cash payments in Square Point of Sale and refund them.
 
 ### Example
 ```php
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 # **listBankAccounts**
 > \SquareConnect\Model\V1BankAccount[] listBankAccounts($location_id)
 
-Provides non-confidential details for all of a location's associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+ListBankAccounts
 
 Provides non-confidential details for all of a location's associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
 
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 # **listOrders**
 > \SquareConnect\Model\V1Order[] listOrders($location_id, $order, $limit, $batch_token)
 
-Provides summary information for a merchant's online store orders.
+ListOrders
 
 Provides summary information for a merchant's online store orders.
 
@@ -172,9 +172,9 @@ Name | Type | Description  | Notes
 # **listPayments**
 > \SquareConnect\Model\V1Payment[] listPayments($location_id, $order, $begin_time, $end_time, $limit, $batch_token, $include_partial)
 
-Provides summary information for all payments taken by a merchant or any of the merchant's mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
+ListPayments
 
-Provides summary information for all payments taken by a merchant or any of the merchant's mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
+Provides summary information for all payments taken for a given Square account during a date range. Date ranges cannot exceed 1 year in length. See Date ranges for details of inclusive and exclusive dates.  *Note**: Details for payments processed with Square Point of Sale while in offline mode may not be transmitted to Square for up to 72 hours. Offline payments have a `created_at` value that reflects the time the payment was originally processed, not the time it was subsequently transmitted to Square. Consequently, the ListPayments endpoint might list an offline payment chronologically between online payments that were seen in a previous request.
 
 ### Example
 ```php
@@ -232,7 +232,7 @@ Name | Type | Description  | Notes
 # **listRefunds**
 > \SquareConnect\Model\V1Refund[] listRefunds($location_id, $order, $begin_time, $end_time, $limit, $batch_token)
 
-Provides the details for all refunds initiated by a merchant or any of the merchant's mobile staff during a date range. Date ranges cannot exceed one year in length.
+ListRefunds
 
 Provides the details for all refunds initiated by a merchant or any of the merchant's mobile staff during a date range. Date ranges cannot exceed one year in length.
 
@@ -290,9 +290,9 @@ Name | Type | Description  | Notes
 # **listSettlements**
 > \SquareConnect\Model\V1Settlement[] listSettlements($location_id, $order, $begin_time, $end_time, $limit, $status, $batch_token)
 
-Provides summary information for all deposits and withdrawals initiated by Square to a merchant's bank account during a date range. Date ranges cannot exceed one year in length.
+ListSettlements
 
-Provides summary information for all deposits and withdrawals initiated by Square to a merchant's bank account during a date range. Date ranges cannot exceed one year in length.
+Provides summary information for all deposits and withdrawals initiated by Square to a linked bank account during a date range. Date ranges cannot exceed one year in length.  *Note**: the ListSettlements endpoint does not provide entry information.
 
 ### Example
 ```php
@@ -350,7 +350,7 @@ Name | Type | Description  | Notes
 # **retrieveBankAccount**
 > \SquareConnect\Model\V1BankAccount retrieveBankAccount($location_id, $bank_account_id)
 
-Provides non-confidential details for a merchant's associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+RetrieveBankAccount
 
 Provides non-confidential details for a merchant's associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
 
@@ -400,7 +400,7 @@ Name | Type | Description  | Notes
 # **retrieveOrder**
 > \SquareConnect\Model\V1Order retrieveOrder($location_id, $order_id)
 
-Provides comprehensive information for a single online store order, including the order's history.
+RetrieveOrder
 
 Provides comprehensive information for a single online store order, including the order's history.
 
@@ -450,7 +450,7 @@ Name | Type | Description  | Notes
 # **retrievePayment**
 > \SquareConnect\Model\V1Payment retrievePayment($location_id, $payment_id)
 
-Provides comprehensive information for a single payment.
+RetrievePayment
 
 Provides comprehensive information for a single payment.
 
@@ -500,9 +500,9 @@ Name | Type | Description  | Notes
 # **retrieveSettlement**
 > \SquareConnect\Model\V1Settlement retrieveSettlement($location_id, $settlement_id)
 
-Provides comprehensive information for a single settlement, including the entries that contribute to the settlement's total.
+RetrieveSettlement
 
-Provides comprehensive information for a single settlement, including the entries that contribute to the settlement's total.
+Provides comprehensive information for a single settlement.  The returned `Settlement` objects include an `entries` field that lists the transactions that contribute to the settlement total. Most settlement entries correspond to a payment payout, but settlement entries are also generated for less common events, like refunds, manual adjustments, or chargeback holds.  Square initiates its regular deposits as indicated in the [Deposit Options with Square](https://squareup.com/help/us/en/article/3807) help article. Details for a regular deposit are usually not available from Connect API endpoints before 10 p.m. PST the same day.  Square does not know when an initiated settlement **completes**, only whether it has failed. A completed settlement is typically reflected in a bank account within 3 business days, but in exceptional cases it may take longer.
 
 ### Example
 ```php
@@ -550,7 +550,7 @@ Name | Type | Description  | Notes
 # **updateOrder**
 > \SquareConnect\Model\V1Order updateOrder($location_id, $order_id, $body)
 
-Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions:
+UpdateOrder
 
 Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions:
 

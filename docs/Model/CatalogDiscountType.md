@@ -1,8 +1,16 @@
 # CatalogDiscountType
 
+### Description
+
+How to apply a [CatalogDiscount](#type-catalogdiscount) to a [CatalogItem](#type-catalogitem).
+
 ## Properties
-Name | Getter | Setter | Type | Description | Notes
------------- | ------------- | ------------- | ------------- | ------------- | -------------
+Name | Type
+------------ | -------------
+**FIXED_PERCENTAGE** | string
+**FIXED_AMOUNT** | string
+**VARIABLE_PERCENTAGE** | string
+**VARIABLE_AMOUNT** | string
 
 Note: All properties are protected and only accessed via getters and setters.
 

@@ -1,5 +1,9 @@
 # CatalogTax
 
+### Description
+
+A tax in the Catalog object model.
+
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------

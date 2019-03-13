@@ -1,5 +1,9 @@
 # Error
 
+### Description
+
+Represents an error encountered during a request to the Connect API.
+
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------

@@ -1,5 +1,9 @@
 # CatalogObjectBatch
 
+### Description
+
+A batch of [CatalogObject](#type-catalogobject)s.
+
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------

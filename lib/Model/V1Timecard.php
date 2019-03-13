@@ -121,7 +121,7 @@ class V1Timecard implements ArrayAccess
       */
     protected $clockout_time;
     /**
-      * $clockin_location_id The ID of the location the employee clocked in from. We strongly reccomend providing a clockin_location_id. Square uses the clockin_location_id to determine a timecard���s timezone and overtime rules.
+      * $clockin_location_id The ID of the location the employee clocked in from. We strongly reccomend providing a clockin_location_id. Square uses the clockin_location_id to determine a timecard’s timezone and overtime rules.
       * @var string
       */
     protected $clockin_location_id;
@@ -331,7 +331,7 @@ class V1Timecard implements ArrayAccess
   
     /**
      * Sets clockin_location_id
-     * @param string $clockin_location_id The ID of the location the employee clocked in from. We strongly reccomend providing a clockin_location_id. Square uses the clockin_location_id to determine a timecard���s timezone and overtime rules.
+     * @param string $clockin_location_id The ID of the location the employee clocked in from. We strongly reccomend providing a clockin_location_id. Square uses the clockin_location_id to determine a timecard’s timezone and overtime rules.
      * @return $this
      */
     public function setClockinLocationId($clockin_location_id)

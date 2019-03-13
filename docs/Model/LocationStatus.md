@@ -1,8 +1,14 @@
 # LocationStatus
 
+### Description
+
+Indicates the location's status.
+
 ## Properties
-Name | Getter | Setter | Type | Description | Notes
------------- | ------------- | ------------- | ------------- | ------------- | -------------
+Name | Type
+------------ | -------------
+**ACTIVE** | string
+**INACTIVE** | string
 
 Note: All properties are protected and only accessed via getters and setters.
 

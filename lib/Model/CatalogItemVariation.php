@@ -155,7 +155,7 @@ class CatalogItemVariation implements ArrayAccess
       */
     protected $inventory_alert_threshold;
     /**
-      * $user_data Arbitrary user metadata to associate with the item variation. Searchable. This field has max length of 255 Unicode code points.
+      * $user_data Arbitrary user metadata to associate with the item variation. Cannot exceed 255 characters. Searchable.
       * @var string
       */
     protected $user_data;
@@ -459,7 +459,7 @@ class CatalogItemVariation implements ArrayAccess
   
     /**
      * Sets user_data
-     * @param string $user_data Arbitrary user metadata to associate with the item variation. Searchable. This field has max length of 255 Unicode code points.
+     * @param string $user_data Arbitrary user metadata to associate with the item variation. Cannot exceed 255 characters. Searchable.
      * @return $this
      */
     public function setUserData($user_data)

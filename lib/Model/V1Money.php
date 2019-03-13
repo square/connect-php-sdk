@@ -61,7 +61,7 @@ class V1Money implements ArrayAccess
       */
     protected $amount;
     /**
-      * $currency_code 
+      * $currency_code See [Currency](#type-currency) for possible values
       * @var string
       */
     protected $currency_code;
@@ -115,7 +115,7 @@ class V1Money implements ArrayAccess
   
     /**
      * Sets currency_code
-     * @param string $currency_code 
+     * @param string $currency_code See [Currency](#type-currency) for possible values
      * @return $this
      */
     public function setCurrencyCode($currency_code)

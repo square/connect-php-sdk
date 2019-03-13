@@ -1,8 +1,14 @@
 # CatalogModifierListSelectionType
 
+### Description
+
+Indicates whether a [CatalogModifierList](#type-catalogmodifierlist) supports multiple selections.
+
 ## Properties
-Name | Getter | Setter | Type | Description | Notes
------------- | ------------- | ------------- | ------------- | ------------- | -------------
+Name | Type
+------------ | -------------
+**SINGLE** | string
+**MULTIPLE** | string
 
 Note: All properties are protected and only accessed via getters and setters.
 

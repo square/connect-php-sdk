@@ -1,5 +1,9 @@
 # V1ItemImage
 
+### Description
+
+V1ItemImage
+
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------

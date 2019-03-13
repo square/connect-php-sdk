@@ -1,8 +1,15 @@
 # OrderLineItemTaxScope
 
+### Description
+
+Indicates whether this is a line item or order level tax.
+
 ## Properties
-Name | Getter | Setter | Type | Description | Notes
------------- | ------------- | ------------- | ------------- | ------------- | -------------
+Name | Type
+------------ | -------------
+**OTHER_TAX_SCOPE** | string
+**LINE_ITEM** | string
+**ORDER** | string
 
 Note: All properties are protected and only accessed via getters and setters.
 

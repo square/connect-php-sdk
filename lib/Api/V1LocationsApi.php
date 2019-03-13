@@ -67,7 +67,7 @@ class V1LocationsApi
     /**
      * listLocations
      *
-     * Provides details for a business's locations, including their IDs.
+     * ListLocations
      *
      * @return \SquareConnect\Model\V1Merchant[]
      * @throws \SquareConnect\ApiException on non-2xx response
@@ -82,7 +82,7 @@ class V1LocationsApi
     /**
      * listLocationsWithHttpInfo
      *
-     * Provides details for a business's locations, including their IDs.
+     * ListLocations
      *
      * @return Array of \SquareConnect\Model\V1Merchant[], HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
@@ -102,6 +102,7 @@ class V1LocationsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -149,7 +150,7 @@ class V1LocationsApi
     /**
      * retrieveBusiness
      *
-     * Get a business's information.
+     * RetrieveBusiness
      *
      * @return \SquareConnect\Model\V1Merchant
      * @throws \SquareConnect\ApiException on non-2xx response
@@ -164,7 +165,7 @@ class V1LocationsApi
     /**
      * retrieveBusinessWithHttpInfo
      *
-     * Get a business's information.
+     * RetrieveBusiness
      *
      * @return Array of \SquareConnect\Model\V1Merchant, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
@@ -184,6 +185,7 @@ class V1LocationsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         

@@ -1,9 +1,13 @@
 # V1Refund
 
+### Description
+
+V1Refund
+
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------
-**type** | getType() | setType($value) | **string** | The type of refund | [optional] 
+**type** | getType() | setType($value) | **string** | The type of refund See [V1RefundType](#type-v1refundtype) for possible values | [optional] 
 **reason** | getReason() | setReason($value) | **string** | The merchant-specified reason for the refund. | [optional] 
 **refunded_money** | getRefundedMoney() | setRefundedMoney($value) | [**\SquareConnect\Model\V1Money**](V1Money.md) | The amount of money refunded. This amount is always negative. | [optional] 
 **refunded_processing_fee_money** | getRefundedProcessingFeeMoney() | setRefundedProcessingFeeMoney($value) | [**\SquareConnect\Model\V1Money**](V1Money.md) | The amount of processing fee money refunded. This amount is always positive. | [optional] 

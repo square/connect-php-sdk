@@ -1,8 +1,16 @@
 # RefundStatus
 
+### Description
+
+Indicates a refund's current status.
+
 ## Properties
-Name | Getter | Setter | Type | Description | Notes
------------- | ------------- | ------------- | ------------- | ------------- | -------------
+Name | Type
+------------ | -------------
+**PENDING** | string
+**APPROVED** | string
+**REJECTED** | string
+**FAILED** | string
 
 Note: All properties are protected and only accessed via getters and setters.
 

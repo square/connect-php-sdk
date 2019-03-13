@@ -1,8 +1,17 @@
 # TenderCardDetailsEntryMethod
 
+### Description
+
+Indicates the method used to enter the card's details.
+
 ## Properties
-Name | Getter | Setter | Type | Description | Notes
------------- | ------------- | ------------- | ------------- | ------------- | -------------
+Name | Type
+------------ | -------------
+**SWIPED** | string
+**KEYED** | string
+**EMV** | string
+**ON_FILE** | string
+**CONTACTLESS** | string
 
 Note: All properties are protected and only accessed via getters and setters.
 

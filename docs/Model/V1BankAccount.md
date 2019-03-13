@@ -1,5 +1,9 @@
 # V1BankAccount
 
+### Description
+
+V1BankAccount
+
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------
@@ -10,7 +14,7 @@ Name | Getter | Setter | Type | Description | Notes
 **routing_number** | getRoutingNumber() | setRoutingNumber($value) | **string** | The bank account&#39;s routing number. | [optional] 
 **account_number_suffix** | getAccountNumberSuffix() | setAccountNumberSuffix($value) | **string** | The last few digits of the bank account number. | [optional] 
 **currency_code** | getCurrencyCode() | setCurrencyCode($value) | **string** | The currency code of the currency associated with the bank account, in ISO 4217 format. For example, the currency code for US dollars is USD. | [optional] 
-**type** | getType() | setType($value) | **string** | The bank account&#39;s type (for example, savings or checking). | [optional] 
+**type** | getType() | setType($value) | **string** | The bank account&#39;s type (for example, savings or checking). See [V1BankAccountType](#type-v1bankaccounttype) for possible values | [optional] 
 
 Note: All properties are protected and only accessed via getters and setters.
 

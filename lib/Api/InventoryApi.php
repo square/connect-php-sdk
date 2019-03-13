@@ -108,7 +108,7 @@ class InventoryApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-02-13";
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -201,7 +201,7 @@ class InventoryApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-02-13";
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -294,7 +294,7 @@ class InventoryApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-02-13";
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -387,7 +387,7 @@ class InventoryApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-02-13";
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -446,7 +446,7 @@ class InventoryApi
      *
      * @param string $catalog_object_id ID of the [CatalogObject](#type-catalogobject) to retrieve. (required)
      * @param string $location_ids The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations. (optional)
-     * @param string $cursor A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Paginating results](#paginatingresults) for more information. (optional)
+     * @param string $cursor A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)
      * @return \SquareConnect\Model\RetrieveInventoryChangesResponse
      * @throws \SquareConnect\ApiException on non-2xx response
      */
@@ -464,7 +464,7 @@ class InventoryApi
      *
      * @param string $catalog_object_id ID of the [CatalogObject](#type-catalogobject) to retrieve. (required)
      * @param string $location_ids The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations. (optional)
-     * @param string $cursor A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Paginating results](#paginatingresults) for more information. (optional)
+     * @param string $cursor A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)
      * @return Array of \SquareConnect\Model\RetrieveInventoryChangesResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
@@ -487,7 +487,7 @@ class InventoryApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-02-13";
+        $headerParams['Square-Version'] = "2019-03-13";
 
         // query params
         if ($location_ids !== null) {
@@ -552,7 +552,7 @@ class InventoryApi
      *
      * @param string $catalog_object_id ID of the [CatalogObject](#type-catalogobject) to retrieve. (required)
      * @param string $location_ids The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations. (optional)
-     * @param string $cursor A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Paginating results](#paginatingresults) for more information. (optional)
+     * @param string $cursor A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)
      * @return \SquareConnect\Model\RetrieveInventoryCountResponse
      * @throws \SquareConnect\ApiException on non-2xx response
      */
@@ -570,7 +570,7 @@ class InventoryApi
      *
      * @param string $catalog_object_id ID of the [CatalogObject](#type-catalogobject) to retrieve. (required)
      * @param string $location_ids The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations. (optional)
-     * @param string $cursor A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Paginating results](#paginatingresults) for more information. (optional)
+     * @param string $cursor A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)
      * @return Array of \SquareConnect\Model\RetrieveInventoryCountResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
@@ -593,7 +593,7 @@ class InventoryApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-02-13";
+        $headerParams['Square-Version'] = "2019-03-13";
 
         // query params
         if ($location_ids !== null) {
@@ -695,7 +695,7 @@ class InventoryApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-02-13";
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         

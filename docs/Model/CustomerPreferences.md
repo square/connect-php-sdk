@@ -1,5 +1,9 @@
 # CustomerPreferences
 
+### Description
+
+Represents a particular customer's preferences.
+
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------

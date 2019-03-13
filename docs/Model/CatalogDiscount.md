@@ -1,5 +1,9 @@
 # CatalogDiscount
 
+### Description
+
+A discount in the Catalog object model.
+
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------

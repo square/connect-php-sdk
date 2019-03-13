@@ -1,5 +1,9 @@
 # DeleteCustomerResponse
 
+### Description
+
+Defines the fields that are included in the response body of a request to the [DeleteCustomer](#endpoint-deletecustomer) endpoint.
+
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------

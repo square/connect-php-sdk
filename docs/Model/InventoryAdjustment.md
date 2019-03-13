@@ -1,5 +1,9 @@
 # InventoryAdjustment
 
+### Description
+
+Represents a change in state or quantity of product inventory at a particular time and location.
+
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------

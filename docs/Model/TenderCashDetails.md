@@ -1,5 +1,9 @@
 # TenderCashDetails
 
+### Description
+
+Represents the details of a tender with `type` `CASH`.
+
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------
