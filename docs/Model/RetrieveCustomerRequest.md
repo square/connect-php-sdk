@@ -1,5 +1,9 @@
 # RetrieveCustomerRequest
 
+### Description
+
+
+
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------

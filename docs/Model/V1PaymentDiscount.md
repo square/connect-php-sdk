@@ -1,5 +1,9 @@
 # V1PaymentDiscount
 
+### Description
+
+V1PaymentDiscount
+
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------

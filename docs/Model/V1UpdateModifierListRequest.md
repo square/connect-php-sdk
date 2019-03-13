@@ -1,10 +1,14 @@
 # V1UpdateModifierListRequest
 
+### Description
+
+V1UpdateModifierListRequest
+
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------
 **name** | getName() | setName($value) | **string** | The modifier list&#39;s name. | [optional] 
-**selection_type** | getSelectionType() | setSelectionType($value) | **string** | Indicates whether multiple options from the modifier list can be applied to a single item. | [optional] 
+**selection_type** | getSelectionType() | setSelectionType($value) | **string** | Indicates whether multiple options from the modifier list can be applied to a single item. See [V1UpdateModifierListRequestSelectionType](#type-v1updatemodifierlistrequestselectiontype) for possible values | [optional] 
 
 Note: All properties are protected and only accessed via getters and setters.
 

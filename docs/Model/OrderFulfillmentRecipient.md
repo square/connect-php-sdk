@@ -1,5 +1,9 @@
 # OrderFulfillmentRecipient
 
+### Description
+
+The recipient of a fulfillment.
+
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------

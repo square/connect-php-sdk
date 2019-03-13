@@ -67,7 +67,7 @@ class V1TransactionsApi
     /**
      * createRefund
      *
-     * Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.
+     * CreateRefund
      *
      * @param string $location_id The ID of the original payment&#39;s associated location. (required)
      * @param \SquareConnect\Model\V1CreateRefundRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
@@ -84,7 +84,7 @@ class V1TransactionsApi
     /**
      * createRefundWithHttpInfo
      *
-     * Issues a refund for a previously processed payment. You must issue a refund within 60 days of the associated payment.
+     * CreateRefund
      *
      * @param string $location_id The ID of the original payment&#39;s associated location. (required)
      * @param \SquareConnect\Model\V1CreateRefundRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
@@ -114,6 +114,7 @@ class V1TransactionsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -172,7 +173,7 @@ class V1TransactionsApi
     /**
      * listBankAccounts
      *
-     * Provides non-confidential details for all of a location's associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+     * ListBankAccounts
      *
      * @param string $location_id The ID of the location to list bank accounts for. (required)
      * @return \SquareConnect\Model\V1BankAccount[]
@@ -188,7 +189,7 @@ class V1TransactionsApi
     /**
      * listBankAccountsWithHttpInfo
      *
-     * Provides non-confidential details for all of a location's associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+     * ListBankAccounts
      *
      * @param string $location_id The ID of the location to list bank accounts for. (required)
      * @return Array of \SquareConnect\Model\V1BankAccount[], HTTP status code, HTTP response headers (array of strings)
@@ -213,6 +214,7 @@ class V1TransactionsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -267,7 +269,7 @@ class V1TransactionsApi
     /**
      * listOrders
      *
-     * Provides summary information for a merchant's online store orders.
+     * ListOrders
      *
      * @param string $location_id The ID of the location to list online store orders for. (required)
      * @param string $order TThe order in which payments are listed in the response. (optional)
@@ -286,7 +288,7 @@ class V1TransactionsApi
     /**
      * listOrdersWithHttpInfo
      *
-     * Provides summary information for a merchant's online store orders.
+     * ListOrders
      *
      * @param string $location_id The ID of the location to list online store orders for. (required)
      * @param string $order TThe order in which payments are listed in the response. (optional)
@@ -314,6 +316,7 @@ class V1TransactionsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         // query params
         if ($order !== null) {
@@ -377,7 +380,7 @@ class V1TransactionsApi
     /**
      * listPayments
      *
-     * Provides summary information for all payments taken by a merchant or any of the merchant's mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
+     * ListPayments
      *
      * @param string $location_id The ID of the location to list payments for. If you specify me, this endpoint returns payments aggregated from all of the business&#39;s locations. (required)
      * @param string $order The order in which payments are listed in the response. (optional)
@@ -399,7 +402,7 @@ class V1TransactionsApi
     /**
      * listPaymentsWithHttpInfo
      *
-     * Provides summary information for all payments taken by a merchant or any of the merchant's mobile staff during a date range. Date ranges cannot exceed one year in length. See Date ranges for details of inclusive and exclusive dates.
+     * ListPayments
      *
      * @param string $location_id The ID of the location to list payments for. If you specify me, this endpoint returns payments aggregated from all of the business&#39;s locations. (required)
      * @param string $order The order in which payments are listed in the response. (optional)
@@ -430,6 +433,7 @@ class V1TransactionsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         // query params
         if ($order !== null) {
@@ -502,7 +506,7 @@ class V1TransactionsApi
     /**
      * listRefunds
      *
-     * Provides the details for all refunds initiated by a merchant or any of the merchant's mobile staff during a date range. Date ranges cannot exceed one year in length.
+     * ListRefunds
      *
      * @param string $location_id The ID of the location to list refunds for. (required)
      * @param string $order TThe order in which payments are listed in the response. (optional)
@@ -523,7 +527,7 @@ class V1TransactionsApi
     /**
      * listRefundsWithHttpInfo
      *
-     * Provides the details for all refunds initiated by a merchant or any of the merchant's mobile staff during a date range. Date ranges cannot exceed one year in length.
+     * ListRefunds
      *
      * @param string $location_id The ID of the location to list refunds for. (required)
      * @param string $order TThe order in which payments are listed in the response. (optional)
@@ -553,6 +557,7 @@ class V1TransactionsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         // query params
         if ($order !== null) {
@@ -622,7 +627,7 @@ class V1TransactionsApi
     /**
      * listSettlements
      *
-     * Provides summary information for all deposits and withdrawals initiated by Square to a merchant's bank account during a date range. Date ranges cannot exceed one year in length.
+     * ListSettlements
      *
      * @param string $location_id The ID of the location to list settlements for. If you specify me, this endpoint returns payments aggregated from all of the business&#39;s locations. (required)
      * @param string $order TThe order in which payments are listed in the response. (optional)
@@ -644,7 +649,7 @@ class V1TransactionsApi
     /**
      * listSettlementsWithHttpInfo
      *
-     * Provides summary information for all deposits and withdrawals initiated by Square to a merchant's bank account during a date range. Date ranges cannot exceed one year in length.
+     * ListSettlements
      *
      * @param string $location_id The ID of the location to list settlements for. If you specify me, this endpoint returns payments aggregated from all of the business&#39;s locations. (required)
      * @param string $order TThe order in which payments are listed in the response. (optional)
@@ -675,6 +680,7 @@ class V1TransactionsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         // query params
         if ($order !== null) {
@@ -747,7 +753,7 @@ class V1TransactionsApi
     /**
      * retrieveBankAccount
      *
-     * Provides non-confidential details for a merchant's associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+     * RetrieveBankAccount
      *
      * @param string $location_id The ID of the bank account&#39;s associated location. (required)
      * @param string $bank_account_id The bank account&#39;s Square-issued ID. You obtain this value from Settlement objects returned. (required)
@@ -764,7 +770,7 @@ class V1TransactionsApi
     /**
      * retrieveBankAccountWithHttpInfo
      *
-     * Provides non-confidential details for a merchant's associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+     * RetrieveBankAccount
      *
      * @param string $location_id The ID of the bank account&#39;s associated location. (required)
      * @param string $bank_account_id The bank account&#39;s Square-issued ID. You obtain this value from Settlement objects returned. (required)
@@ -794,6 +800,7 @@ class V1TransactionsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -855,7 +862,7 @@ class V1TransactionsApi
     /**
      * retrieveOrder
      *
-     * Provides comprehensive information for a single online store order, including the order's history.
+     * RetrieveOrder
      *
      * @param string $location_id The ID of the order&#39;s associated location. (required)
      * @param string $order_id The order&#39;s Square-issued ID. You obtain this value from Order objects returned by the List Orders endpoint (required)
@@ -872,7 +879,7 @@ class V1TransactionsApi
     /**
      * retrieveOrderWithHttpInfo
      *
-     * Provides comprehensive information for a single online store order, including the order's history.
+     * RetrieveOrder
      *
      * @param string $location_id The ID of the order&#39;s associated location. (required)
      * @param string $order_id The order&#39;s Square-issued ID. You obtain this value from Order objects returned by the List Orders endpoint (required)
@@ -902,6 +909,7 @@ class V1TransactionsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -963,7 +971,7 @@ class V1TransactionsApi
     /**
      * retrievePayment
      *
-     * Provides comprehensive information for a single payment.
+     * RetrievePayment
      *
      * @param string $location_id The ID of the payment&#39;s associated location. (required)
      * @param string $payment_id The Square-issued payment ID. payment_id comes from Payment objects returned by the List Payments endpoint, Settlement objects returned by the List Settlements endpoint, or Refund objects returned by the List Refunds endpoint. (required)
@@ -980,7 +988,7 @@ class V1TransactionsApi
     /**
      * retrievePaymentWithHttpInfo
      *
-     * Provides comprehensive information for a single payment.
+     * RetrievePayment
      *
      * @param string $location_id The ID of the payment&#39;s associated location. (required)
      * @param string $payment_id The Square-issued payment ID. payment_id comes from Payment objects returned by the List Payments endpoint, Settlement objects returned by the List Settlements endpoint, or Refund objects returned by the List Refunds endpoint. (required)
@@ -1010,6 +1018,7 @@ class V1TransactionsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -1071,7 +1080,7 @@ class V1TransactionsApi
     /**
      * retrieveSettlement
      *
-     * Provides comprehensive information for a single settlement, including the entries that contribute to the settlement's total.
+     * RetrieveSettlement
      *
      * @param string $location_id The ID of the settlements&#39;s associated location. (required)
      * @param string $settlement_id The settlement&#39;s Square-issued ID. You obtain this value from Settlement objects returned by the List Settlements endpoint. (required)
@@ -1088,7 +1097,7 @@ class V1TransactionsApi
     /**
      * retrieveSettlementWithHttpInfo
      *
-     * Provides comprehensive information for a single settlement, including the entries that contribute to the settlement's total.
+     * RetrieveSettlement
      *
      * @param string $location_id The ID of the settlements&#39;s associated location. (required)
      * @param string $settlement_id The settlement&#39;s Square-issued ID. You obtain this value from Settlement objects returned by the List Settlements endpoint. (required)
@@ -1118,6 +1127,7 @@ class V1TransactionsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -1179,7 +1189,7 @@ class V1TransactionsApi
     /**
      * updateOrder
      *
-     * Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions:
+     * UpdateOrder
      *
      * @param string $location_id The ID of the order&#39;s associated location. (required)
      * @param string $order_id The order&#39;s Square-issued ID. You obtain this value from Order objects returned by the List Orders endpoint (required)
@@ -1197,7 +1207,7 @@ class V1TransactionsApi
     /**
      * updateOrderWithHttpInfo
      *
-     * Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions:
+     * UpdateOrder
      *
      * @param string $location_id The ID of the order&#39;s associated location. (required)
      * @param string $order_id The order&#39;s Square-issued ID. You obtain this value from Order objects returned by the List Orders endpoint (required)
@@ -1232,6 +1242,7 @@ class V1TransactionsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         

@@ -1,5 +1,9 @@
 # Address
 
+### Description
+
+Represents a physical address.
+
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------

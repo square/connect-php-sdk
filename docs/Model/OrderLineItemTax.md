@@ -1,5 +1,9 @@
 # OrderLineItemTax
 
+### Description
+
+Represents a tax that applies to one or more line items in an order.
+
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------

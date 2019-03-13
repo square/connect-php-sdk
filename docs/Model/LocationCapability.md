@@ -1,8 +1,13 @@
 # LocationCapability
 
+### Description
+
+Indicates payment capabilities that a business's location might or might not have enabled.
+
 ## Properties
-Name | Getter | Setter | Type | Description | Notes
------------- | ------------- | ------------- | ------------- | ------------- | -------------
+Name | Type
+------------ | -------------
+**CREDIT_CARD_PROCESSING** | string
 
 Note: All properties are protected and only accessed via getters and setters.
 

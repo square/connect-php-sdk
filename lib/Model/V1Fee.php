@@ -99,12 +99,12 @@ class V1Fee implements ArrayAccess
       */
     protected $rate;
     /**
-      * $calculation_phase Forthcoming
+      * $calculation_phase Forthcoming See [V1FeeCalculationPhase](#type-v1feecalculationphase) for possible values
       * @var string
       */
     protected $calculation_phase;
     /**
-      * $adjustment_type The type of adjustment the fee applies to a payment. Currently, this value is TAX for all fees.
+      * $adjustment_type The type of adjustment the fee applies to a payment. Currently, this value is TAX for all fees. See [V1FeeAdjustmentType](#type-v1feeadjustmenttype) for possible values
       * @var string
       */
     protected $adjustment_type;
@@ -119,12 +119,12 @@ class V1Fee implements ArrayAccess
       */
     protected $enabled;
     /**
-      * $inclusion_type Whether the fee is ADDITIVE or INCLUSIVE.
+      * $inclusion_type Whether the fee is ADDITIVE or INCLUSIVE. See [V1FeeInclusionType](#type-v1feeinclusiontype) for possible values
       * @var string
       */
     protected $inclusion_type;
     /**
-      * $type In countries with multiple classifications for sales taxes, indicates which classification the fee falls under. Currently relevant only to Canadian merchants.
+      * $type In countries with multiple classifications for sales taxes, indicates which classification the fee falls under. Currently relevant only to Canadian merchants. See [V1FeeType](#type-v1feetype) for possible values
       * @var string
       */
     protected $type;
@@ -251,7 +251,7 @@ class V1Fee implements ArrayAccess
   
     /**
      * Sets calculation_phase
-     * @param string $calculation_phase Forthcoming
+     * @param string $calculation_phase Forthcoming See [V1FeeCalculationPhase](#type-v1feecalculationphase) for possible values
      * @return $this
      */
     public function setCalculationPhase($calculation_phase)
@@ -270,7 +270,7 @@ class V1Fee implements ArrayAccess
   
     /**
      * Sets adjustment_type
-     * @param string $adjustment_type The type of adjustment the fee applies to a payment. Currently, this value is TAX for all fees.
+     * @param string $adjustment_type The type of adjustment the fee applies to a payment. Currently, this value is TAX for all fees. See [V1FeeAdjustmentType](#type-v1feeadjustmenttype) for possible values
      * @return $this
      */
     public function setAdjustmentType($adjustment_type)
@@ -327,7 +327,7 @@ class V1Fee implements ArrayAccess
   
     /**
      * Sets inclusion_type
-     * @param string $inclusion_type Whether the fee is ADDITIVE or INCLUSIVE.
+     * @param string $inclusion_type Whether the fee is ADDITIVE or INCLUSIVE. See [V1FeeInclusionType](#type-v1feeinclusiontype) for possible values
      * @return $this
      */
     public function setInclusionType($inclusion_type)
@@ -346,7 +346,7 @@ class V1Fee implements ArrayAccess
   
     /**
      * Sets type
-     * @param string $type In countries with multiple classifications for sales taxes, indicates which classification the fee falls under. Currently relevant only to Canadian merchants.
+     * @param string $type In countries with multiple classifications for sales taxes, indicates which classification the fee falls under. Currently relevant only to Canadian merchants. See [V1FeeType](#type-v1feetype) for possible values
      * @return $this
      */
     public function setType($type)

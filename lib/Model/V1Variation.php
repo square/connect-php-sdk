@@ -112,7 +112,7 @@ class V1Variation implements ArrayAccess
       */
     protected $ordinal;
     /**
-      * $pricing_type Indicates whether the item variation's price is fixed or determined at the time of sale.
+      * $pricing_type Indicates whether the item variation's price is fixed or determined at the time of sale. See [V1VariationPricingType](#type-v1variationpricingtype) for possible values
       * @var string
       */
     protected $pricing_type;
@@ -132,7 +132,7 @@ class V1Variation implements ArrayAccess
       */
     protected $track_inventory;
     /**
-      * $inventory_alert_type Indicates whether the item variation displays an alert when its inventory quantity is less than or equal to its inventory_alert_threshold.
+      * $inventory_alert_type Indicates whether the item variation displays an alert when its inventory quantity is less than or equal to its inventory_alert_threshold. See [V1VariationInventoryAlertType](#type-v1variationinventoryalerttype) for possible values
       * @var string
       */
     protected $inventory_alert_type;
@@ -298,7 +298,7 @@ class V1Variation implements ArrayAccess
   
     /**
      * Sets pricing_type
-     * @param string $pricing_type Indicates whether the item variation's price is fixed or determined at the time of sale.
+     * @param string $pricing_type Indicates whether the item variation's price is fixed or determined at the time of sale. See [V1VariationPricingType](#type-v1variationpricingtype) for possible values
      * @return $this
      */
     public function setPricingType($pricing_type)
@@ -374,7 +374,7 @@ class V1Variation implements ArrayAccess
   
     /**
      * Sets inventory_alert_type
-     * @param string $inventory_alert_type Indicates whether the item variation displays an alert when its inventory quantity is less than or equal to its inventory_alert_threshold.
+     * @param string $inventory_alert_type Indicates whether the item variation displays an alert when its inventory quantity is less than or equal to its inventory_alert_threshold. See [V1VariationInventoryAlertType](#type-v1variationinventoryalerttype) for possible values
      * @return $this
      */
     public function setInventoryAlertType($inventory_alert_type)

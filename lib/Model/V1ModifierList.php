@@ -74,7 +74,7 @@ class V1ModifierList implements ArrayAccess
       */
     protected $name;
     /**
-      * $selection_type Indicates whether MULTIPLE options or a SINGLE option from the modifier list can be applied to a single item.
+      * $selection_type Indicates whether MULTIPLE options or a SINGLE option from the modifier list can be applied to a single item. See [V1ModifierListSelectionType](#type-v1modifierlistselectiontype) for possible values
       * @var string
       */
     protected $selection_type;
@@ -162,7 +162,7 @@ class V1ModifierList implements ArrayAccess
   
     /**
      * Sets selection_type
-     * @param string $selection_type Indicates whether MULTIPLE options or a SINGLE option from the modifier list can be applied to a single item.
+     * @param string $selection_type Indicates whether MULTIPLE options or a SINGLE option from the modifier list can be applied to a single item. See [V1ModifierListSelectionType](#type-v1modifierlistselectiontype) for possible values
      * @return $this
      */
     public function setSelectionType($selection_type)

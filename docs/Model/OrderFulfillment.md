@@ -1,5 +1,9 @@
 # OrderFulfillment
 
+### Description
+
+Contains details on how to fulfill this order.
+
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------

@@ -1,5 +1,9 @@
 # CustomerGroupInfo
 
+### Description
+
+Contains some brief information about a customer group with its identifier included.
+
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------

@@ -1,8 +1,17 @@
 # OrderLineItemDiscountType
 
+### Description
+
+Indicates how the discount is applied to the associated line item or order.
+
 ## Properties
-Name | Getter | Setter | Type | Description | Notes
------------- | ------------- | ------------- | ------------- | ------------- | -------------
+Name | Type
+------------ | -------------
+**UNKNOWN_DISCOUNT** | string
+**FIXED_PERCENTAGE** | string
+**FIXED_AMOUNT** | string
+**VARIABLE_PERCENTAGE** | string
+**VARIABLE_AMOUNT** | string
 
 Note: All properties are protected and only accessed via getters and setters.
 

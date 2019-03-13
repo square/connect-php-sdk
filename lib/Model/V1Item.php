@@ -127,12 +127,12 @@ class V1Item implements ArrayAccess
       */
     protected $description;
     /**
-      * $type The item's type. This value is NORMAL for almost all items.
+      * $type The item's type. This value is NORMAL for almost all items. See [V1ItemType](#type-v1itemtype) for possible values
       * @var string
       */
     protected $type;
     /**
-      * $color The color of the discount's display label in Square Register, if not the default color. The default color is 9da2a6.
+      * $color The color of the discount's display label in Square Register, if not the default color. The default color is 9da2a6. See [V1ItemColor](#type-v1itemcolor) for possible values
       * @var string
       */
     protected $color;
@@ -142,7 +142,7 @@ class V1Item implements ArrayAccess
       */
     protected $abbreviation;
     /**
-      * $visibility Indicates whether the item is viewable from the merchant's online store (PUBLIC) or PRIVATE.
+      * $visibility Indicates whether the item is viewable from the merchant's online store (PUBLIC) or PRIVATE. See [V1ItemVisibility](#type-v1itemvisibility) for possible values
       * @var string
       */
     protected $visibility;
@@ -349,7 +349,7 @@ class V1Item implements ArrayAccess
   
     /**
      * Sets type
-     * @param string $type The item's type. This value is NORMAL for almost all items.
+     * @param string $type The item's type. This value is NORMAL for almost all items. See [V1ItemType](#type-v1itemtype) for possible values
      * @return $this
      */
     public function setType($type)
@@ -368,7 +368,7 @@ class V1Item implements ArrayAccess
   
     /**
      * Sets color
-     * @param string $color The color of the discount's display label in Square Register, if not the default color. The default color is 9da2a6.
+     * @param string $color The color of the discount's display label in Square Register, if not the default color. The default color is 9da2a6. See [V1ItemColor](#type-v1itemcolor) for possible values
      * @return $this
      */
     public function setColor($color)
@@ -406,7 +406,7 @@ class V1Item implements ArrayAccess
   
     /**
      * Sets visibility
-     * @param string $visibility Indicates whether the item is viewable from the merchant's online store (PUBLIC) or PRIVATE.
+     * @param string $visibility Indicates whether the item is viewable from the merchant's online store (PUBLIC) or PRIVATE. See [V1ItemVisibility](#type-v1itemvisibility) for possible values
      * @return $this
      */
     public function setVisibility($visibility)

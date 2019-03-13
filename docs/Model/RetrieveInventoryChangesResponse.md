@@ -1,11 +1,15 @@
 # RetrieveInventoryChangesResponse
 
+### Description
+
+
+
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------
 **errors** | getErrors() | setErrors($value) | [**\SquareConnect\Model\Error[]**](Error.md) | Any errors that occurred during the request. | [optional] 
 **changes** | getChanges() | setChanges($value) | [**\SquareConnect\Model\InventoryChange[]**](InventoryChange.md) | The set of inventory changes for the requested object and locations. | [optional] 
-**cursor** | getCursor() | setCursor($value) | **string** | The pagination cursor to be used in a subsequent request. If unset, this is the final response.  See [Paginating results](#paginatingresults) for more information. | [optional] 
+**cursor** | getCursor() | setCursor($value) | **string** | The pagination cursor to be used in a subsequent request. If unset, this is the final response.  See [Pagination](/basics/api101/pagination) for more information. | [optional] 
 
 Note: All properties are protected and only accessed via getters and setters.
 

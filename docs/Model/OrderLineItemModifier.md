@@ -1,5 +1,9 @@
 # OrderLineItemModifier
 
+### Description
+
+A [CatalogModifier](#type-catalogmodifier).
+
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------

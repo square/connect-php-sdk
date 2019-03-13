@@ -1,5 +1,9 @@
 # Tender
 
+### Description
+
+Represents a tender (i.e., a method of payment) used in a Square transaction.
+
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------

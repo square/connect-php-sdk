@@ -1,8 +1,18 @@
 # TenderType
 
+### Description
+
+Indicates a tender's type.
+
 ## Properties
-Name | Getter | Setter | Type | Description | Notes
------------- | ------------- | ------------- | ------------- | ------------- | -------------
+Name | Type
+------------ | -------------
+**CARD** | string
+**CASH** | string
+**THIRD_PARTY_CARD** | string
+**SQUARE_GIFT_CARD** | string
+**NO_SALE** | string
+**OTHER** | string
 
 Note: All properties are protected and only accessed via getters and setters.
 

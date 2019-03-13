@@ -1,8 +1,14 @@
 # TaxInclusionType
 
+### Description
+
+Whether to the tax amount should be additional to or included in to the [CatalogItem](#type-catalogitem) price.
+
 ## Properties
-Name | Getter | Setter | Type | Description | Notes
------------- | ------------- | ------------- | ------------- | ------------- | -------------
+Name | Type
+------------ | -------------
+**ADDITIVE** | string
+**INCLUSIVE** | string
 
 Note: All properties are protected and only accessed via getters and setters.
 

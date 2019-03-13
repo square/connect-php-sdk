@@ -1,5 +1,9 @@
 # V1PaymentItemDetail
 
+### Description
+
+V1PaymentItemDetail
+
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------

@@ -129,7 +129,7 @@ class V1CashDrawerShift implements ArrayAccess
       */
     protected $id;
     /**
-      * $event_type The shift's current state.
+      * $event_type The shift's current state. See [V1CashDrawerShiftEventType](#type-v1cashdrawershifteventtype) for possible values
       * @var string
       */
     protected $event_type;
@@ -353,7 +353,7 @@ class V1CashDrawerShift implements ArrayAccess
   
     /**
      * Sets event_type
-     * @param string $event_type The shift's current state.
+     * @param string $event_type The shift's current state. See [V1CashDrawerShiftEventType](#type-v1cashdrawershifteventtype) for possible values
      * @return $this
      */
     public function setEventType($event_type)

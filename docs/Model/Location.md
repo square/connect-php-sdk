@@ -1,5 +1,9 @@
 # Location
 
+### Description
+
+Represents one of a business's locations.
+
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------

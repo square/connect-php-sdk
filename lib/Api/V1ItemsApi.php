@@ -67,7 +67,7 @@ class V1ItemsApi
     /**
      * adjustInventory
      *
-     * Adjusts an item variation's current available inventory.
+     * AdjustInventory
      *
      * @param string $location_id The ID of the item&#39;s associated location. (required)
      * @param string $variation_id The ID of the variation to adjust inventory information for. (required)
@@ -85,7 +85,7 @@ class V1ItemsApi
     /**
      * adjustInventoryWithHttpInfo
      *
-     * Adjusts an item variation's current available inventory.
+     * AdjustInventory
      *
      * @param string $location_id The ID of the item&#39;s associated location. (required)
      * @param string $variation_id The ID of the variation to adjust inventory information for. (required)
@@ -120,6 +120,7 @@ class V1ItemsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -185,7 +186,7 @@ class V1ItemsApi
     /**
      * applyFee
      *
-     * Associates a fee with an item, meaning the fee is automatically applied to the item in Square Register.
+     * ApplyFee
      *
      * @param string $location_id The ID of the fee&#39;s associated location. (required)
      * @param string $item_id The ID of the item to add the fee to. (required)
@@ -203,7 +204,7 @@ class V1ItemsApi
     /**
      * applyFeeWithHttpInfo
      *
-     * Associates a fee with an item, meaning the fee is automatically applied to the item in Square Register.
+     * ApplyFee
      *
      * @param string $location_id The ID of the fee&#39;s associated location. (required)
      * @param string $item_id The ID of the item to add the fee to. (required)
@@ -238,6 +239,7 @@ class V1ItemsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -306,7 +308,7 @@ class V1ItemsApi
     /**
      * applyModifierList
      *
-     * Associates a modifier list with an item, meaning modifier options from the list can be applied to the item.
+     * ApplyModifierList
      *
      * @param string $location_id The ID of the item&#39;s associated location. (required)
      * @param string $modifier_list_id The ID of the modifier list to apply. (required)
@@ -324,7 +326,7 @@ class V1ItemsApi
     /**
      * applyModifierListWithHttpInfo
      *
-     * Associates a modifier list with an item, meaning modifier options from the list can be applied to the item.
+     * ApplyModifierList
      *
      * @param string $location_id The ID of the item&#39;s associated location. (required)
      * @param string $modifier_list_id The ID of the modifier list to apply. (required)
@@ -359,6 +361,7 @@ class V1ItemsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -427,7 +430,7 @@ class V1ItemsApi
     /**
      * createCategory
      *
-     * Creates an item category.
+     * CreateCategory
      *
      * @param string $location_id The ID of the location to create an item for. (required)
      * @param \SquareConnect\Model\V1Category $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
@@ -444,7 +447,7 @@ class V1ItemsApi
     /**
      * createCategoryWithHttpInfo
      *
-     * Creates an item category.
+     * CreateCategory
      *
      * @param string $location_id The ID of the location to create an item for. (required)
      * @param \SquareConnect\Model\V1Category $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
@@ -474,6 +477,7 @@ class V1ItemsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -532,7 +536,7 @@ class V1ItemsApi
     /**
      * createDiscount
      *
-     * Creates a discount.
+     * CreateDiscount
      *
      * @param string $location_id The ID of the location to create an item for. (required)
      * @param \SquareConnect\Model\V1Discount $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
@@ -549,7 +553,7 @@ class V1ItemsApi
     /**
      * createDiscountWithHttpInfo
      *
-     * Creates a discount.
+     * CreateDiscount
      *
      * @param string $location_id The ID of the location to create an item for. (required)
      * @param \SquareConnect\Model\V1Discount $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
@@ -579,6 +583,7 @@ class V1ItemsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -637,7 +642,7 @@ class V1ItemsApi
     /**
      * createFee
      *
-     * Creates a fee (tax).
+     * CreateFee
      *
      * @param string $location_id The ID of the location to create a fee for. (required)
      * @param \SquareConnect\Model\V1Fee $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
@@ -654,7 +659,7 @@ class V1ItemsApi
     /**
      * createFeeWithHttpInfo
      *
-     * Creates a fee (tax).
+     * CreateFee
      *
      * @param string $location_id The ID of the location to create a fee for. (required)
      * @param \SquareConnect\Model\V1Fee $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
@@ -684,6 +689,7 @@ class V1ItemsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -742,7 +748,7 @@ class V1ItemsApi
     /**
      * createItem
      *
-     * Creates an item and at least one variation for it.
+     * CreateItem
      *
      * @param string $location_id The ID of the location to create an item for. (required)
      * @param \SquareConnect\Model\V1Item $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
@@ -759,7 +765,7 @@ class V1ItemsApi
     /**
      * createItemWithHttpInfo
      *
-     * Creates an item and at least one variation for it.
+     * CreateItem
      *
      * @param string $location_id The ID of the location to create an item for. (required)
      * @param \SquareConnect\Model\V1Item $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
@@ -789,6 +795,7 @@ class V1ItemsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -847,7 +854,7 @@ class V1ItemsApi
     /**
      * createModifierList
      *
-     * Creates an item modifier list and at least one modifier option for it.
+     * CreateModifierList
      *
      * @param string $location_id The ID of the location to create a modifier list for. (required)
      * @param \SquareConnect\Model\V1ModifierList $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
@@ -864,7 +871,7 @@ class V1ItemsApi
     /**
      * createModifierListWithHttpInfo
      *
-     * Creates an item modifier list and at least one modifier option for it.
+     * CreateModifierList
      *
      * @param string $location_id The ID of the location to create a modifier list for. (required)
      * @param \SquareConnect\Model\V1ModifierList $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
@@ -894,6 +901,7 @@ class V1ItemsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -952,7 +960,7 @@ class V1ItemsApi
     /**
      * createModifierOption
      *
-     * Creates an item modifier option and adds it to a modifier list.
+     * CreateModifierOption
      *
      * @param string $location_id The ID of the item&#39;s associated location. (required)
      * @param string $modifier_list_id The ID of the modifier list to edit. (required)
@@ -970,7 +978,7 @@ class V1ItemsApi
     /**
      * createModifierOptionWithHttpInfo
      *
-     * Creates an item modifier option and adds it to a modifier list.
+     * CreateModifierOption
      *
      * @param string $location_id The ID of the item&#39;s associated location. (required)
      * @param string $modifier_list_id The ID of the modifier list to edit. (required)
@@ -1005,6 +1013,7 @@ class V1ItemsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -1070,7 +1079,7 @@ class V1ItemsApi
     /**
      * createPage
      *
-     * Creates a Favorites page in Square Register.
+     * CreatePage
      *
      * @param string $location_id The ID of the location to create an item for. (required)
      * @param \SquareConnect\Model\V1Page $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
@@ -1087,7 +1096,7 @@ class V1ItemsApi
     /**
      * createPageWithHttpInfo
      *
-     * Creates a Favorites page in Square Register.
+     * CreatePage
      *
      * @param string $location_id The ID of the location to create an item for. (required)
      * @param \SquareConnect\Model\V1Page $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
@@ -1117,6 +1126,7 @@ class V1ItemsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -1175,7 +1185,7 @@ class V1ItemsApi
     /**
      * createVariation
      *
-     * Creates an item variation for an existing item.
+     * CreateVariation
      *
      * @param string $location_id The ID of the item&#39;s associated location. (required)
      * @param string $item_id The item&#39;s ID. (required)
@@ -1193,7 +1203,7 @@ class V1ItemsApi
     /**
      * createVariationWithHttpInfo
      *
-     * Creates an item variation for an existing item.
+     * CreateVariation
      *
      * @param string $location_id The ID of the item&#39;s associated location. (required)
      * @param string $item_id The item&#39;s ID. (required)
@@ -1228,6 +1238,7 @@ class V1ItemsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -1293,7 +1304,7 @@ class V1ItemsApi
     /**
      * deleteCategory
      *
-     * Deletes an existing item category.
+     * DeleteCategory
      *
      * @param string $location_id The ID of the item&#39;s associated location. (required)
      * @param string $category_id The ID of the category to delete. (required)
@@ -1310,7 +1321,7 @@ class V1ItemsApi
     /**
      * deleteCategoryWithHttpInfo
      *
-     * Deletes an existing item category.
+     * DeleteCategory
      *
      * @param string $location_id The ID of the item&#39;s associated location. (required)
      * @param string $category_id The ID of the category to delete. (required)
@@ -1340,6 +1351,7 @@ class V1ItemsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -1401,7 +1413,7 @@ class V1ItemsApi
     /**
      * deleteDiscount
      *
-     * Deletes an existing discount.
+     * DeleteDiscount
      *
      * @param string $location_id The ID of the item&#39;s associated location. (required)
      * @param string $discount_id The ID of the discount to delete. (required)
@@ -1418,7 +1430,7 @@ class V1ItemsApi
     /**
      * deleteDiscountWithHttpInfo
      *
-     * Deletes an existing discount.
+     * DeleteDiscount
      *
      * @param string $location_id The ID of the item&#39;s associated location. (required)
      * @param string $discount_id The ID of the discount to delete. (required)
@@ -1448,6 +1460,7 @@ class V1ItemsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -1509,7 +1522,7 @@ class V1ItemsApi
     /**
      * deleteFee
      *
-     * Deletes an existing fee (tax).
+     * DeleteFee
      *
      * @param string $location_id The ID of the fee&#39;s associated location. (required)
      * @param string $fee_id The ID of the fee to delete. (required)
@@ -1526,7 +1539,7 @@ class V1ItemsApi
     /**
      * deleteFeeWithHttpInfo
      *
-     * Deletes an existing fee (tax).
+     * DeleteFee
      *
      * @param string $location_id The ID of the fee&#39;s associated location. (required)
      * @param string $fee_id The ID of the fee to delete. (required)
@@ -1556,6 +1569,7 @@ class V1ItemsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -1617,7 +1631,7 @@ class V1ItemsApi
     /**
      * deleteItem
      *
-     * Deletes an existing item and all item variations associated with it.
+     * DeleteItem
      *
      * @param string $location_id The ID of the item&#39;s associated location. (required)
      * @param string $item_id The ID of the item to modify. (required)
@@ -1634,7 +1648,7 @@ class V1ItemsApi
     /**
      * deleteItemWithHttpInfo
      *
-     * Deletes an existing item and all item variations associated with it.
+     * DeleteItem
      *
      * @param string $location_id The ID of the item&#39;s associated location. (required)
      * @param string $item_id The ID of the item to modify. (required)
@@ -1664,6 +1678,7 @@ class V1ItemsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -1725,7 +1740,7 @@ class V1ItemsApi
     /**
      * deleteModifierList
      *
-     * Deletes an existing item modifier list and all modifier options associated with it.
+     * DeleteModifierList
      *
      * @param string $location_id The ID of the item&#39;s associated location. (required)
      * @param string $modifier_list_id The ID of the modifier list to delete. (required)
@@ -1742,7 +1757,7 @@ class V1ItemsApi
     /**
      * deleteModifierListWithHttpInfo
      *
-     * Deletes an existing item modifier list and all modifier options associated with it.
+     * DeleteModifierList
      *
      * @param string $location_id The ID of the item&#39;s associated location. (required)
      * @param string $modifier_list_id The ID of the modifier list to delete. (required)
@@ -1772,6 +1787,7 @@ class V1ItemsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -1833,7 +1849,7 @@ class V1ItemsApi
     /**
      * deleteModifierOption
      *
-     * Deletes an existing item modifier option from a modifier list.
+     * DeleteModifierOption
      *
      * @param string $location_id The ID of the item&#39;s associated location. (required)
      * @param string $modifier_list_id The ID of the modifier list to delete. (required)
@@ -1851,7 +1867,7 @@ class V1ItemsApi
     /**
      * deleteModifierOptionWithHttpInfo
      *
-     * Deletes an existing item modifier option from a modifier list.
+     * DeleteModifierOption
      *
      * @param string $location_id The ID of the item&#39;s associated location. (required)
      * @param string $modifier_list_id The ID of the modifier list to delete. (required)
@@ -1886,6 +1902,7 @@ class V1ItemsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -1954,7 +1971,7 @@ class V1ItemsApi
     /**
      * deletePage
      *
-     * Deletes an existing Favorites page and all of its cells.
+     * DeletePage
      *
      * @param string $location_id The ID of the Favorites page&#39;s associated location. (required)
      * @param string $page_id The ID of the page to delete. (required)
@@ -1971,7 +1988,7 @@ class V1ItemsApi
     /**
      * deletePageWithHttpInfo
      *
-     * Deletes an existing Favorites page and all of its cells.
+     * DeletePage
      *
      * @param string $location_id The ID of the Favorites page&#39;s associated location. (required)
      * @param string $page_id The ID of the page to delete. (required)
@@ -2001,6 +2018,7 @@ class V1ItemsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -2062,7 +2080,7 @@ class V1ItemsApi
     /**
      * deletePageCell
      *
-     * Deletes a cell from a Favorites page in Square Register.
+     * DeletePageCell
      *
      * @param string $location_id The ID of the Favorites page&#39;s associated location. (required)
      * @param string $page_id The ID of the page to delete. (required)
@@ -2081,7 +2099,7 @@ class V1ItemsApi
     /**
      * deletePageCellWithHttpInfo
      *
-     * Deletes a cell from a Favorites page in Square Register.
+     * DeletePageCell
      *
      * @param string $location_id The ID of the Favorites page&#39;s associated location. (required)
      * @param string $page_id The ID of the page to delete. (required)
@@ -2113,6 +2131,7 @@ class V1ItemsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         // query params
         if ($row !== null) {
@@ -2180,7 +2199,7 @@ class V1ItemsApi
     /**
      * deleteVariation
      *
-     * Deletes an existing item variation from an item.
+     * DeleteVariation
      *
      * @param string $location_id The ID of the item&#39;s associated location. (required)
      * @param string $item_id The ID of the item to delete. (required)
@@ -2198,7 +2217,7 @@ class V1ItemsApi
     /**
      * deleteVariationWithHttpInfo
      *
-     * Deletes an existing item variation from an item.
+     * DeleteVariation
      *
      * @param string $location_id The ID of the item&#39;s associated location. (required)
      * @param string $item_id The ID of the item to delete. (required)
@@ -2233,6 +2252,7 @@ class V1ItemsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -2301,7 +2321,7 @@ class V1ItemsApi
     /**
      * listCategories
      *
-     * Lists all of a location's item categories.
+     * ListCategories
      *
      * @param string $location_id The ID of the location to list categories for. (required)
      * @return \SquareConnect\Model\V1Category[]
@@ -2317,7 +2337,7 @@ class V1ItemsApi
     /**
      * listCategoriesWithHttpInfo
      *
-     * Lists all of a location's item categories.
+     * ListCategories
      *
      * @param string $location_id The ID of the location to list categories for. (required)
      * @return Array of \SquareConnect\Model\V1Category[], HTTP status code, HTTP response headers (array of strings)
@@ -2342,6 +2362,7 @@ class V1ItemsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -2396,7 +2417,7 @@ class V1ItemsApi
     /**
      * listDiscounts
      *
-     * Lists all of a location's discounts.
+     * ListDiscounts
      *
      * @param string $location_id The ID of the location to list categories for. (required)
      * @return \SquareConnect\Model\V1Discount[]
@@ -2412,7 +2433,7 @@ class V1ItemsApi
     /**
      * listDiscountsWithHttpInfo
      *
-     * Lists all of a location's discounts.
+     * ListDiscounts
      *
      * @param string $location_id The ID of the location to list categories for. (required)
      * @return Array of \SquareConnect\Model\V1Discount[], HTTP status code, HTTP response headers (array of strings)
@@ -2437,6 +2458,7 @@ class V1ItemsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -2491,7 +2513,7 @@ class V1ItemsApi
     /**
      * listFees
      *
-     * Lists all of a location's fees (taxes).
+     * ListFees
      *
      * @param string $location_id The ID of the location to list fees for. (required)
      * @return \SquareConnect\Model\V1Fee[]
@@ -2507,7 +2529,7 @@ class V1ItemsApi
     /**
      * listFeesWithHttpInfo
      *
-     * Lists all of a location's fees (taxes).
+     * ListFees
      *
      * @param string $location_id The ID of the location to list fees for. (required)
      * @return Array of \SquareConnect\Model\V1Fee[], HTTP status code, HTTP response headers (array of strings)
@@ -2532,6 +2554,7 @@ class V1ItemsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -2586,7 +2609,7 @@ class V1ItemsApi
     /**
      * listInventory
      *
-     * Provides inventory information for all of a merchant's inventory-enabled item variations.
+     * ListInventory
      *
      * @param string $location_id The ID of the item&#39;s associated location. (required)
      * @param int $limit The maximum number of inventory entries to return in a single response. This value cannot exceed 1000. (optional)
@@ -2604,7 +2627,7 @@ class V1ItemsApi
     /**
      * listInventoryWithHttpInfo
      *
-     * Provides inventory information for all of a merchant's inventory-enabled item variations.
+     * ListInventory
      *
      * @param string $location_id The ID of the item&#39;s associated location. (required)
      * @param int $limit The maximum number of inventory entries to return in a single response. This value cannot exceed 1000. (optional)
@@ -2631,6 +2654,7 @@ class V1ItemsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         // query params
         if ($limit !== null) {
@@ -2691,7 +2715,7 @@ class V1ItemsApi
     /**
      * listItems
      *
-     * Provides summary information for all of a location's items.
+     * ListItems
      *
      * @param string $location_id The ID of the location to list items for. (required)
      * @param string $batch_token A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)
@@ -2708,7 +2732,7 @@ class V1ItemsApi
     /**
      * listItemsWithHttpInfo
      *
-     * Provides summary information for all of a location's items.
+     * ListItems
      *
      * @param string $location_id The ID of the location to list items for. (required)
      * @param string $batch_token A pagination cursor to retrieve the next set of results for your original query to the endpoint. (optional)
@@ -2734,6 +2758,7 @@ class V1ItemsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         // query params
         if ($batch_token !== null) {
@@ -2791,7 +2816,7 @@ class V1ItemsApi
     /**
      * listModifierLists
      *
-     * Lists all of a location's modifier lists.
+     * ListModifierLists
      *
      * @param string $location_id The ID of the location to list modifier lists for. (required)
      * @return \SquareConnect\Model\V1ModifierList[]
@@ -2807,7 +2832,7 @@ class V1ItemsApi
     /**
      * listModifierListsWithHttpInfo
      *
-     * Lists all of a location's modifier lists.
+     * ListModifierLists
      *
      * @param string $location_id The ID of the location to list modifier lists for. (required)
      * @return Array of \SquareConnect\Model\V1ModifierList[], HTTP status code, HTTP response headers (array of strings)
@@ -2832,6 +2857,7 @@ class V1ItemsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -2886,7 +2912,7 @@ class V1ItemsApi
     /**
      * listPages
      *
-     * Lists all of a location's Favorites pages in Square Register.
+     * ListPages
      *
      * @param string $location_id The ID of the location to list Favorites pages for. (required)
      * @return \SquareConnect\Model\V1Page[]
@@ -2902,7 +2928,7 @@ class V1ItemsApi
     /**
      * listPagesWithHttpInfo
      *
-     * Lists all of a location's Favorites pages in Square Register.
+     * ListPages
      *
      * @param string $location_id The ID of the location to list Favorites pages for. (required)
      * @return Array of \SquareConnect\Model\V1Page[], HTTP status code, HTTP response headers (array of strings)
@@ -2927,6 +2953,7 @@ class V1ItemsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -2981,7 +3008,7 @@ class V1ItemsApi
     /**
      * removeFee
      *
-     * Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register.
+     * RemoveFee
      *
      * @param string $location_id The ID of the fee&#39;s associated location. (required)
      * @param string $item_id The ID of the item to add the fee to. (required)
@@ -2999,7 +3026,7 @@ class V1ItemsApi
     /**
      * removeFeeWithHttpInfo
      *
-     * Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register.
+     * RemoveFee
      *
      * @param string $location_id The ID of the fee&#39;s associated location. (required)
      * @param string $item_id The ID of the item to add the fee to. (required)
@@ -3034,6 +3061,7 @@ class V1ItemsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -3102,7 +3130,7 @@ class V1ItemsApi
     /**
      * removeModifierList
      *
-     * Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item.
+     * RemoveModifierList
      *
      * @param string $location_id The ID of the item&#39;s associated location. (required)
      * @param string $modifier_list_id The ID of the modifier list to remove. (required)
@@ -3120,7 +3148,7 @@ class V1ItemsApi
     /**
      * removeModifierListWithHttpInfo
      *
-     * Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item.
+     * RemoveModifierList
      *
      * @param string $location_id The ID of the item&#39;s associated location. (required)
      * @param string $modifier_list_id The ID of the modifier list to remove. (required)
@@ -3155,6 +3183,7 @@ class V1ItemsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -3223,7 +3252,7 @@ class V1ItemsApi
     /**
      * retrieveItem
      *
-     * Provides the details for a single item, including associated modifier lists and fees.
+     * RetrieveItem
      *
      * @param string $location_id The ID of the item&#39;s associated location. (required)
      * @param string $item_id The item&#39;s ID. (required)
@@ -3240,7 +3269,7 @@ class V1ItemsApi
     /**
      * retrieveItemWithHttpInfo
      *
-     * Provides the details for a single item, including associated modifier lists and fees.
+     * RetrieveItem
      *
      * @param string $location_id The ID of the item&#39;s associated location. (required)
      * @param string $item_id The item&#39;s ID. (required)
@@ -3270,6 +3299,7 @@ class V1ItemsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -3331,7 +3361,7 @@ class V1ItemsApi
     /**
      * retrieveModifierList
      *
-     * Provides the details for a single modifier list.
+     * RetrieveModifierList
      *
      * @param string $location_id The ID of the item&#39;s associated location. (required)
      * @param string $modifier_list_id The modifier list&#39;s ID. (required)
@@ -3348,7 +3378,7 @@ class V1ItemsApi
     /**
      * retrieveModifierListWithHttpInfo
      *
-     * Provides the details for a single modifier list.
+     * RetrieveModifierList
      *
      * @param string $location_id The ID of the item&#39;s associated location. (required)
      * @param string $modifier_list_id The modifier list&#39;s ID. (required)
@@ -3378,6 +3408,7 @@ class V1ItemsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -3439,7 +3470,7 @@ class V1ItemsApi
     /**
      * updateCategory
      *
-     * Modifies the details of an existing item category.
+     * UpdateCategory
      *
      * @param string $location_id The ID of the category&#39;s associated location. (required)
      * @param string $category_id The ID of the category to edit. (required)
@@ -3457,7 +3488,7 @@ class V1ItemsApi
     /**
      * updateCategoryWithHttpInfo
      *
-     * Modifies the details of an existing item category.
+     * UpdateCategory
      *
      * @param string $location_id The ID of the category&#39;s associated location. (required)
      * @param string $category_id The ID of the category to edit. (required)
@@ -3492,6 +3523,7 @@ class V1ItemsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -3557,7 +3589,7 @@ class V1ItemsApi
     /**
      * updateDiscount
      *
-     * Modifies the details of an existing discount.
+     * UpdateDiscount
      *
      * @param string $location_id The ID of the category&#39;s associated location. (required)
      * @param string $discount_id The ID of the discount to edit. (required)
@@ -3575,7 +3607,7 @@ class V1ItemsApi
     /**
      * updateDiscountWithHttpInfo
      *
-     * Modifies the details of an existing discount.
+     * UpdateDiscount
      *
      * @param string $location_id The ID of the category&#39;s associated location. (required)
      * @param string $discount_id The ID of the discount to edit. (required)
@@ -3610,6 +3642,7 @@ class V1ItemsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -3675,7 +3708,7 @@ class V1ItemsApi
     /**
      * updateFee
      *
-     * Modifies the details of an existing fee (tax).
+     * UpdateFee
      *
      * @param string $location_id The ID of the fee&#39;s associated location. (required)
      * @param string $fee_id The ID of the fee to edit. (required)
@@ -3693,7 +3726,7 @@ class V1ItemsApi
     /**
      * updateFeeWithHttpInfo
      *
-     * Modifies the details of an existing fee (tax).
+     * UpdateFee
      *
      * @param string $location_id The ID of the fee&#39;s associated location. (required)
      * @param string $fee_id The ID of the fee to edit. (required)
@@ -3728,6 +3761,7 @@ class V1ItemsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -3793,7 +3827,7 @@ class V1ItemsApi
     /**
      * updateItem
      *
-     * Modifies the core details of an existing item.
+     * UpdateItem
      *
      * @param string $location_id The ID of the item&#39;s associated location. (required)
      * @param string $item_id The ID of the item to modify. (required)
@@ -3811,7 +3845,7 @@ class V1ItemsApi
     /**
      * updateItemWithHttpInfo
      *
-     * Modifies the core details of an existing item.
+     * UpdateItem
      *
      * @param string $location_id The ID of the item&#39;s associated location. (required)
      * @param string $item_id The ID of the item to modify. (required)
@@ -3846,6 +3880,7 @@ class V1ItemsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -3911,7 +3946,7 @@ class V1ItemsApi
     /**
      * updateModifierList
      *
-     * Modifies the details of an existing item modifier list.
+     * UpdateModifierList
      *
      * @param string $location_id The ID of the item&#39;s associated location. (required)
      * @param string $modifier_list_id The ID of the modifier list to edit. (required)
@@ -3929,7 +3964,7 @@ class V1ItemsApi
     /**
      * updateModifierListWithHttpInfo
      *
-     * Modifies the details of an existing item modifier list.
+     * UpdateModifierList
      *
      * @param string $location_id The ID of the item&#39;s associated location. (required)
      * @param string $modifier_list_id The ID of the modifier list to edit. (required)
@@ -3964,6 +3999,7 @@ class V1ItemsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -4029,7 +4065,7 @@ class V1ItemsApi
     /**
      * updateModifierOption
      *
-     * Modifies the details of an existing item modifier option.
+     * UpdateModifierOption
      *
      * @param string $location_id The ID of the item&#39;s associated location. (required)
      * @param string $modifier_list_id The ID of the modifier list to edit. (required)
@@ -4048,7 +4084,7 @@ class V1ItemsApi
     /**
      * updateModifierOptionWithHttpInfo
      *
-     * Modifies the details of an existing item modifier option.
+     * UpdateModifierOption
      *
      * @param string $location_id The ID of the item&#39;s associated location. (required)
      * @param string $modifier_list_id The ID of the modifier list to edit. (required)
@@ -4088,6 +4124,7 @@ class V1ItemsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -4160,7 +4197,7 @@ class V1ItemsApi
     /**
      * updatePage
      *
-     * Modifies the details of a Favorites page in Square Register.
+     * UpdatePage
      *
      * @param string $location_id The ID of the Favorites page&#39;s associated location (required)
      * @param string $page_id The ID of the page to modify. (required)
@@ -4178,7 +4215,7 @@ class V1ItemsApi
     /**
      * updatePageWithHttpInfo
      *
-     * Modifies the details of a Favorites page in Square Register.
+     * UpdatePage
      *
      * @param string $location_id The ID of the Favorites page&#39;s associated location (required)
      * @param string $page_id The ID of the page to modify. (required)
@@ -4213,6 +4250,7 @@ class V1ItemsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -4278,7 +4316,7 @@ class V1ItemsApi
     /**
      * updatePageCell
      *
-     * Modifies a cell of a Favorites page in Square Register.
+     * UpdatePageCell
      *
      * @param string $location_id The ID of the Favorites page&#39;s associated location. (required)
      * @param string $page_id The ID of the page the cell belongs to. (required)
@@ -4296,7 +4334,7 @@ class V1ItemsApi
     /**
      * updatePageCellWithHttpInfo
      *
-     * Modifies a cell of a Favorites page in Square Register.
+     * UpdatePageCell
      *
      * @param string $location_id The ID of the Favorites page&#39;s associated location. (required)
      * @param string $page_id The ID of the page the cell belongs to. (required)
@@ -4331,6 +4369,7 @@ class V1ItemsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         
@@ -4396,7 +4435,7 @@ class V1ItemsApi
     /**
      * updateVariation
      *
-     * Modifies the details of an existing item variation.
+     * UpdateVariation
      *
      * @param string $location_id The ID of the item&#39;s associated location. (required)
      * @param string $item_id The ID of the item to modify. (required)
@@ -4415,7 +4454,7 @@ class V1ItemsApi
     /**
      * updateVariationWithHttpInfo
      *
-     * Modifies the details of an existing item variation.
+     * UpdateVariation
      *
      * @param string $location_id The ID of the item&#39;s associated location. (required)
      * @param string $item_id The ID of the item to modify. (required)
@@ -4455,6 +4494,7 @@ class V1ItemsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-03-13";
 
         
         

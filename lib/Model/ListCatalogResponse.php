@@ -65,7 +65,7 @@ class ListCatalogResponse implements ArrayAccess
       */
     protected $errors;
     /**
-      * $cursor The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Paginating results](#paginatingresults) for more information.
+      * $cursor The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Pagination](/basics/api101/pagination) for more information.
       * @var string
       */
     protected $cursor;
@@ -129,7 +129,7 @@ class ListCatalogResponse implements ArrayAccess
   
     /**
      * Sets cursor
-     * @param string $cursor The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Paginating results](#paginatingresults) for more information.
+     * @param string $cursor The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Pagination](/basics/api101/pagination) for more information.
      * @return $this
      */
     public function setCursor($cursor)

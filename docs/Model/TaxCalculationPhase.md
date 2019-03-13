@@ -1,8 +1,14 @@
 # TaxCalculationPhase
 
+### Description
+
+When to calculate the taxes due on a cart.
+
 ## Properties
-Name | Getter | Setter | Type | Description | Notes
------------- | ------------- | ------------- | ------------- | ------------- | -------------
+Name | Type
+------------ | -------------
+**TAX_SUBTOTAL_PHASE** | string
+**TAX_TOTAL_PHASE** | string
 
 Note: All properties are protected and only accessed via getters and setters.
 

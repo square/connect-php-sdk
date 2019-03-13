@@ -1,5 +1,9 @@
 # CreateMobileAuthorizationCodeRequest
 
+### Description
+
+Defines the body parameters that can be provided in a request to the [CreateMobileAuthorizationCode](#endpoint-createmobileauthorizationcode) endpoint.
+
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------

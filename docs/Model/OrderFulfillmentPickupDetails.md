@@ -1,5 +1,9 @@
 # OrderFulfillmentPickupDetails
 
+### Description
+
+Contains details necessary to fulfill a pickup order.
+
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------

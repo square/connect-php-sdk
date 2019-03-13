@@ -1,8 +1,15 @@
 # OrderLineItemTaxType
 
+### Description
+
+Indicates how the tax is applied to the associated line item or order.
+
 ## Properties
-Name | Getter | Setter | Type | Description | Notes
------------- | ------------- | ------------- | ------------- | ------------- | -------------
+Name | Type
+------------ | -------------
+**UNKNOWN_TAX** | string
+**ADDITIVE** | string
+**INCLUSIVE** | string
 
 Note: All properties are protected and only accessed via getters and setters.
 

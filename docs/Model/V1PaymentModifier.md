@@ -1,5 +1,9 @@
 # V1PaymentModifier
 
+### Description
+
+V1PaymentModifier
+
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------

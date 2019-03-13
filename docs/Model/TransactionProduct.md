@@ -1,8 +1,20 @@
 # TransactionProduct
 
+### Description
+
+Indicates the Square product used to process a transaction.
+
 ## Properties
-Name | Getter | Setter | Type | Description | Notes
------------- | ------------- | ------------- | ------------- | ------------- | -------------
+Name | Type
+------------ | -------------
+**REGISTER** | string
+**EXTERNAL_API** | string
+**BILLING** | string
+**APPOINTMENTS** | string
+**INVOICES** | string
+**ONLINE_STORE** | string
+**PAYROLL** | string
+**OTHER** | string
 
 Note: All properties are protected and only accessed via getters and setters.
 

@@ -1,8 +1,13 @@
 # OrderFulfillmentType
 
+### Description
+
+The type of fulfillment.
+
 ## Properties
-Name | Getter | Setter | Type | Description | Notes
------------- | ------------- | ------------- | ------------- | ------------- | -------------
+Name | Type
+------------ | -------------
+**PICKUP** | string
 
 Note: All properties are protected and only accessed via getters and setters.
 

@@ -1,8 +1,16 @@
 # TenderCardDetailsStatus
 
+### Description
+
+Indicates the card transaction's current status.
+
 ## Properties
-Name | Getter | Setter | Type | Description | Notes
------------- | ------------- | ------------- | ------------- | ------------- | -------------
+Name | Type
+------------ | -------------
+**AUTHORIZED** | string
+**CAPTURED** | string
+**VOIDED** | string
+**FAILED** | string
 
 Note: All properties are protected and only accessed via getters and setters.
 

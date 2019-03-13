@@ -1,10 +1,14 @@
 # V1Money
 
+### Description
+
+
+
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------
 **amount** | getAmount() | setAmount($value) | **int** | Amount in the lowest denominated value of this Currency. E.g. in USD these are cents, in JPY they are Yen (which do not have a &#39;cent&#39; concept). | [optional] 
-**currency_code** | getCurrencyCode() | setCurrencyCode($value) | **string** |  | [optional] 
+**currency_code** | getCurrencyCode() | setCurrencyCode($value) | **string** | See [Currency](#type-currency) for possible values | [optional] 
 
 Note: All properties are protected and only accessed via getters and setters.
 

@@ -1,5 +1,9 @@
 # V1InventoryEntry
 
+### Description
+
+V1InventoryEntry
+
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------

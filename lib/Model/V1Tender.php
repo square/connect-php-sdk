@@ -117,7 +117,7 @@ class V1Tender implements ArrayAccess
       */
     protected $id;
     /**
-      * $type The type of tender.
+      * $type The type of tender. See [V1TenderType](#type-v1tendertype) for possible values
       * @var string
       */
     protected $type;
@@ -137,7 +137,7 @@ class V1Tender implements ArrayAccess
       */
     protected $receipt_url;
     /**
-      * $card_brand The brand of credit card provided.
+      * $card_brand The brand of credit card provided. See [CardBrand](#type-cardbrand) for possible values
       * @var string
       */
     protected $card_brand;
@@ -147,7 +147,7 @@ class V1Tender implements ArrayAccess
       */
     protected $pan_suffix;
     /**
-      * $entry_method The tender's unique ID.
+      * $entry_method The tender's unique ID. See [V1TenderEntryMethod](#type-v1tenderentrymethod) for possible values
       * @var string
       */
     protected $entry_method;
@@ -311,7 +311,7 @@ class V1Tender implements ArrayAccess
   
     /**
      * Sets type
-     * @param string $type The type of tender.
+     * @param string $type The type of tender. See [V1TenderType](#type-v1tendertype) for possible values
      * @return $this
      */
     public function setType($type)
@@ -387,7 +387,7 @@ class V1Tender implements ArrayAccess
   
     /**
      * Sets card_brand
-     * @param string $card_brand The brand of credit card provided.
+     * @param string $card_brand The brand of credit card provided. See [CardBrand](#type-cardbrand) for possible values
      * @return $this
      */
     public function setCardBrand($card_brand)
@@ -425,7 +425,7 @@ class V1Tender implements ArrayAccess
   
     /**
      * Sets entry_method
-     * @param string $entry_method The tender's unique ID.
+     * @param string $entry_method The tender's unique ID. See [V1TenderEntryMethod](#type-v1tenderentrymethod) for possible values
      * @return $this
      */
     public function setEntryMethod($entry_method)

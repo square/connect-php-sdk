@@ -1,8 +1,14 @@
 # RegisterDomainResponseStatus
 
+### Description
+
+The status of domain registration.
+
 ## Properties
-Name | Getter | Setter | Type | Description | Notes
------------- | ------------- | ------------- | ------------- | ------------- | -------------
+Name | Type
+------------ | -------------
+**PENDING** | string
+**VERIFIED** | string
 
 Note: All properties are protected and only accessed via getters and setters.
 

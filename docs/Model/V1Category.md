@@ -1,5 +1,9 @@
 # V1Category
 
+### Description
+
+V1Category
+
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------

@@ -1,15 +1,19 @@
 # V1Item
 
+### Description
+
+V1Item
+
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------
 **id** | getId() | setId($value) | **string** | The item&#39;s ID. Must be unique among all entity IDs ever provided on behalf of the merchant. You can never reuse an ID. This value can include alphanumeric characters, dashes (-), and underscores (_). | [optional] 
 **name** | getName() | setName($value) | **string** | The item&#39;s name. | [optional] 
 **description** | getDescription() | setDescription($value) | **string** | The item&#39;s description. | [optional] 
-**type** | getType() | setType($value) | **string** | The item&#39;s type. This value is NORMAL for almost all items. | [optional] 
-**color** | getColor() | setColor($value) | **string** | The color of the discount&#39;s display label in Square Register, if not the default color. The default color is 9da2a6. | [optional] 
+**type** | getType() | setType($value) | **string** | The item&#39;s type. This value is NORMAL for almost all items. See [V1ItemType](#type-v1itemtype) for possible values | [optional] 
+**color** | getColor() | setColor($value) | **string** | The color of the discount&#39;s display label in Square Register, if not the default color. The default color is 9da2a6. See [V1ItemColor](#type-v1itemcolor) for possible values | [optional] 
 **abbreviation** | getAbbreviation() | setAbbreviation($value) | **string** | The text of the item&#39;s display label in Square Register. Only up to the first five characters of the string are used. | [optional] 
-**visibility** | getVisibility() | setVisibility($value) | **string** | Indicates whether the item is viewable from the merchant&#39;s online store (PUBLIC) or PRIVATE. | [optional] 
+**visibility** | getVisibility() | setVisibility($value) | **string** | Indicates whether the item is viewable from the merchant&#39;s online store (PUBLIC) or PRIVATE. See [V1ItemVisibility](#type-v1itemvisibility) for possible values | [optional] 
 **available_online** | getAvailableOnline() | setAvailableOnline($value) | **bool** | If true, the item can be added to shipping orders from the merchant&#39;s online store. | [optional] 
 **master_image** | getMasterImage() | setMasterImage($value) | [**\SquareConnect\Model\V1ItemImage**](V1ItemImage.md) | The item&#39;s master image, if any. | [optional] 
 **category** | getCategory() | setCategory($value) | [**\SquareConnect\Model\V1Category**](V1Category.md) | The category the item belongs to, if any. | [optional] 

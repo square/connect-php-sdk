@@ -1,5 +1,9 @@
 # V1PhoneNumber
 
+### Description
+
+Represents a phone number.
+
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------

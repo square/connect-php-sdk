@@ -1,8 +1,18 @@
 # OrderFulfillmentState
 
+### Description
+
+The state of the fulfillment.
+
 ## Properties
-Name | Getter | Setter | Type | Description | Notes
------------- | ------------- | ------------- | ------------- | ------------- | -------------
+Name | Type
+------------ | -------------
+**PROPOSED** | string
+**RESERVED** | string
+**PREPARED** | string
+**COMPLETED** | string
+**CANCELED** | string
+**FAILED** | string
 
 Note: All properties are protected and only accessed via getters and setters.
 

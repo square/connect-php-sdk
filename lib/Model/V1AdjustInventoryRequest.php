@@ -65,7 +65,7 @@ class V1AdjustInventoryRequest implements ArrayAccess
       */
     protected $quantity_delta;
     /**
-      * $adjustment_type The reason for the inventory adjustment.
+      * $adjustment_type The reason for the inventory adjustment. See [V1AdjustInventoryRequestAdjustmentType](#type-v1adjustinventoryrequestadjustmenttype) for possible values
       * @var string
       */
     protected $adjustment_type;
@@ -129,7 +129,7 @@ class V1AdjustInventoryRequest implements ArrayAccess
   
     /**
      * Sets adjustment_type
-     * @param string $adjustment_type The reason for the inventory adjustment.
+     * @param string $adjustment_type The reason for the inventory adjustment. See [V1AdjustInventoryRequestAdjustmentType](#type-v1adjustinventoryrequestadjustmenttype) for possible values
      * @return $this
      */
     public function setAdjustmentType($adjustment_type)

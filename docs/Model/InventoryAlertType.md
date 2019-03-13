@@ -1,8 +1,14 @@
 # InventoryAlertType
 
+### Description
+
+Indicates whether Square should alert the merchant when the inventory quantity of a [CatalogItemVariation](#type-catalogitemvariation) is low.
+
 ## Properties
-Name | Getter | Setter | Type | Description | Notes
------------- | ------------- | ------------- | ------------- | ------------- | -------------
+Name | Type
+------------ | -------------
+**NONE** | string
+**LOW_QUANTITY** | string
 
 Note: All properties are protected and only accessed via getters and setters.
 

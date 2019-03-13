@@ -1,5 +1,9 @@
 # UpdateCustomerResponse
 
+### Description
+
+Defines the fields that are included in the response body of a request to the [UpdateCustomer](#endpoint-updatecustomer) endpoint.  One of `errors` or `customer` is present in a given response (never both).
+
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------

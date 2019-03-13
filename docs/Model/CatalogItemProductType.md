@@ -1,8 +1,17 @@
 # CatalogItemProductType
 
+### Description
+
+The type of a [CatalogItem](#type-catalogitem). Connect V2 only allows the creation of `REGULAR` items.
+
 ## Properties
-Name | Getter | Setter | Type | Description | Notes
------------- | ------------- | ------------- | ------------- | ------------- | -------------
+Name | Type
+------------ | -------------
+**REGULAR** | string
+**GIFT_CARD** | string
+**APPOINTMENTS_SERVICE** | string
+**RETAIL_ITEM** | string
+**RESTAURANT_ITEM** | string
 
 Note: All properties are protected and only accessed via getters and setters.
 
