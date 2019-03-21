@@ -27,7 +27,7 @@ class V1CashDrawerShift implements ArrayAccess
         'id' => 'string',
         'event_type' => 'string',
         'opened_at' => 'string',
-        'ended_at' => 'bool',
+        'ended_at' => 'string',
         'closed_at' => 'string',
         'employee_ids' => 'string[]',
         'opening_employee_id' => 'string',
@@ -140,7 +140,7 @@ class V1CashDrawerShift implements ArrayAccess
     protected $opened_at;
     /**
       * $ended_at The time when the shift ended, in ISO 8601 format.
-      * @var bool
+      * @var string
       */
     protected $ended_at;
     /**
@@ -382,7 +382,7 @@ class V1CashDrawerShift implements ArrayAccess
     }
     /**
      * Gets ended_at
-     * @return bool
+     * @return string
      */
     public function getEndedAt()
     {
@@ -391,7 +391,7 @@ class V1CashDrawerShift implements ArrayAccess
   
     /**
      * Sets ended_at
-     * @param bool $ended_at The time when the shift ended, in ISO 8601 format.
+     * @param string $ended_at The time when the shift ended, in ISO 8601 format.
      * @return $this
      */
     public function setEndedAt($ended_at)

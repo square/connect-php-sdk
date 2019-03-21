@@ -822,12 +822,16 @@ class V1EmployeesApi
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
         $headerParams['Square-Version'] = "2019-03-13";
 
-        // query params
+        
+        
+        // path params
         if ($timecard_id !== null) {
-            $queryParams['timecard_id'] = $this->apiClient->getSerializer()->toQueryValue($timecard_id);
+            $resourcePath = str_replace(
+                "{" . "timecard_id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($timecard_id),
+                $resourcePath
+            );
         }
-        
-        
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 

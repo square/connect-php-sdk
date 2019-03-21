@@ -10,7 +10,7 @@ Name | Getter | Setter | Type | Description | Notes
 **id** | getId() | setId($value) | **string** | The shift&#39;s unique ID. | [optional] 
 **event_type** | getEventType() | setEventType($value) | **string** | The shift&#39;s current state. See [V1CashDrawerShiftEventType](#type-v1cashdrawershifteventtype) for possible values | [optional] 
 **opened_at** | getOpenedAt() | setOpenedAt($value) | **string** | The time when the shift began, in ISO 8601 format. | [optional] 
-**ended_at** | getEndedAt() | setEndedAt($value) | **bool** | The time when the shift ended, in ISO 8601 format. | [optional] 
+**ended_at** | getEndedAt() | setEndedAt($value) | **string** | The time when the shift ended, in ISO 8601 format. | [optional] 
 **closed_at** | getClosedAt() | setClosedAt($value) | **string** | The time when the shift was closed, in ISO 8601 format. | [optional] 
 **employee_ids** | getEmployeeIds() | setEmployeeIds($value) | **string[]** | The IDs of all employees that were logged into Square Register at some point during the cash drawer shift. | [optional] 
 **opening_employee_id** | getOpeningEmployeeId() | setOpeningEmployeeId($value) | **string** | The ID of the employee that started the cash drawer shift. | [optional] 
