@@ -24,7 +24,7 @@ class V1ListTimecardEventsRequest implements ArrayAccess
       * @var string[]
       */
     static $swaggerTypes = array(
-        'timecard_id' => 'string'
+        
     );
   
     /** 
@@ -32,7 +32,7 @@ class V1ListTimecardEventsRequest implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
-        'timecard_id' => 'timecard_id'
+        
     );
   
     /**
@@ -40,7 +40,7 @@ class V1ListTimecardEventsRequest implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
-        'timecard_id' => 'setTimecardId'
+        
     );
   
     /**
@@ -48,14 +48,9 @@ class V1ListTimecardEventsRequest implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
-        'timecard_id' => 'getTimecardId'
+        
     );
   
-    /**
-      * $timecard_id The ID of the timecard to list events for.
-      * @var string
-      */
-    protected $timecard_id;
 
     /**
      * Constructor
@@ -64,31 +59,7 @@ class V1ListTimecardEventsRequest implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            if (isset($data["timecard_id"])) {
-              $this->timecard_id = $data["timecard_id"];
-            } else {
-              $this->timecard_id = null;
-            }
         }
-    }
-    /**
-     * Gets timecard_id
-     * @return string
-     */
-    public function getTimecardId()
-    {
-        return $this->timecard_id;
-    }
-  
-    /**
-     * Sets timecard_id
-     * @param string $timecard_id The ID of the timecard to list events for.
-     * @return $this
-     */
-    public function setTimecardId($timecard_id)
-    {
-        $this->timecard_id = $timecard_id;
-        return $this;
     }
     /**
      * Returns true if offset exists. False otherwise.

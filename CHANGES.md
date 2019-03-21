@@ -1,5 +1,12 @@
 # Change Log
 
+## Version 2.20190313.1 (2019-03-21)
+
+### Bug Fix: Connect v1
+
+* Change `timecard_id` as path parameter for `ListTimecardEvents` endpoint
+* Change `ended_at` to string type for `V1CashDrawerShift` type
+
 ## Version 2.20190313.0 (2019-03-13)
 
 ## New API: Labor API
