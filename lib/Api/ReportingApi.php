@@ -116,7 +116,7 @@ class ReportingApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-03-13";
+        $headerParams['Square-Version'] = "2019-03-27";
 
         // query params
         if ($begin_time !== null) {
@@ -232,7 +232,7 @@ class ReportingApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-03-13";
+        $headerParams['Square-Version'] = "2019-03-27";
 
         // query params
         if ($begin_time !== null) {

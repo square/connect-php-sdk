@@ -65,12 +65,12 @@ class ListCustomersRequest implements ArrayAccess
       */
     protected $cursor;
     /**
-      * $sort_field Indicates how Customers should be sorted. Default: `DEFAULT`. See [CustomerSortField](#type-customersortfield) for possible values.
+      * $sort_field Indicates how Customers should be sorted. Default: `DEFAULT`. See [CustomerSortField](#type-customersortfield) for possible values
       * @var string
       */
     protected $sort_field;
     /**
-      * $sort_order Indicates whether Customers should be sorted in ascending (`ASC`) or descending (`DESC`) order. Default: `ASC`. See [SortOrder](#type-sortorder) for possible values.
+      * $sort_order Indicates whether Customers should be sorted in ascending (`ASC`) or descending (`DESC`) order. Default: `ASC`. See [SortOrder](#type-sortorder) for possible values
       * @var string
       */
     protected $sort_order;
@@ -129,7 +129,7 @@ class ListCustomersRequest implements ArrayAccess
   
     /**
      * Sets sort_field
-     * @param string $sort_field Indicates how Customers should be sorted. Default: `DEFAULT`. See [CustomerSortField](#type-customersortfield) for possible values.
+     * @param string $sort_field Indicates how Customers should be sorted. Default: `DEFAULT`. See [CustomerSortField](#type-customersortfield) for possible values
      * @return $this
      */
     public function setSortField($sort_field)
@@ -148,7 +148,7 @@ class ListCustomersRequest implements ArrayAccess
   
     /**
      * Sets sort_order
-     * @param string $sort_order Indicates whether Customers should be sorted in ascending (`ASC`) or descending (`DESC`) order. Default: `ASC`. See [SortOrder](#type-sortorder) for possible values.
+     * @param string $sort_order Indicates whether Customers should be sorted in ascending (`ASC`) or descending (`DESC`) order. Default: `ASC`. See [SortOrder](#type-sortorder) for possible values
      * @return $this
      */
     public function setSortOrder($sort_order)

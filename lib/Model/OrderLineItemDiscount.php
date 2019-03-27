@@ -86,7 +86,7 @@ class OrderLineItemDiscount implements ArrayAccess
       */
     protected $name;
     /**
-      * $type The type of the discount. If it is created by API, it would be either `FIXED_PERCENTAGE` or `FIXED_AMOUNT`.  VARIABLE_* is not supported in API because the order is created at the time of sale and either percentage or amount has to be specified.  See [OrderLineItemDiscountType](#type-orderlineitemdiscounttype) for possible values.
+      * $type The type of the discount. If it is created by API, it would be either `FIXED_PERCENTAGE` or `FIXED_AMOUNT`.  VARIABLE_* is not supported in API because the order is created at the time of sale and either percentage or amount has to be specified. See [OrderLineItemDiscountType](#type-orderlineitemdiscounttype) for possible values
       * @var string
       */
     protected $type;
@@ -106,7 +106,7 @@ class OrderLineItemDiscount implements ArrayAccess
       */
     protected $applied_money;
     /**
-      * $scope Indicates the level at which the discount applies. This field is set by the server. If set in a CreateOrder request, it will be ignored on write. See [OrderLineItemDiscountScope](#type-orderlineitemdiscountscope) for possible values.
+      * $scope Indicates the level at which the discount applies. This field is set by the server. If set in a CreateOrder request, it will be ignored on write. See [OrderLineItemDiscountScope](#type-orderlineitemdiscountscope) for possible values
       * @var string
       */
     protected $scope;
@@ -204,7 +204,7 @@ class OrderLineItemDiscount implements ArrayAccess
   
     /**
      * Sets type
-     * @param string $type The type of the discount. If it is created by API, it would be either `FIXED_PERCENTAGE` or `FIXED_AMOUNT`.  VARIABLE_* is not supported in API because the order is created at the time of sale and either percentage or amount has to be specified.  See [OrderLineItemDiscountType](#type-orderlineitemdiscounttype) for possible values.
+     * @param string $type The type of the discount. If it is created by API, it would be either `FIXED_PERCENTAGE` or `FIXED_AMOUNT`.  VARIABLE_* is not supported in API because the order is created at the time of sale and either percentage or amount has to be specified. See [OrderLineItemDiscountType](#type-orderlineitemdiscounttype) for possible values
      * @return $this
      */
     public function setType($type)
@@ -280,7 +280,7 @@ class OrderLineItemDiscount implements ArrayAccess
   
     /**
      * Sets scope
-     * @param string $scope Indicates the level at which the discount applies. This field is set by the server. If set in a CreateOrder request, it will be ignored on write. See [OrderLineItemDiscountScope](#type-orderlineitemdiscountscope) for possible values.
+     * @param string $scope Indicates the level at which the discount applies. This field is set by the server. If set in a CreateOrder request, it will be ignored on write. See [OrderLineItemDiscountScope](#type-orderlineitemdiscountscope) for possible values
      * @return $this
      */
     public function setScope($scope)

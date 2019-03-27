@@ -82,7 +82,7 @@ class ItemVariationLocationOverrides implements ArrayAccess
       */
     protected $price_money;
     /**
-      * $pricing_type The pricing type (fixed or variable) for the [CatalogItemVariation](#type-catalogitemvariation) at the given [location](#type-location). See [CatalogPricingType](#type-catalogpricingtype) for all possible values.
+      * $pricing_type The pricing type (fixed or variable) for the [CatalogItemVariation](#type-catalogitemvariation) at the given [location](#type-location). See [CatalogPricingType](#type-catalogpricingtype) for possible values
       * @var string
       */
     protected $pricing_type;
@@ -92,7 +92,7 @@ class ItemVariationLocationOverrides implements ArrayAccess
       */
     protected $track_inventory;
     /**
-      * $inventory_alert_type Indicates whether the [CatalogItemVariation](#type-catalogitemvariation) displays an alert when its inventory quantity is less than or equal to its `inventory_alert_threshold`. See [InventoryAlertType](#type-inventoryalerttype) for all possible values.
+      * $inventory_alert_type Indicates whether the [CatalogItemVariation](#type-catalogitemvariation) displays an alert when its inventory quantity is less than or equal to its `inventory_alert_threshold`. See [InventoryAlertType](#type-inventoryalerttype) for possible values
       * @var string
       */
     protected $inventory_alert_type;
@@ -190,7 +190,7 @@ class ItemVariationLocationOverrides implements ArrayAccess
   
     /**
      * Sets pricing_type
-     * @param string $pricing_type The pricing type (fixed or variable) for the [CatalogItemVariation](#type-catalogitemvariation) at the given [location](#type-location). See [CatalogPricingType](#type-catalogpricingtype) for all possible values.
+     * @param string $pricing_type The pricing type (fixed or variable) for the [CatalogItemVariation](#type-catalogitemvariation) at the given [location](#type-location). See [CatalogPricingType](#type-catalogpricingtype) for possible values
      * @return $this
      */
     public function setPricingType($pricing_type)
@@ -228,7 +228,7 @@ class ItemVariationLocationOverrides implements ArrayAccess
   
     /**
      * Sets inventory_alert_type
-     * @param string $inventory_alert_type Indicates whether the [CatalogItemVariation](#type-catalogitemvariation) displays an alert when its inventory quantity is less than or equal to its `inventory_alert_threshold`. See [InventoryAlertType](#type-inventoryalerttype) for all possible values.
+     * @param string $inventory_alert_type Indicates whether the [CatalogItemVariation](#type-catalogitemvariation) displays an alert when its inventory quantity is less than or equal to its `inventory_alert_threshold`. See [InventoryAlertType](#type-inventoryalerttype) for possible values
      * @return $this
      */
     public function setInventoryAlertType($inventory_alert_type)

@@ -118,7 +118,7 @@ class Transaction implements ArrayAccess
       */
     protected $reference_id;
     /**
-      * $product The Square product that processed the transaction.
+      * $product The Square product that processed the transaction. See [TransactionProduct](#type-transactionproduct) for possible values
       * @var string
       */
     protected $product;
@@ -322,7 +322,7 @@ class Transaction implements ArrayAccess
   
     /**
      * Sets product
-     * @param string $product The Square product that processed the transaction.
+     * @param string $product The Square product that processed the transaction. See [TransactionProduct](#type-transactionproduct) for possible values
      * @return $this
      */
     public function setProduct($product)

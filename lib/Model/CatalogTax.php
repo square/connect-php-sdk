@@ -77,12 +77,12 @@ class CatalogTax implements ArrayAccess
       */
     protected $name;
     /**
-      * $calculation_phase Whether the tax is calculated based on a payment's subtotal or total. See [TaxCalculationPhase](#type-taxcalculationphase) for all possible values.
+      * $calculation_phase Whether the tax is calculated based on a payment's subtotal or total. See [TaxCalculationPhase](#type-taxcalculationphase) for possible values
       * @var string
       */
     protected $calculation_phase;
     /**
-      * $inclusion_type Whether the tax is `ADDITIVE` or `INCLUSIVE`. See [TaxInclusionType](#type-taxinclusiontype) for all possible values.
+      * $inclusion_type Whether the tax is `ADDITIVE` or `INCLUSIVE`. See [TaxInclusionType](#type-taxinclusiontype) for possible values
       * @var string
       */
     protected $inclusion_type;
@@ -171,7 +171,7 @@ class CatalogTax implements ArrayAccess
   
     /**
      * Sets calculation_phase
-     * @param string $calculation_phase Whether the tax is calculated based on a payment's subtotal or total. See [TaxCalculationPhase](#type-taxcalculationphase) for all possible values.
+     * @param string $calculation_phase Whether the tax is calculated based on a payment's subtotal or total. See [TaxCalculationPhase](#type-taxcalculationphase) for possible values
      * @return $this
      */
     public function setCalculationPhase($calculation_phase)
@@ -190,7 +190,7 @@ class CatalogTax implements ArrayAccess
   
     /**
      * Sets inclusion_type
-     * @param string $inclusion_type Whether the tax is `ADDITIVE` or `INCLUSIVE`. See [TaxInclusionType](#type-taxinclusiontype) for all possible values.
+     * @param string $inclusion_type Whether the tax is `ADDITIVE` or `INCLUSIVE`. See [TaxInclusionType](#type-taxinclusiontype) for possible values
      * @return $this
      */
     public function setInclusionType($inclusion_type)

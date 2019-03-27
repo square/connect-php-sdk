@@ -19,7 +19,7 @@ Requirements
 Installing
 -----
 
-##### With Composer
+##### Option 1: With Composer
 
 The PHP SDK is available on Packagist. To add it to Composer, simply run:
 
@@ -40,13 +40,13 @@ And then install your composer dependencies with
 ```
 $ php composer.phar install
 ```
-##### From GitHub
+##### Option 2: From GitHub
 Clone this repository, or download the zip into your project's folder and then add the following line in your code:
 ```
 require('connect-php-sdk/autoload.php');
 ```
 *Note: you might have to change the path depending on your project's folder structure.*
-##### Without Command Line Access
+##### Option 3: Without Command Line Access
 If you cannot access the command line for your server, you can also install the SDK from github. Download the SDK from github with [this link](https://github.com/square/connect-php-sdk/archive/master.zip), unzip it and add the following line to your php files that will need to access the SDK:
 ```
 require('connect-php-sdk-master/autoload.php');
@@ -284,6 +284,7 @@ Class | Method | HTTP request | Description
  - [CatalogDiscount](docs/Model/CatalogDiscount.md)
  - [CatalogDiscountType](docs/Model/CatalogDiscountType.md)
  - [CatalogIdMapping](docs/Model/CatalogIdMapping.md)
+ - [CatalogImage](docs/Model/CatalogImage.md)
  - [CatalogInfoRequest](docs/Model/CatalogInfoRequest.md)
  - [CatalogInfoResponse](docs/Model/CatalogInfoResponse.md)
  - [CatalogInfoResponseLimits](docs/Model/CatalogInfoResponseLimits.md)

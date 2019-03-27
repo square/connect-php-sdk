@@ -127,7 +127,7 @@ class OrderFulfillmentPickupDetails implements ArrayAccess
       */
     protected $auto_complete_duration;
     /**
-      * $schedule_type The schedule type of the pickup fulfillment. Defaults to `SCHEDULED`.
+      * $schedule_type The schedule type of the pickup fulfillment. Defaults to `SCHEDULED`. See [OrderFulfillmentPickupDetailsScheduleType](#type-orderfulfillmentpickupdetailsscheduletype) for possible values
       * @var string
       */
     protected $schedule_type;
@@ -349,7 +349,7 @@ class OrderFulfillmentPickupDetails implements ArrayAccess
   
     /**
      * Sets schedule_type
-     * @param string $schedule_type The schedule type of the pickup fulfillment. Defaults to `SCHEDULED`.
+     * @param string $schedule_type The schedule type of the pickup fulfillment. Defaults to `SCHEDULED`. See [OrderFulfillmentPickupDetailsScheduleType](#type-orderfulfillmentpickupdetailsscheduletype) for possible values
      * @return $this
      */
     public function setScheduleType($schedule_type)

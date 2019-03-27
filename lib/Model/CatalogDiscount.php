@@ -77,7 +77,7 @@ class CatalogDiscount implements ArrayAccess
       */
     protected $name;
     /**
-      * $discount_type Indicates whether the discount is a fixed amount or percentage, or entered at the time of sale. See [CatalogDiscountType](#type-catalogdiscounttype) for all possible values.
+      * $discount_type Indicates whether the discount is a fixed amount or percentage, or entered at the time of sale. See [CatalogDiscountType](#type-catalogdiscounttype) for possible values
       * @var string
       */
     protected $discount_type;
@@ -171,7 +171,7 @@ class CatalogDiscount implements ArrayAccess
   
     /**
      * Sets discount_type
-     * @param string $discount_type Indicates whether the discount is a fixed amount or percentage, or entered at the time of sale. See [CatalogDiscountType](#type-catalogdiscounttype) for all possible values.
+     * @param string $discount_type Indicates whether the discount is a fixed amount or percentage, or entered at the time of sale. See [CatalogDiscountType](#type-catalogdiscounttype) for possible values
      * @return $this
      */
     public function setDiscountType($discount_type)

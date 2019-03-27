@@ -196,7 +196,7 @@ class Customer implements ArrayAccess
       */
     protected $groups;
     /**
-      * $creation_source A creation source represents the method used to create the customer profile.
+      * $creation_source A creation source represents the method used to create the customer profile. See [CustomerCreationSource](#type-customercreationsource) for possible values
       * @var string
       */
     protected $creation_source;
@@ -610,7 +610,7 @@ class Customer implements ArrayAccess
   
     /**
      * Sets creation_source
-     * @param string $creation_source A creation source represents the method used to create the customer profile.
+     * @param string $creation_source A creation source represents the method used to create the customer profile. See [CustomerCreationSource](#type-customercreationsource) for possible values
      * @return $this
      */
     public function setCreationSource($creation_source)

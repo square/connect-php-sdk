@@ -8,7 +8,7 @@ Represents an amount of money.  __Important:__ Unlike version 1 of the Connect A
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------
 **amount** | getAmount() | setAmount($value) | **int** | The amount of money, in the smallest denomination of the currency indicated by &#x60;currency&#x60;. For example, when &#x60;currency&#x60; is &#x60;USD&#x60;, &#x60;amount&#x60; is in cents. | [optional] 
-**currency** | getCurrency() | setCurrency($value) | **string** | The type of currency, in __ISO 4217 format__. For example, the currency code for US dollars is &#x60;USD&#x60;.  See [Currency](#type-currency) for possible values. | [optional] 
+**currency** | getCurrency() | setCurrency($value) | **string** | The type of currency, in __ISO 4217 format__. For example, the currency code for US dollars is &#x60;USD&#x60;. See [Currency](#type-currency) for possible values | [optional] 
 
 Note: All properties are protected and only accessed via getters and setters.
 

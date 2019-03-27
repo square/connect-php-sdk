@@ -77,7 +77,7 @@ class WorkweekConfig implements ArrayAccess
       */
     protected $id;
     /**
-      * $start_of_week The day of the week on which a business week cuts over for compensation purposes.
+      * $start_of_week The day of the week on which a business week cuts over for compensation purposes. See [Weekday](#type-weekday) for possible values
       * @var string
       */
     protected $start_of_week;
@@ -171,7 +171,7 @@ class WorkweekConfig implements ArrayAccess
   
     /**
      * Sets start_of_week
-     * @param string $start_of_week The day of the week on which a business week cuts over for compensation purposes.
+     * @param string $start_of_week The day of the week on which a business week cuts over for compensation purposes. See [Weekday](#type-weekday) for possible values
      * @return $this
      */
     public function setStartOfWeek($start_of_week)

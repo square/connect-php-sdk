@@ -65,7 +65,7 @@ class CatalogModifierList implements ArrayAccess
       */
     protected $name;
     /**
-      * $selection_type Indicates whether multiple options from the [CatalogModifierList](#type-catalogmodifierlist) can be applied to a single [CatalogItem](#type-catalogitem). See [CatalogModifierListSelectionType](#type-catalogmodifierlistselectiontype) for all possible values.
+      * $selection_type Indicates whether multiple options from the [CatalogModifierList](#type-catalogmodifierlist) can be applied to a single [CatalogItem](#type-catalogitem). See [CatalogModifierListSelectionType](#type-catalogmodifierlistselectiontype) for possible values
       * @var string
       */
     protected $selection_type;
@@ -129,7 +129,7 @@ class CatalogModifierList implements ArrayAccess
   
     /**
      * Sets selection_type
-     * @param string $selection_type Indicates whether multiple options from the [CatalogModifierList](#type-catalogmodifierlist) can be applied to a single [CatalogItem](#type-catalogitem). See [CatalogModifierListSelectionType](#type-catalogmodifierlistselectiontype) for all possible values.
+     * @param string $selection_type Indicates whether multiple options from the [CatalogModifierList](#type-catalogmodifierlist) can be applied to a single [CatalogItem](#type-catalogitem). See [CatalogModifierListSelectionType](#type-catalogmodifierlistselectiontype) for possible values
      * @return $this
      */
     public function setSelectionType($selection_type)

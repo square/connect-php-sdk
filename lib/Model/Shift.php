@@ -136,7 +136,7 @@ class Shift implements ArrayAccess
       */
     protected $breaks;
     /**
-      * $status Describes working state of the current `Shift`.
+      * $status Describes working state of the current `Shift`. See [ShiftStatus](#type-shiftstatus) for possible values
       * @var string
       */
     protected $status;
@@ -388,7 +388,7 @@ class Shift implements ArrayAccess
   
     /**
      * Sets status
-     * @param string $status Describes working state of the current `Shift`.
+     * @param string $status Describes working state of the current `Shift`. See [ShiftStatus](#type-shiftstatus) for possible values
      * @return $this
      */
     public function setStatus($status)

@@ -81,12 +81,12 @@ class ObtainTokenRequest implements ArrayAccess
       */
     protected $client_id;
     /**
-      * $client_secret The Square-issued application secret for your application,  available from the [application dashboard](https://connect.squareup.com/apps).
+      * $client_secret The Square-issued application secret for your application, available from the [application dashboard](https://connect.squareup.com/apps).
       * @var string
       */
     protected $client_secret;
     /**
-      * $code The authorization code to exchange.  This is required if `grant_type` is set to `authorization_code`, to indicate that  the application wants to exchange an authorization code for an OAuth access token.
+      * $code The authorization code to exchange. This is required if `grant_type` is set to `authorization_code`, to indicate that the application wants to exchange an authorization code for an OAuth access token.
       * @var string
       */
     protected $code;
@@ -96,17 +96,17 @@ class ObtainTokenRequest implements ArrayAccess
       */
     protected $redirect_uri;
     /**
-      * $grant_type Specifies the method to request an OAuth access token.  Valid values are: `authorization_code`, `refresh_token`, and `migration_token`
+      * $grant_type Specifies the method to request an OAuth access token. Valid values are: `authorization_code`, `refresh_token`, and `migration_token`
       * @var string
       */
     protected $grant_type;
     /**
-      * $refresh_token A valid refresh token for generating a new OAuth access token.  A valid refresh token is required if `grant_type` is set to `refresh_token` ,   to indicate the application wants a replacement for an expired OAuth access token.
+      * $refresh_token A valid refresh token for generating a new OAuth access token. A valid refresh token is required if `grant_type` is set to `refresh_token` , to indicate the application wants a replacement for an expired OAuth access token.
       * @var string
       */
     protected $refresh_token;
     /**
-      * $migration_token Legacy OAuth access token obtained using a Connect API version prior  to 2019-03-13. This parameter is required if `grant_type` is set to  `migration_token` to indicate that the application wants to get a replacement   OAuth access token. The response also returns a refresh token.  For more information, see [Migrate to Using Refresh Tokens](/authz/oauth/migration).
+      * $migration_token Legacy OAuth access token obtained using a Connect API version prior to 2019-03-13. This parameter is required if `grant_type` is set to `migration_token` to indicate that the application wants to get a replacement OAuth access token. The response also returns a refresh token. For more information, see [Migrate to Using Refresh Tokens](/authz/oauth/migration).
       * @var string
       */
     protected $migration_token;
@@ -185,7 +185,7 @@ class ObtainTokenRequest implements ArrayAccess
   
     /**
      * Sets client_secret
-     * @param string $client_secret The Square-issued application secret for your application,  available from the [application dashboard](https://connect.squareup.com/apps).
+     * @param string $client_secret The Square-issued application secret for your application, available from the [application dashboard](https://connect.squareup.com/apps).
      * @return $this
      */
     public function setClientSecret($client_secret)
@@ -204,7 +204,7 @@ class ObtainTokenRequest implements ArrayAccess
   
     /**
      * Sets code
-     * @param string $code The authorization code to exchange.  This is required if `grant_type` is set to `authorization_code`, to indicate that  the application wants to exchange an authorization code for an OAuth access token.
+     * @param string $code The authorization code to exchange. This is required if `grant_type` is set to `authorization_code`, to indicate that the application wants to exchange an authorization code for an OAuth access token.
      * @return $this
      */
     public function setCode($code)
@@ -242,7 +242,7 @@ class ObtainTokenRequest implements ArrayAccess
   
     /**
      * Sets grant_type
-     * @param string $grant_type Specifies the method to request an OAuth access token.  Valid values are: `authorization_code`, `refresh_token`, and `migration_token`
+     * @param string $grant_type Specifies the method to request an OAuth access token. Valid values are: `authorization_code`, `refresh_token`, and `migration_token`
      * @return $this
      */
     public function setGrantType($grant_type)
@@ -261,7 +261,7 @@ class ObtainTokenRequest implements ArrayAccess
   
     /**
      * Sets refresh_token
-     * @param string $refresh_token A valid refresh token for generating a new OAuth access token.  A valid refresh token is required if `grant_type` is set to `refresh_token` ,   to indicate the application wants a replacement for an expired OAuth access token.
+     * @param string $refresh_token A valid refresh token for generating a new OAuth access token. A valid refresh token is required if `grant_type` is set to `refresh_token` , to indicate the application wants a replacement for an expired OAuth access token.
      * @return $this
      */
     public function setRefreshToken($refresh_token)
@@ -280,7 +280,7 @@ class ObtainTokenRequest implements ArrayAccess
   
     /**
      * Sets migration_token
-     * @param string $migration_token Legacy OAuth access token obtained using a Connect API version prior  to 2019-03-13. This parameter is required if `grant_type` is set to  `migration_token` to indicate that the application wants to get a replacement   OAuth access token. The response also returns a refresh token.  For more information, see [Migrate to Using Refresh Tokens](/authz/oauth/migration).
+     * @param string $migration_token Legacy OAuth access token obtained using a Connect API version prior to 2019-03-13. This parameter is required if `grant_type` is set to `migration_token` to indicate that the application wants to get a replacement OAuth access token. The response also returns a refresh token. For more information, see [Migrate to Using Refresh Tokens](/authz/oauth/migration).
      * @return $this
      */
     public function setMigrationToken($migration_token)

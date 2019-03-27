@@ -11,7 +11,7 @@ Name | Getter | Setter | Type | Description | Notes
 **first_name** | getFirstName() | setFirstName($value) | **string** | Given (first) name of the employee. | [optional] 
 **last_name** | getLastName() | setLastName($value) | **string** | Family (last) name of the employee | [optional] 
 **location_ids** | getLocationIds() | setLocationIds($value) | **string[]** | A list of location IDs where this employee has access. | [optional] 
-**status** | getStatus() | setStatus($value) | **string** | Specifies the status of the employee being fetched. | [optional] 
+**status** | getStatus() | setStatus($value) | **string** | Specifies the status of the employee being fetched. See [EmployeeStatus](#type-employeestatus) for possible values | [optional] 
 **created_at** | getCreatedAt() | setCreatedAt($value) | **string** | A read-only timestamp in RFC 3339 format. | [optional] 
 **updated_at** | getUpdatedAt() | setUpdatedAt($value) | **string** | A read-only timestamp in RFC 3339 format. | [optional] 
 

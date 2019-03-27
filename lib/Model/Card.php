@@ -85,7 +85,7 @@ class Card implements ArrayAccess
       */
     protected $id;
     /**
-      * $card_brand The card's brand (such as `VISA`). See [CardBrand](#type-cardbrand) for all possible values.
+      * $card_brand The card's brand (such as `VISA`). See [CardBrand](#type-cardbrand) for possible values
       * @var string
       */
     protected $card_brand;
@@ -199,7 +199,7 @@ class Card implements ArrayAccess
   
     /**
      * Sets card_brand
-     * @param string $card_brand The card's brand (such as `VISA`). See [CardBrand](#type-cardbrand) for all possible values.
+     * @param string $card_brand The card's brand (such as `VISA`). See [CardBrand](#type-cardbrand) for possible values
      * @return $this
      */
     public function setCardBrand($card_brand)

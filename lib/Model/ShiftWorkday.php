@@ -65,7 +65,7 @@ class ShiftWorkday implements ArrayAccess
       */
     protected $date_range;
     /**
-      * $match_shifts_by The strategy on which the dates are applied.
+      * $match_shifts_by The strategy on which the dates are applied. See [ShiftWorkdayMatcher](#type-shiftworkdaymatcher) for possible values
       * @var string
       */
     protected $match_shifts_by;
@@ -129,7 +129,7 @@ class ShiftWorkday implements ArrayAccess
   
     /**
      * Sets match_shifts_by
-     * @param string $match_shifts_by The strategy on which the dates are applied.
+     * @param string $match_shifts_by The strategy on which the dates are applied. See [ShiftWorkdayMatcher](#type-shiftworkdaymatcher) for possible values
      * @return $this
      */
     public function setMatchShiftsBy($match_shifts_by)

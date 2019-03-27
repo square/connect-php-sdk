@@ -145,7 +145,7 @@ class Tender implements ArrayAccess
       */
     protected $customer_id;
     /**
-      * $type The type of tender, such as `CARD` or `CASH`.
+      * $type The type of tender, such as `CARD` or `CASH`. See [TenderType](#type-tendertype) for possible values
       * @var string
       */
     protected $type;
@@ -421,7 +421,7 @@ class Tender implements ArrayAccess
   
     /**
      * Sets type
-     * @param string $type The type of tender, such as `CARD` or `CASH`.
+     * @param string $type The type of tender, such as `CARD` or `CASH`. See [TenderType](#type-tendertype) for possible values
      * @return $this
      */
     public function setType($type)

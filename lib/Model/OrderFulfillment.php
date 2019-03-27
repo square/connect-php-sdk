@@ -60,12 +60,12 @@ class OrderFulfillment implements ArrayAccess
     );
   
     /**
-      * $type The type of the fulfillment.
+      * $type The type of the fulfillment. See [OrderFulfillmentType](#type-orderfulfillmenttype) for possible values
       * @var string
       */
     protected $type;
     /**
-      * $state The state of the fulfillment.
+      * $state The state of the fulfillment. See [OrderFulfillmentState](#type-orderfulfillmentstate) for possible values
       * @var string
       */
     protected $state;
@@ -110,7 +110,7 @@ class OrderFulfillment implements ArrayAccess
   
     /**
      * Sets type
-     * @param string $type The type of the fulfillment.
+     * @param string $type The type of the fulfillment. See [OrderFulfillmentType](#type-orderfulfillmenttype) for possible values
      * @return $this
      */
     public function setType($type)
@@ -129,7 +129,7 @@ class OrderFulfillment implements ArrayAccess
   
     /**
      * Sets state
-     * @param string $state The state of the fulfillment.
+     * @param string $state The state of the fulfillment. See [OrderFulfillmentState](#type-orderfulfillmentstate) for possible values
      * @return $this
      */
     public function setState($state)

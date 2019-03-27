@@ -1,5 +1,12 @@
 # Change Log
 
+## Version 2.20190327.0 (2019-03-27)
+
+## New features: Catalog API
+* Deprecated `image_url` field in `CatalogItem` in favor of a richer
+  `CatalogImage` data type.
+* Image information is now set, and returned, at the `CatalogObject` level.
+
 ## Version 2.20190313.1 (2019-03-21)
 
 ### Bug Fix: Connect v1

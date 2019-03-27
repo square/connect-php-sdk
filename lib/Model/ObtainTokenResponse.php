@@ -100,7 +100,7 @@ class ObtainTokenResponse implements ArrayAccess
       */
     protected $merchant_id;
     /**
-      * $subscription_id __Legacy field__. The ID of a subscription plan the merchant signed up for. Only present if  the merchant signed up for a subscription during authorization.
+      * $subscription_id __Legacy field__. The ID of a subscription plan the merchant signed up for. Only present if the merchant signed up for a subscription during authorization.
       * @var string
       */
     protected $subscription_id;
@@ -115,7 +115,7 @@ class ObtainTokenResponse implements ArrayAccess
       */
     protected $id_token;
     /**
-      * $refresh_token A refresh token.  For more information, see [OAuth access token management](/authz/oauth/how-it-works#oauth-access-token-management).
+      * $refresh_token A refresh token. For more information, see [OAuth access token management](/authz/oauth/how-it-works#oauth-access-token-management).
       * @var string
       */
     protected $refresh_token;
@@ -256,7 +256,7 @@ class ObtainTokenResponse implements ArrayAccess
   
     /**
      * Sets subscription_id
-     * @param string $subscription_id __Legacy field__. The ID of a subscription plan the merchant signed up for. Only present if  the merchant signed up for a subscription during authorization.
+     * @param string $subscription_id __Legacy field__. The ID of a subscription plan the merchant signed up for. Only present if the merchant signed up for a subscription during authorization.
      * @return $this
      */
     public function setSubscriptionId($subscription_id)
@@ -313,7 +313,7 @@ class ObtainTokenResponse implements ArrayAccess
   
     /**
      * Sets refresh_token
-     * @param string $refresh_token A refresh token.  For more information, see [OAuth access token management](/authz/oauth/how-it-works#oauth-access-token-management).
+     * @param string $refresh_token A refresh token. For more information, see [OAuth access token management](/authz/oauth/how-it-works#oauth-access-token-management).
      * @return $this
      */
     public function setRefreshToken($refresh_token)

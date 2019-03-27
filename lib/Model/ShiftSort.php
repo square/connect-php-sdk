@@ -56,12 +56,12 @@ class ShiftSort implements ArrayAccess
     );
   
     /**
-      * $field The field to sort on.
+      * $field The field to sort on. See [ShiftSortField](#type-shiftsortfield) for possible values
       * @var string
       */
     protected $field;
     /**
-      * $order The order in which results are returned. Defaults to DESC.
+      * $order The order in which results are returned. Defaults to DESC. See [SortOrder](#type-sortorder) for possible values
       * @var string
       */
     protected $order;
@@ -96,7 +96,7 @@ class ShiftSort implements ArrayAccess
   
     /**
      * Sets field
-     * @param string $field The field to sort on.
+     * @param string $field The field to sort on. See [ShiftSortField](#type-shiftsortfield) for possible values
      * @return $this
      */
     public function setField($field)
@@ -115,7 +115,7 @@ class ShiftSort implements ArrayAccess
   
     /**
      * Sets order
-     * @param string $order The order in which results are returned. Defaults to DESC.
+     * @param string $order The order in which results are returned. Defaults to DESC. See [SortOrder](#type-sortorder) for possible values
      * @return $this
      */
     public function setOrder($order)

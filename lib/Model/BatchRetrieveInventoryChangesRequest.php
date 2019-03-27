@@ -86,12 +86,12 @@ class BatchRetrieveInventoryChangesRequest implements ArrayAccess
       */
     protected $location_ids;
     /**
-      * $types Filters results by [InventoryChangeType](#type-inventorychangetype). Default: [`PHYSICAL_COUNT`, `ADJUSTMENT`]. `TRANSFER` is not supported as a filter.
+      * $types Filters results by [InventoryChangeType](#type-inventorychangetype). Default: [`PHYSICAL_COUNT`, `ADJUSTMENT`]. `TRANSFER` is not supported as a filter. See [InventoryChangeType](#type-inventorychangetype) for possible values
       * @var string[]
       */
     protected $types;
     /**
-      * $states Filters `ADJUSTMENT` query results by [InventoryState](#type-inventorystate). Only applied when set. Default: unset.
+      * $states Filters `ADJUSTMENT` query results by [InventoryState](#type-inventorystate). Only applied when set. Default: unset. See [InventoryState](#type-inventorystate) for possible values
       * @var string[]
       */
     protected $states;
@@ -204,7 +204,7 @@ class BatchRetrieveInventoryChangesRequest implements ArrayAccess
   
     /**
      * Sets types
-     * @param string[] $types Filters results by [InventoryChangeType](#type-inventorychangetype). Default: [`PHYSICAL_COUNT`, `ADJUSTMENT`]. `TRANSFER` is not supported as a filter.
+     * @param string[] $types Filters results by [InventoryChangeType](#type-inventorychangetype). Default: [`PHYSICAL_COUNT`, `ADJUSTMENT`]. `TRANSFER` is not supported as a filter. See [InventoryChangeType](#type-inventorychangetype) for possible values
      * @return $this
      */
     public function setTypes($types)
@@ -223,7 +223,7 @@ class BatchRetrieveInventoryChangesRequest implements ArrayAccess
   
     /**
      * Sets states
-     * @param string[] $states Filters `ADJUSTMENT` query results by [InventoryState](#type-inventorystate). Only applied when set. Default: unset.
+     * @param string[] $states Filters `ADJUSTMENT` query results by [InventoryState](#type-inventorystate). Only applied when set. Default: unset. See [InventoryState](#type-inventorystate) for possible values
      * @return $this
      */
     public function setStates($states)
