@@ -82,7 +82,7 @@ class OrderLineItemTax implements ArrayAccess
       */
     protected $name;
     /**
-      * $type Indicates the calculation method used to apply the tax.  See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values.
+      * $type Indicates the calculation method used to apply the tax. See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values
       * @var string
       */
     protected $type;
@@ -97,7 +97,7 @@ class OrderLineItemTax implements ArrayAccess
       */
     protected $applied_money;
     /**
-      * $scope Indicates the level at which the tax applies. This field is set by the server. If set in a CreateOrder request, it will be ignored on write. See [OrderLineItemTaxScope](#type-orderlineitemtaxscope) for possible values.
+      * $scope Indicates the level at which the tax applies. This field is set by the server. If set in a CreateOrder request, it will be ignored on write. See [OrderLineItemTaxScope](#type-orderlineitemtaxscope) for possible values
       * @var string
       */
     protected $scope;
@@ -190,7 +190,7 @@ class OrderLineItemTax implements ArrayAccess
   
     /**
      * Sets type
-     * @param string $type Indicates the calculation method used to apply the tax.  See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values.
+     * @param string $type Indicates the calculation method used to apply the tax. See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values
      * @return $this
      */
     public function setType($type)
@@ -247,7 +247,7 @@ class OrderLineItemTax implements ArrayAccess
   
     /**
      * Sets scope
-     * @param string $scope Indicates the level at which the tax applies. This field is set by the server. If set in a CreateOrder request, it will be ignored on write. See [OrderLineItemTaxScope](#type-orderlineitemtaxscope) for possible values.
+     * @param string $scope Indicates the level at which the tax applies. This field is set by the server. If set in a CreateOrder request, it will be ignored on write. See [OrderLineItemTaxScope](#type-orderlineitemtaxscope) for possible values
      * @return $this
      */
     public function setScope($scope)

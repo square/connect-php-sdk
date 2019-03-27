@@ -39,7 +39,8 @@ class CatalogObject implements ArrayAccess
         'tax_data' => '\SquareConnect\Model\CatalogTax',
         'discount_data' => '\SquareConnect\Model\CatalogDiscount',
         'modifier_list_data' => '\SquareConnect\Model\CatalogModifierList',
-        'modifier_data' => '\SquareConnect\Model\CatalogModifier'
+        'modifier_data' => '\SquareConnect\Model\CatalogModifier',
+        'image_data' => '\SquareConnect\Model\CatalogImage'
     );
   
     /** 
@@ -62,7 +63,8 @@ class CatalogObject implements ArrayAccess
         'tax_data' => 'tax_data',
         'discount_data' => 'discount_data',
         'modifier_list_data' => 'modifier_list_data',
-        'modifier_data' => 'modifier_data'
+        'modifier_data' => 'modifier_data',
+        'image_data' => 'image_data'
     );
   
     /**
@@ -85,7 +87,8 @@ class CatalogObject implements ArrayAccess
         'tax_data' => 'setTaxData',
         'discount_data' => 'setDiscountData',
         'modifier_list_data' => 'setModifierListData',
-        'modifier_data' => 'setModifierData'
+        'modifier_data' => 'setModifierData',
+        'image_data' => 'setImageData'
     );
   
     /**
@@ -108,11 +111,12 @@ class CatalogObject implements ArrayAccess
         'tax_data' => 'getTaxData',
         'discount_data' => 'getDiscountData',
         'modifier_list_data' => 'getModifierListData',
-        'modifier_data' => 'getModifierData'
+        'modifier_data' => 'getModifierData',
+        'image_data' => 'getImageData'
     );
   
     /**
-      * $type The type of this object. Each object type has expected properties expressed in a structured format within its corresponding `*_data` field below.  See [CatalogObjectType](#type-catalogobjecttype) for all possible values.
+      * $type The type of this object. Each object type has expected properties expressed in a structured format within its corresponding `*_data` field below. See [CatalogObjectType](#type-catalogobjecttype) for possible values
       * @var string
       */
     protected $type;
@@ -191,6 +195,11 @@ class CatalogObject implements ArrayAccess
       * @var \SquareConnect\Model\CatalogModifier
       */
     protected $modifier_data;
+    /**
+      * $image_data Structured data for a [CatalogImage](#type-catalogimage), set for CatalogObjects of type `IMAGE`.
+      * @var \SquareConnect\Model\CatalogImage
+      */
+    protected $image_data;
 
     /**
      * Constructor
@@ -279,6 +288,11 @@ class CatalogObject implements ArrayAccess
             } else {
               $this->modifier_data = null;
             }
+            if (isset($data["image_data"])) {
+              $this->image_data = $data["image_data"];
+            } else {
+              $this->image_data = null;
+            }
         }
     }
     /**
@@ -292,7 +306,7 @@ class CatalogObject implements ArrayAccess
   
     /**
      * Sets type
-     * @param string $type The type of this object. Each object type has expected properties expressed in a structured format within its corresponding `*_data` field below.  See [CatalogObjectType](#type-catalogobjecttype) for all possible values.
+     * @param string $type The type of this object. Each object type has expected properties expressed in a structured format within its corresponding `*_data` field below. See [CatalogObjectType](#type-catalogobjecttype) for possible values
      * @return $this
      */
     public function setType($type)
@@ -583,6 +597,25 @@ class CatalogObject implements ArrayAccess
     public function setModifierData($modifier_data)
     {
         $this->modifier_data = $modifier_data;
+        return $this;
+    }
+    /**
+     * Gets image_data
+     * @return \SquareConnect\Model\CatalogImage
+     */
+    public function getImageData()
+    {
+        return $this->image_data;
+    }
+  
+    /**
+     * Sets image_data
+     * @param \SquareConnect\Model\CatalogImage $image_data Structured data for a [CatalogImage](#type-catalogimage), set for CatalogObjects of type `IMAGE`.
+     * @return $this
+     */
+    public function setImageData($image_data)
+    {
+        $this->image_data = $image_data;
         return $this;
     }
     /**

@@ -154,7 +154,7 @@ class CatalogItem implements ArrayAccess
       */
     protected $modifier_list_info;
     /**
-      * $image_url The URL of an image representing this item.
+      * $image_url __Deprecated__. The URL of an image representing this item. Deprecated in favor of `image_data` in [`CatalogObject`](#type-catalogobject).
       * @var string
       */
     protected $image_url;
@@ -164,7 +164,7 @@ class CatalogItem implements ArrayAccess
       */
     protected $variations;
     /**
-      * $product_type The product type of the item. May not be changed once an item has been created.  Only items of product type `REGULAR` may be created by this API; items with other product types are read-only. See [CatalogItemProductType](#type-catalogitemproducttype) for all possible values.
+      * $product_type The product type of the item. May not be changed once an item has been created.  Only items of product type `REGULAR` may be created by this API; items with other product types are read-only. See [CatalogItemProductType](#type-catalogitemproducttype) for possible values
       * @var string
       */
     protected $product_type;
@@ -454,7 +454,7 @@ class CatalogItem implements ArrayAccess
   
     /**
      * Sets image_url
-     * @param string $image_url The URL of an image representing this item.
+     * @param string $image_url __Deprecated__. The URL of an image representing this item. Deprecated in favor of `image_data` in [`CatalogObject`](#type-catalogobject).
      * @return $this
      */
     public function setImageUrl($image_url)
@@ -492,7 +492,7 @@ class CatalogItem implements ArrayAccess
   
     /**
      * Sets product_type
-     * @param string $product_type The product type of the item. May not be changed once an item has been created.  Only items of product type `REGULAR` may be created by this API; items with other product types are read-only. See [CatalogItemProductType](#type-catalogitemproducttype) for all possible values.
+     * @param string $product_type The product type of the item. May not be changed once an item has been created.  Only items of product type `REGULAR` may be created by this API; items with other product types are read-only. See [CatalogItemProductType](#type-catalogitemproducttype) for possible values
      * @return $this
      */
     public function setProductType($product_type)

@@ -106,7 +106,7 @@ class InventoryTransfer implements ArrayAccess
       */
     protected $reference_id;
     /**
-      * $state The [InventoryState](#type-inventorystate) for the quantity of items being transfered.
+      * $state The [InventoryState](#type-inventorystate) for the quantity of items being transfered. See [InventoryState](#type-inventorystate) for possible values
       * @var string
       */
     protected $state;
@@ -274,7 +274,7 @@ class InventoryTransfer implements ArrayAccess
   
     /**
      * Sets state
-     * @param string $state The [InventoryState](#type-inventorystate) for the quantity of items being transfered.
+     * @param string $state The [InventoryState](#type-inventorystate) for the quantity of items being transfered. See [InventoryState](#type-inventorystate) for possible values
      * @return $this
      */
     public function setState($state)

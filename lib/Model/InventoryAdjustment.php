@@ -126,12 +126,12 @@ class InventoryAdjustment implements ArrayAccess
       */
     protected $reference_id;
     /**
-      * $from_state The [InventoryState](#type-inventorystate) of the related quantity of items before the adjustment.
+      * $from_state The [InventoryState](#type-inventorystate) of the related quantity of items before the adjustment. See [InventoryState](#type-inventorystate) for possible values
       * @var string
       */
     protected $from_state;
     /**
-      * $to_state The [InventoryState](#type-inventorystate) of the related quantity of items after the adjustment.
+      * $to_state The [InventoryState](#type-inventorystate) of the related quantity of items after the adjustment. See [InventoryState](#type-inventorystate) for possible values
       * @var string
       */
     protected $to_state;
@@ -344,7 +344,7 @@ class InventoryAdjustment implements ArrayAccess
   
     /**
      * Sets from_state
-     * @param string $from_state The [InventoryState](#type-inventorystate) of the related quantity of items before the adjustment.
+     * @param string $from_state The [InventoryState](#type-inventorystate) of the related quantity of items before the adjustment. See [InventoryState](#type-inventorystate) for possible values
      * @return $this
      */
     public function setFromState($from_state)
@@ -363,7 +363,7 @@ class InventoryAdjustment implements ArrayAccess
   
     /**
      * Sets to_state
-     * @param string $to_state The [InventoryState](#type-inventorystate) of the related quantity of items after the adjustment.
+     * @param string $to_state The [InventoryState](#type-inventorystate) of the related quantity of items after the adjustment. See [InventoryState](#type-inventorystate) for possible values
      * @return $this
      */
     public function setToState($to_state)

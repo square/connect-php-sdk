@@ -82,7 +82,7 @@ class ShiftFilter implements ArrayAccess
       */
     protected $employee_id;
     /**
-      * $status Fetch a `Shift` instance by `Shift.status`.
+      * $status Fetch a `Shift` instance by `Shift.status`. See [ShiftFilterStatus](#type-shiftfilterstatus) for possible values
       * @var string
       */
     protected $status;
@@ -190,7 +190,7 @@ class ShiftFilter implements ArrayAccess
   
     /**
      * Sets status
-     * @param string $status Fetch a `Shift` instance by `Shift.status`.
+     * @param string $status Fetch a `Shift` instance by `Shift.status`. See [ShiftFilterStatus](#type-shiftfilterstatus) for possible values
      * @return $this
      */
     public function setStatus($status)

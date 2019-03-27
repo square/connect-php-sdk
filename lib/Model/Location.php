@@ -128,12 +128,12 @@ class Location implements ArrayAccess
       */
     protected $timezone;
     /**
-      * $capabilities Indicates which Square features are enabled for the location.  See [LocationCapability](#type-locationcapability) for possible values.
+      * $capabilities Indicates which Square features are enabled for the location. See [LocationCapability](#type-locationcapability) for possible values
       * @var string[]
       */
     protected $capabilities;
     /**
-      * $status The location's status  See [LocationStatus](#type-locationstatus) for possible values.
+      * $status The location's status See [LocationStatus](#type-locationstatus) for possible values
       * @var string
       */
     protected $status;
@@ -148,7 +148,7 @@ class Location implements ArrayAccess
       */
     protected $merchant_id;
     /**
-      * $country The location's country, in ISO 3166-1-alpha-2 format.  See [Country](#type-country) for possible values.
+      * $country The location's country, in ISO 3166-1-alpha-2 format. See [Country](#type-country) for possible values
       * @var string
       */
     protected $country;
@@ -158,7 +158,7 @@ class Location implements ArrayAccess
       */
     protected $language_code;
     /**
-      * $currency The currency used for all transactions at this location, specified in __ISO 4217 format__. For example, the currency for a location processing transactions in the United States is 'USD'.  See [Currency](#type-currency) for possible values.
+      * $currency The currency used for all transactions at this location, specified in __ISO 4217 format__. For example, the currency for a location processing transactions in the United States is 'USD'. See [Currency](#type-currency) for possible values
       * @var string
       */
     protected $currency;
@@ -173,7 +173,7 @@ class Location implements ArrayAccess
       */
     protected $business_name;
     /**
-      * $type The location's type, as set by the account owner in the Square dashboard. Typically used to indicate whether or not the location object represents a physical space like a building or mall space.  See [LocationType](#type-locationtype) for possible values.
+      * $type The location's type, as set by the account owner in the Square dashboard. Typically used to indicate whether or not the location object represents a physical space like a building or mall space. See [LocationType](#type-locationtype) for possible values
       * @var string
       */
     protected $type;
@@ -354,7 +354,7 @@ class Location implements ArrayAccess
   
     /**
      * Sets capabilities
-     * @param string[] $capabilities Indicates which Square features are enabled for the location.  See [LocationCapability](#type-locationcapability) for possible values.
+     * @param string[] $capabilities Indicates which Square features are enabled for the location. See [LocationCapability](#type-locationcapability) for possible values
      * @return $this
      */
     public function setCapabilities($capabilities)
@@ -373,7 +373,7 @@ class Location implements ArrayAccess
   
     /**
      * Sets status
-     * @param string $status The location's status  See [LocationStatus](#type-locationstatus) for possible values.
+     * @param string $status The location's status See [LocationStatus](#type-locationstatus) for possible values
      * @return $this
      */
     public function setStatus($status)
@@ -430,7 +430,7 @@ class Location implements ArrayAccess
   
     /**
      * Sets country
-     * @param string $country The location's country, in ISO 3166-1-alpha-2 format.  See [Country](#type-country) for possible values.
+     * @param string $country The location's country, in ISO 3166-1-alpha-2 format. See [Country](#type-country) for possible values
      * @return $this
      */
     public function setCountry($country)
@@ -468,7 +468,7 @@ class Location implements ArrayAccess
   
     /**
      * Sets currency
-     * @param string $currency The currency used for all transactions at this location, specified in __ISO 4217 format__. For example, the currency for a location processing transactions in the United States is 'USD'.  See [Currency](#type-currency) for possible values.
+     * @param string $currency The currency used for all transactions at this location, specified in __ISO 4217 format__. For example, the currency for a location processing transactions in the United States is 'USD'. See [Currency](#type-currency) for possible values
      * @return $this
      */
     public function setCurrency($currency)
@@ -525,7 +525,7 @@ class Location implements ArrayAccess
   
     /**
      * Sets type
-     * @param string $type The location's type, as set by the account owner in the Square dashboard. Typically used to indicate whether or not the location object represents a physical space like a building or mall space.  See [LocationType](#type-locationtype) for possible values.
+     * @param string $type The location's type, as set by the account owner in the Square dashboard. Typically used to indicate whether or not the location object represents a physical space like a building or mall space. See [LocationType](#type-locationtype) for possible values
      * @return $this
      */
     public function setType($type)

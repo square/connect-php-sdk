@@ -28,7 +28,7 @@ Name | Getter | Setter | Type | Description | Notes
 **net_sales_money** | getNetSalesMoney() | setNetSalesMoney($value) | [**\SquareConnect\Model\V1Money**](V1Money.md) | The total of all sales, minus any applicable taxes. | [optional] 
 **inclusive_tax** | getInclusiveTax() | setInclusiveTax($value) | [**\SquareConnect\Model\V1PaymentTax[]**](V1PaymentTax.md) | All of the inclusive taxes associated with the payment. | [optional] 
 **additive_tax** | getAdditiveTax() | setAdditiveTax($value) | [**\SquareConnect\Model\V1PaymentTax[]**](V1PaymentTax.md) | All of the additive taxes associated with the payment. | [optional] 
-**tender** | getTender() | setTender($value) | [**\SquareConnect\Model\V1Tender[]**](V1Tender.md) | All of the additive taxes associated with the payment. | [optional] 
+**tender** | getTender() | setTender($value) | [**\SquareConnect\Model\V1Tender[]**](V1Tender.md) | All of the tenders associated with the payment. | [optional] 
 **refunds** | getRefunds() | setRefunds($value) | [**\SquareConnect\Model\V1Refund[]**](V1Refund.md) | All of the refunds applied to the payment. Note that the value of all refunds on a payment can exceed the value of all tenders if a merchant chooses to refund money to a tender after previously accepting returned goods as part of an exchange. | [optional] 
 **itemizations** | getItemizations() | setItemizations($value) | [**\SquareConnect\Model\V1PaymentItemization[]**](V1PaymentItemization.md) | The items purchased in the payment. | [optional] 
 **surcharge_money** | getSurchargeMoney() | setSurchargeMoney($value) | [**\SquareConnect\Model\V1Money**](V1Money.md) | The total of all surcharges applied to the payment. | [optional] 

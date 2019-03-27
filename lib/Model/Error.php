@@ -64,7 +64,7 @@ class Error implements ArrayAccess
     );
   
     /**
-      * $category The error's high-level category. See [ErrorCategory](#type-errorcategory) for possible values.
+      * $category The error's high-level category. See [ErrorCategory](#type-errorcategory) for possible values
       * @var string
       */
     protected $category;
@@ -124,7 +124,7 @@ class Error implements ArrayAccess
   
     /**
      * Sets category
-     * @param string $category The error's high-level category. See [ErrorCategory](#type-errorcategory) for possible values.
+     * @param string $category The error's high-level category. See [ErrorCategory](#type-errorcategory) for possible values
      * @return $this
      */
     public function setCategory($category)

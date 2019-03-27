@@ -96,7 +96,7 @@ class Employee implements ArrayAccess
       */
     protected $location_ids;
     /**
-      * $status Specifies the status of the employee being fetched.
+      * $status Specifies the status of the employee being fetched. See [EmployeeStatus](#type-employeestatus) for possible values
       * @var string
       */
     protected $status;
@@ -242,7 +242,7 @@ class Employee implements ArrayAccess
   
     /**
      * Sets status
-     * @param string $status Specifies the status of the employee being fetched.
+     * @param string $status Specifies the status of the employee being fetched. See [EmployeeStatus](#type-employeestatus) for possible values
      * @return $this
      */
     public function setStatus($status)

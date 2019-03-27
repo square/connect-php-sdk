@@ -102,7 +102,7 @@ class LocationsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-03-13";
+        $headerParams['Square-Version'] = "2019-03-27";
 
         
         

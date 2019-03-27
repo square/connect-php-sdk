@@ -82,7 +82,7 @@ class InventoryCount implements ArrayAccess
       */
     protected $catalog_object_type;
     /**
-      * $state The current [InventoryState](#type-inventorystate) for the related quantity of items.
+      * $state The current [InventoryState](#type-inventorystate) for the related quantity of items. See [InventoryState](#type-inventorystate) for possible values
       * @var string
       */
     protected $state;
@@ -190,7 +190,7 @@ class InventoryCount implements ArrayAccess
   
     /**
      * Sets state
-     * @param string $state The current [InventoryState](#type-inventorystate) for the related quantity of items.
+     * @param string $state The current [InventoryState](#type-inventorystate) for the related quantity of items. See [InventoryState](#type-inventorystate) for possible values
      * @return $this
      */
     public function setState($state)

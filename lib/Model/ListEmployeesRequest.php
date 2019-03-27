@@ -69,7 +69,7 @@ class ListEmployeesRequest implements ArrayAccess
       */
     protected $location_id;
     /**
-      * $status Specifies the EmployeeStatus to filter the employee by.
+      * $status Specifies the EmployeeStatus to filter the employee by. See [EmployeeStatus](#type-employeestatus) for possible values
       * @var string
       */
     protected $status;
@@ -143,7 +143,7 @@ class ListEmployeesRequest implements ArrayAccess
   
     /**
      * Sets status
-     * @param string $status Specifies the EmployeeStatus to filter the employee by.
+     * @param string $status Specifies the EmployeeStatus to filter the employee by. See [EmployeeStatus](#type-employeestatus) for possible values
      * @return $this
      */
     public function setStatus($status)
