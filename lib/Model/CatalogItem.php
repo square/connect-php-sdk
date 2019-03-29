@@ -154,7 +154,7 @@ class CatalogItem implements ArrayAccess
       */
     protected $modifier_list_info;
     /**
-      * $image_url __Deprecated__. The URL of an image representing this item. Deprecated in favor of `image_data` in [`CatalogObject`](#type-catalogobject).
+      * $image_url __Deprecated__. The URL of an image representing this item. Deprecated in favor of `image_id` in [`CatalogObject`](#type-catalogobject).
       * @var string
       */
     protected $image_url;
@@ -454,7 +454,7 @@ class CatalogItem implements ArrayAccess
   
     /**
      * Sets image_url
-     * @param string $image_url __Deprecated__. The URL of an image representing this item. Deprecated in favor of `image_data` in [`CatalogObject`](#type-catalogobject).
+     * @param string $image_url __Deprecated__. The URL of an image representing this item. Deprecated in favor of `image_id` in [`CatalogObject`](#type-catalogobject).
      * @return $this
      */
     public function setImageUrl($image_url)
