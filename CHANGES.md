@@ -1,5 +1,10 @@
 # Change Log
 
+## Version 2.20190327.1 (2019-03-29)
+
+## Bug Fix: Catalog API
+* Add `image_id` to `CatalogObject`
+
 ## Version 2.20190327.0 (2019-03-27)
 
 ## New features: Catalog API

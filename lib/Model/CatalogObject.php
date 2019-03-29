@@ -33,6 +33,7 @@ class CatalogObject implements ArrayAccess
         'present_at_all_locations' => 'bool',
         'present_at_location_ids' => 'string[]',
         'absent_at_location_ids' => 'string[]',
+        'image_id' => 'string',
         'item_data' => '\SquareConnect\Model\CatalogItem',
         'category_data' => '\SquareConnect\Model\CatalogCategory',
         'item_variation_data' => '\SquareConnect\Model\CatalogItemVariation',
@@ -57,6 +58,7 @@ class CatalogObject implements ArrayAccess
         'present_at_all_locations' => 'present_at_all_locations',
         'present_at_location_ids' => 'present_at_location_ids',
         'absent_at_location_ids' => 'absent_at_location_ids',
+        'image_id' => 'image_id',
         'item_data' => 'item_data',
         'category_data' => 'category_data',
         'item_variation_data' => 'item_variation_data',
@@ -81,6 +83,7 @@ class CatalogObject implements ArrayAccess
         'present_at_all_locations' => 'setPresentAtAllLocations',
         'present_at_location_ids' => 'setPresentAtLocationIds',
         'absent_at_location_ids' => 'setAbsentAtLocationIds',
+        'image_id' => 'setImageId',
         'item_data' => 'setItemData',
         'category_data' => 'setCategoryData',
         'item_variation_data' => 'setItemVariationData',
@@ -105,6 +108,7 @@ class CatalogObject implements ArrayAccess
         'present_at_all_locations' => 'getPresentAtAllLocations',
         'present_at_location_ids' => 'getPresentAtLocationIds',
         'absent_at_location_ids' => 'getAbsentAtLocationIds',
+        'image_id' => 'getImageId',
         'item_data' => 'getItemData',
         'category_data' => 'getCategoryData',
         'item_variation_data' => 'getItemVariationData',
@@ -160,6 +164,11 @@ class CatalogObject implements ArrayAccess
       * @var string[]
       */
     protected $absent_at_location_ids;
+    /**
+      * $image_id Identifies the `CatalogImage` attached to this `CatalogObject`.
+      * @var string
+      */
+    protected $image_id;
     /**
       * $item_data Structured data for a [CatalogItem](#type-catalogitem), set for CatalogObjects of type `ITEM`.
       * @var \SquareConnect\Model\CatalogItem
@@ -252,6 +261,11 @@ class CatalogObject implements ArrayAccess
               $this->absent_at_location_ids = $data["absent_at_location_ids"];
             } else {
               $this->absent_at_location_ids = null;
+            }
+            if (isset($data["image_id"])) {
+              $this->image_id = $data["image_id"];
+            } else {
+              $this->image_id = null;
             }
             if (isset($data["item_data"])) {
               $this->item_data = $data["item_data"];
@@ -464,6 +478,25 @@ class CatalogObject implements ArrayAccess
     public function setAbsentAtLocationIds($absent_at_location_ids)
     {
         $this->absent_at_location_ids = $absent_at_location_ids;
+        return $this;
+    }
+    /**
+     * Gets image_id
+     * @return string
+     */
+    public function getImageId()
+    {
+        return $this->image_id;
+    }
+  
+    /**
+     * Sets image_id
+     * @param string $image_id Identifies the `CatalogImage` attached to this `CatalogObject`.
+     * @return $this
+     */
+    public function setImageId($image_id)
+    {
+        $this->image_id = $image_id;
         return $this;
     }
     /**
