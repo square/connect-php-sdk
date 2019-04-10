@@ -23,6 +23,7 @@ Name | Getter | Setter | Type | Description | Notes
 **taxable** | getTaxable() | setTaxable($value) | **bool** | Deprecated. This field is not used. | [optional] 
 **category_id** | getCategoryId() | setCategoryId($value) | **string** | The ID of the item&#39;s category, if any. | [optional] 
 **available_for_pickup** | getAvailableForPickup() | setAvailableForPickup($value) | **bool** | If true, the item can be added to pickup orders from the merchant&#39;s online store. Default value: false | [optional] 
+**v2_id** | getV2Id() | setV2Id($value) | **string** | The ID of the CatalogObject in the Connect v2 API. Objects that are shared across multiple locations share the same v2 ID. | [optional] 
 
 Note: All properties are protected and only accessed via getters and setters.
 

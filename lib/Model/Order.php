@@ -27,6 +27,7 @@ class Order implements ArrayAccess
         'id' => 'string',
         'location_id' => 'string',
         'reference_id' => 'string',
+        'source' => '\SquareConnect\Model\OrderSource',
         'line_items' => '\SquareConnect\Model\OrderLineItem[]',
         'taxes' => '\SquareConnect\Model\OrderLineItemTax[]',
         'discounts' => '\SquareConnect\Model\OrderLineItemDiscount[]',
@@ -44,6 +45,7 @@ class Order implements ArrayAccess
         'id' => 'id',
         'location_id' => 'location_id',
         'reference_id' => 'reference_id',
+        'source' => 'source',
         'line_items' => 'line_items',
         'taxes' => 'taxes',
         'discounts' => 'discounts',
@@ -61,6 +63,7 @@ class Order implements ArrayAccess
         'id' => 'setId',
         'location_id' => 'setLocationId',
         'reference_id' => 'setReferenceId',
+        'source' => 'setSource',
         'line_items' => 'setLineItems',
         'taxes' => 'setTaxes',
         'discounts' => 'setDiscounts',
@@ -78,6 +81,7 @@ class Order implements ArrayAccess
         'id' => 'getId',
         'location_id' => 'getLocationId',
         'reference_id' => 'getReferenceId',
+        'source' => 'getSource',
         'line_items' => 'getLineItems',
         'taxes' => 'getTaxes',
         'discounts' => 'getDiscounts',
@@ -88,7 +92,7 @@ class Order implements ArrayAccess
     );
   
     /**
-      * $id The order's unique ID.  This value is only present for Order objects created by the Orders API through the [CreateOrder](#endpoint-createorder) endpoint.
+      * $id The order's unique ID.  This value is only present for Order objects created by the Orders API through the [CreateOrder](#endpoint-orders-createorder) endpoint.
       * @var string
       */
     protected $id;
@@ -102,6 +106,11 @@ class Order implements ArrayAccess
       * @var string
       */
     protected $reference_id;
+    /**
+      * $source The origination details of the order.
+      * @var \SquareConnect\Model\OrderSource
+      */
+    protected $source;
     /**
       * $line_items The line items included in the order.
       * @var \SquareConnect\Model\OrderLineItem[]
@@ -160,6 +169,11 @@ class Order implements ArrayAccess
             } else {
               $this->reference_id = null;
             }
+            if (isset($data["source"])) {
+              $this->source = $data["source"];
+            } else {
+              $this->source = null;
+            }
             if (isset($data["line_items"])) {
               $this->line_items = $data["line_items"];
             } else {
@@ -208,7 +222,7 @@ class Order implements ArrayAccess
   
     /**
      * Sets id
-     * @param string $id The order's unique ID.  This value is only present for Order objects created by the Orders API through the [CreateOrder](#endpoint-createorder) endpoint.
+     * @param string $id The order's unique ID.  This value is only present for Order objects created by the Orders API through the [CreateOrder](#endpoint-orders-createorder) endpoint.
      * @return $this
      */
     public function setId($id)
@@ -252,6 +266,25 @@ class Order implements ArrayAccess
     public function setReferenceId($reference_id)
     {
         $this->reference_id = $reference_id;
+        return $this;
+    }
+    /**
+     * Gets source
+     * @return \SquareConnect\Model\OrderSource
+     */
+    public function getSource()
+    {
+        return $this->source;
+    }
+  
+    /**
+     * Sets source
+     * @param \SquareConnect\Model\OrderSource $source The origination details of the order.
+     * @return $this
+     */
+    public function setSource($source)
+    {
+        $this->source = $source;
         return $this;
     }
     /**

@@ -1,5 +1,24 @@
 # Change Log
 
+## Version 2.20190410.0 (2019-04-10)
+
+## New features: Orders API beta
+
+* The Connect v2 Orders object now includes an OrderSource field (`source`)
+  that encapsulates the origination details of an order.
+
+## Improvement: Connect v2 Catalog IDs in Connect v1 objects
+
+* The following Connect v1 data types now include a `v2_id` field that makes it
+  easier to link information from Connect v1 endpoints to related Connect v2
+  Catalog objects:
+  * V1Discount
+  * V1Fee
+  * V1Item
+  * V1ModifierList
+  * V1ModifierOption
+  * V1Variation
+
 ## Version 2.20190327.1 (2019-03-29)
 
 ## Bug Fix: Catalog API

@@ -32,7 +32,8 @@ class V1Fee implements ArrayAccess
         'applies_to_custom_amounts' => 'bool',
         'enabled' => 'bool',
         'inclusion_type' => 'string',
-        'type' => 'string'
+        'type' => 'string',
+        'v2_id' => 'string'
     );
   
     /** 
@@ -48,7 +49,8 @@ class V1Fee implements ArrayAccess
         'applies_to_custom_amounts' => 'applies_to_custom_amounts',
         'enabled' => 'enabled',
         'inclusion_type' => 'inclusion_type',
-        'type' => 'type'
+        'type' => 'type',
+        'v2_id' => 'v2_id'
     );
   
     /**
@@ -64,7 +66,8 @@ class V1Fee implements ArrayAccess
         'applies_to_custom_amounts' => 'setAppliesToCustomAmounts',
         'enabled' => 'setEnabled',
         'inclusion_type' => 'setInclusionType',
-        'type' => 'setType'
+        'type' => 'setType',
+        'v2_id' => 'setV2Id'
     );
   
     /**
@@ -80,7 +83,8 @@ class V1Fee implements ArrayAccess
         'applies_to_custom_amounts' => 'getAppliesToCustomAmounts',
         'enabled' => 'getEnabled',
         'inclusion_type' => 'getInclusionType',
-        'type' => 'getType'
+        'type' => 'getType',
+        'v2_id' => 'getV2Id'
     );
   
     /**
@@ -128,6 +132,11 @@ class V1Fee implements ArrayAccess
       * @var string
       */
     protected $type;
+    /**
+      * $v2_id The ID of the CatalogObject in the Connect v2 API. Objects that are shared across multiple locations share the same v2 ID.
+      * @var string
+      */
+    protected $v2_id;
 
     /**
      * Constructor
@@ -180,6 +189,11 @@ class V1Fee implements ArrayAccess
               $this->type = $data["type"];
             } else {
               $this->type = null;
+            }
+            if (isset($data["v2_id"])) {
+              $this->v2_id = $data["v2_id"];
+            } else {
+              $this->v2_id = null;
             }
         }
     }
@@ -352,6 +366,25 @@ class V1Fee implements ArrayAccess
     public function setType($type)
     {
         $this->type = $type;
+        return $this;
+    }
+    /**
+     * Gets v2_id
+     * @return string
+     */
+    public function getV2Id()
+    {
+        return $this->v2_id;
+    }
+  
+    /**
+     * Sets v2_id
+     * @param string $v2_id The ID of the CatalogObject in the Connect v2 API. Objects that are shared across multiple locations share the same v2 ID.
+     * @return $this
+     */
+    public function setV2Id($v2_id)
+    {
+        $this->v2_id = $v2_id;
         return $this;
     }
     /**

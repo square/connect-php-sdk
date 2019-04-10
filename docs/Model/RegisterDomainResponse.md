@@ -2,7 +2,7 @@
 
 ### Description
 
-Defines the fields that are included in the response body of a request to the [RegisterDomain](#endpoint-registerdomain) endpoint.  Either `errors` or `status` will be present in a given response (never both).
+Defines the fields that are included in the response body of a request to the RegisterDomain endpoint.  Either `errors` or `status` will be present in a given response (never both).
 
 ## Properties
 Name | Getter | Setter | Type | Description | Notes

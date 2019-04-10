@@ -2,7 +2,7 @@
 
 ### Description
 
-Defines the body parameters that can be included in a request to the [CreateRefund](#endpoint-createrefund) endpoint.
+Defines the body parameters that can be included in a request to the CreateRefund endpoint.
 
 ## Properties
 Name | Getter | Setter | Type | Description | Notes

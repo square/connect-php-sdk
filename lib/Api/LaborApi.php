@@ -108,7 +108,7 @@ class LaborApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-03-27";
+        $headerParams['Square-Version'] = "2019-04-10";
 
         
         
@@ -201,7 +201,7 @@ class LaborApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-03-27";
+        $headerParams['Square-Version'] = "2019-04-10";
 
         
         
@@ -294,7 +294,7 @@ class LaborApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-03-27";
+        $headerParams['Square-Version'] = "2019-04-10";
 
         
         
@@ -390,7 +390,7 @@ class LaborApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-03-27";
+        $headerParams['Square-Version'] = "2019-04-10";
 
         
         
@@ -486,7 +486,7 @@ class LaborApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-03-27";
+        $headerParams['Square-Version'] = "2019-04-10";
 
         
         
@@ -582,7 +582,7 @@ class LaborApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-03-27";
+        $headerParams['Square-Version'] = "2019-04-10";
 
         
         
@@ -678,7 +678,7 @@ class LaborApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-03-27";
+        $headerParams['Square-Version'] = "2019-04-10";
 
         
         
@@ -774,7 +774,7 @@ class LaborApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-03-27";
+        $headerParams['Square-Version'] = "2019-04-10";
 
         // query params
         if ($location_id !== null) {
@@ -872,7 +872,7 @@ class LaborApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-03-27";
+        $headerParams['Square-Version'] = "2019-04-10";
 
         // query params
         if ($employee_id !== null) {
@@ -968,7 +968,7 @@ class LaborApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-03-27";
+        $headerParams['Square-Version'] = "2019-04-10";
 
         // query params
         if ($limit !== null) {
@@ -1063,7 +1063,7 @@ class LaborApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-03-27";
+        $headerParams['Square-Version'] = "2019-04-10";
 
         
         
@@ -1162,7 +1162,7 @@ class LaborApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-03-27";
+        $headerParams['Square-Version'] = "2019-04-10";
 
         
         
@@ -1268,7 +1268,7 @@ class LaborApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-03-27";
+        $headerParams['Square-Version'] = "2019-04-10";
 
         
         
@@ -1374,7 +1374,7 @@ class LaborApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-03-27";
+        $headerParams['Square-Version'] = "2019-04-10";
 
         
         

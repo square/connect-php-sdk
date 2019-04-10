@@ -2,7 +2,7 @@
 
 ### Description
 
-Defines the parameters that can be included in the body of a request to the [Charge](#endpoint-charge) endpoint.
+Defines the parameters that can be included in the body of a request to the Charge endpoint.
 
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
