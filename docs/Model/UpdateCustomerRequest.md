@@ -2,7 +2,7 @@
 
 ### Description
 
-Defines the body parameters that can be provided in a request to the [UpdateCustomer](#endpoint-updatecustomer) endpoint.
+Defines the body parameters that can be provided in a request to the UpdateCustomer endpoint.
 
 ## Properties
 Name | Getter | Setter | Type | Description | Notes

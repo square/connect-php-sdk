@@ -2,7 +2,7 @@
 
 ### Description
 
-Defines the query parameters that can be included in a request to the [ListAdditionalRecipientReceivables](#endpoint-listadditionalrecipientreceivables) endpoint.
+Defines the query parameters that can be included in a request to the ListAdditionalRecipientReceivables endpoint.
 
 ## Properties
 Name | Getter | Setter | Type | Description | Notes

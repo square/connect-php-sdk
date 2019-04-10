@@ -34,7 +34,8 @@ class V1Variation implements ArrayAccess
         'track_inventory' => 'bool',
         'inventory_alert_type' => 'string',
         'inventory_alert_threshold' => 'int',
-        'user_data' => 'string'
+        'user_data' => 'string',
+        'v2_id' => 'string'
     );
   
     /** 
@@ -52,7 +53,8 @@ class V1Variation implements ArrayAccess
         'track_inventory' => 'track_inventory',
         'inventory_alert_type' => 'inventory_alert_type',
         'inventory_alert_threshold' => 'inventory_alert_threshold',
-        'user_data' => 'user_data'
+        'user_data' => 'user_data',
+        'v2_id' => 'v2_id'
     );
   
     /**
@@ -70,7 +72,8 @@ class V1Variation implements ArrayAccess
         'track_inventory' => 'setTrackInventory',
         'inventory_alert_type' => 'setInventoryAlertType',
         'inventory_alert_threshold' => 'setInventoryAlertThreshold',
-        'user_data' => 'setUserData'
+        'user_data' => 'setUserData',
+        'v2_id' => 'setV2Id'
     );
   
     /**
@@ -88,7 +91,8 @@ class V1Variation implements ArrayAccess
         'track_inventory' => 'getTrackInventory',
         'inventory_alert_type' => 'getInventoryAlertType',
         'inventory_alert_threshold' => 'getInventoryAlertThreshold',
-        'user_data' => 'getUserData'
+        'user_data' => 'getUserData',
+        'v2_id' => 'getV2Id'
     );
   
     /**
@@ -146,6 +150,11 @@ class V1Variation implements ArrayAccess
       * @var string
       */
     protected $user_data;
+    /**
+      * $v2_id The ID of the CatalogObject in the Connect v2 API. Objects that are shared across multiple locations share the same v2 ID.
+      * @var string
+      */
+    protected $v2_id;
 
     /**
      * Constructor
@@ -208,6 +217,11 @@ class V1Variation implements ArrayAccess
               $this->user_data = $data["user_data"];
             } else {
               $this->user_data = null;
+            }
+            if (isset($data["v2_id"])) {
+              $this->v2_id = $data["v2_id"];
+            } else {
+              $this->v2_id = null;
             }
         }
     }
@@ -418,6 +432,25 @@ class V1Variation implements ArrayAccess
     public function setUserData($user_data)
     {
         $this->user_data = $user_data;
+        return $this;
+    }
+    /**
+     * Gets v2_id
+     * @return string
+     */
+    public function getV2Id()
+    {
+        return $this->v2_id;
+    }
+  
+    /**
+     * Sets v2_id
+     * @param string $v2_id The ID of the CatalogObject in the Connect v2 API. Objects that are shared across multiple locations share the same v2 ID.
+     * @return $this
+     */
+    public function setV2Id($v2_id)
+    {
+        $this->v2_id = $v2_id;
         return $this;
     }
     /**

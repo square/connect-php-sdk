@@ -16,6 +16,7 @@ Name | Getter | Setter | Type | Description | Notes
 **enabled** | getEnabled() | setEnabled($value) | **bool** | If true, the fee is applied to all appropriate items. If false, the fee is not applied at all. | [optional] 
 **inclusion_type** | getInclusionType() | setInclusionType($value) | **string** | Whether the fee is ADDITIVE or INCLUSIVE. See [V1FeeInclusionType](#type-v1feeinclusiontype) for possible values | [optional] 
 **type** | getType() | setType($value) | **string** | In countries with multiple classifications for sales taxes, indicates which classification the fee falls under. Currently relevant only to Canadian merchants. See [V1FeeType](#type-v1feetype) for possible values | [optional] 
+**v2_id** | getV2Id() | setV2Id($value) | **string** | The ID of the CatalogObject in the Connect v2 API. Objects that are shared across multiple locations share the same v2 ID. | [optional] 
 
 Note: All properties are protected and only accessed via getters and setters.
 

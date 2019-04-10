@@ -9,7 +9,7 @@ namespace SquareConnect\Model;
 
 use \ArrayAccess;
 /**
- * V1Category Class Doc Comment
+ * OrderSource Class Doc Comment
  *
  * @category Class
  * @package  SquareConnect
@@ -17,16 +17,14 @@ use \ArrayAccess;
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://squareup.com/developers
  */
-class V1Category implements ArrayAccess
+class OrderSource implements ArrayAccess
 {
     /**
       * Array of property to type mappings. Used for (de)serialization 
       * @var string[]
       */
     static $swaggerTypes = array(
-        'id' => 'string',
-        'name' => 'string',
-        'v2_id' => 'string'
+        'name' => 'string'
     );
   
     /** 
@@ -34,9 +32,7 @@ class V1Category implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
-        'id' => 'id',
-        'name' => 'name',
-        'v2_id' => 'v2_id'
+        'name' => 'name'
     );
   
     /**
@@ -44,9 +40,7 @@ class V1Category implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
-        'id' => 'setId',
-        'name' => 'setName',
-        'v2_id' => 'setV2Id'
+        'name' => 'setName'
     );
   
     /**
@@ -54,26 +48,14 @@ class V1Category implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
-        'id' => 'getId',
-        'name' => 'getName',
-        'v2_id' => 'getV2Id'
+        'name' => 'getName'
     );
   
     /**
-      * $id The category's unique ID.
-      * @var string
-      */
-    protected $id;
-    /**
-      * $name The category's name.
+      * $name The name used to identify the place (physical or digital) that an order originates.  If unset, the name defaults to the name of the application that created the order.
       * @var string
       */
     protected $name;
-    /**
-      * $v2_id The ID of the CatalogObject in the Connect v2 API. Objects that are shared across multiple locations share the same v2 ID.
-      * @var string
-      */
-    protected $v2_id;
 
     /**
      * Constructor
@@ -82,41 +64,12 @@ class V1Category implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            if (isset($data["id"])) {
-              $this->id = $data["id"];
-            } else {
-              $this->id = null;
-            }
             if (isset($data["name"])) {
               $this->name = $data["name"];
             } else {
               $this->name = null;
             }
-            if (isset($data["v2_id"])) {
-              $this->v2_id = $data["v2_id"];
-            } else {
-              $this->v2_id = null;
-            }
         }
-    }
-    /**
-     * Gets id
-     * @return string
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-  
-    /**
-     * Sets id
-     * @param string $id The category's unique ID.
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-        return $this;
     }
     /**
      * Gets name
@@ -129,31 +82,12 @@ class V1Category implements ArrayAccess
   
     /**
      * Sets name
-     * @param string $name The category's name.
+     * @param string $name The name used to identify the place (physical or digital) that an order originates.  If unset, the name defaults to the name of the application that created the order.
      * @return $this
      */
     public function setName($name)
     {
         $this->name = $name;
-        return $this;
-    }
-    /**
-     * Gets v2_id
-     * @return string
-     */
-    public function getV2Id()
-    {
-        return $this->v2_id;
-    }
-  
-    /**
-     * Sets v2_id
-     * @param string $v2_id The ID of the CatalogObject in the Connect v2 API. Objects that are shared across multiple locations share the same v2 ID.
-     * @return $this
-     */
-    public function setV2Id($v2_id)
-    {
-        $this->v2_id = $v2_id;
         return $this;
     }
     /**

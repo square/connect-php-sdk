@@ -2,7 +2,7 @@
 
 ### Description
 
-
+Defines the query parameters for calls to the CaptureTransaction endpoint.
 
 ## Properties
 Name | Getter | Setter | Type | Description | Notes

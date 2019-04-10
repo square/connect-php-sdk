@@ -39,7 +39,8 @@ class V1Item implements ArrayAccess
         'fees' => '\SquareConnect\Model\V1Fee[]',
         'taxable' => 'bool',
         'category_id' => 'string',
-        'available_for_pickup' => 'bool'
+        'available_for_pickup' => 'bool',
+        'v2_id' => 'string'
     );
   
     /** 
@@ -62,7 +63,8 @@ class V1Item implements ArrayAccess
         'fees' => 'fees',
         'taxable' => 'taxable',
         'category_id' => 'category_id',
-        'available_for_pickup' => 'available_for_pickup'
+        'available_for_pickup' => 'available_for_pickup',
+        'v2_id' => 'v2_id'
     );
   
     /**
@@ -85,7 +87,8 @@ class V1Item implements ArrayAccess
         'fees' => 'setFees',
         'taxable' => 'setTaxable',
         'category_id' => 'setCategoryId',
-        'available_for_pickup' => 'setAvailableForPickup'
+        'available_for_pickup' => 'setAvailableForPickup',
+        'v2_id' => 'setV2Id'
     );
   
     /**
@@ -108,7 +111,8 @@ class V1Item implements ArrayAccess
         'fees' => 'getFees',
         'taxable' => 'getTaxable',
         'category_id' => 'getCategoryId',
-        'available_for_pickup' => 'getAvailableForPickup'
+        'available_for_pickup' => 'getAvailableForPickup',
+        'v2_id' => 'getV2Id'
     );
   
     /**
@@ -191,6 +195,11 @@ class V1Item implements ArrayAccess
       * @var bool
       */
     protected $available_for_pickup;
+    /**
+      * $v2_id The ID of the CatalogObject in the Connect v2 API. Objects that are shared across multiple locations share the same v2 ID.
+      * @var string
+      */
+    protected $v2_id;
 
     /**
      * Constructor
@@ -278,6 +287,11 @@ class V1Item implements ArrayAccess
               $this->available_for_pickup = $data["available_for_pickup"];
             } else {
               $this->available_for_pickup = null;
+            }
+            if (isset($data["v2_id"])) {
+              $this->v2_id = $data["v2_id"];
+            } else {
+              $this->v2_id = null;
             }
         }
     }
@@ -583,6 +597,25 @@ class V1Item implements ArrayAccess
     public function setAvailableForPickup($available_for_pickup)
     {
         $this->available_for_pickup = $available_for_pickup;
+        return $this;
+    }
+    /**
+     * Gets v2_id
+     * @return string
+     */
+    public function getV2Id()
+    {
+        return $this->v2_id;
+    }
+  
+    /**
+     * Sets v2_id
+     * @param string $v2_id The ID of the CatalogObject in the Connect v2 API. Objects that are shared across multiple locations share the same v2 ID.
+     * @return $this
+     */
+    public function setV2Id($v2_id)
+    {
+        $this->v2_id = $v2_id;
         return $this;
     }
     /**

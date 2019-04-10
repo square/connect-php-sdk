@@ -2,7 +2,7 @@
 
 ### Description
 
-
+Defines the request body for calls to the VoidTransaction endpoint.
 
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
