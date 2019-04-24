@@ -9,7 +9,7 @@ namespace SquareConnect\Model;
 
 use \ArrayAccess;
 /**
- * ListCatalogRequest Class Doc Comment
+ * V1TenderCardBrand Class Doc Comment
  *
  * @category Class
  * @package  SquareConnect
@@ -17,15 +17,14 @@ use \ArrayAccess;
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://squareup.com/developers
  */
-class ListCatalogRequest implements ArrayAccess
+class V1TenderCardBrand implements ArrayAccess
 {
     /**
       * Array of property to type mappings. Used for (de)serialization 
       * @var string[]
       */
     static $swaggerTypes = array(
-        'cursor' => 'string',
-        'types' => 'string'
+        
     );
   
     /** 
@@ -33,8 +32,7 @@ class ListCatalogRequest implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
-        'cursor' => 'cursor',
-        'types' => 'types'
+        
     );
   
     /**
@@ -42,8 +40,7 @@ class ListCatalogRequest implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
-        'cursor' => 'setCursor',
-        'types' => 'setTypes'
+        
     );
   
     /**
@@ -51,20 +48,9 @@ class ListCatalogRequest implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
-        'cursor' => 'getCursor',
-        'types' => 'getTypes'
+        
     );
   
-    /**
-      * $cursor The pagination cursor returned in the previous response. Leave unset for an initial request. See [Pagination](/basics/api101/pagination) for more information.
-      * @var string
-      */
-    protected $cursor;
-    /**
-      * $types An optional case-insensitive, comma-separated list of object types to retrieve, for example `ITEM,ITEM_VARIATION,CATEGORY,IMAGE`.  The legal values are taken from the [CatalogObjectType](#type-catalogobjecttype) enumeration, namely `ITEM`, `ITEM_VARIATION`, `CATEGORY`, `DISCOUNT`, `TAX`, `MODIFIER`, `MODIFIER_LIST`, or `IMAGE`.
-      * @var string
-      */
-    protected $types;
 
     /**
      * Constructor
@@ -73,55 +59,7 @@ class ListCatalogRequest implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            if (isset($data["cursor"])) {
-              $this->cursor = $data["cursor"];
-            } else {
-              $this->cursor = null;
-            }
-            if (isset($data["types"])) {
-              $this->types = $data["types"];
-            } else {
-              $this->types = null;
-            }
         }
-    }
-    /**
-     * Gets cursor
-     * @return string
-     */
-    public function getCursor()
-    {
-        return $this->cursor;
-    }
-  
-    /**
-     * Sets cursor
-     * @param string $cursor The pagination cursor returned in the previous response. Leave unset for an initial request. See [Pagination](/basics/api101/pagination) for more information.
-     * @return $this
-     */
-    public function setCursor($cursor)
-    {
-        $this->cursor = $cursor;
-        return $this;
-    }
-    /**
-     * Gets types
-     * @return string
-     */
-    public function getTypes()
-    {
-        return $this->types;
-    }
-  
-    /**
-     * Sets types
-     * @param string $types An optional case-insensitive, comma-separated list of object types to retrieve, for example `ITEM,ITEM_VARIATION,CATEGORY,IMAGE`.  The legal values are taken from the [CatalogObjectType](#type-catalogobjecttype) enumeration, namely `ITEM`, `ITEM_VARIATION`, `CATEGORY`, `DISCOUNT`, `TAX`, `MODIFIER`, `MODIFIER_LIST`, or `IMAGE`.
-     * @return $this
-     */
-    public function setTypes($types)
-    {
-        $this->types = $types;
-        return $this;
     }
     /**
      * Returns true if offset exists. False otherwise.

@@ -80,7 +80,7 @@ class ObtainTokenResponse implements ArrayAccess
     );
   
     /**
-      * $access_token A valid OAuth access token. Provide the access token in a header with every request to Connect API endpoints. See the [Build with OAuth](/authz/oauth/build-with-the-api) guide for more information.
+      * $access_token A valid OAuth access token. OAuth access tokens are 64 bytes long. Provide the access token in a header with every request to Connect API endpoints. See the [Build with OAuth](/authz/oauth/build-with-the-api) guide for more information.
       * @var string
       */
     protected $access_token;
@@ -180,7 +180,7 @@ class ObtainTokenResponse implements ArrayAccess
   
     /**
      * Sets access_token
-     * @param string $access_token A valid OAuth access token. Provide the access token in a header with every request to Connect API endpoints. See the [Build with OAuth](/authz/oauth/build-with-the-api) guide for more information.
+     * @param string $access_token A valid OAuth access token. OAuth access tokens are 64 bytes long. Provide the access token in a header with every request to Connect API endpoints. See the [Build with OAuth](/authz/oauth/build-with-the-api) guide for more information.
      * @return $this
      */
     public function setAccessToken($access_token)

@@ -137,7 +137,7 @@ class V1Tender implements ArrayAccess
       */
     protected $receipt_url;
     /**
-      * $card_brand The brand of credit card provided. See [CardBrand](#type-cardbrand) for possible values
+      * $card_brand The brand of credit card provided. See [V1TenderCardBrand](#type-v1tendercardbrand) for possible values
       * @var string
       */
     protected $card_brand;
@@ -387,7 +387,7 @@ class V1Tender implements ArrayAccess
   
     /**
      * Sets card_brand
-     * @param string $card_brand The brand of credit card provided. See [CardBrand](#type-cardbrand) for possible values
+     * @param string $card_brand The brand of credit card provided. See [V1TenderCardBrand](#type-v1tendercardbrand) for possible values
      * @return $this
      */
     public function setCardBrand($card_brand)

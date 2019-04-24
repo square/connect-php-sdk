@@ -12,7 +12,7 @@ Name | Getter | Setter | Type | Description | Notes
 **name** | getName() | setName($value) | **string** | A human-readable description of the tender. | [optional] 
 **employee_id** | getEmployeeId() | setEmployeeId($value) | **string** | The ID of the employee that processed the tender. | [optional] 
 **receipt_url** | getReceiptUrl() | setReceiptUrl($value) | **string** | The URL of the receipt for the tender. | [optional] 
-**card_brand** | getCardBrand() | setCardBrand($value) | **string** | The brand of credit card provided. See [CardBrand](#type-cardbrand) for possible values | [optional] 
+**card_brand** | getCardBrand() | setCardBrand($value) | **string** | The brand of credit card provided. See [V1TenderCardBrand](#type-v1tendercardbrand) for possible values | [optional] 
 **pan_suffix** | getPanSuffix() | setPanSuffix($value) | **string** | The last four digits of the provided credit card&#39;s account number. | [optional] 
 **entry_method** | getEntryMethod() | setEntryMethod($value) | **string** | The tender&#39;s unique ID. See [V1TenderEntryMethod](#type-v1tenderentrymethod) for possible values | [optional] 
 **payment_note** | getPaymentNote() | setPaymentNote($value) | **string** | Notes entered by the merchant about the tender at the time of payment, if any. Typically only present for tender with the type: OTHER. | [optional] 

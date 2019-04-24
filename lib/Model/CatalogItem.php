@@ -114,7 +114,7 @@ class CatalogItem implements ArrayAccess
       */
     protected $description;
     /**
-      * $abbreviation The text of the item's display label in the Square Point of Sale app. Only up to the first five characters of the string are used.  Searchable. This field has max length of 24 Unicode code points.
+      * $abbreviation The text of the item's display label in the Square Point of Sale app. Only up to the first five characters of the string are used. Searchable. This field has max length of 24 Unicode code points.
       * @var string
       */
     protected $abbreviation;
@@ -302,7 +302,7 @@ class CatalogItem implements ArrayAccess
   
     /**
      * Sets abbreviation
-     * @param string $abbreviation The text of the item's display label in the Square Point of Sale app. Only up to the first five characters of the string are used.  Searchable. This field has max length of 24 Unicode code points.
+     * @param string $abbreviation The text of the item's display label in the Square Point of Sale app. Only up to the first five characters of the string are used. Searchable. This field has max length of 24 Unicode code points.
      * @return $this
      */
     public function setAbbreviation($abbreviation)
