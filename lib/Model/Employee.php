@@ -27,6 +27,8 @@ class Employee implements ArrayAccess
         'id' => 'string',
         'first_name' => 'string',
         'last_name' => 'string',
+        'email' => 'string',
+        'phone_number' => 'string',
         'location_ids' => 'string[]',
         'status' => 'string',
         'created_at' => 'string',
@@ -41,6 +43,8 @@ class Employee implements ArrayAccess
         'id' => 'id',
         'first_name' => 'first_name',
         'last_name' => 'last_name',
+        'email' => 'email',
+        'phone_number' => 'phone_number',
         'location_ids' => 'location_ids',
         'status' => 'status',
         'created_at' => 'created_at',
@@ -55,6 +59,8 @@ class Employee implements ArrayAccess
         'id' => 'setId',
         'first_name' => 'setFirstName',
         'last_name' => 'setLastName',
+        'email' => 'setEmail',
+        'phone_number' => 'setPhoneNumber',
         'location_ids' => 'setLocationIds',
         'status' => 'setStatus',
         'created_at' => 'setCreatedAt',
@@ -69,6 +75,8 @@ class Employee implements ArrayAccess
         'id' => 'getId',
         'first_name' => 'getFirstName',
         'last_name' => 'getLastName',
+        'email' => 'getEmail',
+        'phone_number' => 'getPhoneNumber',
         'location_ids' => 'getLocationIds',
         'status' => 'getStatus',
         'created_at' => 'getCreatedAt',
@@ -90,6 +98,16 @@ class Employee implements ArrayAccess
       * @var string
       */
     protected $last_name;
+    /**
+      * $email Email of the employee
+      * @var string
+      */
+    protected $email;
+    /**
+      * $phone_number Phone number of the employee in E.164 format, i.e. \"+12125554250\"
+      * @var string
+      */
+    protected $phone_number;
     /**
       * $location_ids A list of location IDs where this employee has access.
       * @var string[]
@@ -132,6 +150,16 @@ class Employee implements ArrayAccess
               $this->last_name = $data["last_name"];
             } else {
               $this->last_name = null;
+            }
+            if (isset($data["email"])) {
+              $this->email = $data["email"];
+            } else {
+              $this->email = null;
+            }
+            if (isset($data["phone_number"])) {
+              $this->phone_number = $data["phone_number"];
+            } else {
+              $this->phone_number = null;
             }
             if (isset($data["location_ids"])) {
               $this->location_ids = $data["location_ids"];
@@ -210,6 +238,44 @@ class Employee implements ArrayAccess
     public function setLastName($last_name)
     {
         $this->last_name = $last_name;
+        return $this;
+    }
+    /**
+     * Gets email
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+  
+    /**
+     * Sets email
+     * @param string $email Email of the employee
+     * @return $this
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+        return $this;
+    }
+    /**
+     * Gets phone_number
+     * @return string
+     */
+    public function getPhoneNumber()
+    {
+        return $this->phone_number;
+    }
+  
+    /**
+     * Sets phone_number
+     * @param string $phone_number Phone number of the employee in E.164 format, i.e. \"+12125554250\"
+     * @return $this
+     */
+    public function setPhoneNumber($phone_number)
+    {
+        $this->phone_number = $phone_number;
         return $this;
     }
     /**

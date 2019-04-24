@@ -7,7 +7,7 @@
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------
-**access_token** | getAccessToken() | setAccessToken($value) | **string** | A valid OAuth access token. Provide the access token in a header with every request to Connect API endpoints. See the [Build with OAuth](/authz/oauth/build-with-the-api) guide for more information. | [optional] 
+**access_token** | getAccessToken() | setAccessToken($value) | **string** | A valid OAuth access token. OAuth access tokens are 64 bytes long. Provide the access token in a header with every request to Connect API endpoints. See the [Build with OAuth](/authz/oauth/build-with-the-api) guide for more information. | [optional] 
 **token_type** | getTokenType() | setTokenType($value) | **string** | This value is always _bearer_. | [optional] 
 **expires_at** | getExpiresAt() | setExpiresAt($value) | **string** | The date when access_token expires, in [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format. | [optional] 
 **merchant_id** | getMerchantId() | setMerchantId($value) | **string** | The ID of the authorizing merchant&#39;s business. | [optional] 

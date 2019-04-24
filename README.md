@@ -630,6 +630,7 @@ Class | Method | HTTP request | Description
  - [V1SettlementEntryType](docs/Model/V1SettlementEntryType.md)
  - [V1SettlementStatus](docs/Model/V1SettlementStatus.md)
  - [V1Tender](docs/Model/V1Tender.md)
+ - [V1TenderCardBrand](docs/Model/V1TenderCardBrand.md)
  - [V1TenderEntryMethod](docs/Model/V1TenderEntryMethod.md)
  - [V1TenderType](docs/Model/V1TenderType.md)
  - [V1Timecard](docs/Model/V1Timecard.md)

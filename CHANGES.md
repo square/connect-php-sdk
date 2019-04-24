@@ -1,5 +1,14 @@
 # Change Log
 
+## Version 2.20190410.1 (2019-04-24)
+
+## Details
+
+* **New functionality**: Employees API (Connect v2) &mdash; New fields to
+  capture contact information for employee profiles.
+* **New functionality**: `V1Tender.CardBrand` &mdash; New V1 enum to represent
+  brand information for credit cars.
+
 ## Version 2.20190410.0 (2019-04-10)
 
 ## New features: Orders API beta

@@ -130,7 +130,7 @@ class ChargeRequest implements ArrayAccess
       */
     protected $reference_id;
     /**
-      * $note 
+      * $note An optional note to associate with the transaction.  This value cannot exceed 60 characters.
       * @var string
       */
     protected $note;
@@ -364,7 +364,7 @@ class ChargeRequest implements ArrayAccess
   
     /**
      * Sets note
-     * @param string $note 
+     * @param string $note An optional note to associate with the transaction.  This value cannot exceed 60 characters.
      * @return $this
      */
     public function setNote($note)
