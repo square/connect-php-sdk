@@ -74,7 +74,7 @@ class CreateOrderRequestTax implements ArrayAccess
       */
     protected $name;
     /**
-      * $type Only used for ad hoc taxes. Indicates the calculation method used to apply the line item tax.  Default: `ADDITIVE`; See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values
+      * $type Only used for ad hoc taxes. Indicates the calculation method used to apply the line item tax.  Default: `ADDITIVE`; See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values. See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values
       * @var string
       */
     protected $type;
@@ -162,7 +162,7 @@ class CreateOrderRequestTax implements ArrayAccess
   
     /**
      * Sets type
-     * @param string $type Only used for ad hoc taxes. Indicates the calculation method used to apply the line item tax.  Default: `ADDITIVE`; See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values
+     * @param string $type Only used for ad hoc taxes. Indicates the calculation method used to apply the line item tax.  Default: `ADDITIVE`; See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values. See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values
      * @return $this
      */
     public function setType($type)

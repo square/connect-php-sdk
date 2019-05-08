@@ -28,10 +28,21 @@ class Order implements ArrayAccess
         'location_id' => 'string',
         'reference_id' => 'string',
         'source' => '\SquareConnect\Model\OrderSource',
+        'customer_id' => 'string',
         'line_items' => '\SquareConnect\Model\OrderLineItem[]',
         'taxes' => '\SquareConnect\Model\OrderLineItemTax[]',
         'discounts' => '\SquareConnect\Model\OrderLineItemDiscount[]',
         'fulfillments' => '\SquareConnect\Model\OrderFulfillment[]',
+        'returns' => '\SquareConnect\Model\OrderReturn[]',
+        'return_amounts' => '\SquareConnect\Model\OrderMoneyAmounts',
+        'net_amounts' => '\SquareConnect\Model\OrderMoneyAmounts',
+        'rounding_adjustment' => '\SquareConnect\Model\OrderRoundingAdjustment',
+        'tenders' => '\SquareConnect\Model\Tender[]',
+        'refunds' => '\SquareConnect\Model\Refund[]',
+        'created_at' => 'string',
+        'updated_at' => 'string',
+        'closed_at' => 'string',
+        'state' => 'string',
         'total_money' => '\SquareConnect\Model\Money',
         'total_tax_money' => '\SquareConnect\Model\Money',
         'total_discount_money' => '\SquareConnect\Model\Money'
@@ -46,10 +57,21 @@ class Order implements ArrayAccess
         'location_id' => 'location_id',
         'reference_id' => 'reference_id',
         'source' => 'source',
+        'customer_id' => 'customer_id',
         'line_items' => 'line_items',
         'taxes' => 'taxes',
         'discounts' => 'discounts',
         'fulfillments' => 'fulfillments',
+        'returns' => 'returns',
+        'return_amounts' => 'return_amounts',
+        'net_amounts' => 'net_amounts',
+        'rounding_adjustment' => 'rounding_adjustment',
+        'tenders' => 'tenders',
+        'refunds' => 'refunds',
+        'created_at' => 'created_at',
+        'updated_at' => 'updated_at',
+        'closed_at' => 'closed_at',
+        'state' => 'state',
         'total_money' => 'total_money',
         'total_tax_money' => 'total_tax_money',
         'total_discount_money' => 'total_discount_money'
@@ -64,10 +86,21 @@ class Order implements ArrayAccess
         'location_id' => 'setLocationId',
         'reference_id' => 'setReferenceId',
         'source' => 'setSource',
+        'customer_id' => 'setCustomerId',
         'line_items' => 'setLineItems',
         'taxes' => 'setTaxes',
         'discounts' => 'setDiscounts',
         'fulfillments' => 'setFulfillments',
+        'returns' => 'setReturns',
+        'return_amounts' => 'setReturnAmounts',
+        'net_amounts' => 'setNetAmounts',
+        'rounding_adjustment' => 'setRoundingAdjustment',
+        'tenders' => 'setTenders',
+        'refunds' => 'setRefunds',
+        'created_at' => 'setCreatedAt',
+        'updated_at' => 'setUpdatedAt',
+        'closed_at' => 'setClosedAt',
+        'state' => 'setState',
         'total_money' => 'setTotalMoney',
         'total_tax_money' => 'setTotalTaxMoney',
         'total_discount_money' => 'setTotalDiscountMoney'
@@ -82,10 +115,21 @@ class Order implements ArrayAccess
         'location_id' => 'getLocationId',
         'reference_id' => 'getReferenceId',
         'source' => 'getSource',
+        'customer_id' => 'getCustomerId',
         'line_items' => 'getLineItems',
         'taxes' => 'getTaxes',
         'discounts' => 'getDiscounts',
         'fulfillments' => 'getFulfillments',
+        'returns' => 'getReturns',
+        'return_amounts' => 'getReturnAmounts',
+        'net_amounts' => 'getNetAmounts',
+        'rounding_adjustment' => 'getRoundingAdjustment',
+        'tenders' => 'getTenders',
+        'refunds' => 'getRefunds',
+        'created_at' => 'getCreatedAt',
+        'updated_at' => 'getUpdatedAt',
+        'closed_at' => 'getClosedAt',
+        'state' => 'getState',
         'total_money' => 'getTotalMoney',
         'total_tax_money' => 'getTotalTaxMoney',
         'total_discount_money' => 'getTotalDiscountMoney'
@@ -112,6 +156,11 @@ class Order implements ArrayAccess
       */
     protected $source;
     /**
+      * $customer_id The [Customer](#type-customer) ID of the customer associated with the order.
+      * @var string
+      */
+    protected $customer_id;
+    /**
       * $line_items The line items included in the order.
       * @var \SquareConnect\Model\OrderLineItem[]
       */
@@ -131,6 +180,56 @@ class Order implements ArrayAccess
       * @var \SquareConnect\Model\OrderFulfillment[]
       */
     protected $fulfillments;
+    /**
+      * $returns Collection of items from sale Orders being returned in this one. Normally part of an Itemized Return or Exchange.  There will be exactly one `Return` object per sale Order being referenced.
+      * @var \SquareConnect\Model\OrderReturn[]
+      */
+    protected $returns;
+    /**
+      * $return_amounts Rollup of returned money amounts.
+      * @var \SquareConnect\Model\OrderMoneyAmounts
+      */
+    protected $return_amounts;
+    /**
+      * $net_amounts Net money amounts (sale money - return money).
+      * @var \SquareConnect\Model\OrderMoneyAmounts
+      */
+    protected $net_amounts;
+    /**
+      * $rounding_adjustment A positive or negative rounding adjustment to the total of the order, commonly used to apply Cash Rounding when the minimum unit of account is smaller than the lowest physical denomination of currency.
+      * @var \SquareConnect\Model\OrderRoundingAdjustment
+      */
+    protected $rounding_adjustment;
+    /**
+      * $tenders The Tenders which were used to pay for the Order. This field is read-only.
+      * @var \SquareConnect\Model\Tender[]
+      */
+    protected $tenders;
+    /**
+      * $refunds The Refunds that are part of this Order. This field is read-only.
+      * @var \SquareConnect\Model\Refund[]
+      */
+    protected $refunds;
+    /**
+      * $created_at Timestamp for when the order was created. In RFC 3339 format, e.g., \"2016-09-04T23:59:33.123Z\".
+      * @var string
+      */
+    protected $created_at;
+    /**
+      * $updated_at Timestamp for when the order was last updated. In RFC 3339 format, e.g., \"2016-09-04T23:59:33.123Z\".
+      * @var string
+      */
+    protected $updated_at;
+    /**
+      * $closed_at Timestamp for when the order was closed. In RFC 3339 format, e.g., \"2016-09-04T23:59:33.123Z\".
+      * @var string
+      */
+    protected $closed_at;
+    /**
+      * $state The current state of the order. `OPEN`,`COMPLETED`,`CANCELED` See [OrderState](#type-orderstate) for possible values
+      * @var string
+      */
+    protected $state;
     /**
       * $total_money The total amount of money to collect for the order.
       * @var \SquareConnect\Model\Money
@@ -174,6 +273,11 @@ class Order implements ArrayAccess
             } else {
               $this->source = null;
             }
+            if (isset($data["customer_id"])) {
+              $this->customer_id = $data["customer_id"];
+            } else {
+              $this->customer_id = null;
+            }
             if (isset($data["line_items"])) {
               $this->line_items = $data["line_items"];
             } else {
@@ -193,6 +297,56 @@ class Order implements ArrayAccess
               $this->fulfillments = $data["fulfillments"];
             } else {
               $this->fulfillments = null;
+            }
+            if (isset($data["returns"])) {
+              $this->returns = $data["returns"];
+            } else {
+              $this->returns = null;
+            }
+            if (isset($data["return_amounts"])) {
+              $this->return_amounts = $data["return_amounts"];
+            } else {
+              $this->return_amounts = null;
+            }
+            if (isset($data["net_amounts"])) {
+              $this->net_amounts = $data["net_amounts"];
+            } else {
+              $this->net_amounts = null;
+            }
+            if (isset($data["rounding_adjustment"])) {
+              $this->rounding_adjustment = $data["rounding_adjustment"];
+            } else {
+              $this->rounding_adjustment = null;
+            }
+            if (isset($data["tenders"])) {
+              $this->tenders = $data["tenders"];
+            } else {
+              $this->tenders = null;
+            }
+            if (isset($data["refunds"])) {
+              $this->refunds = $data["refunds"];
+            } else {
+              $this->refunds = null;
+            }
+            if (isset($data["created_at"])) {
+              $this->created_at = $data["created_at"];
+            } else {
+              $this->created_at = null;
+            }
+            if (isset($data["updated_at"])) {
+              $this->updated_at = $data["updated_at"];
+            } else {
+              $this->updated_at = null;
+            }
+            if (isset($data["closed_at"])) {
+              $this->closed_at = $data["closed_at"];
+            } else {
+              $this->closed_at = null;
+            }
+            if (isset($data["state"])) {
+              $this->state = $data["state"];
+            } else {
+              $this->state = null;
             }
             if (isset($data["total_money"])) {
               $this->total_money = $data["total_money"];
@@ -288,6 +442,25 @@ class Order implements ArrayAccess
         return $this;
     }
     /**
+     * Gets customer_id
+     * @return string
+     */
+    public function getCustomerId()
+    {
+        return $this->customer_id;
+    }
+  
+    /**
+     * Sets customer_id
+     * @param string $customer_id The [Customer](#type-customer) ID of the customer associated with the order.
+     * @return $this
+     */
+    public function setCustomerId($customer_id)
+    {
+        $this->customer_id = $customer_id;
+        return $this;
+    }
+    /**
      * Gets line_items
      * @return \SquareConnect\Model\OrderLineItem[]
      */
@@ -361,6 +534,196 @@ class Order implements ArrayAccess
     public function setFulfillments($fulfillments)
     {
         $this->fulfillments = $fulfillments;
+        return $this;
+    }
+    /**
+     * Gets returns
+     * @return \SquareConnect\Model\OrderReturn[]
+     */
+    public function getReturns()
+    {
+        return $this->returns;
+    }
+  
+    /**
+     * Sets returns
+     * @param \SquareConnect\Model\OrderReturn[] $returns Collection of items from sale Orders being returned in this one. Normally part of an Itemized Return or Exchange.  There will be exactly one `Return` object per sale Order being referenced.
+     * @return $this
+     */
+    public function setReturns($returns)
+    {
+        $this->returns = $returns;
+        return $this;
+    }
+    /**
+     * Gets return_amounts
+     * @return \SquareConnect\Model\OrderMoneyAmounts
+     */
+    public function getReturnAmounts()
+    {
+        return $this->return_amounts;
+    }
+  
+    /**
+     * Sets return_amounts
+     * @param \SquareConnect\Model\OrderMoneyAmounts $return_amounts Rollup of returned money amounts.
+     * @return $this
+     */
+    public function setReturnAmounts($return_amounts)
+    {
+        $this->return_amounts = $return_amounts;
+        return $this;
+    }
+    /**
+     * Gets net_amounts
+     * @return \SquareConnect\Model\OrderMoneyAmounts
+     */
+    public function getNetAmounts()
+    {
+        return $this->net_amounts;
+    }
+  
+    /**
+     * Sets net_amounts
+     * @param \SquareConnect\Model\OrderMoneyAmounts $net_amounts Net money amounts (sale money - return money).
+     * @return $this
+     */
+    public function setNetAmounts($net_amounts)
+    {
+        $this->net_amounts = $net_amounts;
+        return $this;
+    }
+    /**
+     * Gets rounding_adjustment
+     * @return \SquareConnect\Model\OrderRoundingAdjustment
+     */
+    public function getRoundingAdjustment()
+    {
+        return $this->rounding_adjustment;
+    }
+  
+    /**
+     * Sets rounding_adjustment
+     * @param \SquareConnect\Model\OrderRoundingAdjustment $rounding_adjustment A positive or negative rounding adjustment to the total of the order, commonly used to apply Cash Rounding when the minimum unit of account is smaller than the lowest physical denomination of currency.
+     * @return $this
+     */
+    public function setRoundingAdjustment($rounding_adjustment)
+    {
+        $this->rounding_adjustment = $rounding_adjustment;
+        return $this;
+    }
+    /**
+     * Gets tenders
+     * @return \SquareConnect\Model\Tender[]
+     */
+    public function getTenders()
+    {
+        return $this->tenders;
+    }
+  
+    /**
+     * Sets tenders
+     * @param \SquareConnect\Model\Tender[] $tenders The Tenders which were used to pay for the Order. This field is read-only.
+     * @return $this
+     */
+    public function setTenders($tenders)
+    {
+        $this->tenders = $tenders;
+        return $this;
+    }
+    /**
+     * Gets refunds
+     * @return \SquareConnect\Model\Refund[]
+     */
+    public function getRefunds()
+    {
+        return $this->refunds;
+    }
+  
+    /**
+     * Sets refunds
+     * @param \SquareConnect\Model\Refund[] $refunds The Refunds that are part of this Order. This field is read-only.
+     * @return $this
+     */
+    public function setRefunds($refunds)
+    {
+        $this->refunds = $refunds;
+        return $this;
+    }
+    /**
+     * Gets created_at
+     * @return string
+     */
+    public function getCreatedAt()
+    {
+        return $this->created_at;
+    }
+  
+    /**
+     * Sets created_at
+     * @param string $created_at Timestamp for when the order was created. In RFC 3339 format, e.g., \"2016-09-04T23:59:33.123Z\".
+     * @return $this
+     */
+    public function setCreatedAt($created_at)
+    {
+        $this->created_at = $created_at;
+        return $this;
+    }
+    /**
+     * Gets updated_at
+     * @return string
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updated_at;
+    }
+  
+    /**
+     * Sets updated_at
+     * @param string $updated_at Timestamp for when the order was last updated. In RFC 3339 format, e.g., \"2016-09-04T23:59:33.123Z\".
+     * @return $this
+     */
+    public function setUpdatedAt($updated_at)
+    {
+        $this->updated_at = $updated_at;
+        return $this;
+    }
+    /**
+     * Gets closed_at
+     * @return string
+     */
+    public function getClosedAt()
+    {
+        return $this->closed_at;
+    }
+  
+    /**
+     * Sets closed_at
+     * @param string $closed_at Timestamp for when the order was closed. In RFC 3339 format, e.g., \"2016-09-04T23:59:33.123Z\".
+     * @return $this
+     */
+    public function setClosedAt($closed_at)
+    {
+        $this->closed_at = $closed_at;
+        return $this;
+    }
+    /**
+     * Gets state
+     * @return string
+     */
+    public function getState()
+    {
+        return $this->state;
+    }
+  
+    /**
+     * Sets state
+     * @param string $state The current state of the order. `OPEN`,`COMPLETED`,`CANCELED` See [OrderState](#type-orderstate) for possible values
+     * @return $this
+     */
+    public function setState($state)
+    {
+        $this->state = $state;
         return $this;
     }
     /**

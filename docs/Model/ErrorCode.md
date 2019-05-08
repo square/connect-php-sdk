@@ -80,6 +80,8 @@ Name | Type
 **INVALID_PHONE_NUMBER** | string
 **CHECKOUT_EXPIRED** | string
 **BAD_CERTIFICATE** | string
+**INVALID_SQUARE_VERSION_FORMAT** | string
+**API_VERSION_INCOMPATIBLE** | string
 **CARD_DECLINED** | string
 **VERIFY_CVV_FAILURE** | string
 **VERIFY_AVS_FAILURE** | string

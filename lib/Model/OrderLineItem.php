@@ -24,8 +24,10 @@ class OrderLineItem implements ArrayAccess
       * @var string[]
       */
     static $swaggerTypes = array(
+        'uid' => 'string',
         'name' => 'string',
         'quantity' => 'string',
+        'quantity_unit' => '\SquareConnect\Model\OrderQuantityUnit',
         'note' => 'string',
         'catalog_object_id' => 'string',
         'variation_name' => 'string',
@@ -33,6 +35,7 @@ class OrderLineItem implements ArrayAccess
         'taxes' => '\SquareConnect\Model\OrderLineItemTax[]',
         'discounts' => '\SquareConnect\Model\OrderLineItemDiscount[]',
         'base_price_money' => '\SquareConnect\Model\Money',
+        'variation_total_price_money' => '\SquareConnect\Model\Money',
         'gross_sales_money' => '\SquareConnect\Model\Money',
         'total_tax_money' => '\SquareConnect\Model\Money',
         'total_discount_money' => '\SquareConnect\Model\Money',
@@ -44,8 +47,10 @@ class OrderLineItem implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
+        'uid' => 'uid',
         'name' => 'name',
         'quantity' => 'quantity',
+        'quantity_unit' => 'quantity_unit',
         'note' => 'note',
         'catalog_object_id' => 'catalog_object_id',
         'variation_name' => 'variation_name',
@@ -53,6 +58,7 @@ class OrderLineItem implements ArrayAccess
         'taxes' => 'taxes',
         'discounts' => 'discounts',
         'base_price_money' => 'base_price_money',
+        'variation_total_price_money' => 'variation_total_price_money',
         'gross_sales_money' => 'gross_sales_money',
         'total_tax_money' => 'total_tax_money',
         'total_discount_money' => 'total_discount_money',
@@ -64,8 +70,10 @@ class OrderLineItem implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
+        'uid' => 'setUid',
         'name' => 'setName',
         'quantity' => 'setQuantity',
+        'quantity_unit' => 'setQuantityUnit',
         'note' => 'setNote',
         'catalog_object_id' => 'setCatalogObjectId',
         'variation_name' => 'setVariationName',
@@ -73,6 +81,7 @@ class OrderLineItem implements ArrayAccess
         'taxes' => 'setTaxes',
         'discounts' => 'setDiscounts',
         'base_price_money' => 'setBasePriceMoney',
+        'variation_total_price_money' => 'setVariationTotalPriceMoney',
         'gross_sales_money' => 'setGrossSalesMoney',
         'total_tax_money' => 'setTotalTaxMoney',
         'total_discount_money' => 'setTotalDiscountMoney',
@@ -84,8 +93,10 @@ class OrderLineItem implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
+        'uid' => 'getUid',
         'name' => 'getName',
         'quantity' => 'getQuantity',
+        'quantity_unit' => 'getQuantityUnit',
         'note' => 'getNote',
         'catalog_object_id' => 'getCatalogObjectId',
         'variation_name' => 'getVariationName',
@@ -93,6 +104,7 @@ class OrderLineItem implements ArrayAccess
         'taxes' => 'getTaxes',
         'discounts' => 'getDiscounts',
         'base_price_money' => 'getBasePriceMoney',
+        'variation_total_price_money' => 'getVariationTotalPriceMoney',
         'gross_sales_money' => 'getGrossSalesMoney',
         'total_tax_money' => 'getTotalTaxMoney',
         'total_discount_money' => 'getTotalDiscountMoney',
@@ -100,15 +112,25 @@ class OrderLineItem implements ArrayAccess
     );
   
     /**
+      * $uid The line item's Unique identifier, unique only within this order. This field is read-only.
+      * @var string
+      */
+    protected $uid;
+    /**
       * $name The name of the line item.
       * @var string
       */
     protected $name;
     /**
-      * $quantity The quantity purchased, as a string representation of a number.  This string must have a positive integer value.
+      * $quantity The quantity purchased, formatted as a decimal number. For example: `\"3\"`.  Line items with a `quantity_unit` can have non-integer quantities. For example: `\"1.70000\"`.  Orders Hub and older versions of Connect do not support non-integer quantities. See [Decimal quantities with Orders hub and older versions of Connect](/more-apis/orders/overview#decimal-quantities).
       * @var string
       */
     protected $quantity;
+    /**
+      * $quantity_unit The unit and precision that this line item's quantity is measured in.
+      * @var \SquareConnect\Model\OrderQuantityUnit
+      */
+    protected $quantity_unit;
     /**
       * $note The note of the line item.
       * @var string
@@ -145,7 +167,12 @@ class OrderLineItem implements ArrayAccess
       */
     protected $base_price_money;
     /**
-      * $gross_sales_money The gross sales amount of money calculated as (item base price + modifiers price) * quantity.
+      * $variation_total_price_money The total price of all item variations sold in this line item. Calculated as `base_price_money` multiplied by `quantity`. Does not include modifiers.
+      * @var \SquareConnect\Model\Money
+      */
+    protected $variation_total_price_money;
+    /**
+      * $gross_sales_money The amount of money made in gross sales for this line item. Calculated as the sum of the variation's total price and each modifier's total price.
       * @var \SquareConnect\Model\Money
       */
     protected $gross_sales_money;
@@ -172,6 +199,11 @@ class OrderLineItem implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
+            if (isset($data["uid"])) {
+              $this->uid = $data["uid"];
+            } else {
+              $this->uid = null;
+            }
             if (isset($data["name"])) {
               $this->name = $data["name"];
             } else {
@@ -181,6 +213,11 @@ class OrderLineItem implements ArrayAccess
               $this->quantity = $data["quantity"];
             } else {
               $this->quantity = null;
+            }
+            if (isset($data["quantity_unit"])) {
+              $this->quantity_unit = $data["quantity_unit"];
+            } else {
+              $this->quantity_unit = null;
             }
             if (isset($data["note"])) {
               $this->note = $data["note"];
@@ -217,6 +254,11 @@ class OrderLineItem implements ArrayAccess
             } else {
               $this->base_price_money = null;
             }
+            if (isset($data["variation_total_price_money"])) {
+              $this->variation_total_price_money = $data["variation_total_price_money"];
+            } else {
+              $this->variation_total_price_money = null;
+            }
             if (isset($data["gross_sales_money"])) {
               $this->gross_sales_money = $data["gross_sales_money"];
             } else {
@@ -238,6 +280,25 @@ class OrderLineItem implements ArrayAccess
               $this->total_money = null;
             }
         }
+    }
+    /**
+     * Gets uid
+     * @return string
+     */
+    public function getUid()
+    {
+        return $this->uid;
+    }
+  
+    /**
+     * Sets uid
+     * @param string $uid The line item's Unique identifier, unique only within this order. This field is read-only.
+     * @return $this
+     */
+    public function setUid($uid)
+    {
+        $this->uid = $uid;
+        return $this;
     }
     /**
      * Gets name
@@ -269,12 +330,31 @@ class OrderLineItem implements ArrayAccess
   
     /**
      * Sets quantity
-     * @param string $quantity The quantity purchased, as a string representation of a number.  This string must have a positive integer value.
+     * @param string $quantity The quantity purchased, formatted as a decimal number. For example: `\"3\"`.  Line items with a `quantity_unit` can have non-integer quantities. For example: `\"1.70000\"`.  Orders Hub and older versions of Connect do not support non-integer quantities. See [Decimal quantities with Orders hub and older versions of Connect](/more-apis/orders/overview#decimal-quantities).
      * @return $this
      */
     public function setQuantity($quantity)
     {
         $this->quantity = $quantity;
+        return $this;
+    }
+    /**
+     * Gets quantity_unit
+     * @return \SquareConnect\Model\OrderQuantityUnit
+     */
+    public function getQuantityUnit()
+    {
+        return $this->quantity_unit;
+    }
+  
+    /**
+     * Sets quantity_unit
+     * @param \SquareConnect\Model\OrderQuantityUnit $quantity_unit The unit and precision that this line item's quantity is measured in.
+     * @return $this
+     */
+    public function setQuantityUnit($quantity_unit)
+    {
+        $this->quantity_unit = $quantity_unit;
         return $this;
     }
     /**
@@ -411,6 +491,25 @@ class OrderLineItem implements ArrayAccess
         return $this;
     }
     /**
+     * Gets variation_total_price_money
+     * @return \SquareConnect\Model\Money
+     */
+    public function getVariationTotalPriceMoney()
+    {
+        return $this->variation_total_price_money;
+    }
+  
+    /**
+     * Sets variation_total_price_money
+     * @param \SquareConnect\Model\Money $variation_total_price_money The total price of all item variations sold in this line item. Calculated as `base_price_money` multiplied by `quantity`. Does not include modifiers.
+     * @return $this
+     */
+    public function setVariationTotalPriceMoney($variation_total_price_money)
+    {
+        $this->variation_total_price_money = $variation_total_price_money;
+        return $this;
+    }
+    /**
      * Gets gross_sales_money
      * @return \SquareConnect\Model\Money
      */
@@ -421,7 +520,7 @@ class OrderLineItem implements ArrayAccess
   
     /**
      * Sets gross_sales_money
-     * @param \SquareConnect\Model\Money $gross_sales_money The gross sales amount of money calculated as (item base price + modifiers price) * quantity.
+     * @param \SquareConnect\Model\Money $gross_sales_money The amount of money made in gross sales for this line item. Calculated as the sum of the variation's total price and each modifier's total price.
      * @return $this
      */
     public function setGrossSalesMoney($gross_sales_money)

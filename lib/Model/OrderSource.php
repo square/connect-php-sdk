@@ -52,7 +52,7 @@ class OrderSource implements ArrayAccess
     );
   
     /**
-      * $name The name used to identify the place (physical or digital) that an order originates.  If unset, the name defaults to the name of the application that created the order.
+      * $name The name used to identify the place (physical or digital) that an order originates. If unset, the name defaults to the name of the application that created the order.
       * @var string
       */
     protected $name;
@@ -82,7 +82,7 @@ class OrderSource implements ArrayAccess
   
     /**
      * Sets name
-     * @param string $name The name used to identify the place (physical or digital) that an order originates.  If unset, the name defaults to the name of the application that created the order.
+     * @param string $name The name used to identify the place (physical or digital) that an order originates. If unset, the name defaults to the name of the application that created the order.
      * @return $this
      */
     public function setName($name)

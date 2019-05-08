@@ -140,17 +140,17 @@ class ChargeRequest implements ArrayAccess
       */
     protected $customer_id;
     /**
-      * $billing_address The buyer's billing address. This value is optional, but this transaction is ineligible for chargeback protection if neither this parameter nor `shipping_address` is provided.
+      * $billing_address The buyer's billing address.
       * @var \SquareConnect\Model\Address
       */
     protected $billing_address;
     /**
-      * $shipping_address The buyer's shipping address, if available. This value is optional, but this transaction is ineligible for chargeback protection if neither this parameter nor `billing_address` is provided.
+      * $shipping_address The buyer's shipping address, if available.
       * @var \SquareConnect\Model\Address
       */
     protected $shipping_address;
     /**
-      * $buyer_email_address The buyer's email address, if available. This value is optional, but this transaction is ineligible for chargeback protection if it is not provided.
+      * $buyer_email_address The buyer's email address, if available.
       * @var string
       */
     protected $buyer_email_address;
@@ -402,7 +402,7 @@ class ChargeRequest implements ArrayAccess
   
     /**
      * Sets billing_address
-     * @param \SquareConnect\Model\Address $billing_address The buyer's billing address. This value is optional, but this transaction is ineligible for chargeback protection if neither this parameter nor `shipping_address` is provided.
+     * @param \SquareConnect\Model\Address $billing_address The buyer's billing address.
      * @return $this
      */
     public function setBillingAddress($billing_address)
@@ -421,7 +421,7 @@ class ChargeRequest implements ArrayAccess
   
     /**
      * Sets shipping_address
-     * @param \SquareConnect\Model\Address $shipping_address The buyer's shipping address, if available. This value is optional, but this transaction is ineligible for chargeback protection if neither this parameter nor `billing_address` is provided.
+     * @param \SquareConnect\Model\Address $shipping_address The buyer's shipping address, if available.
      * @return $this
      */
     public function setShippingAddress($shipping_address)
@@ -440,7 +440,7 @@ class ChargeRequest implements ArrayAccess
   
     /**
      * Sets buyer_email_address
-     * @param string $buyer_email_address The buyer's email address, if available. This value is optional, but this transaction is ineligible for chargeback protection if it is not provided.
+     * @param string $buyer_email_address The buyer's email address, if available.
      * @return $this
      */
     public function setBuyerEmailAddress($buyer_email_address)

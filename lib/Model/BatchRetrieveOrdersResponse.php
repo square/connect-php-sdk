@@ -25,7 +25,8 @@ class BatchRetrieveOrdersResponse implements ArrayAccess
       */
     static $swaggerTypes = array(
         'orders' => '\SquareConnect\Model\Order[]',
-        'errors' => '\SquareConnect\Model\Error[]'
+        'errors' => '\SquareConnect\Model\Error[]',
+        'unconvertible_transaction_ids' => 'string[]'
     );
   
     /** 
@@ -34,7 +35,8 @@ class BatchRetrieveOrdersResponse implements ArrayAccess
       */
     static $attributeMap = array(
         'orders' => 'orders',
-        'errors' => 'errors'
+        'errors' => 'errors',
+        'unconvertible_transaction_ids' => 'unconvertible_transaction_ids'
     );
   
     /**
@@ -43,7 +45,8 @@ class BatchRetrieveOrdersResponse implements ArrayAccess
       */
     static $setters = array(
         'orders' => 'setOrders',
-        'errors' => 'setErrors'
+        'errors' => 'setErrors',
+        'unconvertible_transaction_ids' => 'setUnconvertibleTransactionIds'
     );
   
     /**
@@ -52,7 +55,8 @@ class BatchRetrieveOrdersResponse implements ArrayAccess
       */
     static $getters = array(
         'orders' => 'getOrders',
-        'errors' => 'getErrors'
+        'errors' => 'getErrors',
+        'unconvertible_transaction_ids' => 'getUnconvertibleTransactionIds'
     );
   
     /**
@@ -65,6 +69,11 @@ class BatchRetrieveOrdersResponse implements ArrayAccess
       * @var \SquareConnect\Model\Error[]
       */
     protected $errors;
+    /**
+      * $unconvertible_transaction_ids List of transaction ids within the requested set of ids that encountered transformation issues when being converted to an Order.
+      * @var string[]
+      */
+    protected $unconvertible_transaction_ids;
 
     /**
      * Constructor
@@ -82,6 +91,11 @@ class BatchRetrieveOrdersResponse implements ArrayAccess
               $this->errors = $data["errors"];
             } else {
               $this->errors = null;
+            }
+            if (isset($data["unconvertible_transaction_ids"])) {
+              $this->unconvertible_transaction_ids = $data["unconvertible_transaction_ids"];
+            } else {
+              $this->unconvertible_transaction_ids = null;
             }
         }
     }
@@ -121,6 +135,25 @@ class BatchRetrieveOrdersResponse implements ArrayAccess
     public function setErrors($errors)
     {
         $this->errors = $errors;
+        return $this;
+    }
+    /**
+     * Gets unconvertible_transaction_ids
+     * @return string[]
+     */
+    public function getUnconvertibleTransactionIds()
+    {
+        return $this->unconvertible_transaction_ids;
+    }
+  
+    /**
+     * Sets unconvertible_transaction_ids
+     * @param string[] $unconvertible_transaction_ids List of transaction ids within the requested set of ids that encountered transformation issues when being converted to an Order.
+     * @return $this
+     */
+    public function setUnconvertibleTransactionIds($unconvertible_transaction_ids)
+    {
+        $this->unconvertible_transaction_ids = $unconvertible_transaction_ids;
         return $this;
     }
     /**
