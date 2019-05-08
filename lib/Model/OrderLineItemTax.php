@@ -24,6 +24,7 @@ class OrderLineItemTax implements ArrayAccess
       * @var string[]
       */
     static $swaggerTypes = array(
+        'uid' => 'string',
         'catalog_object_id' => 'string',
         'name' => 'string',
         'type' => 'string',
@@ -37,6 +38,7 @@ class OrderLineItemTax implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
+        'uid' => 'uid',
         'catalog_object_id' => 'catalog_object_id',
         'name' => 'name',
         'type' => 'type',
@@ -50,6 +52,7 @@ class OrderLineItemTax implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
+        'uid' => 'setUid',
         'catalog_object_id' => 'setCatalogObjectId',
         'name' => 'setName',
         'type' => 'setType',
@@ -63,6 +66,7 @@ class OrderLineItemTax implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
+        'uid' => 'getUid',
         'catalog_object_id' => 'getCatalogObjectId',
         'name' => 'getName',
         'type' => 'getType',
@@ -71,6 +75,11 @@ class OrderLineItemTax implements ArrayAccess
         'scope' => 'getScope'
     );
   
+    /**
+      * $uid The tax's Unique identifier, unique only within this order. This field is read-only.
+      * @var string
+      */
+    protected $uid;
     /**
       * $catalog_object_id The catalog object id referencing [CatalogTax](#type-catalogtax).
       * @var string
@@ -109,6 +118,11 @@ class OrderLineItemTax implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
+            if (isset($data["uid"])) {
+              $this->uid = $data["uid"];
+            } else {
+              $this->uid = null;
+            }
             if (isset($data["catalog_object_id"])) {
               $this->catalog_object_id = $data["catalog_object_id"];
             } else {
@@ -140,6 +154,25 @@ class OrderLineItemTax implements ArrayAccess
               $this->scope = null;
             }
         }
+    }
+    /**
+     * Gets uid
+     * @return string
+     */
+    public function getUid()
+    {
+        return $this->uid;
+    }
+  
+    /**
+     * Sets uid
+     * @param string $uid The tax's Unique identifier, unique only within this order. This field is read-only.
+     * @return $this
+     */
+    public function setUid($uid)
+    {
+        $this->uid = $uid;
+        return $this;
     }
     /**
      * Gets catalog_object_id

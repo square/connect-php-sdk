@@ -24,6 +24,7 @@ class OrderLineItemDiscount implements ArrayAccess
       * @var string[]
       */
     static $swaggerTypes = array(
+        'uid' => 'string',
         'catalog_object_id' => 'string',
         'name' => 'string',
         'type' => 'string',
@@ -38,6 +39,7 @@ class OrderLineItemDiscount implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
+        'uid' => 'uid',
         'catalog_object_id' => 'catalog_object_id',
         'name' => 'name',
         'type' => 'type',
@@ -52,6 +54,7 @@ class OrderLineItemDiscount implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
+        'uid' => 'setUid',
         'catalog_object_id' => 'setCatalogObjectId',
         'name' => 'setName',
         'type' => 'setType',
@@ -66,6 +69,7 @@ class OrderLineItemDiscount implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
+        'uid' => 'getUid',
         'catalog_object_id' => 'getCatalogObjectId',
         'name' => 'getName',
         'type' => 'getType',
@@ -75,6 +79,11 @@ class OrderLineItemDiscount implements ArrayAccess
         'scope' => 'getScope'
     );
   
+    /**
+      * $uid The discount's Unique identifier, unique only within this order. This field is read-only.
+      * @var string
+      */
+    protected $uid;
     /**
       * $catalog_object_id The catalog object id referencing [CatalogDiscount](#type-catalogdiscount).
       * @var string
@@ -91,7 +100,7 @@ class OrderLineItemDiscount implements ArrayAccess
       */
     protected $type;
     /**
-      * $percentage The percentage of the tax, as a string representation of a decimal number. A value of `7.25` corresponds to a percentage of 7.25%.  The percentage won't be set for an amount-based discount.
+      * $percentage The percentage of the discount, as a string representation of a decimal number. A value of `7.25` corresponds to a percentage of 7.25%.  The percentage won't be set for an amount-based discount.
       * @var string
       */
     protected $percentage;
@@ -118,6 +127,11 @@ class OrderLineItemDiscount implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
+            if (isset($data["uid"])) {
+              $this->uid = $data["uid"];
+            } else {
+              $this->uid = null;
+            }
             if (isset($data["catalog_object_id"])) {
               $this->catalog_object_id = $data["catalog_object_id"];
             } else {
@@ -154,6 +168,25 @@ class OrderLineItemDiscount implements ArrayAccess
               $this->scope = null;
             }
         }
+    }
+    /**
+     * Gets uid
+     * @return string
+     */
+    public function getUid()
+    {
+        return $this->uid;
+    }
+  
+    /**
+     * Sets uid
+     * @param string $uid The discount's Unique identifier, unique only within this order. This field is read-only.
+     * @return $this
+     */
+    public function setUid($uid)
+    {
+        $this->uid = $uid;
+        return $this;
     }
     /**
      * Gets catalog_object_id
@@ -223,7 +256,7 @@ class OrderLineItemDiscount implements ArrayAccess
   
     /**
      * Sets percentage
-     * @param string $percentage The percentage of the tax, as a string representation of a decimal number. A value of `7.25` corresponds to a percentage of 7.25%.  The percentage won't be set for an amount-based discount.
+     * @param string $percentage The percentage of the discount, as a string representation of a decimal number. A value of `7.25` corresponds to a percentage of 7.25%.  The percentage won't be set for an amount-based discount.
      * @return $this
      */
     public function setPercentage($percentage)

@@ -24,6 +24,7 @@ class OrderLineItemModifier implements ArrayAccess
       * @var string[]
       */
     static $swaggerTypes = array(
+        'uid' => 'string',
         'catalog_object_id' => 'string',
         'name' => 'string',
         'base_price_money' => '\SquareConnect\Model\Money',
@@ -35,6 +36,7 @@ class OrderLineItemModifier implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
+        'uid' => 'uid',
         'catalog_object_id' => 'catalog_object_id',
         'name' => 'name',
         'base_price_money' => 'base_price_money',
@@ -46,6 +48,7 @@ class OrderLineItemModifier implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
+        'uid' => 'setUid',
         'catalog_object_id' => 'setCatalogObjectId',
         'name' => 'setName',
         'base_price_money' => 'setBasePriceMoney',
@@ -57,12 +60,18 @@ class OrderLineItemModifier implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
+        'uid' => 'getUid',
         'catalog_object_id' => 'getCatalogObjectId',
         'name' => 'getName',
         'base_price_money' => 'getBasePriceMoney',
         'total_price_money' => 'getTotalPriceMoney'
     );
   
+    /**
+      * $uid The modifier's Unique identifier, unique only within this order. This field is read-only.
+      * @var string
+      */
+    protected $uid;
     /**
       * $catalog_object_id The catalog object id referencing [CatalogModifier](#type-catalogmodifier).
       * @var string
@@ -79,7 +88,7 @@ class OrderLineItemModifier implements ArrayAccess
       */
     protected $base_price_money;
     /**
-      * $total_price_money The total price of the item modifier for its line item. This is the modifier's base_price_money multiplied by the line item's quantity.
+      * $total_price_money The total price of the item modifier for its line item. This is the modifier's `base_price_money` multiplied by the line item's quantity.
       * @var \SquareConnect\Model\Money
       */
     protected $total_price_money;
@@ -91,6 +100,11 @@ class OrderLineItemModifier implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
+            if (isset($data["uid"])) {
+              $this->uid = $data["uid"];
+            } else {
+              $this->uid = null;
+            }
             if (isset($data["catalog_object_id"])) {
               $this->catalog_object_id = $data["catalog_object_id"];
             } else {
@@ -112,6 +126,25 @@ class OrderLineItemModifier implements ArrayAccess
               $this->total_price_money = null;
             }
         }
+    }
+    /**
+     * Gets uid
+     * @return string
+     */
+    public function getUid()
+    {
+        return $this->uid;
+    }
+  
+    /**
+     * Sets uid
+     * @param string $uid The modifier's Unique identifier, unique only within this order. This field is read-only.
+     * @return $this
+     */
+    public function setUid($uid)
+    {
+        $this->uid = $uid;
+        return $this;
     }
     /**
      * Gets catalog_object_id
@@ -181,7 +214,7 @@ class OrderLineItemModifier implements ArrayAccess
   
     /**
      * Sets total_price_money
-     * @param \SquareConnect\Model\Money $total_price_money The total price of the item modifier for its line item. This is the modifier's base_price_money multiplied by the line item's quantity.
+     * @param \SquareConnect\Model\Money $total_price_money The total price of the item modifier for its line item. This is the modifier's `base_price_money` multiplied by the line item's quantity.
      * @return $this
      */
     public function setTotalPriceMoney($total_price_money)

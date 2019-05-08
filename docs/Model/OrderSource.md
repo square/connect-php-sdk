@@ -7,7 +7,7 @@ Represents the origination details of an order.
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------
-**name** | getName() | setName($value) | **string** | The name used to identify the place (physical or digital) that an order originates.  If unset, the name defaults to the name of the application that created the order. | [optional] 
+**name** | getName() | setName($value) | **string** | The name used to identify the place (physical or digital) that an order originates. If unset, the name defaults to the name of the application that created the order. | [optional] 
 
 Note: All properties are protected and only accessed via getters and setters.
 

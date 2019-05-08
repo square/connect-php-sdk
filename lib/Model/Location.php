@@ -38,7 +38,8 @@ class Location implements ArrayAccess
         'phone_number' => 'string',
         'business_name' => 'string',
         'type' => 'string',
-        'website_url' => 'string'
+        'website_url' => 'string',
+        'business_hours' => '\SquareConnect\Model\BusinessHours'
     );
   
     /** 
@@ -60,7 +61,8 @@ class Location implements ArrayAccess
         'phone_number' => 'phone_number',
         'business_name' => 'business_name',
         'type' => 'type',
-        'website_url' => 'website_url'
+        'website_url' => 'website_url',
+        'business_hours' => 'business_hours'
     );
   
     /**
@@ -82,7 +84,8 @@ class Location implements ArrayAccess
         'phone_number' => 'setPhoneNumber',
         'business_name' => 'setBusinessName',
         'type' => 'setType',
-        'website_url' => 'setWebsiteUrl'
+        'website_url' => 'setWebsiteUrl',
+        'business_hours' => 'setBusinessHours'
     );
   
     /**
@@ -104,7 +107,8 @@ class Location implements ArrayAccess
         'phone_number' => 'getPhoneNumber',
         'business_name' => 'getBusinessName',
         'type' => 'getType',
-        'website_url' => 'getWebsiteUrl'
+        'website_url' => 'getWebsiteUrl',
+        'business_hours' => 'getBusinessHours'
     );
   
     /**
@@ -182,6 +186,11 @@ class Location implements ArrayAccess
       * @var string
       */
     protected $website_url;
+    /**
+      * $business_hours The hours of operation for a business location.  Default: none; only exists if explicitly set.
+      * @var \SquareConnect\Model\BusinessHours
+      */
+    protected $business_hours;
 
     /**
      * Constructor
@@ -264,6 +273,11 @@ class Location implements ArrayAccess
               $this->website_url = $data["website_url"];
             } else {
               $this->website_url = null;
+            }
+            if (isset($data["business_hours"])) {
+              $this->business_hours = $data["business_hours"];
+            } else {
+              $this->business_hours = null;
             }
         }
     }
@@ -550,6 +564,25 @@ class Location implements ArrayAccess
     public function setWebsiteUrl($website_url)
     {
         $this->website_url = $website_url;
+        return $this;
+    }
+    /**
+     * Gets business_hours
+     * @return \SquareConnect\Model\BusinessHours
+     */
+    public function getBusinessHours()
+    {
+        return $this->business_hours;
+    }
+  
+    /**
+     * Sets business_hours
+     * @param \SquareConnect\Model\BusinessHours $business_hours The hours of operation for a business location.  Default: none; only exists if explicitly set.
+     * @return $this
+     */
+    public function setBusinessHours($business_hours)
+    {
+        $this->business_hours = $business_hours;
         return $this;
     }
     /**
