@@ -62,15 +62,15 @@
 ## New API: Labor API
 
 The Labor API now includes functionality
-that gives a Square account the ability to track and retrieve employee labor hours 
-including multiple hourly wage rates per employee, work shift break tracking, and 
+that gives a Square account the ability to track and retrieve employee labor hours
+including multiple hourly wage rates per employee, work shift break tracking, and
 standardized break templates.
 
 See the Connect v2 Technical Reference.
 
 ## New API: Employees API
 
-The Employees API includes the ability to list employees for a Square 
+The Employees API includes the ability to list employees for a Square
 account and retrieve a single employee by ID.
 
 See the Connect v2 Technical Reference.
