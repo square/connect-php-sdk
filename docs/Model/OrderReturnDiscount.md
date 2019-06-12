@@ -7,7 +7,7 @@ The line item discount being returned.
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------
-**uid** | getUid() | setUid($value) | **string** | The return discount&#39;s Unique identifier, unique only within this order. | [optional] 
+**uid** | getUid() | setUid($value) | **string** | Unique ID that identifies the return discount only within this order.  This field is read-only. | [optional] 
 **source_discount_uid** | getSourceDiscountUid() | setSourceDiscountUid($value) | **string** | &#x60;uid&#x60; of the Discount from the Order which contains the original application of this discount. | [optional] 
 **catalog_object_id** | getCatalogObjectId() | setCatalogObjectId($value) | **string** | The catalog object id referencing [CatalogDiscount](#type-catalogdiscount). | [optional] 
 **name** | getName() | setName($value) | **string** | The discount&#39;s name. | [optional] 

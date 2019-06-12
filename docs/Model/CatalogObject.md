@@ -25,6 +25,7 @@ Name | Getter | Setter | Type | Description | Notes
 **modifier_list_data** | getModifierListData() | setModifierListData($value) | [**\SquareConnect\Model\CatalogModifierList**](CatalogModifierList.md) | Structured data for a [CatalogModifierList](#type-catalogmodifierlist), set for CatalogObjects of type &#x60;MODIFIER_LIST&#x60;. | [optional] 
 **modifier_data** | getModifierData() | setModifierData($value) | [**\SquareConnect\Model\CatalogModifier**](CatalogModifier.md) | Structured data for a [CatalogModifier](#type-catalogmodifier), set for CatalogObjects of type &#x60;MODIFIER&#x60;. | [optional] 
 **image_data** | getImageData() | setImageData($value) | [**\SquareConnect\Model\CatalogImage**](CatalogImage.md) | Structured data for a [CatalogImage](#type-catalogimage), set for CatalogObjects of type &#x60;IMAGE&#x60;. | [optional] 
+**measurement_unit_data** | getMeasurementUnitData() | setMeasurementUnitData($value) | [**\SquareConnect\Model\CatalogMeasurementUnit**](CatalogMeasurementUnit.md) | Structured data for a [CatalogMeasurementUnit](#type-catalogmeasurementunit), set for CatalogObjects of type &#x60;MEASUREMENT_UNIT&#x60;. | [optional] 
 
 Note: All properties are protected and only accessed via getters and setters.
 

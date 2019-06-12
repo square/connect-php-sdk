@@ -100,12 +100,12 @@ class ObtainTokenResponse implements ArrayAccess
       */
     protected $merchant_id;
     /**
-      * $subscription_id __Legacy field__. The ID of a subscription plan the merchant signed up for. Only present if the merchant signed up for a subscription during authorization.
+      * $subscription_id __LEGACY FIELD__. The ID of a subscription plan the merchant signed up for. Only present if the merchant signed up for a subscription during authorization.
       * @var string
       */
     protected $subscription_id;
     /**
-      * $plan_id The ID of the [subscription](https://docs.connect.squareup.com/api/connect/v1/#navsection-subscriptionmanagement) plan the merchant signed up for. Only present if the merchant signed up for a subscription during authorization.
+      * $plan_id __LEGACY FIELD__. The ID of the subscription plan the merchant signed up for. Only present if the merchant signed up for a subscription during authorization.
       * @var string
       */
     protected $plan_id;
@@ -256,7 +256,7 @@ class ObtainTokenResponse implements ArrayAccess
   
     /**
      * Sets subscription_id
-     * @param string $subscription_id __Legacy field__. The ID of a subscription plan the merchant signed up for. Only present if the merchant signed up for a subscription during authorization.
+     * @param string $subscription_id __LEGACY FIELD__. The ID of a subscription plan the merchant signed up for. Only present if the merchant signed up for a subscription during authorization.
      * @return $this
      */
     public function setSubscriptionId($subscription_id)
@@ -275,7 +275,7 @@ class ObtainTokenResponse implements ArrayAccess
   
     /**
      * Sets plan_id
-     * @param string $plan_id The ID of the [subscription](https://docs.connect.squareup.com/api/connect/v1/#navsection-subscriptionmanagement) plan the merchant signed up for. Only present if the merchant signed up for a subscription during authorization.
+     * @param string $plan_id __LEGACY FIELD__. The ID of the subscription plan the merchant signed up for. Only present if the merchant signed up for a subscription during authorization.
      * @return $this
      */
     public function setPlanId($plan_id)

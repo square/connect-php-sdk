@@ -159,7 +159,7 @@ class CatalogItem implements ArrayAccess
       */
     protected $image_url;
     /**
-      * $variations A list of [CatalogObject](#type-catalogobject)s containing the [CatalogItemVariation](#type-catalogitemvariation)s for this item.
+      * $variations A list of [CatalogObject](#type-catalogobject)s containing the [CatalogItemVariation](#type-catalogitemvariation)s for this item.  Maximum: 250 item variations
       * @var \SquareConnect\Model\CatalogObject[]
       */
     protected $variations;
@@ -473,7 +473,7 @@ class CatalogItem implements ArrayAccess
   
     /**
      * Sets variations
-     * @param \SquareConnect\Model\CatalogObject[] $variations A list of [CatalogObject](#type-catalogobject)s containing the [CatalogItemVariation](#type-catalogitemvariation)s for this item.
+     * @param \SquareConnect\Model\CatalogObject[] $variations A list of [CatalogObject](#type-catalogobject)s containing the [CatalogItemVariation](#type-catalogitemvariation)s for this item.  Maximum: 250 item variations
      * @return $this
      */
     public function setVariations($variations)

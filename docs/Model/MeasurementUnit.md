@@ -12,6 +12,7 @@ Name | Getter | Setter | Type | Description | Notes
 **length_unit** | getLengthUnit() | setLengthUnit($value) | **string** | Represents a standard length unit. See [MeasurementUnitLength](#type-measurementunitlength) for possible values | [optional] 
 **volume_unit** | getVolumeUnit() | setVolumeUnit($value) | **string** | Represents a standard volume unit. See [MeasurementUnitVolume](#type-measurementunitvolume) for possible values | [optional] 
 **weight_unit** | getWeightUnit() | setWeightUnit($value) | **string** | Represents a standard unit of weight or mass. See [MeasurementUnitWeight](#type-measurementunitweight) for possible values | [optional] 
+**generic_unit** | getGenericUnit() | setGenericUnit($value) | **string** | Reserved for API integrations that lack the ability to specify a real measurement unit See [MeasurementUnitGeneric](#type-measurementunitgeneric) for possible values | [optional] 
 
 Note: All properties are protected and only accessed via getters and setters.
 

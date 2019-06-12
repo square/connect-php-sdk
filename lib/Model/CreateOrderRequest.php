@@ -82,7 +82,7 @@ class CreateOrderRequest implements ArrayAccess
       */
     protected $idempotency_key;
     /**
-      * $reference_id __Deprecated__: Please set the reference_id on the nested [order](#type-order) field instead.  An optional ID you can associate with the order for your own purposes (such as to associate the order with an entity ID in your own database).  This value cannot exceed 40 characters. -- Top-level fields necessary to support the connect v2 CreateOrderRequest shape.
+      * $reference_id __Deprecated__: Please set the reference_id on the nested [order](#type-order) field instead.  An optional ID you can associate with the order for your own purposes (such as to associate the order with an entity ID in your own database).  This value cannot exceed 40 characters.
       * @var string
       */
     protected $reference_id;
@@ -190,7 +190,7 @@ class CreateOrderRequest implements ArrayAccess
   
     /**
      * Sets reference_id
-     * @param string $reference_id __Deprecated__: Please set the reference_id on the nested [order](#type-order) field instead.  An optional ID you can associate with the order for your own purposes (such as to associate the order with an entity ID in your own database).  This value cannot exceed 40 characters. -- Top-level fields necessary to support the connect v2 CreateOrderRequest shape.
+     * @param string $reference_id __Deprecated__: Please set the reference_id on the nested [order](#type-order) field instead.  An optional ID you can associate with the order for your own purposes (such as to associate the order with an entity ID in your own database).  This value cannot exceed 40 characters.
      * @return $this
      */
     public function setReferenceId($reference_id)

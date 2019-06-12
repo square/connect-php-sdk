@@ -60,7 +60,7 @@ class OrderRoundingAdjustment implements ArrayAccess
     );
   
     /**
-      * $uid The rounding adjustment's Unique identifier, unique only within this order. This field is read-only.
+      * $uid Unique ID that identifies the rounding adjustment only within this order.  This field is read-only.
       * @var string
       */
     protected $uid;
@@ -110,7 +110,7 @@ class OrderRoundingAdjustment implements ArrayAccess
   
     /**
      * Sets uid
-     * @param string $uid The rounding adjustment's Unique identifier, unique only within this order. This field is read-only.
+     * @param string $uid Unique ID that identifies the rounding adjustment only within this order.  This field is read-only.
      * @return $this
      */
     public function setUid($uid)

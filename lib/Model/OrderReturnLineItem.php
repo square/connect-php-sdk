@@ -181,22 +181,22 @@ class OrderReturnLineItem implements ArrayAccess
       */
     protected $variation_total_price_money;
     /**
-      * $gross_return_money The gross return amount of money calculated as (item base price + modifiers price) * quantity.
+      * $gross_return_money The gross return amount of money calculated as (item base price + modifiers price) * quantity.  This field is read-only.
       * @var \SquareConnect\Model\Money
       */
     protected $gross_return_money;
     /**
-      * $total_tax_money The total tax amount of money to return for the line item.
+      * $total_tax_money The total tax amount of money to return for the line item.  This field is read-only.
       * @var \SquareConnect\Model\Money
       */
     protected $total_tax_money;
     /**
-      * $total_discount_money The total discount amount of money to return for the line item.
+      * $total_discount_money The total discount amount of money to return for the line item.  This field is read-only.
       * @var \SquareConnect\Model\Money
       */
     protected $total_discount_money;
     /**
-      * $total_money The total amount of money to return for this line item.
+      * $total_money The total amount of money to return for this line item.  This field is read-only.
       * @var \SquareConnect\Model\Money
       */
     protected $total_money;
@@ -553,7 +553,7 @@ class OrderReturnLineItem implements ArrayAccess
   
     /**
      * Sets gross_return_money
-     * @param \SquareConnect\Model\Money $gross_return_money The gross return amount of money calculated as (item base price + modifiers price) * quantity.
+     * @param \SquareConnect\Model\Money $gross_return_money The gross return amount of money calculated as (item base price + modifiers price) * quantity.  This field is read-only.
      * @return $this
      */
     public function setGrossReturnMoney($gross_return_money)
@@ -572,7 +572,7 @@ class OrderReturnLineItem implements ArrayAccess
   
     /**
      * Sets total_tax_money
-     * @param \SquareConnect\Model\Money $total_tax_money The total tax amount of money to return for the line item.
+     * @param \SquareConnect\Model\Money $total_tax_money The total tax amount of money to return for the line item.  This field is read-only.
      * @return $this
      */
     public function setTotalTaxMoney($total_tax_money)
@@ -591,7 +591,7 @@ class OrderReturnLineItem implements ArrayAccess
   
     /**
      * Sets total_discount_money
-     * @param \SquareConnect\Model\Money $total_discount_money The total discount amount of money to return for the line item.
+     * @param \SquareConnect\Model\Money $total_discount_money The total discount amount of money to return for the line item.  This field is read-only.
      * @return $this
      */
     public function setTotalDiscountMoney($total_discount_money)
@@ -610,7 +610,7 @@ class OrderReturnLineItem implements ArrayAccess
   
     /**
      * Sets total_money
-     * @param \SquareConnect\Model\Money $total_money The total amount of money to return for this line item.
+     * @param \SquareConnect\Model\Money $total_money The total amount of money to return for this line item.  This field is read-only.
      * @return $this
      */
     public function setTotalMoney($total_money)

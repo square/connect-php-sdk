@@ -7,7 +7,7 @@ The line item tax being returned.
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------
-**uid** | getUid() | setUid($value) | **string** | The return tax&#39;s Unique identifier, unique only within this order. | [optional] 
+**uid** | getUid() | setUid($value) | **string** | Unique ID that identifies the return tax only within this order.  This field is read-only. | [optional] 
 **source_tax_uid** | getSourceTaxUid() | setSourceTaxUid($value) | **string** | &#x60;uid&#x60; of the Tax from the Order which contains the original charge of this tax. | [optional] 
 **catalog_object_id** | getCatalogObjectId() | setCatalogObjectId($value) | **string** | The catalog object id referencing [CatalogTax](#type-catalogtax). | [optional] 
 **name** | getName() | setName($value) | **string** | The tax&#39;s name. | [optional] 

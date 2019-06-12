@@ -52,6 +52,7 @@ Name | Type
 **ONE_INSTRUMENT_EXPECTED** | string
 **NO_FIELDS_SET** | string
 **DEPRECATED_FIELD_SET** | string
+**RETIRED_FIELD_SET** | string
 **CARD_EXPIRED** | string
 **INVALID_EXPIRATION** | string
 **INVALID_EXPIRATION_YEAR** | string

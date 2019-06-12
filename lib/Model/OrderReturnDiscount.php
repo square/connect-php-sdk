@@ -84,7 +84,7 @@ class OrderReturnDiscount implements ArrayAccess
     );
   
     /**
-      * $uid The return discount's Unique identifier, unique only within this order.
+      * $uid Unique ID that identifies the return discount only within this order.  This field is read-only.
       * @var string
       */
     protected $uid;
@@ -194,7 +194,7 @@ class OrderReturnDiscount implements ArrayAccess
   
     /**
      * Sets uid
-     * @param string $uid The return discount's Unique identifier, unique only within this order.
+     * @param string $uid Unique ID that identifies the return discount only within this order.  This field is read-only.
      * @return $this
      */
     public function setUid($uid)

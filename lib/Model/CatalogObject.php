@@ -41,7 +41,8 @@ class CatalogObject implements ArrayAccess
         'discount_data' => '\SquareConnect\Model\CatalogDiscount',
         'modifier_list_data' => '\SquareConnect\Model\CatalogModifierList',
         'modifier_data' => '\SquareConnect\Model\CatalogModifier',
-        'image_data' => '\SquareConnect\Model\CatalogImage'
+        'image_data' => '\SquareConnect\Model\CatalogImage',
+        'measurement_unit_data' => '\SquareConnect\Model\CatalogMeasurementUnit'
     );
   
     /** 
@@ -66,7 +67,8 @@ class CatalogObject implements ArrayAccess
         'discount_data' => 'discount_data',
         'modifier_list_data' => 'modifier_list_data',
         'modifier_data' => 'modifier_data',
-        'image_data' => 'image_data'
+        'image_data' => 'image_data',
+        'measurement_unit_data' => 'measurement_unit_data'
     );
   
     /**
@@ -91,7 +93,8 @@ class CatalogObject implements ArrayAccess
         'discount_data' => 'setDiscountData',
         'modifier_list_data' => 'setModifierListData',
         'modifier_data' => 'setModifierData',
-        'image_data' => 'setImageData'
+        'image_data' => 'setImageData',
+        'measurement_unit_data' => 'setMeasurementUnitData'
     );
   
     /**
@@ -116,7 +119,8 @@ class CatalogObject implements ArrayAccess
         'discount_data' => 'getDiscountData',
         'modifier_list_data' => 'getModifierListData',
         'modifier_data' => 'getModifierData',
-        'image_data' => 'getImageData'
+        'image_data' => 'getImageData',
+        'measurement_unit_data' => 'getMeasurementUnitData'
     );
   
     /**
@@ -209,6 +213,11 @@ class CatalogObject implements ArrayAccess
       * @var \SquareConnect\Model\CatalogImage
       */
     protected $image_data;
+    /**
+      * $measurement_unit_data Structured data for a [CatalogMeasurementUnit](#type-catalogmeasurementunit), set for CatalogObjects of type `MEASUREMENT_UNIT`.
+      * @var \SquareConnect\Model\CatalogMeasurementUnit
+      */
+    protected $measurement_unit_data;
 
     /**
      * Constructor
@@ -306,6 +315,11 @@ class CatalogObject implements ArrayAccess
               $this->image_data = $data["image_data"];
             } else {
               $this->image_data = null;
+            }
+            if (isset($data["measurement_unit_data"])) {
+              $this->measurement_unit_data = $data["measurement_unit_data"];
+            } else {
+              $this->measurement_unit_data = null;
             }
         }
     }
@@ -649,6 +663,25 @@ class CatalogObject implements ArrayAccess
     public function setImageData($image_data)
     {
         $this->image_data = $image_data;
+        return $this;
+    }
+    /**
+     * Gets measurement_unit_data
+     * @return \SquareConnect\Model\CatalogMeasurementUnit
+     */
+    public function getMeasurementUnitData()
+    {
+        return $this->measurement_unit_data;
+    }
+  
+    /**
+     * Sets measurement_unit_data
+     * @param \SquareConnect\Model\CatalogMeasurementUnit $measurement_unit_data Structured data for a [CatalogMeasurementUnit](#type-catalogmeasurementunit), set for CatalogObjects of type `MEASUREMENT_UNIT`.
+     * @return $this
+     */
+    public function setMeasurementUnitData($measurement_unit_data)
+    {
+        $this->measurement_unit_data = $measurement_unit_data;
         return $this;
     }
     /**

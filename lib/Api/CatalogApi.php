@@ -108,7 +108,7 @@ class CatalogApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-05-08";
+        $headerParams['Square-Version'] = "2019-06-12";
 
         
         
@@ -201,7 +201,7 @@ class CatalogApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-05-08";
+        $headerParams['Square-Version'] = "2019-06-12";
 
         
         
@@ -294,7 +294,7 @@ class CatalogApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-05-08";
+        $headerParams['Square-Version'] = "2019-06-12";
 
         
         
@@ -381,7 +381,7 @@ class CatalogApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-05-08";
+        $headerParams['Square-Version'] = "2019-06-12";
 
         
         
@@ -470,7 +470,7 @@ class CatalogApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-05-08";
+        $headerParams['Square-Version'] = "2019-06-12";
 
         
         
@@ -564,7 +564,7 @@ class CatalogApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-05-08";
+        $headerParams['Square-Version'] = "2019-06-12";
 
         // query params
         if ($cursor !== null) {
@@ -621,7 +621,7 @@ class CatalogApi
      * RetrieveCatalogObject
      *
      * @param string $object_id The object ID of any type of [CatalogObject](#type-catalogobject)s to be retrieved. (required)
-     * @param bool $include_related_objects If &#x60;true&#x60;, the response will include additional objects that are related to the requested object, as follows:  If the &#x60;object&#x60; field of the response contains a [CatalogItem](#type-catalogitem), its associated [CatalogCategory](#type-catalogcategory), [CatalogTax](#type-catalogtax)es, and [CatalogModifierList](#type-catalogmodifierlist)s will be returned in the &#x60;related_objects&#x60; field of the response. If the &#x60;object&#x60; field of the response contains a [CatalogItemVariation](#type-catalogitemvariation), its parent [CatalogItem](#type-catalogitem) will be returned in the &#x60;related_objects&#x60; field of the response.  Default value: &#x60;false&#x60; (optional)
+     * @param bool $include_related_objects If &#x60;true&#x60;, the response will include additional objects that are related to the requested object, as follows:  If the &#x60;object&#x60; field of the response contains a [CatalogItem](#type-catalogitem), its associated [CatalogCategory](#type-catalogcategory), [CatalogTax](#type-catalogtax)es, [CatalogImage](#type-catalogimage)s and [CatalogModifierList](#type-catalogmodifierlist)s will be returned in the &#x60;related_objects&#x60; field of the response. If the &#x60;object&#x60; field of the response contains a [CatalogItemVariation](#type-catalogitemvariation), its parent [CatalogItem](#type-catalogitem) will be returned in the &#x60;related_objects&#x60; field of  the response.  Default value: &#x60;false&#x60; (optional)
      * @return \SquareConnect\Model\RetrieveCatalogObjectResponse
      * @throws \SquareConnect\ApiException on non-2xx response
      */
@@ -638,7 +638,7 @@ class CatalogApi
      * RetrieveCatalogObject
      *
      * @param string $object_id The object ID of any type of [CatalogObject](#type-catalogobject)s to be retrieved. (required)
-     * @param bool $include_related_objects If &#x60;true&#x60;, the response will include additional objects that are related to the requested object, as follows:  If the &#x60;object&#x60; field of the response contains a [CatalogItem](#type-catalogitem), its associated [CatalogCategory](#type-catalogcategory), [CatalogTax](#type-catalogtax)es, and [CatalogModifierList](#type-catalogmodifierlist)s will be returned in the &#x60;related_objects&#x60; field of the response. If the &#x60;object&#x60; field of the response contains a [CatalogItemVariation](#type-catalogitemvariation), its parent [CatalogItem](#type-catalogitem) will be returned in the &#x60;related_objects&#x60; field of the response.  Default value: &#x60;false&#x60; (optional)
+     * @param bool $include_related_objects If &#x60;true&#x60;, the response will include additional objects that are related to the requested object, as follows:  If the &#x60;object&#x60; field of the response contains a [CatalogItem](#type-catalogitem), its associated [CatalogCategory](#type-catalogcategory), [CatalogTax](#type-catalogtax)es, [CatalogImage](#type-catalogimage)s and [CatalogModifierList](#type-catalogmodifierlist)s will be returned in the &#x60;related_objects&#x60; field of the response. If the &#x60;object&#x60; field of the response contains a [CatalogItemVariation](#type-catalogitemvariation), its parent [CatalogItem](#type-catalogitem) will be returned in the &#x60;related_objects&#x60; field of  the response.  Default value: &#x60;false&#x60; (optional)
      * @return Array of \SquareConnect\Model\RetrieveCatalogObjectResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
@@ -661,7 +661,7 @@ class CatalogApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-05-08";
+        $headerParams['Square-Version'] = "2019-06-12";
 
         // query params
         if ($include_related_objects !== null) {
@@ -760,7 +760,7 @@ class CatalogApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-05-08";
+        $headerParams['Square-Version'] = "2019-06-12";
 
         
         
@@ -853,7 +853,7 @@ class CatalogApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-05-08";
+        $headerParams['Square-Version'] = "2019-06-12";
 
         
         
@@ -946,7 +946,7 @@ class CatalogApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-05-08";
+        $headerParams['Square-Version'] = "2019-06-12";
 
         
         
@@ -1039,7 +1039,7 @@ class CatalogApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-05-08";
+        $headerParams['Square-Version'] = "2019-06-12";
 
         
         

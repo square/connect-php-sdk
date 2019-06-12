@@ -112,7 +112,7 @@ class OrderLineItem implements ArrayAccess
     );
   
     /**
-      * $uid The line item's Unique identifier, unique only within this order. This field is read-only.
+      * $uid Unique ID that identifies the line item only within this order.  This field is read-only.
       * @var string
       */
     protected $uid;
@@ -172,22 +172,22 @@ class OrderLineItem implements ArrayAccess
       */
     protected $variation_total_price_money;
     /**
-      * $gross_sales_money The amount of money made in gross sales for this line item. Calculated as the sum of the variation's total price and each modifier's total price.
+      * $gross_sales_money The amount of money made in gross sales for this line item. Calculated as the sum of the variation's total price and each modifier's total price.  This field is read-only.
       * @var \SquareConnect\Model\Money
       */
     protected $gross_sales_money;
     /**
-      * $total_tax_money The total tax amount of money to collect for the line item.
+      * $total_tax_money The total tax amount of money to collect for the line item.  This field is read-only.
       * @var \SquareConnect\Model\Money
       */
     protected $total_tax_money;
     /**
-      * $total_discount_money The total discount amount of money to collect for the line item.
+      * $total_discount_money The total discount amount of money to collect for the line item.  This field is read-only.
       * @var \SquareConnect\Model\Money
       */
     protected $total_discount_money;
     /**
-      * $total_money The total amount of money to collect for this line item.
+      * $total_money The total amount of money to collect for this line item.  This field is read-only.
       * @var \SquareConnect\Model\Money
       */
     protected $total_money;
@@ -292,7 +292,7 @@ class OrderLineItem implements ArrayAccess
   
     /**
      * Sets uid
-     * @param string $uid The line item's Unique identifier, unique only within this order. This field is read-only.
+     * @param string $uid Unique ID that identifies the line item only within this order.  This field is read-only.
      * @return $this
      */
     public function setUid($uid)
@@ -520,7 +520,7 @@ class OrderLineItem implements ArrayAccess
   
     /**
      * Sets gross_sales_money
-     * @param \SquareConnect\Model\Money $gross_sales_money The amount of money made in gross sales for this line item. Calculated as the sum of the variation's total price and each modifier's total price.
+     * @param \SquareConnect\Model\Money $gross_sales_money The amount of money made in gross sales for this line item. Calculated as the sum of the variation's total price and each modifier's total price.  This field is read-only.
      * @return $this
      */
     public function setGrossSalesMoney($gross_sales_money)
@@ -539,7 +539,7 @@ class OrderLineItem implements ArrayAccess
   
     /**
      * Sets total_tax_money
-     * @param \SquareConnect\Model\Money $total_tax_money The total tax amount of money to collect for the line item.
+     * @param \SquareConnect\Model\Money $total_tax_money The total tax amount of money to collect for the line item.  This field is read-only.
      * @return $this
      */
     public function setTotalTaxMoney($total_tax_money)
@@ -558,7 +558,7 @@ class OrderLineItem implements ArrayAccess
   
     /**
      * Sets total_discount_money
-     * @param \SquareConnect\Model\Money $total_discount_money The total discount amount of money to collect for the line item.
+     * @param \SquareConnect\Model\Money $total_discount_money The total discount amount of money to collect for the line item.  This field is read-only.
      * @return $this
      */
     public function setTotalDiscountMoney($total_discount_money)
@@ -577,7 +577,7 @@ class OrderLineItem implements ArrayAccess
   
     /**
      * Sets total_money
-     * @param \SquareConnect\Model\Money $total_money The total amount of money to collect for this line item.
+     * @param \SquareConnect\Model\Money $total_money The total amount of money to collect for this line item.  This field is read-only.
      * @return $this
      */
     public function setTotalMoney($total_money)
