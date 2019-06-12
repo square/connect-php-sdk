@@ -32,6 +32,7 @@ class Order implements ArrayAccess
         'line_items' => '\SquareConnect\Model\OrderLineItem[]',
         'taxes' => '\SquareConnect\Model\OrderLineItemTax[]',
         'discounts' => '\SquareConnect\Model\OrderLineItemDiscount[]',
+        'service_charges' => '\SquareConnect\Model\OrderServiceCharge[]',
         'fulfillments' => '\SquareConnect\Model\OrderFulfillment[]',
         'returns' => '\SquareConnect\Model\OrderReturn[]',
         'return_amounts' => '\SquareConnect\Model\OrderMoneyAmounts',
@@ -45,7 +46,8 @@ class Order implements ArrayAccess
         'state' => 'string',
         'total_money' => '\SquareConnect\Model\Money',
         'total_tax_money' => '\SquareConnect\Model\Money',
-        'total_discount_money' => '\SquareConnect\Model\Money'
+        'total_discount_money' => '\SquareConnect\Model\Money',
+        'total_service_charge_money' => '\SquareConnect\Model\Money'
     );
   
     /** 
@@ -61,6 +63,7 @@ class Order implements ArrayAccess
         'line_items' => 'line_items',
         'taxes' => 'taxes',
         'discounts' => 'discounts',
+        'service_charges' => 'service_charges',
         'fulfillments' => 'fulfillments',
         'returns' => 'returns',
         'return_amounts' => 'return_amounts',
@@ -74,7 +77,8 @@ class Order implements ArrayAccess
         'state' => 'state',
         'total_money' => 'total_money',
         'total_tax_money' => 'total_tax_money',
-        'total_discount_money' => 'total_discount_money'
+        'total_discount_money' => 'total_discount_money',
+        'total_service_charge_money' => 'total_service_charge_money'
     );
   
     /**
@@ -90,6 +94,7 @@ class Order implements ArrayAccess
         'line_items' => 'setLineItems',
         'taxes' => 'setTaxes',
         'discounts' => 'setDiscounts',
+        'service_charges' => 'setServiceCharges',
         'fulfillments' => 'setFulfillments',
         'returns' => 'setReturns',
         'return_amounts' => 'setReturnAmounts',
@@ -103,7 +108,8 @@ class Order implements ArrayAccess
         'state' => 'setState',
         'total_money' => 'setTotalMoney',
         'total_tax_money' => 'setTotalTaxMoney',
-        'total_discount_money' => 'setTotalDiscountMoney'
+        'total_discount_money' => 'setTotalDiscountMoney',
+        'total_service_charge_money' => 'setTotalServiceChargeMoney'
     );
   
     /**
@@ -119,6 +125,7 @@ class Order implements ArrayAccess
         'line_items' => 'getLineItems',
         'taxes' => 'getTaxes',
         'discounts' => 'getDiscounts',
+        'service_charges' => 'getServiceCharges',
         'fulfillments' => 'getFulfillments',
         'returns' => 'getReturns',
         'return_amounts' => 'getReturnAmounts',
@@ -132,11 +139,12 @@ class Order implements ArrayAccess
         'state' => 'getState',
         'total_money' => 'getTotalMoney',
         'total_tax_money' => 'getTotalTaxMoney',
-        'total_discount_money' => 'getTotalDiscountMoney'
+        'total_discount_money' => 'getTotalDiscountMoney',
+        'total_service_charge_money' => 'getTotalServiceChargeMoney'
     );
   
     /**
-      * $id The order's unique ID.  This value is only present for Order objects created by the Orders API through the [CreateOrder](#endpoint-orders-createorder) endpoint.
+      * $id The order's unique ID.  This field is read-only.
       * @var string
       */
     protected $id;
@@ -176,27 +184,32 @@ class Order implements ArrayAccess
       */
     protected $discounts;
     /**
+      * $service_charges A list of service charges applied to the order.
+      * @var \SquareConnect\Model\OrderServiceCharge[]
+      */
+    protected $service_charges;
+    /**
       * $fulfillments Details on order fulfillment.  Orders can only be created with at most one fulfillment. However, orders returned by the API may contain multiple fulfillments.
       * @var \SquareConnect\Model\OrderFulfillment[]
       */
     protected $fulfillments;
     /**
-      * $returns Collection of items from sale Orders being returned in this one. Normally part of an Itemized Return or Exchange.  There will be exactly one `Return` object per sale Order being referenced.
+      * $returns Collection of items from sale Orders being returned in this one. Normally part of an Itemized Return or Exchange.  There will be exactly one `Return` object per sale Order being referenced.  This field is read-only.
       * @var \SquareConnect\Model\OrderReturn[]
       */
     protected $returns;
     /**
-      * $return_amounts Rollup of returned money amounts.
+      * $return_amounts Rollup of returned money amounts.  This field is read-only.
       * @var \SquareConnect\Model\OrderMoneyAmounts
       */
     protected $return_amounts;
     /**
-      * $net_amounts Net money amounts (sale money - return money).
+      * $net_amounts Net money amounts (sale money - return money).  This field is read-only.
       * @var \SquareConnect\Model\OrderMoneyAmounts
       */
     protected $net_amounts;
     /**
-      * $rounding_adjustment A positive or negative rounding adjustment to the total of the order, commonly used to apply Cash Rounding when the minimum unit of account is smaller than the lowest physical denomination of currency.
+      * $rounding_adjustment A positive or negative rounding adjustment to the total of the order, commonly used to apply Cash Rounding when the minimum unit of account is smaller than the lowest physical denomination of currency.  This field is read-only.
       * @var \SquareConnect\Model\OrderRoundingAdjustment
       */
     protected $rounding_adjustment;
@@ -211,17 +224,17 @@ class Order implements ArrayAccess
       */
     protected $refunds;
     /**
-      * $created_at Timestamp for when the order was created. In RFC 3339 format, e.g., \"2016-09-04T23:59:33.123Z\".
+      * $created_at Timestamp for when the order was created. In RFC 3339 format, e.g., \"2016-09-04T23:59:33.123Z\".  This field is read-only.
       * @var string
       */
     protected $created_at;
     /**
-      * $updated_at Timestamp for when the order was last updated. In RFC 3339 format, e.g., \"2016-09-04T23:59:33.123Z\".
+      * $updated_at Timestamp for when the order was last updated. In RFC 3339 format, e.g., \"2016-09-04T23:59:33.123Z\".  This field is read-only.
       * @var string
       */
     protected $updated_at;
     /**
-      * $closed_at Timestamp for when the order was closed. In RFC 3339 format, e.g., \"2016-09-04T23:59:33.123Z\".
+      * $closed_at Timestamp for when the order was closed. In RFC 3339 format, e.g., \"2016-09-04T23:59:33.123Z\".  This field is read-only.
       * @var string
       */
     protected $closed_at;
@@ -231,20 +244,25 @@ class Order implements ArrayAccess
       */
     protected $state;
     /**
-      * $total_money The total amount of money to collect for the order.
+      * $total_money The total amount of money to collect for the order.  This field is read-only.
       * @var \SquareConnect\Model\Money
       */
     protected $total_money;
     /**
-      * $total_tax_money The total tax amount of money to collect for the order.
+      * $total_tax_money The total tax amount of money to collect for the order.  This field is read-only.
       * @var \SquareConnect\Model\Money
       */
     protected $total_tax_money;
     /**
-      * $total_discount_money The total discount amount of money to collect for the order.
+      * $total_discount_money The total discount amount of money to collect for the order.  This field is read-only.
       * @var \SquareConnect\Model\Money
       */
     protected $total_discount_money;
+    /**
+      * $total_service_charge_money The total amount of money collected in service charges for the order.  Note: `total_service_charge_money` is the sum of `applied_money` fields for each individual service charge. Therefore, `total_service_charge_money` will only include inclusive tax amounts, not additive tax amounts.  This field is read-only.
+      * @var \SquareConnect\Model\Money
+      */
+    protected $total_service_charge_money;
 
     /**
      * Constructor
@@ -292,6 +310,11 @@ class Order implements ArrayAccess
               $this->discounts = $data["discounts"];
             } else {
               $this->discounts = null;
+            }
+            if (isset($data["service_charges"])) {
+              $this->service_charges = $data["service_charges"];
+            } else {
+              $this->service_charges = null;
             }
             if (isset($data["fulfillments"])) {
               $this->fulfillments = $data["fulfillments"];
@@ -363,6 +386,11 @@ class Order implements ArrayAccess
             } else {
               $this->total_discount_money = null;
             }
+            if (isset($data["total_service_charge_money"])) {
+              $this->total_service_charge_money = $data["total_service_charge_money"];
+            } else {
+              $this->total_service_charge_money = null;
+            }
         }
     }
     /**
@@ -376,7 +404,7 @@ class Order implements ArrayAccess
   
     /**
      * Sets id
-     * @param string $id The order's unique ID.  This value is only present for Order objects created by the Orders API through the [CreateOrder](#endpoint-orders-createorder) endpoint.
+     * @param string $id The order's unique ID.  This field is read-only.
      * @return $this
      */
     public function setId($id)
@@ -518,6 +546,25 @@ class Order implements ArrayAccess
         return $this;
     }
     /**
+     * Gets service_charges
+     * @return \SquareConnect\Model\OrderServiceCharge[]
+     */
+    public function getServiceCharges()
+    {
+        return $this->service_charges;
+    }
+  
+    /**
+     * Sets service_charges
+     * @param \SquareConnect\Model\OrderServiceCharge[] $service_charges A list of service charges applied to the order.
+     * @return $this
+     */
+    public function setServiceCharges($service_charges)
+    {
+        $this->service_charges = $service_charges;
+        return $this;
+    }
+    /**
      * Gets fulfillments
      * @return \SquareConnect\Model\OrderFulfillment[]
      */
@@ -547,7 +594,7 @@ class Order implements ArrayAccess
   
     /**
      * Sets returns
-     * @param \SquareConnect\Model\OrderReturn[] $returns Collection of items from sale Orders being returned in this one. Normally part of an Itemized Return or Exchange.  There will be exactly one `Return` object per sale Order being referenced.
+     * @param \SquareConnect\Model\OrderReturn[] $returns Collection of items from sale Orders being returned in this one. Normally part of an Itemized Return or Exchange.  There will be exactly one `Return` object per sale Order being referenced.  This field is read-only.
      * @return $this
      */
     public function setReturns($returns)
@@ -566,7 +613,7 @@ class Order implements ArrayAccess
   
     /**
      * Sets return_amounts
-     * @param \SquareConnect\Model\OrderMoneyAmounts $return_amounts Rollup of returned money amounts.
+     * @param \SquareConnect\Model\OrderMoneyAmounts $return_amounts Rollup of returned money amounts.  This field is read-only.
      * @return $this
      */
     public function setReturnAmounts($return_amounts)
@@ -585,7 +632,7 @@ class Order implements ArrayAccess
   
     /**
      * Sets net_amounts
-     * @param \SquareConnect\Model\OrderMoneyAmounts $net_amounts Net money amounts (sale money - return money).
+     * @param \SquareConnect\Model\OrderMoneyAmounts $net_amounts Net money amounts (sale money - return money).  This field is read-only.
      * @return $this
      */
     public function setNetAmounts($net_amounts)
@@ -604,7 +651,7 @@ class Order implements ArrayAccess
   
     /**
      * Sets rounding_adjustment
-     * @param \SquareConnect\Model\OrderRoundingAdjustment $rounding_adjustment A positive or negative rounding adjustment to the total of the order, commonly used to apply Cash Rounding when the minimum unit of account is smaller than the lowest physical denomination of currency.
+     * @param \SquareConnect\Model\OrderRoundingAdjustment $rounding_adjustment A positive or negative rounding adjustment to the total of the order, commonly used to apply Cash Rounding when the minimum unit of account is smaller than the lowest physical denomination of currency.  This field is read-only.
      * @return $this
      */
     public function setRoundingAdjustment($rounding_adjustment)
@@ -661,7 +708,7 @@ class Order implements ArrayAccess
   
     /**
      * Sets created_at
-     * @param string $created_at Timestamp for when the order was created. In RFC 3339 format, e.g., \"2016-09-04T23:59:33.123Z\".
+     * @param string $created_at Timestamp for when the order was created. In RFC 3339 format, e.g., \"2016-09-04T23:59:33.123Z\".  This field is read-only.
      * @return $this
      */
     public function setCreatedAt($created_at)
@@ -680,7 +727,7 @@ class Order implements ArrayAccess
   
     /**
      * Sets updated_at
-     * @param string $updated_at Timestamp for when the order was last updated. In RFC 3339 format, e.g., \"2016-09-04T23:59:33.123Z\".
+     * @param string $updated_at Timestamp for when the order was last updated. In RFC 3339 format, e.g., \"2016-09-04T23:59:33.123Z\".  This field is read-only.
      * @return $this
      */
     public function setUpdatedAt($updated_at)
@@ -699,7 +746,7 @@ class Order implements ArrayAccess
   
     /**
      * Sets closed_at
-     * @param string $closed_at Timestamp for when the order was closed. In RFC 3339 format, e.g., \"2016-09-04T23:59:33.123Z\".
+     * @param string $closed_at Timestamp for when the order was closed. In RFC 3339 format, e.g., \"2016-09-04T23:59:33.123Z\".  This field is read-only.
      * @return $this
      */
     public function setClosedAt($closed_at)
@@ -737,7 +784,7 @@ class Order implements ArrayAccess
   
     /**
      * Sets total_money
-     * @param \SquareConnect\Model\Money $total_money The total amount of money to collect for the order.
+     * @param \SquareConnect\Model\Money $total_money The total amount of money to collect for the order.  This field is read-only.
      * @return $this
      */
     public function setTotalMoney($total_money)
@@ -756,7 +803,7 @@ class Order implements ArrayAccess
   
     /**
      * Sets total_tax_money
-     * @param \SquareConnect\Model\Money $total_tax_money The total tax amount of money to collect for the order.
+     * @param \SquareConnect\Model\Money $total_tax_money The total tax amount of money to collect for the order.  This field is read-only.
      * @return $this
      */
     public function setTotalTaxMoney($total_tax_money)
@@ -775,12 +822,31 @@ class Order implements ArrayAccess
   
     /**
      * Sets total_discount_money
-     * @param \SquareConnect\Model\Money $total_discount_money The total discount amount of money to collect for the order.
+     * @param \SquareConnect\Model\Money $total_discount_money The total discount amount of money to collect for the order.  This field is read-only.
      * @return $this
      */
     public function setTotalDiscountMoney($total_discount_money)
     {
         $this->total_discount_money = $total_discount_money;
+        return $this;
+    }
+    /**
+     * Gets total_service_charge_money
+     * @return \SquareConnect\Model\Money
+     */
+    public function getTotalServiceChargeMoney()
+    {
+        return $this->total_service_charge_money;
+    }
+  
+    /**
+     * Sets total_service_charge_money
+     * @param \SquareConnect\Model\Money $total_service_charge_money The total amount of money collected in service charges for the order.  Note: `total_service_charge_money` is the sum of `applied_money` fields for each individual service charge. Therefore, `total_service_charge_money` will only include inclusive tax amounts, not additive tax amounts.  This field is read-only.
+     * @return $this
+     */
+    public function setTotalServiceChargeMoney($total_service_charge_money)
+    {
+        $this->total_service_charge_money = $total_service_charge_money;
         return $this;
     }
     /**

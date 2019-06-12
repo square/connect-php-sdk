@@ -39,7 +39,13 @@ class Location implements ArrayAccess
         'business_name' => 'string',
         'type' => 'string',
         'website_url' => 'string',
-        'business_hours' => '\SquareConnect\Model\BusinessHours'
+        'business_hours' => '\SquareConnect\Model\BusinessHours',
+        'business_email' => 'string',
+        'description' => 'string',
+        'twitter_username' => 'string',
+        'instagram_username' => 'string',
+        'facebook_url' => 'string',
+        'coordinates' => '\SquareConnect\Model\Coordinates'
     );
   
     /** 
@@ -62,7 +68,13 @@ class Location implements ArrayAccess
         'business_name' => 'business_name',
         'type' => 'type',
         'website_url' => 'website_url',
-        'business_hours' => 'business_hours'
+        'business_hours' => 'business_hours',
+        'business_email' => 'business_email',
+        'description' => 'description',
+        'twitter_username' => 'twitter_username',
+        'instagram_username' => 'instagram_username',
+        'facebook_url' => 'facebook_url',
+        'coordinates' => 'coordinates'
     );
   
     /**
@@ -85,7 +97,13 @@ class Location implements ArrayAccess
         'business_name' => 'setBusinessName',
         'type' => 'setType',
         'website_url' => 'setWebsiteUrl',
-        'business_hours' => 'setBusinessHours'
+        'business_hours' => 'setBusinessHours',
+        'business_email' => 'setBusinessEmail',
+        'description' => 'setDescription',
+        'twitter_username' => 'setTwitterUsername',
+        'instagram_username' => 'setInstagramUsername',
+        'facebook_url' => 'setFacebookUrl',
+        'coordinates' => 'setCoordinates'
     );
   
     /**
@@ -108,7 +126,13 @@ class Location implements ArrayAccess
         'business_name' => 'getBusinessName',
         'type' => 'getType',
         'website_url' => 'getWebsiteUrl',
-        'business_hours' => 'getBusinessHours'
+        'business_hours' => 'getBusinessHours',
+        'business_email' => 'getBusinessEmail',
+        'description' => 'getDescription',
+        'twitter_username' => 'getTwitterUsername',
+        'instagram_username' => 'getInstagramUsername',
+        'facebook_url' => 'getFacebookUrl',
+        'coordinates' => 'getCoordinates'
     );
   
     /**
@@ -191,6 +215,36 @@ class Location implements ArrayAccess
       * @var \SquareConnect\Model\BusinessHours
       */
     protected $business_hours;
+    /**
+      * $business_email The email of the location.
+      * @var string
+      */
+    protected $business_email;
+    /**
+      * $description The business description of the location.
+      * @var string
+      */
+    protected $description;
+    /**
+      * $twitter_username The Twitter username of the location without the '
+      * @var string
+      */
+    protected $twitter_username;
+    /**
+      * $instagram_username The Instagram username of the location without the '
+      * @var string
+      */
+    protected $instagram_username;
+    /**
+      * $facebook_url The Facebook profile URL of the location. The URL should begin with 'facebook.com/'.
+      * @var string
+      */
+    protected $facebook_url;
+    /**
+      * $coordinates The physical coordinates (latitude and longitude) of the location.
+      * @var \SquareConnect\Model\Coordinates
+      */
+    protected $coordinates;
 
     /**
      * Constructor
@@ -278,6 +332,36 @@ class Location implements ArrayAccess
               $this->business_hours = $data["business_hours"];
             } else {
               $this->business_hours = null;
+            }
+            if (isset($data["business_email"])) {
+              $this->business_email = $data["business_email"];
+            } else {
+              $this->business_email = null;
+            }
+            if (isset($data["description"])) {
+              $this->description = $data["description"];
+            } else {
+              $this->description = null;
+            }
+            if (isset($data["twitter_username"])) {
+              $this->twitter_username = $data["twitter_username"];
+            } else {
+              $this->twitter_username = null;
+            }
+            if (isset($data["instagram_username"])) {
+              $this->instagram_username = $data["instagram_username"];
+            } else {
+              $this->instagram_username = null;
+            }
+            if (isset($data["facebook_url"])) {
+              $this->facebook_url = $data["facebook_url"];
+            } else {
+              $this->facebook_url = null;
+            }
+            if (isset($data["coordinates"])) {
+              $this->coordinates = $data["coordinates"];
+            } else {
+              $this->coordinates = null;
             }
         }
     }
@@ -583,6 +667,120 @@ class Location implements ArrayAccess
     public function setBusinessHours($business_hours)
     {
         $this->business_hours = $business_hours;
+        return $this;
+    }
+    /**
+     * Gets business_email
+     * @return string
+     */
+    public function getBusinessEmail()
+    {
+        return $this->business_email;
+    }
+  
+    /**
+     * Sets business_email
+     * @param string $business_email The email of the location.
+     * @return $this
+     */
+    public function setBusinessEmail($business_email)
+    {
+        $this->business_email = $business_email;
+        return $this;
+    }
+    /**
+     * Gets description
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+  
+    /**
+     * Sets description
+     * @param string $description The business description of the location.
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+        return $this;
+    }
+    /**
+     * Gets twitter_username
+     * @return string
+     */
+    public function getTwitterUsername()
+    {
+        return $this->twitter_username;
+    }
+  
+    /**
+     * Sets twitter_username
+     * @param string $twitter_username The Twitter username of the location without the '
+     * @return $this
+     */
+    public function setTwitterUsername($twitter_username)
+    {
+        $this->twitter_username = $twitter_username;
+        return $this;
+    }
+    /**
+     * Gets instagram_username
+     * @return string
+     */
+    public function getInstagramUsername()
+    {
+        return $this->instagram_username;
+    }
+  
+    /**
+     * Sets instagram_username
+     * @param string $instagram_username The Instagram username of the location without the '
+     * @return $this
+     */
+    public function setInstagramUsername($instagram_username)
+    {
+        $this->instagram_username = $instagram_username;
+        return $this;
+    }
+    /**
+     * Gets facebook_url
+     * @return string
+     */
+    public function getFacebookUrl()
+    {
+        return $this->facebook_url;
+    }
+  
+    /**
+     * Sets facebook_url
+     * @param string $facebook_url The Facebook profile URL of the location. The URL should begin with 'facebook.com/'.
+     * @return $this
+     */
+    public function setFacebookUrl($facebook_url)
+    {
+        $this->facebook_url = $facebook_url;
+        return $this;
+    }
+    /**
+     * Gets coordinates
+     * @return \SquareConnect\Model\Coordinates
+     */
+    public function getCoordinates()
+    {
+        return $this->coordinates;
+    }
+  
+    /**
+     * Sets coordinates
+     * @param \SquareConnect\Model\Coordinates $coordinates The physical coordinates (latitude and longitude) of the location.
+     * @return $this
+     */
+    public function setCoordinates($coordinates)
+    {
+        $this->coordinates = $coordinates;
         return $this;
     }
     /**

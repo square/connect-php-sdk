@@ -76,7 +76,7 @@ class OrderLineItemTax implements ArrayAccess
     );
   
     /**
-      * $uid The tax's Unique identifier, unique only within this order. This field is read-only.
+      * $uid Unique ID that identifies the tax only within this order.  This field is read-only.
       * @var string
       */
     protected $uid;
@@ -166,7 +166,7 @@ class OrderLineItemTax implements ArrayAccess
   
     /**
      * Sets uid
-     * @param string $uid The tax's Unique identifier, unique only within this order. This field is read-only.
+     * @param string $uid Unique ID that identifies the tax only within this order.  This field is read-only.
      * @return $this
      */
     public function setUid($uid)

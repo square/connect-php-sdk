@@ -115,7 +115,7 @@ class Card implements ArrayAccess
       */
     protected $billing_address;
     /**
-      * $fingerprint __Not currently set.__ Intended as a Square-assigned identifier, based on the card number, to identify the card across multiple locations within a single application.
+      * $fingerprint A unique, Square-assigned ID that identifies the card across multiple locations and applications for a single Square account.
       * @var string
       */
     protected $fingerprint;
@@ -313,7 +313,7 @@ class Card implements ArrayAccess
   
     /**
      * Sets fingerprint
-     * @param string $fingerprint __Not currently set.__ Intended as a Square-assigned identifier, based on the card number, to identify the card across multiple locations within a single application.
+     * @param string $fingerprint A unique, Square-assigned ID that identifies the card across multiple locations and applications for a single Square account.
      * @return $this
      */
     public function setFingerprint($fingerprint)

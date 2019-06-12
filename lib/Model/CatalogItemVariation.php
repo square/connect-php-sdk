@@ -36,7 +36,9 @@ class CatalogItemVariation implements ArrayAccess
         'inventory_alert_type' => 'string',
         'inventory_alert_threshold' => 'int',
         'user_data' => 'string',
-        'service_duration' => 'int'
+        'service_duration' => 'int',
+        'catalog_measurement_unit_id' => 'string',
+        'measurement_unit_id' => 'string'
     );
   
     /** 
@@ -56,7 +58,9 @@ class CatalogItemVariation implements ArrayAccess
         'inventory_alert_type' => 'inventory_alert_type',
         'inventory_alert_threshold' => 'inventory_alert_threshold',
         'user_data' => 'user_data',
-        'service_duration' => 'service_duration'
+        'service_duration' => 'service_duration',
+        'catalog_measurement_unit_id' => 'catalog_measurement_unit_id',
+        'measurement_unit_id' => 'measurement_unit_id'
     );
   
     /**
@@ -76,7 +80,9 @@ class CatalogItemVariation implements ArrayAccess
         'inventory_alert_type' => 'setInventoryAlertType',
         'inventory_alert_threshold' => 'setInventoryAlertThreshold',
         'user_data' => 'setUserData',
-        'service_duration' => 'setServiceDuration'
+        'service_duration' => 'setServiceDuration',
+        'catalog_measurement_unit_id' => 'setCatalogMeasurementUnitId',
+        'measurement_unit_id' => 'setMeasurementUnitId'
     );
   
     /**
@@ -96,7 +102,9 @@ class CatalogItemVariation implements ArrayAccess
         'inventory_alert_type' => 'getInventoryAlertType',
         'inventory_alert_threshold' => 'getInventoryAlertThreshold',
         'user_data' => 'getUserData',
-        'service_duration' => 'getServiceDuration'
+        'service_duration' => 'getServiceDuration',
+        'catalog_measurement_unit_id' => 'getCatalogMeasurementUnitId',
+        'measurement_unit_id' => 'getMeasurementUnitId'
     );
   
     /**
@@ -164,6 +172,16 @@ class CatalogItemVariation implements ArrayAccess
       * @var int
       */
     protected $service_duration;
+    /**
+      * $catalog_measurement_unit_id Represents the unit used to measure a [CatalogItemVariation](#type-catalogitemvariation) and specifies the precision for decimal quantities.
+      * @var string
+      */
+    protected $catalog_measurement_unit_id;
+    /**
+      * $measurement_unit_id ID of the ‘CatalogMeasurementUnit’ that is used to measure the quantity sold of this item variation. If left unset, the item will be sold in whole quantities.
+      * @var string
+      */
+    protected $measurement_unit_id;
 
     /**
      * Constructor
@@ -236,6 +254,16 @@ class CatalogItemVariation implements ArrayAccess
               $this->service_duration = $data["service_duration"];
             } else {
               $this->service_duration = null;
+            }
+            if (isset($data["catalog_measurement_unit_id"])) {
+              $this->catalog_measurement_unit_id = $data["catalog_measurement_unit_id"];
+            } else {
+              $this->catalog_measurement_unit_id = null;
+            }
+            if (isset($data["measurement_unit_id"])) {
+              $this->measurement_unit_id = $data["measurement_unit_id"];
+            } else {
+              $this->measurement_unit_id = null;
             }
         }
     }
@@ -484,6 +512,44 @@ class CatalogItemVariation implements ArrayAccess
     public function setServiceDuration($service_duration)
     {
         $this->service_duration = $service_duration;
+        return $this;
+    }
+    /**
+     * Gets catalog_measurement_unit_id
+     * @return string
+     */
+    public function getCatalogMeasurementUnitId()
+    {
+        return $this->catalog_measurement_unit_id;
+    }
+  
+    /**
+     * Sets catalog_measurement_unit_id
+     * @param string $catalog_measurement_unit_id Represents the unit used to measure a [CatalogItemVariation](#type-catalogitemvariation) and specifies the precision for decimal quantities.
+     * @return $this
+     */
+    public function setCatalogMeasurementUnitId($catalog_measurement_unit_id)
+    {
+        $this->catalog_measurement_unit_id = $catalog_measurement_unit_id;
+        return $this;
+    }
+    /**
+     * Gets measurement_unit_id
+     * @return string
+     */
+    public function getMeasurementUnitId()
+    {
+        return $this->measurement_unit_id;
+    }
+  
+    /**
+     * Sets measurement_unit_id
+     * @param string $measurement_unit_id ID of the ‘CatalogMeasurementUnit’ that is used to measure the quantity sold of this item variation. If left unset, the item will be sold in whole quantities.
+     * @return $this
+     */
+    public function setMeasurementUnitId($measurement_unit_id)
+    {
+        $this->measurement_unit_id = $measurement_unit_id;
         return $this;
     }
     /**

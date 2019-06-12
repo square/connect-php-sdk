@@ -28,7 +28,8 @@ class MeasurementUnit implements ArrayAccess
         'area_unit' => 'string',
         'length_unit' => 'string',
         'volume_unit' => 'string',
-        'weight_unit' => 'string'
+        'weight_unit' => 'string',
+        'generic_unit' => 'string'
     );
   
     /** 
@@ -40,7 +41,8 @@ class MeasurementUnit implements ArrayAccess
         'area_unit' => 'area_unit',
         'length_unit' => 'length_unit',
         'volume_unit' => 'volume_unit',
-        'weight_unit' => 'weight_unit'
+        'weight_unit' => 'weight_unit',
+        'generic_unit' => 'generic_unit'
     );
   
     /**
@@ -52,7 +54,8 @@ class MeasurementUnit implements ArrayAccess
         'area_unit' => 'setAreaUnit',
         'length_unit' => 'setLengthUnit',
         'volume_unit' => 'setVolumeUnit',
-        'weight_unit' => 'setWeightUnit'
+        'weight_unit' => 'setWeightUnit',
+        'generic_unit' => 'setGenericUnit'
     );
   
     /**
@@ -64,7 +67,8 @@ class MeasurementUnit implements ArrayAccess
         'area_unit' => 'getAreaUnit',
         'length_unit' => 'getLengthUnit',
         'volume_unit' => 'getVolumeUnit',
-        'weight_unit' => 'getWeightUnit'
+        'weight_unit' => 'getWeightUnit',
+        'generic_unit' => 'getGenericUnit'
     );
   
     /**
@@ -92,6 +96,11 @@ class MeasurementUnit implements ArrayAccess
       * @var string
       */
     protected $weight_unit;
+    /**
+      * $generic_unit Reserved for API integrations that lack the ability to specify a real measurement unit See [MeasurementUnitGeneric](#type-measurementunitgeneric) for possible values
+      * @var string
+      */
+    protected $generic_unit;
 
     /**
      * Constructor
@@ -124,6 +133,11 @@ class MeasurementUnit implements ArrayAccess
               $this->weight_unit = $data["weight_unit"];
             } else {
               $this->weight_unit = null;
+            }
+            if (isset($data["generic_unit"])) {
+              $this->generic_unit = $data["generic_unit"];
+            } else {
+              $this->generic_unit = null;
             }
         }
     }
@@ -220,6 +234,25 @@ class MeasurementUnit implements ArrayAccess
     public function setWeightUnit($weight_unit)
     {
         $this->weight_unit = $weight_unit;
+        return $this;
+    }
+    /**
+     * Gets generic_unit
+     * @return string
+     */
+    public function getGenericUnit()
+    {
+        return $this->generic_unit;
+    }
+  
+    /**
+     * Sets generic_unit
+     * @param string $generic_unit Reserved for API integrations that lack the ability to specify a real measurement unit See [MeasurementUnitGeneric](#type-measurementunitgeneric) for possible values
+     * @return $this
+     */
+    public function setGenericUnit($generic_unit)
+    {
+        $this->generic_unit = $generic_unit;
         return $this;
     }
     /**

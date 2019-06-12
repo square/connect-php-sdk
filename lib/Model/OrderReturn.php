@@ -27,6 +27,7 @@ class OrderReturn implements ArrayAccess
         'uid' => 'string',
         'source_order_id' => 'string',
         'return_line_items' => '\SquareConnect\Model\OrderReturnLineItem[]',
+        'return_service_charges' => '\SquareConnect\Model\OrderReturnServiceCharge[]',
         'return_taxes' => '\SquareConnect\Model\OrderReturnTax[]',
         'return_discounts' => '\SquareConnect\Model\OrderReturnDiscount[]',
         'rounding_adjustment' => '\SquareConnect\Model\OrderRoundingAdjustment',
@@ -41,6 +42,7 @@ class OrderReturn implements ArrayAccess
         'uid' => 'uid',
         'source_order_id' => 'source_order_id',
         'return_line_items' => 'return_line_items',
+        'return_service_charges' => 'return_service_charges',
         'return_taxes' => 'return_taxes',
         'return_discounts' => 'return_discounts',
         'rounding_adjustment' => 'rounding_adjustment',
@@ -55,6 +57,7 @@ class OrderReturn implements ArrayAccess
         'uid' => 'setUid',
         'source_order_id' => 'setSourceOrderId',
         'return_line_items' => 'setReturnLineItems',
+        'return_service_charges' => 'setReturnServiceCharges',
         'return_taxes' => 'setReturnTaxes',
         'return_discounts' => 'setReturnDiscounts',
         'rounding_adjustment' => 'setRoundingAdjustment',
@@ -69,6 +72,7 @@ class OrderReturn implements ArrayAccess
         'uid' => 'getUid',
         'source_order_id' => 'getSourceOrderId',
         'return_line_items' => 'getReturnLineItems',
+        'return_service_charges' => 'getReturnServiceCharges',
         'return_taxes' => 'getReturnTaxes',
         'return_discounts' => 'getReturnDiscounts',
         'rounding_adjustment' => 'getRoundingAdjustment',
@@ -76,7 +80,7 @@ class OrderReturn implements ArrayAccess
     );
   
     /**
-      * $uid The return's Unique identifier, unique only within this order. This field is read-only.
+      * $uid Unique ID that identifies the return only within this order.  This field is read-only.
       * @var string
       */
     protected $uid;
@@ -90,6 +94,11 @@ class OrderReturn implements ArrayAccess
       * @var \SquareConnect\Model\OrderReturnLineItem[]
       */
     protected $return_line_items;
+    /**
+      * $return_service_charges Collection of service charges which are being returned.  This field is read-only.
+      * @var \SquareConnect\Model\OrderReturnServiceCharge[]
+      */
+    protected $return_service_charges;
     /**
       * $return_taxes Collection of taxes which are being returned.
       * @var \SquareConnect\Model\OrderReturnTax[]
@@ -133,6 +142,11 @@ class OrderReturn implements ArrayAccess
             } else {
               $this->return_line_items = null;
             }
+            if (isset($data["return_service_charges"])) {
+              $this->return_service_charges = $data["return_service_charges"];
+            } else {
+              $this->return_service_charges = null;
+            }
             if (isset($data["return_taxes"])) {
               $this->return_taxes = $data["return_taxes"];
             } else {
@@ -166,7 +180,7 @@ class OrderReturn implements ArrayAccess
   
     /**
      * Sets uid
-     * @param string $uid The return's Unique identifier, unique only within this order. This field is read-only.
+     * @param string $uid Unique ID that identifies the return only within this order.  This field is read-only.
      * @return $this
      */
     public function setUid($uid)
@@ -210,6 +224,25 @@ class OrderReturn implements ArrayAccess
     public function setReturnLineItems($return_line_items)
     {
         $this->return_line_items = $return_line_items;
+        return $this;
+    }
+    /**
+     * Gets return_service_charges
+     * @return \SquareConnect\Model\OrderReturnServiceCharge[]
+     */
+    public function getReturnServiceCharges()
+    {
+        return $this->return_service_charges;
+    }
+  
+    /**
+     * Sets return_service_charges
+     * @param \SquareConnect\Model\OrderReturnServiceCharge[] $return_service_charges Collection of service charges which are being returned.  This field is read-only.
+     * @return $this
+     */
+    public function setReturnServiceCharges($return_service_charges)
+    {
+        $this->return_service_charges = $return_service_charges;
         return $this;
     }
     /**

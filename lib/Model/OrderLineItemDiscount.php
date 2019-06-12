@@ -80,7 +80,7 @@ class OrderLineItemDiscount implements ArrayAccess
     );
   
     /**
-      * $uid The discount's Unique identifier, unique only within this order. This field is read-only.
+      * $uid Unique ID that identifies the discount only within this order.  This field is read-only.
       * @var string
       */
     protected $uid;
@@ -180,7 +180,7 @@ class OrderLineItemDiscount implements ArrayAccess
   
     /**
      * Sets uid
-     * @param string $uid The discount's Unique identifier, unique only within this order. This field is read-only.
+     * @param string $uid Unique ID that identifies the discount only within this order.  This field is read-only.
      * @return $this
      */
     public function setUid($uid)

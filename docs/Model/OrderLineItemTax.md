@@ -7,7 +7,7 @@ Represents a tax that applies to one or more line items in an order.
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------
-**uid** | getUid() | setUid($value) | **string** | The tax&#39;s Unique identifier, unique only within this order. This field is read-only. | [optional] 
+**uid** | getUid() | setUid($value) | **string** | Unique ID that identifies the tax only within this order.  This field is read-only. | [optional] 
 **catalog_object_id** | getCatalogObjectId() | setCatalogObjectId($value) | **string** | The catalog object id referencing [CatalogTax](#type-catalogtax). | [optional] 
 **name** | getName() | setName($value) | **string** | The tax&#39;s name. | [optional] 
 **type** | getType() | setType($value) | **string** | Indicates the calculation method used to apply the tax. See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values | [optional] 

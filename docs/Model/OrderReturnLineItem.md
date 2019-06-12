@@ -20,10 +20,10 @@ Name | Getter | Setter | Type | Description | Notes
 **return_discounts** | getReturnDiscounts() | setReturnDiscounts($value) | [**\SquareConnect\Model\OrderReturnDiscount[]**](OrderReturnDiscount.md) | A list of discounts applied to this line item. On read or retrieve, this list includes both item-level discounts and any return-level discounts apportioned to this item. | [optional] 
 **base_price_money** | getBasePriceMoney() | setBasePriceMoney($value) | [**\SquareConnect\Model\Money**](Money.md) | The base price for a single unit of the line item. | [optional] 
 **variation_total_price_money** | getVariationTotalPriceMoney() | setVariationTotalPriceMoney($value) | [**\SquareConnect\Model\Money**](Money.md) | The total price of all item variations returned in this line item. Calculated as &#x60;base_price_money&#x60; multiplied by &#x60;quantity&#x60;. Does not include modifiers. | [optional] 
-**gross_return_money** | getGrossReturnMoney() | setGrossReturnMoney($value) | [**\SquareConnect\Model\Money**](Money.md) | The gross return amount of money calculated as (item base price + modifiers price) * quantity. | [optional] 
-**total_tax_money** | getTotalTaxMoney() | setTotalTaxMoney($value) | [**\SquareConnect\Model\Money**](Money.md) | The total tax amount of money to return for the line item. | [optional] 
-**total_discount_money** | getTotalDiscountMoney() | setTotalDiscountMoney($value) | [**\SquareConnect\Model\Money**](Money.md) | The total discount amount of money to return for the line item. | [optional] 
-**total_money** | getTotalMoney() | setTotalMoney($value) | [**\SquareConnect\Model\Money**](Money.md) | The total amount of money to return for this line item. | [optional] 
+**gross_return_money** | getGrossReturnMoney() | setGrossReturnMoney($value) | [**\SquareConnect\Model\Money**](Money.md) | The gross return amount of money calculated as (item base price + modifiers price) * quantity.  This field is read-only. | [optional] 
+**total_tax_money** | getTotalTaxMoney() | setTotalTaxMoney($value) | [**\SquareConnect\Model\Money**](Money.md) | The total tax amount of money to return for the line item.  This field is read-only. | [optional] 
+**total_discount_money** | getTotalDiscountMoney() | setTotalDiscountMoney($value) | [**\SquareConnect\Model\Money**](Money.md) | The total discount amount of money to return for the line item.  This field is read-only. | [optional] 
+**total_money** | getTotalMoney() | setTotalMoney($value) | [**\SquareConnect\Model\Money**](Money.md) | The total amount of money to return for this line item.  This field is read-only. | [optional] 
 
 Note: All properties are protected and only accessed via getters and setters.
 

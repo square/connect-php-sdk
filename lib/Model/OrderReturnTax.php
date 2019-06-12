@@ -80,7 +80,7 @@ class OrderReturnTax implements ArrayAccess
     );
   
     /**
-      * $uid The return tax's Unique identifier, unique only within this order.
+      * $uid Unique ID that identifies the return tax only within this order.  This field is read-only.
       * @var string
       */
     protected $uid;
@@ -180,7 +180,7 @@ class OrderReturnTax implements ArrayAccess
   
     /**
      * Sets uid
-     * @param string $uid The return tax's Unique identifier, unique only within this order.
+     * @param string $uid Unique ID that identifies the return tax only within this order.  This field is read-only.
      * @return $this
      */
     public function setUid($uid)

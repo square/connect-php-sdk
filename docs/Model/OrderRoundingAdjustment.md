@@ -7,7 +7,7 @@ A rounding adjustment of the money being returned. Commonly used to apply Cash R
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------
-**uid** | getUid() | setUid($value) | **string** | The rounding adjustment&#39;s Unique identifier, unique only within this order. This field is read-only. | [optional] 
+**uid** | getUid() | setUid($value) | **string** | Unique ID that identifies the rounding adjustment only within this order.  This field is read-only. | [optional] 
 **name** | getName() | setName($value) | **string** | The name of the rounding adjustment from the original sale Order. | [optional] 
 **amount_money** | getAmountMoney() | setAmountMoney($value) | [**\SquareConnect\Model\Money**](Money.md) | Actual rounding adjustment amount. | [optional] 
 

@@ -14,7 +14,7 @@ Name | Getter | Setter | Type | Description | Notes
 **exp_year** | getExpYear() | setExpYear($value) | **int** | The four-digit year of the card&#39;s expiration date. | [optional] 
 **cardholder_name** | getCardholderName() | setCardholderName($value) | **string** | The name of the cardholder. | [optional] 
 **billing_address** | getBillingAddress() | setBillingAddress($value) | [**\SquareConnect\Model\Address**](Address.md) | The billing address for this card. | [optional] 
-**fingerprint** | getFingerprint() | setFingerprint($value) | **string** | __Not currently set.__ Intended as a Square-assigned identifier, based on the card number, to identify the card across multiple locations within a single application. | [optional] 
+**fingerprint** | getFingerprint() | setFingerprint($value) | **string** | A unique, Square-assigned ID that identifies the card across multiple locations and applications for a single Square account. | [optional] 
 
 Note: All properties are protected and only accessed via getters and setters.
 

@@ -23,6 +23,12 @@ Name | Getter | Setter | Type | Description | Notes
 **type** | getType() | setType($value) | **string** | The location&#39;s type, as set by the account owner in the Square dashboard. Typically used to indicate whether or not the location object represents a physical space like a building or mall space. See [LocationType](#type-locationtype) for possible values | [optional] 
 **website_url** | getWebsiteUrl() | setWebsiteUrl($value) | **string** | The location&#39;s website, as set by the account owner in the Square dashboard.  Default: none; only exists if explicitly set. | [optional] 
 **business_hours** | getBusinessHours() | setBusinessHours($value) | [**\SquareConnect\Model\BusinessHours**](BusinessHours.md) | The hours of operation for a business location.  Default: none; only exists if explicitly set. | [optional] 
+**business_email** | getBusinessEmail() | setBusinessEmail($value) | **string** | The email of the location. | [optional] 
+**description** | getDescription() | setDescription($value) | **string** | The business description of the location. | [optional] 
+**twitter_username** | getTwitterUsername() | setTwitterUsername($value) | **string** | The Twitter username of the location without the &#39; | [optional] 
+**instagram_username** | getInstagramUsername() | setInstagramUsername($value) | **string** | The Instagram username of the location without the &#39; | [optional] 
+**facebook_url** | getFacebookUrl() | setFacebookUrl($value) | **string** | The Facebook profile URL of the location. The URL should begin with &#39;facebook.com/&#39;. | [optional] 
+**coordinates** | getCoordinates() | setCoordinates($value) | [**\SquareConnect\Model\Coordinates**](Coordinates.md) | The physical coordinates (latitude and longitude) of the location. | [optional] 
 
 Note: All properties are protected and only accessed via getters and setters.
 

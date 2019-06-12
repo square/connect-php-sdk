@@ -68,7 +68,7 @@ class OrderLineItemModifier implements ArrayAccess
     );
   
     /**
-      * $uid The modifier's Unique identifier, unique only within this order. This field is read-only.
+      * $uid Unique ID that identifies the modifier only within this order.  This field is read-only.
       * @var string
       */
     protected $uid;
@@ -138,7 +138,7 @@ class OrderLineItemModifier implements ArrayAccess
   
     /**
      * Sets uid
-     * @param string $uid The modifier's Unique identifier, unique only within this order. This field is read-only.
+     * @param string $uid Unique ID that identifies the modifier only within this order.  This field is read-only.
      * @return $this
      */
     public function setUid($uid)
