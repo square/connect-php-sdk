@@ -169,7 +169,7 @@ class V1CashDrawerShift implements ArrayAccess
       */
     protected $closing_employee_id;
     /**
-      * $description The time when the timecard was created, in ISO 8601 format.
+      * $description A description of the cash drawer shift.
       * @var string
       */
     protected $description;
@@ -505,7 +505,7 @@ class V1CashDrawerShift implements ArrayAccess
   
     /**
      * Sets description
-     * @param string $description The time when the timecard was created, in ISO 8601 format.
+     * @param string $description A description of the cash drawer shift.
      * @return $this
      */
     public function setDescription($description)

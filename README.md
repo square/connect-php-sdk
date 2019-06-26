@@ -699,6 +699,7 @@ Class | Method | HTTP request | Description
  - [V1VariationPricingType](docs/Model/V1VariationPricingType.md)
  - [VoidTransactionRequest](docs/Model/VoidTransactionRequest.md)
  - [VoidTransactionResponse](docs/Model/VoidTransactionResponse.md)
+ - [WebhookEvents](docs/Model/WebhookEvents.md)
  - [Weekday](docs/Model/Weekday.md)
  - [WorkweekConfig](docs/Model/WorkweekConfig.md)
 

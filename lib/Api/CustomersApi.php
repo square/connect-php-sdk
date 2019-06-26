@@ -162,7 +162,7 @@ class CustomersApi
      *
      * CreateCustomerCard
      *
-     * @param string $customer_id The ID of the customer to link the card on file to. (required)
+     * @param string $customer_id The Square ID of the customer profile the card is linked to. (required)
      * @param \SquareConnect\Model\CreateCustomerCardRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
      * @return \SquareConnect\Model\CreateCustomerCardResponse
      * @throws \SquareConnect\ApiException on non-2xx response
@@ -179,7 +179,7 @@ class CustomersApi
      *
      * CreateCustomerCard
      *
-     * @param string $customer_id The ID of the customer to link the card on file to. (required)
+     * @param string $customer_id The Square ID of the customer profile the card is linked to. (required)
      * @param \SquareConnect\Model\CreateCustomerCardRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
      * @return Array of \SquareConnect\Model\CreateCustomerCardResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
