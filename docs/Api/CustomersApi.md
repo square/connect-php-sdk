@@ -78,7 +78,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $api_instance = new SquareConnect\Api\CustomersApi();
-$customer_id = "customer_id_example"; // string | The ID of the customer to link the card on file to.
+$customer_id = "customer_id_example"; // string | The Square ID of the customer profile the card is linked to.
 $body = new \SquareConnect\Model\CreateCustomerCardRequest(); // \SquareConnect\Model\CreateCustomerCardRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
@@ -94,7 +94,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer_id** | **string**| The ID of the customer to link the card on file to. |
+ **customer_id** | **string**| The Square ID of the customer profile the card is linked to. |
  **body** | [**\SquareConnect\Model\CreateCustomerCardRequest**](../Model/CreateCustomerCardRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type

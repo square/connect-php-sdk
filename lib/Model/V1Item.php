@@ -35,7 +35,7 @@ class V1Item implements ArrayAccess
         'master_image' => '\SquareConnect\Model\V1ItemImage',
         'category' => '\SquareConnect\Model\V1Category',
         'variations' => '\SquareConnect\Model\V1Variation[]',
-        'modifier_lists' => '\SquareConnect\Model\V1Variation[]',
+        'modifier_lists' => '\SquareConnect\Model\V1ModifierList[]',
         'fees' => '\SquareConnect\Model\V1Fee[]',
         'taxable' => 'bool',
         'category_id' => 'string',
@@ -172,7 +172,7 @@ class V1Item implements ArrayAccess
     protected $variations;
     /**
       * $modifier_lists The modifier lists that apply to the item, if any.
-      * @var \SquareConnect\Model\V1Variation[]
+      * @var \SquareConnect\Model\V1ModifierList[]
       */
     protected $modifier_lists;
     /**
@@ -506,7 +506,7 @@ class V1Item implements ArrayAccess
     }
     /**
      * Gets modifier_lists
-     * @return \SquareConnect\Model\V1Variation[]
+     * @return \SquareConnect\Model\V1ModifierList[]
      */
     public function getModifierLists()
     {
@@ -515,7 +515,7 @@ class V1Item implements ArrayAccess
   
     /**
      * Sets modifier_lists
-     * @param \SquareConnect\Model\V1Variation[] $modifier_lists The modifier lists that apply to the item, if any.
+     * @param \SquareConnect\Model\V1ModifierList[] $modifier_lists The modifier lists that apply to the item, if any.
      * @return $this
      */
     public function setModifierLists($modifier_lists)

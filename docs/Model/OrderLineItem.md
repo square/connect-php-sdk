@@ -9,7 +9,7 @@ Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------
 **uid** | getUid() | setUid($value) | **string** | Unique ID that identifies the line item only within this order.  This field is read-only. | [optional] 
 **name** | getName() | setName($value) | **string** | The name of the line item. | [optional] 
-**quantity** | getQuantity() | setQuantity($value) | **string** | The quantity purchased, formatted as a decimal number. For example: &#x60;\&quot;3\&quot;&#x60;.  Line items with a &#x60;quantity_unit&#x60; can have non-integer quantities. For example: &#x60;\&quot;1.70000\&quot;&#x60;.  Orders Hub and older versions of Connect do not support non-integer quantities. See [Decimal quantities with Orders hub and older versions of Connect](/more-apis/orders/overview#decimal-quantities). | 
+**quantity** | getQuantity() | setQuantity($value) | **string** | The quantity purchased, formatted as a decimal number. For example: &#x60;\&quot;3\&quot;&#x60;.  Line items with a &#x60;quantity_unit&#x60; can have non-integer quantities. For example: &#x60;\&quot;1.70000\&quot;&#x60;. | 
 **quantity_unit** | getQuantityUnit() | setQuantityUnit($value) | [**\SquareConnect\Model\OrderQuantityUnit**](OrderQuantityUnit.md) | The unit and precision that this line item&#39;s quantity is measured in. | [optional] 
 **note** | getNote() | setNote($value) | **string** | The note of the line item. | [optional] 
 **catalog_object_id** | getCatalogObjectId() | setCatalogObjectId($value) | **string** | The [CatalogItemVariation](#type-catalogitemvariation) id applied to this line item. | [optional] 

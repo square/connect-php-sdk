@@ -18,7 +18,7 @@ Name | Getter | Setter | Type | Description | Notes
 **master_image** | getMasterImage() | setMasterImage($value) | [**\SquareConnect\Model\V1ItemImage**](V1ItemImage.md) | The item&#39;s master image, if any. | [optional] 
 **category** | getCategory() | setCategory($value) | [**\SquareConnect\Model\V1Category**](V1Category.md) | The category the item belongs to, if any. | [optional] 
 **variations** | getVariations() | setVariations($value) | [**\SquareConnect\Model\V1Variation[]**](V1Variation.md) | The item&#39;s variations. You must specify at least one variation. | [optional] 
-**modifier_lists** | getModifierLists() | setModifierLists($value) | [**\SquareConnect\Model\V1Variation[]**](V1Variation.md) | The modifier lists that apply to the item, if any. | [optional] 
+**modifier_lists** | getModifierLists() | setModifierLists($value) | [**\SquareConnect\Model\V1ModifierList[]**](V1ModifierList.md) | The modifier lists that apply to the item, if any. | [optional] 
 **fees** | getFees() | setFees($value) | [**\SquareConnect\Model\V1Fee[]**](V1Fee.md) | The fees that apply to the item, if any. | [optional] 
 **taxable** | getTaxable() | setTaxable($value) | **bool** | Deprecated. This field is not used. | [optional] 
 **category_id** | getCategoryId() | setCategoryId($value) | **string** | The ID of the item&#39;s category, if any. | [optional] 

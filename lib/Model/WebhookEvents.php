@@ -9,7 +9,7 @@ namespace SquareConnect\Model;
 
 use \ArrayAccess;
 /**
- * OrderQuantityUnit Class Doc Comment
+ * WebhookEvents Class Doc Comment
  *
  * @category Class
  * @package  SquareConnect
@@ -17,15 +17,14 @@ use \ArrayAccess;
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://squareup.com/developers
  */
-class OrderQuantityUnit implements ArrayAccess
+class WebhookEvents implements ArrayAccess
 {
     /**
       * Array of property to type mappings. Used for (de)serialization 
       * @var string[]
       */
     static $swaggerTypes = array(
-        'measurement_unit' => '\SquareConnect\Model\MeasurementUnit',
-        'precision' => 'int'
+        
     );
   
     /** 
@@ -33,8 +32,7 @@ class OrderQuantityUnit implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
-        'measurement_unit' => 'measurement_unit',
-        'precision' => 'precision'
+        
     );
   
     /**
@@ -42,8 +40,7 @@ class OrderQuantityUnit implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
-        'measurement_unit' => 'setMeasurementUnit',
-        'precision' => 'setPrecision'
+        
     );
   
     /**
@@ -51,20 +48,9 @@ class OrderQuantityUnit implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
-        'measurement_unit' => 'getMeasurementUnit',
-        'precision' => 'getPrecision'
+        
     );
   
-    /**
-      * $measurement_unit A [MeasurementUnit](#type-measurementunit) that represents the unit of measure for the quantity.
-      * @var \SquareConnect\Model\MeasurementUnit
-      */
-    protected $measurement_unit;
-    /**
-      * $precision For non-integer quantities, represents the number of digits after the decimal point that are recorded for this quantity.  For example, a precision of 1 allows quantities like `\"1.0\"` and `\"1.1\"`, but not `\"1.01\"`.  Min: 0. Max: 5.
-      * @var int
-      */
-    protected $precision;
 
     /**
      * Constructor
@@ -73,55 +59,7 @@ class OrderQuantityUnit implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            if (isset($data["measurement_unit"])) {
-              $this->measurement_unit = $data["measurement_unit"];
-            } else {
-              $this->measurement_unit = null;
-            }
-            if (isset($data["precision"])) {
-              $this->precision = $data["precision"];
-            } else {
-              $this->precision = null;
-            }
         }
-    }
-    /**
-     * Gets measurement_unit
-     * @return \SquareConnect\Model\MeasurementUnit
-     */
-    public function getMeasurementUnit()
-    {
-        return $this->measurement_unit;
-    }
-  
-    /**
-     * Sets measurement_unit
-     * @param \SquareConnect\Model\MeasurementUnit $measurement_unit A [MeasurementUnit](#type-measurementunit) that represents the unit of measure for the quantity.
-     * @return $this
-     */
-    public function setMeasurementUnit($measurement_unit)
-    {
-        $this->measurement_unit = $measurement_unit;
-        return $this;
-    }
-    /**
-     * Gets precision
-     * @return int
-     */
-    public function getPrecision()
-    {
-        return $this->precision;
-    }
-  
-    /**
-     * Sets precision
-     * @param int $precision For non-integer quantities, represents the number of digits after the decimal point that are recorded for this quantity.  For example, a precision of 1 allows quantities like `\"1.0\"` and `\"1.1\"`, but not `\"1.01\"`.  Min: 0. Max: 5.
-     * @return $this
-     */
-    public function setPrecision($precision)
-    {
-        $this->precision = $precision;
-        return $this;
     }
     /**
      * Returns true if offset exists. False otherwise.

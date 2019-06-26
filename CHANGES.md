@@ -1,5 +1,9 @@
 # Change Log
 
+## Version 2.20190612.1 (2019-06-26)
+
+* **Bug fix**: `Transaction.Charge` and `Customers.CreateCustomerCard` request objects &mdash; now include the `verification_token` required for [Strong Customer Authentication](https://developer.squareup.com/docs/sca-overview).
+
 ## Version 2.20190612.0 (2019-06-12)
 
 * **BETA releases**:
