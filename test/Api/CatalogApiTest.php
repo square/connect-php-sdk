@@ -325,7 +325,6 @@ class CatalogApiTest extends \PHPUnit_Framework_TestCase
       $this->assertNull($coffee->getItemData()->getModifierListInfo()[0]->getMinSelectedModifiers());
       $this->assertNull($coffee->getItemData()->getModifierListInfo()[0]->getMaxSelectedModifiers());
       $this->assertNull($coffee->getItemData()->getModifierListInfo()[0]->getEnabled());
-      $this->assertNull($coffee->getItemData()->getImageUrl());
 
       $this->assertCount(2, $coffee->getItemData()->getVariations());
       $this->assertEquals("Small", $coffee->getItemData()->getVariations()[0]->getItemVariationData()->getName());
