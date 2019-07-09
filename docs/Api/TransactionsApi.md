@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 CaptureTransaction
 
-Captures a transaction that was created with the [Charge](#endpoint-transactions-charge) endpoint with a `delay_capture` value of `true`.  See [Delayed capture transactions](/payments/transactions/overview#delayed-capture) for more information.
+Captures a transaction that was created with the [Charge](#endpoint-transactions-charge) endpoint with a `delay_capture` value of `true`.  See the [Delay Capture of Funds](/transactions-api/cookbook/delay-capture) recipe for more information.
 
 ### Example
 ```php
@@ -332,7 +332,7 @@ Name | Type | Description  | Notes
 
 VoidTransaction
 
-Cancels a transaction that was created with the [Charge](#endpoint-transactions-charge) endpoint with a `delay_capture` value of `true`.  See [Delayed capture transactions](/payments/transactions/overview#delayed-capture) for more information.
+Cancels a transaction that was created with the [Charge](#endpoint-transactions-charge) endpoint with a `delay_capture` value of `true`.  See the [Delay Capture of Funds](/transactions-api/cookbook/delay-capture) recipe for more information.
 
 ### Example
 ```php

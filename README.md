@@ -262,7 +262,6 @@ Class | Method | HTTP request | Description
  - [AdditionalRecipientReceivable](docs/Model/AdditionalRecipientReceivable.md)
  - [AdditionalRecipientReceivableRefund](docs/Model/AdditionalRecipientReceivableRefund.md)
  - [Address](docs/Model/Address.md)
- - [AggregationStrategy](docs/Model/AggregationStrategy.md)
  - [BatchChangeInventoryRequest](docs/Model/BatchChangeInventoryRequest.md)
  - [BatchChangeInventoryResponse](docs/Model/BatchChangeInventoryResponse.md)
  - [BatchDeleteCatalogObjectsRequest](docs/Model/BatchDeleteCatalogObjectsRequest.md)

@@ -34,7 +34,6 @@ class CatalogItem implements ArrayAccess
         'category_id' => 'string',
         'tax_ids' => 'string[]',
         'modifier_list_info' => '\SquareConnect\Model\CatalogItemModifierListInfo[]',
-        'image_url' => 'string',
         'variations' => '\SquareConnect\Model\CatalogObject[]',
         'product_type' => 'string',
         'skip_modifier_screen' => 'bool'
@@ -55,7 +54,6 @@ class CatalogItem implements ArrayAccess
         'category_id' => 'category_id',
         'tax_ids' => 'tax_ids',
         'modifier_list_info' => 'modifier_list_info',
-        'image_url' => 'image_url',
         'variations' => 'variations',
         'product_type' => 'product_type',
         'skip_modifier_screen' => 'skip_modifier_screen'
@@ -76,7 +74,6 @@ class CatalogItem implements ArrayAccess
         'category_id' => 'setCategoryId',
         'tax_ids' => 'setTaxIds',
         'modifier_list_info' => 'setModifierListInfo',
-        'image_url' => 'setImageUrl',
         'variations' => 'setVariations',
         'product_type' => 'setProductType',
         'skip_modifier_screen' => 'setSkipModifierScreen'
@@ -97,7 +94,6 @@ class CatalogItem implements ArrayAccess
         'category_id' => 'getCategoryId',
         'tax_ids' => 'getTaxIds',
         'modifier_list_info' => 'getModifierListInfo',
-        'image_url' => 'getImageUrl',
         'variations' => 'getVariations',
         'product_type' => 'getProductType',
         'skip_modifier_screen' => 'getSkipModifierScreen'
@@ -153,11 +149,6 @@ class CatalogItem implements ArrayAccess
       * @var \SquareConnect\Model\CatalogItemModifierListInfo[]
       */
     protected $modifier_list_info;
-    /**
-      * $image_url __Deprecated__. The URL of an image representing this item. Deprecated in favor of `image_id` in [`CatalogObject`](#type-catalogobject).
-      * @var string
-      */
-    protected $image_url;
     /**
       * $variations A list of [CatalogObject](#type-catalogobject)s containing the [CatalogItemVariation](#type-catalogitemvariation)s for this item.  Maximum: 250 item variations
       * @var \SquareConnect\Model\CatalogObject[]
@@ -230,11 +221,6 @@ class CatalogItem implements ArrayAccess
               $this->modifier_list_info = $data["modifier_list_info"];
             } else {
               $this->modifier_list_info = null;
-            }
-            if (isset($data["image_url"])) {
-              $this->image_url = $data["image_url"];
-            } else {
-              $this->image_url = null;
             }
             if (isset($data["variations"])) {
               $this->variations = $data["variations"];
@@ -441,25 +427,6 @@ class CatalogItem implements ArrayAccess
     public function setModifierListInfo($modifier_list_info)
     {
         $this->modifier_list_info = $modifier_list_info;
-        return $this;
-    }
-    /**
-     * Gets image_url
-     * @return string
-     */
-    public function getImageUrl()
-    {
-        return $this->image_url;
-    }
-  
-    /**
-     * Sets image_url
-     * @param string $image_url __Deprecated__. The URL of an image representing this item. Deprecated in favor of `image_id` in [`CatalogObject`](#type-catalogobject).
-     * @return $this
-     */
-    public function setImageUrl($image_url)
-    {
-        $this->image_url = $image_url;
         return $this;
     }
     /**
