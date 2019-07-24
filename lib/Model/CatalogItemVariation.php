@@ -37,6 +37,7 @@ class CatalogItemVariation implements ArrayAccess
         'inventory_alert_threshold' => 'int',
         'user_data' => 'string',
         'service_duration' => 'int',
+        'item_option_values' => '\SquareConnect\Model\CatalogItemOptionValueForItemVariation[]',
         'measurement_unit_id' => 'string'
     );
   
@@ -58,6 +59,7 @@ class CatalogItemVariation implements ArrayAccess
         'inventory_alert_threshold' => 'inventory_alert_threshold',
         'user_data' => 'user_data',
         'service_duration' => 'service_duration',
+        'item_option_values' => 'item_option_values',
         'measurement_unit_id' => 'measurement_unit_id'
     );
   
@@ -79,6 +81,7 @@ class CatalogItemVariation implements ArrayAccess
         'inventory_alert_threshold' => 'setInventoryAlertThreshold',
         'user_data' => 'setUserData',
         'service_duration' => 'setServiceDuration',
+        'item_option_values' => 'setItemOptionValues',
         'measurement_unit_id' => 'setMeasurementUnitId'
     );
   
@@ -100,6 +103,7 @@ class CatalogItemVariation implements ArrayAccess
         'inventory_alert_threshold' => 'getInventoryAlertThreshold',
         'user_data' => 'getUserData',
         'service_duration' => 'getServiceDuration',
+        'item_option_values' => 'getItemOptionValues',
         'measurement_unit_id' => 'getMeasurementUnitId'
     );
   
@@ -168,6 +172,11 @@ class CatalogItemVariation implements ArrayAccess
       * @var int
       */
     protected $service_duration;
+    /**
+      * $item_option_values List of item option values associated with this item variation. Listed in the same order as the item options of the parent item.
+      * @var \SquareConnect\Model\CatalogItemOptionValueForItemVariation[]
+      */
+    protected $item_option_values;
     /**
       * $measurement_unit_id ID of the ‘CatalogMeasurementUnit’ that is used to measure the quantity sold of this item variation. If left unset, the item will be sold in whole quantities.
       * @var string
@@ -245,6 +254,11 @@ class CatalogItemVariation implements ArrayAccess
               $this->service_duration = $data["service_duration"];
             } else {
               $this->service_duration = null;
+            }
+            if (isset($data["item_option_values"])) {
+              $this->item_option_values = $data["item_option_values"];
+            } else {
+              $this->item_option_values = null;
             }
             if (isset($data["measurement_unit_id"])) {
               $this->measurement_unit_id = $data["measurement_unit_id"];
@@ -498,6 +512,25 @@ class CatalogItemVariation implements ArrayAccess
     public function setServiceDuration($service_duration)
     {
         $this->service_duration = $service_duration;
+        return $this;
+    }
+    /**
+     * Gets item_option_values
+     * @return \SquareConnect\Model\CatalogItemOptionValueForItemVariation[]
+     */
+    public function getItemOptionValues()
+    {
+        return $this->item_option_values;
+    }
+  
+    /**
+     * Sets item_option_values
+     * @param \SquareConnect\Model\CatalogItemOptionValueForItemVariation[] $item_option_values List of item option values associated with this item variation. Listed in the same order as the item options of the parent item.
+     * @return $this
+     */
+    public function setItemOptionValues($item_option_values)
+    {
+        $this->item_option_values = $item_option_values;
         return $this;
     }
     /**

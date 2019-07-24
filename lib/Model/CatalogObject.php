@@ -45,7 +45,9 @@ class CatalogObject implements ArrayAccess
         'product_set_data' => '\SquareConnect\Model\CatalogProductSet',
         'pricing_rule_data' => '\SquareConnect\Model\CatalogPricingRule',
         'image_data' => '\SquareConnect\Model\CatalogImage',
-        'measurement_unit_data' => '\SquareConnect\Model\CatalogMeasurementUnit'
+        'measurement_unit_data' => '\SquareConnect\Model\CatalogMeasurementUnit',
+        'item_option_data' => '\SquareConnect\Model\CatalogItemOption',
+        'item_option_value_data' => '\SquareConnect\Model\CatalogItemOptionValue'
     );
   
     /** 
@@ -74,7 +76,9 @@ class CatalogObject implements ArrayAccess
         'product_set_data' => 'product_set_data',
         'pricing_rule_data' => 'pricing_rule_data',
         'image_data' => 'image_data',
-        'measurement_unit_data' => 'measurement_unit_data'
+        'measurement_unit_data' => 'measurement_unit_data',
+        'item_option_data' => 'item_option_data',
+        'item_option_value_data' => 'item_option_value_data'
     );
   
     /**
@@ -103,7 +107,9 @@ class CatalogObject implements ArrayAccess
         'product_set_data' => 'setProductSetData',
         'pricing_rule_data' => 'setPricingRuleData',
         'image_data' => 'setImageData',
-        'measurement_unit_data' => 'setMeasurementUnitData'
+        'measurement_unit_data' => 'setMeasurementUnitData',
+        'item_option_data' => 'setItemOptionData',
+        'item_option_value_data' => 'setItemOptionValueData'
     );
   
     /**
@@ -132,7 +138,9 @@ class CatalogObject implements ArrayAccess
         'product_set_data' => 'getProductSetData',
         'pricing_rule_data' => 'getPricingRuleData',
         'image_data' => 'getImageData',
-        'measurement_unit_data' => 'getMeasurementUnitData'
+        'measurement_unit_data' => 'getMeasurementUnitData',
+        'item_option_data' => 'getItemOptionData',
+        'item_option_value_data' => 'getItemOptionValueData'
     );
   
     /**
@@ -245,6 +253,16 @@ class CatalogObject implements ArrayAccess
       * @var \SquareConnect\Model\CatalogMeasurementUnit
       */
     protected $measurement_unit_data;
+    /**
+      * $item_option_data Structured data for a [CatalogItemOption](#type-catalogitemoption), set for CatalogObjects of type `ITEM_OPTION`.
+      * @var \SquareConnect\Model\CatalogItemOption
+      */
+    protected $item_option_data;
+    /**
+      * $item_option_value_data Structured data for a [CatalogItemOptionValue](#type-catalogitemoptionvalue), set for CatalogObjects of type `ITEM_OPTION_VAL`.
+      * @var \SquareConnect\Model\CatalogItemOptionValue
+      */
+    protected $item_option_value_data;
 
     /**
      * Constructor
@@ -362,6 +380,16 @@ class CatalogObject implements ArrayAccess
               $this->measurement_unit_data = $data["measurement_unit_data"];
             } else {
               $this->measurement_unit_data = null;
+            }
+            if (isset($data["item_option_data"])) {
+              $this->item_option_data = $data["item_option_data"];
+            } else {
+              $this->item_option_data = null;
+            }
+            if (isset($data["item_option_value_data"])) {
+              $this->item_option_value_data = $data["item_option_value_data"];
+            } else {
+              $this->item_option_value_data = null;
             }
         }
     }
@@ -781,6 +809,44 @@ class CatalogObject implements ArrayAccess
     public function setMeasurementUnitData($measurement_unit_data)
     {
         $this->measurement_unit_data = $measurement_unit_data;
+        return $this;
+    }
+    /**
+     * Gets item_option_data
+     * @return \SquareConnect\Model\CatalogItemOption
+     */
+    public function getItemOptionData()
+    {
+        return $this->item_option_data;
+    }
+  
+    /**
+     * Sets item_option_data
+     * @param \SquareConnect\Model\CatalogItemOption $item_option_data Structured data for a [CatalogItemOption](#type-catalogitemoption), set for CatalogObjects of type `ITEM_OPTION`.
+     * @return $this
+     */
+    public function setItemOptionData($item_option_data)
+    {
+        $this->item_option_data = $item_option_data;
+        return $this;
+    }
+    /**
+     * Gets item_option_value_data
+     * @return \SquareConnect\Model\CatalogItemOptionValue
+     */
+    public function getItemOptionValueData()
+    {
+        return $this->item_option_value_data;
+    }
+  
+    /**
+     * Sets item_option_value_data
+     * @param \SquareConnect\Model\CatalogItemOptionValue $item_option_value_data Structured data for a [CatalogItemOptionValue](#type-catalogitemoptionvalue), set for CatalogObjects of type `ITEM_OPTION_VAL`.
+     * @return $this
+     */
+    public function setItemOptionValueData($item_option_value_data)
+    {
+        $this->item_option_value_data = $item_option_value_data;
         return $this;
     }
     /**

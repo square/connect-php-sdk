@@ -36,7 +36,8 @@ class CatalogItem implements ArrayAccess
         'modifier_list_info' => '\SquareConnect\Model\CatalogItemModifierListInfo[]',
         'variations' => '\SquareConnect\Model\CatalogObject[]',
         'product_type' => 'string',
-        'skip_modifier_screen' => 'bool'
+        'skip_modifier_screen' => 'bool',
+        'item_options' => '\SquareConnect\Model\CatalogItemOptionForItem[]'
     );
   
     /** 
@@ -56,7 +57,8 @@ class CatalogItem implements ArrayAccess
         'modifier_list_info' => 'modifier_list_info',
         'variations' => 'variations',
         'product_type' => 'product_type',
-        'skip_modifier_screen' => 'skip_modifier_screen'
+        'skip_modifier_screen' => 'skip_modifier_screen',
+        'item_options' => 'item_options'
     );
   
     /**
@@ -76,7 +78,8 @@ class CatalogItem implements ArrayAccess
         'modifier_list_info' => 'setModifierListInfo',
         'variations' => 'setVariations',
         'product_type' => 'setProductType',
-        'skip_modifier_screen' => 'setSkipModifierScreen'
+        'skip_modifier_screen' => 'setSkipModifierScreen',
+        'item_options' => 'setItemOptions'
     );
   
     /**
@@ -96,7 +99,8 @@ class CatalogItem implements ArrayAccess
         'modifier_list_info' => 'getModifierListInfo',
         'variations' => 'getVariations',
         'product_type' => 'getProductType',
-        'skip_modifier_screen' => 'getSkipModifierScreen'
+        'skip_modifier_screen' => 'getSkipModifierScreen',
+        'item_options' => 'getItemOptions'
     );
   
     /**
@@ -155,7 +159,7 @@ class CatalogItem implements ArrayAccess
       */
     protected $variations;
     /**
-      * $product_type The product type of the item. May not be changed once an item has been created.  Only items of product type `REGULAR` may be created by this API; items with other product types are read-only. See [CatalogItemProductType](#type-catalogitemproducttype) for possible values
+      * $product_type The product type of the item. May not be changed once an item has been created.  Only items of product type `REGULAR` or `APPOINTMENTS_SERVICE` may be created by this API; items with other product types are read-only. See [CatalogItemProductType](#type-catalogitemproducttype) for possible values
       * @var string
       */
     protected $product_type;
@@ -164,6 +168,11 @@ class CatalogItem implements ArrayAccess
       * @var bool
       */
     protected $skip_modifier_screen;
+    /**
+      * $item_options List of item options IDs for this item. Used to manage and group item variations in a specified order.  Maximum: 6 item options.
+      * @var \SquareConnect\Model\CatalogItemOptionForItem[]
+      */
+    protected $item_options;
 
     /**
      * Constructor
@@ -236,6 +245,11 @@ class CatalogItem implements ArrayAccess
               $this->skip_modifier_screen = $data["skip_modifier_screen"];
             } else {
               $this->skip_modifier_screen = null;
+            }
+            if (isset($data["item_options"])) {
+              $this->item_options = $data["item_options"];
+            } else {
+              $this->item_options = null;
             }
         }
     }
@@ -459,7 +473,7 @@ class CatalogItem implements ArrayAccess
   
     /**
      * Sets product_type
-     * @param string $product_type The product type of the item. May not be changed once an item has been created.  Only items of product type `REGULAR` may be created by this API; items with other product types are read-only. See [CatalogItemProductType](#type-catalogitemproducttype) for possible values
+     * @param string $product_type The product type of the item. May not be changed once an item has been created.  Only items of product type `REGULAR` or `APPOINTMENTS_SERVICE` may be created by this API; items with other product types are read-only. See [CatalogItemProductType](#type-catalogitemproducttype) for possible values
      * @return $this
      */
     public function setProductType($product_type)
@@ -484,6 +498,25 @@ class CatalogItem implements ArrayAccess
     public function setSkipModifierScreen($skip_modifier_screen)
     {
         $this->skip_modifier_screen = $skip_modifier_screen;
+        return $this;
+    }
+    /**
+     * Gets item_options
+     * @return \SquareConnect\Model\CatalogItemOptionForItem[]
+     */
+    public function getItemOptions()
+    {
+        return $this->item_options;
+    }
+  
+    /**
+     * Sets item_options
+     * @param \SquareConnect\Model\CatalogItemOptionForItem[] $item_options List of item options IDs for this item. Used to manage and group item variations in a specified order.  Maximum: 6 item options.
+     * @return $this
+     */
+    public function setItemOptions($item_options)
+    {
+        $this->item_options = $item_options;
         return $this;
     }
     /**

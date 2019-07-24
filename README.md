@@ -64,9 +64,12 @@ require 'vendor/autoload.php';
 
 $access_token = 'YOUR_ACCESS_TOKEN';
 # setup authorization
-\SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken($access_token);
+$api_config = new \SquareConnect\Configuration();
+$api_config->setHost("https://connect.squareup.com");
+$api_config->setAccessToken($access_token);
+$api_client = new \SquareConnect\ApiClient($api_config);
 # create an instance of the Location API
-$locations_api = new \SquareConnect\Api\LocationsApi();
+$locations_api = new \SquareConnect\Api\LocationsApi($api_client);
 
 try {
   $locations = $locations_api->listLocations();
@@ -87,9 +90,12 @@ require 'vendor/autoload.php';
 
 $access_token = 'YOUR_ACCESS_TOKEN';
 # setup authorization
-\SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken($access_token);
+$api_config = new \SquareConnect\Configuration();
+$api_config->setHost("https://connect.squareup.com");
+$api_config->setAccessToken($access_token);
+$api_client = new \SquareConnect\ApiClient($api_config);
 # create an instance of the Transaction API class
-$transactions_api = new \SquareConnect\Api\TransactionsApi();
+$transactions_api = new \SquareConnect\Api\TransactionsApi($api_client);
 $location_id = 'YOUR_LOCATION_ID'
 $nonce = 'YOUR_NONCE'
 
@@ -293,6 +299,10 @@ Class | Method | HTTP request | Description
  - [CatalogInfoResponseLimits](docs/Model/CatalogInfoResponseLimits.md)
  - [CatalogItem](docs/Model/CatalogItem.md)
  - [CatalogItemModifierListInfo](docs/Model/CatalogItemModifierListInfo.md)
+ - [CatalogItemOption](docs/Model/CatalogItemOption.md)
+ - [CatalogItemOptionForItem](docs/Model/CatalogItemOptionForItem.md)
+ - [CatalogItemOptionValue](docs/Model/CatalogItemOptionValue.md)
+ - [CatalogItemOptionValueForItemVariation](docs/Model/CatalogItemOptionValueForItemVariation.md)
  - [CatalogItemProductType](docs/Model/CatalogItemProductType.md)
  - [CatalogItemVariation](docs/Model/CatalogItemVariation.md)
  - [CatalogMeasurementUnit](docs/Model/CatalogMeasurementUnit.md)
@@ -308,6 +318,8 @@ Class | Method | HTTP request | Description
  - [CatalogProductSet](docs/Model/CatalogProductSet.md)
  - [CatalogQuery](docs/Model/CatalogQuery.md)
  - [CatalogQueryExact](docs/Model/CatalogQueryExact.md)
+ - [CatalogQueryItemVariationsForItemOptionValues](docs/Model/CatalogQueryItemVariationsForItemOptionValues.md)
+ - [CatalogQueryItemsForItemOptions](docs/Model/CatalogQueryItemsForItemOptions.md)
  - [CatalogQueryItemsForModifierList](docs/Model/CatalogQueryItemsForModifierList.md)
  - [CatalogQueryItemsForTax](docs/Model/CatalogQueryItemsForTax.md)
  - [CatalogQueryPrefix](docs/Model/CatalogQueryPrefix.md)
@@ -718,7 +730,7 @@ Class | Method | HTTP request | Description
  - **EMPLOYEES_WRITE**: __HTTP Method__: `POST`, `PUT`, `DELETE`  Grants write access to employee profile information. For example, to create and modify employee profiles.
  - **INVENTORY_READ**: __HTTP Method__: `GET`  Grants read access to inventory information. For example, to call the RetrieveInventoryCount endpoint.
  - **INVENTORY_WRITE**: __HTTP Method__:  `POST`, `PUT`, `DELETE`  Grants write access to inventory information. For example, to call the BatchChangeInventory endpoint.
- - **ITEMS_READ**: __HTTP Method__: `GET`  Grants read access to business and location information. For example, to obtain a location ID for subsequent activity.
+ - **ITEMS_READ**: __HTTP Method__: `GET`  Grants read access to product catalog information. For example, to get an  item or a list of items.
  - **ITEMS_WRITE**: __HTTP Method__: `POST`, `PUT`, `DELETE`  Grants write access to product catalog information. For example, to modify or add to a product catalog.
  - **MERCHANT_PROFILE_READ**: __HTTP Method__: `GET`  Grants read access to business and location information. For example, to obtain a location ID for subsequent activity.
  - **ORDERS_READ**: __HTTP Method__: `GET`  Grants read access to order information. For example, to call the BatchRetrieveOrders endpoint.

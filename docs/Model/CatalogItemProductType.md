@@ -2,7 +2,7 @@
 
 ### Description
 
-The type of a [CatalogItem](#type-catalogitem). Connect V2 only allows the creation of `REGULAR` items.
+The type of a [CatalogItem](#type-catalogitem). Connect V2 only allows the creation of `REGULAR` or `APPOINTMENTS_SERVICE` items.
 
 ## Properties
 Name | Type
