@@ -1,5 +1,10 @@
 # Change Log
 
+## Version 2.20190724.0 (2019-07-24)
+
+* **BETA releases**:
+  * Catalog API: supports item options with datatypes and enums for item options and item option values.
+
 ## Version 2.20190710.0 (2019-07-10)
 
 * **Retired functionality** &mdash; The `CatalogItem.image_url` field (deprecated under `Square-Version` YYYYMMDD) is retired and no longer included in Connect SDKs.

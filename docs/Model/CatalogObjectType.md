@@ -18,6 +18,9 @@ Name | Type
 **PRICING_RULE** | string
 **PRODUCT_SET** | string
 **TIME_PERIOD** | string
+**MEASUREMENT_UNIT** | string
+**ITEM_OPTION** | string
+**ITEM_OPTION_VAL** | string
 
 Note: All properties are protected and only accessed via getters and setters.
 
