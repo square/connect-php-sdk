@@ -60,17 +60,17 @@ class SearchOrdersDateTimeFilter implements ArrayAccess
     );
   
     /**
-      * $created_at Time range for filtering on the `created_at` timestamp.
+      * $created_at Time range for filtering on the `created_at` timestamp. If you use this value, you must also set the `sort_field` in the OrdersSearchSort object to `CREATED_AT`.
       * @var \SquareConnect\Model\TimeRange
       */
     protected $created_at;
     /**
-      * $updated_at Time range for filtering on the `updated_at` timestamp.
+      * $updated_at Time range for filtering on the `updated_at` timestamp. If you use this value, you must also set the `sort_field` in the OrdersSearchSort object to `UPDATED_AT`.
       * @var \SquareConnect\Model\TimeRange
       */
     protected $updated_at;
     /**
-      * $closed_at Time range for filtering on the `closed_at` timestamp.
+      * $closed_at Time range for filtering on the `closed_at` timestamp. If you use this value, you must also set the `sort_field` in the OrdersSearchSort object to `CLOSED_AT`.
       * @var \SquareConnect\Model\TimeRange
       */
     protected $closed_at;
@@ -110,7 +110,7 @@ class SearchOrdersDateTimeFilter implements ArrayAccess
   
     /**
      * Sets created_at
-     * @param \SquareConnect\Model\TimeRange $created_at Time range for filtering on the `created_at` timestamp.
+     * @param \SquareConnect\Model\TimeRange $created_at Time range for filtering on the `created_at` timestamp. If you use this value, you must also set the `sort_field` in the OrdersSearchSort object to `CREATED_AT`.
      * @return $this
      */
     public function setCreatedAt($created_at)
@@ -129,7 +129,7 @@ class SearchOrdersDateTimeFilter implements ArrayAccess
   
     /**
      * Sets updated_at
-     * @param \SquareConnect\Model\TimeRange $updated_at Time range for filtering on the `updated_at` timestamp.
+     * @param \SquareConnect\Model\TimeRange $updated_at Time range for filtering on the `updated_at` timestamp. If you use this value, you must also set the `sort_field` in the OrdersSearchSort object to `UPDATED_AT`.
      * @return $this
      */
     public function setUpdatedAt($updated_at)
@@ -148,7 +148,7 @@ class SearchOrdersDateTimeFilter implements ArrayAccess
   
     /**
      * Sets closed_at
-     * @param \SquareConnect\Model\TimeRange $closed_at Time range for filtering on the `closed_at` timestamp.
+     * @param \SquareConnect\Model\TimeRange $closed_at Time range for filtering on the `closed_at` timestamp. If you use this value, you must also set the `sort_field` in the OrdersSearchSort object to `CLOSED_AT`.
      * @return $this
      */
     public function setClosedAt($closed_at)

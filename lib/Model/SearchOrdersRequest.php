@@ -68,7 +68,7 @@ class SearchOrdersRequest implements ArrayAccess
     );
   
     /**
-      * $location_ids The location IDs for the orders to query. The caller must have access to all provided locations.  Min: 1 `location_ids`. Max: 10 `location_ids`.
+      * $location_ids The location IDs for the orders to query. All locations must belong to the same merchant.  Min: 1 location IDs.  Max: 10 location IDs.
       * @var string[]
       */
     protected $location_ids;
@@ -78,17 +78,17 @@ class SearchOrdersRequest implements ArrayAccess
       */
     protected $cursor;
     /**
-      * $query Query conditions used to filter or sort the results. Note that when fetching additional pages using a `cursor`, the `query` must be equal to the `query` used to fetch the first page of results.
+      * $query Query conditions used to filter or sort the results. Note that when fetching additional pages using a cursor, the query must be equal to the query used to fetch the first page of results.
       * @var \SquareConnect\Model\SearchOrdersQuery
       */
     protected $query;
     /**
-      * $limit Number of results to be returned in a single page. SearchOrders may use a smaller limit than specified depending on server load. If the response includes a `cursor` field, you can use it to retrieve the next set of results. Default: `500`
+      * $limit Maximum number of results to be returned in a single page. It is possible to receive fewer results than the specified limit on a given page.  Default: `500`
       * @var int
       */
     protected $limit;
     /**
-      * $return_entries If set to `true`, SearchOrders will return [`OrderEntry`](#type-orderentry) objects instead of `Order` objects. `OrderEntry` objects are lightweight descriptions of orders that include `order_id`s.  Default: `false`.
+      * $return_entries Boolean that controls the format of the search results. If `true`, SearchOrders will return [`OrderEntry`](#type-orderentry) objects. If `false`, SearchOrders will return complete Order objects.  Default: `false`.
       * @var bool
       */
     protected $return_entries;
@@ -138,7 +138,7 @@ class SearchOrdersRequest implements ArrayAccess
   
     /**
      * Sets location_ids
-     * @param string[] $location_ids The location IDs for the orders to query. The caller must have access to all provided locations.  Min: 1 `location_ids`. Max: 10 `location_ids`.
+     * @param string[] $location_ids The location IDs for the orders to query. All locations must belong to the same merchant.  Min: 1 location IDs.  Max: 10 location IDs.
      * @return $this
      */
     public function setLocationIds($location_ids)
@@ -176,7 +176,7 @@ class SearchOrdersRequest implements ArrayAccess
   
     /**
      * Sets query
-     * @param \SquareConnect\Model\SearchOrdersQuery $query Query conditions used to filter or sort the results. Note that when fetching additional pages using a `cursor`, the `query` must be equal to the `query` used to fetch the first page of results.
+     * @param \SquareConnect\Model\SearchOrdersQuery $query Query conditions used to filter or sort the results. Note that when fetching additional pages using a cursor, the query must be equal to the query used to fetch the first page of results.
      * @return $this
      */
     public function setQuery($query)
@@ -195,7 +195,7 @@ class SearchOrdersRequest implements ArrayAccess
   
     /**
      * Sets limit
-     * @param int $limit Number of results to be returned in a single page. SearchOrders may use a smaller limit than specified depending on server load. If the response includes a `cursor` field, you can use it to retrieve the next set of results. Default: `500`
+     * @param int $limit Maximum number of results to be returned in a single page. It is possible to receive fewer results than the specified limit on a given page.  Default: `500`
      * @return $this
      */
     public function setLimit($limit)
@@ -214,7 +214,7 @@ class SearchOrdersRequest implements ArrayAccess
   
     /**
      * Sets return_entries
-     * @param bool $return_entries If set to `true`, SearchOrders will return [`OrderEntry`](#type-orderentry) objects instead of `Order` objects. `OrderEntry` objects are lightweight descriptions of orders that include `order_id`s.  Default: `false`.
+     * @param bool $return_entries Boolean that controls the format of the search results. If `true`, SearchOrders will return [`OrderEntry`](#type-orderentry) objects. If `false`, SearchOrders will return complete Order objects.  Default: `false`.
      * @return $this
      */
     public function setReturnEntries($return_entries)

@@ -2,7 +2,7 @@
 
 ### Description
 
-Indicates specific errors that can occur during a request to the Connect API.
+Indicates the specific error that occurred during a request to a Square API.
 
 ## Properties
 Name | Type
@@ -51,8 +51,6 @@ Name | Type
 **INVALID_FORM_VALUE** | string
 **ONE_INSTRUMENT_EXPECTED** | string
 **NO_FIELDS_SET** | string
-**DEPRECATED_FIELD_SET** | string
-**RETIRED_FIELD_SET** | string
 **CARD_EXPIRED** | string
 **INVALID_EXPIRATION** | string
 **INVALID_EXPIRATION_YEAR** | string
@@ -61,6 +59,26 @@ Name | Type
 **UNSUPPORTED_ENTRY_METHOD** | string
 **INVALID_ENCRYPTED_CARD** | string
 **INVALID_CARD** | string
+**GENERIC_DECLINE** | string
+**CVV_FAILURE** | string
+**ADDRESS_VERIFICATION_FAILURE** | string
+**INVALID_ACCOUNT** | string
+**CURRENCY_MISMATCH** | string
+**INSUFFICIENT_FUNDS** | string
+**INSUFFICIENT_PERMISSIONS** | string
+**CARDHOLDER_INSUFFICIENT_PERMISSIONS** | string
+**INVALID_LOCATION** | string
+**TRANSACTION_LIMIT** | string
+**VOICE_FAILURE** | string
+**PAN_FAILURE** | string
+**EXPIRATION_FAILURE** | string
+**CARD_NOT_SUPPORTED** | string
+**INVALID_PIN** | string
+**INVALID_POSTAL_CODE** | string
+**INVALID_FEES** | string
+**MANUALLY_ENTERED_PAYMENT_NOT_SUPPORTED** | string
+**PAYMENT_LIMIT_EXCEEDED** | string
+**GIFT_CARD_AVAILABLE_AMOUNT** | string
 **DELAYED_TRANSACTION_EXPIRED** | string
 **DELAYED_TRANSACTION_CANCELED** | string
 **DELAYED_TRANSACTION_CAPTURED** | string
@@ -83,10 +101,17 @@ Name | Type
 **BAD_CERTIFICATE** | string
 **INVALID_SQUARE_VERSION_FORMAT** | string
 **API_VERSION_INCOMPATIBLE** | string
+**INVALID_URL** | string
+**HTTPS_ONLY** | string
 **CARD_DECLINED** | string
 **VERIFY_CVV_FAILURE** | string
 **VERIFY_AVS_FAILURE** | string
 **CARD_DECLINED_CALL_ISSUER** | string
+**CARD_DECLINED_VERIFICATION_REQUIRED** | string
+**BAD_EXPIRATION** | string
+**CHIP_INSERTION_REQUIRED** | string
+**ALLOWABLE_PIN_TRIES_EXCEEDED** | string
+**RESERVATION_DECLINED** | string
 **NOT_FOUND** | string
 **APPLE_PAYMENT_PROCESSING_CERTIFICATE_HASH_NOT_FOUND** | string
 **METHOD_NOT_ALLOWED** | string
@@ -98,6 +123,7 @@ Name | Type
 **RATE_LIMITED** | string
 **NOT_IMPLEMENTED** | string
 **SERVICE_UNAVAILABLE** | string
+**TEMPORARY_ERROR** | string
 **GATEWAY_TIMEOUT** | string
 
 Note: All properties are protected and only accessed via getters and setters.

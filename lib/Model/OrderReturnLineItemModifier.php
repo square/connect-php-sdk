@@ -72,7 +72,7 @@ class OrderReturnLineItemModifier implements ArrayAccess
     );
   
     /**
-      * $uid Unique ID that identifies the return modifier only within this order.  This field is read-only.
+      * $uid Unique ID that identifies the return modifier only within this order.
       * @var string
       */
     protected $uid;
@@ -152,7 +152,7 @@ class OrderReturnLineItemModifier implements ArrayAccess
   
     /**
      * Sets uid
-     * @param string $uid Unique ID that identifies the return modifier only within this order.  This field is read-only.
+     * @param string $uid Unique ID that identifies the return modifier only within this order.
      * @return $this
      */
     public function setUid($uid)

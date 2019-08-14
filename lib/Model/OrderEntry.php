@@ -25,6 +25,7 @@ class OrderEntry implements ArrayAccess
       */
     static $swaggerTypes = array(
         'order_id' => 'string',
+        'version' => 'int',
         'location_id' => 'string'
     );
   
@@ -34,6 +35,7 @@ class OrderEntry implements ArrayAccess
       */
     static $attributeMap = array(
         'order_id' => 'order_id',
+        'version' => 'version',
         'location_id' => 'location_id'
     );
   
@@ -43,6 +45,7 @@ class OrderEntry implements ArrayAccess
       */
     static $setters = array(
         'order_id' => 'setOrderId',
+        'version' => 'setVersion',
         'location_id' => 'setLocationId'
     );
   
@@ -52,6 +55,7 @@ class OrderEntry implements ArrayAccess
       */
     static $getters = array(
         'order_id' => 'getOrderId',
+        'version' => 'getVersion',
         'location_id' => 'getLocationId'
     );
   
@@ -60,6 +64,11 @@ class OrderEntry implements ArrayAccess
       * @var string
       */
     protected $order_id;
+    /**
+      * $version Version number which is incremented each time an update is committed to the order. Orders that were not created through the API will not include a version and thus cannot be updated.  [Read more about working with versions](/orders-api/manage-orders#update-orders).
+      * @var int
+      */
+    protected $version;
     /**
       * $location_id The location id the Order belongs to.
       * @var string
@@ -77,6 +86,11 @@ class OrderEntry implements ArrayAccess
               $this->order_id = $data["order_id"];
             } else {
               $this->order_id = null;
+            }
+            if (isset($data["version"])) {
+              $this->version = $data["version"];
+            } else {
+              $this->version = null;
             }
             if (isset($data["location_id"])) {
               $this->location_id = $data["location_id"];
@@ -102,6 +116,25 @@ class OrderEntry implements ArrayAccess
     public function setOrderId($order_id)
     {
         $this->order_id = $order_id;
+        return $this;
+    }
+    /**
+     * Gets version
+     * @return int
+     */
+    public function getVersion()
+    {
+        return $this->version;
+    }
+  
+    /**
+     * Sets version
+     * @param int $version Version number which is incremented each time an update is committed to the order. Orders that were not created through the API will not include a version and thus cannot be updated.  [Read more about working with versions](/orders-api/manage-orders#update-orders).
+     * @return $this
+     */
+    public function setVersion($version)
+    {
+        $this->version = $version;
         return $this;
     }
     /**

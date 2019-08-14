@@ -2,7 +2,7 @@
 
 ### Description
 
-Defines the query parameters that can be included in a request to the ListTransactions endpoint.
+Defines the query parameters that can be included in a request to the [ListTransactions](#endpoint-listtransactions) endpoint.  Deprecated - recommend using [SearchOrders](#endpoint-orders-searchorders)
 
 ## Properties
 Name | Getter | Setter | Type | Description | Notes

@@ -35,7 +35,8 @@ class OrderReturnServiceCharge implements ArrayAccess
         'total_tax_money' => '\SquareConnect\Model\Money',
         'calculation_phase' => 'string',
         'taxable' => 'bool',
-        'return_taxes' => '\SquareConnect\Model\OrderReturnTax[]'
+        'return_taxes' => '\SquareConnect\Model\OrderReturnTax[]',
+        'applied_taxes' => '\SquareConnect\Model\OrderLineItemAppliedTax[]'
     );
   
     /** 
@@ -54,7 +55,8 @@ class OrderReturnServiceCharge implements ArrayAccess
         'total_tax_money' => 'total_tax_money',
         'calculation_phase' => 'calculation_phase',
         'taxable' => 'taxable',
-        'return_taxes' => 'return_taxes'
+        'return_taxes' => 'return_taxes',
+        'applied_taxes' => 'applied_taxes'
     );
   
     /**
@@ -73,7 +75,8 @@ class OrderReturnServiceCharge implements ArrayAccess
         'total_tax_money' => 'setTotalTaxMoney',
         'calculation_phase' => 'setCalculationPhase',
         'taxable' => 'setTaxable',
-        'return_taxes' => 'setReturnTaxes'
+        'return_taxes' => 'setReturnTaxes',
+        'applied_taxes' => 'setAppliedTaxes'
     );
   
     /**
@@ -92,16 +95,17 @@ class OrderReturnServiceCharge implements ArrayAccess
         'total_tax_money' => 'getTotalTaxMoney',
         'calculation_phase' => 'getCalculationPhase',
         'taxable' => 'getTaxable',
-        'return_taxes' => 'getReturnTaxes'
+        'return_taxes' => 'getReturnTaxes',
+        'applied_taxes' => 'getAppliedTaxes'
     );
   
     /**
-      * $uid Unique ID that identifies the return service charge only within this order.  This field is read-only.
+      * $uid Unique ID that identifies the return service charge only within this order.
       * @var string
       */
     protected $uid;
     /**
-      * $source_service_charge_uid `uid` of the Service Charge from the Order which contains the original charge of this service charge, null for unlinked returns.
+      * $source_service_charge_uid `uid` of the Service Charge from the Order containing the original charge of the service charge. `source_service_charge_uid` is `null` for unlinked returns.
       * @var string
       */
     protected $source_service_charge_uid;
@@ -111,37 +115,37 @@ class OrderReturnServiceCharge implements ArrayAccess
       */
     protected $name;
     /**
-      * $catalog_object_id The ID referencing the service charge [CatalogObject](#type-catalogobject)
+      * $catalog_object_id The catalog object ID of the associated [CatalogServiceCharge](#type-catalogservicecharge).
       * @var string
       */
     protected $catalog_object_id;
     /**
-      * $percentage The percentage of the service charge, as a string representation of a decimal number.  A value of `7.25` corresponds to a percentage of 7.25%.  Exactly one of percentage or amount_money should be set.
+      * $percentage The percentage of the service charge, as a string representation of a decimal number. For example, a value of `\"7.25\"` corresponds to a percentage of 7.25%.  Exactly one of `percentage` or `amount_money` should be set.
       * @var string
       */
     protected $percentage;
     /**
-      * $amount_money The amount of a non-percentage based service charge.  Exactly one of percentage or amount_money should be set.
+      * $amount_money The amount of a non-percentage based service charge.  Exactly one of `percentage` or `amount_money` should be set.
       * @var \SquareConnect\Model\Money
       */
     protected $amount_money;
     /**
-      * $applied_money The amount of money applied to the order by the service charge, as calculated by the server.  For fixed-amount service charges, `applied_money` is equal to `amount_money`.  For percentage-based service charges, `applied_money` is the money calculated using the percentage. The `applied_money` field will include any inclusive tax amounts as well.  This field is read-only.
+      * $applied_money The amount of money applied to the order by the service charge, including any inclusive tax amounts, as calculated by Square.  - For fixed-amount service charges, `applied_money` is equal to `amount_money`. - For percentage-based service charges, `applied_money` is the money calculated using the percentage.
       * @var \SquareConnect\Model\Money
       */
     protected $applied_money;
     /**
-      * $total_money The total amount of money to collect for the service charge.  Note that `total_money` does not equal `applied_money` plus `total_tax_money` if an inclusive tax is applied to the service charge since the inclusive tax amount will be included in both `applied_money` and `total_tax_money`.  This field is read-only.
+      * $total_money The total amount of money to collect for the service charge.  __NOTE__: if an inclusive tax is applied to the service charge, `total_money` does not equal `applied_money` plus `total_tax_money` since the inclusive tax amount will already be included in both `applied_money` and `total_tax_money`.
       * @var \SquareConnect\Model\Money
       */
     protected $total_money;
     /**
-      * $total_tax_money The total amount of tax money to collect for the service charge.  This field is read-only.
+      * $total_tax_money The total amount of tax money to collect for the service charge.
       * @var \SquareConnect\Model\Money
       */
     protected $total_tax_money;
     /**
-      * $calculation_phase The calculation phase after which to apply the service charge.  This field is read-only. See [OrderServiceChargeCalculationPhase](#type-orderservicechargecalculationphase) for possible values
+      * $calculation_phase The calculation phase after which to apply the service charge. See [OrderServiceChargeCalculationPhase](#type-orderservicechargecalculationphase) for possible values
       * @var string
       */
     protected $calculation_phase;
@@ -151,10 +155,15 @@ class OrderReturnServiceCharge implements ArrayAccess
       */
     protected $taxable;
     /**
-      * $return_taxes The taxes which apply to the service charge. Return-level taxes apply by default to service charge calculated in the `SUBTOTAL_PHASE` if the service charge is marked as taxable.
+      * $return_taxes Taxes applied to the `OrderReturnServiceCharge`. By default, return-level taxes apply to `OrderReturnServiceCharge`s calculated in the `SUBTOTAL_PHASE` if `taxable` is set to `true`.  On read or retrieve, this list includes both item-level taxes and any return-level taxes apportioned to this item.  This field has been deprecated in favour of `applied_taxes`.
       * @var \SquareConnect\Model\OrderReturnTax[]
       */
     protected $return_taxes;
+    /**
+      * $applied_taxes The list of references to `OrderReturnTax` entities applied to the `OrderReturnServiceCharge`. Each `OrderLineItemAppliedTax` has a `tax_uid` that references the `uid` of a top-level `OrderReturnTax` that is being applied to the `OrderReturnServiceCharge`. On reads, the amount applied is populated.
+      * @var \SquareConnect\Model\OrderLineItemAppliedTax[]
+      */
+    protected $applied_taxes;
 
     /**
      * Constructor
@@ -223,6 +232,11 @@ class OrderReturnServiceCharge implements ArrayAccess
             } else {
               $this->return_taxes = null;
             }
+            if (isset($data["applied_taxes"])) {
+              $this->applied_taxes = $data["applied_taxes"];
+            } else {
+              $this->applied_taxes = null;
+            }
         }
     }
     /**
@@ -236,7 +250,7 @@ class OrderReturnServiceCharge implements ArrayAccess
   
     /**
      * Sets uid
-     * @param string $uid Unique ID that identifies the return service charge only within this order.  This field is read-only.
+     * @param string $uid Unique ID that identifies the return service charge only within this order.
      * @return $this
      */
     public function setUid($uid)
@@ -255,7 +269,7 @@ class OrderReturnServiceCharge implements ArrayAccess
   
     /**
      * Sets source_service_charge_uid
-     * @param string $source_service_charge_uid `uid` of the Service Charge from the Order which contains the original charge of this service charge, null for unlinked returns.
+     * @param string $source_service_charge_uid `uid` of the Service Charge from the Order containing the original charge of the service charge. `source_service_charge_uid` is `null` for unlinked returns.
      * @return $this
      */
     public function setSourceServiceChargeUid($source_service_charge_uid)
@@ -293,7 +307,7 @@ class OrderReturnServiceCharge implements ArrayAccess
   
     /**
      * Sets catalog_object_id
-     * @param string $catalog_object_id The ID referencing the service charge [CatalogObject](#type-catalogobject)
+     * @param string $catalog_object_id The catalog object ID of the associated [CatalogServiceCharge](#type-catalogservicecharge).
      * @return $this
      */
     public function setCatalogObjectId($catalog_object_id)
@@ -312,7 +326,7 @@ class OrderReturnServiceCharge implements ArrayAccess
   
     /**
      * Sets percentage
-     * @param string $percentage The percentage of the service charge, as a string representation of a decimal number.  A value of `7.25` corresponds to a percentage of 7.25%.  Exactly one of percentage or amount_money should be set.
+     * @param string $percentage The percentage of the service charge, as a string representation of a decimal number. For example, a value of `\"7.25\"` corresponds to a percentage of 7.25%.  Exactly one of `percentage` or `amount_money` should be set.
      * @return $this
      */
     public function setPercentage($percentage)
@@ -331,7 +345,7 @@ class OrderReturnServiceCharge implements ArrayAccess
   
     /**
      * Sets amount_money
-     * @param \SquareConnect\Model\Money $amount_money The amount of a non-percentage based service charge.  Exactly one of percentage or amount_money should be set.
+     * @param \SquareConnect\Model\Money $amount_money The amount of a non-percentage based service charge.  Exactly one of `percentage` or `amount_money` should be set.
      * @return $this
      */
     public function setAmountMoney($amount_money)
@@ -350,7 +364,7 @@ class OrderReturnServiceCharge implements ArrayAccess
   
     /**
      * Sets applied_money
-     * @param \SquareConnect\Model\Money $applied_money The amount of money applied to the order by the service charge, as calculated by the server.  For fixed-amount service charges, `applied_money` is equal to `amount_money`.  For percentage-based service charges, `applied_money` is the money calculated using the percentage. The `applied_money` field will include any inclusive tax amounts as well.  This field is read-only.
+     * @param \SquareConnect\Model\Money $applied_money The amount of money applied to the order by the service charge, including any inclusive tax amounts, as calculated by Square.  - For fixed-amount service charges, `applied_money` is equal to `amount_money`. - For percentage-based service charges, `applied_money` is the money calculated using the percentage.
      * @return $this
      */
     public function setAppliedMoney($applied_money)
@@ -369,7 +383,7 @@ class OrderReturnServiceCharge implements ArrayAccess
   
     /**
      * Sets total_money
-     * @param \SquareConnect\Model\Money $total_money The total amount of money to collect for the service charge.  Note that `total_money` does not equal `applied_money` plus `total_tax_money` if an inclusive tax is applied to the service charge since the inclusive tax amount will be included in both `applied_money` and `total_tax_money`.  This field is read-only.
+     * @param \SquareConnect\Model\Money $total_money The total amount of money to collect for the service charge.  __NOTE__: if an inclusive tax is applied to the service charge, `total_money` does not equal `applied_money` plus `total_tax_money` since the inclusive tax amount will already be included in both `applied_money` and `total_tax_money`.
      * @return $this
      */
     public function setTotalMoney($total_money)
@@ -388,7 +402,7 @@ class OrderReturnServiceCharge implements ArrayAccess
   
     /**
      * Sets total_tax_money
-     * @param \SquareConnect\Model\Money $total_tax_money The total amount of tax money to collect for the service charge.  This field is read-only.
+     * @param \SquareConnect\Model\Money $total_tax_money The total amount of tax money to collect for the service charge.
      * @return $this
      */
     public function setTotalTaxMoney($total_tax_money)
@@ -407,7 +421,7 @@ class OrderReturnServiceCharge implements ArrayAccess
   
     /**
      * Sets calculation_phase
-     * @param string $calculation_phase The calculation phase after which to apply the service charge.  This field is read-only. See [OrderServiceChargeCalculationPhase](#type-orderservicechargecalculationphase) for possible values
+     * @param string $calculation_phase The calculation phase after which to apply the service charge. See [OrderServiceChargeCalculationPhase](#type-orderservicechargecalculationphase) for possible values
      * @return $this
      */
     public function setCalculationPhase($calculation_phase)
@@ -445,12 +459,31 @@ class OrderReturnServiceCharge implements ArrayAccess
   
     /**
      * Sets return_taxes
-     * @param \SquareConnect\Model\OrderReturnTax[] $return_taxes The taxes which apply to the service charge. Return-level taxes apply by default to service charge calculated in the `SUBTOTAL_PHASE` if the service charge is marked as taxable.
+     * @param \SquareConnect\Model\OrderReturnTax[] $return_taxes Taxes applied to the `OrderReturnServiceCharge`. By default, return-level taxes apply to `OrderReturnServiceCharge`s calculated in the `SUBTOTAL_PHASE` if `taxable` is set to `true`.  On read or retrieve, this list includes both item-level taxes and any return-level taxes apportioned to this item.  This field has been deprecated in favour of `applied_taxes`.
      * @return $this
      */
     public function setReturnTaxes($return_taxes)
     {
         $this->return_taxes = $return_taxes;
+        return $this;
+    }
+    /**
+     * Gets applied_taxes
+     * @return \SquareConnect\Model\OrderLineItemAppliedTax[]
+     */
+    public function getAppliedTaxes()
+    {
+        return $this->applied_taxes;
+    }
+  
+    /**
+     * Sets applied_taxes
+     * @param \SquareConnect\Model\OrderLineItemAppliedTax[] $applied_taxes The list of references to `OrderReturnTax` entities applied to the `OrderReturnServiceCharge`. Each `OrderLineItemAppliedTax` has a `tax_uid` that references the `uid` of a top-level `OrderReturnTax` that is being applied to the `OrderReturnServiceCharge`. On reads, the amount applied is populated.
+     * @return $this
+     */
+    public function setAppliedTaxes($applied_taxes)
+    {
+        $this->applied_taxes = $applied_taxes;
         return $this;
     }
     /**

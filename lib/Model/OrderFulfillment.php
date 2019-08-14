@@ -24,9 +24,11 @@ class OrderFulfillment implements ArrayAccess
       * @var string[]
       */
     static $swaggerTypes = array(
+        'uid' => 'string',
         'type' => 'string',
         'state' => 'string',
-        'pickup_details' => '\SquareConnect\Model\OrderFulfillmentPickupDetails'
+        'pickup_details' => '\SquareConnect\Model\OrderFulfillmentPickupDetails',
+        'shipment_details' => '\SquareConnect\Model\OrderFulfillmentShipmentDetails'
     );
   
     /** 
@@ -34,9 +36,11 @@ class OrderFulfillment implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
+        'uid' => 'uid',
         'type' => 'type',
         'state' => 'state',
-        'pickup_details' => 'pickup_details'
+        'pickup_details' => 'pickup_details',
+        'shipment_details' => 'shipment_details'
     );
   
     /**
@@ -44,9 +48,11 @@ class OrderFulfillment implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
+        'uid' => 'setUid',
         'type' => 'setType',
         'state' => 'setState',
-        'pickup_details' => 'setPickupDetails'
+        'pickup_details' => 'setPickupDetails',
+        'shipment_details' => 'setShipmentDetails'
     );
   
     /**
@@ -54,11 +60,18 @@ class OrderFulfillment implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
+        'uid' => 'getUid',
         'type' => 'getType',
         'state' => 'getState',
-        'pickup_details' => 'getPickupDetails'
+        'pickup_details' => 'getPickupDetails',
+        'shipment_details' => 'getShipmentDetails'
     );
   
+    /**
+      * $uid Unique ID that identifies the fulfillment only within this order.
+      * @var string
+      */
+    protected $uid;
     /**
       * $type The type of the fulfillment. See [OrderFulfillmentType](#type-orderfulfillmenttype) for possible values
       * @var string
@@ -70,10 +83,15 @@ class OrderFulfillment implements ArrayAccess
       */
     protected $state;
     /**
-      * $pickup_details Contains pickup-specific details. Required when fulfillment type is `PICKUP`.
+      * $pickup_details Contains details for a pickup fulfillment. Required when fulfillment type is `PICKUP`.
       * @var \SquareConnect\Model\OrderFulfillmentPickupDetails
       */
     protected $pickup_details;
+    /**
+      * $shipment_details Contains details for a shipment fulfillment. Required when fulfillment type is `SHIPMENT`.  A shipment fulfillment's relationship to fulfillment `state`: `PROPOSED`: A shipment is requested. `RESERVED`: Fulfillment accepted. Shipment processing. `PREPARED`: Shipment packaged. Shipping label created. `COMPLETED`: Package has been shipped. `CANCELED`: Shipment has been canceled. `FAILED`: Shipment has failed.
+      * @var \SquareConnect\Model\OrderFulfillmentShipmentDetails
+      */
+    protected $shipment_details;
 
     /**
      * Constructor
@@ -82,6 +100,11 @@ class OrderFulfillment implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
+            if (isset($data["uid"])) {
+              $this->uid = $data["uid"];
+            } else {
+              $this->uid = null;
+            }
             if (isset($data["type"])) {
               $this->type = $data["type"];
             } else {
@@ -97,7 +120,31 @@ class OrderFulfillment implements ArrayAccess
             } else {
               $this->pickup_details = null;
             }
+            if (isset($data["shipment_details"])) {
+              $this->shipment_details = $data["shipment_details"];
+            } else {
+              $this->shipment_details = null;
+            }
         }
+    }
+    /**
+     * Gets uid
+     * @return string
+     */
+    public function getUid()
+    {
+        return $this->uid;
+    }
+  
+    /**
+     * Sets uid
+     * @param string $uid Unique ID that identifies the fulfillment only within this order.
+     * @return $this
+     */
+    public function setUid($uid)
+    {
+        $this->uid = $uid;
+        return $this;
     }
     /**
      * Gets type
@@ -148,12 +195,31 @@ class OrderFulfillment implements ArrayAccess
   
     /**
      * Sets pickup_details
-     * @param \SquareConnect\Model\OrderFulfillmentPickupDetails $pickup_details Contains pickup-specific details. Required when fulfillment type is `PICKUP`.
+     * @param \SquareConnect\Model\OrderFulfillmentPickupDetails $pickup_details Contains details for a pickup fulfillment. Required when fulfillment type is `PICKUP`.
      * @return $this
      */
     public function setPickupDetails($pickup_details)
     {
         $this->pickup_details = $pickup_details;
+        return $this;
+    }
+    /**
+     * Gets shipment_details
+     * @return \SquareConnect\Model\OrderFulfillmentShipmentDetails
+     */
+    public function getShipmentDetails()
+    {
+        return $this->shipment_details;
+    }
+  
+    /**
+     * Sets shipment_details
+     * @param \SquareConnect\Model\OrderFulfillmentShipmentDetails $shipment_details Contains details for a shipment fulfillment. Required when fulfillment type is `SHIPMENT`.  A shipment fulfillment's relationship to fulfillment `state`: `PROPOSED`: A shipment is requested. `RESERVED`: Fulfillment accepted. Shipment processing. `PREPARED`: Shipment packaged. Shipping label created. `COMPLETED`: Package has been shipped. `CANCELED`: Shipment has been canceled. `FAILED`: Shipment has failed.
+     * @return $this
+     */
+    public function setShipmentDetails($shipment_details)
+    {
+        $this->shipment_details = $shipment_details;
         return $this;
     }
     /**

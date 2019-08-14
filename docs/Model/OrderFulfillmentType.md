@@ -8,6 +8,7 @@ The type of fulfillment.
 Name | Type
 ------------ | -------------
 **PICKUP** | string
+**SHIPMENT** | string
 
 Note: All properties are protected and only accessed via getters and setters.
 

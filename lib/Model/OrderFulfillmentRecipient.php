@@ -27,7 +27,8 @@ class OrderFulfillmentRecipient implements ArrayAccess
         'customer_id' => 'string',
         'display_name' => 'string',
         'email_address' => 'string',
-        'phone_number' => 'string'
+        'phone_number' => 'string',
+        'address' => '\SquareConnect\Model\Address'
     );
   
     /** 
@@ -38,7 +39,8 @@ class OrderFulfillmentRecipient implements ArrayAccess
         'customer_id' => 'customer_id',
         'display_name' => 'display_name',
         'email_address' => 'email_address',
-        'phone_number' => 'phone_number'
+        'phone_number' => 'phone_number',
+        'address' => 'address'
     );
   
     /**
@@ -49,7 +51,8 @@ class OrderFulfillmentRecipient implements ArrayAccess
         'customer_id' => 'setCustomerId',
         'display_name' => 'setDisplayName',
         'email_address' => 'setEmailAddress',
-        'phone_number' => 'setPhoneNumber'
+        'phone_number' => 'setPhoneNumber',
+        'address' => 'setAddress'
     );
   
     /**
@@ -60,29 +63,35 @@ class OrderFulfillmentRecipient implements ArrayAccess
         'customer_id' => 'getCustomerId',
         'display_name' => 'getDisplayName',
         'email_address' => 'getEmailAddress',
-        'phone_number' => 'getPhoneNumber'
+        'phone_number' => 'getPhoneNumber',
+        'address' => 'getAddress'
     );
   
     /**
-      * $customer_id The Customer ID of the customer associated with the fulfillment.  If customer_id is provided, the corresponding recipient information fields (`display_name`, `email_address`, and `phone_number`) are automatically populated from the relevant customer profile. If the targeted profile information does not contain the necessary required information, the request will result in an error.
+      * $customer_id The Customer ID of the customer associated with the fulfillment.  If `customer_id` is provided, the fulfillment recipient's `display_name`, `email_address`, and `phone_number` are automatically populated from the targeted customer profile. If these fields are set in the request, the request values will override the information from the customer profile. If the targeted customer profile does not contain the necessary information and these fields are left unset, the request will result in an error.
       * @var string
       */
     protected $customer_id;
     /**
-      * $display_name The display name of the fulfillment recipient.  If provided, overrides the value from customer profile indicated by customer_id.
+      * $display_name The display name of the fulfillment recipient.  If provided, overrides the value pulled from the customer profile indicated by `customer_id`.
       * @var string
       */
     protected $display_name;
     /**
-      * $email_address The email address of the fulfillment recipient.  If provided, overrides the value from customer profile indicated by customer_id.
+      * $email_address The email address of the fulfillment recipient.  If provided, overrides the value pulled from the customer profile indicated by `customer_id`.
       * @var string
       */
     protected $email_address;
     /**
-      * $phone_number The phone number of the fulfillment recipient.  If provided, overrides the value from customer profile indicated by customer_id.
+      * $phone_number The phone number of the fulfillment recipient.  If provided, overrides the value pulled from the customer profile indicated by `customer_id`.
       * @var string
       */
     protected $phone_number;
+    /**
+      * $address The address of the fulfillment recipient.  If provided, overrides the value pulled from the customer profile indicated by `customer_id`.
+      * @var \SquareConnect\Model\Address
+      */
+    protected $address;
 
     /**
      * Constructor
@@ -111,6 +120,11 @@ class OrderFulfillmentRecipient implements ArrayAccess
             } else {
               $this->phone_number = null;
             }
+            if (isset($data["address"])) {
+              $this->address = $data["address"];
+            } else {
+              $this->address = null;
+            }
         }
     }
     /**
@@ -124,7 +138,7 @@ class OrderFulfillmentRecipient implements ArrayAccess
   
     /**
      * Sets customer_id
-     * @param string $customer_id The Customer ID of the customer associated with the fulfillment.  If customer_id is provided, the corresponding recipient information fields (`display_name`, `email_address`, and `phone_number`) are automatically populated from the relevant customer profile. If the targeted profile information does not contain the necessary required information, the request will result in an error.
+     * @param string $customer_id The Customer ID of the customer associated with the fulfillment.  If `customer_id` is provided, the fulfillment recipient's `display_name`, `email_address`, and `phone_number` are automatically populated from the targeted customer profile. If these fields are set in the request, the request values will override the information from the customer profile. If the targeted customer profile does not contain the necessary information and these fields are left unset, the request will result in an error.
      * @return $this
      */
     public function setCustomerId($customer_id)
@@ -143,7 +157,7 @@ class OrderFulfillmentRecipient implements ArrayAccess
   
     /**
      * Sets display_name
-     * @param string $display_name The display name of the fulfillment recipient.  If provided, overrides the value from customer profile indicated by customer_id.
+     * @param string $display_name The display name of the fulfillment recipient.  If provided, overrides the value pulled from the customer profile indicated by `customer_id`.
      * @return $this
      */
     public function setDisplayName($display_name)
@@ -162,7 +176,7 @@ class OrderFulfillmentRecipient implements ArrayAccess
   
     /**
      * Sets email_address
-     * @param string $email_address The email address of the fulfillment recipient.  If provided, overrides the value from customer profile indicated by customer_id.
+     * @param string $email_address The email address of the fulfillment recipient.  If provided, overrides the value pulled from the customer profile indicated by `customer_id`.
      * @return $this
      */
     public function setEmailAddress($email_address)
@@ -181,12 +195,31 @@ class OrderFulfillmentRecipient implements ArrayAccess
   
     /**
      * Sets phone_number
-     * @param string $phone_number The phone number of the fulfillment recipient.  If provided, overrides the value from customer profile indicated by customer_id.
+     * @param string $phone_number The phone number of the fulfillment recipient.  If provided, overrides the value pulled from the customer profile indicated by `customer_id`.
      * @return $this
      */
     public function setPhoneNumber($phone_number)
     {
         $this->phone_number = $phone_number;
+        return $this;
+    }
+    /**
+     * Gets address
+     * @return \SquareConnect\Model\Address
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
+  
+    /**
+     * Sets address
+     * @param \SquareConnect\Model\Address $address The address of the fulfillment recipient.  If provided, overrides the value pulled from the customer profile indicated by `customer_id`.
+     * @return $this
+     */
+    public function setAddress($address)
+    {
+        $this->address = $address;
         return $this;
     }
     /**

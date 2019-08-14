@@ -27,8 +27,7 @@ class SearchOrdersResponse implements ArrayAccess
         'order_entries' => '\SquareConnect\Model\OrderEntry[]',
         'orders' => '\SquareConnect\Model\Order[]',
         'cursor' => 'string',
-        'errors' => '\SquareConnect\Model\Error[]',
-        'unconvertible_transaction_ids' => 'string[]'
+        'errors' => '\SquareConnect\Model\Error[]'
     );
   
     /** 
@@ -39,8 +38,7 @@ class SearchOrdersResponse implements ArrayAccess
         'order_entries' => 'order_entries',
         'orders' => 'orders',
         'cursor' => 'cursor',
-        'errors' => 'errors',
-        'unconvertible_transaction_ids' => 'unconvertible_transaction_ids'
+        'errors' => 'errors'
     );
   
     /**
@@ -51,8 +49,7 @@ class SearchOrdersResponse implements ArrayAccess
         'order_entries' => 'setOrderEntries',
         'orders' => 'setOrders',
         'cursor' => 'setCursor',
-        'errors' => 'setErrors',
-        'unconvertible_transaction_ids' => 'setUnconvertibleTransactionIds'
+        'errors' => 'setErrors'
     );
   
     /**
@@ -63,17 +60,16 @@ class SearchOrdersResponse implements ArrayAccess
         'order_entries' => 'getOrderEntries',
         'orders' => 'getOrders',
         'cursor' => 'getCursor',
-        'errors' => 'getErrors',
-        'unconvertible_transaction_ids' => 'getUnconvertibleTransactionIds'
+        'errors' => 'getErrors'
     );
   
     /**
-      * $order_entries List of [OrderEntries](#type-orderentry) that fit the query conditions.  Populated only if `order_entries` was set to `true` in the request.
+      * $order_entries List of [OrderEntries](#type-orderentry) that fit the query conditions. Populated only if `return_entries` was set to `true` in the request.
       * @var \SquareConnect\Model\OrderEntry[]
       */
     protected $order_entries;
     /**
-      * $orders List of [Orders](#type-order) that match query conditions. Populated only if `return_entries` in the request is set to `false`.
+      * $orders List of [Order](#type-order) objects that match query conditions. Populated only if `return_entries` in the request is set to `false`.
       * @var \SquareConnect\Model\Order[]
       */
     protected $orders;
@@ -87,11 +83,6 @@ class SearchOrdersResponse implements ArrayAccess
       * @var \SquareConnect\Model\Error[]
       */
     protected $errors;
-    /**
-      * $unconvertible_transaction_ids List of transaction IDs identifying transactions that could not be converted to an `Order`. Empty if `return_entries` is true, however, attempts to retrieve those orders may encounter subsequent `unconvertible_transcation_ids` Note that this field will not be present after SearchOrders moves from BETA to GA.
-      * @var string[]
-      */
-    protected $unconvertible_transaction_ids;
 
     /**
      * Constructor
@@ -120,11 +111,6 @@ class SearchOrdersResponse implements ArrayAccess
             } else {
               $this->errors = null;
             }
-            if (isset($data["unconvertible_transaction_ids"])) {
-              $this->unconvertible_transaction_ids = $data["unconvertible_transaction_ids"];
-            } else {
-              $this->unconvertible_transaction_ids = null;
-            }
         }
     }
     /**
@@ -138,7 +124,7 @@ class SearchOrdersResponse implements ArrayAccess
   
     /**
      * Sets order_entries
-     * @param \SquareConnect\Model\OrderEntry[] $order_entries List of [OrderEntries](#type-orderentry) that fit the query conditions.  Populated only if `order_entries` was set to `true` in the request.
+     * @param \SquareConnect\Model\OrderEntry[] $order_entries List of [OrderEntries](#type-orderentry) that fit the query conditions. Populated only if `return_entries` was set to `true` in the request.
      * @return $this
      */
     public function setOrderEntries($order_entries)
@@ -157,7 +143,7 @@ class SearchOrdersResponse implements ArrayAccess
   
     /**
      * Sets orders
-     * @param \SquareConnect\Model\Order[] $orders List of [Orders](#type-order) that match query conditions. Populated only if `return_entries` in the request is set to `false`.
+     * @param \SquareConnect\Model\Order[] $orders List of [Order](#type-order) objects that match query conditions. Populated only if `return_entries` in the request is set to `false`.
      * @return $this
      */
     public function setOrders($orders)
@@ -201,25 +187,6 @@ class SearchOrdersResponse implements ArrayAccess
     public function setErrors($errors)
     {
         $this->errors = $errors;
-        return $this;
-    }
-    /**
-     * Gets unconvertible_transaction_ids
-     * @return string[]
-     */
-    public function getUnconvertibleTransactionIds()
-    {
-        return $this->unconvertible_transaction_ids;
-    }
-  
-    /**
-     * Sets unconvertible_transaction_ids
-     * @param string[] $unconvertible_transaction_ids List of transaction IDs identifying transactions that could not be converted to an `Order`. Empty if `return_entries` is true, however, attempts to retrieve those orders may encounter subsequent `unconvertible_transcation_ids` Note that this field will not be present after SearchOrders moves from BETA to GA.
-     * @return $this
-     */
-    public function setUnconvertibleTransactionIds($unconvertible_transaction_ids)
-    {
-        $this->unconvertible_transaction_ids = $unconvertible_transaction_ids;
         return $this;
     }
     /**
