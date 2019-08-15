@@ -52,7 +52,7 @@ class SearchOrdersCustomerFilter implements ArrayAccess
     );
   
     /**
-      * $customer_ids Filter by orders with any of the listed `customer_id`s.  Max: 10 `customer_id`s.
+      * $customer_ids List of customer IDs to filter by.  Max: 10 customer IDs.
       * @var string[]
       */
     protected $customer_ids;
@@ -82,7 +82,7 @@ class SearchOrdersCustomerFilter implements ArrayAccess
   
     /**
      * Sets customer_ids
-     * @param string[] $customer_ids Filter by orders with any of the listed `customer_id`s.  Max: 10 `customer_id`s.
+     * @param string[] $customer_ids List of customer IDs to filter by.  Max: 10 customer IDs.
      * @return $this
      */
     public function setCustomerIds($customer_ids)

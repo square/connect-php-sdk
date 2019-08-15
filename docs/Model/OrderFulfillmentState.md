@@ -2,7 +2,7 @@
 
 ### Description
 
-The state of the fulfillment.
+The current state of this fulfillment.
 
 ## Properties
 Name | Type

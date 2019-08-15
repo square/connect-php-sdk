@@ -52,7 +52,7 @@ class SearchOrdersSourceFilter implements ArrayAccess
     );
   
     /**
-      * $source_names Filters by [Source](#type-ordersource) `name`. Will return any orders with with `source.name`s that match any of the listed source names.  Max: 10 `source_names`.
+      * $source_names Filters by [Source](#type-ordersource) `name`. Will return any orders with with a `source.name` that matches any of the listed source names.  Max: 10 source names.
       * @var string[]
       */
     protected $source_names;
@@ -82,7 +82,7 @@ class SearchOrdersSourceFilter implements ArrayAccess
   
     /**
      * Sets source_names
-     * @param string[] $source_names Filters by [Source](#type-ordersource) `name`. Will return any orders with with `source.name`s that match any of the listed source names.  Max: 10 `source_names`.
+     * @param string[] $source_names Filters by [Source](#type-ordersource) `name`. Will return any orders with with a `source.name` that matches any of the listed source names.  Max: 10 source names.
      * @return $this
      */
     public function setSourceNames($source_names)

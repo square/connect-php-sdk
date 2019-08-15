@@ -29,7 +29,9 @@ class MeasurementUnit implements ArrayAccess
         'length_unit' => 'string',
         'volume_unit' => 'string',
         'weight_unit' => 'string',
-        'generic_unit' => 'string'
+        'generic_unit' => 'string',
+        'time_unit' => 'string',
+        'type' => 'string'
     );
   
     /** 
@@ -42,7 +44,9 @@ class MeasurementUnit implements ArrayAccess
         'length_unit' => 'length_unit',
         'volume_unit' => 'volume_unit',
         'weight_unit' => 'weight_unit',
-        'generic_unit' => 'generic_unit'
+        'generic_unit' => 'generic_unit',
+        'time_unit' => 'time_unit',
+        'type' => 'type'
     );
   
     /**
@@ -55,7 +59,9 @@ class MeasurementUnit implements ArrayAccess
         'length_unit' => 'setLengthUnit',
         'volume_unit' => 'setVolumeUnit',
         'weight_unit' => 'setWeightUnit',
-        'generic_unit' => 'setGenericUnit'
+        'generic_unit' => 'setGenericUnit',
+        'time_unit' => 'setTimeUnit',
+        'type' => 'setType'
     );
   
     /**
@@ -68,7 +74,9 @@ class MeasurementUnit implements ArrayAccess
         'length_unit' => 'getLengthUnit',
         'volume_unit' => 'getVolumeUnit',
         'weight_unit' => 'getWeightUnit',
-        'generic_unit' => 'getGenericUnit'
+        'generic_unit' => 'getGenericUnit',
+        'time_unit' => 'getTimeUnit',
+        'type' => 'getType'
     );
   
     /**
@@ -101,6 +109,16 @@ class MeasurementUnit implements ArrayAccess
       * @var string
       */
     protected $generic_unit;
+    /**
+      * $time_unit Represents a standard unit of time. See [MeasurementUnitTime](#type-measurementunittime) for possible values
+      * @var string
+      */
+    protected $time_unit;
+    /**
+      * $type Represents the type of the measurement unit. See [MeasurementUnitUnitType](#type-measurementunitunittype) for possible values
+      * @var string
+      */
+    protected $type;
 
     /**
      * Constructor
@@ -138,6 +156,16 @@ class MeasurementUnit implements ArrayAccess
               $this->generic_unit = $data["generic_unit"];
             } else {
               $this->generic_unit = null;
+            }
+            if (isset($data["time_unit"])) {
+              $this->time_unit = $data["time_unit"];
+            } else {
+              $this->time_unit = null;
+            }
+            if (isset($data["type"])) {
+              $this->type = $data["type"];
+            } else {
+              $this->type = null;
             }
         }
     }
@@ -253,6 +281,44 @@ class MeasurementUnit implements ArrayAccess
     public function setGenericUnit($generic_unit)
     {
         $this->generic_unit = $generic_unit;
+        return $this;
+    }
+    /**
+     * Gets time_unit
+     * @return string
+     */
+    public function getTimeUnit()
+    {
+        return $this->time_unit;
+    }
+  
+    /**
+     * Sets time_unit
+     * @param string $time_unit Represents a standard unit of time. See [MeasurementUnitTime](#type-measurementunittime) for possible values
+     * @return $this
+     */
+    public function setTimeUnit($time_unit)
+    {
+        $this->time_unit = $time_unit;
+        return $this;
+    }
+    /**
+     * Gets type
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+  
+    /**
+     * Sets type
+     * @param string $type Represents the type of the measurement unit. See [MeasurementUnitUnitType](#type-measurementunitunittype) for possible values
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
         return $this;
     }
     /**

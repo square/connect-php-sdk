@@ -56,12 +56,12 @@ class SearchOrdersSort implements ArrayAccess
     );
   
     /**
-      * $sort_field The field to sort by.  __Important:__ When using a [DateTimeFilter](#type-searchordersfilter), `sort_field` must match the set time range field. If this field does not match the time range field in `DateTimeFilter`, SearchOrder will return an error.  Default: `CREATED_AT`. See [SearchOrdersSortField](#type-searchorderssortfield) for possible values
+      * $sort_field The field to sort by.  __Important:__ When using a [DateTimeFilter](#type-searchordersfilter), `sort_field` must match the timestamp field that the DateTimeFilter uses to filter. For example, If you set your `sort_field` to `CLOSED_AT` and you use a DateTimeFilter, your DateTimeFilter must filter for orders by their `CLOSED_AT` date. If this field does not match the timestamp field in `DateTimeFilter`, SearchOrders will return an error.  Default: `CREATED_AT`. See [SearchOrdersSortField](#type-searchorderssortfield) for possible values
       * @var string
       */
     protected $sort_field;
     /**
-      * $sort_order The order in which results are returned. Defaults to `DESC`. See [SortOrder](#type-sortorder) for possible values
+      * $sort_order The chronological order in which results are returned. Defaults to `DESC`. See [SortOrder](#type-sortorder) for possible values
       * @var string
       */
     protected $sort_order;
@@ -96,7 +96,7 @@ class SearchOrdersSort implements ArrayAccess
   
     /**
      * Sets sort_field
-     * @param string $sort_field The field to sort by.  __Important:__ When using a [DateTimeFilter](#type-searchordersfilter), `sort_field` must match the set time range field. If this field does not match the time range field in `DateTimeFilter`, SearchOrder will return an error.  Default: `CREATED_AT`. See [SearchOrdersSortField](#type-searchorderssortfield) for possible values
+     * @param string $sort_field The field to sort by.  __Important:__ When using a [DateTimeFilter](#type-searchordersfilter), `sort_field` must match the timestamp field that the DateTimeFilter uses to filter. For example, If you set your `sort_field` to `CLOSED_AT` and you use a DateTimeFilter, your DateTimeFilter must filter for orders by their `CLOSED_AT` date. If this field does not match the timestamp field in `DateTimeFilter`, SearchOrders will return an error.  Default: `CREATED_AT`. See [SearchOrdersSortField](#type-searchorderssortfield) for possible values
      * @return $this
      */
     public function setSortField($sort_field)
@@ -115,7 +115,7 @@ class SearchOrdersSort implements ArrayAccess
   
     /**
      * Sets sort_order
-     * @param string $sort_order The order in which results are returned. Defaults to `DESC`. See [SortOrder](#type-sortorder) for possible values
+     * @param string $sort_order The chronological order in which results are returned. Defaults to `DESC`. See [SortOrder](#type-sortorder) for possible values
      * @return $this
      */
     public function setSortOrder($sort_order)

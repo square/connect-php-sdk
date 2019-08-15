@@ -80,7 +80,7 @@ class OrderReturn implements ArrayAccess
     );
   
     /**
-      * $uid Unique ID that identifies the return only within this order.  This field is read-only.
+      * $uid Unique ID that identifies the return only within this order.
       * @var string
       */
     protected $uid;
@@ -95,17 +95,17 @@ class OrderReturn implements ArrayAccess
       */
     protected $return_line_items;
     /**
-      * $return_service_charges Collection of service charges which are being returned.  This field is read-only.
+      * $return_service_charges Collection of service charges which are being returned.
       * @var \SquareConnect\Model\OrderReturnServiceCharge[]
       */
     protected $return_service_charges;
     /**
-      * $return_taxes Collection of taxes which are being returned.
+      * $return_taxes Collection of references to taxes being returned for an order, including the total applied tax amount to be returned. The taxes must reference a top-level tax ID from the source order.
       * @var \SquareConnect\Model\OrderReturnTax[]
       */
     protected $return_taxes;
     /**
-      * $return_discounts Collection of discounts which are being returned.
+      * $return_discounts Collection of references to discounts being returned for an order, including the total applied discount amount to be returned. The discounts must reference a top-level discount ID from the source order.
       * @var \SquareConnect\Model\OrderReturnDiscount[]
       */
     protected $return_discounts;
@@ -180,7 +180,7 @@ class OrderReturn implements ArrayAccess
   
     /**
      * Sets uid
-     * @param string $uid Unique ID that identifies the return only within this order.  This field is read-only.
+     * @param string $uid Unique ID that identifies the return only within this order.
      * @return $this
      */
     public function setUid($uid)
@@ -237,7 +237,7 @@ class OrderReturn implements ArrayAccess
   
     /**
      * Sets return_service_charges
-     * @param \SquareConnect\Model\OrderReturnServiceCharge[] $return_service_charges Collection of service charges which are being returned.  This field is read-only.
+     * @param \SquareConnect\Model\OrderReturnServiceCharge[] $return_service_charges Collection of service charges which are being returned.
      * @return $this
      */
     public function setReturnServiceCharges($return_service_charges)
@@ -256,7 +256,7 @@ class OrderReturn implements ArrayAccess
   
     /**
      * Sets return_taxes
-     * @param \SquareConnect\Model\OrderReturnTax[] $return_taxes Collection of taxes which are being returned.
+     * @param \SquareConnect\Model\OrderReturnTax[] $return_taxes Collection of references to taxes being returned for an order, including the total applied tax amount to be returned. The taxes must reference a top-level tax ID from the source order.
      * @return $this
      */
     public function setReturnTaxes($return_taxes)
@@ -275,7 +275,7 @@ class OrderReturn implements ArrayAccess
   
     /**
      * Sets return_discounts
-     * @param \SquareConnect\Model\OrderReturnDiscount[] $return_discounts Collection of discounts which are being returned.
+     * @param \SquareConnect\Model\OrderReturnDiscount[] $return_discounts Collection of references to discounts being returned for an order, including the total applied discount amount to be returned. The discounts must reference a top-level discount ID from the source order.
      * @return $this
      */
     public function setReturnDiscounts($return_discounts)

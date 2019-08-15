@@ -29,6 +29,8 @@ Name | Getter | Setter | Type | Description | Notes
 **instagram_username** | getInstagramUsername() | setInstagramUsername($value) | **string** | The Instagram username of the location without the &#39; | [optional] 
 **facebook_url** | getFacebookUrl() | setFacebookUrl($value) | **string** | The Facebook profile URL of the location. The URL should begin with &#39;facebook.com/&#39;. | [optional] 
 **coordinates** | getCoordinates() | setCoordinates($value) | [**\SquareConnect\Model\Coordinates**](Coordinates.md) | The physical coordinates (latitude and longitude) of the location. | [optional] 
+**logo_url** | getLogoUrl() | setLogoUrl($value) | **string** | The logo image URL of the location. | [optional] 
+**pos_background_url** | getPosBackgroundUrl() | setPosBackgroundUrl($value) | **string** | The Point of Sale background image URL of the location. | [optional] 
 
 Note: All properties are protected and only accessed via getters and setters.
 

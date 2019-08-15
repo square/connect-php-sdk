@@ -34,7 +34,8 @@ class OrderServiceCharge implements ArrayAccess
         'total_tax_money' => '\SquareConnect\Model\Money',
         'calculation_phase' => 'string',
         'taxable' => 'bool',
-        'taxes' => '\SquareConnect\Model\OrderLineItemTax[]'
+        'taxes' => '\SquareConnect\Model\OrderLineItemTax[]',
+        'applied_taxes' => '\SquareConnect\Model\OrderLineItemAppliedTax[]'
     );
   
     /** 
@@ -52,7 +53,8 @@ class OrderServiceCharge implements ArrayAccess
         'total_tax_money' => 'total_tax_money',
         'calculation_phase' => 'calculation_phase',
         'taxable' => 'taxable',
-        'taxes' => 'taxes'
+        'taxes' => 'taxes',
+        'applied_taxes' => 'applied_taxes'
     );
   
     /**
@@ -70,7 +72,8 @@ class OrderServiceCharge implements ArrayAccess
         'total_tax_money' => 'setTotalTaxMoney',
         'calculation_phase' => 'setCalculationPhase',
         'taxable' => 'setTaxable',
-        'taxes' => 'setTaxes'
+        'taxes' => 'setTaxes',
+        'applied_taxes' => 'setAppliedTaxes'
     );
   
     /**
@@ -88,11 +91,12 @@ class OrderServiceCharge implements ArrayAccess
         'total_tax_money' => 'getTotalTaxMoney',
         'calculation_phase' => 'getCalculationPhase',
         'taxable' => 'getTaxable',
-        'taxes' => 'getTaxes'
+        'taxes' => 'getTaxes',
+        'applied_taxes' => 'getAppliedTaxes'
     );
   
     /**
-      * $uid Unique ID that identifies the service charge only within this order.  This field is read-only.
+      * $uid Unique ID that identifies the service charge only within this order.
       * @var string
       */
     protected $uid;
@@ -107,7 +111,7 @@ class OrderServiceCharge implements ArrayAccess
       */
     protected $catalog_object_id;
     /**
-      * $percentage The service charge percentage, as a string representation of a decimal number.  For example, `7.25` indicates 7.25%  Exactly one of `percentage` or `amount_money` should be set.
+      * $percentage The service charge percentage as a string representation of a decimal number. For example, `\"7.25\"` indicates a service charge of 7.25%.  Exactly 1 of `percentage` or `amount_money` should be set.
       * @var string
       */
     protected $percentage;
@@ -117,17 +121,17 @@ class OrderServiceCharge implements ArrayAccess
       */
     protected $amount_money;
     /**
-      * $applied_money The amount of money applied to the order by the service charge, as calculated by the server.  For fixed-amount service charges, `applied_money` is equal to `amount_money`.  For percentage-based service charges, `applied_money` is the money calculated using the percentage. The `applied_money` field will include any inclusive tax amounts as well.  This field is read-only.
+      * $applied_money The amount of money applied to the order by the service charge, including any inclusive tax amounts, as calculated by Square.  - For fixed-amount service charges, `applied_money` is equal to `amount_money`. - For percentage-based service charges, `applied_money` is the money calculated using the percentage.
       * @var \SquareConnect\Model\Money
       */
     protected $applied_money;
     /**
-      * $total_money The total amount of money to collect for the service charge.  Note that `total_money` does not equal `applied_money` plus `total_tax_money` if an inclusive tax is applied to the service charge since the inclusive tax amount will be included in both `applied_money` and `total_tax_money`.  This field is read-only.
+      * $total_money The total amount of money to collect for the service charge.  __Note__: if an inclusive tax is applied to the service charge, `total_money` __does not__ equal `applied_money` plus `total_tax_money` since the inclusive tax amount will already be included in both `applied_money` and `total_tax_money`.
       * @var \SquareConnect\Model\Money
       */
     protected $total_money;
     /**
-      * $total_tax_money The total amount of tax money to collect for the service charge.  This field is read-only.
+      * $total_tax_money The total amount of tax money to collect for the service charge.
       * @var \SquareConnect\Model\Money
       */
     protected $total_tax_money;
@@ -137,15 +141,20 @@ class OrderServiceCharge implements ArrayAccess
       */
     protected $calculation_phase;
     /**
-      * $taxable Indicates whether the service charge can be taxed. If set to `true`, any order-level taxes will automatically apply to this service charge. Note that service charges calculated in the `TOTAL_PHASE` cannot be marked as taxable.
+      * $taxable Indicates whether the service charge can be taxed. If set to `true`, order-level taxes automatically apply to the service charge. Note that service charges calculated in the `TOTAL_PHASE` cannot be marked as taxable.
       * @var bool
       */
     protected $taxable;
     /**
-      * $taxes Taxes applied to the service charge. By default, order-level taxes apply to service charges calculated in the `SUBTOTAL_PHASE` if `taxable` is set to `true`.
+      * $taxes A list of taxes applied to this service charge. On read or retrieve, this list includes both item-level taxes and any order-level taxes apportioned to this service charge. When creating an Order, set your service charge-level taxes in this list. By default, order-level taxes apply to service charges calculated in the `SUBTOTAL_PHASE` if `taxable` is set to `true`.  This field has been deprecated in favour of `applied_taxes`. Usage of both this field and `applied_taxes` when creating an order will result in an error. Usage of this field when sending requests to the UpdateOrder endpoint will result in an error.
       * @var \SquareConnect\Model\OrderLineItemTax[]
       */
     protected $taxes;
+    /**
+      * $applied_taxes The list of references to taxes applied to this service charge. Each `OrderLineItemAppliedTax` has a `tax_uid` that references the `uid` of a top-level `OrderLineItemTax` that is being applied to this service charge. On reads, the amount applied is populated.  An `OrderLineItemAppliedTax` will be automatically created on every taxable service charge for all `ORDER` scoped taxes that are added to the order. `OrderLineItemAppliedTax` records for `LINE_ITEM` scoped taxes must be added in requests for the tax to apply to any taxable service charge.  Taxable service charges have the `taxable` field set to true and calculated in the `SUBTOTAL_PHASE`.  To change the amount of a tax, modify the referenced top-level tax.
+      * @var \SquareConnect\Model\OrderLineItemAppliedTax[]
+      */
+    protected $applied_taxes;
 
     /**
      * Constructor
@@ -209,6 +218,11 @@ class OrderServiceCharge implements ArrayAccess
             } else {
               $this->taxes = null;
             }
+            if (isset($data["applied_taxes"])) {
+              $this->applied_taxes = $data["applied_taxes"];
+            } else {
+              $this->applied_taxes = null;
+            }
         }
     }
     /**
@@ -222,7 +236,7 @@ class OrderServiceCharge implements ArrayAccess
   
     /**
      * Sets uid
-     * @param string $uid Unique ID that identifies the service charge only within this order.  This field is read-only.
+     * @param string $uid Unique ID that identifies the service charge only within this order.
      * @return $this
      */
     public function setUid($uid)
@@ -279,7 +293,7 @@ class OrderServiceCharge implements ArrayAccess
   
     /**
      * Sets percentage
-     * @param string $percentage The service charge percentage, as a string representation of a decimal number.  For example, `7.25` indicates 7.25%  Exactly one of `percentage` or `amount_money` should be set.
+     * @param string $percentage The service charge percentage as a string representation of a decimal number. For example, `\"7.25\"` indicates a service charge of 7.25%.  Exactly 1 of `percentage` or `amount_money` should be set.
      * @return $this
      */
     public function setPercentage($percentage)
@@ -317,7 +331,7 @@ class OrderServiceCharge implements ArrayAccess
   
     /**
      * Sets applied_money
-     * @param \SquareConnect\Model\Money $applied_money The amount of money applied to the order by the service charge, as calculated by the server.  For fixed-amount service charges, `applied_money` is equal to `amount_money`.  For percentage-based service charges, `applied_money` is the money calculated using the percentage. The `applied_money` field will include any inclusive tax amounts as well.  This field is read-only.
+     * @param \SquareConnect\Model\Money $applied_money The amount of money applied to the order by the service charge, including any inclusive tax amounts, as calculated by Square.  - For fixed-amount service charges, `applied_money` is equal to `amount_money`. - For percentage-based service charges, `applied_money` is the money calculated using the percentage.
      * @return $this
      */
     public function setAppliedMoney($applied_money)
@@ -336,7 +350,7 @@ class OrderServiceCharge implements ArrayAccess
   
     /**
      * Sets total_money
-     * @param \SquareConnect\Model\Money $total_money The total amount of money to collect for the service charge.  Note that `total_money` does not equal `applied_money` plus `total_tax_money` if an inclusive tax is applied to the service charge since the inclusive tax amount will be included in both `applied_money` and `total_tax_money`.  This field is read-only.
+     * @param \SquareConnect\Model\Money $total_money The total amount of money to collect for the service charge.  __Note__: if an inclusive tax is applied to the service charge, `total_money` __does not__ equal `applied_money` plus `total_tax_money` since the inclusive tax amount will already be included in both `applied_money` and `total_tax_money`.
      * @return $this
      */
     public function setTotalMoney($total_money)
@@ -355,7 +369,7 @@ class OrderServiceCharge implements ArrayAccess
   
     /**
      * Sets total_tax_money
-     * @param \SquareConnect\Model\Money $total_tax_money The total amount of tax money to collect for the service charge.  This field is read-only.
+     * @param \SquareConnect\Model\Money $total_tax_money The total amount of tax money to collect for the service charge.
      * @return $this
      */
     public function setTotalTaxMoney($total_tax_money)
@@ -393,7 +407,7 @@ class OrderServiceCharge implements ArrayAccess
   
     /**
      * Sets taxable
-     * @param bool $taxable Indicates whether the service charge can be taxed. If set to `true`, any order-level taxes will automatically apply to this service charge. Note that service charges calculated in the `TOTAL_PHASE` cannot be marked as taxable.
+     * @param bool $taxable Indicates whether the service charge can be taxed. If set to `true`, order-level taxes automatically apply to the service charge. Note that service charges calculated in the `TOTAL_PHASE` cannot be marked as taxable.
      * @return $this
      */
     public function setTaxable($taxable)
@@ -412,12 +426,31 @@ class OrderServiceCharge implements ArrayAccess
   
     /**
      * Sets taxes
-     * @param \SquareConnect\Model\OrderLineItemTax[] $taxes Taxes applied to the service charge. By default, order-level taxes apply to service charges calculated in the `SUBTOTAL_PHASE` if `taxable` is set to `true`.
+     * @param \SquareConnect\Model\OrderLineItemTax[] $taxes A list of taxes applied to this service charge. On read or retrieve, this list includes both item-level taxes and any order-level taxes apportioned to this service charge. When creating an Order, set your service charge-level taxes in this list. By default, order-level taxes apply to service charges calculated in the `SUBTOTAL_PHASE` if `taxable` is set to `true`.  This field has been deprecated in favour of `applied_taxes`. Usage of both this field and `applied_taxes` when creating an order will result in an error. Usage of this field when sending requests to the UpdateOrder endpoint will result in an error.
      * @return $this
      */
     public function setTaxes($taxes)
     {
         $this->taxes = $taxes;
+        return $this;
+    }
+    /**
+     * Gets applied_taxes
+     * @return \SquareConnect\Model\OrderLineItemAppliedTax[]
+     */
+    public function getAppliedTaxes()
+    {
+        return $this->applied_taxes;
+    }
+  
+    /**
+     * Sets applied_taxes
+     * @param \SquareConnect\Model\OrderLineItemAppliedTax[] $applied_taxes The list of references to taxes applied to this service charge. Each `OrderLineItemAppliedTax` has a `tax_uid` that references the `uid` of a top-level `OrderLineItemTax` that is being applied to this service charge. On reads, the amount applied is populated.  An `OrderLineItemAppliedTax` will be automatically created on every taxable service charge for all `ORDER` scoped taxes that are added to the order. `OrderLineItemAppliedTax` records for `LINE_ITEM` scoped taxes must be added in requests for the tax to apply to any taxable service charge.  Taxable service charges have the `taxable` field set to true and calculated in the `SUBTOTAL_PHASE`.  To change the amount of a tax, modify the referenced top-level tax.
+     * @return $this
+     */
+    public function setAppliedTaxes($applied_taxes)
+    {
+        $this->applied_taxes = $applied_taxes;
         return $this;
     }
     /**

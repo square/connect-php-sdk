@@ -55,15 +55,6 @@ class ReportingApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function test_listAdditionalRecipientReceivableRefunds() {
-      $request = new \SquareConnect\Model\ListAdditionalRecipientReceivableRefundsRequest([
-          "begin_time" => "2017-09-30T00:00:00Z",
-          "end_time" => "2017-10-30T00:00:00Z",
-          "sort_order" => "DESC"
-      ]);
-
-      $response = self::$api->listAdditionalRecipientReceivableRefunds(self::$location_id, $request);
-
-      $this->assertEmpty($response->getErrors());
     }
     /**
      * Test case for listAdditionalRecipientReceivables
@@ -72,14 +63,5 @@ class ReportingApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function test_listAdditionalRecipientReceivables() {
-        $request = new \SquareConnect\Model\ListAdditionalRecipientReceivablesRequest([
-            "begin_time" => "2017-09-30T00:00:00Z",
-            "end_time" => "2017-10-30T00:00:00Z",
-            "sort_order" => "DESC"
-        ]);
-
-        $response = self::$api->listAdditionalRecipientReceivables(self::$location_id, $request);
-
-        $this->assertEmpty($response->getErrors());
     }
 }

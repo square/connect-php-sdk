@@ -1,5 +1,17 @@
 # Change Log
 
+## Version 2.20190814.0 (2019-08-15)
+
+* **New functionality**: All SDKs have been updated to support the Sandbox v2 BETA release
+* **Deprecated functionality**: All Transactions API functionality is deprecated in favor of Payments API and Refunds API functionality.
+* **New functionality**: All SDKs have been updated to support the Payments API GA.
+* **New functionality**: All SDKs have been updated to support the Refunds API GA.
+* **New functionality**: All SDKs have been updated to support Orders API updates:
+  * Pickup Fulfillments, SearchOrders, and ServiceCharges move from BETA to GA.
+  * New BETA endpoint: Orders.UpdateOrder &mdash; use the UpdateOrder endpoint to update existing orders.
+  * New BETA functionality: Create shipment-type fulfillments. 
+* **New functionality**: Locations.RetrieveLocation &mdash; use the RetrieveLocation endpoint to load details for a specific Location.
+
 ## Version 2.20190724.0 (2019-07-24)
 
 * **BETA releases**:

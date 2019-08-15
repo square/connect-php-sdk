@@ -65,6 +65,7 @@ class ReportingApi
     }
   
     /**
+     * @deprecated
      * listAdditionalRecipientReceivableRefunds
      *
      * ListAdditionalRecipientReceivableRefunds
@@ -79,6 +80,7 @@ class ReportingApi
      */
     public function listAdditionalRecipientReceivableRefunds($location_id, $begin_time = null, $end_time = null, $sort_order = null, $cursor = null)
     {
+        trigger_error('Calling deprecated API: ReportingApi.listAdditionalRecipientReceivableRefunds', E_USER_DEPRECATED);
         list($response, $statusCode, $httpHeader) = $this->listAdditionalRecipientReceivableRefundsWithHttpInfo ($location_id, $begin_time, $end_time, $sort_order, $cursor);
         return $response; 
     }
@@ -116,7 +118,7 @@ class ReportingApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-06-12";
+        $headerParams['Square-Version'] = "2019-08-14";
 
         // query params
         if ($begin_time !== null) {
@@ -181,6 +183,7 @@ class ReportingApi
         }
     }
     /**
+     * @deprecated
      * listAdditionalRecipientReceivables
      *
      * ListAdditionalRecipientReceivables
@@ -195,6 +198,7 @@ class ReportingApi
      */
     public function listAdditionalRecipientReceivables($location_id, $begin_time = null, $end_time = null, $sort_order = null, $cursor = null)
     {
+        trigger_error('Calling deprecated API: ReportingApi.listAdditionalRecipientReceivables', E_USER_DEPRECATED);
         list($response, $statusCode, $httpHeader) = $this->listAdditionalRecipientReceivablesWithHttpInfo ($location_id, $begin_time, $end_time, $sort_order, $cursor);
         return $response; 
     }
@@ -232,7 +236,7 @@ class ReportingApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-06-12";
+        $headerParams['Square-Version'] = "2019-08-14";
 
         // query params
         if ($begin_time !== null) {

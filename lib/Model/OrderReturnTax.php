@@ -80,7 +80,7 @@ class OrderReturnTax implements ArrayAccess
     );
   
     /**
-      * $uid Unique ID that identifies the return tax only within this order.  This field is read-only.
+      * $uid Unique ID that identifies the return tax only within this order.
       * @var string
       */
     protected $uid;
@@ -105,7 +105,7 @@ class OrderReturnTax implements ArrayAccess
       */
     protected $type;
     /**
-      * $percentage The percentage of the tax, as a string representation of a decimal number.  A value of `7.25` corresponds to a percentage of 7.25%.
+      * $percentage The percentage of the tax, as a string representation of a decimal number. For example, a value of `\"7.25\"` corresponds to a percentage of 7.25%.
       * @var string
       */
     protected $percentage;
@@ -115,7 +115,7 @@ class OrderReturnTax implements ArrayAccess
       */
     protected $applied_money;
     /**
-      * $scope Indicates the level at which the tax applies. This field is set by the server. If set in a CreateOrder request, it will be ignored on write. See [OrderLineItemTaxScope](#type-orderlineitemtaxscope) for possible values
+      * $scope Indicates the level at which the `OrderReturnTax` applies. For `ORDER` scoped taxes, Square generates references in `applied_taxes` on all `OrderReturnLineItem`s. For `LINE_ITEM` scoped taxes, the tax will only apply to `OrderReturnLineItem`s with references in their `applied_discounts` field. See [OrderLineItemTaxScope](#type-orderlineitemtaxscope) for possible values
       * @var string
       */
     protected $scope;
@@ -180,7 +180,7 @@ class OrderReturnTax implements ArrayAccess
   
     /**
      * Sets uid
-     * @param string $uid Unique ID that identifies the return tax only within this order.  This field is read-only.
+     * @param string $uid Unique ID that identifies the return tax only within this order.
      * @return $this
      */
     public function setUid($uid)
@@ -275,7 +275,7 @@ class OrderReturnTax implements ArrayAccess
   
     /**
      * Sets percentage
-     * @param string $percentage The percentage of the tax, as a string representation of a decimal number.  A value of `7.25` corresponds to a percentage of 7.25%.
+     * @param string $percentage The percentage of the tax, as a string representation of a decimal number. For example, a value of `\"7.25\"` corresponds to a percentage of 7.25%.
      * @return $this
      */
     public function setPercentage($percentage)
@@ -313,7 +313,7 @@ class OrderReturnTax implements ArrayAccess
   
     /**
      * Sets scope
-     * @param string $scope Indicates the level at which the tax applies. This field is set by the server. If set in a CreateOrder request, it will be ignored on write. See [OrderLineItemTaxScope](#type-orderlineitemtaxscope) for possible values
+     * @param string $scope Indicates the level at which the `OrderReturnTax` applies. For `ORDER` scoped taxes, Square generates references in `applied_taxes` on all `OrderReturnLineItem`s. For `LINE_ITEM` scoped taxes, the tax will only apply to `OrderReturnLineItem`s with references in their `applied_discounts` field. See [OrderLineItemTaxScope](#type-orderlineitemtaxscope) for possible values
      * @return $this
      */
     public function setScope($scope)

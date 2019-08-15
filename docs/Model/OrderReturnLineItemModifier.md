@@ -7,7 +7,7 @@ A line item modifier being returned.
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------
-**uid** | getUid() | setUid($value) | **string** | Unique ID that identifies the return modifier only within this order.  This field is read-only. | [optional] 
+**uid** | getUid() | setUid($value) | **string** | Unique ID that identifies the return modifier only within this order. | [optional] 
 **source_modifier_uid** | getSourceModifierUid() | setSourceModifierUid($value) | **string** | &#x60;uid&#x60; of the Modifier from the LineItem from the Order which contains the original sale of this line item modifier. | [optional] 
 **catalog_object_id** | getCatalogObjectId() | setCatalogObjectId($value) | **string** | The catalog object id referencing [CatalogModifier](#type-catalogmodifier). | [optional] 
 **name** | getName() | setName($value) | **string** | The name of the item modifier. | [optional] 

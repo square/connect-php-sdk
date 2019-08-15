@@ -114,7 +114,7 @@ class OrdersApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-06-12";
+        $headerParams['Square-Version'] = "2019-08-14";
 
         
         
@@ -220,7 +220,7 @@ class OrdersApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-06-12";
+        $headerParams['Square-Version'] = "2019-08-14";
 
         
         
@@ -277,6 +277,112 @@ class OrdersApi
         }
     }
     /**
+     * payOrder
+     *
+     * PayOrder
+     *
+     * @param string $order_id The ID of the order being paid. (required)
+     * @param \SquareConnect\Model\PayOrderRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
+     * @return \SquareConnect\Model\PayOrderResponse
+     * @throws \SquareConnect\ApiException on non-2xx response
+     */
+    public function payOrder($order_id, $body)
+    {
+        list($response, $statusCode, $httpHeader) = $this->payOrderWithHttpInfo ($order_id, $body);
+        return $response; 
+    }
+
+
+    /**
+     * payOrderWithHttpInfo
+     *
+     * PayOrder
+     *
+     * @param string $order_id The ID of the order being paid. (required)
+     * @param \SquareConnect\Model\PayOrderRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
+     * @return Array of \SquareConnect\Model\PayOrderResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws \SquareConnect\ApiException on non-2xx response
+     */
+    public function payOrderWithHttpInfo($order_id, $body)
+    {
+        
+        // verify the required parameter 'order_id' is set
+        if ($order_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $order_id when calling payOrder');
+        }
+        // verify the required parameter 'body' is set
+        if ($body === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $body when calling payOrder');
+        }
+  
+        // parse inputs
+        $resourcePath = "/v2/orders/{order_id}/pay";
+        $httpBody = '';
+        $queryParams = array();
+        $headerParams = array();
+        $formParams = array();
+        $_header_accept = ApiClient::selectHeaderAccept(array('application/json'));
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-08-14";
+
+        
+        
+        // path params
+        if ($order_id !== null) {
+            $resourcePath = str_replace(
+                "{" . "order_id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($order_id),
+                $resourcePath
+            );
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        // body params
+        $_tempBody = null;
+        if (isset($body)) {
+            $_tempBody = $body;
+        }
+  
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath, 'POST',
+                $queryParams, $httpBody,
+                $headerParams, '\SquareConnect\Model\PayOrderResponse'
+            );
+            if (!$response) {
+                return array(null, $statusCode, $httpHeader);
+            }
+
+            return array(\SquareConnect\ObjectSerializer::deserialize($response, '\SquareConnect\Model\PayOrderResponse', $httpHeader), $statusCode, $httpHeader);
+                    } catch (ApiException $e) {
+            switch ($e->getCode()) { 
+            case 200:
+                $data = \SquareConnect\ObjectSerializer::deserialize($e->getResponseBody(), '\SquareConnect\Model\PayOrderResponse', $e->getResponseHeaders());
+                $e->setResponseObject($data);
+                break;
+            }
+  
+            throw $e;
+        }
+    }
+    /**
      * searchOrders
      *
      * SearchOrders
@@ -320,7 +426,7 @@ class OrdersApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-06-12";
+        $headerParams['Square-Version'] = "2019-08-14";
 
         
         
@@ -362,6 +468,99 @@ class OrdersApi
             switch ($e->getCode()) { 
             case 200:
                 $data = \SquareConnect\ObjectSerializer::deserialize($e->getResponseBody(), '\SquareConnect\Model\SearchOrdersResponse', $e->getResponseHeaders());
+                $e->setResponseObject($data);
+                break;
+            }
+  
+            throw $e;
+        }
+    }
+    /**
+     * updateOrder
+     *
+     * UpdateOrder
+     *
+     * @param \SquareConnect\Model\UpdateOrderRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
+     * @return \SquareConnect\Model\UpdateOrderResponse
+     * @throws \SquareConnect\ApiException on non-2xx response
+     */
+    public function updateOrder($body)
+    {
+        list($response, $statusCode, $httpHeader) = $this->updateOrderWithHttpInfo ($body);
+        return $response; 
+    }
+
+
+    /**
+     * updateOrderWithHttpInfo
+     *
+     * UpdateOrder
+     *
+     * @param \SquareConnect\Model\UpdateOrderRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
+     * @return Array of \SquareConnect\Model\UpdateOrderResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws \SquareConnect\ApiException on non-2xx response
+     */
+    public function updateOrderWithHttpInfo($body)
+    {
+        
+        // verify the required parameter 'body' is set
+        if ($body === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $body when calling updateOrder');
+        }
+  
+        // parse inputs
+        $resourcePath = "/v2/locations/{location_id}/orders/{order_id}";
+        $httpBody = '';
+        $queryParams = array();
+        $headerParams = array();
+        $formParams = array();
+        $_header_accept = ApiClient::selectHeaderAccept(array('application/json'));
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-08-14";
+
+        
+        
+        
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        // body params
+        $_tempBody = null;
+        if (isset($body)) {
+            $_tempBody = $body;
+        }
+  
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath, 'PUT',
+                $queryParams, $httpBody,
+                $headerParams, '\SquareConnect\Model\UpdateOrderResponse'
+            );
+            if (!$response) {
+                return array(null, $statusCode, $httpHeader);
+            }
+
+            return array(\SquareConnect\ObjectSerializer::deserialize($response, '\SquareConnect\Model\UpdateOrderResponse', $httpHeader), $statusCode, $httpHeader);
+                    } catch (ApiException $e) {
+            switch ($e->getCode()) { 
+            case 200:
+                $data = \SquareConnect\ObjectSerializer::deserialize($e->getResponseBody(), '\SquareConnect\Model\UpdateOrderResponse', $e->getResponseHeaders());
                 $e->setResponseObject($data);
                 break;
             }

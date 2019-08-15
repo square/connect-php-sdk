@@ -45,7 +45,9 @@ class Location implements ArrayAccess
         'twitter_username' => 'string',
         'instagram_username' => 'string',
         'facebook_url' => 'string',
-        'coordinates' => '\SquareConnect\Model\Coordinates'
+        'coordinates' => '\SquareConnect\Model\Coordinates',
+        'logo_url' => 'string',
+        'pos_background_url' => 'string'
     );
   
     /** 
@@ -74,7 +76,9 @@ class Location implements ArrayAccess
         'twitter_username' => 'twitter_username',
         'instagram_username' => 'instagram_username',
         'facebook_url' => 'facebook_url',
-        'coordinates' => 'coordinates'
+        'coordinates' => 'coordinates',
+        'logo_url' => 'logo_url',
+        'pos_background_url' => 'pos_background_url'
     );
   
     /**
@@ -103,7 +107,9 @@ class Location implements ArrayAccess
         'twitter_username' => 'setTwitterUsername',
         'instagram_username' => 'setInstagramUsername',
         'facebook_url' => 'setFacebookUrl',
-        'coordinates' => 'setCoordinates'
+        'coordinates' => 'setCoordinates',
+        'logo_url' => 'setLogoUrl',
+        'pos_background_url' => 'setPosBackgroundUrl'
     );
   
     /**
@@ -132,7 +138,9 @@ class Location implements ArrayAccess
         'twitter_username' => 'getTwitterUsername',
         'instagram_username' => 'getInstagramUsername',
         'facebook_url' => 'getFacebookUrl',
-        'coordinates' => 'getCoordinates'
+        'coordinates' => 'getCoordinates',
+        'logo_url' => 'getLogoUrl',
+        'pos_background_url' => 'getPosBackgroundUrl'
     );
   
     /**
@@ -245,6 +253,16 @@ class Location implements ArrayAccess
       * @var \SquareConnect\Model\Coordinates
       */
     protected $coordinates;
+    /**
+      * $logo_url The logo image URL of the location.
+      * @var string
+      */
+    protected $logo_url;
+    /**
+      * $pos_background_url The Point of Sale background image URL of the location.
+      * @var string
+      */
+    protected $pos_background_url;
 
     /**
      * Constructor
@@ -362,6 +380,16 @@ class Location implements ArrayAccess
               $this->coordinates = $data["coordinates"];
             } else {
               $this->coordinates = null;
+            }
+            if (isset($data["logo_url"])) {
+              $this->logo_url = $data["logo_url"];
+            } else {
+              $this->logo_url = null;
+            }
+            if (isset($data["pos_background_url"])) {
+              $this->pos_background_url = $data["pos_background_url"];
+            } else {
+              $this->pos_background_url = null;
             }
         }
     }
@@ -781,6 +809,44 @@ class Location implements ArrayAccess
     public function setCoordinates($coordinates)
     {
         $this->coordinates = $coordinates;
+        return $this;
+    }
+    /**
+     * Gets logo_url
+     * @return string
+     */
+    public function getLogoUrl()
+    {
+        return $this->logo_url;
+    }
+  
+    /**
+     * Sets logo_url
+     * @param string $logo_url The logo image URL of the location.
+     * @return $this
+     */
+    public function setLogoUrl($logo_url)
+    {
+        $this->logo_url = $logo_url;
+        return $this;
+    }
+    /**
+     * Gets pos_background_url
+     * @return string
+     */
+    public function getPosBackgroundUrl()
+    {
+        return $this->pos_background_url;
+    }
+  
+    /**
+     * Sets pos_background_url
+     * @param string $pos_background_url The Point of Sale background image URL of the location.
+     * @return $this
+     */
+    public function setPosBackgroundUrl($pos_background_url)
+    {
+        $this->pos_background_url = $pos_background_url;
         return $this;
     }
     /**

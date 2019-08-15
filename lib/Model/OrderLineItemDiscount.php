@@ -80,7 +80,7 @@ class OrderLineItemDiscount implements ArrayAccess
     );
   
     /**
-      * $uid Unique ID that identifies the discount only within this order.  This field is read-only.
+      * $uid Unique ID that identifies the discount only within this order.
       * @var string
       */
     protected $uid;
@@ -105,17 +105,17 @@ class OrderLineItemDiscount implements ArrayAccess
       */
     protected $percentage;
     /**
-      * $amount_money The total monetary amount of the applicable discount. If it is at order level, it is the value of the order level discount. If it is at line item level, it is the value of the line item level discount.  The amount_money won't be set for a percentage-based discount.
+      * $amount_money The total declared monetary amount of the discount.  `amount_money` is not set for percentage-based discounts.
       * @var \SquareConnect\Model\Money
       */
     protected $amount_money;
     /**
-      * $applied_money The amount of discount actually applied to this line item.  Represents the amount of money applied to a line item as a discount When an amount-based discount is at order-level, this value is different from `amount_money` because the discount is distributed across the line items.
+      * $applied_money The amount of discount actually applied to the line item.  Represents the amount of money applied as a line item-scoped discount. When an amount-based discount is scoped to the entire order, the value of `applied_money` is different from `amount_money` because the total amount of the discount is distributed across all line items.
       * @var \SquareConnect\Model\Money
       */
     protected $applied_money;
     /**
-      * $scope Indicates the level at which the discount applies. This field is set by the server. If set in a CreateOrder request, it will be ignored on write. See [OrderLineItemDiscountScope](#type-orderlineitemdiscountscope) for possible values
+      * $scope Indicates the level at which the discount applies. For `ORDER` scoped discounts, Square generates references in `applied_discounts` on all order line items that do not have them. For `LINE_ITEM` scoped discounts, the discount only applies to line items with a discount reference in their `applied_discounts` field.  This field is immutable. To change the scope of a discount you must delete the discount and re-add it as a new discount. See [OrderLineItemDiscountScope](#type-orderlineitemdiscountscope) for possible values
       * @var string
       */
     protected $scope;
@@ -180,7 +180,7 @@ class OrderLineItemDiscount implements ArrayAccess
   
     /**
      * Sets uid
-     * @param string $uid Unique ID that identifies the discount only within this order.  This field is read-only.
+     * @param string $uid Unique ID that identifies the discount only within this order.
      * @return $this
      */
     public function setUid($uid)
@@ -275,7 +275,7 @@ class OrderLineItemDiscount implements ArrayAccess
   
     /**
      * Sets amount_money
-     * @param \SquareConnect\Model\Money $amount_money The total monetary amount of the applicable discount. If it is at order level, it is the value of the order level discount. If it is at line item level, it is the value of the line item level discount.  The amount_money won't be set for a percentage-based discount.
+     * @param \SquareConnect\Model\Money $amount_money The total declared monetary amount of the discount.  `amount_money` is not set for percentage-based discounts.
      * @return $this
      */
     public function setAmountMoney($amount_money)
@@ -294,7 +294,7 @@ class OrderLineItemDiscount implements ArrayAccess
   
     /**
      * Sets applied_money
-     * @param \SquareConnect\Model\Money $applied_money The amount of discount actually applied to this line item.  Represents the amount of money applied to a line item as a discount When an amount-based discount is at order-level, this value is different from `amount_money` because the discount is distributed across the line items.
+     * @param \SquareConnect\Model\Money $applied_money The amount of discount actually applied to the line item.  Represents the amount of money applied as a line item-scoped discount. When an amount-based discount is scoped to the entire order, the value of `applied_money` is different from `amount_money` because the total amount of the discount is distributed across all line items.
      * @return $this
      */
     public function setAppliedMoney($applied_money)
@@ -313,7 +313,7 @@ class OrderLineItemDiscount implements ArrayAccess
   
     /**
      * Sets scope
-     * @param string $scope Indicates the level at which the discount applies. This field is set by the server. If set in a CreateOrder request, it will be ignored on write. See [OrderLineItemDiscountScope](#type-orderlineitemdiscountscope) for possible values
+     * @param string $scope Indicates the level at which the discount applies. For `ORDER` scoped discounts, Square generates references in `applied_discounts` on all order line items that do not have them. For `LINE_ITEM` scoped discounts, the discount only applies to line items with a discount reference in their `applied_discounts` field.  This field is immutable. To change the scope of a discount you must delete the discount and re-add it as a new discount. See [OrderLineItemDiscountScope](#type-orderlineitemdiscountscope) for possible values
      * @return $this
      */
     public function setScope($scope)

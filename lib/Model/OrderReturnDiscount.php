@@ -84,7 +84,7 @@ class OrderReturnDiscount implements ArrayAccess
     );
   
     /**
-      * $uid Unique ID that identifies the return discount only within this order.  This field is read-only.
+      * $uid Unique ID that identifies the return discount only within this order.
       * @var string
       */
     protected $uid;
@@ -114,7 +114,7 @@ class OrderReturnDiscount implements ArrayAccess
       */
     protected $percentage;
     /**
-      * $amount_money The total monetary amount of the applicable discount. If it is at order level, it is the value of the order level discount. If it is at line item level, it is the value of the line item level discount.  The amount_money won't be set for a percentage-based discount.
+      * $amount_money The total declared monetary amount of the discount. The amount_money won't be set for a percentage-based discount.
       * @var \SquareConnect\Model\Money
       */
     protected $amount_money;
@@ -124,7 +124,7 @@ class OrderReturnDiscount implements ArrayAccess
       */
     protected $applied_money;
     /**
-      * $scope Indicates the level at which the discount applies. This field is set by the server. If set in a CreateOrder request, it will be ignored on write. See [OrderLineItemDiscountScope](#type-orderlineitemdiscountscope) for possible values
+      * $scope Indicates the level at which the `OrderReturnDiscount` applies. For `ORDER` scoped discounts, the server will generate references in `applied_discounts` on all `OrderReturnLineItem`s. For `LINE_ITEM` scoped discounts, the discount will only apply to `OrderReturnLineItem`s with references in their `applied_discounts` field. See [OrderLineItemDiscountScope](#type-orderlineitemdiscountscope) for possible values
       * @var string
       */
     protected $scope;
@@ -194,7 +194,7 @@ class OrderReturnDiscount implements ArrayAccess
   
     /**
      * Sets uid
-     * @param string $uid Unique ID that identifies the return discount only within this order.  This field is read-only.
+     * @param string $uid Unique ID that identifies the return discount only within this order.
      * @return $this
      */
     public function setUid($uid)
@@ -308,7 +308,7 @@ class OrderReturnDiscount implements ArrayAccess
   
     /**
      * Sets amount_money
-     * @param \SquareConnect\Model\Money $amount_money The total monetary amount of the applicable discount. If it is at order level, it is the value of the order level discount. If it is at line item level, it is the value of the line item level discount.  The amount_money won't be set for a percentage-based discount.
+     * @param \SquareConnect\Model\Money $amount_money The total declared monetary amount of the discount. The amount_money won't be set for a percentage-based discount.
      * @return $this
      */
     public function setAmountMoney($amount_money)
@@ -346,7 +346,7 @@ class OrderReturnDiscount implements ArrayAccess
   
     /**
      * Sets scope
-     * @param string $scope Indicates the level at which the discount applies. This field is set by the server. If set in a CreateOrder request, it will be ignored on write. See [OrderLineItemDiscountScope](#type-orderlineitemdiscountscope) for possible values
+     * @param string $scope Indicates the level at which the `OrderReturnDiscount` applies. For `ORDER` scoped discounts, the server will generate references in `applied_discounts` on all `OrderReturnLineItem`s. For `LINE_ITEM` scoped discounts, the discount will only apply to `OrderReturnLineItem`s with references in their `applied_discounts` field. See [OrderLineItemDiscountScope](#type-orderlineitemdiscountscope) for possible values
      * @return $this
      */
     public function setScope($scope)

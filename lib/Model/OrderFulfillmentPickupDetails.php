@@ -112,17 +112,17 @@ class OrderFulfillmentPickupDetails implements ArrayAccess
     );
   
     /**
-      * $recipient The recipient of this pickup fulfillment.
+      * $recipient Information on the person meant to pick up this fulfillment from a physical location.
       * @var \SquareConnect\Model\OrderFulfillmentRecipient
       */
     protected $recipient;
     /**
-      * $expires_at The expiry [timestamp](#workingwithdates) in RFC 3339 format, e.g., \"2016-09-04T23:59:33.123Z\". This timestamp indicates when the pickup fulfillment will expire if it is not accepted by the merchant. Expiration time can only be set up to 7 days in the future. If not set, this pickup fulfillment will be automatically accepted when placed.
+      * $expires_at The [timestamp](#workingwithdates) indicating when this fulfillment will expire if it is not accepted. Must be in RFC 3339 format e.g., \"2016-09-04T23:59:33.123Z\". Expiration time can only be set up to 7 days in the future. If `expires_at` is not set, this pickup fulfillment will be automatically accepted when placed.
       * @var string
       */
     protected $expires_at;
     /**
-      * $auto_complete_duration The auto completion duration in RFC3339 duration format, e.g., \"P1W3D\". If set, an open and accepted pickup fulfillment will automatically move to the `COMPLETED` state after this period of time. If not set, this pickup fulfillment will remain accepted until it is canceled or completed.
+      * $auto_complete_duration The duration of time after which an open and accepted pickup fulfillment will automatically move to the `COMPLETED` state. Must be in RFC3339 duration format e.g., \"P1W3D\".  If not set, this pickup fulfillment will remain accepted until it is canceled or completed.
       * @var string
       */
     protected $auto_complete_duration;
@@ -132,62 +132,62 @@ class OrderFulfillmentPickupDetails implements ArrayAccess
       */
     protected $schedule_type;
     /**
-      * $pickup_at The pickup [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \"2016-09-04T23:59:33.123Z\". For fulfillments with the schedule type `ASAP`, this is automatically set to the current time plus the expected duration to prepare the fulfillment. This represents the start of the pickup window.
+      * $pickup_at The [timestamp](#workingwithdates) that represents the start of the pickup window. Must be in RFC3339 timestamp format, e.g., \"2016-09-04T23:59:33.123Z\". For fulfillments with the schedule type `ASAP`, this is automatically set to the current time plus the expected duration to prepare the fulfillment.
       * @var string
       */
     protected $pickup_at;
     /**
-      * $pickup_window_duration The pickup window duration in RFC3339 duration format, e.g., \"P1W3D\". This duration represents the window of time for which the order should be picked up after the `pickup_at` time. Can be used as an informational guideline for merchants.
+      * $pickup_window_duration The window of time in which the order should be picked up after the `pickup_at` timestamp. Must be in RFC3339 duration format, e.g., \"P1W3D\". Can be used as an informational guideline for merchants.
       * @var string
       */
     protected $pickup_window_duration;
     /**
-      * $prep_time_duration The preparation time duration in RFC3339 duration format, e.g., \"P1W3D\". This duration indicates how long it takes the merchant to prepare this fulfillment.
+      * $prep_time_duration The duration of time it takes to prepare this fulfillment. Must be in RFC3339 duration format, e.g., \"P1W3D\".
       * @var string
       */
     protected $prep_time_duration;
     /**
-      * $note A general note about the pickup fulfillment.  Notes are useful for providing additional instructions and are displayed in Square apps.
+      * $note A note meant to provide additional instructions about the pickup fulfillment displayed in the Square Point of Sale and set by the API.
       * @var string
       */
     protected $note;
     /**
-      * $placed_at The [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \"2016-09-04T23:59:33.123Z\", indicating when the fulfillment was placed.
+      * $placed_at The [timestamp](#workingwithdates) indicating when the fulfillment was placed. Must be in RFC3339 timestamp format, e.g., \"2016-09-04T23:59:33.123Z\".
       * @var string
       */
     protected $placed_at;
     /**
-      * $accepted_at The [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \"2016-09-04T23:59:33.123Z\", indicating when the fulfillment was accepted by the merchant.
+      * $accepted_at The [timestamp](#workingwithdates) indicating when the fulfillment was accepted. In RFC3339 timestamp format, e.g., \"2016-09-04T23:59:33.123Z\".
       * @var string
       */
     protected $accepted_at;
     /**
-      * $rejected_at The [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \"2016-09-04T23:59:33.123Z\", indicating when the fulfillment was rejected.
+      * $rejected_at The [timestamp](#workingwithdates) indicating when the fulfillment was rejected. In RFC3339 timestamp format, e.g., \"2016-09-04T23:59:33.123Z\".
       * @var string
       */
     protected $rejected_at;
     /**
-      * $ready_at The [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \"2016-09-04T23:59:33.123Z\", indicating when the merchant set the fulfillment as ready for pickup.
+      * $ready_at The [timestamp](#workingwithdates) indicating when the fulfillment is marked as ready for pickup. In RFC3339 timestamp format, e.g., \"2016-09-04T23:59:33.123Z\".
       * @var string
       */
     protected $ready_at;
     /**
-      * $expired_at The [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \"2016-09-04T23:59:33.123Z\", indicating when the fulfillment expired.
+      * $expired_at The [timestamp](#workingwithdates) indicating when the fulfillment expired. In RFC3339 timestamp format, e.g., \"2016-09-04T23:59:33.123Z\".
       * @var string
       */
     protected $expired_at;
     /**
-      * $picked_up_at The [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \"2016-09-04T23:59:33.123Z\", indicating when the fulfillment was picked up by the recipient.
+      * $picked_up_at The [timestamp](#workingwithdates) indicating when the fulfillment was picked up by the recipient. In RFC3339 timestamp format, e.g., \"2016-09-04T23:59:33.123Z\".
       * @var string
       */
     protected $picked_up_at;
     /**
-      * $canceled_at The [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \"2016-09-04T23:59:33.123Z\", indicating when the fulfillment was canceled by the merchant or buyer.
+      * $canceled_at The [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \"2016-09-04T23:59:33.123Z\", indicating when the fulfillment was canceled.
       * @var string
       */
     protected $canceled_at;
     /**
-      * $cancel_reason A description of why the pickup was canceled. Max length is 100 characters.
+      * $cancel_reason A description of why the pickup was canceled. Max length: 100 characters.
       * @var string
       */
     protected $cancel_reason;
@@ -292,7 +292,7 @@ class OrderFulfillmentPickupDetails implements ArrayAccess
   
     /**
      * Sets recipient
-     * @param \SquareConnect\Model\OrderFulfillmentRecipient $recipient The recipient of this pickup fulfillment.
+     * @param \SquareConnect\Model\OrderFulfillmentRecipient $recipient Information on the person meant to pick up this fulfillment from a physical location.
      * @return $this
      */
     public function setRecipient($recipient)
@@ -311,7 +311,7 @@ class OrderFulfillmentPickupDetails implements ArrayAccess
   
     /**
      * Sets expires_at
-     * @param string $expires_at The expiry [timestamp](#workingwithdates) in RFC 3339 format, e.g., \"2016-09-04T23:59:33.123Z\". This timestamp indicates when the pickup fulfillment will expire if it is not accepted by the merchant. Expiration time can only be set up to 7 days in the future. If not set, this pickup fulfillment will be automatically accepted when placed.
+     * @param string $expires_at The [timestamp](#workingwithdates) indicating when this fulfillment will expire if it is not accepted. Must be in RFC 3339 format e.g., \"2016-09-04T23:59:33.123Z\". Expiration time can only be set up to 7 days in the future. If `expires_at` is not set, this pickup fulfillment will be automatically accepted when placed.
      * @return $this
      */
     public function setExpiresAt($expires_at)
@@ -330,7 +330,7 @@ class OrderFulfillmentPickupDetails implements ArrayAccess
   
     /**
      * Sets auto_complete_duration
-     * @param string $auto_complete_duration The auto completion duration in RFC3339 duration format, e.g., \"P1W3D\". If set, an open and accepted pickup fulfillment will automatically move to the `COMPLETED` state after this period of time. If not set, this pickup fulfillment will remain accepted until it is canceled or completed.
+     * @param string $auto_complete_duration The duration of time after which an open and accepted pickup fulfillment will automatically move to the `COMPLETED` state. Must be in RFC3339 duration format e.g., \"P1W3D\".  If not set, this pickup fulfillment will remain accepted until it is canceled or completed.
      * @return $this
      */
     public function setAutoCompleteDuration($auto_complete_duration)
@@ -368,7 +368,7 @@ class OrderFulfillmentPickupDetails implements ArrayAccess
   
     /**
      * Sets pickup_at
-     * @param string $pickup_at The pickup [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \"2016-09-04T23:59:33.123Z\". For fulfillments with the schedule type `ASAP`, this is automatically set to the current time plus the expected duration to prepare the fulfillment. This represents the start of the pickup window.
+     * @param string $pickup_at The [timestamp](#workingwithdates) that represents the start of the pickup window. Must be in RFC3339 timestamp format, e.g., \"2016-09-04T23:59:33.123Z\". For fulfillments with the schedule type `ASAP`, this is automatically set to the current time plus the expected duration to prepare the fulfillment.
      * @return $this
      */
     public function setPickupAt($pickup_at)
@@ -387,7 +387,7 @@ class OrderFulfillmentPickupDetails implements ArrayAccess
   
     /**
      * Sets pickup_window_duration
-     * @param string $pickup_window_duration The pickup window duration in RFC3339 duration format, e.g., \"P1W3D\". This duration represents the window of time for which the order should be picked up after the `pickup_at` time. Can be used as an informational guideline for merchants.
+     * @param string $pickup_window_duration The window of time in which the order should be picked up after the `pickup_at` timestamp. Must be in RFC3339 duration format, e.g., \"P1W3D\". Can be used as an informational guideline for merchants.
      * @return $this
      */
     public function setPickupWindowDuration($pickup_window_duration)
@@ -406,7 +406,7 @@ class OrderFulfillmentPickupDetails implements ArrayAccess
   
     /**
      * Sets prep_time_duration
-     * @param string $prep_time_duration The preparation time duration in RFC3339 duration format, e.g., \"P1W3D\". This duration indicates how long it takes the merchant to prepare this fulfillment.
+     * @param string $prep_time_duration The duration of time it takes to prepare this fulfillment. Must be in RFC3339 duration format, e.g., \"P1W3D\".
      * @return $this
      */
     public function setPrepTimeDuration($prep_time_duration)
@@ -425,7 +425,7 @@ class OrderFulfillmentPickupDetails implements ArrayAccess
   
     /**
      * Sets note
-     * @param string $note A general note about the pickup fulfillment.  Notes are useful for providing additional instructions and are displayed in Square apps.
+     * @param string $note A note meant to provide additional instructions about the pickup fulfillment displayed in the Square Point of Sale and set by the API.
      * @return $this
      */
     public function setNote($note)
@@ -444,7 +444,7 @@ class OrderFulfillmentPickupDetails implements ArrayAccess
   
     /**
      * Sets placed_at
-     * @param string $placed_at The [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \"2016-09-04T23:59:33.123Z\", indicating when the fulfillment was placed.
+     * @param string $placed_at The [timestamp](#workingwithdates) indicating when the fulfillment was placed. Must be in RFC3339 timestamp format, e.g., \"2016-09-04T23:59:33.123Z\".
      * @return $this
      */
     public function setPlacedAt($placed_at)
@@ -463,7 +463,7 @@ class OrderFulfillmentPickupDetails implements ArrayAccess
   
     /**
      * Sets accepted_at
-     * @param string $accepted_at The [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \"2016-09-04T23:59:33.123Z\", indicating when the fulfillment was accepted by the merchant.
+     * @param string $accepted_at The [timestamp](#workingwithdates) indicating when the fulfillment was accepted. In RFC3339 timestamp format, e.g., \"2016-09-04T23:59:33.123Z\".
      * @return $this
      */
     public function setAcceptedAt($accepted_at)
@@ -482,7 +482,7 @@ class OrderFulfillmentPickupDetails implements ArrayAccess
   
     /**
      * Sets rejected_at
-     * @param string $rejected_at The [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \"2016-09-04T23:59:33.123Z\", indicating when the fulfillment was rejected.
+     * @param string $rejected_at The [timestamp](#workingwithdates) indicating when the fulfillment was rejected. In RFC3339 timestamp format, e.g., \"2016-09-04T23:59:33.123Z\".
      * @return $this
      */
     public function setRejectedAt($rejected_at)
@@ -501,7 +501,7 @@ class OrderFulfillmentPickupDetails implements ArrayAccess
   
     /**
      * Sets ready_at
-     * @param string $ready_at The [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \"2016-09-04T23:59:33.123Z\", indicating when the merchant set the fulfillment as ready for pickup.
+     * @param string $ready_at The [timestamp](#workingwithdates) indicating when the fulfillment is marked as ready for pickup. In RFC3339 timestamp format, e.g., \"2016-09-04T23:59:33.123Z\".
      * @return $this
      */
     public function setReadyAt($ready_at)
@@ -520,7 +520,7 @@ class OrderFulfillmentPickupDetails implements ArrayAccess
   
     /**
      * Sets expired_at
-     * @param string $expired_at The [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \"2016-09-04T23:59:33.123Z\", indicating when the fulfillment expired.
+     * @param string $expired_at The [timestamp](#workingwithdates) indicating when the fulfillment expired. In RFC3339 timestamp format, e.g., \"2016-09-04T23:59:33.123Z\".
      * @return $this
      */
     public function setExpiredAt($expired_at)
@@ -539,7 +539,7 @@ class OrderFulfillmentPickupDetails implements ArrayAccess
   
     /**
      * Sets picked_up_at
-     * @param string $picked_up_at The [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \"2016-09-04T23:59:33.123Z\", indicating when the fulfillment was picked up by the recipient.
+     * @param string $picked_up_at The [timestamp](#workingwithdates) indicating when the fulfillment was picked up by the recipient. In RFC3339 timestamp format, e.g., \"2016-09-04T23:59:33.123Z\".
      * @return $this
      */
     public function setPickedUpAt($picked_up_at)
@@ -558,7 +558,7 @@ class OrderFulfillmentPickupDetails implements ArrayAccess
   
     /**
      * Sets canceled_at
-     * @param string $canceled_at The [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \"2016-09-04T23:59:33.123Z\", indicating when the fulfillment was canceled by the merchant or buyer.
+     * @param string $canceled_at The [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \"2016-09-04T23:59:33.123Z\", indicating when the fulfillment was canceled.
      * @return $this
      */
     public function setCanceledAt($canceled_at)
@@ -577,7 +577,7 @@ class OrderFulfillmentPickupDetails implements ArrayAccess
   
     /**
      * Sets cancel_reason
-     * @param string $cancel_reason A description of why the pickup was canceled. Max length is 100 characters.
+     * @param string $cancel_reason A description of why the pickup was canceled. Max length: 100 characters.
      * @return $this
      */
     public function setCancelReason($cancel_reason)

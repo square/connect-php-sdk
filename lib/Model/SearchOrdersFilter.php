@@ -73,7 +73,7 @@ class SearchOrdersFilter implements ArrayAccess
       */
     protected $state_filter;
     /**
-      * $date_time_filter Filter for results within a time range.
+      * $date_time_filter Filter for results within a time range.  __Important:__ If you filter for orders by time range, you must set SearchOrdersSort to sort by the same field. [Learn more about filtering orders by time range](/orders-api/manage-orders#important-note-on-filtering-orders-by-time-range)
       * @var \SquareConnect\Model\SearchOrdersDateTimeFilter
       */
     protected $date_time_filter;
@@ -157,7 +157,7 @@ class SearchOrdersFilter implements ArrayAccess
   
     /**
      * Sets date_time_filter
-     * @param \SquareConnect\Model\SearchOrdersDateTimeFilter $date_time_filter Filter for results within a time range.
+     * @param \SquareConnect\Model\SearchOrdersDateTimeFilter $date_time_filter Filter for results within a time range.  __Important:__ If you filter for orders by time range, you must set SearchOrdersSort to sort by the same field. [Learn more about filtering orders by time range](/orders-api/manage-orders#important-note-on-filtering-orders-by-time-range)
      * @return $this
      */
     public function setDateTimeFilter($date_time_filter)

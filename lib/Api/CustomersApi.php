@@ -108,7 +108,7 @@ class CustomersApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-06-12";
+        $headerParams['Square-Version'] = "2019-08-14";
 
         
         
@@ -207,7 +207,7 @@ class CustomersApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-06-12";
+        $headerParams['Square-Version'] = "2019-08-14";
 
         
         
@@ -307,7 +307,7 @@ class CustomersApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-06-12";
+        $headerParams['Square-Version'] = "2019-08-14";
 
         
         
@@ -409,7 +409,7 @@ class CustomersApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-06-12";
+        $headerParams['Square-Version'] = "2019-08-14";
 
         
         
@@ -512,7 +512,7 @@ class CustomersApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-06-12";
+        $headerParams['Square-Version'] = "2019-08-14";
 
         // query params
         if ($cursor !== null) {
@@ -610,7 +610,7 @@ class CustomersApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-06-12";
+        $headerParams['Square-Version'] = "2019-08-14";
 
         
         
@@ -706,7 +706,7 @@ class CustomersApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-06-12";
+        $headerParams['Square-Version'] = "2019-08-14";
 
         
         
@@ -805,7 +805,7 @@ class CustomersApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-06-12";
+        $headerParams['Square-Version'] = "2019-08-14";
 
         
         
