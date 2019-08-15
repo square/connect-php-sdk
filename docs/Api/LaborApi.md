@@ -35,11 +35,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\LaborApi();
+$apiInstance = new SquareConnect\Api\LaborApi();
 $body = new \SquareConnect\Model\CreateBreakTypeRequest(); // \SquareConnect\Model\CreateBreakTypeRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->createBreakType($body);
+    $result = $apiInstance->createBreakType($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LaborApi->createBreakType: ', $e->getMessage(), PHP_EOL;
@@ -83,11 +83,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\LaborApi();
+$apiInstance = new SquareConnect\Api\LaborApi();
 $body = new \SquareConnect\Model\CreateShiftRequest(); // \SquareConnect\Model\CreateShiftRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->createShift($body);
+    $result = $apiInstance->createShift($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LaborApi->createShift: ', $e->getMessage(), PHP_EOL;
@@ -131,11 +131,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\LaborApi();
+$apiInstance = new SquareConnect\Api\LaborApi();
 $id = "id_example"; // string | UUID for the `BreakType` being deleted.
 
 try {
-    $result = $api_instance->deleteBreakType($id);
+    $result = $apiInstance->deleteBreakType($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LaborApi->deleteBreakType: ', $e->getMessage(), PHP_EOL;
@@ -179,11 +179,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\LaborApi();
+$apiInstance = new SquareConnect\Api\LaborApi();
 $id = "id_example"; // string | UUID for the `Shift` being deleted.
 
 try {
-    $result = $api_instance->deleteShift($id);
+    $result = $apiInstance->deleteShift($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LaborApi->deleteShift: ', $e->getMessage(), PHP_EOL;
@@ -227,11 +227,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\LaborApi();
+$apiInstance = new SquareConnect\Api\LaborApi();
 $id = "id_example"; // string | UUID for the `BreakType` being retrieved.
 
 try {
-    $result = $api_instance->getBreakType($id);
+    $result = $apiInstance->getBreakType($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LaborApi->getBreakType: ', $e->getMessage(), PHP_EOL;
@@ -275,11 +275,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\LaborApi();
+$apiInstance = new SquareConnect\Api\LaborApi();
 $id = "id_example"; // string | UUID for the `EmployeeWage` being retrieved.
 
 try {
-    $result = $api_instance->getEmployeeWage($id);
+    $result = $apiInstance->getEmployeeWage($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LaborApi->getEmployeeWage: ', $e->getMessage(), PHP_EOL;
@@ -323,11 +323,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\LaborApi();
+$apiInstance = new SquareConnect\Api\LaborApi();
 $id = "id_example"; // string | UUID for the `Shift` being retrieved.
 
 try {
-    $result = $api_instance->getShift($id);
+    $result = $apiInstance->getShift($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LaborApi->getShift: ', $e->getMessage(), PHP_EOL;
@@ -371,13 +371,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\LaborApi();
+$apiInstance = new SquareConnect\Api\LaborApi();
 $location_id = "location_id_example"; // string | Filter Break Types returned to only those that are associated with the specified location.
 $limit = 56; // int | Maximum number of Break Types to return per page. Can range between 1 and 200. The default is the maximum at 200.
 $cursor = "cursor_example"; // string | Pointer to the next page of Break Type results to fetch.
 
 try {
-    $result = $api_instance->listBreakTypes($location_id, $limit, $cursor);
+    $result = $apiInstance->listBreakTypes($location_id, $limit, $cursor);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LaborApi->listBreakTypes: ', $e->getMessage(), PHP_EOL;
@@ -423,13 +423,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\LaborApi();
+$apiInstance = new SquareConnect\Api\LaborApi();
 $employee_id = "employee_id_example"; // string | Filter wages returned to only those that are associated with the specified employee.
 $limit = 56; // int | Maximum number of Employee Wages to return per page. Can range between 1 and 200. The default is the maximum at 200.
 $cursor = "cursor_example"; // string | Pointer to the next page of Employee Wage results to fetch.
 
 try {
-    $result = $api_instance->listEmployeeWages($employee_id, $limit, $cursor);
+    $result = $apiInstance->listEmployeeWages($employee_id, $limit, $cursor);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LaborApi->listEmployeeWages: ', $e->getMessage(), PHP_EOL;
@@ -475,12 +475,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\LaborApi();
+$apiInstance = new SquareConnect\Api\LaborApi();
 $limit = 56; // int | Maximum number of Workweek Configs to return per page.
 $cursor = "cursor_example"; // string | Pointer to the next page of Workweek Config results to fetch.
 
 try {
-    $result = $api_instance->listWorkweekConfigs($limit, $cursor);
+    $result = $apiInstance->listWorkweekConfigs($limit, $cursor);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LaborApi->listWorkweekConfigs: ', $e->getMessage(), PHP_EOL;
@@ -525,11 +525,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\LaborApi();
+$apiInstance = new SquareConnect\Api\LaborApi();
 $body = new \SquareConnect\Model\SearchShiftsRequest(); // \SquareConnect\Model\SearchShiftsRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->searchShifts($body);
+    $result = $apiInstance->searchShifts($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LaborApi->searchShifts: ', $e->getMessage(), PHP_EOL;
@@ -573,12 +573,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\LaborApi();
+$apiInstance = new SquareConnect\Api\LaborApi();
 $id = "id_example"; // string | UUID for the `BreakType` being updated.
 $body = new \SquareConnect\Model\UpdateBreakTypeRequest(); // \SquareConnect\Model\UpdateBreakTypeRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->updateBreakType($id, $body);
+    $result = $apiInstance->updateBreakType($id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LaborApi->updateBreakType: ', $e->getMessage(), PHP_EOL;
@@ -623,12 +623,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\LaborApi();
+$apiInstance = new SquareConnect\Api\LaborApi();
 $id = "id_example"; // string | ID of the object being updated.
 $body = new \SquareConnect\Model\UpdateShiftRequest(); // \SquareConnect\Model\UpdateShiftRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->updateShift($id, $body);
+    $result = $apiInstance->updateShift($id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LaborApi->updateShift: ', $e->getMessage(), PHP_EOL;
@@ -673,12 +673,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\LaborApi();
+$apiInstance = new SquareConnect\Api\LaborApi();
 $id = "id_example"; // string | UUID for the `WorkweekConfig` object being updated.
 $body = new \SquareConnect\Model\UpdateWorkweekConfigRequest(); // \SquareConnect\Model\UpdateWorkweekConfigRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->updateWorkweekConfig($id, $body);
+    $result = $apiInstance->updateWorkweekConfig($id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LaborApi->updateWorkweekConfig: ', $e->getMessage(), PHP_EOL;

@@ -28,11 +28,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\InventoryApi();
+$apiInstance = new SquareConnect\Api\InventoryApi();
 $body = new \SquareConnect\Model\BatchChangeInventoryRequest(); // \SquareConnect\Model\BatchChangeInventoryRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->batchChangeInventory($body);
+    $result = $apiInstance->batchChangeInventory($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InventoryApi->batchChangeInventory: ', $e->getMessage(), PHP_EOL;
@@ -76,11 +76,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\InventoryApi();
+$apiInstance = new SquareConnect\Api\InventoryApi();
 $body = new \SquareConnect\Model\BatchRetrieveInventoryChangesRequest(); // \SquareConnect\Model\BatchRetrieveInventoryChangesRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->batchRetrieveInventoryChanges($body);
+    $result = $apiInstance->batchRetrieveInventoryChanges($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InventoryApi->batchRetrieveInventoryChanges: ', $e->getMessage(), PHP_EOL;
@@ -124,11 +124,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\InventoryApi();
+$apiInstance = new SquareConnect\Api\InventoryApi();
 $body = new \SquareConnect\Model\BatchRetrieveInventoryCountsRequest(); // \SquareConnect\Model\BatchRetrieveInventoryCountsRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->batchRetrieveInventoryCounts($body);
+    $result = $apiInstance->batchRetrieveInventoryCounts($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InventoryApi->batchRetrieveInventoryCounts: ', $e->getMessage(), PHP_EOL;
@@ -172,11 +172,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\InventoryApi();
+$apiInstance = new SquareConnect\Api\InventoryApi();
 $adjustment_id = "adjustment_id_example"; // string | ID of the [InventoryAdjustment](#type-inventoryadjustment) to retrieve.
 
 try {
-    $result = $api_instance->retrieveInventoryAdjustment($adjustment_id);
+    $result = $apiInstance->retrieveInventoryAdjustment($adjustment_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InventoryApi->retrieveInventoryAdjustment: ', $e->getMessage(), PHP_EOL;
@@ -220,13 +220,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\InventoryApi();
+$apiInstance = new SquareConnect\Api\InventoryApi();
 $catalog_object_id = "catalog_object_id_example"; // string | ID of the [CatalogObject](#type-catalogobject) to retrieve.
 $location_ids = "location_ids_example"; // string | The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations.
 $cursor = "cursor_example"; // string | A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information.
 
 try {
-    $result = $api_instance->retrieveInventoryChanges($catalog_object_id, $location_ids, $cursor);
+    $result = $apiInstance->retrieveInventoryChanges($catalog_object_id, $location_ids, $cursor);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InventoryApi->retrieveInventoryChanges: ', $e->getMessage(), PHP_EOL;
@@ -272,13 +272,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\InventoryApi();
+$apiInstance = new SquareConnect\Api\InventoryApi();
 $catalog_object_id = "catalog_object_id_example"; // string | ID of the [CatalogObject](#type-catalogobject) to retrieve.
 $location_ids = "location_ids_example"; // string | The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations.
 $cursor = "cursor_example"; // string | A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information.
 
 try {
-    $result = $api_instance->retrieveInventoryCount($catalog_object_id, $location_ids, $cursor);
+    $result = $apiInstance->retrieveInventoryCount($catalog_object_id, $location_ids, $cursor);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InventoryApi->retrieveInventoryCount: ', $e->getMessage(), PHP_EOL;
@@ -324,11 +324,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\InventoryApi();
+$apiInstance = new SquareConnect\Api\InventoryApi();
 $physical_count_id = "physical_count_id_example"; // string | ID of the [InventoryPhysicalCount](#type-inventoryphysicalcount) to retrieve.
 
 try {
-    $result = $api_instance->retrieveInventoryPhysicalCount($physical_count_id);
+    $result = $apiInstance->retrieveInventoryPhysicalCount($physical_count_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InventoryApi->retrieveInventoryPhysicalCount: ', $e->getMessage(), PHP_EOL;

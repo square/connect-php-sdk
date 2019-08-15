@@ -23,14 +23,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\EmployeesApi();
+$apiInstance = new SquareConnect\Api\EmployeesApi();
 $location_id = "location_id_example"; // string | Filter employees returned to only those that are associated with the specified location.
 $status = "status_example"; // string | Specifies the EmployeeStatus to filter the employee by.
 $limit = 56; // int | The number of employees to be returned on each page.
 $cursor = "cursor_example"; // string | The token required to retrieve the specified page of results.
 
 try {
-    $result = $api_instance->listEmployees($location_id, $status, $limit, $cursor);
+    $result = $apiInstance->listEmployees($location_id, $status, $limit, $cursor);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EmployeesApi->listEmployees: ', $e->getMessage(), PHP_EOL;
@@ -77,11 +77,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\EmployeesApi();
+$apiInstance = new SquareConnect\Api\EmployeesApi();
 $id = "id_example"; // string | UUID for the employee that was requested.
 
 try {
-    $result = $api_instance->retrieveEmployee($id);
+    $result = $apiInstance->retrieveEmployee($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EmployeesApi->retrieveEmployee: ', $e->getMessage(), PHP_EOL;

@@ -22,11 +22,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\ApplePayApi();
+$apiInstance = new SquareConnect\Api\ApplePayApi();
 $body = new \SquareConnect\Model\RegisterDomainRequest(); // \SquareConnect\Model\RegisterDomainRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->registerDomain($body);
+    $result = $apiInstance->registerDomain($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ApplePayApi->registerDomain: ', $e->getMessage(), PHP_EOL;

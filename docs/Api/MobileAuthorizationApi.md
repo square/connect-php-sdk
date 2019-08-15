@@ -22,11 +22,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\MobileAuthorizationApi();
+$apiInstance = new SquareConnect\Api\MobileAuthorizationApi();
 $body = new \SquareConnect\Model\CreateMobileAuthorizationCodeRequest(); // \SquareConnect\Model\CreateMobileAuthorizationCodeRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->createMobileAuthorizationCode($body);
+    $result = $apiInstance->createMobileAuthorizationCode($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MobileAuthorizationApi->createMobileAuthorizationCode: ', $e->getMessage(), PHP_EOL;

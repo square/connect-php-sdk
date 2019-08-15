@@ -22,10 +22,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\LocationsApi();
+$apiInstance = new SquareConnect\Api\LocationsApi();
 
 try {
-    $result = $api_instance->listLocations();
+    $result = $apiInstance->listLocations();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LocationsApi->listLocations: ', $e->getMessage(), PHP_EOL;

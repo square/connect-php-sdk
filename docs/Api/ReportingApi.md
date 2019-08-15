@@ -9,6 +9,7 @@ Method | HTTP request | Description
 
 
 # **listAdditionalRecipientReceivableRefunds**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\ListAdditionalRecipientReceivableRefundsResponse listAdditionalRecipientReceivableRefunds($location_id, $begin_time, $end_time, $sort_order, $cursor)
 
 ListAdditionalRecipientReceivableRefunds
@@ -23,7 +24,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\ReportingApi();
+$apiInstance = new SquareConnect\Api\ReportingApi();
 $location_id = "location_id_example"; // string | The ID of the location to list AdditionalRecipientReceivableRefunds for.
 $begin_time = "begin_time_example"; // string | The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year.
 $end_time = "end_time_example"; // string | The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time.
@@ -31,7 +32,7 @@ $sort_order = "sort_order_example"; // string | The order in which results are l
 $cursor = "cursor_example"; // string | A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Pagination](/basics/api101/pagination) for more information.
 
 try {
-    $result = $api_instance->listAdditionalRecipientReceivableRefunds($location_id, $begin_time, $end_time, $sort_order, $cursor);
+    $result = $apiInstance->listAdditionalRecipientReceivableRefunds($location_id, $begin_time, $end_time, $sort_order, $cursor);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ReportingApi->listAdditionalRecipientReceivableRefunds: ', $e->getMessage(), PHP_EOL;
@@ -65,6 +66,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listAdditionalRecipientReceivables**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\ListAdditionalRecipientReceivablesResponse listAdditionalRecipientReceivables($location_id, $begin_time, $end_time, $sort_order, $cursor)
 
 ListAdditionalRecipientReceivables
@@ -79,7 +81,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\ReportingApi();
+$apiInstance = new SquareConnect\Api\ReportingApi();
 $location_id = "location_id_example"; // string | The ID of the location to list AdditionalRecipientReceivables for.
 $begin_time = "begin_time_example"; // string | The beginning of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time minus one year.
 $end_time = "end_time_example"; // string | The end of the requested reporting period, in RFC 3339 format.  See [Date ranges](#dateranges) for details on date inclusivity/exclusivity.  Default value: The current time.
@@ -87,7 +89,7 @@ $sort_order = "sort_order_example"; // string | The order in which results are l
 $cursor = "cursor_example"; // string | A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Pagination](/basics/api101/pagination) for more information.
 
 try {
-    $result = $api_instance->listAdditionalRecipientReceivables($location_id, $begin_time, $end_time, $sort_order, $cursor);
+    $result = $apiInstance->listAdditionalRecipientReceivables($location_id, $begin_time, $end_time, $sort_order, $cursor);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ReportingApi->listAdditionalRecipientReceivables: ', $e->getMessage(), PHP_EOL;

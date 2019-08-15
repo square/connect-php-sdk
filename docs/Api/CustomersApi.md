@@ -29,11 +29,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\CustomersApi();
+$apiInstance = new SquareConnect\Api\CustomersApi();
 $body = new \SquareConnect\Model\CreateCustomerRequest(); // \SquareConnect\Model\CreateCustomerRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->createCustomer($body);
+    $result = $apiInstance->createCustomer($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomersApi->createCustomer: ', $e->getMessage(), PHP_EOL;
@@ -77,12 +77,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\CustomersApi();
+$apiInstance = new SquareConnect\Api\CustomersApi();
 $customer_id = "customer_id_example"; // string | The Square ID of the customer profile the card is linked to.
 $body = new \SquareConnect\Model\CreateCustomerCardRequest(); // \SquareConnect\Model\CreateCustomerCardRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->createCustomerCard($customer_id, $body);
+    $result = $apiInstance->createCustomerCard($customer_id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomersApi->createCustomerCard: ', $e->getMessage(), PHP_EOL;
@@ -127,11 +127,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\CustomersApi();
+$apiInstance = new SquareConnect\Api\CustomersApi();
 $customer_id = "customer_id_example"; // string | The ID of the customer to delete.
 
 try {
-    $result = $api_instance->deleteCustomer($customer_id);
+    $result = $apiInstance->deleteCustomer($customer_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomersApi->deleteCustomer: ', $e->getMessage(), PHP_EOL;
@@ -175,12 +175,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\CustomersApi();
+$apiInstance = new SquareConnect\Api\CustomersApi();
 $customer_id = "customer_id_example"; // string | The ID of the customer that the card on file belongs to.
 $card_id = "card_id_example"; // string | The ID of the card on file to delete.
 
 try {
-    $result = $api_instance->deleteCustomerCard($customer_id, $card_id);
+    $result = $apiInstance->deleteCustomerCard($customer_id, $card_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomersApi->deleteCustomerCard: ', $e->getMessage(), PHP_EOL;
@@ -225,13 +225,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\CustomersApi();
+$apiInstance = new SquareConnect\Api\CustomersApi();
 $cursor = "cursor_example"; // string | A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query.  See [Pagination](/basics/api101/pagination) for more information.
 $sort_field = "sort_field_example"; // string | Indicates how Customers should be sorted. Default: `DEFAULT`.
 $sort_order = "sort_order_example"; // string | Indicates whether Customers should be sorted in ascending (`ASC`) or descending (`DESC`) order. Default: `ASC`.
 
 try {
-    $result = $api_instance->listCustomers($cursor, $sort_field, $sort_order);
+    $result = $apiInstance->listCustomers($cursor, $sort_field, $sort_order);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomersApi->listCustomers: ', $e->getMessage(), PHP_EOL;
@@ -277,11 +277,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\CustomersApi();
+$apiInstance = new SquareConnect\Api\CustomersApi();
 $customer_id = "customer_id_example"; // string | The ID of the customer to retrieve.
 
 try {
-    $result = $api_instance->retrieveCustomer($customer_id);
+    $result = $apiInstance->retrieveCustomer($customer_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomersApi->retrieveCustomer: ', $e->getMessage(), PHP_EOL;
@@ -325,11 +325,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\CustomersApi();
+$apiInstance = new SquareConnect\Api\CustomersApi();
 $body = new \SquareConnect\Model\SearchCustomersRequest(); // \SquareConnect\Model\SearchCustomersRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->searchCustomers($body);
+    $result = $apiInstance->searchCustomers($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomersApi->searchCustomers: ', $e->getMessage(), PHP_EOL;
@@ -373,12 +373,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\CustomersApi();
+$apiInstance = new SquareConnect\Api\CustomersApi();
 $customer_id = "customer_id_example"; // string | The ID of the customer to update.
 $body = new \SquareConnect\Model\UpdateCustomerRequest(); // \SquareConnect\Model\UpdateCustomerRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->updateCustomer($customer_id, $body);
+    $result = $apiInstance->updateCustomer($customer_id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomersApi->updateCustomer: ', $e->getMessage(), PHP_EOL;

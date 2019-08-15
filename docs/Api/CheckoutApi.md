@@ -22,12 +22,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\CheckoutApi();
+$apiInstance = new SquareConnect\Api\CheckoutApi();
 $location_id = "location_id_example"; // string | The ID of the business location to associate the checkout with.
 $body = new \SquareConnect\Model\CreateCheckoutRequest(); // \SquareConnect\Model\CreateCheckoutRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->createCheckout($location_id, $body);
+    $result = $apiInstance->createCheckout($location_id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CheckoutApi->createCheckout: ', $e->getMessage(), PHP_EOL;
