@@ -24,11 +24,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\RefundsApi();
+$apiInstance = new SquareConnect\Api\RefundsApi();
 $refund_id = "refund_id_example"; // string | Unique ID for the desired `PaymentRefund`.
 
 try {
-    $result = $api_instance->getPaymentRefund($refund_id);
+    $result = $apiInstance->getPaymentRefund($refund_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RefundsApi->getPaymentRefund: ', $e->getMessage(), PHP_EOL;
@@ -72,7 +72,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\RefundsApi();
+$apiInstance = new SquareConnect\Api\RefundsApi();
 $begin_time = "begin_time_example"; // string | Timestamp for the beginning of the requested reporting period, in RFC 3339 format.  Default: The current time minus one year.
 $end_time = "end_time_example"; // string | Timestamp for the end of the requested reporting period, in RFC 3339 format.  Default: The current time.
 $sort_order = "sort_order_example"; // string | The order in which results are listed. - `ASC` - oldest to newest - `DESC` - newest to oldest (default).
@@ -82,7 +82,7 @@ $status = "status_example"; // string | If provided, only refunds with the given
 $source_type = "source_type_example"; // string | If provided, only refunds with the given source type are returned.  - `CARD` - List refunds only for payments where card was specified as payment  source.  Default: If omitted refunds are returned regardless of source type.
 
 try {
-    $result = $api_instance->listPaymentRefunds($begin_time, $end_time, $sort_order, $cursor, $location_id, $status, $source_type);
+    $result = $apiInstance->listPaymentRefunds($begin_time, $end_time, $sort_order, $cursor, $location_id, $status, $source_type);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RefundsApi->listPaymentRefunds: ', $e->getMessage(), PHP_EOL;
@@ -132,11 +132,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\RefundsApi();
+$apiInstance = new SquareConnect\Api\RefundsApi();
 $body = new \SquareConnect\Model\RefundPaymentRequest(); // \SquareConnect\Model\RefundPaymentRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->refundPayment($body);
+    $result = $apiInstance->refundPayment($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RefundsApi->refundPayment: ', $e->getMessage(), PHP_EOL;

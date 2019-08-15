@@ -26,12 +26,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\OrdersApi();
+$apiInstance = new SquareConnect\Api\OrdersApi();
 $location_id = "location_id_example"; // string | The ID of the orders' associated location.
 $body = new \SquareConnect\Model\BatchRetrieveOrdersRequest(); // \SquareConnect\Model\BatchRetrieveOrdersRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->batchRetrieveOrders($location_id, $body);
+    $result = $apiInstance->batchRetrieveOrders($location_id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrdersApi->batchRetrieveOrders: ', $e->getMessage(), PHP_EOL;
@@ -76,12 +76,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\OrdersApi();
+$apiInstance = new SquareConnect\Api\OrdersApi();
 $location_id = "location_id_example"; // string | The ID of the business location to associate the order with.
 $body = new \SquareConnect\Model\CreateOrderRequest(); // \SquareConnect\Model\CreateOrderRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->createOrder($location_id, $body);
+    $result = $apiInstance->createOrder($location_id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrdersApi->createOrder: ', $e->getMessage(), PHP_EOL;
@@ -126,12 +126,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\OrdersApi();
+$apiInstance = new SquareConnect\Api\OrdersApi();
 $order_id = "order_id_example"; // string | The ID of the order being paid.
 $body = new \SquareConnect\Model\PayOrderRequest(); // \SquareConnect\Model\PayOrderRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->payOrder($order_id, $body);
+    $result = $apiInstance->payOrder($order_id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrdersApi->payOrder: ', $e->getMessage(), PHP_EOL;
@@ -176,11 +176,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\OrdersApi();
+$apiInstance = new SquareConnect\Api\OrdersApi();
 $body = new \SquareConnect\Model\SearchOrdersRequest(); // \SquareConnect\Model\SearchOrdersRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->searchOrders($body);
+    $result = $apiInstance->searchOrders($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrdersApi->searchOrders: ', $e->getMessage(), PHP_EOL;
@@ -224,11 +224,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\OrdersApi();
+$apiInstance = new SquareConnect\Api\OrdersApi();
 $body = new \SquareConnect\Model\UpdateOrderRequest(); // \SquareConnect\Model\UpdateOrderRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->updateOrder($body);
+    $result = $apiInstance->updateOrder($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrdersApi->updateOrder: ', $e->getMessage(), PHP_EOL;

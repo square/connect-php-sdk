@@ -37,11 +37,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\V1EmployeesApi();
+$apiInstance = new SquareConnect\Api\V1EmployeesApi();
 $body = new \SquareConnect\Model\V1Employee(); // \SquareConnect\Model\V1Employee | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->createEmployee($body);
+    $result = $apiInstance->createEmployee($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling V1EmployeesApi->createEmployee: ', $e->getMessage(), PHP_EOL;
@@ -85,11 +85,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\V1EmployeesApi();
+$apiInstance = new SquareConnect\Api\V1EmployeesApi();
 $employee_role = new \SquareConnect\Model\V1EmployeeRole(); // \SquareConnect\Model\V1EmployeeRole | An EmployeeRole object with a name and permissions, and an optional owner flag.
 
 try {
-    $result = $api_instance->createEmployeeRole($employee_role);
+    $result = $apiInstance->createEmployeeRole($employee_role);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling V1EmployeesApi->createEmployeeRole: ', $e->getMessage(), PHP_EOL;
@@ -133,11 +133,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\V1EmployeesApi();
+$apiInstance = new SquareConnect\Api\V1EmployeesApi();
 $body = new \SquareConnect\Model\V1Timecard(); // \SquareConnect\Model\V1Timecard | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->createTimecard($body);
+    $result = $apiInstance->createTimecard($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling V1EmployeesApi->createTimecard: ', $e->getMessage(), PHP_EOL;
@@ -181,11 +181,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\V1EmployeesApi();
+$apiInstance = new SquareConnect\Api\V1EmployeesApi();
 $timecard_id = "timecard_id_example"; // string | The ID of the timecard to delete.
 
 try {
-    $result = $api_instance->deleteTimecard($timecard_id);
+    $result = $apiInstance->deleteTimecard($timecard_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling V1EmployeesApi->deleteTimecard: ', $e->getMessage(), PHP_EOL;
@@ -229,14 +229,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\V1EmployeesApi();
+$apiInstance = new SquareConnect\Api\V1EmployeesApi();
 $location_id = "location_id_example"; // string | The ID of the location to list cash drawer shifts for.
 $order = "order_example"; // string | The order in which cash drawer shifts are listed in the response, based on their created_at field. Default value: ASC
 $begin_time = "begin_time_example"; // string | The beginning of the requested reporting period, in ISO 8601 format. Default value: The current time minus 90 days.
 $end_time = "end_time_example"; // string | The beginning of the requested reporting period, in ISO 8601 format. Default value: The current time.
 
 try {
-    $result = $api_instance->listCashDrawerShifts($location_id, $order, $begin_time, $end_time);
+    $result = $apiInstance->listCashDrawerShifts($location_id, $order, $begin_time, $end_time);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling V1EmployeesApi->listCashDrawerShifts: ', $e->getMessage(), PHP_EOL;
@@ -283,13 +283,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\V1EmployeesApi();
+$apiInstance = new SquareConnect\Api\V1EmployeesApi();
 $order = "order_example"; // string | The order in which employees are listed in the response, based on their created_at field.Default value: ASC
 $limit = 56; // int | The maximum integer number of employee entities to return in a single response. Default 100, maximum 200.
 $batch_token = "batch_token_example"; // string | A pagination cursor to retrieve the next set of results for your original query to the endpoint.
 
 try {
-    $result = $api_instance->listEmployeeRoles($order, $limit, $batch_token);
+    $result = $apiInstance->listEmployeeRoles($order, $limit, $batch_token);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling V1EmployeesApi->listEmployeeRoles: ', $e->getMessage(), PHP_EOL;
@@ -335,7 +335,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\V1EmployeesApi();
+$apiInstance = new SquareConnect\Api\V1EmployeesApi();
 $order = "order_example"; // string | The order in which employees are listed in the response, based on their created_at field.      Default value: ASC
 $begin_updated_at = "begin_updated_at_example"; // string | If filtering results by their updated_at field, the beginning of the requested reporting period, in ISO 8601 format
 $end_updated_at = "end_updated_at_example"; // string | If filtering results by there updated_at field, the end of the requested reporting period, in ISO 8601 format.
@@ -347,7 +347,7 @@ $limit = 56; // int | The maximum integer number of employee entities to return 
 $batch_token = "batch_token_example"; // string | A pagination cursor to retrieve the next set of results for your original query to the endpoint.
 
 try {
-    $result = $api_instance->listEmployees($order, $begin_updated_at, $end_updated_at, $begin_created_at, $end_created_at, $status, $external_id, $limit, $batch_token);
+    $result = $apiInstance->listEmployees($order, $begin_updated_at, $end_updated_at, $begin_created_at, $end_created_at, $status, $external_id, $limit, $batch_token);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling V1EmployeesApi->listEmployees: ', $e->getMessage(), PHP_EOL;
@@ -399,11 +399,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\V1EmployeesApi();
+$apiInstance = new SquareConnect\Api\V1EmployeesApi();
 $timecard_id = "timecard_id_example"; // string | The ID of the timecard to list events for.
 
 try {
-    $result = $api_instance->listTimecardEvents($timecard_id);
+    $result = $apiInstance->listTimecardEvents($timecard_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling V1EmployeesApi->listTimecardEvents: ', $e->getMessage(), PHP_EOL;
@@ -447,7 +447,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\V1EmployeesApi();
+$apiInstance = new SquareConnect\Api\V1EmployeesApi();
 $order = "order_example"; // string | The order in which timecards are listed in the response, based on their created_at field.
 $employee_id = "employee_id_example"; // string | If provided, the endpoint returns only timecards for the employee with the specified ID.
 $begin_clockin_time = "begin_clockin_time_example"; // string | If filtering results by their clockin_time field, the beginning of the requested reporting period, in ISO 8601 format.
@@ -461,7 +461,7 @@ $limit = 56; // int | The maximum integer number of employee entities to return 
 $batch_token = "batch_token_example"; // string | A pagination cursor to retrieve the next set of results for your original query to the endpoint.
 
 try {
-    $result = $api_instance->listTimecards($order, $employee_id, $begin_clockin_time, $end_clockin_time, $begin_clockout_time, $end_clockout_time, $begin_updated_at, $end_updated_at, $deleted, $limit, $batch_token);
+    $result = $apiInstance->listTimecards($order, $employee_id, $begin_clockin_time, $end_clockin_time, $begin_clockout_time, $end_clockout_time, $begin_updated_at, $end_updated_at, $deleted, $limit, $batch_token);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling V1EmployeesApi->listTimecards: ', $e->getMessage(), PHP_EOL;
@@ -515,12 +515,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\V1EmployeesApi();
+$apiInstance = new SquareConnect\Api\V1EmployeesApi();
 $location_id = "location_id_example"; // string | The ID of the location to list cash drawer shifts for.
 $shift_id = "shift_id_example"; // string | The shift's ID.
 
 try {
-    $result = $api_instance->retrieveCashDrawerShift($location_id, $shift_id);
+    $result = $apiInstance->retrieveCashDrawerShift($location_id, $shift_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling V1EmployeesApi->retrieveCashDrawerShift: ', $e->getMessage(), PHP_EOL;
@@ -565,11 +565,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\V1EmployeesApi();
+$apiInstance = new SquareConnect\Api\V1EmployeesApi();
 $employee_id = "employee_id_example"; // string | The employee's ID.
 
 try {
-    $result = $api_instance->retrieveEmployee($employee_id);
+    $result = $apiInstance->retrieveEmployee($employee_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling V1EmployeesApi->retrieveEmployee: ', $e->getMessage(), PHP_EOL;
@@ -613,11 +613,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\V1EmployeesApi();
+$apiInstance = new SquareConnect\Api\V1EmployeesApi();
 $role_id = "role_id_example"; // string | The role's ID.
 
 try {
-    $result = $api_instance->retrieveEmployeeRole($role_id);
+    $result = $apiInstance->retrieveEmployeeRole($role_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling V1EmployeesApi->retrieveEmployeeRole: ', $e->getMessage(), PHP_EOL;
@@ -661,11 +661,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\V1EmployeesApi();
+$apiInstance = new SquareConnect\Api\V1EmployeesApi();
 $timecard_id = "timecard_id_example"; // string | The timecard's ID.
 
 try {
-    $result = $api_instance->retrieveTimecard($timecard_id);
+    $result = $apiInstance->retrieveTimecard($timecard_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling V1EmployeesApi->retrieveTimecard: ', $e->getMessage(), PHP_EOL;
@@ -709,12 +709,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\V1EmployeesApi();
+$apiInstance = new SquareConnect\Api\V1EmployeesApi();
 $employee_id = "employee_id_example"; // string | The ID of the role to modify.
 $body = new \SquareConnect\Model\V1Employee(); // \SquareConnect\Model\V1Employee | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->updateEmployee($employee_id, $body);
+    $result = $apiInstance->updateEmployee($employee_id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling V1EmployeesApi->updateEmployee: ', $e->getMessage(), PHP_EOL;
@@ -759,12 +759,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\V1EmployeesApi();
+$apiInstance = new SquareConnect\Api\V1EmployeesApi();
 $role_id = "role_id_example"; // string | The ID of the role to modify.
 $body = new \SquareConnect\Model\V1EmployeeRole(); // \SquareConnect\Model\V1EmployeeRole | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->updateEmployeeRole($role_id, $body);
+    $result = $apiInstance->updateEmployeeRole($role_id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling V1EmployeesApi->updateEmployeeRole: ', $e->getMessage(), PHP_EOL;
@@ -809,12 +809,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\V1EmployeesApi();
+$apiInstance = new SquareConnect\Api\V1EmployeesApi();
 $timecard_id = "timecard_id_example"; // string | TThe ID of the timecard to modify.
 $body = new \SquareConnect\Model\V1Timecard(); // \SquareConnect\Model\V1Timecard | An object containing the fields to POST for the request. See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->updateTimecard($timecard_id, $body);
+    $result = $apiInstance->updateTimecard($timecard_id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling V1EmployeesApi->updateTimecard: ', $e->getMessage(), PHP_EOL;

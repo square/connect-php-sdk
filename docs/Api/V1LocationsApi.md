@@ -23,10 +23,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\V1LocationsApi();
+$apiInstance = new SquareConnect\Api\V1LocationsApi();
 
 try {
-    $result = $api_instance->listLocations();
+    $result = $apiInstance->listLocations();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling V1LocationsApi->listLocations: ', $e->getMessage(), PHP_EOL;
@@ -67,10 +67,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\V1LocationsApi();
+$apiInstance = new SquareConnect\Api\V1LocationsApi();
 
 try {
-    $result = $api_instance->retrieveBusiness();
+    $result = $apiInstance->retrieveBusiness();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling V1LocationsApi->retrieveBusiness: ', $e->getMessage(), PHP_EOL;

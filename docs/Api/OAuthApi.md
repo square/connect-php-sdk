@@ -21,11 +21,11 @@ Returns an OAuth access token.   The endpoint supports distinct methods of obtai
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new SquareConnect\Api\OAuthApi();
+$apiInstance = new SquareConnect\Api\OAuthApi();
 $body = new \SquareConnect\Model\ObtainTokenRequest(); // \SquareConnect\Model\ObtainTokenRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->obtainToken($body);
+    $result = $apiInstance->obtainToken($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OAuthApi->obtainToken: ', $e->getMessage(), PHP_EOL;
@@ -55,6 +55,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **renewToken**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\RenewTokenResponse renewToken($client_id, $body)
 
 RenewToken
@@ -67,16 +68,16 @@ RenewToken
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: oauth2ClientSecret
-SquareConnect\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = SquareConnect\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SquareConnect\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = SquareConnect\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
-$api_instance = new SquareConnect\Api\OAuthApi();
+$apiInstance = new SquareConnect\Api\OAuthApi();
 $client_id = "client_id_example"; // string | Your application's ID, available from the [application dashboard](https://connect.squareup.com/apps).
 $body = new \SquareConnect\Model\RenewTokenRequest(); // \SquareConnect\Model\RenewTokenRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->renewToken($client_id, $body);
+    $result = $apiInstance->renewToken($client_id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OAuthApi->renewToken: ', $e->getMessage(), PHP_EOL;
@@ -119,15 +120,15 @@ Revokes an access token generated with the OAuth flow.  If an account has more t
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: oauth2ClientSecret
-SquareConnect\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = SquareConnect\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SquareConnect\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = SquareConnect\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
-$api_instance = new SquareConnect\Api\OAuthApi();
+$apiInstance = new SquareConnect\Api\OAuthApi();
 $body = new \SquareConnect\Model\RevokeTokenRequest(); // \SquareConnect\Model\RevokeTokenRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->revokeToken($body);
+    $result = $apiInstance->revokeToken($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OAuthApi->revokeToken: ', $e->getMessage(), PHP_EOL;

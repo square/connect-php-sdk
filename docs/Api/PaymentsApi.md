@@ -27,11 +27,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\PaymentsApi();
+$apiInstance = new SquareConnect\Api\PaymentsApi();
 $payment_id = "payment_id_example"; // string | `payment_id` identifying the payment to be canceled.
 
 try {
-    $result = $api_instance->cancelPayment($payment_id);
+    $result = $apiInstance->cancelPayment($payment_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PaymentsApi->cancelPayment: ', $e->getMessage(), PHP_EOL;
@@ -75,11 +75,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\PaymentsApi();
+$apiInstance = new SquareConnect\Api\PaymentsApi();
 $body = new \SquareConnect\Model\CancelPaymentByIdempotencyKeyRequest(); // \SquareConnect\Model\CancelPaymentByIdempotencyKeyRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->cancelPaymentByIdempotencyKey($body);
+    $result = $apiInstance->cancelPaymentByIdempotencyKey($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PaymentsApi->cancelPaymentByIdempotencyKey: ', $e->getMessage(), PHP_EOL;
@@ -123,11 +123,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\PaymentsApi();
+$apiInstance = new SquareConnect\Api\PaymentsApi();
 $payment_id = "payment_id_example"; // string | Unique ID identifying the payment to be completed.
 
 try {
-    $result = $api_instance->completePayment($payment_id);
+    $result = $apiInstance->completePayment($payment_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PaymentsApi->completePayment: ', $e->getMessage(), PHP_EOL;
@@ -171,11 +171,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\PaymentsApi();
+$apiInstance = new SquareConnect\Api\PaymentsApi();
 $body = new \SquareConnect\Model\CreatePaymentRequest(); // \SquareConnect\Model\CreatePaymentRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $api_instance->createPayment($body);
+    $result = $apiInstance->createPayment($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PaymentsApi->createPayment: ', $e->getMessage(), PHP_EOL;
@@ -219,11 +219,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\PaymentsApi();
+$apiInstance = new SquareConnect\Api\PaymentsApi();
 $payment_id = "payment_id_example"; // string | Unique ID for the desired `Payment`.
 
 try {
-    $result = $api_instance->getPayment($payment_id);
+    $result = $apiInstance->getPayment($payment_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PaymentsApi->getPayment: ', $e->getMessage(), PHP_EOL;
@@ -267,7 +267,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: oauth2
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new SquareConnect\Api\PaymentsApi();
+$apiInstance = new SquareConnect\Api\PaymentsApi();
 $begin_time = "begin_time_example"; // string | Timestamp for the beginning of the reporting period, in RFC 3339 format. Inclusive. Default: The current time minus one year.
 $end_time = "end_time_example"; // string | Timestamp for the end of the requested reporting period, in RFC 3339 format.  Default: The current time.
 $sort_order = "sort_order_example"; // string | The order in which results are listed. - `ASC` - oldest to newest - `DESC` - newest to oldest (default).
@@ -278,7 +278,7 @@ $last_4 = "last_4_example"; // string | The last 4 digits of `Payment` card.
 $card_brand = "card_brand_example"; // string | The brand of `Payment` card. For example, `VISA`
 
 try {
-    $result = $api_instance->listPayments($begin_time, $end_time, $sort_order, $cursor, $location_id, $total, $last_4, $card_brand);
+    $result = $apiInstance->listPayments($begin_time, $end_time, $sort_order, $cursor, $location_id, $total, $last_4, $card_brand);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PaymentsApi->listPayments: ', $e->getMessage(), PHP_EOL;
