@@ -65,6 +65,7 @@ class ReportingApi
     }
   
     /**
+     * @deprecated
      * listAdditionalRecipientReceivableRefunds
      *
      * ListAdditionalRecipientReceivableRefunds
@@ -79,6 +80,7 @@ class ReportingApi
      */
     public function listAdditionalRecipientReceivableRefunds($location_id, $begin_time = null, $end_time = null, $sort_order = null, $cursor = null)
     {
+        trigger_error('Calling deprecated API: ReportingApi.listAdditionalRecipientReceivableRefunds', E_USER_DEPRECATED);
         list($response, $statusCode, $httpHeader) = $this->listAdditionalRecipientReceivableRefundsWithHttpInfo ($location_id, $begin_time, $end_time, $sort_order, $cursor);
         return $response; 
     }
@@ -181,6 +183,7 @@ class ReportingApi
         }
     }
     /**
+     * @deprecated
      * listAdditionalRecipientReceivables
      *
      * ListAdditionalRecipientReceivables
@@ -195,6 +198,7 @@ class ReportingApi
      */
     public function listAdditionalRecipientReceivables($location_id, $begin_time = null, $end_time = null, $sort_order = null, $cursor = null)
     {
+        trigger_error('Calling deprecated API: ReportingApi.listAdditionalRecipientReceivables', E_USER_DEPRECATED);
         list($response, $statusCode, $httpHeader) = $this->listAdditionalRecipientReceivablesWithHttpInfo ($location_id, $begin_time, $end_time, $sort_order, $cursor);
         return $response; 
     }

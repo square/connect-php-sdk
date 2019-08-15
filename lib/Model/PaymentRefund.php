@@ -31,6 +31,7 @@ class PaymentRefund implements ArrayAccess
         'app_fee_money' => '\SquareConnect\Model\Money',
         'processing_fee' => '\SquareConnect\Model\ProcessingFee[]',
         'payment_id' => 'string',
+        'order_id' => 'string',
         'reason' => 'string',
         'created_at' => 'string',
         'updated_at' => 'string'
@@ -48,6 +49,7 @@ class PaymentRefund implements ArrayAccess
         'app_fee_money' => 'app_fee_money',
         'processing_fee' => 'processing_fee',
         'payment_id' => 'payment_id',
+        'order_id' => 'order_id',
         'reason' => 'reason',
         'created_at' => 'created_at',
         'updated_at' => 'updated_at'
@@ -65,6 +67,7 @@ class PaymentRefund implements ArrayAccess
         'app_fee_money' => 'setAppFeeMoney',
         'processing_fee' => 'setProcessingFee',
         'payment_id' => 'setPaymentId',
+        'order_id' => 'setOrderId',
         'reason' => 'setReason',
         'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt'
@@ -82,6 +85,7 @@ class PaymentRefund implements ArrayAccess
         'app_fee_money' => 'getAppFeeMoney',
         'processing_fee' => 'getProcessingFee',
         'payment_id' => 'getPaymentId',
+        'order_id' => 'getOrderId',
         'reason' => 'getReason',
         'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt'
@@ -122,6 +126,11 @@ class PaymentRefund implements ArrayAccess
       * @var string
       */
     protected $payment_id;
+    /**
+      * $order_id The ID of the order associated with the refund.
+      * @var string
+      */
+    protected $order_id;
     /**
       * $reason The reason for the refund.
       * @var string
@@ -179,6 +188,11 @@ class PaymentRefund implements ArrayAccess
               $this->payment_id = $data["payment_id"];
             } else {
               $this->payment_id = null;
+            }
+            if (isset($data["order_id"])) {
+              $this->order_id = $data["order_id"];
+            } else {
+              $this->order_id = null;
             }
             if (isset($data["reason"])) {
               $this->reason = $data["reason"];
@@ -328,6 +342,25 @@ class PaymentRefund implements ArrayAccess
     public function setPaymentId($payment_id)
     {
         $this->payment_id = $payment_id;
+        return $this;
+    }
+    /**
+     * Gets order_id
+     * @return string
+     */
+    public function getOrderId()
+    {
+        return $this->order_id;
+    }
+  
+    /**
+     * Sets order_id
+     * @param string $order_id The ID of the order associated with the refund.
+     * @return $this
+     */
+    public function setOrderId($order_id)
+    {
+        $this->order_id = $order_id;
         return $this;
     }
     /**
