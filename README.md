@@ -486,7 +486,6 @@ Class | Method | HTTP request | Description
  - [MeasurementUnitCustom](docs/Model/MeasurementUnitCustom.md)
  - [MeasurementUnitGeneric](docs/Model/MeasurementUnitGeneric.md)
  - [MeasurementUnitLength](docs/Model/MeasurementUnitLength.md)
- - [MeasurementUnitTime](docs/Model/MeasurementUnitTime.md)
  - [MeasurementUnitUnitType](docs/Model/MeasurementUnitUnitType.md)
  - [MeasurementUnitVolume](docs/Model/MeasurementUnitVolume.md)
  - [MeasurementUnitWeight](docs/Model/MeasurementUnitWeight.md)

@@ -12,7 +12,6 @@ Name | Type
 **TYPE_LENGTH** | string
 **TYPE_VOLUME** | string
 **TYPE_WEIGHT** | string
-**TYPE_TIME** | string
 **TYPE_GENERIC** | string
 
 Note: All properties are protected and only accessed via getters and setters.

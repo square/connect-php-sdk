@@ -1,5 +1,8 @@
 # Change Log
 
+## Version 2.20190814.1 (2018-08-16)
+
+* **Bug fix**: Removed a currently unsupported API object type
 ## Version 2.20190814.0 (2019-08-15)
 
 * **New functionality**: All SDKs have been updated to support the Sandbox v2 BETA release

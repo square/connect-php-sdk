@@ -13,7 +13,6 @@ Name | Getter | Setter | Type | Description | Notes
 **volume_unit** | getVolumeUnit() | setVolumeUnit($value) | **string** | Represents a standard volume unit. See [MeasurementUnitVolume](#type-measurementunitvolume) for possible values | [optional] 
 **weight_unit** | getWeightUnit() | setWeightUnit($value) | **string** | Represents a standard unit of weight or mass. See [MeasurementUnitWeight](#type-measurementunitweight) for possible values | [optional] 
 **generic_unit** | getGenericUnit() | setGenericUnit($value) | **string** | Reserved for API integrations that lack the ability to specify a real measurement unit See [MeasurementUnitGeneric](#type-measurementunitgeneric) for possible values | [optional] 
-**time_unit** | getTimeUnit() | setTimeUnit($value) | **string** | Represents a standard unit of time. See [MeasurementUnitTime](#type-measurementunittime) for possible values | [optional] 
 **type** | getType() | setType($value) | **string** | Represents the type of the measurement unit. See [MeasurementUnitUnitType](#type-measurementunitunittype) for possible values | [optional] 
 
 Note: All properties are protected and only accessed via getters and setters.
