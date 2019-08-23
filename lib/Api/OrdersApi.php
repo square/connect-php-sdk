@@ -480,13 +480,15 @@ class OrdersApi
      *
      * UpdateOrder
      *
+     * @param string $location_id The ID of the order&#39;s associated location. (required)
+     * @param string $order_id The ID of the order to update. (required)
      * @param \SquareConnect\Model\UpdateOrderRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
      * @return \SquareConnect\Model\UpdateOrderResponse
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function updateOrder($body)
+    public function updateOrder($location_id, $order_id, $body)
     {
-        list($response, $statusCode, $httpHeader) = $this->updateOrderWithHttpInfo ($body);
+        list($response, $statusCode, $httpHeader) = $this->updateOrderWithHttpInfo ($location_id, $order_id, $body);
         return $response; 
     }
 
@@ -496,13 +498,23 @@ class OrdersApi
      *
      * UpdateOrder
      *
+     * @param string $location_id The ID of the order&#39;s associated location. (required)
+     * @param string $order_id The ID of the order to update. (required)
      * @param \SquareConnect\Model\UpdateOrderRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
      * @return Array of \SquareConnect\Model\UpdateOrderResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function updateOrderWithHttpInfo($body)
+    public function updateOrderWithHttpInfo($location_id, $order_id, $body)
     {
         
+        // verify the required parameter 'location_id' is set
+        if ($location_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $location_id when calling updateOrder');
+        }
+        // verify the required parameter 'order_id' is set
+        if ($order_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $order_id when calling updateOrder');
+        }
         // verify the required parameter 'body' is set
         if ($body === null) {
             throw new \InvalidArgumentException('Missing the required parameter $body when calling updateOrder');
@@ -523,7 +535,21 @@ class OrdersApi
 
         
         
-        
+        // path params
+        if ($location_id !== null) {
+            $resourcePath = str_replace(
+                "{" . "location_id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($location_id),
+                $resourcePath
+            );
+        }// path params
+        if ($order_id !== null) {
+            $resourcePath = str_replace(
+                "{" . "order_id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($order_id),
+                $resourcePath
+            );
+        }
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 

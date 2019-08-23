@@ -1,5 +1,9 @@
 # Change Log
 
+## Version 2.20190814.2 (2019-08-23)
+
+* **Bug fix**: Fixed path parameters for `UpdateOrder`
+
 ## Version 2.20190814.1 (2018-08-16)
 
 * **Bug fix**: Removed a currently unsupported API object type
