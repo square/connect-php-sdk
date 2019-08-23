@@ -210,7 +210,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateOrder**
-> \SquareConnect\Model\UpdateOrderResponse updateOrder($body)
+> \SquareConnect\Model\UpdateOrderResponse updateOrder($location_id, $order_id, $body)
 
 UpdateOrder
 
@@ -225,10 +225,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $apiInstance = new SquareConnect\Api\OrdersApi();
+$location_id = "location_id_example"; // string | The ID of the order's associated location.
+$order_id = "order_id_example"; // string | The ID of the order to update.
 $body = new \SquareConnect\Model\UpdateOrderRequest(); // \SquareConnect\Model\UpdateOrderRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $apiInstance->updateOrder($body);
+    $result = $apiInstance->updateOrder($location_id, $order_id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrdersApi->updateOrder: ', $e->getMessage(), PHP_EOL;
@@ -240,6 +242,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **location_id** | **string**| The ID of the order&#39;s associated location. |
+ **order_id** | **string**| The ID of the order to update. |
  **body** | [**\SquareConnect\Model\UpdateOrderRequest**](../Model/UpdateOrderRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
