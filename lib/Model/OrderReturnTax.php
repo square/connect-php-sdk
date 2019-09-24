@@ -90,7 +90,7 @@ class OrderReturnTax implements ArrayAccess
       */
     protected $source_tax_uid;
     /**
-      * $catalog_object_id The catalog object id referencing [CatalogTax](#type-catalogtax).
+      * $catalog_object_id The catalog object id referencing `CatalogTax`.
       * @var string
       */
     protected $catalog_object_id;
@@ -218,7 +218,7 @@ class OrderReturnTax implements ArrayAccess
   
     /**
      * Sets catalog_object_id
-     * @param string $catalog_object_id The catalog object id referencing [CatalogTax](#type-catalogtax).
+     * @param string $catalog_object_id The catalog object id referencing `CatalogTax`.
      * @return $this
      */
     public function setCatalogObjectId($catalog_object_id)

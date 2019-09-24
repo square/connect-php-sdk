@@ -52,7 +52,7 @@ class CatalogQueryItemVariationsForItemOptionValues implements ArrayAccess
     );
   
     /**
-      * $item_option_value_ids A set of [CatalogItemOptionValue](#type-catalogitemoptionvalue) IDs to be used to find associated [CatalogItemVariation](#type-catalogitemvariation)s. All ItemVariations that contain all of the given Item Option Values (in any order) will be returned.
+      * $item_option_value_ids A set of `CatalogItemOptionValue` IDs to be used to find associated `CatalogItemVariation`s. All ItemVariations that contain all of the given Item Option Values (in any order) will be returned.
       * @var string[]
       */
     protected $item_option_value_ids;
@@ -82,7 +82,7 @@ class CatalogQueryItemVariationsForItemOptionValues implements ArrayAccess
   
     /**
      * Sets item_option_value_ids
-     * @param string[] $item_option_value_ids A set of [CatalogItemOptionValue](#type-catalogitemoptionvalue) IDs to be used to find associated [CatalogItemVariation](#type-catalogitemvariation)s. All ItemVariations that contain all of the given Item Option Values (in any order) will be returned.
+     * @param string[] $item_option_value_ids A set of `CatalogItemOptionValue` IDs to be used to find associated `CatalogItemVariation`s. All ItemVariations that contain all of the given Item Option Values (in any order) will be returned.
      * @return $this
      */
     public function setItemOptionValueIds($item_option_value_ids)

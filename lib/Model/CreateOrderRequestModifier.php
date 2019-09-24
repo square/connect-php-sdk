@@ -60,7 +60,7 @@ class CreateOrderRequestModifier implements ArrayAccess
     );
   
     /**
-      * $catalog_object_id The catalog object ID of a [CatalogModifier](#type-catalogmodifier).
+      * $catalog_object_id The catalog object ID of a `CatalogModifier`.
       * @var string
       */
     protected $catalog_object_id;
@@ -70,7 +70,7 @@ class CreateOrderRequestModifier implements ArrayAccess
       */
     protected $name;
     /**
-      * $base_price_money The base price for the modifier.  `base_price_money` is required for ad hoc modifiers. If both `catalog_object_id` and `base_price_money` are set, `base_price_money` will override the predefined [CatalogModifier](#type-catalogmodifier) price.
+      * $base_price_money The base price for the modifier.  `base_price_money` is required for ad hoc modifiers. If both `catalog_object_id` and `base_price_money` are set, `base_price_money` will override the predefined `CatalogModifier` price.
       * @var \SquareConnect\Model\Money
       */
     protected $base_price_money;
@@ -110,7 +110,7 @@ class CreateOrderRequestModifier implements ArrayAccess
   
     /**
      * Sets catalog_object_id
-     * @param string $catalog_object_id The catalog object ID of a [CatalogModifier](#type-catalogmodifier).
+     * @param string $catalog_object_id The catalog object ID of a `CatalogModifier`.
      * @return $this
      */
     public function setCatalogObjectId($catalog_object_id)
@@ -148,7 +148,7 @@ class CreateOrderRequestModifier implements ArrayAccess
   
     /**
      * Sets base_price_money
-     * @param \SquareConnect\Model\Money $base_price_money The base price for the modifier.  `base_price_money` is required for ad hoc modifiers. If both `catalog_object_id` and `base_price_money` are set, `base_price_money` will override the predefined [CatalogModifier](#type-catalogmodifier) price.
+     * @param \SquareConnect\Model\Money $base_price_money The base price for the modifier.  `base_price_money` is required for ad hoc modifiers. If both `catalog_object_id` and `base_price_money` are set, `base_price_money` will override the predefined `CatalogModifier` price.
      * @return $this
      */
     public function setBasePriceMoney($base_price_money)

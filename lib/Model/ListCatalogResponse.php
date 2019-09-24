@@ -60,17 +60,17 @@ class ListCatalogResponse implements ArrayAccess
     );
   
     /**
-      * $errors The set of [Error](#type-error)s encountered.
+      * $errors The set of `Error`s encountered.
       * @var \SquareConnect\Model\Error[]
       */
     protected $errors;
     /**
-      * $cursor The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Pagination](/basics/api101/pagination) for more information.
+      * $cursor The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information.
       * @var string
       */
     protected $cursor;
     /**
-      * $objects The [CatalogObject](#type-catalogobject)s returned.
+      * $objects The `CatalogObject`s returned.
       * @var \SquareConnect\Model\CatalogObject[]
       */
     protected $objects;
@@ -110,7 +110,7 @@ class ListCatalogResponse implements ArrayAccess
   
     /**
      * Sets errors
-     * @param \SquareConnect\Model\Error[] $errors The set of [Error](#type-error)s encountered.
+     * @param \SquareConnect\Model\Error[] $errors The set of `Error`s encountered.
      * @return $this
      */
     public function setErrors($errors)
@@ -129,7 +129,7 @@ class ListCatalogResponse implements ArrayAccess
   
     /**
      * Sets cursor
-     * @param string $cursor The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Pagination](/basics/api101/pagination) for more information.
+     * @param string $cursor The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information.
      * @return $this
      */
     public function setCursor($cursor)
@@ -148,7 +148,7 @@ class ListCatalogResponse implements ArrayAccess
   
     /**
      * Sets objects
-     * @param \SquareConnect\Model\CatalogObject[] $objects The [CatalogObject](#type-catalogobject)s returned.
+     * @param \SquareConnect\Model\CatalogObject[] $objects The `CatalogObject`s returned.
      * @return $this
      */
     public function setObjects($objects)

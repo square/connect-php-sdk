@@ -108,7 +108,7 @@ class CatalogItemVariation implements ArrayAccess
     );
   
     /**
-      * $item_id The ID of the [CatalogItem](#type-catalogitem) associated with this item variation. Searchable.
+      * $item_id The ID of the `CatalogItem` associated with this item variation. Searchable.
       * @var string
       */
     protected $item_id;
@@ -128,7 +128,7 @@ class CatalogItemVariation implements ArrayAccess
       */
     protected $upc;
     /**
-      * $ordinal The order in which this item variation should be displayed. This value is read-only. On writes, the ordinal for each item variation within a parent [CatalogItem](#type-catalogitem) is set according to the item variations's position. On reads, the value is not guaranteed to be sequential or unique.
+      * $ordinal The order in which this item variation should be displayed. This value is read-only. On writes, the ordinal for each item variation within a parent `CatalogItem` is set according to the item variations's position. On reads, the value is not guaranteed to be sequential or unique.
       * @var int
       */
     protected $ordinal;
@@ -143,7 +143,7 @@ class CatalogItemVariation implements ArrayAccess
       */
     protected $price_money;
     /**
-      * $location_overrides Per-[location](#type-location) price and inventory overrides.
+      * $location_overrides Per-`location` price and inventory overrides.
       * @var \SquareConnect\Model\ItemVariationLocationOverrides[]
       */
     protected $location_overrides;
@@ -168,7 +168,7 @@ class CatalogItemVariation implements ArrayAccess
       */
     protected $user_data;
     /**
-      * $service_duration If the [CatalogItem](#type-catalogitem) that owns this item variation is of type `APPOINTMENTS_SERVICE`, then this is the duration of the service in milliseconds. For example, a 30 minute appointment would have the value `1800000`, which is equal to 30 (minutes) * 60 (seconds per minute) * 1000 (milliseconds per second).
+      * $service_duration If the `CatalogItem` that owns this item variation is of type `APPOINTMENTS_SERVICE`, then this is the duration of the service in milliseconds. For example, a 30 minute appointment would have the value `1800000`, which is equal to 30 (minutes) * 60 (seconds per minute) * 1000 (milliseconds per second).
       * @var int
       */
     protected $service_duration;
@@ -278,7 +278,7 @@ class CatalogItemVariation implements ArrayAccess
   
     /**
      * Sets item_id
-     * @param string $item_id The ID of the [CatalogItem](#type-catalogitem) associated with this item variation. Searchable.
+     * @param string $item_id The ID of the `CatalogItem` associated with this item variation. Searchable.
      * @return $this
      */
     public function setItemId($item_id)
@@ -354,7 +354,7 @@ class CatalogItemVariation implements ArrayAccess
   
     /**
      * Sets ordinal
-     * @param int $ordinal The order in which this item variation should be displayed. This value is read-only. On writes, the ordinal for each item variation within a parent [CatalogItem](#type-catalogitem) is set according to the item variations's position. On reads, the value is not guaranteed to be sequential or unique.
+     * @param int $ordinal The order in which this item variation should be displayed. This value is read-only. On writes, the ordinal for each item variation within a parent `CatalogItem` is set according to the item variations's position. On reads, the value is not guaranteed to be sequential or unique.
      * @return $this
      */
     public function setOrdinal($ordinal)
@@ -411,7 +411,7 @@ class CatalogItemVariation implements ArrayAccess
   
     /**
      * Sets location_overrides
-     * @param \SquareConnect\Model\ItemVariationLocationOverrides[] $location_overrides Per-[location](#type-location) price and inventory overrides.
+     * @param \SquareConnect\Model\ItemVariationLocationOverrides[] $location_overrides Per-`location` price and inventory overrides.
      * @return $this
      */
     public function setLocationOverrides($location_overrides)
@@ -506,7 +506,7 @@ class CatalogItemVariation implements ArrayAccess
   
     /**
      * Sets service_duration
-     * @param int $service_duration If the [CatalogItem](#type-catalogitem) that owns this item variation is of type `APPOINTMENTS_SERVICE`, then this is the duration of the service in milliseconds. For example, a 30 minute appointment would have the value `1800000`, which is equal to 30 (minutes) * 60 (seconds per minute) * 1000 (milliseconds per second).
+     * @param int $service_duration If the `CatalogItem` that owns this item variation is of type `APPOINTMENTS_SERVICE`, then this is the duration of the service in milliseconds. For example, a 30 minute appointment would have the value `1800000`, which is equal to 30 (minutes) * 60 (seconds per minute) * 1000 (milliseconds per second).
      * @return $this
      */
     public function setServiceDuration($service_duration)

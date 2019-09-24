@@ -129,7 +129,7 @@ class Tender implements ArrayAccess
       */
     protected $note;
     /**
-      * $amount_money The total amount of the tender, including `tip_money`. If the tender has a `payment_id`, the `total_money` of the corresponding [Payment](#type-payment) will be equal to the `amount_money` of the tender.
+      * $amount_money The total amount of the tender, including `tip_money`. If the tender has a `payment_id`, the `total_money` of the corresponding `Payment` will be equal to the `amount_money` of the tender.
       * @var \SquareConnect\Model\Money
       */
     protected $amount_money;
@@ -169,7 +169,7 @@ class Tender implements ArrayAccess
       */
     protected $additional_recipients;
     /**
-      * $payment_id The ID of the [Payment](#type-payment) that corresponds to this tender. This value is only present for payments created with the v2 Payments API.
+      * $payment_id The ID of the `Payment` that corresponds to this tender. This value is only present for payments created with the v2 Payments API.
       * @var string
       */
     protected $payment_id;
@@ -359,7 +359,7 @@ class Tender implements ArrayAccess
   
     /**
      * Sets amount_money
-     * @param \SquareConnect\Model\Money $amount_money The total amount of the tender, including `tip_money`. If the tender has a `payment_id`, the `total_money` of the corresponding [Payment](#type-payment) will be equal to the `amount_money` of the tender.
+     * @param \SquareConnect\Model\Money $amount_money The total amount of the tender, including `tip_money`. If the tender has a `payment_id`, the `total_money` of the corresponding `Payment` will be equal to the `amount_money` of the tender.
      * @return $this
      */
     public function setAmountMoney($amount_money)
@@ -511,7 +511,7 @@ class Tender implements ArrayAccess
   
     /**
      * Sets payment_id
-     * @param string $payment_id The ID of the [Payment](#type-payment) that corresponds to this tender. This value is only present for payments created with the v2 Payments API.
+     * @param string $payment_id The ID of the `Payment` that corresponds to this tender. This value is only present for payments created with the v2 Payments API.
      * @return $this
      */
     public function setPaymentId($payment_id)

@@ -47,7 +47,8 @@ class Location implements ArrayAccess
         'facebook_url' => 'string',
         'coordinates' => '\SquareConnect\Model\Coordinates',
         'logo_url' => 'string',
-        'pos_background_url' => 'string'
+        'pos_background_url' => 'string',
+        'mcc' => 'string'
     );
   
     /** 
@@ -78,7 +79,8 @@ class Location implements ArrayAccess
         'facebook_url' => 'facebook_url',
         'coordinates' => 'coordinates',
         'logo_url' => 'logo_url',
-        'pos_background_url' => 'pos_background_url'
+        'pos_background_url' => 'pos_background_url',
+        'mcc' => 'mcc'
     );
   
     /**
@@ -109,7 +111,8 @@ class Location implements ArrayAccess
         'facebook_url' => 'setFacebookUrl',
         'coordinates' => 'setCoordinates',
         'logo_url' => 'setLogoUrl',
-        'pos_background_url' => 'setPosBackgroundUrl'
+        'pos_background_url' => 'setPosBackgroundUrl',
+        'mcc' => 'setMcc'
     );
   
     /**
@@ -140,7 +143,8 @@ class Location implements ArrayAccess
         'facebook_url' => 'getFacebookUrl',
         'coordinates' => 'getCoordinates',
         'logo_url' => 'getLogoUrl',
-        'pos_background_url' => 'getPosBackgroundUrl'
+        'pos_background_url' => 'getPosBackgroundUrl',
+        'mcc' => 'getMcc'
     );
   
     /**
@@ -234,12 +238,12 @@ class Location implements ArrayAccess
       */
     protected $description;
     /**
-      * $twitter_username The Twitter username of the location without the '
+      * $twitter_username The Twitter username of the location without the '&#64;' symbol.
       * @var string
       */
     protected $twitter_username;
     /**
-      * $instagram_username The Instagram username of the location without the '
+      * $instagram_username The Instagram username of the location without the '&#64;' symbol.
       * @var string
       */
     protected $instagram_username;
@@ -263,6 +267,11 @@ class Location implements ArrayAccess
       * @var string
       */
     protected $pos_background_url;
+    /**
+      * $mcc The merchant category code (MCC) of the location, as standardized by ISO 18245. The MCC describes the kind of goods or services sold at the location.
+      * @var string
+      */
+    protected $mcc;
 
     /**
      * Constructor
@@ -390,6 +399,11 @@ class Location implements ArrayAccess
               $this->pos_background_url = $data["pos_background_url"];
             } else {
               $this->pos_background_url = null;
+            }
+            if (isset($data["mcc"])) {
+              $this->mcc = $data["mcc"];
+            } else {
+              $this->mcc = null;
             }
         }
     }
@@ -746,7 +760,7 @@ class Location implements ArrayAccess
   
     /**
      * Sets twitter_username
-     * @param string $twitter_username The Twitter username of the location without the '
+     * @param string $twitter_username The Twitter username of the location without the '&#64;' symbol.
      * @return $this
      */
     public function setTwitterUsername($twitter_username)
@@ -765,7 +779,7 @@ class Location implements ArrayAccess
   
     /**
      * Sets instagram_username
-     * @param string $instagram_username The Instagram username of the location without the '
+     * @param string $instagram_username The Instagram username of the location without the '&#64;' symbol.
      * @return $this
      */
     public function setInstagramUsername($instagram_username)
@@ -847,6 +861,25 @@ class Location implements ArrayAccess
     public function setPosBackgroundUrl($pos_background_url)
     {
         $this->pos_background_url = $pos_background_url;
+        return $this;
+    }
+    /**
+     * Gets mcc
+     * @return string
+     */
+    public function getMcc()
+    {
+        return $this->mcc;
+    }
+  
+    /**
+     * Sets mcc
+     * @param string $mcc The merchant category code (MCC) of the location, as standardized by ISO 18245. The MCC describes the kind of goods or services sold at the location.
+     * @return $this
+     */
+    public function setMcc($mcc)
+    {
+        $this->mcc = $mcc;
         return $this;
     }
     /**

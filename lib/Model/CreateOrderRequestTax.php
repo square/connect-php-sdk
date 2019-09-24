@@ -64,7 +64,7 @@ class CreateOrderRequestTax implements ArrayAccess
     );
   
     /**
-      * $catalog_object_id Only used for catalog taxes. The catalog object ID of an existing [CatalogTax](#type-catalogtax).  Do not provide a value for this field if you provide values in other fields for an ad hoc tax.
+      * $catalog_object_id Only used for catalog taxes. The catalog object ID of an existing `CatalogTax`.  Do not provide a value for this field if you provide values in other fields for an ad hoc tax.
       * @var string
       */
     protected $catalog_object_id;
@@ -74,7 +74,7 @@ class CreateOrderRequestTax implements ArrayAccess
       */
     protected $name;
     /**
-      * $type Only used for ad hoc taxes. Indicates the calculation method used to apply the line item tax.  Default: `ADDITIVE`; See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values. See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values
+      * $type Only used for ad hoc taxes. Indicates the calculation method used to apply the line item tax.  Default: `ADDITIVE`; See `OrderLineItemTaxType` for possible values. See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values
       * @var string
       */
     protected $type;
@@ -124,7 +124,7 @@ class CreateOrderRequestTax implements ArrayAccess
   
     /**
      * Sets catalog_object_id
-     * @param string $catalog_object_id Only used for catalog taxes. The catalog object ID of an existing [CatalogTax](#type-catalogtax).  Do not provide a value for this field if you provide values in other fields for an ad hoc tax.
+     * @param string $catalog_object_id Only used for catalog taxes. The catalog object ID of an existing `CatalogTax`.  Do not provide a value for this field if you provide values in other fields for an ad hoc tax.
      * @return $this
      */
     public function setCatalogObjectId($catalog_object_id)
@@ -162,7 +162,7 @@ class CreateOrderRequestTax implements ArrayAccess
   
     /**
      * Sets type
-     * @param string $type Only used for ad hoc taxes. Indicates the calculation method used to apply the line item tax.  Default: `ADDITIVE`; See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values. See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values
+     * @param string $type Only used for ad hoc taxes. Indicates the calculation method used to apply the line item tax.  Default: `ADDITIVE`; See `OrderLineItemTaxType` for possible values. See [OrderLineItemTaxType](#type-orderlineitemtaxtype) for possible values
      * @return $this
      */
     public function setType($type)

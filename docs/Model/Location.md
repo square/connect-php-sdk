@@ -25,12 +25,13 @@ Name | Getter | Setter | Type | Description | Notes
 **business_hours** | getBusinessHours() | setBusinessHours($value) | [**\SquareConnect\Model\BusinessHours**](BusinessHours.md) | The hours of operation for a business location.  Default: none; only exists if explicitly set. | [optional] 
 **business_email** | getBusinessEmail() | setBusinessEmail($value) | **string** | The email of the location. | [optional] 
 **description** | getDescription() | setDescription($value) | **string** | The business description of the location. | [optional] 
-**twitter_username** | getTwitterUsername() | setTwitterUsername($value) | **string** | The Twitter username of the location without the &#39; | [optional] 
-**instagram_username** | getInstagramUsername() | setInstagramUsername($value) | **string** | The Instagram username of the location without the &#39; | [optional] 
+**twitter_username** | getTwitterUsername() | setTwitterUsername($value) | **string** | The Twitter username of the location without the &#39;&amp;#64;&#39; symbol. | [optional] 
+**instagram_username** | getInstagramUsername() | setInstagramUsername($value) | **string** | The Instagram username of the location without the &#39;&amp;#64;&#39; symbol. | [optional] 
 **facebook_url** | getFacebookUrl() | setFacebookUrl($value) | **string** | The Facebook profile URL of the location. The URL should begin with &#39;facebook.com/&#39;. | [optional] 
 **coordinates** | getCoordinates() | setCoordinates($value) | [**\SquareConnect\Model\Coordinates**](Coordinates.md) | The physical coordinates (latitude and longitude) of the location. | [optional] 
 **logo_url** | getLogoUrl() | setLogoUrl($value) | **string** | The logo image URL of the location. | [optional] 
 **pos_background_url** | getPosBackgroundUrl() | setPosBackgroundUrl($value) | **string** | The Point of Sale background image URL of the location. | [optional] 
+**mcc** | getMcc() | setMcc($value) | **string** | The merchant category code (MCC) of the location, as standardized by ISO 18245. The MCC describes the kind of goods or services sold at the location. | [optional] 
 
 Note: All properties are protected and only accessed via getters and setters.
 

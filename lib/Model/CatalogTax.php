@@ -92,7 +92,7 @@ class CatalogTax implements ArrayAccess
       */
     protected $percentage;
     /**
-      * $applies_to_custom_amounts If `true`, the fee applies to custom amounts entered into the Square Point of Sale app that are not associated with a particular [CatalogItem](#type-catalogitem).
+      * $applies_to_custom_amounts If `true`, the fee applies to custom amounts entered into the Square Point of Sale app that are not associated with a particular `CatalogItem`.
       * @var bool
       */
     protected $applies_to_custom_amounts;
@@ -228,7 +228,7 @@ class CatalogTax implements ArrayAccess
   
     /**
      * Sets applies_to_custom_amounts
-     * @param bool $applies_to_custom_amounts If `true`, the fee applies to custom amounts entered into the Square Point of Sale app that are not associated with a particular [CatalogItem](#type-catalogitem).
+     * @param bool $applies_to_custom_amounts If `true`, the fee applies to custom amounts entered into the Square Point of Sale app that are not associated with a particular `CatalogItem`.
      * @return $this
      */
     public function setAppliesToCustomAmounts($applies_to_custom_amounts)

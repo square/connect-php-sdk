@@ -8,7 +8,7 @@
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------
 **errors** | getErrors() | setErrors($value) | [**\SquareConnect\Model\Error[]**](Error.md) | Any errors that occurred during the request. | [optional] 
-**count** | getCount() | setCount($value) | [**\SquareConnect\Model\InventoryPhysicalCount**](InventoryPhysicalCount.md) | The requested [InventoryPhysicalCount](#type-inventoryphysicalcount). | [optional] 
+**count** | getCount() | setCount($value) | [**\SquareConnect\Model\InventoryPhysicalCount**](InventoryPhysicalCount.md) | The requested &#x60;InventoryPhysicalCount&#x60;. | [optional] 
 
 Note: All properties are protected and only accessed via getters and setters.
 

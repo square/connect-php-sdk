@@ -154,7 +154,7 @@ class OrderReturnLineItem implements ArrayAccess
       */
     protected $note;
     /**
-      * $catalog_object_id The [CatalogItemVariation](#type-catalogitemvariation) id applied to this returned line item.
+      * $catalog_object_id The `CatalogItemVariation` id applied to this returned line item.
       * @var string
       */
     protected $catalog_object_id;
@@ -164,7 +164,7 @@ class OrderReturnLineItem implements ArrayAccess
       */
     protected $variation_name;
     /**
-      * $return_modifiers The [CatalogModifier](#type-catalogmodifier)s applied to this line item.
+      * $return_modifiers The `CatalogModifier`s applied to this line item.
       * @var \SquareConnect\Model\OrderReturnLineItemModifier[]
       */
     protected $return_modifiers;
@@ -448,7 +448,7 @@ class OrderReturnLineItem implements ArrayAccess
   
     /**
      * Sets catalog_object_id
-     * @param string $catalog_object_id The [CatalogItemVariation](#type-catalogitemvariation) id applied to this returned line item.
+     * @param string $catalog_object_id The `CatalogItemVariation` id applied to this returned line item.
      * @return $this
      */
     public function setCatalogObjectId($catalog_object_id)
@@ -486,7 +486,7 @@ class OrderReturnLineItem implements ArrayAccess
   
     /**
      * Sets return_modifiers
-     * @param \SquareConnect\Model\OrderReturnLineItemModifier[] $return_modifiers The [CatalogModifier](#type-catalogmodifier)s applied to this line item.
+     * @param \SquareConnect\Model\OrderReturnLineItemModifier[] $return_modifiers The `CatalogModifier`s applied to this line item.
      * @return $this
      */
     public function setReturnModifiers($return_modifiers)

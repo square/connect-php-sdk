@@ -15,6 +15,7 @@ Name | Getter | Setter | Type | Description | Notes
 **cardholder_name** | getCardholderName() | setCardholderName($value) | **string** | The name of the cardholder. | [optional] 
 **billing_address** | getBillingAddress() | setBillingAddress($value) | [**\SquareConnect\Model\Address**](Address.md) | The billing address for this card. | [optional] 
 **fingerprint** | getFingerprint() | setFingerprint($value) | **string** | A unique, Square-assigned ID that identifies the card across multiple locations and applications for a single Square account. | [optional] 
+**bin** | getBin() | setBin($value) | **string** | The first six digits of the card number, known as the Bank Identification Number (BIN). Only the Payments API returns this field. | [optional] 
 
 Note: All properties are protected and only accessed via getters and setters.
 

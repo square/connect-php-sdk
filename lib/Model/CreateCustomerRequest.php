@@ -92,7 +92,7 @@ class CreateCustomerRequest implements ArrayAccess
     );
   
     /**
-      * $idempotency_key The idempotency key for the request. See the [Idempotency](/basics/api101/idempotency) guide for more information.
+      * $idempotency_key The idempotency key for the request. See the [Idempotency](https://developer.squareup.com/docs/basics/api101/idempotency) guide for more information.
       * @var string
       */
     protected $idempotency_key;
@@ -222,7 +222,7 @@ class CreateCustomerRequest implements ArrayAccess
   
     /**
      * Sets idempotency_key
-     * @param string $idempotency_key The idempotency key for the request. See the [Idempotency](/basics/api101/idempotency) guide for more information.
+     * @param string $idempotency_key The idempotency key for the request. See the [Idempotency](https://developer.squareup.com/docs/basics/api101/idempotency) guide for more information.
      * @return $this
      */
     public function setIdempotencyKey($idempotency_key)

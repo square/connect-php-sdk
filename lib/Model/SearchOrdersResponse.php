@@ -64,22 +64,22 @@ class SearchOrdersResponse implements ArrayAccess
     );
   
     /**
-      * $order_entries List of [OrderEntries](#type-orderentry) that fit the query conditions. Populated only if `return_entries` was set to `true` in the request.
+      * $order_entries List of `OrderEntries` that fit the query conditions. Populated only if `return_entries` was set to `true` in the request.
       * @var \SquareConnect\Model\OrderEntry[]
       */
     protected $order_entries;
     /**
-      * $orders List of [Order](#type-order) objects that match query conditions. Populated only if `return_entries` in the request is set to `false`.
+      * $orders List of `Order` objects that match query conditions. Populated only if `return_entries` in the request is set to `false`.
       * @var \SquareConnect\Model\Order[]
       */
     protected $orders;
     /**
-      * $cursor The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Pagination](/basics/api101/pagination) for more information.
+      * $cursor The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information.
       * @var string
       */
     protected $cursor;
     /**
-      * $errors [Errors](#type-error) encountered during the search.
+      * $errors `Errors` encountered during the search.
       * @var \SquareConnect\Model\Error[]
       */
     protected $errors;
@@ -124,7 +124,7 @@ class SearchOrdersResponse implements ArrayAccess
   
     /**
      * Sets order_entries
-     * @param \SquareConnect\Model\OrderEntry[] $order_entries List of [OrderEntries](#type-orderentry) that fit the query conditions. Populated only if `return_entries` was set to `true` in the request.
+     * @param \SquareConnect\Model\OrderEntry[] $order_entries List of `OrderEntries` that fit the query conditions. Populated only if `return_entries` was set to `true` in the request.
      * @return $this
      */
     public function setOrderEntries($order_entries)
@@ -143,7 +143,7 @@ class SearchOrdersResponse implements ArrayAccess
   
     /**
      * Sets orders
-     * @param \SquareConnect\Model\Order[] $orders List of [Order](#type-order) objects that match query conditions. Populated only if `return_entries` in the request is set to `false`.
+     * @param \SquareConnect\Model\Order[] $orders List of `Order` objects that match query conditions. Populated only if `return_entries` in the request is set to `false`.
      * @return $this
      */
     public function setOrders($orders)
@@ -162,7 +162,7 @@ class SearchOrdersResponse implements ArrayAccess
   
     /**
      * Sets cursor
-     * @param string $cursor The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Pagination](/basics/api101/pagination) for more information.
+     * @param string $cursor The pagination cursor to be used in a subsequent request. If unset, this is the final response. See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information.
      * @return $this
      */
     public function setCursor($cursor)
@@ -181,7 +181,7 @@ class SearchOrdersResponse implements ArrayAccess
   
     /**
      * Sets errors
-     * @param \SquareConnect\Model\Error[] $errors [Errors](#type-error) encountered during the search.
+     * @param \SquareConnect\Model\Error[] $errors `Errors` encountered during the search.
      * @return $this
      */
     public function setErrors($errors)
