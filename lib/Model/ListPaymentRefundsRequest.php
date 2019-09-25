@@ -91,7 +91,7 @@ class ListPaymentRefundsRequest implements ArrayAccess
       */
     protected $sort_order;
     /**
-      * $cursor A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information.
+      * $cursor A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information.
       * @var string
       */
     protected $cursor;
@@ -101,7 +101,7 @@ class ListPaymentRefundsRequest implements ArrayAccess
       */
     protected $location_id;
     /**
-      * $status If provided, only refunds with the given status are returned.  For a list of refund status values, see [PaymentRefund](#type-paymentrefund).  Default: If omitted refunds are returned regardless of status.
+      * $status If provided, only refunds with the given status are returned.  For a list of refund status values, see `PaymentRefund`.  Default: If omitted refunds are returned regardless of status.
       * @var string
       */
     protected $status;
@@ -223,7 +223,7 @@ class ListPaymentRefundsRequest implements ArrayAccess
   
     /**
      * Sets cursor
-     * @param string $cursor A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information.
+     * @param string $cursor A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information.
      * @return $this
      */
     public function setCursor($cursor)
@@ -261,7 +261,7 @@ class ListPaymentRefundsRequest implements ArrayAccess
   
     /**
      * Sets status
-     * @param string $status If provided, only refunds with the given status are returned.  For a list of refund status values, see [PaymentRefund](#type-paymentrefund).  Default: If omitted refunds are returned regardless of status.
+     * @param string $status If provided, only refunds with the given status are returned.  For a list of refund status values, see `PaymentRefund`.  Default: If omitted refunds are returned regardless of status.
      * @return $this
      */
     public function setStatus($status)

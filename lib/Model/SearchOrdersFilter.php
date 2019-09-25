@@ -68,12 +68,12 @@ class SearchOrdersFilter implements ArrayAccess
     );
   
     /**
-      * $state_filter Filter by [`OrderState`](#type-orderstate).
+      * $state_filter Filter by ``OrderState``.
       * @var \SquareConnect\Model\SearchOrdersStateFilter
       */
     protected $state_filter;
     /**
-      * $date_time_filter Filter for results within a time range.  __Important:__ If you filter for orders by time range, you must set SearchOrdersSort to sort by the same field. [Learn more about filtering orders by time range](/orders-api/manage-orders#important-note-on-filtering-orders-by-time-range)
+      * $date_time_filter Filter for results within a time range.  __Important:__ If you filter for orders by time range, you must set SearchOrdersSort to sort by the same field. [Learn more about filtering orders by time range](https://developer.squareup.com/docs/orders-api/manage-orders#important-note-on-filtering-orders-by-time-range)
       * @var \SquareConnect\Model\SearchOrdersDateTimeFilter
       */
     protected $date_time_filter;
@@ -138,7 +138,7 @@ class SearchOrdersFilter implements ArrayAccess
   
     /**
      * Sets state_filter
-     * @param \SquareConnect\Model\SearchOrdersStateFilter $state_filter Filter by [`OrderState`](#type-orderstate).
+     * @param \SquareConnect\Model\SearchOrdersStateFilter $state_filter Filter by ``OrderState``.
      * @return $this
      */
     public function setStateFilter($state_filter)
@@ -157,7 +157,7 @@ class SearchOrdersFilter implements ArrayAccess
   
     /**
      * Sets date_time_filter
-     * @param \SquareConnect\Model\SearchOrdersDateTimeFilter $date_time_filter Filter for results within a time range.  __Important:__ If you filter for orders by time range, you must set SearchOrdersSort to sort by the same field. [Learn more about filtering orders by time range](/orders-api/manage-orders#important-note-on-filtering-orders-by-time-range)
+     * @param \SquareConnect\Model\SearchOrdersDateTimeFilter $date_time_filter Filter for results within a time range.  __Important:__ If you filter for orders by time range, you must set SearchOrdersSort to sort by the same field. [Learn more about filtering orders by time range](https://developer.squareup.com/docs/orders-api/manage-orders#important-note-on-filtering-orders-by-time-range)
      * @return $this
      */
     public function setDateTimeFilter($date_time_filter)

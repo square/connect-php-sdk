@@ -173,7 +173,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $apiInstance = new SquareConnect\Api\InventoryApi();
-$adjustment_id = "adjustment_id_example"; // string | ID of the [InventoryAdjustment](#type-inventoryadjustment) to retrieve.
+$adjustment_id = "adjustment_id_example"; // string | ID of the `InventoryAdjustment` to retrieve.
 
 try {
     $result = $apiInstance->retrieveInventoryAdjustment($adjustment_id);
@@ -188,7 +188,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **adjustment_id** | **string**| ID of the [InventoryAdjustment](#type-inventoryadjustment) to retrieve. |
+ **adjustment_id** | **string**| ID of the &#x60;InventoryAdjustment&#x60; to retrieve. |
 
 ### Return type
 
@@ -221,9 +221,9 @@ require_once(__DIR__ . '/vendor/autoload.php');
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $apiInstance = new SquareConnect\Api\InventoryApi();
-$catalog_object_id = "catalog_object_id_example"; // string | ID of the [CatalogObject](#type-catalogobject) to retrieve.
-$location_ids = "location_ids_example"; // string | The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations.
-$cursor = "cursor_example"; // string | A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information.
+$catalog_object_id = "catalog_object_id_example"; // string | ID of the `CatalogObject` to retrieve.
+$location_ids = "location_ids_example"; // string | The `Location` IDs to look up as a comma-separated list. An empty list queries all locations.
+$cursor = "cursor_example"; // string | A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information.
 
 try {
     $result = $apiInstance->retrieveInventoryChanges($catalog_object_id, $location_ids, $cursor);
@@ -238,9 +238,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **catalog_object_id** | **string**| ID of the [CatalogObject](#type-catalogobject) to retrieve. |
- **location_ids** | **string**| The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations. | [optional]
- **cursor** | **string**| A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. | [optional]
+ **catalog_object_id** | **string**| ID of the &#x60;CatalogObject&#x60; to retrieve. |
+ **location_ids** | **string**| The &#x60;Location&#x60; IDs to look up as a comma-separated list. An empty list queries all locations. | [optional]
+ **cursor** | **string**| A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. | [optional]
 
 ### Return type
 
@@ -273,9 +273,9 @@ require_once(__DIR__ . '/vendor/autoload.php');
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $apiInstance = new SquareConnect\Api\InventoryApi();
-$catalog_object_id = "catalog_object_id_example"; // string | ID of the [CatalogObject](#type-catalogobject) to retrieve.
-$location_ids = "location_ids_example"; // string | The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations.
-$cursor = "cursor_example"; // string | A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information.
+$catalog_object_id = "catalog_object_id_example"; // string | ID of the `CatalogObject` to retrieve.
+$location_ids = "location_ids_example"; // string | The `Location` IDs to look up as a comma-separated list. An empty list queries all locations.
+$cursor = "cursor_example"; // string | A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information.
 
 try {
     $result = $apiInstance->retrieveInventoryCount($catalog_object_id, $location_ids, $cursor);
@@ -290,9 +290,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **catalog_object_id** | **string**| ID of the [CatalogObject](#type-catalogobject) to retrieve. |
- **location_ids** | **string**| The [Location](#type-location) IDs to look up as a comma-separated list. An empty list queries all locations. | [optional]
- **cursor** | **string**| A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. | [optional]
+ **catalog_object_id** | **string**| ID of the &#x60;CatalogObject&#x60; to retrieve. |
+ **location_ids** | **string**| The &#x60;Location&#x60; IDs to look up as a comma-separated list. An empty list queries all locations. | [optional]
+ **cursor** | **string**| A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. | [optional]
 
 ### Return type
 
@@ -325,7 +325,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $apiInstance = new SquareConnect\Api\InventoryApi();
-$physical_count_id = "physical_count_id_example"; // string | ID of the [InventoryPhysicalCount](#type-inventoryphysicalcount) to retrieve.
+$physical_count_id = "physical_count_id_example"; // string | ID of the `InventoryPhysicalCount` to retrieve.
 
 try {
     $result = $apiInstance->retrieveInventoryPhysicalCount($physical_count_id);
@@ -340,7 +340,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **physical_count_id** | **string**| ID of the [InventoryPhysicalCount](#type-inventoryphysicalcount) to retrieve. |
+ **physical_count_id** | **string**| ID of the &#x60;InventoryPhysicalCount&#x60; to retrieve. |
 
 ### Return type
 

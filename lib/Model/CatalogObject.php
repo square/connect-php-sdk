@@ -169,7 +169,7 @@ class CatalogObject implements ArrayAccess
       */
     protected $is_deleted;
     /**
-      * $catalog_v1_ids The Connect V1 IDs for this object at each [location](#type-location) where it is present, where they differ from the object's Connect V2 ID. The field will only be present for objects that have been created or modified by legacy APIs.
+      * $catalog_v1_ids The Connect V1 IDs for this object at each `location` where it is present, where they differ from the object's Connect V2 ID. The field will only be present for objects that have been created or modified by legacy APIs.
       * @var \SquareConnect\Model\CatalogV1Id[]
       */
     protected $catalog_v1_ids;
@@ -194,72 +194,72 @@ class CatalogObject implements ArrayAccess
       */
     protected $image_id;
     /**
-      * $item_data Structured data for a [CatalogItem](#type-catalogitem), set for CatalogObjects of type `ITEM`.
+      * $item_data Structured data for a `CatalogItem`, set for CatalogObjects of type `ITEM`.
       * @var \SquareConnect\Model\CatalogItem
       */
     protected $item_data;
     /**
-      * $category_data Structured data for a [CatalogCategory](#type-catalogcategory), set for CatalogObjects of type `CATEGORY`.
+      * $category_data Structured data for a `CatalogCategory`, set for CatalogObjects of type `CATEGORY`.
       * @var \SquareConnect\Model\CatalogCategory
       */
     protected $category_data;
     /**
-      * $item_variation_data Structured data for a [CatalogItemVariation](#type-catalogitemvariation), set for CatalogObjects of type `ITEM_VARIATION`.
+      * $item_variation_data Structured data for a `CatalogItemVariation`, set for CatalogObjects of type `ITEM_VARIATION`.
       * @var \SquareConnect\Model\CatalogItemVariation
       */
     protected $item_variation_data;
     /**
-      * $tax_data Structured data for a [CatalogTax](#type-catalogtax), set for CatalogObjects of type `TAX`.
+      * $tax_data Structured data for a `CatalogTax`, set for CatalogObjects of type `TAX`.
       * @var \SquareConnect\Model\CatalogTax
       */
     protected $tax_data;
     /**
-      * $discount_data Structured data for a [CatalogDiscount](#type-catalogdiscount), set for CatalogObjects of type `DISCOUNT`.
+      * $discount_data Structured data for a `CatalogDiscount`, set for CatalogObjects of type `DISCOUNT`.
       * @var \SquareConnect\Model\CatalogDiscount
       */
     protected $discount_data;
     /**
-      * $modifier_list_data Structured data for a [CatalogModifierList](#type-catalogmodifierlist), set for CatalogObjects of type `MODIFIER_LIST`.
+      * $modifier_list_data Structured data for a `CatalogModifierList`, set for CatalogObjects of type `MODIFIER_LIST`.
       * @var \SquareConnect\Model\CatalogModifierList
       */
     protected $modifier_list_data;
     /**
-      * $modifier_data Structured data for a [CatalogModifier](#type-catalogmodifier), set for CatalogObjects of type `MODIFIER`.
+      * $modifier_data Structured data for a `CatalogModifier`, set for CatalogObjects of type `MODIFIER`.
       * @var \SquareConnect\Model\CatalogModifier
       */
     protected $modifier_data;
     /**
-      * $time_period_data Structured data for a [CatalogTimePeriod](#type-catalogtimeperiod), set for CatalogObjects of type `TIME_PERIOD`.
+      * $time_period_data Structured data for a `CatalogTimePeriod`, set for CatalogObjects of type `TIME_PERIOD`.
       * @var \SquareConnect\Model\CatalogTimePeriod
       */
     protected $time_period_data;
     /**
-      * $product_set_data Structured data for a [CatalogProductSet](#type-catalogproductset), set for CatalogObjects of type `PRODUCT_SET`.
+      * $product_set_data Structured data for a `CatalogProductSet`, set for CatalogObjects of type `PRODUCT_SET`.
       * @var \SquareConnect\Model\CatalogProductSet
       */
     protected $product_set_data;
     /**
-      * $pricing_rule_data Structured data for a [CatalogPricingRule](#type-catalogpricingrule), set for CatalogObjects of type `PRICING_RULE`.
+      * $pricing_rule_data Structured data for a `CatalogPricingRule`, set for CatalogObjects of type `PRICING_RULE`.
       * @var \SquareConnect\Model\CatalogPricingRule
       */
     protected $pricing_rule_data;
     /**
-      * $image_data Structured data for a [CatalogImage](#type-catalogimage), set for CatalogObjects of type `IMAGE`.
+      * $image_data Structured data for a `CatalogImage`, set for CatalogObjects of type `IMAGE`.
       * @var \SquareConnect\Model\CatalogImage
       */
     protected $image_data;
     /**
-      * $measurement_unit_data Structured data for a [CatalogMeasurementUnit](#type-catalogmeasurementunit), set for CatalogObjects of type `MEASUREMENT_UNIT`.
+      * $measurement_unit_data Structured data for a `CatalogMeasurementUnit`, set for CatalogObjects of type `MEASUREMENT_UNIT`.
       * @var \SquareConnect\Model\CatalogMeasurementUnit
       */
     protected $measurement_unit_data;
     /**
-      * $item_option_data Structured data for a [CatalogItemOption](#type-catalogitemoption), set for CatalogObjects of type `ITEM_OPTION`.
+      * $item_option_data Structured data for a `CatalogItemOption`, set for CatalogObjects of type `ITEM_OPTION`.
       * @var \SquareConnect\Model\CatalogItemOption
       */
     protected $item_option_data;
     /**
-      * $item_option_value_data Structured data for a [CatalogItemOptionValue](#type-catalogitemoptionvalue), set for CatalogObjects of type `ITEM_OPTION_VAL`.
+      * $item_option_value_data Structured data for a `CatalogItemOptionValue`, set for CatalogObjects of type `ITEM_OPTION_VAL`.
       * @var \SquareConnect\Model\CatalogItemOptionValue
       */
     protected $item_option_value_data;
@@ -499,7 +499,7 @@ class CatalogObject implements ArrayAccess
   
     /**
      * Sets catalog_v1_ids
-     * @param \SquareConnect\Model\CatalogV1Id[] $catalog_v1_ids The Connect V1 IDs for this object at each [location](#type-location) where it is present, where they differ from the object's Connect V2 ID. The field will only be present for objects that have been created or modified by legacy APIs.
+     * @param \SquareConnect\Model\CatalogV1Id[] $catalog_v1_ids The Connect V1 IDs for this object at each `location` where it is present, where they differ from the object's Connect V2 ID. The field will only be present for objects that have been created or modified by legacy APIs.
      * @return $this
      */
     public function setCatalogV1Ids($catalog_v1_ids)
@@ -594,7 +594,7 @@ class CatalogObject implements ArrayAccess
   
     /**
      * Sets item_data
-     * @param \SquareConnect\Model\CatalogItem $item_data Structured data for a [CatalogItem](#type-catalogitem), set for CatalogObjects of type `ITEM`.
+     * @param \SquareConnect\Model\CatalogItem $item_data Structured data for a `CatalogItem`, set for CatalogObjects of type `ITEM`.
      * @return $this
      */
     public function setItemData($item_data)
@@ -613,7 +613,7 @@ class CatalogObject implements ArrayAccess
   
     /**
      * Sets category_data
-     * @param \SquareConnect\Model\CatalogCategory $category_data Structured data for a [CatalogCategory](#type-catalogcategory), set for CatalogObjects of type `CATEGORY`.
+     * @param \SquareConnect\Model\CatalogCategory $category_data Structured data for a `CatalogCategory`, set for CatalogObjects of type `CATEGORY`.
      * @return $this
      */
     public function setCategoryData($category_data)
@@ -632,7 +632,7 @@ class CatalogObject implements ArrayAccess
   
     /**
      * Sets item_variation_data
-     * @param \SquareConnect\Model\CatalogItemVariation $item_variation_data Structured data for a [CatalogItemVariation](#type-catalogitemvariation), set for CatalogObjects of type `ITEM_VARIATION`.
+     * @param \SquareConnect\Model\CatalogItemVariation $item_variation_data Structured data for a `CatalogItemVariation`, set for CatalogObjects of type `ITEM_VARIATION`.
      * @return $this
      */
     public function setItemVariationData($item_variation_data)
@@ -651,7 +651,7 @@ class CatalogObject implements ArrayAccess
   
     /**
      * Sets tax_data
-     * @param \SquareConnect\Model\CatalogTax $tax_data Structured data for a [CatalogTax](#type-catalogtax), set for CatalogObjects of type `TAX`.
+     * @param \SquareConnect\Model\CatalogTax $tax_data Structured data for a `CatalogTax`, set for CatalogObjects of type `TAX`.
      * @return $this
      */
     public function setTaxData($tax_data)
@@ -670,7 +670,7 @@ class CatalogObject implements ArrayAccess
   
     /**
      * Sets discount_data
-     * @param \SquareConnect\Model\CatalogDiscount $discount_data Structured data for a [CatalogDiscount](#type-catalogdiscount), set for CatalogObjects of type `DISCOUNT`.
+     * @param \SquareConnect\Model\CatalogDiscount $discount_data Structured data for a `CatalogDiscount`, set for CatalogObjects of type `DISCOUNT`.
      * @return $this
      */
     public function setDiscountData($discount_data)
@@ -689,7 +689,7 @@ class CatalogObject implements ArrayAccess
   
     /**
      * Sets modifier_list_data
-     * @param \SquareConnect\Model\CatalogModifierList $modifier_list_data Structured data for a [CatalogModifierList](#type-catalogmodifierlist), set for CatalogObjects of type `MODIFIER_LIST`.
+     * @param \SquareConnect\Model\CatalogModifierList $modifier_list_data Structured data for a `CatalogModifierList`, set for CatalogObjects of type `MODIFIER_LIST`.
      * @return $this
      */
     public function setModifierListData($modifier_list_data)
@@ -708,7 +708,7 @@ class CatalogObject implements ArrayAccess
   
     /**
      * Sets modifier_data
-     * @param \SquareConnect\Model\CatalogModifier $modifier_data Structured data for a [CatalogModifier](#type-catalogmodifier), set for CatalogObjects of type `MODIFIER`.
+     * @param \SquareConnect\Model\CatalogModifier $modifier_data Structured data for a `CatalogModifier`, set for CatalogObjects of type `MODIFIER`.
      * @return $this
      */
     public function setModifierData($modifier_data)
@@ -727,7 +727,7 @@ class CatalogObject implements ArrayAccess
   
     /**
      * Sets time_period_data
-     * @param \SquareConnect\Model\CatalogTimePeriod $time_period_data Structured data for a [CatalogTimePeriod](#type-catalogtimeperiod), set for CatalogObjects of type `TIME_PERIOD`.
+     * @param \SquareConnect\Model\CatalogTimePeriod $time_period_data Structured data for a `CatalogTimePeriod`, set for CatalogObjects of type `TIME_PERIOD`.
      * @return $this
      */
     public function setTimePeriodData($time_period_data)
@@ -746,7 +746,7 @@ class CatalogObject implements ArrayAccess
   
     /**
      * Sets product_set_data
-     * @param \SquareConnect\Model\CatalogProductSet $product_set_data Structured data for a [CatalogProductSet](#type-catalogproductset), set for CatalogObjects of type `PRODUCT_SET`.
+     * @param \SquareConnect\Model\CatalogProductSet $product_set_data Structured data for a `CatalogProductSet`, set for CatalogObjects of type `PRODUCT_SET`.
      * @return $this
      */
     public function setProductSetData($product_set_data)
@@ -765,7 +765,7 @@ class CatalogObject implements ArrayAccess
   
     /**
      * Sets pricing_rule_data
-     * @param \SquareConnect\Model\CatalogPricingRule $pricing_rule_data Structured data for a [CatalogPricingRule](#type-catalogpricingrule), set for CatalogObjects of type `PRICING_RULE`.
+     * @param \SquareConnect\Model\CatalogPricingRule $pricing_rule_data Structured data for a `CatalogPricingRule`, set for CatalogObjects of type `PRICING_RULE`.
      * @return $this
      */
     public function setPricingRuleData($pricing_rule_data)
@@ -784,7 +784,7 @@ class CatalogObject implements ArrayAccess
   
     /**
      * Sets image_data
-     * @param \SquareConnect\Model\CatalogImage $image_data Structured data for a [CatalogImage](#type-catalogimage), set for CatalogObjects of type `IMAGE`.
+     * @param \SquareConnect\Model\CatalogImage $image_data Structured data for a `CatalogImage`, set for CatalogObjects of type `IMAGE`.
      * @return $this
      */
     public function setImageData($image_data)
@@ -803,7 +803,7 @@ class CatalogObject implements ArrayAccess
   
     /**
      * Sets measurement_unit_data
-     * @param \SquareConnect\Model\CatalogMeasurementUnit $measurement_unit_data Structured data for a [CatalogMeasurementUnit](#type-catalogmeasurementunit), set for CatalogObjects of type `MEASUREMENT_UNIT`.
+     * @param \SquareConnect\Model\CatalogMeasurementUnit $measurement_unit_data Structured data for a `CatalogMeasurementUnit`, set for CatalogObjects of type `MEASUREMENT_UNIT`.
      * @return $this
      */
     public function setMeasurementUnitData($measurement_unit_data)
@@ -822,7 +822,7 @@ class CatalogObject implements ArrayAccess
   
     /**
      * Sets item_option_data
-     * @param \SquareConnect\Model\CatalogItemOption $item_option_data Structured data for a [CatalogItemOption](#type-catalogitemoption), set for CatalogObjects of type `ITEM_OPTION`.
+     * @param \SquareConnect\Model\CatalogItemOption $item_option_data Structured data for a `CatalogItemOption`, set for CatalogObjects of type `ITEM_OPTION`.
      * @return $this
      */
     public function setItemOptionData($item_option_data)
@@ -841,7 +841,7 @@ class CatalogObject implements ArrayAccess
   
     /**
      * Sets item_option_value_data
-     * @param \SquareConnect\Model\CatalogItemOptionValue $item_option_value_data Structured data for a [CatalogItemOptionValue](#type-catalogitemoptionvalue), set for CatalogObjects of type `ITEM_OPTION_VAL`.
+     * @param \SquareConnect\Model\CatalogItemOptionValue $item_option_value_data Structured data for a `CatalogItemOptionValue`, set for CatalogObjects of type `ITEM_OPTION_VAL`.
      * @return $this
      */
     public function setItemOptionValueData($item_option_value_data)

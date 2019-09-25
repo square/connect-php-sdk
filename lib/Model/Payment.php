@@ -40,6 +40,7 @@ class Payment implements ArrayAccess
         'order_id' => 'string',
         'reference_id' => 'string',
         'customer_id' => 'string',
+        'employee_id' => 'string',
         'refund_ids' => 'string[]',
         'buyer_email_address' => 'string',
         'billing_address' => '\SquareConnect\Model\Address',
@@ -68,6 +69,7 @@ class Payment implements ArrayAccess
         'order_id' => 'order_id',
         'reference_id' => 'reference_id',
         'customer_id' => 'customer_id',
+        'employee_id' => 'employee_id',
         'refund_ids' => 'refund_ids',
         'buyer_email_address' => 'buyer_email_address',
         'billing_address' => 'billing_address',
@@ -96,6 +98,7 @@ class Payment implements ArrayAccess
         'order_id' => 'setOrderId',
         'reference_id' => 'setReferenceId',
         'customer_id' => 'setCustomerId',
+        'employee_id' => 'setEmployeeId',
         'refund_ids' => 'setRefundIds',
         'buyer_email_address' => 'setBuyerEmailAddress',
         'billing_address' => 'setBillingAddress',
@@ -124,6 +127,7 @@ class Payment implements ArrayAccess
         'order_id' => 'getOrderId',
         'reference_id' => 'getReferenceId',
         'customer_id' => 'getCustomerId',
+        'employee_id' => 'getEmployeeId',
         'refund_ids' => 'getRefundIds',
         'buyer_email_address' => 'getBuyerEmailAddress',
         'billing_address' => 'getBillingAddress',
@@ -147,7 +151,7 @@ class Payment implements ArrayAccess
       */
     protected $updated_at;
     /**
-      * $amount_money The amount of money processed for this payment, not including `tip_money`. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents. For more information, see [Working with monetary amounts](/build-basics/working-with-monetary-amounts).
+      * $amount_money The amount of money processed for this payment, not including `tip_money`. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents. For more information, see [Working with monetary amounts](https://developer.squareup.com/docs/build-basics/working-with-monetary-amounts).
       * @var \SquareConnect\Model\Money
       */
     protected $amount_money;
@@ -162,7 +166,7 @@ class Payment implements ArrayAccess
       */
     protected $total_money;
     /**
-      * $app_fee_money The amount of money the developer is taking as a fee for facilitating the payment on behalf of the seller. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents.  For more information, see [Take Payments and Collect Fees](/payments-api/take-payments-and-collect-fees).  Cannot be more than 90% of the `total_money` value.
+      * $app_fee_money The amount of money the developer is taking as a fee for facilitating the payment on behalf of the seller. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents.  For more information, see [Take Payments and Collect Fees](https://developer.squareup.com/docs/payments-api/take-payments-and-collect-fees).  Cannot be more than 90% of the `total_money` value.
       * @var \SquareConnect\Model\Money
       */
     protected $app_fee_money;
@@ -182,7 +186,7 @@ class Payment implements ArrayAccess
       */
     protected $status;
     /**
-      * $source_type The source type for this payment
+      * $source_type The source type for this payment  Current values include: `CARD`
       * @var string
       */
     protected $source_type;
@@ -211,6 +215,11 @@ class Payment implements ArrayAccess
       * @var string
       */
     protected $customer_id;
+    /**
+      * $employee_id An optional ID of the employee associated with taking this payment.
+      * @var string
+      */
+    protected $employee_id;
     /**
       * $refund_ids List of `refund_id`s identifying refunds for this payment.
       * @var string[]
@@ -324,6 +333,11 @@ class Payment implements ArrayAccess
             } else {
               $this->customer_id = null;
             }
+            if (isset($data["employee_id"])) {
+              $this->employee_id = $data["employee_id"];
+            } else {
+              $this->employee_id = null;
+            }
             if (isset($data["refund_ids"])) {
               $this->refund_ids = $data["refund_ids"];
             } else {
@@ -419,7 +433,7 @@ class Payment implements ArrayAccess
   
     /**
      * Sets amount_money
-     * @param \SquareConnect\Model\Money $amount_money The amount of money processed for this payment, not including `tip_money`. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents. For more information, see [Working with monetary amounts](/build-basics/working-with-monetary-amounts).
+     * @param \SquareConnect\Model\Money $amount_money The amount of money processed for this payment, not including `tip_money`. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents. For more information, see [Working with monetary amounts](https://developer.squareup.com/docs/build-basics/working-with-monetary-amounts).
      * @return $this
      */
     public function setAmountMoney($amount_money)
@@ -476,7 +490,7 @@ class Payment implements ArrayAccess
   
     /**
      * Sets app_fee_money
-     * @param \SquareConnect\Model\Money $app_fee_money The amount of money the developer is taking as a fee for facilitating the payment on behalf of the seller. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents.  For more information, see [Take Payments and Collect Fees](/payments-api/take-payments-and-collect-fees).  Cannot be more than 90% of the `total_money` value.
+     * @param \SquareConnect\Model\Money $app_fee_money The amount of money the developer is taking as a fee for facilitating the payment on behalf of the seller. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents.  For more information, see [Take Payments and Collect Fees](https://developer.squareup.com/docs/payments-api/take-payments-and-collect-fees).  Cannot be more than 90% of the `total_money` value.
      * @return $this
      */
     public function setAppFeeMoney($app_fee_money)
@@ -552,7 +566,7 @@ class Payment implements ArrayAccess
   
     /**
      * Sets source_type
-     * @param string $source_type The source type for this payment
+     * @param string $source_type The source type for this payment  Current values include: `CARD`
      * @return $this
      */
     public function setSourceType($source_type)
@@ -653,6 +667,25 @@ class Payment implements ArrayAccess
     public function setCustomerId($customer_id)
     {
         $this->customer_id = $customer_id;
+        return $this;
+    }
+    /**
+     * Gets employee_id
+     * @return string
+     */
+    public function getEmployeeId()
+    {
+        return $this->employee_id;
+    }
+  
+    /**
+     * Sets employee_id
+     * @param string $employee_id An optional ID of the employee associated with taking this payment.
+     * @return $this
+     */
+    public function setEmployeeId($employee_id)
+    {
+        $this->employee_id = $employee_id;
         return $this;
     }
     /**

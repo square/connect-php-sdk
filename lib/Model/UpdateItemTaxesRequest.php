@@ -60,17 +60,17 @@ class UpdateItemTaxesRequest implements ArrayAccess
     );
   
     /**
-      * $item_ids The [CatalogItem](#type-catalogitem)s whose enabled/disabled [CatalogTax](#type-catalogtax)es are being updated.
+      * $item_ids The `CatalogItem](#type-catalogitem)s whose enabled/disabled [CatalogTax`es are being updated.
       * @var string[]
       */
     protected $item_ids;
     /**
-      * $taxes_to_enable The set of [CatalogTax](#type-catalogtax)es (referenced by ID) to enable for the [CatalogItem](#type-catalogitem).
+      * $taxes_to_enable The set of `CatalogTax](#type-catalogtax)es (referenced by ID) to enable for the [CatalogItem`.
       * @var string[]
       */
     protected $taxes_to_enable;
     /**
-      * $taxes_to_disable The set of [CatalogTax](#type-catalogtax)es (referenced by ID) to disable for the [CatalogItem](#type-catalogitem).
+      * $taxes_to_disable The set of `CatalogTax](#type-catalogtax)es (referenced by ID) to disable for the [CatalogItem`.
       * @var string[]
       */
     protected $taxes_to_disable;
@@ -110,7 +110,7 @@ class UpdateItemTaxesRequest implements ArrayAccess
   
     /**
      * Sets item_ids
-     * @param string[] $item_ids The [CatalogItem](#type-catalogitem)s whose enabled/disabled [CatalogTax](#type-catalogtax)es are being updated.
+     * @param string[] $item_ids The `CatalogItem](#type-catalogitem)s whose enabled/disabled [CatalogTax`es are being updated.
      * @return $this
      */
     public function setItemIds($item_ids)
@@ -129,7 +129,7 @@ class UpdateItemTaxesRequest implements ArrayAccess
   
     /**
      * Sets taxes_to_enable
-     * @param string[] $taxes_to_enable The set of [CatalogTax](#type-catalogtax)es (referenced by ID) to enable for the [CatalogItem](#type-catalogitem).
+     * @param string[] $taxes_to_enable The set of `CatalogTax](#type-catalogtax)es (referenced by ID) to enable for the [CatalogItem`.
      * @return $this
      */
     public function setTaxesToEnable($taxes_to_enable)
@@ -148,7 +148,7 @@ class UpdateItemTaxesRequest implements ArrayAccess
   
     /**
      * Sets taxes_to_disable
-     * @param string[] $taxes_to_disable The set of [CatalogTax](#type-catalogtax)es (referenced by ID) to disable for the [CatalogItem](#type-catalogitem).
+     * @param string[] $taxes_to_disable The set of `CatalogTax](#type-catalogtax)es (referenced by ID) to disable for the [CatalogItem`.
      * @return $this
      */
     public function setTaxesToDisable($taxes_to_disable)

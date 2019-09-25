@@ -113,7 +113,7 @@ class Transaction implements ArrayAccess
       */
     protected $refunds;
     /**
-      * $reference_id If the transaction was created with the [Charge](#endpoint-transactions-charge) endpoint, this value is the same as the value provided for the `reference_id` parameter in the request to that endpoint. Otherwise, it is not set.
+      * $reference_id If the transaction was created with the `Charge` endpoint, this value is the same as the value provided for the `reference_id` parameter in the request to that endpoint. Otherwise, it is not set.
       * @var string
       */
     protected $reference_id;
@@ -303,7 +303,7 @@ class Transaction implements ArrayAccess
   
     /**
      * Sets reference_id
-     * @param string $reference_id If the transaction was created with the [Charge](#endpoint-transactions-charge) endpoint, this value is the same as the value provided for the `reference_id` parameter in the request to that endpoint. Otherwise, it is not set.
+     * @param string $reference_id If the transaction was created with the `Charge` endpoint, this value is the same as the value provided for the `reference_id` parameter in the request to that endpoint. Otherwise, it is not set.
      * @return $this
      */
     public function setReferenceId($reference_id)

@@ -2,7 +2,7 @@
 
 ### Description
 
-How to apply a [CatalogDiscount](#type-catalogdiscount) to a [CatalogItem](#type-catalogitem).
+How to apply a `CatalogDiscount](#type-catalogdiscount) to a [CatalogItem`.
 
 ## Properties
 Name | Type

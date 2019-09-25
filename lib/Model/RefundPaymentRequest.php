@@ -68,17 +68,17 @@ class RefundPaymentRequest implements ArrayAccess
     );
   
     /**
-      * $idempotency_key A unique string that identifies this RefundPayment request. Key can be any valid string but must be unique for every RefundPayment request.  For more information, see [Idempotency keys](/basics/api101/idempotency).
+      * $idempotency_key A unique string that identifies this RefundPayment request. Key can be any valid string but must be unique for every RefundPayment request.  For more information, see [Idempotency keys](https://developer.squareup.com/docs/basics/api101/idempotency).
       * @var string
       */
     protected $idempotency_key;
     /**
-      * $amount_money The amount of money to refund.  Cannot be more than the `total_money` value of the payment minus the total amount of all previously completed refunds for this payment.  Must be specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents. See [Working with monetary amounts](/build-basics/working-with-monetary-amounts) for details.  The currency code must match the currency associated with the business that is charging the card.
+      * $amount_money The amount of money to refund.  Cannot be more than the `total_money` value of the payment minus the total amount of all previously completed refunds for this payment.  Must be specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents. See [Working with monetary amounts](https://developer.squareup.com/docs/build-basics/working-with-monetary-amounts) for details.  The currency code must match the currency associated with the business that is charging the card.
       * @var \SquareConnect\Model\Money
       */
     protected $amount_money;
     /**
-      * $app_fee_money Amount of money the developer will contribute to help cover the refunded amount. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents.  Value cannot be more than the `amount_money`.  You can specify this parameter in a refund request only if the  same parameter was also included when taking the payment. This is part of the application fee  scenario the API supports.  For more information, see  [Collect Fees](/payments-api/take-payments-and-collect-fees)
+      * $app_fee_money Amount of money the developer will contribute to help cover the refunded amount. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents.  Value cannot be more than the `amount_money`.  You can specify this parameter in a refund request only if the  same parameter was also included when taking the payment. This is part of the application fee  scenario the API supports.  For more information, see  [Collect Fees](https://developer.squareup.com/docs/payments-api/take-payments-and-collect-fees)
       * @var \SquareConnect\Model\Money
       */
     protected $app_fee_money;
@@ -138,7 +138,7 @@ class RefundPaymentRequest implements ArrayAccess
   
     /**
      * Sets idempotency_key
-     * @param string $idempotency_key A unique string that identifies this RefundPayment request. Key can be any valid string but must be unique for every RefundPayment request.  For more information, see [Idempotency keys](/basics/api101/idempotency).
+     * @param string $idempotency_key A unique string that identifies this RefundPayment request. Key can be any valid string but must be unique for every RefundPayment request.  For more information, see [Idempotency keys](https://developer.squareup.com/docs/basics/api101/idempotency).
      * @return $this
      */
     public function setIdempotencyKey($idempotency_key)
@@ -157,7 +157,7 @@ class RefundPaymentRequest implements ArrayAccess
   
     /**
      * Sets amount_money
-     * @param \SquareConnect\Model\Money $amount_money The amount of money to refund.  Cannot be more than the `total_money` value of the payment minus the total amount of all previously completed refunds for this payment.  Must be specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents. See [Working with monetary amounts](/build-basics/working-with-monetary-amounts) for details.  The currency code must match the currency associated with the business that is charging the card.
+     * @param \SquareConnect\Model\Money $amount_money The amount of money to refund.  Cannot be more than the `total_money` value of the payment minus the total amount of all previously completed refunds for this payment.  Must be specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents. See [Working with monetary amounts](https://developer.squareup.com/docs/build-basics/working-with-monetary-amounts) for details.  The currency code must match the currency associated with the business that is charging the card.
      * @return $this
      */
     public function setAmountMoney($amount_money)
@@ -176,7 +176,7 @@ class RefundPaymentRequest implements ArrayAccess
   
     /**
      * Sets app_fee_money
-     * @param \SquareConnect\Model\Money $app_fee_money Amount of money the developer will contribute to help cover the refunded amount. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents.  Value cannot be more than the `amount_money`.  You can specify this parameter in a refund request only if the  same parameter was also included when taking the payment. This is part of the application fee  scenario the API supports.  For more information, see  [Collect Fees](/payments-api/take-payments-and-collect-fees)
+     * @param \SquareConnect\Model\Money $app_fee_money Amount of money the developer will contribute to help cover the refunded amount. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents.  Value cannot be more than the `amount_money`.  You can specify this parameter in a refund request only if the  same parameter was also included when taking the payment. This is part of the application fee  scenario the API supports.  For more information, see  [Collect Fees](https://developer.squareup.com/docs/payments-api/take-payments-and-collect-fees)
      * @return $this
      */
     public function setAppFeeMoney($app_fee_money)

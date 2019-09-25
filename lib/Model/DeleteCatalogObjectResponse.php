@@ -60,12 +60,12 @@ class DeleteCatalogObjectResponse implements ArrayAccess
     );
   
     /**
-      * $errors The set of [Error](#type-error)s encountered.
+      * $errors The set of `Error`s encountered.
       * @var \SquareConnect\Model\Error[]
       */
     protected $errors;
     /**
-      * $deleted_object_ids The IDs of all [CatalogObject](#type-catalogobject)s deleted by this request. Multiple IDs may be returned when associated objects are also deleted, for example a [CatalogItemVariation](#type-catalogitemvariation) will be deleted (and its ID included in this field) when its parent [CatalogItem](#type-catalogitem) is deleted.
+      * $deleted_object_ids The IDs of all `CatalogObject`s deleted by this request. Multiple IDs may be returned when associated objects are also deleted, for example a `CatalogItemVariation` when its parent `CatalogItem` is deleted.
       * @var string[]
       */
     protected $deleted_object_ids;
@@ -110,7 +110,7 @@ class DeleteCatalogObjectResponse implements ArrayAccess
   
     /**
      * Sets errors
-     * @param \SquareConnect\Model\Error[] $errors The set of [Error](#type-error)s encountered.
+     * @param \SquareConnect\Model\Error[] $errors The set of `Error`s encountered.
      * @return $this
      */
     public function setErrors($errors)
@@ -129,7 +129,7 @@ class DeleteCatalogObjectResponse implements ArrayAccess
   
     /**
      * Sets deleted_object_ids
-     * @param string[] $deleted_object_ids The IDs of all [CatalogObject](#type-catalogobject)s deleted by this request. Multiple IDs may be returned when associated objects are also deleted, for example a [CatalogItemVariation](#type-catalogitemvariation) will be deleted (and its ID included in this field) when its parent [CatalogItem](#type-catalogitem) is deleted.
+     * @param string[] $deleted_object_ids The IDs of all `CatalogObject`s deleted by this request. Multiple IDs may be returned when associated objects are also deleted, for example a `CatalogItemVariation` when its parent `CatalogItem` is deleted.
      * @return $this
      */
     public function setDeletedObjectIds($deleted_object_ids)

@@ -115,7 +115,7 @@ class OrderReturnServiceCharge implements ArrayAccess
       */
     protected $name;
     /**
-      * $catalog_object_id The catalog object ID of the associated [CatalogServiceCharge](#type-catalogservicecharge).
+      * $catalog_object_id The catalog object ID of the associated `CatalogServiceCharge`.
       * @var string
       */
     protected $catalog_object_id;
@@ -307,7 +307,7 @@ class OrderReturnServiceCharge implements ArrayAccess
   
     /**
      * Sets catalog_object_id
-     * @param string $catalog_object_id The catalog object ID of the associated [CatalogServiceCharge](#type-catalogservicecharge).
+     * @param string $catalog_object_id The catalog object ID of the associated `CatalogServiceCharge`.
      * @return $this
      */
     public function setCatalogObjectId($catalog_object_id)

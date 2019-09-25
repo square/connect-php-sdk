@@ -73,7 +73,7 @@ class SearchOrdersRequest implements ArrayAccess
       */
     protected $location_ids;
     /**
-      * $cursor A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query. See [Pagination](/basics/api101/pagination) for more information.
+      * $cursor A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query. See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information.
       * @var string
       */
     protected $cursor;
@@ -88,7 +88,7 @@ class SearchOrdersRequest implements ArrayAccess
       */
     protected $limit;
     /**
-      * $return_entries Boolean that controls the format of the search results. If `true`, SearchOrders will return [`OrderEntry`](#type-orderentry) objects. If `false`, SearchOrders will return complete Order objects.  Default: `false`.
+      * $return_entries Boolean that controls the format of the search results. If `true`, SearchOrders will return ``OrderEntry`` objects. If `false`, SearchOrders will return complete Order objects.  Default: `false`.
       * @var bool
       */
     protected $return_entries;
@@ -157,7 +157,7 @@ class SearchOrdersRequest implements ArrayAccess
   
     /**
      * Sets cursor
-     * @param string $cursor A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query. See [Pagination](/basics/api101/pagination) for more information.
+     * @param string $cursor A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for your original query. See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information.
      * @return $this
      */
     public function setCursor($cursor)
@@ -214,7 +214,7 @@ class SearchOrdersRequest implements ArrayAccess
   
     /**
      * Sets return_entries
-     * @param bool $return_entries Boolean that controls the format of the search results. If `true`, SearchOrders will return [`OrderEntry`](#type-orderentry) objects. If `false`, SearchOrders will return complete Order objects.  Default: `false`.
+     * @param bool $return_entries Boolean that controls the format of the search results. If `true`, SearchOrders will return ``OrderEntry`` objects. If `false`, SearchOrders will return complete Order objects.  Default: `false`.
      * @return $this
      */
     public function setReturnEntries($return_entries)

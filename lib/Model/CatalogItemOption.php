@@ -92,12 +92,12 @@ class CatalogItemOption implements ArrayAccess
       */
     protected $show_colors;
     /**
-      * $values A list of [CatalogObject](#type-catalogobject)s containing the [CatalogItemOptionValue](#type-catalogitemoptionvalue)s for this item.
+      * $values A list of `CatalogObject`s containing the `CatalogItemOptionValue`s for this item.
       * @var \SquareConnect\Model\CatalogObject[]
       */
     protected $values;
     /**
-      * $item_count The number of [CatalogItem](#type-catalogitem)s currently associated with this item option. Present only if the `include_counts` was specified in the request. Any count over 100 will be returned as `100`.
+      * $item_count The number of `CatalogItem`s currently associated with this item option. Present only if the `include_counts` was specified in the request. Any count over 100 will be returned as `100`.
       * @var int
       */
     protected $item_count;
@@ -228,7 +228,7 @@ class CatalogItemOption implements ArrayAccess
   
     /**
      * Sets values
-     * @param \SquareConnect\Model\CatalogObject[] $values A list of [CatalogObject](#type-catalogobject)s containing the [CatalogItemOptionValue](#type-catalogitemoptionvalue)s for this item.
+     * @param \SquareConnect\Model\CatalogObject[] $values A list of `CatalogObject`s containing the `CatalogItemOptionValue`s for this item.
      * @return $this
      */
     public function setValues($values)
@@ -247,7 +247,7 @@ class CatalogItemOption implements ArrayAccess
   
     /**
      * Sets item_count
-     * @param int $item_count The number of [CatalogItem](#type-catalogitem)s currently associated with this item option. Present only if the `include_counts` was specified in the request. Any count over 100 will be returned as `100`.
+     * @param int $item_count The number of `CatalogItem`s currently associated with this item option. Present only if the `include_counts` was specified in the request. Any count over 100 will be returned as `100`.
      * @return $this
      */
     public function setItemCount($item_count)

@@ -61,7 +61,7 @@ class PayOrderResponse implements ArrayAccess
       */
     protected $errors;
     /**
-      * $order The paid, updated [order](#type-order).
+      * $order The paid, updated `order`.
       * @var \SquareConnect\Model\Order
       */
     protected $order;
@@ -115,7 +115,7 @@ class PayOrderResponse implements ArrayAccess
   
     /**
      * Sets order
-     * @param \SquareConnect\Model\Order $order The paid, updated [order](#type-order).
+     * @param \SquareConnect\Model\Order $order The paid, updated `order`.
      * @return $this
      */
     public function setOrder($order)

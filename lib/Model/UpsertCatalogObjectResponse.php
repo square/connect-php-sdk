@@ -60,12 +60,12 @@ class UpsertCatalogObjectResponse implements ArrayAccess
     );
   
     /**
-      * $errors The set of [Error](#type-error)s encountered.
+      * $errors The set of `Error`s encountered.
       * @var \SquareConnect\Model\Error[]
       */
     protected $errors;
     /**
-      * $catalog_object The created [CatalogObject](#type-catalogobject).
+      * $catalog_object The created `CatalogObject`.
       * @var \SquareConnect\Model\CatalogObject
       */
     protected $catalog_object;
@@ -110,7 +110,7 @@ class UpsertCatalogObjectResponse implements ArrayAccess
   
     /**
      * Sets errors
-     * @param \SquareConnect\Model\Error[] $errors The set of [Error](#type-error)s encountered.
+     * @param \SquareConnect\Model\Error[] $errors The set of `Error`s encountered.
      * @return $this
      */
     public function setErrors($errors)
@@ -129,7 +129,7 @@ class UpsertCatalogObjectResponse implements ArrayAccess
   
     /**
      * Sets catalog_object
-     * @param \SquareConnect\Model\CatalogObject $catalog_object The created [CatalogObject](#type-catalogobject).
+     * @param \SquareConnect\Model\CatalogObject $catalog_object The created `CatalogObject`.
      * @return $this
      */
     public function setCatalogObject($catalog_object)

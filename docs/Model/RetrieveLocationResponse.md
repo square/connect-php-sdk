@@ -2,12 +2,12 @@
 
 ### Description
 
-Defines the fields that are included in the response body of a request to the [RetrieveLocation](#endpoint-retrievelocation) endpoint.  One of `errors` or `location` is present in a given response (never both).
+Defines the fields that the  [RetrieveLocation](#endpoint-retrievelocation) endpoint returns  in a response.
 
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------
-**errors** | getErrors() | setErrors($value) | [**\SquareConnect\Model\Error[]**](Error.md) | Any errors that occurred during the request. | [optional] 
+**errors** | getErrors() | setErrors($value) | [**\SquareConnect\Model\Error[]**](Error.md) | Information on errors encountered during the request. | [optional] 
 **location** | getLocation() | setLocation($value) | [**\SquareConnect\Model\Location**](Location.md) | The requested location. | [optional] 
 
 Note: All properties are protected and only accessed via getters and setters.

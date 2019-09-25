@@ -33,6 +33,9 @@ class CardPaymentDetails implements ArrayAccess
         'application_identifier' => 'string',
         'application_name' => 'string',
         'application_cryptogram' => 'string',
+        'verification_method' => 'string',
+        'verification_results' => 'string',
+        'statement_description' => 'string',
         'errors' => '\SquareConnect\Model\Error[]'
     );
   
@@ -50,6 +53,9 @@ class CardPaymentDetails implements ArrayAccess
         'application_identifier' => 'application_identifier',
         'application_name' => 'application_name',
         'application_cryptogram' => 'application_cryptogram',
+        'verification_method' => 'verification_method',
+        'verification_results' => 'verification_results',
+        'statement_description' => 'statement_description',
         'errors' => 'errors'
     );
   
@@ -67,6 +73,9 @@ class CardPaymentDetails implements ArrayAccess
         'application_identifier' => 'setApplicationIdentifier',
         'application_name' => 'setApplicationName',
         'application_cryptogram' => 'setApplicationCryptogram',
+        'verification_method' => 'setVerificationMethod',
+        'verification_results' => 'setVerificationResults',
+        'statement_description' => 'setStatementDescription',
         'errors' => 'setErrors'
     );
   
@@ -84,6 +93,9 @@ class CardPaymentDetails implements ArrayAccess
         'application_identifier' => 'getApplicationIdentifier',
         'application_name' => 'getApplicationName',
         'application_cryptogram' => 'getApplicationCryptogram',
+        'verification_method' => 'getVerificationMethod',
+        'verification_results' => 'getVerificationResults',
+        'statement_description' => 'getStatementDescription',
         'errors' => 'getErrors'
     );
   
@@ -103,12 +115,12 @@ class CardPaymentDetails implements ArrayAccess
       */
     protected $entry_method;
     /**
-      * $cvv_status Status code returned from the Card Verification Value (CVV) check.
+      * $cvv_status Status code returned from the Card Verification Value (CVV) check. Can be `CVV_ACCEPTED`, `CVV_REJECTED`, `CVV_NOT_CHECKED`.
       * @var string
       */
     protected $cvv_status;
     /**
-      * $avs_status Status code returned from the Address Verification System (AVS) check.
+      * $avs_status Status code returned from the Address Verification System (AVS) check. Can be `AVS_ACCEPTED`, `AVS_REJECTED`, `AVS_NOT_CHECKED`.
       * @var string
       */
     protected $avs_status;
@@ -118,7 +130,7 @@ class CardPaymentDetails implements ArrayAccess
       */
     protected $auth_result_code;
     /**
-      * $application_identifier For EMV payments, identifies the EMV application used for the payment
+      * $application_identifier For EMV payments, identifies the EMV application used for the payment.
       * @var string
       */
     protected $application_identifier;
@@ -132,6 +144,21 @@ class CardPaymentDetails implements ArrayAccess
       * @var string
       */
     protected $application_cryptogram;
+    /**
+      * $verification_method For EMV payments, method used to verify the cardholder's identity.  Can be one of `PIN`, `SIGNATURE`, `PIN_AND_SIGNATURE`, `ON_DEVICE`, or `NONE`.
+      * @var string
+      */
+    protected $verification_method;
+    /**
+      * $verification_results For EMV payments, the results of the cardholder verification.  Can be one of `SUCCESS`, `FAILURE`, or `UNKNOWN`.
+      * @var string
+      */
+    protected $verification_results;
+    /**
+      * $statement_description The statement description sent to the card networks.  Note: The actual statement description will vary and is likely to be truncated and appended with additional information on a per issuer basis.
+      * @var string
+      */
+    protected $statement_description;
     /**
       * $errors Information on errors encountered during the request.
       * @var \SquareConnect\Model\Error[]
@@ -189,6 +216,21 @@ class CardPaymentDetails implements ArrayAccess
               $this->application_cryptogram = $data["application_cryptogram"];
             } else {
               $this->application_cryptogram = null;
+            }
+            if (isset($data["verification_method"])) {
+              $this->verification_method = $data["verification_method"];
+            } else {
+              $this->verification_method = null;
+            }
+            if (isset($data["verification_results"])) {
+              $this->verification_results = $data["verification_results"];
+            } else {
+              $this->verification_results = null;
+            }
+            if (isset($data["statement_description"])) {
+              $this->statement_description = $data["statement_description"];
+            } else {
+              $this->statement_description = null;
             }
             if (isset($data["errors"])) {
               $this->errors = $data["errors"];
@@ -265,7 +307,7 @@ class CardPaymentDetails implements ArrayAccess
   
     /**
      * Sets cvv_status
-     * @param string $cvv_status Status code returned from the Card Verification Value (CVV) check.
+     * @param string $cvv_status Status code returned from the Card Verification Value (CVV) check. Can be `CVV_ACCEPTED`, `CVV_REJECTED`, `CVV_NOT_CHECKED`.
      * @return $this
      */
     public function setCvvStatus($cvv_status)
@@ -284,7 +326,7 @@ class CardPaymentDetails implements ArrayAccess
   
     /**
      * Sets avs_status
-     * @param string $avs_status Status code returned from the Address Verification System (AVS) check.
+     * @param string $avs_status Status code returned from the Address Verification System (AVS) check. Can be `AVS_ACCEPTED`, `AVS_REJECTED`, `AVS_NOT_CHECKED`.
      * @return $this
      */
     public function setAvsStatus($avs_status)
@@ -322,7 +364,7 @@ class CardPaymentDetails implements ArrayAccess
   
     /**
      * Sets application_identifier
-     * @param string $application_identifier For EMV payments, identifies the EMV application used for the payment
+     * @param string $application_identifier For EMV payments, identifies the EMV application used for the payment.
      * @return $this
      */
     public function setApplicationIdentifier($application_identifier)
@@ -366,6 +408,63 @@ class CardPaymentDetails implements ArrayAccess
     public function setApplicationCryptogram($application_cryptogram)
     {
         $this->application_cryptogram = $application_cryptogram;
+        return $this;
+    }
+    /**
+     * Gets verification_method
+     * @return string
+     */
+    public function getVerificationMethod()
+    {
+        return $this->verification_method;
+    }
+  
+    /**
+     * Sets verification_method
+     * @param string $verification_method For EMV payments, method used to verify the cardholder's identity.  Can be one of `PIN`, `SIGNATURE`, `PIN_AND_SIGNATURE`, `ON_DEVICE`, or `NONE`.
+     * @return $this
+     */
+    public function setVerificationMethod($verification_method)
+    {
+        $this->verification_method = $verification_method;
+        return $this;
+    }
+    /**
+     * Gets verification_results
+     * @return string
+     */
+    public function getVerificationResults()
+    {
+        return $this->verification_results;
+    }
+  
+    /**
+     * Sets verification_results
+     * @param string $verification_results For EMV payments, the results of the cardholder verification.  Can be one of `SUCCESS`, `FAILURE`, or `UNKNOWN`.
+     * @return $this
+     */
+    public function setVerificationResults($verification_results)
+    {
+        $this->verification_results = $verification_results;
+        return $this;
+    }
+    /**
+     * Gets statement_description
+     * @return string
+     */
+    public function getStatementDescription()
+    {
+        return $this->statement_description;
+    }
+  
+    /**
+     * Sets statement_description
+     * @param string $statement_description The statement description sent to the card networks.  Note: The actual statement description will vary and is likely to be truncated and appended with additional information on a per issuer basis.
+     * @return $this
+     */
+    public function setStatementDescription($statement_description)
+    {
+        $this->statement_description = $statement_description;
         return $this;
     }
     /**

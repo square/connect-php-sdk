@@ -60,12 +60,12 @@ class BatchDeleteCatalogObjectsResponse implements ArrayAccess
     );
   
     /**
-      * $errors The set of [Error](#type-error)s encountered.
+      * $errors The set of `Error`s encountered.
       * @var \SquareConnect\Model\Error[]
       */
     protected $errors;
     /**
-      * $deleted_object_ids The IDs of all [CatalogObject](#type-catalogobject)s deleted by this request.
+      * $deleted_object_ids The IDs of all `CatalogObject`s deleted by this request.
       * @var string[]
       */
     protected $deleted_object_ids;
@@ -110,7 +110,7 @@ class BatchDeleteCatalogObjectsResponse implements ArrayAccess
   
     /**
      * Sets errors
-     * @param \SquareConnect\Model\Error[] $errors The set of [Error](#type-error)s encountered.
+     * @param \SquareConnect\Model\Error[] $errors The set of `Error`s encountered.
      * @return $this
      */
     public function setErrors($errors)
@@ -129,7 +129,7 @@ class BatchDeleteCatalogObjectsResponse implements ArrayAccess
   
     /**
      * Sets deleted_object_ids
-     * @param string[] $deleted_object_ids The IDs of all [CatalogObject](#type-catalogobject)s deleted by this request.
+     * @param string[] $deleted_object_ids The IDs of all `CatalogObject`s deleted by this request.
      * @return $this
      */
     public function setDeletedObjectIds($deleted_object_ids)

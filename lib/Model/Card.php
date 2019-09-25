@@ -31,7 +31,8 @@ class Card implements ArrayAccess
         'exp_year' => 'int',
         'cardholder_name' => 'string',
         'billing_address' => '\SquareConnect\Model\Address',
-        'fingerprint' => 'string'
+        'fingerprint' => 'string',
+        'bin' => 'string'
     );
   
     /** 
@@ -46,7 +47,8 @@ class Card implements ArrayAccess
         'exp_year' => 'exp_year',
         'cardholder_name' => 'cardholder_name',
         'billing_address' => 'billing_address',
-        'fingerprint' => 'fingerprint'
+        'fingerprint' => 'fingerprint',
+        'bin' => 'bin'
     );
   
     /**
@@ -61,7 +63,8 @@ class Card implements ArrayAccess
         'exp_year' => 'setExpYear',
         'cardholder_name' => 'setCardholderName',
         'billing_address' => 'setBillingAddress',
-        'fingerprint' => 'setFingerprint'
+        'fingerprint' => 'setFingerprint',
+        'bin' => 'setBin'
     );
   
     /**
@@ -76,7 +79,8 @@ class Card implements ArrayAccess
         'exp_year' => 'getExpYear',
         'cardholder_name' => 'getCardholderName',
         'billing_address' => 'getBillingAddress',
-        'fingerprint' => 'getFingerprint'
+        'fingerprint' => 'getFingerprint',
+        'bin' => 'getBin'
     );
   
     /**
@@ -119,6 +123,11 @@ class Card implements ArrayAccess
       * @var string
       */
     protected $fingerprint;
+    /**
+      * $bin The first six digits of the card number, known as the Bank Identification Number (BIN). Only the Payments API returns this field.
+      * @var string
+      */
+    protected $bin;
 
     /**
      * Constructor
@@ -166,6 +175,11 @@ class Card implements ArrayAccess
               $this->fingerprint = $data["fingerprint"];
             } else {
               $this->fingerprint = null;
+            }
+            if (isset($data["bin"])) {
+              $this->bin = $data["bin"];
+            } else {
+              $this->bin = null;
             }
         }
     }
@@ -319,6 +333,25 @@ class Card implements ArrayAccess
     public function setFingerprint($fingerprint)
     {
         $this->fingerprint = $fingerprint;
+        return $this;
+    }
+    /**
+     * Gets bin
+     * @return string
+     */
+    public function getBin()
+    {
+        return $this->bin;
+    }
+  
+    /**
+     * Sets bin
+     * @param string $bin The first six digits of the card number, known as the Bank Identification Number (BIN). Only the Payments API returns this field.
+     * @return $this
+     */
+    public function setBin($bin)
+    {
+        $this->bin = $bin;
         return $this;
     }
     /**

@@ -94,7 +94,7 @@ class CreateOrderRequestLineItem implements ArrayAccess
       */
     protected $quantity;
     /**
-      * $base_price_money The base price for a single unit of the line item.  `base_price_money` is required for ad hoc line items and variable priced [CatalogItemVariation](#type-catalogitemvariation)s. If both `catalog_object_id` and `base_price_money` are set, `base_price_money` will override the CatalogItemVariation's price.
+      * $base_price_money The base price for a single unit of the line item.  `base_price_money` is required for ad hoc line items and variable priced `CatalogItemVariation`s. If both `catalog_object_id` and `base_price_money` are set, `base_price_money` will override the CatalogItemVariation's price.
       * @var \SquareConnect\Model\Money
       */
     protected $base_price_money;
@@ -109,7 +109,7 @@ class CreateOrderRequestLineItem implements ArrayAccess
       */
     protected $note;
     /**
-      * $catalog_object_id Only used for Catalog line items. The catalog object ID for an existing [CatalogItemVariation](#type-catalogitemvariation).  Do not provide a value for this field if you provide a value for `name` and `base_price_money`.
+      * $catalog_object_id Only used for Catalog line items. The catalog object ID for an existing `CatalogItemVariation`.  Do not provide a value for this field if you provide a value for `name` and `base_price_money`.
       * @var string
       */
     protected $catalog_object_id;
@@ -232,7 +232,7 @@ class CreateOrderRequestLineItem implements ArrayAccess
   
     /**
      * Sets base_price_money
-     * @param \SquareConnect\Model\Money $base_price_money The base price for a single unit of the line item.  `base_price_money` is required for ad hoc line items and variable priced [CatalogItemVariation](#type-catalogitemvariation)s. If both `catalog_object_id` and `base_price_money` are set, `base_price_money` will override the CatalogItemVariation's price.
+     * @param \SquareConnect\Model\Money $base_price_money The base price for a single unit of the line item.  `base_price_money` is required for ad hoc line items and variable priced `CatalogItemVariation`s. If both `catalog_object_id` and `base_price_money` are set, `base_price_money` will override the CatalogItemVariation's price.
      * @return $this
      */
     public function setBasePriceMoney($base_price_money)
@@ -289,7 +289,7 @@ class CreateOrderRequestLineItem implements ArrayAccess
   
     /**
      * Sets catalog_object_id
-     * @param string $catalog_object_id Only used for Catalog line items. The catalog object ID for an existing [CatalogItemVariation](#type-catalogitemvariation).  Do not provide a value for this field if you provide a value for `name` and `base_price_money`.
+     * @param string $catalog_object_id Only used for Catalog line items. The catalog object ID for an existing `CatalogItemVariation`.  Do not provide a value for this field if you provide a value for `name` and `base_price_money`.
      * @return $this
      */
     public function setCatalogObjectId($catalog_object_id)

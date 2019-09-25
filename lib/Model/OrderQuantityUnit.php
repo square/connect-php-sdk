@@ -56,7 +56,7 @@ class OrderQuantityUnit implements ArrayAccess
     );
   
     /**
-      * $measurement_unit A [MeasurementUnit](#type-measurementunit) that represents the unit of measure for the quantity.
+      * $measurement_unit A `MeasurementUnit` that represents the unit of measure for the quantity.
       * @var \SquareConnect\Model\MeasurementUnit
       */
     protected $measurement_unit;
@@ -96,7 +96,7 @@ class OrderQuantityUnit implements ArrayAccess
   
     /**
      * Sets measurement_unit
-     * @param \SquareConnect\Model\MeasurementUnit $measurement_unit A [MeasurementUnit](#type-measurementunit) that represents the unit of measure for the quantity.
+     * @param \SquareConnect\Model\MeasurementUnit $measurement_unit A `MeasurementUnit` that represents the unit of measure for the quantity.
      * @return $this
      */
     public function setMeasurementUnit($measurement_unit)

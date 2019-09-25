@@ -60,17 +60,17 @@ class CatalogModifierList implements ArrayAccess
     );
   
     /**
-      * $name The [CatalogModifierList](#type-catalogmodifierlist)'s name. Searchable. This field has max length of 255 Unicode code points.
+      * $name The `CatalogModifierList`'s name. Searchable. This field has max length of 255 Unicode code points.
       * @var string
       */
     protected $name;
     /**
-      * $selection_type Indicates whether multiple options from the [CatalogModifierList](#type-catalogmodifierlist) can be applied to a single [CatalogItem](#type-catalogitem). See [CatalogModifierListSelectionType](#type-catalogmodifierlistselectiontype) for possible values
+      * $selection_type Indicates whether multiple options from the `CatalogModifierList` can be applied to a single `CatalogItem`. See [CatalogModifierListSelectionType](#type-catalogmodifierlistselectiontype) for possible values
       * @var string
       */
     protected $selection_type;
     /**
-      * $modifiers The options included in the [CatalogModifierList](#type-catalogmodifierlist). You must include at least one [CatalogModifier](#type-catalogmodifier). Each [CatalogObject](#type-catalogobject) must have type `MODIFIER` and contain [CatalogModifier](#type-catalogmodifier) data.
+      * $modifiers The options included in the `CatalogModifierList`. You must include at least one `CatalogModifier`. Each `CatalogObject` must have type `MODIFIER` and contain `CatalogModifier` data.
       * @var \SquareConnect\Model\CatalogObject[]
       */
     protected $modifiers;
@@ -110,7 +110,7 @@ class CatalogModifierList implements ArrayAccess
   
     /**
      * Sets name
-     * @param string $name The [CatalogModifierList](#type-catalogmodifierlist)'s name. Searchable. This field has max length of 255 Unicode code points.
+     * @param string $name The `CatalogModifierList`'s name. Searchable. This field has max length of 255 Unicode code points.
      * @return $this
      */
     public function setName($name)
@@ -129,7 +129,7 @@ class CatalogModifierList implements ArrayAccess
   
     /**
      * Sets selection_type
-     * @param string $selection_type Indicates whether multiple options from the [CatalogModifierList](#type-catalogmodifierlist) can be applied to a single [CatalogItem](#type-catalogitem). See [CatalogModifierListSelectionType](#type-catalogmodifierlistselectiontype) for possible values
+     * @param string $selection_type Indicates whether multiple options from the `CatalogModifierList` can be applied to a single `CatalogItem`. See [CatalogModifierListSelectionType](#type-catalogmodifierlistselectiontype) for possible values
      * @return $this
      */
     public function setSelectionType($selection_type)
@@ -148,7 +148,7 @@ class CatalogModifierList implements ArrayAccess
   
     /**
      * Sets modifiers
-     * @param \SquareConnect\Model\CatalogObject[] $modifiers The options included in the [CatalogModifierList](#type-catalogmodifierlist). You must include at least one [CatalogModifier](#type-catalogmodifier). Each [CatalogObject](#type-catalogobject) must have type `MODIFIER` and contain [CatalogModifier](#type-catalogmodifier) data.
+     * @param \SquareConnect\Model\CatalogObject[] $modifiers The options included in the `CatalogModifierList`. You must include at least one `CatalogModifier`. Each `CatalogObject` must have type `MODIFIER` and contain `CatalogModifier` data.
      * @return $this
      */
     public function setModifiers($modifiers)

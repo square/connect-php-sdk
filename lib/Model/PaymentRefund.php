@@ -112,7 +112,7 @@ class PaymentRefund implements ArrayAccess
       */
     protected $amount_money;
     /**
-      * $app_fee_money Amount of money the app developer contributed to help cover the refunded amount. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents. See [Working with monetary amounts](/build-basics/working-with-monetary-amounts) for details.
+      * $app_fee_money Amount of money the app developer contributed to help cover the refunded amount. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents. See [Working with monetary amounts](https://developer.squareup.com/docs/build-basics/working-with-monetary-amounts) for details.
       * @var \SquareConnect\Model\Money
       */
     protected $app_fee_money;
@@ -298,7 +298,7 @@ class PaymentRefund implements ArrayAccess
   
     /**
      * Sets app_fee_money
-     * @param \SquareConnect\Model\Money $app_fee_money Amount of money the app developer contributed to help cover the refunded amount. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents. See [Working with monetary amounts](/build-basics/working-with-monetary-amounts) for details.
+     * @param \SquareConnect\Model\Money $app_fee_money Amount of money the app developer contributed to help cover the refunded amount. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents. See [Working with monetary amounts](https://developer.squareup.com/docs/build-basics/working-with-monetary-amounts) for details.
      * @return $this
      */
     public function setAppFeeMoney($app_fee_money)

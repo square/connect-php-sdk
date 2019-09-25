@@ -56,7 +56,7 @@ class RetrieveLocationResponse implements ArrayAccess
     );
   
     /**
-      * $errors Any errors that occurred during the request.
+      * $errors Information on errors encountered during the request.
       * @var \SquareConnect\Model\Error[]
       */
     protected $errors;
@@ -96,7 +96,7 @@ class RetrieveLocationResponse implements ArrayAccess
   
     /**
      * Sets errors
-     * @param \SquareConnect\Model\Error[] $errors Any errors that occurred during the request.
+     * @param \SquareConnect\Model\Error[] $errors Information on errors encountered during the request.
      * @return $this
      */
     public function setErrors($errors)

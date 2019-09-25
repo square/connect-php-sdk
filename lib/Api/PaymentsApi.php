@@ -108,7 +108,7 @@ class PaymentsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-08-14";
+        $headerParams['Square-Version'] = "2019-09-25";
 
         
         
@@ -204,7 +204,7 @@ class PaymentsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-08-14";
+        $headerParams['Square-Version'] = "2019-09-25";
 
         
         
@@ -297,7 +297,7 @@ class PaymentsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-08-14";
+        $headerParams['Square-Version'] = "2019-09-25";
 
         
         
@@ -393,7 +393,7 @@ class PaymentsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-08-14";
+        $headerParams['Square-Version'] = "2019-09-25";
 
         
         
@@ -486,7 +486,7 @@ class PaymentsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-08-14";
+        $headerParams['Square-Version'] = "2019-09-25";
 
         
         
@@ -546,7 +546,7 @@ class PaymentsApi
      * @param string $begin_time Timestamp for the beginning of the reporting period, in RFC 3339 format. Inclusive. Default: The current time minus one year. (optional)
      * @param string $end_time Timestamp for the end of the requested reporting period, in RFC 3339 format.  Default: The current time. (optional)
      * @param string $sort_order The order in which results are listed. - &#x60;ASC&#x60; - oldest to newest - &#x60;DESC&#x60; - newest to oldest (default). (optional)
-     * @param string $cursor A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)
+     * @param string $cursor A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)
      * @param string $location_id ID of location associated with payment (optional)
      * @param int $total The exact amount in the total_money for a &#x60;Payment&#x60;. (optional)
      * @param string $last_4 The last 4 digits of &#x60;Payment&#x60; card. (optional)
@@ -569,7 +569,7 @@ class PaymentsApi
      * @param string $begin_time Timestamp for the beginning of the reporting period, in RFC 3339 format. Inclusive. Default: The current time minus one year. (optional)
      * @param string $end_time Timestamp for the end of the requested reporting period, in RFC 3339 format.  Default: The current time. (optional)
      * @param string $sort_order The order in which results are listed. - &#x60;ASC&#x60; - oldest to newest - &#x60;DESC&#x60; - newest to oldest (default). (optional)
-     * @param string $cursor A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](/basics/api101/pagination) for more information. (optional)
+     * @param string $cursor A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. (optional)
      * @param string $location_id ID of location associated with payment (optional)
      * @param int $total The exact amount in the total_money for a &#x60;Payment&#x60;. (optional)
      * @param string $last_4 The last 4 digits of &#x60;Payment&#x60; card. (optional)
@@ -592,7 +592,7 @@ class PaymentsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-08-14";
+        $headerParams['Square-Version'] = "2019-09-25";
 
         // query params
         if ($begin_time !== null) {

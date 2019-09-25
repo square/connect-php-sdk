@@ -60,17 +60,17 @@ class UpdateOrderRequest implements ArrayAccess
     );
   
     /**
-      * $order The [sparse order](/orders-api/manage-orders#sparse-order-objects) containing only the fields to update and the version the update is being applied to.
+      * $order The [sparse order](https://developer.squareup.com/docs/orders-api/manage-orders#sparse-order-objects) containing only the fields to update and the version the update is being applied to.
       * @var \SquareConnect\Model\Order
       */
     protected $order;
     /**
-      * $fields_to_clear The [dot notation paths](/orders-api/manage-orders#on-dot-notation) fields to clear. For example, `line_items[uid].note` [Read more about Deleting fields](/orders-api/manage-orders#delete-fields).
+      * $fields_to_clear The [dot notation paths](https://developer.squareup.com/docs/orders-api/manage-orders#on-dot-notation) fields to clear. For example, `line_items[uid].note` [Read more about Deleting fields](https://developer.squareup.com/docs/orders-api/manage-orders#delete-fields).
       * @var string[]
       */
     protected $fields_to_clear;
     /**
-      * $idempotency_key A value you specify that uniquely identifies this update request  If you're unsure whether a particular update was applied to an order successfully, you can reattempt it with the same idempotency key without worrying about creating duplicate updates to the order. The latest order version will be returned.  See [Idempotency](/basics/api101/idempotency) for more information.
+      * $idempotency_key A value you specify that uniquely identifies this update request  If you're unsure whether a particular update was applied to an order successfully, you can reattempt it with the same idempotency key without worrying about creating duplicate updates to the order. The latest order version will be returned.  See [Idempotency](https://developer.squareup.com/docs/basics/api101/idempotency) for more information.
       * @var string
       */
     protected $idempotency_key;
@@ -110,7 +110,7 @@ class UpdateOrderRequest implements ArrayAccess
   
     /**
      * Sets order
-     * @param \SquareConnect\Model\Order $order The [sparse order](/orders-api/manage-orders#sparse-order-objects) containing only the fields to update and the version the update is being applied to.
+     * @param \SquareConnect\Model\Order $order The [sparse order](https://developer.squareup.com/docs/orders-api/manage-orders#sparse-order-objects) containing only the fields to update and the version the update is being applied to.
      * @return $this
      */
     public function setOrder($order)
@@ -129,7 +129,7 @@ class UpdateOrderRequest implements ArrayAccess
   
     /**
      * Sets fields_to_clear
-     * @param string[] $fields_to_clear The [dot notation paths](/orders-api/manage-orders#on-dot-notation) fields to clear. For example, `line_items[uid].note` [Read more about Deleting fields](/orders-api/manage-orders#delete-fields).
+     * @param string[] $fields_to_clear The [dot notation paths](https://developer.squareup.com/docs/orders-api/manage-orders#on-dot-notation) fields to clear. For example, `line_items[uid].note` [Read more about Deleting fields](https://developer.squareup.com/docs/orders-api/manage-orders#delete-fields).
      * @return $this
      */
     public function setFieldsToClear($fields_to_clear)
@@ -148,7 +148,7 @@ class UpdateOrderRequest implements ArrayAccess
   
     /**
      * Sets idempotency_key
-     * @param string $idempotency_key A value you specify that uniquely identifies this update request  If you're unsure whether a particular update was applied to an order successfully, you can reattempt it with the same idempotency key without worrying about creating duplicate updates to the order. The latest order version will be returned.  See [Idempotency](/basics/api101/idempotency) for more information.
+     * @param string $idempotency_key A value you specify that uniquely identifies this update request  If you're unsure whether a particular update was applied to an order successfully, you can reattempt it with the same idempotency key without worrying about creating duplicate updates to the order. The latest order version will be returned.  See [Idempotency](https://developer.squareup.com/docs/basics/api101/idempotency) for more information.
      * @return $this
      */
     public function setIdempotencyKey($idempotency_key)

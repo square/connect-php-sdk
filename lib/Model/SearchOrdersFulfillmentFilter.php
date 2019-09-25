@@ -56,12 +56,12 @@ class SearchOrdersFulfillmentFilter implements ArrayAccess
     );
   
     /**
-      * $fulfillment_types List of [fulfillment types](#type-orderfulfillmenttype) to filter for. Will return orders if any of its fulfillments match any of the fulfillment types listed in this field. See [OrderFulfillmentType](#type-orderfulfillmenttype) for possible values
+      * $fulfillment_types List of `fulfillment types` to filter for. Will return orders if any of its fulfillments match any of the fulfillment types listed in this field. See [OrderFulfillmentType](#type-orderfulfillmenttype) for possible values
       * @var string[]
       */
     protected $fulfillment_types;
     /**
-      * $fulfillment_states List of [fulfillment states](#type-orderfulfillmentstate) to filter for. Will return orders if any of its fulfillments match any of the fulfillment states listed in this field. See [OrderFulfillmentState](#type-orderfulfillmentstate) for possible values
+      * $fulfillment_states List of `fulfillment states` to filter for. Will return orders if any of its fulfillments match any of the fulfillment states listed in this field. See [OrderFulfillmentState](#type-orderfulfillmentstate) for possible values
       * @var string[]
       */
     protected $fulfillment_states;
@@ -96,7 +96,7 @@ class SearchOrdersFulfillmentFilter implements ArrayAccess
   
     /**
      * Sets fulfillment_types
-     * @param string[] $fulfillment_types List of [fulfillment types](#type-orderfulfillmenttype) to filter for. Will return orders if any of its fulfillments match any of the fulfillment types listed in this field. See [OrderFulfillmentType](#type-orderfulfillmenttype) for possible values
+     * @param string[] $fulfillment_types List of `fulfillment types` to filter for. Will return orders if any of its fulfillments match any of the fulfillment types listed in this field. See [OrderFulfillmentType](#type-orderfulfillmenttype) for possible values
      * @return $this
      */
     public function setFulfillmentTypes($fulfillment_types)
@@ -115,7 +115,7 @@ class SearchOrdersFulfillmentFilter implements ArrayAccess
   
     /**
      * Sets fulfillment_states
-     * @param string[] $fulfillment_states List of [fulfillment states](#type-orderfulfillmentstate) to filter for. Will return orders if any of its fulfillments match any of the fulfillment states listed in this field. See [OrderFulfillmentState](#type-orderfulfillmentstate) for possible values
+     * @param string[] $fulfillment_states List of `fulfillment states` to filter for. Will return orders if any of its fulfillments match any of the fulfillment states listed in this field. See [OrderFulfillmentState](#type-orderfulfillmentstate) for possible values
      * @return $this
      */
     public function setFulfillmentStates($fulfillment_states)

@@ -56,7 +56,7 @@ class UpdateItemTaxesResponse implements ArrayAccess
     );
   
     /**
-      * $errors The set of [Error](#type-error)s encountered.
+      * $errors The set of `Error`s encountered.
       * @var \SquareConnect\Model\Error[]
       */
     protected $errors;
@@ -96,7 +96,7 @@ class UpdateItemTaxesResponse implements ArrayAccess
   
     /**
      * Sets errors
-     * @param \SquareConnect\Model\Error[] $errors The set of [Error](#type-error)s encountered.
+     * @param \SquareConnect\Model\Error[] $errors The set of `Error`s encountered.
      * @return $this
      */
     public function setErrors($errors)
