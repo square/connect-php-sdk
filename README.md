@@ -203,6 +203,7 @@ Class | Method | HTTP request | Description
 *LocationsApi* | [**listLocations**](docs/Api/LocationsApi.md#listlocations) | **GET** /v2/locations | ListLocations
 *LocationsApi* | [**retrieveLocation**](docs/Api/LocationsApi.md#retrievelocation) | **GET** /v2/locations/{location_id} | RetrieveLocation
 *LocationsApi* | [**updateLocation**](docs/Api/LocationsApi.md#updatelocation) | **PUT** /v2/locations/{location_id} | UpdateLocation
+*MerchantsApi* | [**listMerchants**](docs/Api/MerchantsApi.md#listmerchants) | **GET** /v2/merchants | ListMerchants
 *MerchantsApi* | [**retrieveMerchant**](docs/Api/MerchantsApi.md#retrievemerchant) | **GET** /v2/merchants/{merchant_id} | RetrieveMerchant
 *MobileAuthorizationApi* | [**createMobileAuthorizationCode**](docs/Api/MobileAuthorizationApi.md#createmobileauthorizationcode) | **POST** /mobile/authorization-code | CreateMobileAuthorizationCode
 *OAuthApi* | [**obtainToken**](docs/Api/OAuthApi.md#obtaintoken) | **POST** /oauth2/token | ObtainToken
@@ -435,6 +436,7 @@ Class | Method | HTTP request | Description
  - [Error](docs/Model/Error.md)
  - [ErrorCategory](docs/Model/ErrorCategory.md)
  - [ErrorCode](docs/Model/ErrorCode.md)
+ - [ExcludeStrategy](docs/Model/ExcludeStrategy.md)
  - [GetBreakTypeRequest](docs/Model/GetBreakTypeRequest.md)
  - [GetBreakTypeResponse](docs/Model/GetBreakTypeResponse.md)
  - [GetEmployeeWageRequest](docs/Model/GetEmployeeWageRequest.md)
@@ -470,6 +472,8 @@ Class | Method | HTTP request | Description
  - [ListEmployeesResponse](docs/Model/ListEmployeesResponse.md)
  - [ListLocationsRequest](docs/Model/ListLocationsRequest.md)
  - [ListLocationsResponse](docs/Model/ListLocationsResponse.md)
+ - [ListMerchantsRequest](docs/Model/ListMerchantsRequest.md)
+ - [ListMerchantsResponse](docs/Model/ListMerchantsResponse.md)
  - [ListPaymentRefundsRequest](docs/Model/ListPaymentRefundsRequest.md)
  - [ListPaymentRefundsResponse](docs/Model/ListPaymentRefundsResponse.md)
  - [ListPaymentsRequest](docs/Model/ListPaymentsRequest.md)

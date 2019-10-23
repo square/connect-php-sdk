@@ -88,7 +88,7 @@ class SearchCatalogObjectsResponse implements ArrayAccess
       */
     protected $related_objects;
     /**
-      * $latest_time When this merchant's catalog was last updated. Will match the value for `end_time` or `cursor` if either field is included in the `SearchCatalog` request.
+      * $latest_time When the associated product catalog was last updated. Will match the value for `end_time` or `cursor` if either field is included in the `SearchCatalog` request.
       * @var string
       */
     protected $latest_time;
@@ -214,7 +214,7 @@ class SearchCatalogObjectsResponse implements ArrayAccess
   
     /**
      * Sets latest_time
-     * @param string $latest_time When this merchant's catalog was last updated. Will match the value for `end_time` or `cursor` if either field is included in the `SearchCatalog` request.
+     * @param string $latest_time When the associated product catalog was last updated. Will match the value for `end_time` or `cursor` if either field is included in the `SearchCatalog` request.
      * @return $this
      */
     public function setLatestTime($latest_time)

@@ -16,6 +16,7 @@ use \ArrayAccess;
  * @author   Square Inc.
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://squareup.com/developers
+ * Note: This endpoint is in beta.
  */
 class CatalogItemOptionValue implements ArrayAccess
 {
@@ -87,7 +88,7 @@ class CatalogItemOptionValue implements ArrayAccess
       */
     protected $description;
     /**
-      * $color The HTML color for this value in the format #FFRRGGBB or #RRGGBB (e.g., \"#ff8d4e85\"). Only displayed if parent Item Option's `show_colors` flag is enabled. value.
+      * $color The HTML-supported hex color for the item option (e.g., \"#ff8d4e85\"). Only displayed if `show_colors` is enabled on the parent `ItemOption`. When left unset, `color` defaults to white (\"#ffffff\") when `show_colors` is enabled on the parent `ItemOption`.
       * @var string
       */
     protected $color;
@@ -209,7 +210,7 @@ class CatalogItemOptionValue implements ArrayAccess
   
     /**
      * Sets color
-     * @param string $color The HTML color for this value in the format #FFRRGGBB or #RRGGBB (e.g., \"#ff8d4e85\"). Only displayed if parent Item Option's `show_colors` flag is enabled. value.
+     * @param string $color The HTML-supported hex color for the item option (e.g., \"#ff8d4e85\"). Only displayed if `show_colors` is enabled on the parent `ItemOption`. When left unset, `color` defaults to white (\"#ffffff\") when `show_colors` is enabled on the parent `ItemOption`.
      * @return $this
      */
     public function setColor($color)

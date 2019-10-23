@@ -112,6 +112,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **payOrder**
+**Note: This endpoint is in beta.**
 > \SquareConnect\Model\PayOrderResponse payOrder($order_id, $body)
 
 PayOrder
@@ -210,6 +211,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateOrder**
+**Note: This endpoint is in beta.**
 > \SquareConnect\Model\UpdateOrderResponse updateOrder($location_id, $order_id, $body)
 
 UpdateOrder

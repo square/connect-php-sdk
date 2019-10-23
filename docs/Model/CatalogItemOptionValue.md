@@ -10,7 +10,7 @@ Name | Getter | Setter | Type | Description | Notes
 **item_option_id** | getItemOptionId() | setItemOptionId($value) | **string** | Unique ID of the associated item option. | [optional] 
 **name** | getName() | setName($value) | **string** | Name of this item option value. Searchable. | [optional] 
 **description** | getDescription() | setDescription($value) | **string** | The option value&#39;s human-readable description. | [optional] 
-**color** | getColor() | setColor($value) | **string** | The HTML color for this value in the format #FFRRGGBB or #RRGGBB (e.g., \&quot;#ff8d4e85\&quot;). Only displayed if parent Item Option&#39;s &#x60;show_colors&#x60; flag is enabled. value. | [optional] 
+**color** | getColor() | setColor($value) | **string** | The HTML-supported hex color for the item option (e.g., \&quot;#ff8d4e85\&quot;). Only displayed if &#x60;show_colors&#x60; is enabled on the parent &#x60;ItemOption&#x60;. When left unset, &#x60;color&#x60; defaults to white (\&quot;#ffffff\&quot;) when &#x60;show_colors&#x60; is enabled on the parent &#x60;ItemOption&#x60;. | [optional] 
 **ordinal** | getOrdinal() | setOrdinal($value) | **int** | Determines where this option value appears in a list of option values. | [optional] 
 **item_variation_count** | getItemVariationCount() | setItemVariationCount($value) | **int** | The number of [CatalogItemVariation(#type-catalogitemvariation)s that currently make use of this Item Option value. Present only if &#x60;retrieve_counts&#x60; was specified on the request used to retrieve the parent Item Option of this value.  Maximum: 100 counts. | [optional] 
 

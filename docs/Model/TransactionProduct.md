@@ -3,6 +3,7 @@
 ### Description
 
 Indicates the Square product used to process a transaction.
+**Note: This model is deprecated.**
 
 ## Properties
 Name | Type

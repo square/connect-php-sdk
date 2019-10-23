@@ -16,6 +16,7 @@ use \ArrayAccess;
  * @author   Square Inc.
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://squareup.com/developers
+ * Note: This endpoint is in beta.
  */
 class MeasurementUnitTime implements ArrayAccess
 {

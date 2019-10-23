@@ -9,6 +9,7 @@ namespace SquareConnect\Model;
 
 use \ArrayAccess;
 /**
+ * @deprecated
  * ListTransactionsRequest Class Doc Comment
  *
  * @category Class

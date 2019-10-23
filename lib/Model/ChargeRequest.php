@@ -9,6 +9,7 @@ namespace SquareConnect\Model;
 
 use \ArrayAccess;
 /**
+ * @deprecated
  * ChargeRequest Class Doc Comment
  *
  * @category Class
@@ -109,7 +110,7 @@ class ChargeRequest implements ArrayAccess
       */
     protected $idempotency_key;
     /**
-      * $amount_money The amount of money to charge.  Note that you specify the amount in the __smallest denomination of the applicable currency__. For example, US dollar amounts are specified in cents. See [Working with monetary amounts](#workingwithmonetaryamounts) for details.  The value of `currency` must match the currency associated with the business that is charging the card.
+      * $amount_money The amount of money to charge.  Note that you specify the amount in the __smallest denomination of the applicable currency__. For example, US dollar amounts are specified in cents. See [Working with monetary amounts](https://developer.squareup.com/docs/build-basics/working-with-monetary-amounts) for details.  The value of `currency` must match the currency associated with the business that is charging the card.
       * @var \SquareConnect\Model\Money
       */
     protected $amount_money;
@@ -283,7 +284,7 @@ class ChargeRequest implements ArrayAccess
   
     /**
      * Sets amount_money
-     * @param \SquareConnect\Model\Money $amount_money The amount of money to charge.  Note that you specify the amount in the __smallest denomination of the applicable currency__. For example, US dollar amounts are specified in cents. See [Working with monetary amounts](#workingwithmonetaryamounts) for details.  The value of `currency` must match the currency associated with the business that is charging the card.
+     * @param \SquareConnect\Model\Money $amount_money The amount of money to charge.  Note that you specify the amount in the __smallest denomination of the applicable currency__. For example, US dollar amounts are specified in cents. See [Working with monetary amounts](https://developer.squareup.com/docs/build-basics/working-with-monetary-amounts) for details.  The value of `currency` must match the currency associated with the business that is charging the card.
      * @return $this
      */
     public function setAmountMoney($amount_money)

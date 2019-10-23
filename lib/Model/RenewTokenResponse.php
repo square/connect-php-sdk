@@ -9,6 +9,7 @@ namespace SquareConnect\Model;
 
 use \ArrayAccess;
 /**
+ * @deprecated
  * RenewTokenResponse Class Doc Comment
  *
  * @category Class

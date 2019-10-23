@@ -102,7 +102,7 @@ class LocationsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-09-25";
+        $headerParams['Square-Version'] = "2019-10-23";
 
         
         
@@ -151,6 +151,7 @@ class LocationsApi
      * retrieveLocation
      *
      * RetrieveLocation
+     * Note: This endpoint is in beta.
      *
      * @param string $location_id The ID of the location to retrieve. (required)
      * @return \SquareConnect\Model\RetrieveLocationResponse
@@ -191,7 +192,7 @@ class LocationsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-09-25";
+        $headerParams['Square-Version'] = "2019-10-23";
 
         
         
@@ -247,6 +248,7 @@ class LocationsApi
      * updateLocation
      *
      * UpdateLocation
+     * Note: This endpoint is in beta.
      *
      * @param string $location_id The ID of the location to update. (required)
      * @param \SquareConnect\Model\UpdateLocationRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
@@ -293,7 +295,7 @@ class LocationsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-09-25";
+        $headerParams['Square-Version'] = "2019-10-23";
 
         
         
