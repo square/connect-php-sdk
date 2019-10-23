@@ -65,11 +65,94 @@ class MerchantsApi
     }
   
     /**
+     * listMerchants
+     *
+     * ListMerchants
+     *
+     * @return \SquareConnect\Model\ListMerchantsResponse
+     * @throws \SquareConnect\ApiException on non-2xx response
+     */
+    public function listMerchants()
+    {
+        list($response, $statusCode, $httpHeader) = $this->listMerchantsWithHttpInfo ();
+        return $response; 
+    }
+
+
+    /**
+     * listMerchantsWithHttpInfo
+     *
+     * ListMerchants
+     *
+     * @return Array of \SquareConnect\Model\ListMerchantsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws \SquareConnect\ApiException on non-2xx response
+     */
+    public function listMerchantsWithHttpInfo()
+    {
+        
+  
+        // parse inputs
+        $resourcePath = "/v2/merchants";
+        $httpBody = '';
+        $queryParams = array();
+        $headerParams = array();
+        $formParams = array();
+        $_header_accept = ApiClient::selectHeaderAccept(array('application/json'));
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
+        $headerParams['Square-Version'] = "2019-10-23";
+
+        
+        
+        
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        
+  
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath, 'GET',
+                $queryParams, $httpBody,
+                $headerParams, '\SquareConnect\Model\ListMerchantsResponse'
+            );
+            if (!$response) {
+                return array(null, $statusCode, $httpHeader);
+            }
+
+            return array(\SquareConnect\ObjectSerializer::deserialize($response, '\SquareConnect\Model\ListMerchantsResponse', $httpHeader), $statusCode, $httpHeader);
+                    } catch (ApiException $e) {
+            switch ($e->getCode()) { 
+            case 200:
+                $data = \SquareConnect\ObjectSerializer::deserialize($e->getResponseBody(), '\SquareConnect\Model\ListMerchantsResponse', $e->getResponseHeaders());
+                $e->setResponseObject($data);
+                break;
+            }
+  
+            throw $e;
+        }
+    }
+    /**
      * retrieveMerchant
      *
      * RetrieveMerchant
      *
-     * @param string $merchant_id The ID of the merchant to retrieve (required)
+     * @param string $merchant_id The ID of the merchant to retrieve. (required)
      * @return \SquareConnect\Model\RetrieveMerchantResponse
      * @throws \SquareConnect\ApiException on non-2xx response
      */
@@ -85,7 +168,7 @@ class MerchantsApi
      *
      * RetrieveMerchant
      *
-     * @param string $merchant_id The ID of the merchant to retrieve (required)
+     * @param string $merchant_id The ID of the merchant to retrieve. (required)
      * @return Array of \SquareConnect\Model\RetrieveMerchantResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
@@ -108,7 +191,7 @@ class MerchantsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-09-25";
+        $headerParams['Square-Version'] = "2019-10-23";
 
         
         

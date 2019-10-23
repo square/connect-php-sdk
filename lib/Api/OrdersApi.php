@@ -114,7 +114,7 @@ class OrdersApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-09-25";
+        $headerParams['Square-Version'] = "2019-10-23";
 
         
         
@@ -220,7 +220,7 @@ class OrdersApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-09-25";
+        $headerParams['Square-Version'] = "2019-10-23";
 
         
         
@@ -280,6 +280,7 @@ class OrdersApi
      * payOrder
      *
      * PayOrder
+     * Note: This endpoint is in beta.
      *
      * @param string $order_id The ID of the order being paid. (required)
      * @param \SquareConnect\Model\PayOrderRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
@@ -326,7 +327,7 @@ class OrdersApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-09-25";
+        $headerParams['Square-Version'] = "2019-10-23";
 
         
         
@@ -426,7 +427,7 @@ class OrdersApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-09-25";
+        $headerParams['Square-Version'] = "2019-10-23";
 
         
         
@@ -479,6 +480,7 @@ class OrdersApi
      * updateOrder
      *
      * UpdateOrder
+     * Note: This endpoint is in beta.
      *
      * @param string $location_id The ID of the order&#39;s associated location. (required)
      * @param string $order_id The ID of the order to update. (required)
@@ -531,7 +533,7 @@ class OrdersApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-09-25";
+        $headerParams['Square-Version'] = "2019-10-23";
 
         
         

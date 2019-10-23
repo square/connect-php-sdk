@@ -9,7 +9,7 @@ namespace SquareConnect\Model;
 
 use \ArrayAccess;
 /**
- * MeasurementUnitArea Class Doc Comment
+ * ExcludeStrategy Class Doc Comment
  *
  * @category Class
  * @package  SquareConnect
@@ -18,7 +18,7 @@ use \ArrayAccess;
  * @link     https://squareup.com/developers
  * Note: This endpoint is in beta.
  */
-class MeasurementUnitArea implements ArrayAccess
+class ExcludeStrategy implements ArrayAccess
 {
     /**
       * Array of property to type mappings. Used for (de)serialization 

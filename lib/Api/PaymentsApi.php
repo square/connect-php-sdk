@@ -108,7 +108,7 @@ class PaymentsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-09-25";
+        $headerParams['Square-Version'] = "2019-10-23";
 
         
         
@@ -204,7 +204,7 @@ class PaymentsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-09-25";
+        $headerParams['Square-Version'] = "2019-10-23";
 
         
         
@@ -297,7 +297,7 @@ class PaymentsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-09-25";
+        $headerParams['Square-Version'] = "2019-10-23";
 
         
         
@@ -393,7 +393,7 @@ class PaymentsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-09-25";
+        $headerParams['Square-Version'] = "2019-10-23";
 
         
         
@@ -486,7 +486,7 @@ class PaymentsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-09-25";
+        $headerParams['Square-Version'] = "2019-10-23";
 
         
         
@@ -592,7 +592,7 @@ class PaymentsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-09-25";
+        $headerParams['Square-Version'] = "2019-10-23";
 
         // query params
         if ($begin_time !== null) {

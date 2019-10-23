@@ -3,6 +3,7 @@
 ### Description
 
 Defines the query parameters that can be included in a request to the ListAdditionalRecipientReceivableRefunds endpoint.
+**Note: This model is deprecated.**
 
 ## Properties
 Name | Getter | Setter | Type | Description | Notes

@@ -54,6 +54,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **retrieveLocation**
+**Note: This endpoint is in beta.**
 > \SquareConnect\Model\RetrieveLocationResponse retrieveLocation($location_id)
 
 RetrieveLocation
@@ -102,6 +103,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateLocation**
+**Note: This endpoint is in beta.**
 > \SquareConnect\Model\UpdateLocationResponse updateLocation($location_id, $body)
 
 UpdateLocation

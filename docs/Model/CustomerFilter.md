@@ -2,7 +2,7 @@
 
 ### Description
 
-Represents a set of [`CustomerQuery`](#type-customerquery) filters used to limit the set of Customers returned by [`SearchCustomers`](#endpoint-customers-seachcustomers).
+Represents a set of `CustomerQuery` filters used to limit the set of Customers returned by SearchCustomers.
 
 ## Properties
 Name | Getter | Setter | Type | Description | Notes

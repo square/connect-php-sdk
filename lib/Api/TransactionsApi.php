@@ -77,7 +77,7 @@ class TransactionsApi
      */
     public function captureTransaction($location_id, $transaction_id)
     {
-        trigger_error('Calling deprecated API: TransactionsApi.captureTransaction', E_USER_DEPRECATED);
+        trigger_error("\x1B[33mCalling deprecated API: TransactionsApi.captureTransaction\x1B[0m", E_USER_DEPRECATED);
         list($response, $statusCode, $httpHeader) = $this->captureTransactionWithHttpInfo ($location_id, $transaction_id);
         return $response; 
     }
@@ -116,7 +116,7 @@ class TransactionsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-09-25";
+        $headerParams['Square-Version'] = "2019-10-23";
 
         
         
@@ -188,7 +188,7 @@ class TransactionsApi
      */
     public function charge($location_id, $body)
     {
-        trigger_error('Calling deprecated API: TransactionsApi.charge', E_USER_DEPRECATED);
+        trigger_error("\x1B[33mCalling deprecated API: TransactionsApi.charge\x1B[0m", E_USER_DEPRECATED);
         list($response, $statusCode, $httpHeader) = $this->chargeWithHttpInfo ($location_id, $body);
         return $response; 
     }
@@ -227,7 +227,7 @@ class TransactionsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-09-25";
+        $headerParams['Square-Version'] = "2019-10-23";
 
         
         
@@ -297,7 +297,7 @@ class TransactionsApi
      */
     public function createRefund($location_id, $transaction_id, $body)
     {
-        trigger_error('Calling deprecated API: TransactionsApi.createRefund', E_USER_DEPRECATED);
+        trigger_error("\x1B[33mCalling deprecated API: TransactionsApi.createRefund\x1B[0m", E_USER_DEPRECATED);
         list($response, $statusCode, $httpHeader) = $this->createRefundWithHttpInfo ($location_id, $transaction_id, $body);
         return $response; 
     }
@@ -341,7 +341,7 @@ class TransactionsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-09-25";
+        $headerParams['Square-Version'] = "2019-10-23";
 
         
         
@@ -420,7 +420,7 @@ class TransactionsApi
      */
     public function listRefunds($location_id, $begin_time = null, $end_time = null, $sort_order = null, $cursor = null)
     {
-        trigger_error('Calling deprecated API: TransactionsApi.listRefunds', E_USER_DEPRECATED);
+        trigger_error("\x1B[33mCalling deprecated API: TransactionsApi.listRefunds\x1B[0m", E_USER_DEPRECATED);
         list($response, $statusCode, $httpHeader) = $this->listRefundsWithHttpInfo ($location_id, $begin_time, $end_time, $sort_order, $cursor);
         return $response; 
     }
@@ -458,7 +458,7 @@ class TransactionsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-09-25";
+        $headerParams['Square-Version'] = "2019-10-23";
 
         // query params
         if ($begin_time !== null) {
@@ -538,7 +538,7 @@ class TransactionsApi
      */
     public function listTransactions($location_id, $begin_time = null, $end_time = null, $sort_order = null, $cursor = null)
     {
-        trigger_error('Calling deprecated API: TransactionsApi.listTransactions', E_USER_DEPRECATED);
+        trigger_error("\x1B[33mCalling deprecated API: TransactionsApi.listTransactions\x1B[0m", E_USER_DEPRECATED);
         list($response, $statusCode, $httpHeader) = $this->listTransactionsWithHttpInfo ($location_id, $begin_time, $end_time, $sort_order, $cursor);
         return $response; 
     }
@@ -576,7 +576,7 @@ class TransactionsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-09-25";
+        $headerParams['Square-Version'] = "2019-10-23";
 
         // query params
         if ($begin_time !== null) {
@@ -653,7 +653,7 @@ class TransactionsApi
      */
     public function retrieveTransaction($location_id, $transaction_id)
     {
-        trigger_error('Calling deprecated API: TransactionsApi.retrieveTransaction', E_USER_DEPRECATED);
+        trigger_error("\x1B[33mCalling deprecated API: TransactionsApi.retrieveTransaction\x1B[0m", E_USER_DEPRECATED);
         list($response, $statusCode, $httpHeader) = $this->retrieveTransactionWithHttpInfo ($location_id, $transaction_id);
         return $response; 
     }
@@ -692,7 +692,7 @@ class TransactionsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-09-25";
+        $headerParams['Square-Version'] = "2019-10-23";
 
         
         
@@ -764,7 +764,7 @@ class TransactionsApi
      */
     public function voidTransaction($location_id, $transaction_id)
     {
-        trigger_error('Calling deprecated API: TransactionsApi.voidTransaction', E_USER_DEPRECATED);
+        trigger_error("\x1B[33mCalling deprecated API: TransactionsApi.voidTransaction\x1B[0m", E_USER_DEPRECATED);
         list($response, $statusCode, $httpHeader) = $this->voidTransactionWithHttpInfo ($location_id, $transaction_id);
         return $response; 
     }
@@ -803,7 +803,7 @@ class TransactionsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-09-25";
+        $headerParams['Square-Version'] = "2019-10-23";
 
         
         

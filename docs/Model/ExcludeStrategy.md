@@ -1,13 +1,14 @@
-# VoidTransactionRequest
+# ExcludeStrategy
 
 ### Description
 
-Defines the request body for calls to the VoidTransaction endpoint.
-**Note: This model is deprecated.**
+Indicates which products matched by a `CatalogPricingRule` will be excluded if the pricing rule uses an exclude set.
 
 ## Properties
-Name | Getter | Setter | Type | Description | Notes
------------- | ------------- | ------------- | ------------- | ------------- | -------------
+Name | Type
+------------ | -------------
+**LEAST_EXPENSIVE** | string
+**MOST_EXPENSIVE** | string
 
 Note: All properties are protected and only accessed via getters and setters.
 

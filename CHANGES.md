@@ -1,5 +1,11 @@
 # Change Log
 
+## Version 2.20191023.0 (2019-10-23)
+* **GA release**: Merchants.ListMerchant is GA for all SDKs.
+* **Beta release**: All SDKs support new Locations API endpoint, CreateLocation.
+* **Beta release**: All SDKs support exclusion strategies for pricing rules.
+
+
 ## Version 2.20190925.0 (2019-09-25)
 
 * **GA release**: All SDKs have been updated to support the new Merchants API.
@@ -21,7 +27,7 @@
 
 ## Version 2.20190814.1 (2018-08-16)
 
-* **Bug fix**: Removed a currently unsupported API object type
+* **Bug fix**: Removed a currentlyunsupported API object type
 ## Version 2.20190814.0 (2019-08-15)
 
 * **New functionality**: All SDKs have been updated to support the Sandbox v2 BETA release

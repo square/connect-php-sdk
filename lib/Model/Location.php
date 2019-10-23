@@ -148,7 +148,7 @@ class Location implements ArrayAccess
     );
   
     /**
-      * $id The location's unique ID.
+      * $id The Square-issued ID of the location.
       * @var string
       */
     protected $id;
@@ -168,7 +168,7 @@ class Location implements ArrayAccess
       */
     protected $timezone;
     /**
-      * $capabilities Indicates which Square features are enabled for the location. See [LocationCapability](#type-locationcapability) for possible values
+      * $capabilities The Square features that are enabled for the location. See `LocationCapability` for possible values. See [LocationCapability](#type-locationcapability) for possible values
       * @var string[]
       */
     protected $capabilities;
@@ -183,12 +183,12 @@ class Location implements ArrayAccess
       */
     protected $created_at;
     /**
-      * $merchant_id The identifier of the merchant that owns the location.
+      * $merchant_id The ID of the merchant that owns the location.
       * @var string
       */
     protected $merchant_id;
     /**
-      * $country The location's country, in ISO 3166-1-alpha-2 format. See [Country](#type-country) for possible values
+      * $country The country of the location, in ISO 3166-1-alpha-2 format.  See `Country` for possible values. See [Country](#type-country) for possible values
       * @var string
       */
     protected $country;
@@ -198,7 +198,7 @@ class Location implements ArrayAccess
       */
     protected $language_code;
     /**
-      * $currency The currency used for all transactions at this location, specified in __ISO 4217 format__. For example, the currency for a location processing transactions in the United States is 'USD'. See [Currency](#type-currency) for possible values
+      * $currency The currency used for all transactions at this location, in ISO 4217 format.  See `Currency` for possible values. See [Currency](#type-currency) for possible values
       * @var string
       */
     protected $currency;
@@ -418,7 +418,7 @@ class Location implements ArrayAccess
   
     /**
      * Sets id
-     * @param string $id The location's unique ID.
+     * @param string $id The Square-issued ID of the location.
      * @return $this
      */
     public function setId($id)
@@ -494,7 +494,7 @@ class Location implements ArrayAccess
   
     /**
      * Sets capabilities
-     * @param string[] $capabilities Indicates which Square features are enabled for the location. See [LocationCapability](#type-locationcapability) for possible values
+     * @param string[] $capabilities The Square features that are enabled for the location. See `LocationCapability` for possible values. See [LocationCapability](#type-locationcapability) for possible values
      * @return $this
      */
     public function setCapabilities($capabilities)
@@ -551,7 +551,7 @@ class Location implements ArrayAccess
   
     /**
      * Sets merchant_id
-     * @param string $merchant_id The identifier of the merchant that owns the location.
+     * @param string $merchant_id The ID of the merchant that owns the location.
      * @return $this
      */
     public function setMerchantId($merchant_id)
@@ -570,7 +570,7 @@ class Location implements ArrayAccess
   
     /**
      * Sets country
-     * @param string $country The location's country, in ISO 3166-1-alpha-2 format. See [Country](#type-country) for possible values
+     * @param string $country The country of the location, in ISO 3166-1-alpha-2 format.  See `Country` for possible values. See [Country](#type-country) for possible values
      * @return $this
      */
     public function setCountry($country)
@@ -608,7 +608,7 @@ class Location implements ArrayAccess
   
     /**
      * Sets currency
-     * @param string $currency The currency used for all transactions at this location, specified in __ISO 4217 format__. For example, the currency for a location processing transactions in the United States is 'USD'. See [Currency](#type-currency) for possible values
+     * @param string $currency The currency used for all transactions at this location, in ISO 4217 format.  See `Currency` for possible values. See [Currency](#type-currency) for possible values
      * @return $this
      */
     public function setCurrency($currency)
