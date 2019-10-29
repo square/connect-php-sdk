@@ -8,11 +8,23 @@ php:
 - 7.0
 cache:
   directories:
-  - $HOME/.composer/cache/files
+  - "$HOME/.composer/cache/files"
 before_install:
 - composer config -g repositories.packagist composer https://packagist.jp
 - composer install -vvv
 install:
-- openssl aes-256-cbc -K $encrypted_afef0992877c_key -iv $encrypted_afef0992877c_iv -in ./travis-ci/accounts.enc -out ./travis-ci/accounts.json -d
+- openssl aes-256-cbc -K $encrypted_afef0992877c_key -iv $encrypted_afef0992877c_iv
+  -in ./travis-ci/accounts.enc -out ./travis-ci/accounts.json -d
 script:
 - vendor/bin/phpunit test
+notifications:
+  slack:
+    secure: EjnT9MIFuwH2cOK4DHoH5PDXmndvHRUeA3f9hbODDsd8RXpiKspzrZxH7bvvXidFomniS1kAsleyV+vHEaRkFnv1Di77suQBfZt1sjqb409SVnP46pSNAiCd2RTXtX6hlpBJ4Zzp4Ry78D5I34QRD4pwmL1hR6T1UYVOu+yPMXE9/5HYOwc+SgPNytZ5m9nKezv5HUOuHb2Nar1B8osbJiaWRJ+aWYrZN3uP2yyRSqqjk/G6eoPwMmdHp5cXR7clG43j0UOh17lGX6HIVXH0Ts5OX6wITEpXwiK4zHft6yBrpsn1Cd/PjYYDlnEA5MSXU83oOsOzHL2U41FRQLbVjAFCQn/cCQoV6VAKJluQYYgNIlIiCxrVldZZ7CK9RKSnMBnJpUgeaZnZkmNC4DXRw0c2XIK0U1bbJXZR/WUT/f0xNt0OM4fJWWd+yzcgUvKEc0Rfk4fXT+7wvaqi/U6aNTM2BAoXcl6Wo3iUdgNhTZ/SgMu6PZrwITaj0P78Lk2Yrgh0sWUESYBOO0tYgXPvY7L3UXZJccVXvMhQI5I6d0bt1LaZXOj0j4GZKbxJ7sFgcyZ4C+dUrYKKBwu2Nbewbbri92+g87xhZ2cfaN/xmBEISpuTgGn9bZkTpuNS0/bbbvRWle306YrjqXokvYuqDbMXIAUnS9UsNCuxRSBG4Jw=
+    on_success: change
+      template:
+        - "@oncall"
+        - "Build <%{build_url}|#%{build_number}> (<%{compare_url}|%{commit}>) of %{repository_slug}@%{branch} in PR <%{pull_request_url}|#%{pull_request_number}> by %{author} %{result} in %{duration}"
+  email:
+    recipients:
+      - dexteam-external@squareup.com
+    on_success: change
