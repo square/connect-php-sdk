@@ -18,14 +18,14 @@ class CaseInsensitiveArrayTest extends \PHPUnit\Framework\TestCase
     /**
      * Setup before running each test case
      */
-    public static function setUpBeforeClass() : void {
+    public static function setUpBeforeClass(): void {
       parent::setUpBeforeClass();
     }
 
     /**
      * Clean up after running each test case
      */
-    public static function tearDownAfterClass() : void {
+    public static function tearDownAfterClass(): void {
       parent::setUpBeforeClass();
     }
 
