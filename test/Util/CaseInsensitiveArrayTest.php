@@ -18,14 +18,14 @@ class CaseInsensitiveArrayTest extends \PHPUnit\Framework\TestCase
     /**
      * Setup before running each test case
      */
-    public static function setUpBeforeClass(): void {
+    public static function setUpBeforeClass(){
       parent::setUpBeforeClass();
     }
 
     /**
      * Clean up after running each test case
      */
-    public static function tearDownAfterClass(): void {
+    public static function tearDownAfterClass(){
       parent::setUpBeforeClass();
     }
 
@@ -35,7 +35,7 @@ class CaseInsensitiveArrayTest extends \PHPUnit\Framework\TestCase
      * DefaultConstructor, Get, and Set.
      *
      */
-    public function test_SimpleBehavior() {
+    public function test_SimpleBehavior(){
         // Test default constructor.
         $cid = new CaseInsensitiveArray();
         $this->assertInstanceOf(
@@ -45,7 +45,7 @@ class CaseInsensitiveArrayTest extends \PHPUnit\Framework\TestCase
 
         $this->assertEquals(count($cid), 0);
 
-        $this->expectException(\Error::class);
+        $this->expectException(Error::class);
         $this->assertError($cid['Foo']);
 
         // Test insert operator.
@@ -61,7 +61,7 @@ class CaseInsensitiveArrayTest extends \PHPUnit\Framework\TestCase
      * ParamConstructor and Get.
      *
      */
-    public function test_ParamConstructor() {
+    public function test_ParamConstructor(){
         // Test parameter constructor.
         $arr = [
           "FOO" => "foo_value",
@@ -77,7 +77,7 @@ class CaseInsensitiveArrayTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($cid['bar'], 'bar_value');
     }
 
-    public function test_IteratorIsCaseSensitive() {
+    public function test_IteratorIsCaseSensitive(){
       $arr = [
         "fOo" => "foo_value",
       ];
