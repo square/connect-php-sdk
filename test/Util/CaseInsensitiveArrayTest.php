@@ -3,7 +3,6 @@
 namespace SquareConnect\Util;
 
 require 'autoload.php';
-use PHPUnit\Framework\Error\Error;
 
 /**
  * CaseInsensitiveArrayTest Class Doc Comment
