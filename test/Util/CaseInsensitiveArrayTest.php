@@ -45,7 +45,7 @@ class CaseInsensitiveArrayTest extends \PHPUnit\Framework\TestCase
 
         $this->assertEquals(count($cid), 0);
 
-        $this->expectException(Error::class);
+        $this->expectException(InvalidArgumentException::class);
         $this->assertError($cid['Foo']);
 
         // Test insert operator.
