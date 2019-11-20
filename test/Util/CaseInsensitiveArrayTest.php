@@ -44,7 +44,7 @@ class CaseInsensitiveArrayTest extends \PHPUnit\Framework\TestCase
         );
 
         $this->assertEquals(count($cid), 0);
-        $errorInstance = new Error;
+        $errorInstance = new \PHPUnit\Framework\Error;
         $this->expectException(get_class($errorInstance));
         $this->assertError($cid['Foo']);
 
