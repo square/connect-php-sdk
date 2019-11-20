@@ -3,6 +3,7 @@
 namespace SquareConnect\Util;
 
 require 'autoload.php';
+use PHPUnit\Framework\Error\Error;
 
 /**
  * CaseInsensitiveArrayTest Class Doc Comment
@@ -44,8 +45,8 @@ class CaseInsensitiveArrayTest extends \PHPUnit\Framework\TestCase
         );
 
         $this->assertEquals(count($cid), 0);
-
-        $this->expectException(PHPUnit\Framework\Error\Error::class);
+        $errorInstance = new Error;
+        $this->expectException(get_class($errorInstance));
         $this->assertError($cid['Foo']);
 
         // Test insert operator.
