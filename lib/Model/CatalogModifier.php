@@ -56,12 +56,12 @@ class CatalogModifier implements ArrayAccess
     );
   
     /**
-      * $name The modifier's name. Searchable. This field has max length of 255 Unicode code points.
+      * $name The modifier name. Searchable. This field has max length of 255 Unicode code points.
       * @var string
       */
     protected $name;
     /**
-      * $price_money The modifier's price.
+      * $price_money The modifier price.
       * @var \SquareConnect\Model\Money
       */
     protected $price_money;
@@ -96,7 +96,7 @@ class CatalogModifier implements ArrayAccess
   
     /**
      * Sets name
-     * @param string $name The modifier's name. Searchable. This field has max length of 255 Unicode code points.
+     * @param string $name The modifier name. Searchable. This field has max length of 255 Unicode code points.
      * @return $this
      */
     public function setName($name)
@@ -115,7 +115,7 @@ class CatalogModifier implements ArrayAccess
   
     /**
      * Sets price_money
-     * @param \SquareConnect\Model\Money $price_money The modifier's price.
+     * @param \SquareConnect\Model\Money $price_money The modifier price.
      * @return $this
      */
     public function setPriceMoney($price_money)

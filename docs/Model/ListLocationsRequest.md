@@ -2,7 +2,7 @@
 
 ### Description
 
-Defines the fields that are included in requests to the ListLocations endpoint.
+Defines the fields that are included in requests to the __ListLocations__ endpoint.
 
 ## Properties
 Name | Getter | Setter | Type | Description | Notes

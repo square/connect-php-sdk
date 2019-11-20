@@ -89,7 +89,7 @@ class Card implements ArrayAccess
       */
     protected $id;
     /**
-      * $card_brand The card's brand (such as `VISA`). See [CardBrand](#type-cardbrand) for possible values
+      * $card_brand The card's brand (such as `VISA`). See `CardBrand` for all possible values. See [CardBrand](#type-cardbrand) for possible values
       * @var string
       */
     protected $card_brand;
@@ -119,7 +119,7 @@ class Card implements ArrayAccess
       */
     protected $billing_address;
     /**
-      * $fingerprint A unique, Square-assigned ID that identifies the card across multiple locations and applications for a single Square account.
+      * $fingerprint __Not currently set.__ Intended as a Square-assigned identifier, based  on the card number, to identify the card across multiple locations within a single application.
       * @var string
       */
     protected $fingerprint;
@@ -213,7 +213,7 @@ class Card implements ArrayAccess
   
     /**
      * Sets card_brand
-     * @param string $card_brand The card's brand (such as `VISA`). See [CardBrand](#type-cardbrand) for possible values
+     * @param string $card_brand The card's brand (such as `VISA`). See `CardBrand` for all possible values. See [CardBrand](#type-cardbrand) for possible values
      * @return $this
      */
     public function setCardBrand($card_brand)
@@ -327,7 +327,7 @@ class Card implements ArrayAccess
   
     /**
      * Sets fingerprint
-     * @param string $fingerprint A unique, Square-assigned ID that identifies the card across multiple locations and applications for a single Square account.
+     * @param string $fingerprint __Not currently set.__ Intended as a Square-assigned identifier, based  on the card number, to identify the card across multiple locations within a single application.
      * @return $this
      */
     public function setFingerprint($fingerprint)

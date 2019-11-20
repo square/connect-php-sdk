@@ -2,7 +2,7 @@
 
 ### Description
 
-The type of a `CatalogItem`. Connect V2 only allows the creation of `REGULAR` or `APPOINTMENTS_SERVICE` items.
+The type of a CatalogItem. Connect V2 only allows the creation of `REGULAR` or `APPOINTMENTS_SERVICE` items.
 
 ## Properties
 Name | Type

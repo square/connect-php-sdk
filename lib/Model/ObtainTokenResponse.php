@@ -105,7 +105,7 @@ class ObtainTokenResponse implements ArrayAccess
       */
     protected $subscription_id;
     /**
-      * $plan_id __LEGACY FIELD__. The ID of the subscription plan the merchant signed up for. Only present if the merchant signed up for a subscription during authorization.
+      * $plan_id T__LEGACY FIELD__. The ID of the subscription plan the merchant signed up for. Only present if the merchant signed up for a subscription during authorization.
       * @var string
       */
     protected $plan_id;
@@ -275,7 +275,7 @@ class ObtainTokenResponse implements ArrayAccess
   
     /**
      * Sets plan_id
-     * @param string $plan_id __LEGACY FIELD__. The ID of the subscription plan the merchant signed up for. Only present if the merchant signed up for a subscription during authorization.
+     * @param string $plan_id T__LEGACY FIELD__. The ID of the subscription plan the merchant signed up for. Only present if the merchant signed up for a subscription during authorization.
      * @return $this
      */
     public function setPlanId($plan_id)

@@ -60,7 +60,7 @@ class CatalogModifierList implements ArrayAccess
     );
   
     /**
-      * $name The `CatalogModifierList`'s name. Searchable. This field has max length of 255 Unicode code points.
+      * $name A searchable name for the `CatalogModifierList`. This field has max length of 255 Unicode code points.
       * @var string
       */
     protected $name;
@@ -70,7 +70,7 @@ class CatalogModifierList implements ArrayAccess
       */
     protected $selection_type;
     /**
-      * $modifiers The options included in the `CatalogModifierList`. You must include at least one `CatalogModifier`. Each `CatalogObject` must have type `MODIFIER` and contain `CatalogModifier` data.
+      * $modifiers The options included in the `CatalogModifierList`. You must include at least one `CatalogModifier`. Each CatalogObject must have type `MODIFIER` and contain `CatalogModifier` data.
       * @var \SquareConnect\Model\CatalogObject[]
       */
     protected $modifiers;
@@ -110,7 +110,7 @@ class CatalogModifierList implements ArrayAccess
   
     /**
      * Sets name
-     * @param string $name The `CatalogModifierList`'s name. Searchable. This field has max length of 255 Unicode code points.
+     * @param string $name A searchable name for the `CatalogModifierList`. This field has max length of 255 Unicode code points.
      * @return $this
      */
     public function setName($name)
@@ -148,7 +148,7 @@ class CatalogModifierList implements ArrayAccess
   
     /**
      * Sets modifiers
-     * @param \SquareConnect\Model\CatalogObject[] $modifiers The options included in the `CatalogModifierList`. You must include at least one `CatalogModifier`. Each `CatalogObject` must have type `MODIFIER` and contain `CatalogModifier` data.
+     * @param \SquareConnect\Model\CatalogObject[] $modifiers The options included in the `CatalogModifierList`. You must include at least one `CatalogModifier`. Each CatalogObject must have type `MODIFIER` and contain `CatalogModifier` data.
      * @return $this
      */
     public function setModifiers($modifiers)

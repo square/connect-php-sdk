@@ -2,12 +2,12 @@
 
 ### Description
 
-Defines the parameters that can be included in the body of a request to the CreateCheckout endpoint.
+Defines the parameters that can be included in the body of a request to the [CreateCheckout](#endpoint-createcheckout) endpoint.
 
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------
-**idempotency_key** | getIdempotencyKey() | setIdempotencyKey($value) | **string** | A unique string that identifies this checkout among others you&#39;ve created. It can be any valid string but must be unique for every order sent to Square Checkout for a given location ID.  The idempotency key is used to avoid processing the same order more than once. If you&#39;re unsure whether a particular checkout was created successfully, you can reattempt it with the same idempotency key and all the same other parameters without worrying about creating duplicates.  We recommend using a random number/string generator native to the language you are working in to generate strings for your idempotency keys.  See [Idempotency](https://developer.squareup.com/docs/basics/api101/idempotency) for more information. | 
+**idempotency_key** | getIdempotencyKey() | setIdempotencyKey($value) | **string** | A unique string that identifies this checkout among others you&#39;ve created. It can be any valid string but must be unique for every order sent to Square Checkout for a given location ID.  The idempotency key is used to avoid processing the same order more than once. If you&#39;re unsure whether a particular checkout was created successfully, you can reattempt it with the same idempotency key and all the same other parameters without worrying about creating duplicates.  We recommend using a random number/string generator native to the language you are working in to generate strings for your idempotency keys.  See [Idempotency keys](#idempotencykeys) for more information. | 
 **order** | getOrder() | setOrder($value) | [**\SquareConnect\Model\CreateOrderRequest**](CreateOrderRequest.md) | The order including line items to be checked out. | 
 **ask_for_shipping_address** | getAskForShippingAddress() | setAskForShippingAddress($value) | **bool** | If &#x60;true&#x60;, Square Checkout will collect shipping information on your behalf and store that information with the transaction information in your Square Dashboard.  Default: &#x60;false&#x60;. | [optional] 
 **merchant_support_email** | getMerchantSupportEmail() | setMerchantSupportEmail($value) | **string** | The email address to display on the Square Checkout confirmation page and confirmation email that the buyer can use to contact the merchant.  If this value is not set, the confirmation page and email will display the primary email address associated with the merchant&#39;s Square account.  Default: none; only exists if explicitly set. | [optional] 

@@ -56,12 +56,12 @@ class BatchRetrieveCatalogObjectsRequest implements ArrayAccess
     );
   
     /**
-      * $object_ids The IDs of the `CatalogObject`s to be retrieved.
+      * $object_ids The IDs of the CatalogObjects to be retrieved.
       * @var string[]
       */
     protected $object_ids;
     /**
-      * $include_related_objects If `true`, the response will include additional objects that are related to the requested objects, as follows:  If the `objects` field of the response contains a `CatalogItem`,  its associated `CatalogCategory](#type-catalogcategory), [CatalogTax`es, `CatalogImage](#type-catalogimage)s and [CatalogModifierList`s will be returned in the `related_objects` field of the response. If the `objects` field of the response contains a `CatalogItemVariation`, its parent `CatalogItem` will be returned in the `related_objects` field of the response.
+      * $include_related_objects If `true`, the response will include additional objects that are related to the requested objects, as follows:  If the `objects` field of the response contains a CatalogItem, its associated CatalogCategory objects, CatalogTax objects, CatalogImage objects and CatalogModifierLists will be returned in the `related_objects` field of the response. If the `objects` field of the response contains a CatalogItemVariation, its parent CatalogItem will be returned in the `related_objects` field of the response.
       * @var bool
       */
     protected $include_related_objects;
@@ -96,7 +96,7 @@ class BatchRetrieveCatalogObjectsRequest implements ArrayAccess
   
     /**
      * Sets object_ids
-     * @param string[] $object_ids The IDs of the `CatalogObject`s to be retrieved.
+     * @param string[] $object_ids The IDs of the CatalogObjects to be retrieved.
      * @return $this
      */
     public function setObjectIds($object_ids)
@@ -115,7 +115,7 @@ class BatchRetrieveCatalogObjectsRequest implements ArrayAccess
   
     /**
      * Sets include_related_objects
-     * @param bool $include_related_objects If `true`, the response will include additional objects that are related to the requested objects, as follows:  If the `objects` field of the response contains a `CatalogItem`,  its associated `CatalogCategory](#type-catalogcategory), [CatalogTax`es, `CatalogImage](#type-catalogimage)s and [CatalogModifierList`s will be returned in the `related_objects` field of the response. If the `objects` field of the response contains a `CatalogItemVariation`, its parent `CatalogItem` will be returned in the `related_objects` field of the response.
+     * @param bool $include_related_objects If `true`, the response will include additional objects that are related to the requested objects, as follows:  If the `objects` field of the response contains a CatalogItem, its associated CatalogCategory objects, CatalogTax objects, CatalogImage objects and CatalogModifierLists will be returned in the `related_objects` field of the response. If the `objects` field of the response contains a CatalogItemVariation, its parent CatalogItem will be returned in the `related_objects` field of the response.
      * @return $this
      */
     public function setIncludeRelatedObjects($include_related_objects)

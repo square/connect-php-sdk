@@ -53,7 +53,7 @@ class CatalogQueryItemsForItemOptions implements ArrayAccess
     );
   
     /**
-      * $item_option_ids A set of `CatalogItemOption` IDs to be used to find associated `CatalogItem` will be returned.
+      * $item_option_ids A set of `CatalogItemOption` IDs to be used to find associated `CatalogItem`s. All Items that contain all of the given Item Options (in any order) will be returned.
       * @var string[]
       */
     protected $item_option_ids;
@@ -83,7 +83,7 @@ class CatalogQueryItemsForItemOptions implements ArrayAccess
   
     /**
      * Sets item_option_ids
-     * @param string[] $item_option_ids A set of `CatalogItemOption` IDs to be used to find associated `CatalogItem` will be returned.
+     * @param string[] $item_option_ids A set of `CatalogItemOption` IDs to be used to find associated `CatalogItem`s. All Items that contain all of the given Item Options (in any order) will be returned.
      * @return $this
      */
     public function setItemOptionIds($item_option_ids)

@@ -2,7 +2,7 @@
 
 ### Description
 
-Defines the fields that are included in the response body of a request to the CreateMobileAuthorizationCode endpoint.
+Defines the fields that are included in the response body of a request to the __CreateMobileAuthorizationCode__ endpoint.
 
 ## Properties
 Name | Getter | Setter | Type | Description | Notes

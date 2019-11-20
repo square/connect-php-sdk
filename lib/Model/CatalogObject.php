@@ -149,12 +149,12 @@ class CatalogObject implements ArrayAccess
       */
     protected $type;
     /**
-      * $id An identifier to reference this object in the catalog. When a new CatalogObject is inserted, the client should set the id to a temporary identifier starting with a `'#'` character. Other objects being inserted or updated within the same request may use this identifier to refer to the new object.  When the server receives the new object, it will supply a unique identifier that replaces the temporary identifier for all future references.
+      * $id An identifier to reference this object in the catalog. When a new `CatalogObject` is inserted, the client should set the id to a temporary identifier starting with a \"`#`\" character. Other objects being inserted or updated within the same request may use this identifier to refer to the new object.  When the server receives the new object, it will supply a unique identifier that replaces the temporary identifier for all future references.
       * @var string
       */
     protected $id;
     /**
-      * $updated_at Last modification [timestamp](#workingwithdates) in RFC 3339 format, e.g., `\"2016-08-15T23:59:33.123Z\"` would indicate the UTC time (denoted by `Z`) of August 15, 2016 at 23:59:33 and 123 milliseconds.
+      * $updated_at Last modification [timestamp](https://developer.squareup.com/docs/build-basics/working-with-dates) in RFC 3339 format, e.g., `\"2016-08-15T23:59:33.123Z\"` would indicate the UTC time (denoted by `Z`) of August 15, 2016 at 23:59:33 and 123 milliseconds.
       * @var string
       */
     protected $updated_at;
@@ -169,7 +169,7 @@ class CatalogObject implements ArrayAccess
       */
     protected $is_deleted;
     /**
-      * $catalog_v1_ids The Connect V1 IDs for this object at each `location` where it is present, where they differ from the object's Connect V2 ID. The field will only be present for objects that have been created or modified by legacy APIs.
+      * $catalog_v1_ids The Connect v1 IDs for this object at each location where it is present, where they differ from the object's Connect V2 ID. The field will only be present for objects that have been created or modified by legacy APIs.
       * @var \SquareConnect\Model\CatalogV1Id[]
       */
     protected $catalog_v1_ids;
@@ -423,7 +423,7 @@ class CatalogObject implements ArrayAccess
   
     /**
      * Sets id
-     * @param string $id An identifier to reference this object in the catalog. When a new CatalogObject is inserted, the client should set the id to a temporary identifier starting with a `'#'` character. Other objects being inserted or updated within the same request may use this identifier to refer to the new object.  When the server receives the new object, it will supply a unique identifier that replaces the temporary identifier for all future references.
+     * @param string $id An identifier to reference this object in the catalog. When a new `CatalogObject` is inserted, the client should set the id to a temporary identifier starting with a \"`#`\" character. Other objects being inserted or updated within the same request may use this identifier to refer to the new object.  When the server receives the new object, it will supply a unique identifier that replaces the temporary identifier for all future references.
      * @return $this
      */
     public function setId($id)
@@ -442,7 +442,7 @@ class CatalogObject implements ArrayAccess
   
     /**
      * Sets updated_at
-     * @param string $updated_at Last modification [timestamp](#workingwithdates) in RFC 3339 format, e.g., `\"2016-08-15T23:59:33.123Z\"` would indicate the UTC time (denoted by `Z`) of August 15, 2016 at 23:59:33 and 123 milliseconds.
+     * @param string $updated_at Last modification [timestamp](https://developer.squareup.com/docs/build-basics/working-with-dates) in RFC 3339 format, e.g., `\"2016-08-15T23:59:33.123Z\"` would indicate the UTC time (denoted by `Z`) of August 15, 2016 at 23:59:33 and 123 milliseconds.
      * @return $this
      */
     public function setUpdatedAt($updated_at)
@@ -499,7 +499,7 @@ class CatalogObject implements ArrayAccess
   
     /**
      * Sets catalog_v1_ids
-     * @param \SquareConnect\Model\CatalogV1Id[] $catalog_v1_ids The Connect V1 IDs for this object at each `location` where it is present, where they differ from the object's Connect V2 ID. The field will only be present for objects that have been created or modified by legacy APIs.
+     * @param \SquareConnect\Model\CatalogV1Id[] $catalog_v1_ids The Connect v1 IDs for this object at each location where it is present, where they differ from the object's Connect V2 ID. The field will only be present for objects that have been created or modified by legacy APIs.
      * @return $this
      */
     public function setCatalogV1Ids($catalog_v1_ids)

@@ -2,7 +2,7 @@
 
 ### Description
 
-Retrieve an employee by `Employee.id`
+
 
 ## Properties
 Name | Getter | Setter | Type | Description | Notes

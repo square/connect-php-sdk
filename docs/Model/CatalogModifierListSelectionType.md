@@ -2,7 +2,7 @@
 
 ### Description
 
-Indicates whether a `CatalogModifierList` supports multiple selections.
+Indicates whether a CatalogModifierList supports multiple selections.
 
 ## Properties
 Name | Type

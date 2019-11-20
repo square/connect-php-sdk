@@ -45,7 +45,8 @@ class Payment implements ArrayAccess
         'buyer_email_address' => 'string',
         'billing_address' => '\SquareConnect\Model\Address',
         'shipping_address' => '\SquareConnect\Model\Address',
-        'note' => 'string'
+        'note' => 'string',
+        'statement_description_identifier' => 'string'
     );
   
     /** 
@@ -74,7 +75,8 @@ class Payment implements ArrayAccess
         'buyer_email_address' => 'buyer_email_address',
         'billing_address' => 'billing_address',
         'shipping_address' => 'shipping_address',
-        'note' => 'note'
+        'note' => 'note',
+        'statement_description_identifier' => 'statement_description_identifier'
     );
   
     /**
@@ -103,7 +105,8 @@ class Payment implements ArrayAccess
         'buyer_email_address' => 'setBuyerEmailAddress',
         'billing_address' => 'setBillingAddress',
         'shipping_address' => 'setShippingAddress',
-        'note' => 'setNote'
+        'note' => 'setNote',
+        'statement_description_identifier' => 'setStatementDescriptionIdentifier'
     );
   
     /**
@@ -132,7 +135,8 @@ class Payment implements ArrayAccess
         'buyer_email_address' => 'getBuyerEmailAddress',
         'billing_address' => 'getBillingAddress',
         'shipping_address' => 'getShippingAddress',
-        'note' => 'getNote'
+        'note' => 'getNote',
+        'statement_description_identifier' => 'getStatementDescriptionIdentifier'
     );
   
     /**
@@ -151,7 +155,7 @@ class Payment implements ArrayAccess
       */
     protected $updated_at;
     /**
-      * $amount_money The amount of money processed for this payment, not including `tip_money`. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents. For more information, see [Working with monetary amounts](https://developer.squareup.com/docs/build-basics/working-with-monetary-amounts).
+      * $amount_money The amount of money processed for this payment, not including `tip_money`. Specified in the smallest denomination of the applicable currency. For example,  US dollar amounts are specified in cents. For more information, see [Working with monetary amounts](https://developer.squareup.com/docs/build-basics/working-with-monetary-amounts).
       * @var \SquareConnect\Model\Money
       */
     protected $amount_money;
@@ -161,12 +165,12 @@ class Payment implements ArrayAccess
       */
     protected $tip_money;
     /**
-      * $total_money The total money for the payment, including `amount_money` and `tip_money`. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents.
+      * $total_money The total money for the payment, including `amount_money` and `tip_money`. Specified in the smallest denomination of the applicable currency.  For example, US dollar amounts are specified in cents.
       * @var \SquareConnect\Model\Money
       */
     protected $total_money;
     /**
-      * $app_fee_money The amount of money the developer is taking as a fee for facilitating the payment on behalf of the seller. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents.  For more information, see [Take Payments and Collect Fees](https://developer.squareup.com/docs/payments-api/take-payments-and-collect-fees).  Cannot be more than 90% of the `total_money` value.
+      * $app_fee_money The amount of money the developer is taking as a fee for facilitating the payment on behalf of the seller. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents.   For more information, see   [Take Payments and Collect Fees](https://developer.squareup.com/docs/payments-api/take-payments-and-collect-fees).  Cannot be more than 90% of the `total_money` value.
       * @var \SquareConnect\Model\Money
       */
     protected $app_fee_money;
@@ -245,6 +249,11 @@ class Payment implements ArrayAccess
       * @var string
       */
     protected $note;
+    /**
+      * $statement_description_identifier Additional payment information that gets added on the customer's card statement as part of the statement description.  Note that the statement_description_identifier may get truncated on the statement description to fit the required information including the Square identifier (SQ *) and name of the merchant taking the payment.
+      * @var string
+      */
+    protected $statement_description_identifier;
 
     /**
      * Constructor
@@ -363,6 +372,11 @@ class Payment implements ArrayAccess
             } else {
               $this->note = null;
             }
+            if (isset($data["statement_description_identifier"])) {
+              $this->statement_description_identifier = $data["statement_description_identifier"];
+            } else {
+              $this->statement_description_identifier = null;
+            }
         }
     }
     /**
@@ -433,7 +447,7 @@ class Payment implements ArrayAccess
   
     /**
      * Sets amount_money
-     * @param \SquareConnect\Model\Money $amount_money The amount of money processed for this payment, not including `tip_money`. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents. For more information, see [Working with monetary amounts](https://developer.squareup.com/docs/build-basics/working-with-monetary-amounts).
+     * @param \SquareConnect\Model\Money $amount_money The amount of money processed for this payment, not including `tip_money`. Specified in the smallest denomination of the applicable currency. For example,  US dollar amounts are specified in cents. For more information, see [Working with monetary amounts](https://developer.squareup.com/docs/build-basics/working-with-monetary-amounts).
      * @return $this
      */
     public function setAmountMoney($amount_money)
@@ -471,7 +485,7 @@ class Payment implements ArrayAccess
   
     /**
      * Sets total_money
-     * @param \SquareConnect\Model\Money $total_money The total money for the payment, including `amount_money` and `tip_money`. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents.
+     * @param \SquareConnect\Model\Money $total_money The total money for the payment, including `amount_money` and `tip_money`. Specified in the smallest denomination of the applicable currency.  For example, US dollar amounts are specified in cents.
      * @return $this
      */
     public function setTotalMoney($total_money)
@@ -490,7 +504,7 @@ class Payment implements ArrayAccess
   
     /**
      * Sets app_fee_money
-     * @param \SquareConnect\Model\Money $app_fee_money The amount of money the developer is taking as a fee for facilitating the payment on behalf of the seller. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents.  For more information, see [Take Payments and Collect Fees](https://developer.squareup.com/docs/payments-api/take-payments-and-collect-fees).  Cannot be more than 90% of the `total_money` value.
+     * @param \SquareConnect\Model\Money $app_fee_money The amount of money the developer is taking as a fee for facilitating the payment on behalf of the seller. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents.   For more information, see   [Take Payments and Collect Fees](https://developer.squareup.com/docs/payments-api/take-payments-and-collect-fees).  Cannot be more than 90% of the `total_money` value.
      * @return $this
      */
     public function setAppFeeMoney($app_fee_money)
@@ -781,6 +795,25 @@ class Payment implements ArrayAccess
     public function setNote($note)
     {
         $this->note = $note;
+        return $this;
+    }
+    /**
+     * Gets statement_description_identifier
+     * @return string
+     */
+    public function getStatementDescriptionIdentifier()
+    {
+        return $this->statement_description_identifier;
+    }
+  
+    /**
+     * Sets statement_description_identifier
+     * @param string $statement_description_identifier Additional payment information that gets added on the customer's card statement as part of the statement description.  Note that the statement_description_identifier may get truncated on the statement description to fit the required information including the Square identifier (SQ *) and name of the merchant taking the payment.
+     * @return $this
+     */
+    public function setStatementDescriptionIdentifier($statement_description_identifier)
+    {
+        $this->statement_description_identifier = $statement_description_identifier;
         return $this;
     }
     /**

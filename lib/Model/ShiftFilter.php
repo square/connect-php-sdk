@@ -24,8 +24,8 @@ class ShiftFilter implements ArrayAccess
       * @var string[]
       */
     static $swaggerTypes = array(
-        'location_id' => 'string[]',
-        'employee_id' => 'string[]',
+        'location_ids' => 'string[]',
+        'employee_ids' => 'string[]',
         'status' => 'string',
         'start' => '\SquareConnect\Model\TimeRange',
         'end' => '\SquareConnect\Model\TimeRange',
@@ -37,8 +37,8 @@ class ShiftFilter implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
-        'location_id' => 'location_id',
-        'employee_id' => 'employee_id',
+        'location_ids' => 'location_ids',
+        'employee_ids' => 'employee_ids',
         'status' => 'status',
         'start' => 'start',
         'end' => 'end',
@@ -50,8 +50,8 @@ class ShiftFilter implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
-        'location_id' => 'setLocationId',
-        'employee_id' => 'setEmployeeId',
+        'location_ids' => 'setLocationIds',
+        'employee_ids' => 'setEmployeeIds',
         'status' => 'setStatus',
         'start' => 'setStart',
         'end' => 'setEnd',
@@ -63,8 +63,8 @@ class ShiftFilter implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
-        'location_id' => 'getLocationId',
-        'employee_id' => 'getEmployeeId',
+        'location_ids' => 'getLocationIds',
+        'employee_ids' => 'getEmployeeIds',
         'status' => 'getStatus',
         'start' => 'getStart',
         'end' => 'getEnd',
@@ -72,15 +72,15 @@ class ShiftFilter implements ArrayAccess
     );
   
     /**
-      * $location_id Fetch shifts for the specified location.
+      * $location_ids Fetch shifts for the specified location.
       * @var string[]
       */
-    protected $location_id;
+    protected $location_ids;
     /**
-      * $employee_id Fetch shifts for the specified employee.
+      * $employee_ids Fetch shifts for the specified employee.
       * @var string[]
       */
-    protected $employee_id;
+    protected $employee_ids;
     /**
       * $status Fetch a `Shift` instance by `Shift.status`. See [ShiftFilterStatus](#type-shiftfilterstatus) for possible values
       * @var string
@@ -109,15 +109,15 @@ class ShiftFilter implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            if (isset($data["location_id"])) {
-              $this->location_id = $data["location_id"];
+            if (isset($data["location_ids"])) {
+              $this->location_ids = $data["location_ids"];
             } else {
-              $this->location_id = null;
+              $this->location_ids = null;
             }
-            if (isset($data["employee_id"])) {
-              $this->employee_id = $data["employee_id"];
+            if (isset($data["employee_ids"])) {
+              $this->employee_ids = $data["employee_ids"];
             } else {
-              $this->employee_id = null;
+              $this->employee_ids = null;
             }
             if (isset($data["status"])) {
               $this->status = $data["status"];
@@ -142,41 +142,41 @@ class ShiftFilter implements ArrayAccess
         }
     }
     /**
-     * Gets location_id
+     * Gets location_ids
      * @return string[]
      */
-    public function getLocationId()
+    public function getLocationIds()
     {
-        return $this->location_id;
+        return $this->location_ids;
     }
   
     /**
-     * Sets location_id
-     * @param string[] $location_id Fetch shifts for the specified location.
+     * Sets location_ids
+     * @param string[] $location_ids Fetch shifts for the specified location.
      * @return $this
      */
-    public function setLocationId($location_id)
+    public function setLocationIds($location_ids)
     {
-        $this->location_id = $location_id;
+        $this->location_ids = $location_ids;
         return $this;
     }
     /**
-     * Gets employee_id
+     * Gets employee_ids
      * @return string[]
      */
-    public function getEmployeeId()
+    public function getEmployeeIds()
     {
-        return $this->employee_id;
+        return $this->employee_ids;
     }
   
     /**
-     * Sets employee_id
-     * @param string[] $employee_id Fetch shifts for the specified employee.
+     * Sets employee_ids
+     * @param string[] $employee_ids Fetch shifts for the specified employee.
      * @return $this
      */
-    public function setEmployeeId($employee_id)
+    public function setEmployeeIds($employee_ids)
     {
-        $this->employee_id = $employee_id;
+        $this->employee_ids = $employee_ids;
         return $this;
     }
     /**

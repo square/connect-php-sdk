@@ -2,7 +2,7 @@
 
 ### Description
 
-Defines the parameters that can be included in the body of a request to the RegisterDomain endpoint.
+Defines the parameters that can be included in the body of a request to the __RegisterDomain__ endpoint.
 
 ## Properties
 Name | Getter | Setter | Type | Description | Notes

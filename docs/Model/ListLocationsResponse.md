@@ -2,13 +2,13 @@
 
 ### Description
 
-Defines the fields that are included in the response body of a request to the ListLocations endpoint.  One of `errors` or `locations` is present in a given response (never both).
+Defines the fields that are included in the response body of a request to the __ListLocations__ endpoint.  One of `errors` or `locations` is present in a given response (never both).
 
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------
 **errors** | getErrors() | setErrors($value) | [**\SquareConnect\Model\Error[]**](Error.md) | Any errors that occurred during the request. | [optional] 
-**locations** | getLocations() | setLocations($value) | [**\SquareConnect\Model\Location[]**](Location.md) | The business&#39;s locations. | [optional] 
+**locations** | getLocations() | setLocations($value) | [**\SquareConnect\Model\Location[]**](Location.md) | The business locations. | [optional] 
 
 Note: All properties are protected and only accessed via getters and setters.
 

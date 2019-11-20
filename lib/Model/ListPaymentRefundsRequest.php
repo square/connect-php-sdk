@@ -101,12 +101,12 @@ class ListPaymentRefundsRequest implements ArrayAccess
       */
     protected $location_id;
     /**
-      * $status If provided, only refunds with the given status are returned.  For a list of refund status values, see `PaymentRefund`.  Default: If omitted refunds are returned regardless of status.
+      * $status If provided, only refunds with the given status are returned. For a list of refund status values, see `PaymentRefund`.  Default: If omitted refunds are returned regardless of status.
       * @var string
       */
     protected $status;
     /**
-      * $source_type If provided, only refunds with the given source type are returned.  - `CARD` - List refunds only for payments where card was specified as payment  source.  Default: If omitted refunds are returned regardless of source type.
+      * $source_type If provided, only refunds with the given source type are returned. - `CARD` - List refunds only for payments where card was specified as payment source.  Default: If omitted refunds are returned regardless of source type.
       * @var string
       */
     protected $source_type;
@@ -261,7 +261,7 @@ class ListPaymentRefundsRequest implements ArrayAccess
   
     /**
      * Sets status
-     * @param string $status If provided, only refunds with the given status are returned.  For a list of refund status values, see `PaymentRefund`.  Default: If omitted refunds are returned regardless of status.
+     * @param string $status If provided, only refunds with the given status are returned. For a list of refund status values, see `PaymentRefund`.  Default: If omitted refunds are returned regardless of status.
      * @return $this
      */
     public function setStatus($status)
@@ -280,7 +280,7 @@ class ListPaymentRefundsRequest implements ArrayAccess
   
     /**
      * Sets source_type
-     * @param string $source_type If provided, only refunds with the given source type are returned.  - `CARD` - List refunds only for payments where card was specified as payment  source.  Default: If omitted refunds are returned regardless of source type.
+     * @param string $source_type If provided, only refunds with the given source type are returned. - `CARD` - List refunds only for payments where card was specified as payment source.  Default: If omitted refunds are returned regardless of source type.
      * @return $this
      */
     public function setSourceType($source_type)

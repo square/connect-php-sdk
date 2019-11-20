@@ -12,8 +12,8 @@ Name | Getter | Setter | Type | Description | Notes
 **sort_order** | getSortOrder() | setSortOrder($value) | **string** | The order in which results are listed. - &#x60;ASC&#x60; - oldest to newest - &#x60;DESC&#x60; - newest to oldest (default). | [optional] 
 **cursor** | getCursor() | setCursor($value) | **string** | A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. | [optional] 
 **location_id** | getLocationId() | setLocationId($value) | **string** | ID of location associated with payment. | [optional] 
-**status** | getStatus() | setStatus($value) | **string** | If provided, only refunds with the given status are returned.  For a list of refund status values, see &#x60;PaymentRefund&#x60;.  Default: If omitted refunds are returned regardless of status. | [optional] 
-**source_type** | getSourceType() | setSourceType($value) | **string** | If provided, only refunds with the given source type are returned.  - &#x60;CARD&#x60; - List refunds only for payments where card was specified as payment  source.  Default: If omitted refunds are returned regardless of source type. | [optional] 
+**status** | getStatus() | setStatus($value) | **string** | If provided, only refunds with the given status are returned. For a list of refund status values, see &#x60;PaymentRefund&#x60;.  Default: If omitted refunds are returned regardless of status. | [optional] 
+**source_type** | getSourceType() | setSourceType($value) | **string** | If provided, only refunds with the given source type are returned. - &#x60;CARD&#x60; - List refunds only for payments where card was specified as payment source.  Default: If omitted refunds are returned regardless of source type. | [optional] 
 
 Note: All properties are protected and only accessed via getters and setters.
 

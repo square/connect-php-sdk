@@ -9,6 +9,7 @@ namespace SquareConnect\Model;
 
 use \ArrayAccess;
 /**
+ * @deprecated
  * V1Variation Class Doc Comment
  *
  * @category Class
@@ -111,7 +112,7 @@ class V1Variation implements ArrayAccess
       */
     protected $item_id;
     /**
-      * $ordinal Indicates the variation's list position when displayed in Square Register and the merchant dashboard. If more than one variation for the same item has the same ordinal value, those variations are displayed in alphabetical order
+      * $ordinal Indicates the variation's list position when displayed in Square Point of Sale and the merchant dashboard. If more than one variation for the same item has the same ordinal value, those variations are displayed in alphabetical order
       * @var int
       */
     protected $ordinal;
@@ -293,7 +294,7 @@ class V1Variation implements ArrayAccess
   
     /**
      * Sets ordinal
-     * @param int $ordinal Indicates the variation's list position when displayed in Square Register and the merchant dashboard. If more than one variation for the same item has the same ordinal value, those variations are displayed in alphabetical order
+     * @param int $ordinal Indicates the variation's list position when displayed in Square Point of Sale and the merchant dashboard. If more than one variation for the same item has the same ordinal value, those variations are displayed in alphabetical order
      * @return $this
      */
     public function setOrdinal($ordinal)

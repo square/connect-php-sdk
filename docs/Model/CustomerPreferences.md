@@ -2,7 +2,7 @@
 
 ### Description
 
-Represents a particular customer's preferences.
+Represents communication preferences for the customer profile.
 
 ## Properties
 Name | Getter | Setter | Type | Description | Notes

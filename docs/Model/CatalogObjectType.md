@@ -2,7 +2,7 @@
 
 ### Description
 
-Possible kinds of `CatalogObject`s returned from the Catalog, each containing type-specific properties in the `*_data` field corresponding to the object type.
+Possible types of CatalogObjects returned from the Catalog, each containing type-specific properties in the `*_data` field corresponding to the object type.
 
 ## Properties
 Name | Type

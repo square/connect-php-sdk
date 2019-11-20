@@ -2,7 +2,7 @@
 
 ### Description
 
-Retrieve a paged-list of employees for a Square account
+
 
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
