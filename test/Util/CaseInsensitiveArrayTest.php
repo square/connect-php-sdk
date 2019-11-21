@@ -44,6 +44,7 @@ class CaseInsensitiveArrayTest extends \PHPUnit\Framework\TestCase
         );
 
         $this->assertEquals(count($cid), 0);
+        $this->assertEmpty($cid);
 
         // Test insert operator.
         $cid['Foo'] = 'Bar';
