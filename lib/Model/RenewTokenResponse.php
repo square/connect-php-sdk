@@ -73,7 +73,7 @@ class RenewTokenResponse implements ArrayAccess
     );
   
     /**
-      * $access_token The renewed access token. This value might be different from the `access_token` you provided in your request. You provide this token in a header with every request to Connect API endpoints. See [Request and response headers](https://docs.connect.squareup.com/api/connect/v2/#requestandresponseheaders) for the format of this header.
+      * $access_token The renewed access token. This value might be different from the `access_token` you provided in your request. You provide this token in a header with every request to Connect API endpoints. See [Request and response headers](https://developer.squareup.com/docs/api/connect/v2/#requestandresponseheaders) for the format of this header.
       * @var string
       */
     protected $access_token;
@@ -93,7 +93,7 @@ class RenewTokenResponse implements ArrayAccess
       */
     protected $merchant_id;
     /**
-      * $subscription_id __LEGACY FIELD__. The ID of the merchant subscription associated with the authorization. Only present if the merchant signed up for a subscription during authorization.
+      * $subscription_id __LEGACY FIELD__. The ID of the merchant subscription associated with the authorization. Only present if the merchant signed up for a subscription during authorization..
       * @var string
       */
     protected $subscription_id;
@@ -153,7 +153,7 @@ class RenewTokenResponse implements ArrayAccess
   
     /**
      * Sets access_token
-     * @param string $access_token The renewed access token. This value might be different from the `access_token` you provided in your request. You provide this token in a header with every request to Connect API endpoints. See [Request and response headers](https://docs.connect.squareup.com/api/connect/v2/#requestandresponseheaders) for the format of this header.
+     * @param string $access_token The renewed access token. This value might be different from the `access_token` you provided in your request. You provide this token in a header with every request to Connect API endpoints. See [Request and response headers](https://developer.squareup.com/docs/api/connect/v2/#requestandresponseheaders) for the format of this header.
      * @return $this
      */
     public function setAccessToken($access_token)
@@ -229,7 +229,7 @@ class RenewTokenResponse implements ArrayAccess
   
     /**
      * Sets subscription_id
-     * @param string $subscription_id __LEGACY FIELD__. The ID of the merchant subscription associated with the authorization. Only present if the merchant signed up for a subscription during authorization.
+     * @param string $subscription_id __LEGACY FIELD__. The ID of the merchant subscription associated with the authorization. Only present if the merchant signed up for a subscription during authorization..
      * @return $this
      */
     public function setSubscriptionId($subscription_id)

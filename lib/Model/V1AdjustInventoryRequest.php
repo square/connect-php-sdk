@@ -9,6 +9,7 @@ namespace SquareConnect\Model;
 
 use \ArrayAccess;
 /**
+ * @deprecated
  * V1AdjustInventoryRequest Class Doc Comment
  *
  * @category Class

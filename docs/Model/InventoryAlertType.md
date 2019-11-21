@@ -2,7 +2,7 @@
 
 ### Description
 
-Indicates whether Square should alert the merchant when the inventory quantity of a `CatalogItemVariation` is low.
+Indicates whether Square should alert the merchant when the inventory quantity of a CatalogItemVariation is low.
 
 ## Properties
 Name | Type

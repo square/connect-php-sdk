@@ -60,7 +60,7 @@ class TenderCardDetails implements ArrayAccess
     );
   
     /**
-      * $status The credit card payment's current state (such as `AUTHORIZED` or `CAPTURED`). See [TenderCardDetailsStatus](#type-tendercarddetailsstatus) for possible values
+      * $status The credit card payment's current state (such as `AUTHORIZED` or `CAPTURED`). See `TenderCardDetailsStatus` for possible values. See [TenderCardDetailsStatus](#type-tendercarddetailsstatus) for possible values
       * @var string
       */
     protected $status;
@@ -110,7 +110,7 @@ class TenderCardDetails implements ArrayAccess
   
     /**
      * Sets status
-     * @param string $status The credit card payment's current state (such as `AUTHORIZED` or `CAPTURED`). See [TenderCardDetailsStatus](#type-tendercarddetailsstatus) for possible values
+     * @param string $status The credit card payment's current state (such as `AUTHORIZED` or `CAPTURED`). See `TenderCardDetailsStatus` for possible values. See [TenderCardDetailsStatus](#type-tendercarddetailsstatus) for possible values
      * @return $this
      */
     public function setStatus($status)

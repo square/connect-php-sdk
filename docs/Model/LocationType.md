@@ -2,7 +2,7 @@
 
 ### Description
 
-Indicates the location's type.
+A location's physical or mobile type.
 
 ## Properties
 Name | Type

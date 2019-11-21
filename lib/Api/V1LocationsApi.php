@@ -65,6 +65,7 @@ class V1LocationsApi
     }
   
     /**
+     * @deprecated
      * listLocations
      *
      * ListLocations
@@ -74,6 +75,7 @@ class V1LocationsApi
      */
     public function listLocations()
     {
+        trigger_error("\x1B[33mCalling deprecated API: V1LocationsApi.listLocations\x1B[0m", E_USER_DEPRECATED);
         list($response, $statusCode, $httpHeader) = $this->listLocationsWithHttpInfo ();
         return $response; 
     }
@@ -102,7 +104,7 @@ class V1LocationsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-10-23";
+        $headerParams['Square-Version'] = "2019-11-20";
 
         
         
@@ -148,6 +150,7 @@ class V1LocationsApi
         }
     }
     /**
+     * @deprecated
      * retrieveBusiness
      *
      * RetrieveBusiness
@@ -157,6 +160,7 @@ class V1LocationsApi
      */
     public function retrieveBusiness()
     {
+        trigger_error("\x1B[33mCalling deprecated API: V1LocationsApi.retrieveBusiness\x1B[0m", E_USER_DEPRECATED);
         list($response, $statusCode, $httpHeader) = $this->retrieveBusinessWithHttpInfo ();
         return $response; 
     }
@@ -185,7 +189,7 @@ class V1LocationsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-10-23";
+        $headerParams['Square-Version'] = "2019-11-20";
 
         
         

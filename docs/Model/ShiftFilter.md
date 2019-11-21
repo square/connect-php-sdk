@@ -7,8 +7,8 @@ Defines a filter used in a search for `Shift` records. `AND` logic is used by Sq
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------
-**location_id** | getLocationId() | setLocationId($value) | **string[]** | Fetch shifts for the specified location. | [optional] 
-**employee_id** | getEmployeeId() | setEmployeeId($value) | **string[]** | Fetch shifts for the specified employee. | [optional] 
+**location_ids** | getLocationIds() | setLocationIds($value) | **string[]** | Fetch shifts for the specified location. | [optional] 
+**employee_ids** | getEmployeeIds() | setEmployeeIds($value) | **string[]** | Fetch shifts for the specified employee. | [optional] 
 **status** | getStatus() | setStatus($value) | **string** | Fetch a &#x60;Shift&#x60; instance by &#x60;Shift.status&#x60;. See [ShiftFilterStatus](#type-shiftfilterstatus) for possible values | [optional] 
 **start** | getStart() | setStart($value) | [**\SquareConnect\Model\TimeRange**](TimeRange.md) | Fetch &#x60;Shift&#x60;s that start in the time range - Inclusive. | [optional] 
 **end** | getEnd() | setEnd($value) | [**\SquareConnect\Model\TimeRange**](TimeRange.md) | Fetch the &#x60;Shift&#x60;s that end in the time range - Inclusive. | [optional] 

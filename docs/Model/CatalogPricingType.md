@@ -2,7 +2,7 @@
 
 ### Description
 
-Indicates whether the price of a `CatalogItemVariation` should be entered manually at the time of sale.
+Indicates whether the price of a CatalogItemVariation should be entered manually at the time of sale.
 
 ## Properties
 Name | Type

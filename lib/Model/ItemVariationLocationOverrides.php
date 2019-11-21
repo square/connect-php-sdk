@@ -72,22 +72,22 @@ class ItemVariationLocationOverrides implements ArrayAccess
     );
   
     /**
-      * $location_id The ID of the `location`.
+      * $location_id The ID of the `Location`.
       * @var string
       */
     protected $location_id;
     /**
-      * $price_money The price of the `CatalogItemVariation](#type-catalogitemvariation) at the given [location`, or blank for variable pricing.
+      * $price_money The price of the `CatalogItemVariation` at the given `Location`, or blank for variable pricing.
       * @var \SquareConnect\Model\Money
       */
     protected $price_money;
     /**
-      * $pricing_type The pricing type (fixed or variable) for the `CatalogItemVariation](#type-catalogitemvariation) at the given [location`. See [CatalogPricingType](#type-catalogpricingtype) for possible values
+      * $pricing_type The pricing type (fixed or variable) for the `CatalogItemVariation` at the given `Location`. See [CatalogPricingType](#type-catalogpricingtype) for possible values
       * @var string
       */
     protected $pricing_type;
     /**
-      * $track_inventory If `true`, inventory tracking is active for the `CatalogItemVariation](#type-catalogitemvariation) at this [location`.
+      * $track_inventory If `true`, inventory tracking is active for the `CatalogItemVariation` at this `Location`.
       * @var bool
       */
     protected $track_inventory;
@@ -152,7 +152,7 @@ class ItemVariationLocationOverrides implements ArrayAccess
   
     /**
      * Sets location_id
-     * @param string $location_id The ID of the `location`.
+     * @param string $location_id The ID of the `Location`.
      * @return $this
      */
     public function setLocationId($location_id)
@@ -171,7 +171,7 @@ class ItemVariationLocationOverrides implements ArrayAccess
   
     /**
      * Sets price_money
-     * @param \SquareConnect\Model\Money $price_money The price of the `CatalogItemVariation](#type-catalogitemvariation) at the given [location`, or blank for variable pricing.
+     * @param \SquareConnect\Model\Money $price_money The price of the `CatalogItemVariation` at the given `Location`, or blank for variable pricing.
      * @return $this
      */
     public function setPriceMoney($price_money)
@@ -190,7 +190,7 @@ class ItemVariationLocationOverrides implements ArrayAccess
   
     /**
      * Sets pricing_type
-     * @param string $pricing_type The pricing type (fixed or variable) for the `CatalogItemVariation](#type-catalogitemvariation) at the given [location`. See [CatalogPricingType](#type-catalogpricingtype) for possible values
+     * @param string $pricing_type The pricing type (fixed or variable) for the `CatalogItemVariation` at the given `Location`. See [CatalogPricingType](#type-catalogpricingtype) for possible values
      * @return $this
      */
     public function setPricingType($pricing_type)
@@ -209,7 +209,7 @@ class ItemVariationLocationOverrides implements ArrayAccess
   
     /**
      * Sets track_inventory
-     * @param bool $track_inventory If `true`, inventory tracking is active for the `CatalogItemVariation](#type-catalogitemvariation) at this [location`.
+     * @param bool $track_inventory If `true`, inventory tracking is active for the `CatalogItemVariation` at this `Location`.
      * @return $this
      */
     public function setTrackInventory($track_inventory)

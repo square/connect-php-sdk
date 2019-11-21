@@ -223,7 +223,7 @@ SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACC
 $apiInstance = new SquareConnect\Api\InventoryApi();
 $catalog_object_id = "catalog_object_id_example"; // string | ID of the `CatalogObject` to retrieve.
 $location_ids = "location_ids_example"; // string | The `Location` IDs to look up as a comma-separated list. An empty list queries all locations.
-$cursor = "cursor_example"; // string | A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information.
+$cursor = "cursor_example"; // string | A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See the [Pagination](https://developer.squareup.com/docs/docs/working-with-apis/pagination) guide for more information.
 
 try {
     $result = $apiInstance->retrieveInventoryChanges($catalog_object_id, $location_ids, $cursor);
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **catalog_object_id** | **string**| ID of the &#x60;CatalogObject&#x60; to retrieve. |
  **location_ids** | **string**| The &#x60;Location&#x60; IDs to look up as a comma-separated list. An empty list queries all locations. | [optional]
- **cursor** | **string**| A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. | [optional]
+ **cursor** | **string**| A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See the [Pagination](https://developer.squareup.com/docs/docs/working-with-apis/pagination) guide for more information. | [optional]
 
 ### Return type
 
@@ -275,7 +275,7 @@ SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACC
 $apiInstance = new SquareConnect\Api\InventoryApi();
 $catalog_object_id = "catalog_object_id_example"; // string | ID of the `CatalogObject` to retrieve.
 $location_ids = "location_ids_example"; // string | The `Location` IDs to look up as a comma-separated list. An empty list queries all locations.
-$cursor = "cursor_example"; // string | A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information.
+$cursor = "cursor_example"; // string | A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See the [Pagination](https://developer.squareup.com/docs/docs/working-with-apis/pagination) guide for more information.
 
 try {
     $result = $apiInstance->retrieveInventoryCount($catalog_object_id, $location_ids, $cursor);
@@ -292,7 +292,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **catalog_object_id** | **string**| ID of the &#x60;CatalogObject&#x60; to retrieve. |
  **location_ids** | **string**| The &#x60;Location&#x60; IDs to look up as a comma-separated list. An empty list queries all locations. | [optional]
- **cursor** | **string**| A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. | [optional]
+ **cursor** | **string**| A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See the [Pagination](https://developer.squareup.com/docs/docs/working-with-apis/pagination) guide for more information. | [optional]
 
 ### Return type
 

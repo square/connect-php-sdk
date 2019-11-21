@@ -2,7 +2,7 @@
 
 ### Description
 
-A custom unit of measurement defined by the user.
+
 
 ## Properties
 Name | Type

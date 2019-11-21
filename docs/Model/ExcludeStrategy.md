@@ -2,7 +2,7 @@
 
 ### Description
 
-Indicates which products matched by a `CatalogPricingRule` will be excluded if the pricing rule uses an exclude set.
+Indicates which products matched by a CatalogPricingRule will be excluded if the pricing rule uses an exclude set.
 
 ## Properties
 Name | Type

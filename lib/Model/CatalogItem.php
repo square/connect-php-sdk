@@ -144,17 +144,17 @@ class CatalogItem implements ArrayAccess
       */
     protected $category_id;
     /**
-      * $tax_ids A set of IDs indicating the `CatalogTax`es that are enabled for this item. When updating an item, any taxes listed here will be added to the item. `CatalogTax`es may also be added to or deleted from an item using `UpdateItemTaxes`.
+      * $tax_ids A set of IDs indicating the taxes enabled for this item. When updating an item, any taxes listed here will be added to the item. Taxes may also be added to or deleted from an item using `UpdateItemTaxes`.
       * @var string[]
       */
     protected $tax_ids;
     /**
-      * $modifier_list_info A set of `CatalogItemModifierListInfo` objects representing the modifier lists that apply to this item, along with the overrides and min and max limits that are specific to this item. `CatalogModifierList`s may also be added to or deleted from an item using `UpdateItemModifierLists`.
+      * $modifier_list_info A set of `CatalogItemModifierListInfo` objects representing the modifier lists that apply to this item, along with the overrides and min and max limits that are specific to this item. Modifier lists may also be added to or deleted from an item using `UpdateItemModifierLists`.
       * @var \SquareConnect\Model\CatalogItemModifierListInfo[]
       */
     protected $modifier_list_info;
     /**
-      * $variations A list of `CatalogObject`s containing the `CatalogItemVariation`s for this item.  Maximum: 250 item variations
+      * $variations A list of CatalogObjects containing the `CatalogItemVariation`s for this item.
       * @var \SquareConnect\Model\CatalogObject[]
       */
     protected $variations;
@@ -416,7 +416,7 @@ class CatalogItem implements ArrayAccess
   
     /**
      * Sets tax_ids
-     * @param string[] $tax_ids A set of IDs indicating the `CatalogTax`es that are enabled for this item. When updating an item, any taxes listed here will be added to the item. `CatalogTax`es may also be added to or deleted from an item using `UpdateItemTaxes`.
+     * @param string[] $tax_ids A set of IDs indicating the taxes enabled for this item. When updating an item, any taxes listed here will be added to the item. Taxes may also be added to or deleted from an item using `UpdateItemTaxes`.
      * @return $this
      */
     public function setTaxIds($tax_ids)
@@ -435,7 +435,7 @@ class CatalogItem implements ArrayAccess
   
     /**
      * Sets modifier_list_info
-     * @param \SquareConnect\Model\CatalogItemModifierListInfo[] $modifier_list_info A set of `CatalogItemModifierListInfo` objects representing the modifier lists that apply to this item, along with the overrides and min and max limits that are specific to this item. `CatalogModifierList`s may also be added to or deleted from an item using `UpdateItemModifierLists`.
+     * @param \SquareConnect\Model\CatalogItemModifierListInfo[] $modifier_list_info A set of `CatalogItemModifierListInfo` objects representing the modifier lists that apply to this item, along with the overrides and min and max limits that are specific to this item. Modifier lists may also be added to or deleted from an item using `UpdateItemModifierLists`.
      * @return $this
      */
     public function setModifierListInfo($modifier_list_info)
@@ -454,7 +454,7 @@ class CatalogItem implements ArrayAccess
   
     /**
      * Sets variations
-     * @param \SquareConnect\Model\CatalogObject[] $variations A list of `CatalogObject`s containing the `CatalogItemVariation`s for this item.  Maximum: 250 item variations
+     * @param \SquareConnect\Model\CatalogObject[] $variations A list of CatalogObjects containing the `CatalogItemVariation`s for this item.
      * @return $this
      */
     public function setVariations($variations)

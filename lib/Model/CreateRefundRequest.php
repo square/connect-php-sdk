@@ -65,7 +65,7 @@ class CreateRefundRequest implements ArrayAccess
     );
   
     /**
-      * $idempotency_key A value you specify that uniquely identifies this refund among refunds you've created for the tender.  If you're unsure whether a particular refund succeeded, you can reattempt it with the same idempotency key without worrying about duplicating the refund.  See [Idempotency](https://developer.squareup.com/docs/basics/api101/idempotency) for more information.
+      * $idempotency_key A value you specify that uniquely identifies this refund among refunds you've created for the tender.  If you're unsure whether a particular refund succeeded, you can reattempt it with the same idempotency key without worrying about duplicating the refund.  See [Idempotency keys](#idempotencykeys) for more information.
       * @var string
       */
     protected $idempotency_key;
@@ -125,7 +125,7 @@ class CreateRefundRequest implements ArrayAccess
   
     /**
      * Sets idempotency_key
-     * @param string $idempotency_key A value you specify that uniquely identifies this refund among refunds you've created for the tender.  If you're unsure whether a particular refund succeeded, you can reattempt it with the same idempotency key without worrying about duplicating the refund.  See [Idempotency](https://developer.squareup.com/docs/basics/api101/idempotency) for more information.
+     * @param string $idempotency_key A value you specify that uniquely identifies this refund among refunds you've created for the tender.  If you're unsure whether a particular refund succeeded, you can reattempt it with the same idempotency key without worrying about duplicating the refund.  See [Idempotency keys](#idempotencykeys) for more information.
      * @return $this
      */
     public function setIdempotencyKey($idempotency_key)

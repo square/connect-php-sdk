@@ -108,7 +108,7 @@ class OAuthApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-10-23";
+        $headerParams['Square-Version'] = "2019-11-20";
 
         
         
@@ -158,7 +158,7 @@ class OAuthApi
      *
      * RenewToken
      *
-     * @param string $client_id Your application&#39;s ID, available from the [application dashboard](https://connect.squareup.com/apps). (required)
+     * @param string $client_id Your application ID, available from the [application dashboard](https://connect.squareup.com/apps). (required)
      * @param \SquareConnect\Model\RenewTokenRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
      * @return \SquareConnect\Model\RenewTokenResponse
      * @throws \SquareConnect\ApiException on non-2xx response
@@ -176,7 +176,7 @@ class OAuthApi
      *
      * RenewToken
      *
-     * @param string $client_id Your application&#39;s ID, available from the [application dashboard](https://connect.squareup.com/apps). (required)
+     * @param string $client_id Your application ID, available from the [application dashboard](https://connect.squareup.com/apps). (required)
      * @param \SquareConnect\Model\RenewTokenRequest $body An object containing the fields to POST for the request.  See the corresponding object definition for field details. (required)
      * @return Array of \SquareConnect\Model\RenewTokenResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
@@ -204,7 +204,7 @@ class OAuthApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-10-23";
+        $headerParams['Square-Version'] = "2019-11-20";
 
         
         
@@ -306,7 +306,7 @@ class OAuthApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2019-10-23";
+        $headerParams['Square-Version'] = "2019-11-20";
 
         
         

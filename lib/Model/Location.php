@@ -153,17 +153,17 @@ class Location implements ArrayAccess
       */
     protected $id;
     /**
-      * $name The location's name. Location names are set by the account owner and displayed in the dashboard as the location's nickname
+      * $name The name of the location. This information appears in the dashboard as the nickname.
       * @var string
       */
     protected $name;
     /**
-      * $address The location's physical address.
+      * $address The physical address of the location.
       * @var \SquareConnect\Model\Address
       */
     protected $address;
     /**
-      * $timezone The [IANA Timezone Database](https://www.iana.org/time-zones) identifier for the location's timezone.
+      * $timezone The [IANA Timezone](https://www.iana.org/time-zones) identifier for the timezone of the location.
       * @var string
       */
     protected $timezone;
@@ -173,7 +173,7 @@ class Location implements ArrayAccess
       */
     protected $capabilities;
     /**
-      * $status The location's status See [LocationStatus](#type-locationstatus) for possible values
+      * $status The status of the location, either active or inactive. See [LocationStatus](#type-locationstatus) for possible values
       * @var string
       */
     protected $status;
@@ -193,47 +193,47 @@ class Location implements ArrayAccess
       */
     protected $country;
     /**
-      * $language_code The language associated with the location in [BCP 47 format](https://tools.ietf.org/html/bcp47#appendix-A).
+      * $language_code The language associated with the location, in [BCP 47 format](https://tools.ietf.org/html/bcp47#appendix-A).
       * @var string
       */
     protected $language_code;
     /**
-      * $currency The currency used for all transactions at this location, in ISO 4217 format.  See `Currency` for possible values. See [Currency](#type-currency) for possible values
+      * $currency The currency used for all transactions at this location, in ISO 4217 format. See `Currency` for possible values. See [Currency](#type-currency) for possible values
       * @var string
       */
     protected $currency;
     /**
-      * $phone_number The location's phone_number.
+      * $phone_number The phone number of the location in human readable format.
       * @var string
       */
     protected $phone_number;
     /**
-      * $business_name The location's business_name which is shown to its customers. For example, this is the name printed on its customer's receipts.
+      * $business_name The business name of the location This is the name visible to the customers of the location. For example, this name appears on customer receipts.
       * @var string
       */
     protected $business_name;
     /**
-      * $type The location's type, as set by the account owner in the Square dashboard. Typically used to indicate whether or not the location object represents a physical space like a building or mall space. See [LocationType](#type-locationtype) for possible values
+      * $type The type of the location, either physical or mobile. See [LocationType](#type-locationtype) for possible values
       * @var string
       */
     protected $type;
     /**
-      * $website_url The location's website, as set by the account owner in the Square dashboard.  Default: none; only exists if explicitly set.
+      * $website_url The website URL of the location.
       * @var string
       */
     protected $website_url;
     /**
-      * $business_hours The hours of operation for a business location.  Default: none; only exists if explicitly set.
+      * $business_hours Represents the hours of operation for the location.
       * @var \SquareConnect\Model\BusinessHours
       */
     protected $business_hours;
     /**
-      * $business_email The email of the location.
+      * $business_email The email of the location. This email is visible to the customers of the location. For example, the email appears on customer receipts.
       * @var string
       */
     protected $business_email;
     /**
-      * $description The business description of the location.
+      * $description The description of the location.
       * @var string
       */
     protected $description;
@@ -258,12 +258,12 @@ class Location implements ArrayAccess
       */
     protected $coordinates;
     /**
-      * $logo_url The logo image URL of the location.
+      * $logo_url The URL of the logo image for the location.
       * @var string
       */
     protected $logo_url;
     /**
-      * $pos_background_url The Point of Sale background image URL of the location.
+      * $pos_background_url The URL of the Point of Sale background image for the location.
       * @var string
       */
     protected $pos_background_url;
@@ -437,7 +437,7 @@ class Location implements ArrayAccess
   
     /**
      * Sets name
-     * @param string $name The location's name. Location names are set by the account owner and displayed in the dashboard as the location's nickname
+     * @param string $name The name of the location. This information appears in the dashboard as the nickname.
      * @return $this
      */
     public function setName($name)
@@ -456,7 +456,7 @@ class Location implements ArrayAccess
   
     /**
      * Sets address
-     * @param \SquareConnect\Model\Address $address The location's physical address.
+     * @param \SquareConnect\Model\Address $address The physical address of the location.
      * @return $this
      */
     public function setAddress($address)
@@ -475,7 +475,7 @@ class Location implements ArrayAccess
   
     /**
      * Sets timezone
-     * @param string $timezone The [IANA Timezone Database](https://www.iana.org/time-zones) identifier for the location's timezone.
+     * @param string $timezone The [IANA Timezone](https://www.iana.org/time-zones) identifier for the timezone of the location.
      * @return $this
      */
     public function setTimezone($timezone)
@@ -513,7 +513,7 @@ class Location implements ArrayAccess
   
     /**
      * Sets status
-     * @param string $status The location's status See [LocationStatus](#type-locationstatus) for possible values
+     * @param string $status The status of the location, either active or inactive. See [LocationStatus](#type-locationstatus) for possible values
      * @return $this
      */
     public function setStatus($status)
@@ -589,7 +589,7 @@ class Location implements ArrayAccess
   
     /**
      * Sets language_code
-     * @param string $language_code The language associated with the location in [BCP 47 format](https://tools.ietf.org/html/bcp47#appendix-A).
+     * @param string $language_code The language associated with the location, in [BCP 47 format](https://tools.ietf.org/html/bcp47#appendix-A).
      * @return $this
      */
     public function setLanguageCode($language_code)
@@ -608,7 +608,7 @@ class Location implements ArrayAccess
   
     /**
      * Sets currency
-     * @param string $currency The currency used for all transactions at this location, in ISO 4217 format.  See `Currency` for possible values. See [Currency](#type-currency) for possible values
+     * @param string $currency The currency used for all transactions at this location, in ISO 4217 format. See `Currency` for possible values. See [Currency](#type-currency) for possible values
      * @return $this
      */
     public function setCurrency($currency)
@@ -627,7 +627,7 @@ class Location implements ArrayAccess
   
     /**
      * Sets phone_number
-     * @param string $phone_number The location's phone_number.
+     * @param string $phone_number The phone number of the location in human readable format.
      * @return $this
      */
     public function setPhoneNumber($phone_number)
@@ -646,7 +646,7 @@ class Location implements ArrayAccess
   
     /**
      * Sets business_name
-     * @param string $business_name The location's business_name which is shown to its customers. For example, this is the name printed on its customer's receipts.
+     * @param string $business_name The business name of the location This is the name visible to the customers of the location. For example, this name appears on customer receipts.
      * @return $this
      */
     public function setBusinessName($business_name)
@@ -665,7 +665,7 @@ class Location implements ArrayAccess
   
     /**
      * Sets type
-     * @param string $type The location's type, as set by the account owner in the Square dashboard. Typically used to indicate whether or not the location object represents a physical space like a building or mall space. See [LocationType](#type-locationtype) for possible values
+     * @param string $type The type of the location, either physical or mobile. See [LocationType](#type-locationtype) for possible values
      * @return $this
      */
     public function setType($type)
@@ -684,7 +684,7 @@ class Location implements ArrayAccess
   
     /**
      * Sets website_url
-     * @param string $website_url The location's website, as set by the account owner in the Square dashboard.  Default: none; only exists if explicitly set.
+     * @param string $website_url The website URL of the location.
      * @return $this
      */
     public function setWebsiteUrl($website_url)
@@ -703,7 +703,7 @@ class Location implements ArrayAccess
   
     /**
      * Sets business_hours
-     * @param \SquareConnect\Model\BusinessHours $business_hours The hours of operation for a business location.  Default: none; only exists if explicitly set.
+     * @param \SquareConnect\Model\BusinessHours $business_hours Represents the hours of operation for the location.
      * @return $this
      */
     public function setBusinessHours($business_hours)
@@ -722,7 +722,7 @@ class Location implements ArrayAccess
   
     /**
      * Sets business_email
-     * @param string $business_email The email of the location.
+     * @param string $business_email The email of the location. This email is visible to the customers of the location. For example, the email appears on customer receipts.
      * @return $this
      */
     public function setBusinessEmail($business_email)
@@ -741,7 +741,7 @@ class Location implements ArrayAccess
   
     /**
      * Sets description
-     * @param string $description The business description of the location.
+     * @param string $description The description of the location.
      * @return $this
      */
     public function setDescription($description)
@@ -836,7 +836,7 @@ class Location implements ArrayAccess
   
     /**
      * Sets logo_url
-     * @param string $logo_url The logo image URL of the location.
+     * @param string $logo_url The URL of the logo image for the location.
      * @return $this
      */
     public function setLogoUrl($logo_url)
@@ -855,7 +855,7 @@ class Location implements ArrayAccess
   
     /**
      * Sets pos_background_url
-     * @param string $pos_background_url The Point of Sale background image URL of the location.
+     * @param string $pos_background_url The URL of the Point of Sale background image for the location.
      * @return $this
      */
     public function setPosBackgroundUrl($pos_background_url)

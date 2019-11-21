@@ -3,6 +3,7 @@
 ### Description
 
 Defines the fields that are included in the response body of a request to the **RetrieveBusiness** endpoint.
+**Note: This model is deprecated.**
 
 ## Properties
 Name | Getter | Setter | Type | Description | Notes

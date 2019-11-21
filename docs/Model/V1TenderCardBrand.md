@@ -3,6 +3,7 @@
 ### Description
 
 The brand of a credit card.
+**Note: This model is deprecated.**
 
 ## Properties
 Name | Type

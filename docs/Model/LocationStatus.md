@@ -2,7 +2,7 @@
 
 ### Description
 
-Indicates the location's status.
+The status of the location, whether a location is active or inactive.
 
 ## Properties
 Name | Type

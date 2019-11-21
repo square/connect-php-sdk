@@ -56,12 +56,12 @@ class Coordinates implements ArrayAccess
     );
   
     /**
-      * $latitude The coordinate's latitude expressed in degrees.
+      * $latitude The latitude of the coordinate expressed in degrees.
       * @var float
       */
     protected $latitude;
     /**
-      * $longitude The coordinate's longitude expressed in degrees.
+      * $longitude The longitude of the coordinate expressed in degrees.
       * @var float
       */
     protected $longitude;
@@ -96,7 +96,7 @@ class Coordinates implements ArrayAccess
   
     /**
      * Sets latitude
-     * @param float $latitude The coordinate's latitude expressed in degrees.
+     * @param float $latitude The latitude of the coordinate expressed in degrees.
      * @return $this
      */
     public function setLatitude($latitude)
@@ -115,7 +115,7 @@ class Coordinates implements ArrayAccess
   
     /**
      * Sets longitude
-     * @param float $longitude The coordinate's longitude expressed in degrees.
+     * @param float $longitude The longitude of the coordinate expressed in degrees.
      * @return $this
      */
     public function setLongitude($longitude)

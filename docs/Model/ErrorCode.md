@@ -103,6 +103,7 @@ Name | Type
 **API_VERSION_INCOMPATIBLE** | string
 **INVALID_URL** | string
 **HTTPS_ONLY** | string
+**UNREACHABLE_URL** | string
 **CARD_DECLINED** | string
 **VERIFY_CVV_FAILURE** | string
 **VERIFY_AVS_FAILURE** | string
@@ -118,10 +119,13 @@ Name | Type
 **NOT_ACCEPTABLE** | string
 **REQUEST_TIMEOUT** | string
 **CONFLICT** | string
+**GONE** | string
 **REQUEST_ENTITY_TOO_LARGE** | string
 **UNSUPPORTED_MEDIA_TYPE** | string
+**UNPROCESSABLE_ENTITY** | string
 **RATE_LIMITED** | string
 **NOT_IMPLEMENTED** | string
+**BAD_GATEWAY** | string
 **SERVICE_UNAVAILABLE** | string
 **TEMPORARY_ERROR** | string
 **GATEWAY_TIMEOUT** | string

@@ -9,6 +9,7 @@ namespace SquareConnect\Model;
 
 use \ArrayAccess;
 /**
+ * @deprecated
  * V1Item Class Doc Comment
  *
  * @category Class
@@ -136,12 +137,12 @@ class V1Item implements ArrayAccess
       */
     protected $type;
     /**
-      * $color The color of the discount's display label in Square Register, if not the default color. The default color is 9da2a6. See [V1ItemColor](#type-v1itemcolor) for possible values
+      * $color The color of the discount's display label in Square Point of Sale, if not the default color. The default color is 9da2a6. See [V1ItemColor](#type-v1itemcolor) for possible values
       * @var string
       */
     protected $color;
     /**
-      * $abbreviation The text of the item's display label in Square Register. Only up to the first five characters of the string are used.
+      * $abbreviation The text of the item's display label in Square Point of Sale. Only up to the first five characters of the string are used.
       * @var string
       */
     protected $abbreviation;
@@ -382,7 +383,7 @@ class V1Item implements ArrayAccess
   
     /**
      * Sets color
-     * @param string $color The color of the discount's display label in Square Register, if not the default color. The default color is 9da2a6. See [V1ItemColor](#type-v1itemcolor) for possible values
+     * @param string $color The color of the discount's display label in Square Point of Sale, if not the default color. The default color is 9da2a6. See [V1ItemColor](#type-v1itemcolor) for possible values
      * @return $this
      */
     public function setColor($color)
@@ -401,7 +402,7 @@ class V1Item implements ArrayAccess
   
     /**
      * Sets abbreviation
-     * @param string $abbreviation The text of the item's display label in Square Register. Only up to the first five characters of the string are used.
+     * @param string $abbreviation The text of the item's display label in Square Point of Sale. Only up to the first five characters of the string are used.
      * @return $this
      */
     public function setAbbreviation($abbreviation)

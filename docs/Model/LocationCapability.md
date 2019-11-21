@@ -2,7 +2,7 @@
 
 ### Description
 
-Indicates payment capabilities that a business's location might or might not have enabled.
+The capabilities a location may have.
 
 ## Properties
 Name | Type

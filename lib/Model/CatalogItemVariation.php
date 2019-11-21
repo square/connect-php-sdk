@@ -143,7 +143,7 @@ class CatalogItemVariation implements ArrayAccess
       */
     protected $price_money;
     /**
-      * $location_overrides Per-`location` price and inventory overrides.
+      * $location_overrides Per-location price and inventory overrides.
       * @var \SquareConnect\Model\ItemVariationLocationOverrides[]
       */
     protected $location_overrides;
@@ -163,7 +163,7 @@ class CatalogItemVariation implements ArrayAccess
       */
     protected $inventory_alert_threshold;
     /**
-      * $user_data Arbitrary user metadata to associate with the item variation. Cannot exceed 255 characters. Searchable.
+      * $user_data Arbitrary user metadata to associate with the item variation. Searchable. This field has max length of 255 Unicode code points.
       * @var string
       */
     protected $user_data;
@@ -411,7 +411,7 @@ class CatalogItemVariation implements ArrayAccess
   
     /**
      * Sets location_overrides
-     * @param \SquareConnect\Model\ItemVariationLocationOverrides[] $location_overrides Per-`location` price and inventory overrides.
+     * @param \SquareConnect\Model\ItemVariationLocationOverrides[] $location_overrides Per-location price and inventory overrides.
      * @return $this
      */
     public function setLocationOverrides($location_overrides)
@@ -487,7 +487,7 @@ class CatalogItemVariation implements ArrayAccess
   
     /**
      * Sets user_data
-     * @param string $user_data Arbitrary user metadata to associate with the item variation. Cannot exceed 255 characters. Searchable.
+     * @param string $user_data Arbitrary user metadata to associate with the item variation. Searchable. This field has max length of 255 Unicode code points.
      * @return $this
      */
     public function setUserData($user_data)

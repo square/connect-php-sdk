@@ -2,7 +2,7 @@
 
 ### Description
 
-Defines the fields that are included in the request body for  the [RetrieveLocation](#endpoint-locations-retrievelocation) endpoint.
+Defines the fields that are included in the request body for the __RetrieveLocation__ endpoint.
 
 ## Properties
 Name | Getter | Setter | Type | Description | Notes

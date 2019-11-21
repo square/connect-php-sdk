@@ -2,7 +2,7 @@
 
 ### Description
 
-Defines the fields that the  [RetrieveLocation](#endpoint-retrievelocation) endpoint returns  in a response.
+Defines the fields that the [RetrieveLocation](#endpoint-retrievelocation) endpoint returns in a response.
 
 ## Properties
 Name | Getter | Setter | Type | Description | Notes

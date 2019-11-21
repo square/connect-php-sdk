@@ -65,12 +65,12 @@ class StandardUnitDescription implements ArrayAccess
       */
     protected $unit;
     /**
-      * $name Display name of the measurement unit. For example, 'Pound'.
+      * $name UI display name of the measurement unit. For example, 'Pound'.
       * @var string
       */
     protected $name;
     /**
-      * $abbreviation Abbreviation for the measurement unit. For example, 'lb'.
+      * $abbreviation UI display abbreviation for the measurement unit. For example, 'lb'.
       * @var string
       */
     protected $abbreviation;
@@ -129,7 +129,7 @@ class StandardUnitDescription implements ArrayAccess
   
     /**
      * Sets name
-     * @param string $name Display name of the measurement unit. For example, 'Pound'.
+     * @param string $name UI display name of the measurement unit. For example, 'Pound'.
      * @return $this
      */
     public function setName($name)
@@ -148,7 +148,7 @@ class StandardUnitDescription implements ArrayAccess
   
     /**
      * Sets abbreviation
-     * @param string $abbreviation Abbreviation for the measurement unit. For example, 'lb'.
+     * @param string $abbreviation UI display abbreviation for the measurement unit. For example, 'lb'.
      * @return $this
      */
     public function setAbbreviation($abbreviation)

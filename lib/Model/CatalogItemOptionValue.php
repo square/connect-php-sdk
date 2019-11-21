@@ -83,7 +83,7 @@ class CatalogItemOptionValue implements ArrayAccess
       */
     protected $name;
     /**
-      * $description The option value's human-readable description.
+      * $description A human-readable description for the option value.
       * @var string
       */
     protected $description;
@@ -98,7 +98,7 @@ class CatalogItemOptionValue implements ArrayAccess
       */
     protected $ordinal;
     /**
-      * $item_variation_count The number of [CatalogItemVariation(#type-catalogitemvariation)s that currently make use of this Item Option value. Present only if `retrieve_counts` was specified on the request used to retrieve the parent Item Option of this value.  Maximum: 100 counts.
+      * $item_variation_count The number of `CatalogItemVariation`s that currently make use of this Item Option value. Present only if `retrieve_counts` was specified on the request used to retrieve the parent Item Option of this value.  Maximum: 100 counts.
       * @var int
       */
     protected $item_variation_count;
@@ -191,7 +191,7 @@ class CatalogItemOptionValue implements ArrayAccess
   
     /**
      * Sets description
-     * @param string $description The option value's human-readable description.
+     * @param string $description A human-readable description for the option value.
      * @return $this
      */
     public function setDescription($description)
@@ -248,7 +248,7 @@ class CatalogItemOptionValue implements ArrayAccess
   
     /**
      * Sets item_variation_count
-     * @param int $item_variation_count The number of [CatalogItemVariation(#type-catalogitemvariation)s that currently make use of this Item Option value. Present only if `retrieve_counts` was specified on the request used to retrieve the parent Item Option of this value.  Maximum: 100 counts.
+     * @param int $item_variation_count The number of `CatalogItemVariation`s that currently make use of this Item Option value. Present only if `retrieve_counts` was specified on the request used to retrieve the parent Item Option of this value.  Maximum: 100 counts.
      * @return $this
      */
     public function setItemVariationCount($item_variation_count)
