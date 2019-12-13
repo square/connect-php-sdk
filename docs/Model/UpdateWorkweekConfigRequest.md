@@ -7,7 +7,7 @@ A request to update a `WorkweekConfig` object
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------
-**workweek_config** | getWorkweekConfig() | setWorkweekConfig($value) | [**\SquareConnect\Model\WorkweekConfig**](WorkweekConfig.md) | The updated &#x60;WorkweekConfig&#x60; object. | [optional] 
+**workweek_config** | getWorkweekConfig() | setWorkweekConfig($value) | [**\SquareConnect\Model\WorkweekConfig**](WorkweekConfig.md) | The updated &#x60;WorkweekConfig&#x60; object. | 
 
 Note: All properties are protected and only accessed via getters and setters.
 

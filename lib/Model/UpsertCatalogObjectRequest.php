@@ -61,7 +61,7 @@ class UpsertCatalogObjectRequest implements ArrayAccess
       */
     protected $idempotency_key;
     /**
-      * $object A `CatalogObject` to be created or updated. - For updates, the object must be active (the `is_deleted` field is not `true`). - For creates, the object ID must start with `#`. The provided ID is replaced with a server-generated ID.
+      * $object A CatalogObject to be created or updated.  - For updates, the object must be active (the `is_deleted` field is not `true`). - For creates, the object ID must start with `#`. The provided ID is replaced with a server-generated ID.
       * @var \SquareConnect\Model\CatalogObject
       */
     protected $object;
@@ -115,7 +115,7 @@ class UpsertCatalogObjectRequest implements ArrayAccess
   
     /**
      * Sets object
-     * @param \SquareConnect\Model\CatalogObject $object A `CatalogObject` to be created or updated. - For updates, the object must be active (the `is_deleted` field is not `true`). - For creates, the object ID must start with `#`. The provided ID is replaced with a server-generated ID.
+     * @param \SquareConnect\Model\CatalogObject $object A CatalogObject to be created or updated.  - For updates, the object must be active (the `is_deleted` field is not `true`). - For creates, the object ID must start with `#`. The provided ID is replaced with a server-generated ID.
      * @return $this
      */
     public function setObject($object)

@@ -9,7 +9,7 @@ namespace SquareConnect\Model;
 
 use \ArrayAccess;
 /**
- * WebhookEvents Class Doc Comment
+ * CatalogQueryFilteredItemsNullableAttribute Class Doc Comment
  *
  * @category Class
  * @package  SquareConnect
@@ -17,7 +17,7 @@ use \ArrayAccess;
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://squareup.com/developers
  */
-class WebhookEvents implements ArrayAccess
+class CatalogQueryFilteredItemsNullableAttribute implements ArrayAccess
 {
     /**
       * Array of property to type mappings. Used for (de)serialization 

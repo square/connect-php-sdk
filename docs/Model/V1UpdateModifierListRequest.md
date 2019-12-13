@@ -3,6 +3,7 @@
 ### Description
 
 V1UpdateModifierListRequest
+**Note: This model is deprecated.**
 
 ## Properties
 Name | Getter | Setter | Type | Description | Notes

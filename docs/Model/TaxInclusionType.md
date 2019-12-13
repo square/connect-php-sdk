@@ -2,7 +2,7 @@
 
 ### Description
 
-Whether to the tax amount should be additional to or included in to the `CatalogItem` price.
+Whether to the tax amount should be additional to or included in the CatalogItem price.
 
 ## Properties
 Name | Type

@@ -60,7 +60,7 @@ class SearchCustomersRequest implements ArrayAccess
     );
   
     /**
-      * $cursor Include the pagination cursor in subsequent calls to this endpoint to retrieve the next set of results associated with the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information.
+      * $cursor Include the pagination cursor in subsequent calls to this endpoint to retrieve the next set of results associated with the original query.  See the [Pagination guide](https://developer.squareup.com/docs/working-with-apis/pagination) for more information.
       * @var string
       */
     protected $cursor;
@@ -110,7 +110,7 @@ class SearchCustomersRequest implements ArrayAccess
   
     /**
      * Sets cursor
-     * @param string $cursor Include the pagination cursor in subsequent calls to this endpoint to retrieve the next set of results associated with the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information.
+     * @param string $cursor Include the pagination cursor in subsequent calls to this endpoint to retrieve the next set of results associated with the original query.  See the [Pagination guide](https://developer.squareup.com/docs/working-with-apis/pagination) for more information.
      * @return $this
      */
     public function setCursor($cursor)

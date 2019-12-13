@@ -56,7 +56,7 @@ class StandardUnitDescriptionGroup implements ArrayAccess
     );
   
     /**
-      * $standard_unit_descriptions List of measurement units in this description group.
+      * $standard_unit_descriptions List of standard (non-custom) measurement units in this description group.
       * @var \SquareConnect\Model\StandardUnitDescription[]
       */
     protected $standard_unit_descriptions;
@@ -96,7 +96,7 @@ class StandardUnitDescriptionGroup implements ArrayAccess
   
     /**
      * Sets standard_unit_descriptions
-     * @param \SquareConnect\Model\StandardUnitDescription[] $standard_unit_descriptions List of measurement units in this description group.
+     * @param \SquareConnect\Model\StandardUnitDescription[] $standard_unit_descriptions List of standard (non-custom) measurement units in this description group.
      * @return $this
      */
     public function setStandardUnitDescriptions($standard_unit_descriptions)

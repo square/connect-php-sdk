@@ -78,8 +78,8 @@ $end_time = "end_time_example"; // string | Timestamp for the end of the request
 $sort_order = "sort_order_example"; // string | The order in which results are listed. - `ASC` - oldest to newest - `DESC` - newest to oldest (default).
 $cursor = "cursor_example"; // string | A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information.
 $location_id = "location_id_example"; // string | ID of location associated with payment.
-$status = "status_example"; // string | If provided, only refunds with the given status are returned.  For a list of refund status values, see `PaymentRefund`.  Default: If omitted refunds are returned regardless of status.
-$source_type = "source_type_example"; // string | If provided, only refunds with the given source type are returned.  - `CARD` - List refunds only for payments where card was specified as payment  source.  Default: If omitted refunds are returned regardless of source type.
+$status = "status_example"; // string | If provided, only refunds with the given status are returned. For a list of refund status values, see `PaymentRefund`.  Default: If omitted refunds are returned regardless of status.
+$source_type = "source_type_example"; // string | If provided, only refunds with the given source type are returned. - `CARD` - List refunds only for payments where card was specified as payment source.  Default: If omitted refunds are returned regardless of source type.
 
 try {
     $result = $apiInstance->listPaymentRefunds($begin_time, $end_time, $sort_order, $cursor, $location_id, $status, $source_type);
@@ -99,8 +99,8 @@ Name | Type | Description  | Notes
  **sort_order** | **string**| The order in which results are listed. - &#x60;ASC&#x60; - oldest to newest - &#x60;DESC&#x60; - newest to oldest (default). | [optional]
  **cursor** | **string**| A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. | [optional]
  **location_id** | **string**| ID of location associated with payment. | [optional]
- **status** | **string**| If provided, only refunds with the given status are returned.  For a list of refund status values, see &#x60;PaymentRefund&#x60;.  Default: If omitted refunds are returned regardless of status. | [optional]
- **source_type** | **string**| If provided, only refunds with the given source type are returned.  - &#x60;CARD&#x60; - List refunds only for payments where card was specified as payment  source.  Default: If omitted refunds are returned regardless of source type. | [optional]
+ **status** | **string**| If provided, only refunds with the given status are returned. For a list of refund status values, see &#x60;PaymentRefund&#x60;.  Default: If omitted refunds are returned regardless of status. | [optional]
+ **source_type** | **string**| If provided, only refunds with the given source type are returned. - &#x60;CARD&#x60; - List refunds only for payments where card was specified as payment source.  Default: If omitted refunds are returned regardless of source type. | [optional]
 
 ### Return type
 

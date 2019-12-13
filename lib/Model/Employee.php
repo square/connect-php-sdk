@@ -84,37 +84,37 @@ class Employee implements ArrayAccess
     );
   
     /**
-      * $id UUID for this `Employee`.
+      * $id UUID for this object.
       * @var string
       */
     protected $id;
     /**
-      * $first_name Given (first) name of the employee.
+      * $first_name The employee's first name.
       * @var string
       */
     protected $first_name;
     /**
-      * $last_name Family (last) name of the employee
+      * $last_name The employee's last name.
       * @var string
       */
     protected $last_name;
     /**
-      * $email Email of the employee
+      * $email The employee's email address
       * @var string
       */
     protected $email;
     /**
-      * $phone_number Phone number of the employee in E.164 format, i.e. \"+12125554250\"
+      * $phone_number The employee's phone number in E.164 format, i.e. \"+12125554250\"
       * @var string
       */
     protected $phone_number;
     /**
-      * $location_ids A list of location IDs where this employee has access.
+      * $location_ids A list of location IDs where this employee has access to.
       * @var string[]
       */
     protected $location_ids;
     /**
-      * $status Specifies the status of the employee being fetched. See [EmployeeStatus](#type-employeestatus) for possible values
+      * $status Specifies the status of the employees being fetched. See [EmployeeStatus](#type-employeestatus) for possible values
       * @var string
       */
     protected $status;
@@ -194,7 +194,7 @@ class Employee implements ArrayAccess
   
     /**
      * Sets id
-     * @param string $id UUID for this `Employee`.
+     * @param string $id UUID for this object.
      * @return $this
      */
     public function setId($id)
@@ -213,7 +213,7 @@ class Employee implements ArrayAccess
   
     /**
      * Sets first_name
-     * @param string $first_name Given (first) name of the employee.
+     * @param string $first_name The employee's first name.
      * @return $this
      */
     public function setFirstName($first_name)
@@ -232,7 +232,7 @@ class Employee implements ArrayAccess
   
     /**
      * Sets last_name
-     * @param string $last_name Family (last) name of the employee
+     * @param string $last_name The employee's last name.
      * @return $this
      */
     public function setLastName($last_name)
@@ -251,7 +251,7 @@ class Employee implements ArrayAccess
   
     /**
      * Sets email
-     * @param string $email Email of the employee
+     * @param string $email The employee's email address
      * @return $this
      */
     public function setEmail($email)
@@ -270,7 +270,7 @@ class Employee implements ArrayAccess
   
     /**
      * Sets phone_number
-     * @param string $phone_number Phone number of the employee in E.164 format, i.e. \"+12125554250\"
+     * @param string $phone_number The employee's phone number in E.164 format, i.e. \"+12125554250\"
      * @return $this
      */
     public function setPhoneNumber($phone_number)
@@ -289,7 +289,7 @@ class Employee implements ArrayAccess
   
     /**
      * Sets location_ids
-     * @param string[] $location_ids A list of location IDs where this employee has access.
+     * @param string[] $location_ids A list of location IDs where this employee has access to.
      * @return $this
      */
     public function setLocationIds($location_ids)
@@ -308,7 +308,7 @@ class Employee implements ArrayAccess
   
     /**
      * Sets status
-     * @param string $status Specifies the status of the employee being fetched. See [EmployeeStatus](#type-employeestatus) for possible values
+     * @param string $status Specifies the status of the employees being fetched. See [EmployeeStatus](#type-employeestatus) for possible values
      * @return $this
      */
     public function setStatus($status)

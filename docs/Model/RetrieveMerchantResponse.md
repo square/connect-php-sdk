@@ -2,7 +2,7 @@
 
 ### Description
 
-The response obeject returned by the [RetrieveMerchant](#endpoint-retrieveMerchant) endpoint.
+The response object returned by the [RetrieveMerchant](#endpoint-retrieveMerchant) endpoint.
 
 ## Properties
 Name | Getter | Setter | Type | Description | Notes

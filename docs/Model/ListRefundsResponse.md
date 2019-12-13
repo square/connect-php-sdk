@@ -10,7 +10,7 @@ Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------
 **errors** | getErrors() | setErrors($value) | [**\SquareConnect\Model\Error[]**](Error.md) | Any errors that occurred during the request. | [optional] 
 **refunds** | getRefunds() | setRefunds($value) | [**\SquareConnect\Model\Refund[]**](Refund.md) | An array of refunds that match your query. | [optional] 
-**cursor** | getCursor() | setCursor($value) | **string** | A pagination cursor for retrieving the next set of results, if any remain. Provide this value as the &#x60;cursor&#x60; parameter in a subsequent request to this endpoint.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. | [optional] 
+**cursor** | getCursor() | setCursor($value) | **string** | A pagination cursor for retrieving the next set of results, if any remain. Provide this value as the &#x60;cursor&#x60; parameter in a subsequent request to this endpoint.  See [Paginating results](#paginatingresults) for more information. | [optional] 
 
 Note: All properties are protected and only accessed via getters and setters.
 

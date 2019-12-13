@@ -9,6 +9,7 @@ namespace SquareConnect\Model;
 
 use \ArrayAccess;
 /**
+ * @deprecated
  * V1Discount Class Doc Comment
  *
  * @category Class
@@ -110,7 +111,7 @@ class V1Discount implements ArrayAccess
       */
     protected $pin_required;
     /**
-      * $color The color of the discount's display label in Square Register, if not the default color. The default color is 9da2a6. See [V1DiscountColor](#type-v1discountcolor) for possible values
+      * $color The color of the discount's display label in Square Point of Sale, if not the default color. The default color is 9da2a6. See [V1DiscountColor](#type-v1discountcolor) for possible values
       * @var string
       */
     protected $color;
@@ -294,7 +295,7 @@ class V1Discount implements ArrayAccess
   
     /**
      * Sets color
-     * @param string $color The color of the discount's display label in Square Register, if not the default color. The default color is 9da2a6. See [V1DiscountColor](#type-v1discountcolor) for possible values
+     * @param string $color The color of the discount's display label in Square Point of Sale, if not the default color. The default color is 9da2a6. See [V1DiscountColor](#type-v1discountcolor) for possible values
      * @return $this
      */
     public function setColor($color)

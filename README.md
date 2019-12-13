@@ -200,6 +200,7 @@ Class | Method | HTTP request | Description
 *LaborApi* | [**updateBreakType**](docs/Api/LaborApi.md#updatebreaktype) | **PUT** /v2/labor/break-types/{id} | UpdateBreakType
 *LaborApi* | [**updateShift**](docs/Api/LaborApi.md#updateshift) | **PUT** /v2/labor/shifts/{id} | UpdateShift
 *LaborApi* | [**updateWorkweekConfig**](docs/Api/LaborApi.md#updateworkweekconfig) | **PUT** /v2/labor/workweek-configs/{id} | UpdateWorkweekConfig
+*LocationsApi* | [**createLocation**](docs/Api/LocationsApi.md#createlocation) | **POST** /v2/locations | CreateLocation
 *LocationsApi* | [**listLocations**](docs/Api/LocationsApi.md#listlocations) | **GET** /v2/locations | ListLocations
 *LocationsApi* | [**retrieveLocation**](docs/Api/LocationsApi.md#retrievelocation) | **GET** /v2/locations/{location_id} | RetrieveLocation
 *LocationsApi* | [**updateLocation**](docs/Api/LocationsApi.md#updatelocation) | **PUT** /v2/locations/{location_id} | UpdateLocation
@@ -336,8 +337,10 @@ Class | Method | HTTP request | Description
  - [Card](docs/Model/Card.md)
  - [CardBrand](docs/Model/CardBrand.md)
  - [CardPaymentDetails](docs/Model/CardPaymentDetails.md)
+ - [CashPaymentDetails](docs/Model/CashPaymentDetails.md)
  - [CatalogCategory](docs/Model/CatalogCategory.md)
  - [CatalogDiscount](docs/Model/CatalogDiscount.md)
+ - [CatalogDiscountModifyTaxBasis](docs/Model/CatalogDiscountModifyTaxBasis.md)
  - [CatalogDiscountType](docs/Model/CatalogDiscountType.md)
  - [CatalogIdMapping](docs/Model/CatalogIdMapping.md)
  - [CatalogImage](docs/Model/CatalogImage.md)
@@ -364,7 +367,13 @@ Class | Method | HTTP request | Description
  - [CatalogPricingType](docs/Model/CatalogPricingType.md)
  - [CatalogProductSet](docs/Model/CatalogProductSet.md)
  - [CatalogQuery](docs/Model/CatalogQuery.md)
+ - [CatalogQueryCustomAttributeUsage](docs/Model/CatalogQueryCustomAttributeUsage.md)
  - [CatalogQueryExact](docs/Model/CatalogQueryExact.md)
+ - [CatalogQueryFilteredItems](docs/Model/CatalogQueryFilteredItems.md)
+ - [CatalogQueryFilteredItemsCustomAttributeFilter](docs/Model/CatalogQueryFilteredItemsCustomAttributeFilter.md)
+ - [CatalogQueryFilteredItemsCustomAttributeFilterFilterType](docs/Model/CatalogQueryFilteredItemsCustomAttributeFilterFilterType.md)
+ - [CatalogQueryFilteredItemsNullableAttribute](docs/Model/CatalogQueryFilteredItemsNullableAttribute.md)
+ - [CatalogQueryFilteredItemsStockLevel](docs/Model/CatalogQueryFilteredItemsStockLevel.md)
  - [CatalogQueryItemVariationsForItemOptionValues](docs/Model/CatalogQueryItemVariationsForItemOptionValues.md)
  - [CatalogQueryItemsForItemOptions](docs/Model/CatalogQueryItemsForItemOptions.md)
  - [CatalogQueryItemsForModifierList](docs/Model/CatalogQueryItemsForModifierList.md)
@@ -386,12 +395,16 @@ Class | Method | HTTP request | Description
  - [Country](docs/Model/Country.md)
  - [CreateBreakTypeRequest](docs/Model/CreateBreakTypeRequest.md)
  - [CreateBreakTypeResponse](docs/Model/CreateBreakTypeResponse.md)
+ - [CreateCatalogImageRequest](docs/Model/CreateCatalogImageRequest.md)
+ - [CreateCatalogImageResponse](docs/Model/CreateCatalogImageResponse.md)
  - [CreateCheckoutRequest](docs/Model/CreateCheckoutRequest.md)
  - [CreateCheckoutResponse](docs/Model/CreateCheckoutResponse.md)
  - [CreateCustomerCardRequest](docs/Model/CreateCustomerCardRequest.md)
  - [CreateCustomerCardResponse](docs/Model/CreateCustomerCardResponse.md)
  - [CreateCustomerRequest](docs/Model/CreateCustomerRequest.md)
  - [CreateCustomerResponse](docs/Model/CreateCustomerResponse.md)
+ - [CreateLocationRequest](docs/Model/CreateLocationRequest.md)
+ - [CreateLocationResponse](docs/Model/CreateLocationResponse.md)
  - [CreateMobileAuthorizationCodeRequest](docs/Model/CreateMobileAuthorizationCodeRequest.md)
  - [CreateMobileAuthorizationCodeResponse](docs/Model/CreateMobileAuthorizationCodeResponse.md)
  - [CreateOrderRequest](docs/Model/CreateOrderRequest.md)
@@ -437,6 +450,7 @@ Class | Method | HTTP request | Description
  - [ErrorCategory](docs/Model/ErrorCategory.md)
  - [ErrorCode](docs/Model/ErrorCode.md)
  - [ExcludeStrategy](docs/Model/ExcludeStrategy.md)
+ - [ExternalPaymentDetails](docs/Model/ExternalPaymentDetails.md)
  - [GetBreakTypeRequest](docs/Model/GetBreakTypeRequest.md)
  - [GetBreakTypeResponse](docs/Model/GetBreakTypeResponse.md)
  - [GetEmployeeWageRequest](docs/Model/GetEmployeeWageRequest.md)
@@ -794,7 +808,6 @@ Class | Method | HTTP request | Description
  - [V1VariationPricingType](docs/Model/V1VariationPricingType.md)
  - [VoidTransactionRequest](docs/Model/VoidTransactionRequest.md)
  - [VoidTransactionResponse](docs/Model/VoidTransactionResponse.md)
- - [WebhookEvents](docs/Model/WebhookEvents.md)
  - [Weekday](docs/Model/Weekday.md)
  - [WorkweekConfig](docs/Model/WorkweekConfig.md)
 
@@ -814,18 +827,18 @@ Class | Method | HTTP request | Description
  - **EMPLOYEES_WRITE**: __HTTP Method__: `POST`, `PUT`, `DELETE`  Grants write access to employee profile information. For example, to create and modify employee profiles.
  - **INVENTORY_READ**: __HTTP Method__: `GET`  Grants read access to inventory information. For example, to call the RetrieveInventoryCount endpoint.
  - **INVENTORY_WRITE**: __HTTP Method__:  `POST`, `PUT`, `DELETE`  Grants write access to inventory information. For example, to call the BatchChangeInventory endpoint.
- - **ITEMS_READ**: __HTTP Method__: `GET`  Grants read access to product catalog information. For example, to get an  item or a list of items.
+ - **ITEMS_READ**: __HTTP Method__: `GET`  Grants read access to business and location information. For example, to obtain a location ID for subsequent activity.
  - **ITEMS_WRITE**: __HTTP Method__: `POST`, `PUT`, `DELETE`  Grants write access to product catalog information. For example, to modify or add to a product catalog.
  - **MERCHANT_PROFILE_READ**: __HTTP Method__: `GET`  Grants read access to business and location information. For example, to obtain a location ID for subsequent activity.
  - **ORDERS_READ**: __HTTP Method__: `GET`  Grants read access to order information. For example, to call the BatchRetrieveOrders endpoint.
  - **ORDERS_WRITE**: __HTTP Method__: `POST`, `PUT`, `DELETE`  Grants write access to order information. For example, to call the CreateCheckout endpoint.
  - **PAYMENTS_READ**: __HTTP Method__: `GET`  Grants read access to transaction and refund information. For example, to call the RetrieveTransaction endpoint.
- - **PAYMENTS_WRITE**: __HTTP Method__: `POST`, `PUT`, `DELETE`  Grants write access to transaction and refunds information. For example, to process payments with the Transactions or Checkout API.
- - **PAYMENTS_WRITE_ADDITIONAL_RECIPIENTS**: __HTTP Method__: `POST`, `PUT`, `DELETE`  Allow third party applications to deduct a portion of each transaction amount. __Required__ to use multiparty transaction functionality with the Transactions API.
- - **PAYMENTS_WRITE_IN_PERSON**: __HTTP Method__: `POST`, `PUT`, `DELETE`  Grants write access to transaction and refunds information. For example, to process in-person payments.
+ - **PAYMENTS_WRITE**: __HTTP Method__: `POST`, `PUT`, `DELETE`  Grants write access to transaction and refunds information. For example, to process payments with the Payments or Checkout API.
+ - **PAYMENTS_WRITE_ADDITIONAL_RECIPIENTS**: __HTTP Method__: `POST`, `PUT`, `DELETE`  Allow third party applications to deduct a portion of each transaction amount. __Required__ to use multiparty transaction functionality with the Payments API.
+ - **PAYMENTS_WRITE_IN_PERSON**: __HTTP Method__: `POST`, `PUT`, `DELETE`  Grants write access to payments and refunds information. For example, to process in-person payments.
  - **SETTLEMENTS_READ**: __HTTP Method__: `GET`  Grants read access to settlement (deposit) information. For example, to call the Connect v1 ListSettlements endpoint.
- - **TIMECARDS_READ**: __HTTP Method__: `GET`  Grants read access to employee timecard information. For example, to call the Connect v1 ListTimecards endpoint.
- - **TIMECARDS_WRITE**: __HTTP Method__: `POST`, `PUT`, `DELETE`  Grants write access to employee timecard information. For example, to create and modify timecards.
+ - **TIMECARDS_READ**: __HTTP Method__: `GET`  Grants read access to employee timecard information. For example, to call the Connect v2 SearchShifts endpoint.
+ - **TIMECARDS_WRITE**: __HTTP Method__: `POST`, `PUT`, `DELETE`  Grants write access to employee shift information. For example, to create and modify employee shifts.
  - **TIMECARDS_SETTINGS_READ**: __HTTP Method__: `GET`  Grants read access to employee timecard settings information. For example, to call the GetBreakType endpoint.
  - **TIMECARDS_SETTINGS_WRITE**: __HTTP Method__: `POST`, `PUT`, `DELETE`  Grants write access to employee timecard settings information. For example, to call the UpdateBreakType endpoint.
 

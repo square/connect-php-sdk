@@ -7,7 +7,7 @@
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------
-**tax_ids** | getTaxIds() | setTaxIds($value) | **string[]** | A set of &#x60;CatalogTax](#type-catalogtax) IDs to be used to find associated [CatalogItem&#x60;s. | 
+**tax_ids** | getTaxIds() | setTaxIds($value) | **string[]** | A set of &#x60;CatalogTax&#x60; IDs to be used to find associated &#x60;CatalogItem&#x60;s. | 
 
 Note: All properties are protected and only accessed via getters and setters.
 

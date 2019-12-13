@@ -126,7 +126,7 @@ class Shift implements ArrayAccess
       */
     protected $end_at;
     /**
-      * $wage Job and pay related information.
+      * $wage Job and pay related information. If wage is not set on create, will default to a wage of zero money. If title is not set on create, will default to the name of the role the employee is assigned to, if any.
       * @var \SquareConnect\Model\ShiftWage
       */
     protected $wage;
@@ -350,7 +350,7 @@ class Shift implements ArrayAccess
   
     /**
      * Sets wage
-     * @param \SquareConnect\Model\ShiftWage $wage Job and pay related information.
+     * @param \SquareConnect\Model\ShiftWage $wage Job and pay related information. If wage is not set on create, will default to a wage of zero money. If title is not set on create, will default to the name of the role the employee is assigned to, if any.
      * @return $this
      */
     public function setWage($wage)

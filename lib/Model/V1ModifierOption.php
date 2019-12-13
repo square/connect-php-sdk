@@ -9,6 +9,7 @@ namespace SquareConnect\Model;
 
 use \ArrayAccess;
 /**
+ * @deprecated
  * V1ModifierOption Class Doc Comment
  *
  * @category Class
@@ -96,7 +97,7 @@ class V1ModifierOption implements ArrayAccess
       */
     protected $on_by_default;
     /**
-      * $ordinal Indicates the modifier option's list position when displayed in Square Register and the merchant dashboard. If more than one modifier option in the same modifier list has the same ordinal value, those options are displayed in alphabetical order.
+      * $ordinal Indicates the modifier option's list position when displayed in Square Point of Sale and the merchant dashboard. If more than one modifier option in the same modifier list has the same ordinal value, those options are displayed in alphabetical order.
       * @var int
       */
     protected $ordinal;
@@ -242,7 +243,7 @@ class V1ModifierOption implements ArrayAccess
   
     /**
      * Sets ordinal
-     * @param int $ordinal Indicates the modifier option's list position when displayed in Square Register and the merchant dashboard. If more than one modifier option in the same modifier list has the same ordinal value, those options are displayed in alphabetical order.
+     * @param int $ordinal Indicates the modifier option's list position when displayed in Square Point of Sale and the merchant dashboard. If more than one modifier option in the same modifier list has the same ordinal value, those options are displayed in alphabetical order.
      * @return $this
      */
     public function setOrdinal($ordinal)

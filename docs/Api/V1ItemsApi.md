@@ -47,11 +47,12 @@ Method | HTTP request | Description
 
 
 # **adjustInventory**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1InventoryEntry adjustInventory($location_id, $variation_id, $body)
 
 AdjustInventory
 
-Adjusts an item variation's current available inventory.
+Adjusts the current available inventory of an item variation.  ---  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  ---
 
 ### Example
 ```php
@@ -99,11 +100,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **applyFee**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1Item applyFee($location_id, $item_id, $fee_id)
 
 ApplyFee
 
-Associates a fee with an item, meaning the fee is automatically applied to the item in Square Register.
+Associates a fee with an item so the fee is automatically applied to the item in Square Point of Sale.  ---  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  ---
 
 ### Example
 ```php
@@ -151,11 +153,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **applyModifierList**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1Item applyModifierList($location_id, $modifier_list_id, $item_id)
 
 ApplyModifierList
 
-Associates a modifier list with an item, meaning modifier options from the list can be applied to the item.
+Associates a modifier list with an item so the associated modifier options can be applied to the item.  ---  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  ---
 
 ### Example
 ```php
@@ -203,11 +206,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createCategory**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1Category createCategory($location_id, $body)
 
 CreateCategory
 
-Creates an item category.
+Creates an item category.  ---  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  ---
 
 ### Example
 ```php
@@ -253,11 +257,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createDiscount**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1Discount createDiscount($location_id, $body)
 
 CreateDiscount
 
-Creates a discount.
+Creates a discount.  ---  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  ---
 
 ### Example
 ```php
@@ -303,11 +308,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createFee**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1Fee createFee($location_id, $body)
 
 CreateFee
 
-Creates a fee (tax).
+Creates a fee (tax).  ---  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  ---
 
 ### Example
 ```php
@@ -353,11 +359,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createItem**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1Item createItem($location_id, $body)
 
 CreateItem
 
-Creates an item and at least one variation for it. Item-related entities include fields you can use to associate them with entities in a non-Square system.  When you create an item-related entity, you can optionally specify its `id`. This value must be unique among all IDs ever specified for the account, including those specified by other applications. You can never reuse an entity ID. If you do not specify an ID, Square generates one for the entity.  Item variations have a `user_data` string that lets you associate arbitrary metadata with the variation. The string cannot exceed 255 characters.
+Creates an item and at least one variation for it.  ---  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  ---   Item-related entities include fields you can use to associate them with entities in a non-Square system.  When you create an item-related entity, you can optionally specify `id`. This value must be unique among all IDs ever specified for the account, including those specified by other applications. You can never reuse an entity ID. If you do not specify an ID, Square generates one for the entity.  Item variations have a `user_data` string that lets you associate arbitrary metadata with the variation. The string cannot exceed 255 characters.
 
 ### Example
 ```php
@@ -403,11 +410,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createModifierList**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1ModifierList createModifierList($location_id, $body)
 
 CreateModifierList
 
-Creates an item modifier list and at least one modifier option for it.
+Creates an item modifier list and at least 1 modifier option for it.  ---  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  ---
 
 ### Example
 ```php
@@ -453,11 +461,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createModifierOption**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1ModifierOption createModifierOption($location_id, $modifier_list_id, $body)
 
 CreateModifierOption
 
-Creates an item modifier option and adds it to a modifier list.
+Creates an item modifier option and adds it to a modifier list.  ---  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  ---
 
 ### Example
 ```php
@@ -505,11 +514,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createPage**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1Page createPage($location_id, $body)
 
 CreatePage
 
-Creates a Favorites page in Square Register.
+Creates a Favorites page in Square Point of Sale.  ---  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  ---
 
 ### Example
 ```php
@@ -555,11 +565,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createVariation**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1Variation createVariation($location_id, $item_id, $body)
 
 CreateVariation
 
-Creates an item variation for an existing item.
+Creates an item variation for an existing item.  ---  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  ---
 
 ### Example
 ```php
@@ -607,11 +618,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteCategory**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1Category deleteCategory($location_id, $category_id)
 
 DeleteCategory
 
-Deletes an existing item category. *Note**: DeleteCategory returns nothing on success but Connect SDKs map the empty response to an empty `V1DeleteCategoryRequest` object as documented below.
+Deletes an existing item category.  ---  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  ---  __DeleteCategory__ returns nothing on success but Connect SDKs map the empty response to an empty `V1DeleteCategoryRequest` object as documented below.
 
 ### Example
 ```php
@@ -657,11 +669,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteDiscount**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1Discount deleteDiscount($location_id, $discount_id)
 
 DeleteDiscount
 
-Deletes an existing discount. *Note**: DeleteDiscount returns nothing on success but Connect SDKs map the empty response to an empty `V1DeleteDiscountRequest` object as documented below.
+Deletes an existing discount.  ---  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  ---  __DeleteDiscount__ returns nothing on success but Connect SDKs map the empty response to an empty `V1DeleteDiscountRequest` object as documented below.
 
 ### Example
 ```php
@@ -707,11 +720,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteFee**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1Fee deleteFee($location_id, $fee_id)
 
 DeleteFee
 
-Deletes an existing fee (tax). *Note**: DeleteFee returns nothing on success but Connect SDKs map the empty response to an empty `V1DeleteFeeRequest` object as documented below.
+Deletes an existing fee (tax).  ---  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  ---  __DeleteFee__ returns nothing on success but Connect SDKs map the empty response to an empty `V1DeleteFeeRequest` object as documented below.
 
 ### Example
 ```php
@@ -757,11 +771,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteItem**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1Item deleteItem($location_id, $item_id)
 
 DeleteItem
 
-Deletes an existing item and all item variations associated with it. *Note**: DeleteItem returns nothing on success but Connect SDKs map the empty response to an empty `V1DeleteItemRequest` object as documented below.
+Deletes an existing item and all item variations associated with it.  ---  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  ---  __DeleteItem__ returns nothing on success but Connect SDKs map the empty response to an empty `V1DeleteItemRequest` object as documented below.
 
 ### Example
 ```php
@@ -807,11 +822,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteModifierList**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1ModifierList deleteModifierList($location_id, $modifier_list_id)
 
 DeleteModifierList
 
-Deletes an existing item modifier list and all modifier options associated with it. *Note**: DeleteModifierList returns nothing on success but Connect SDKs map the empty response to an empty `V1DeleteModifierListRequest` object as documented below.
+Deletes an existing item modifier list and all modifier options associated with it.  ---  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  ---  __DeleteModifierList__ returns nothing on success but Connect SDKs map the empty response to an empty `V1DeleteModifierListRequest` object as documented below.
 
 ### Example
 ```php
@@ -857,11 +873,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteModifierOption**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1ModifierOption deleteModifierOption($location_id, $modifier_list_id, $modifier_option_id)
 
 DeleteModifierOption
 
-Deletes an existing item modifier option from a modifier list. *Note**: DeleteModifierOption returns nothing on success but Connect SDKs map the empty response to an empty `V1DeleteModifierOptionRequest` object as documented below.
+Deletes an existing item modifier option from a modifier list.  ---  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  ---  __DeleteModifierOption__ returns nothing on success but Connect SDKs map the empty response to an empty `V1DeleteModifierOptionRequest` object.
 
 ### Example
 ```php
@@ -909,11 +926,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deletePage**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1Page deletePage($location_id, $page_id)
 
 DeletePage
 
-Deletes an existing Favorites page and all of its cells. *Note**: DeletePage returns nothing on success but Connect SDKs map the empty response to an empty `V1DeletePageRequest` object as documented below.
+Deletes an existing Favorites page and all of its cells.  ---  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  ---  __DeletePage__ returns nothing on success but Connect SDKs map the empty response to an empty `V1DeletePageRequest` object.
 
 ### Example
 ```php
@@ -959,11 +977,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deletePageCell**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1Page deletePageCell($location_id, $page_id, $row, $column)
 
 DeletePageCell
 
-Deletes a cell from a Favorites page in Square Register. *Note**: DeletePageCell returns nothing on success but Connect SDKs map the empty response to an empty `V1DeletePageCellRequest` object as documented below.
+Deletes a cell from a Favorites page in Square Point of Sale.  ---  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  ---  __DeletePageCell__ returns nothing on success but Connect SDKs map the empty response to an empty `V1DeletePageCellRequest` object as documented below.
 
 ### Example
 ```php
@@ -1013,11 +1032,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteVariation**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1Variation deleteVariation($location_id, $item_id, $variation_id)
 
 DeleteVariation
 
-Deletes an existing item variation from an item. *Note**: DeleteVariation returns nothing on success but Connect SDKs map the empty response to an empty `V1DeleteVariationRequest` object as documented below.
+Deletes an existing item variation from an item.  ---  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  ---  __DeleteVariation__ returns nothing on success but Connect SDKs map the empty response to an empty `V1DeleteVariationRequest` object as documented below.
 
 ### Example
 ```php
@@ -1065,11 +1085,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listCategories**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1Category[] listCategories($location_id)
 
 ListCategories
 
-Lists all of a location's item categories.
+Lists all the item categories for a given location.  ---  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  ---
 
 ### Example
 ```php
@@ -1113,11 +1134,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listDiscounts**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1Discount[] listDiscounts($location_id)
 
 ListDiscounts
 
-Lists all of a location's discounts.
+Lists all the discounts for a given location.  ---  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  ---
 
 ### Example
 ```php
@@ -1161,11 +1183,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listFees**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1Fee[] listFees($location_id)
 
 ListFees
 
-Lists all of a location's fees (taxes).
+Lists all the fees (taxes) for a given location.  ---  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  ---
 
 ### Example
 ```php
@@ -1209,11 +1232,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listInventory**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1InventoryEntry[] listInventory($location_id, $limit, $batch_token)
 
 ListInventory
 
-Provides inventory information for all of a merchant's inventory-enabled item variations.
+Provides inventory information for all inventory-enabled item variations.  ---  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  ---
 
 ### Example
 ```php
@@ -1261,11 +1285,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listItems**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1Item[] listItems($location_id, $batch_token)
 
 ListItems
 
-Provides summary information for all of a location's items.
+Provides summary information of all items for a given location.  ---  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  ---
 
 ### Example
 ```php
@@ -1311,11 +1336,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listModifierLists**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1ModifierList[] listModifierLists($location_id)
 
 ListModifierLists
 
-Lists all of a location's modifier lists.
+Lists all the modifier lists for a given location.  ---  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  ---
 
 ### Example
 ```php
@@ -1359,11 +1385,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listPages**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1Page[] listPages($location_id)
 
 ListPages
 
-Lists all of a location's Favorites pages in Square Register.
+Lists all Favorites pages (in Square Point of Sale) for a given location.  ---  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  ---
 
 ### Example
 ```php
@@ -1407,11 +1434,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **removeFee**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1Item removeFee($location_id, $item_id, $fee_id)
 
 RemoveFee
 
-Removes a fee assocation from an item, meaning the fee is no longer automatically applied to the item in Square Register.
+Removes a fee assocation from an item so the fee is no longer automatically applied to the item in Square Point of Sale.  ---  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  ---
 
 ### Example
 ```php
@@ -1459,11 +1487,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **removeModifierList**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1Item removeModifierList($location_id, $modifier_list_id, $item_id)
 
 RemoveModifierList
 
-Removes a modifier list association from an item, meaning modifier options from the list can no longer be applied to the item.
+Removes a modifier list association from an item so the modifier options from the list can no longer be applied to the item.  ---  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  ---
 
 ### Example
 ```php
@@ -1511,11 +1540,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **retrieveItem**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1Item retrieveItem($location_id, $item_id)
 
 RetrieveItem
 
-Provides the details for a single item, including associated modifier lists and fees.
+Provides the details for a single item, including associated modifier lists and fees.  ---  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  ---
 
 ### Example
 ```php
@@ -1561,11 +1591,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **retrieveModifierList**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1ModifierList retrieveModifierList($location_id, $modifier_list_id)
 
 RetrieveModifierList
 
-Provides the details for a single modifier list.
+Provides the details for a single modifier list.  ---  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  ---
 
 ### Example
 ```php
@@ -1611,11 +1642,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateCategory**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1Category updateCategory($location_id, $category_id, $body)
 
 UpdateCategory
 
-Modifies the details of an existing item category.
+Modifies the details of an existing item category.  ---  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  ---
 
 ### Example
 ```php
@@ -1663,11 +1695,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateDiscount**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1Discount updateDiscount($location_id, $discount_id, $body)
 
 UpdateDiscount
 
-Modifies the details of an existing discount.
+Modifies the details of an existing discount.  ---  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  ---
 
 ### Example
 ```php
@@ -1715,11 +1748,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateFee**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1Fee updateFee($location_id, $fee_id, $body)
 
 UpdateFee
 
-Modifies the details of an existing fee (tax).
+Modifies the details of an existing fee (tax).  ---  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  ---
 
 ### Example
 ```php
@@ -1767,11 +1801,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateItem**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1Item updateItem($location_id, $item_id, $body)
 
 UpdateItem
 
-Modifies the core details of an existing item.
+Modifies the core details of an existing item.  ---  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  ---
 
 ### Example
 ```php
@@ -1819,11 +1854,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateModifierList**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1ModifierList updateModifierList($location_id, $modifier_list_id, $body)
 
 UpdateModifierList
 
-Modifies the details of an existing item modifier list.
+Modifies the details of an existing item modifier list.  ---  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  ---
 
 ### Example
 ```php
@@ -1871,11 +1907,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateModifierOption**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1ModifierOption updateModifierOption($location_id, $modifier_list_id, $modifier_option_id, $body)
 
 UpdateModifierOption
 
-Modifies the details of an existing item modifier option.
+Modifies the details of an existing item modifier option.  ---  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  ---
 
 ### Example
 ```php
@@ -1925,11 +1962,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updatePage**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1Page updatePage($location_id, $page_id, $body)
 
 UpdatePage
 
-Modifies the details of a Favorites page in Square Register.
+Modifies the details of a Favorites page in Square Point of Sale.  ---  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  ---
 
 ### Example
 ```php
@@ -1977,11 +2015,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updatePageCell**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1Page updatePageCell($location_id, $page_id, $body)
 
 UpdatePageCell
 
-Modifies a cell of a Favorites page in Square Register.
+Modifies a cell of a Favorites page in Square Point of Sale.  ---  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  ---
 
 ### Example
 ```php
@@ -2029,11 +2068,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateVariation**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1Variation updateVariation($location_id, $item_id, $variation_id, $body)
 
 UpdateVariation
 
-Modifies the details of an existing item variation.
+Modifies the details of an existing item variation.  ---  - __Deprecation date__: 2019-11-20 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2020-11-18 - [Migration guide](/migrate-from-v1/guides/v1-items)  ---
 
 ### Example
 ```php

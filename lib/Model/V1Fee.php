@@ -9,6 +9,7 @@ namespace SquareConnect\Model;
 
 use \ArrayAccess;
 /**
+ * @deprecated
  * V1Fee Class Doc Comment
  *
  * @category Class
@@ -113,7 +114,7 @@ class V1Fee implements ArrayAccess
       */
     protected $adjustment_type;
     /**
-      * $applies_to_custom_amounts If true, the fee applies to custom amounts entered into Square Register that are not associated with a particular item.
+      * $applies_to_custom_amounts If true, the fee applies to custom amounts entered into Square Point of Sale that are not associated with a particular item.
       * @var bool
       */
     protected $applies_to_custom_amounts;
@@ -303,7 +304,7 @@ class V1Fee implements ArrayAccess
   
     /**
      * Sets applies_to_custom_amounts
-     * @param bool $applies_to_custom_amounts If true, the fee applies to custom amounts entered into Square Register that are not associated with a particular item.
+     * @param bool $applies_to_custom_amounts If true, the fee applies to custom amounts entered into Square Point of Sale that are not associated with a particular item.
      * @return $this
      */
     public function setAppliesToCustomAmounts($applies_to_custom_amounts)

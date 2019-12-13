@@ -1,7 +1,20 @@
 # Change Log
 
+## Version 2.20191120.0 (2019-11-20)
+!!!important
+Square has begun the retirement process for Connect v1 APIs. See the [Connect v1 Retirement](/migrate-from-v1) information page for details.
+!!!
+
+* __GA releases:__ SDKs now support the new `modify_tax_basis` field to Discounts and v2 Sandbox
+* __BETA releases:__ SDKs now support the Shifts API webhooks for Labor shift created, updated, deleted, CreateLocation endpoint, and the ability to customize statement description in Payments API.
+* **Deprecated**: Support for v1Items API and v1Locations API is fully deprecated.
+
+
+
+
 ## Version 2.20191023.0 (2019-10-23)
 * **GA release**: Merchants.ListMerchant is GA for all SDKs.
+* **Beta release**: All SDKs support new Locations API endpoint, CreateLocation.
 * **Beta release**: All SDKs support exclusion strategies for pricing rules.
 
 

@@ -4,17 +4,67 @@ All URIs are relative to *https://connect.squareup.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**createLocation**](LocationsApi.md#createLocation) | **POST** /v2/locations | CreateLocation
 [**listLocations**](LocationsApi.md#listLocations) | **GET** /v2/locations | ListLocations
 [**retrieveLocation**](LocationsApi.md#retrieveLocation) | **GET** /v2/locations/{location_id} | RetrieveLocation
 [**updateLocation**](LocationsApi.md#updateLocation) | **PUT** /v2/locations/{location_id} | UpdateLocation
 
+
+# **createLocation**
+**Note: This endpoint is in beta.**
+> \SquareConnect\Model\CreateLocationResponse createLocation($body)
+
+CreateLocation
+
+Creates a location. For more information about locations, see [Locations API Overview](/locations-api).
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure OAuth2 access token for authorization: oauth2
+SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+$apiInstance = new SquareConnect\Api\LocationsApi();
+$body = new \SquareConnect\Model\CreateLocationRequest(); // \SquareConnect\Model\CreateLocationRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
+
+try {
+    $result = $apiInstance->createLocation($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling LocationsApi->createLocation: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\SquareConnect\Model\CreateLocationRequest**](../Model/CreateLocationRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+
+### Return type
+
+[**\SquareConnect\Model\CreateLocationResponse**](../Model/CreateLocationResponse.md)
+
+### Authorization
+
+[oauth2](../../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listLocations**
 > \SquareConnect\Model\ListLocationsResponse listLocations()
 
 ListLocations
 
-Provides the details for all of a business's locations.  Most other Connect API endpoints have a required `location_id` path parameter. The `id` field of the [`Location`](#type-location) objects returned by this endpoint correspond to that `location_id` parameter.
+Provides information of all locations of a business.  Most other Connect API endpoints have a required `location_id` path parameter. The `id` field of the [`Location`](#type-location) objects returned by this endpoint correspond to that `location_id` parameter.
 
 ### Example
 ```php
@@ -54,7 +104,6 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **retrieveLocation**
-**Note: This endpoint is in beta.**
 > \SquareConnect\Model\RetrieveLocationResponse retrieveLocation($location_id)
 
 RetrieveLocation
@@ -108,7 +157,7 @@ Name | Type | Description  | Notes
 
 UpdateLocation
 
-Updates the `Location` specified by the given ID.
+Updates a location.
 
 ### Example
 ```php

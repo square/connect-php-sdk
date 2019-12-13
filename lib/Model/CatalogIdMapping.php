@@ -61,7 +61,7 @@ class CatalogIdMapping implements ArrayAccess
       */
     protected $client_object_id;
     /**
-      * $object_id The permanent ID for the `CatalogObject` created by the server.
+      * $object_id The permanent ID for the CatalogObject created by the server.
       * @var string
       */
     protected $object_id;
@@ -115,7 +115,7 @@ class CatalogIdMapping implements ArrayAccess
   
     /**
      * Sets object_id
-     * @param string $object_id The permanent ID for the `CatalogObject` created by the server.
+     * @param string $object_id The permanent ID for the CatalogObject created by the server.
      * @return $this
      */
     public function setObjectId($object_id)

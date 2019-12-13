@@ -56,7 +56,7 @@ class Money implements ArrayAccess
     );
   
     /**
-      * $amount The amount of money, in the smallest denomination of the currency indicated by `currency`. For example, when `currency` is `USD`, `amount` is in cents. Monetary amounts can be positive or negative. See the specific API documentation to determine the meaning of the sign in a particular case.
+      * $amount The amount of money, in the smallest denomination of the currency indicated by `currency`. For example, when `currency` is `USD`, `amount` is in cents. Monetary amounts can be positive or negative. See the specific field description to determine the meaning of the sign in a particular case.
       * @var int
       */
     protected $amount;
@@ -96,7 +96,7 @@ class Money implements ArrayAccess
   
     /**
      * Sets amount
-     * @param int $amount The amount of money, in the smallest denomination of the currency indicated by `currency`. For example, when `currency` is `USD`, `amount` is in cents. Monetary amounts can be positive or negative. See the specific API documentation to determine the meaning of the sign in a particular case.
+     * @param int $amount The amount of money, in the smallest denomination of the currency indicated by `currency`. For example, when `currency` is `USD`, `amount` is in cents. Monetary amounts can be positive or negative. See the specific field description to determine the meaning of the sign in a particular case.
      * @return $this
      */
     public function setAmount($amount)

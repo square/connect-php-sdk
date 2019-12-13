@@ -60,7 +60,7 @@ class CatalogInfoResponse implements ArrayAccess
     );
   
     /**
-      * $errors The set of `Error`s encountered.
+      * $errors The set of errors encountered.
       * @var \SquareConnect\Model\Error[]
       */
     protected $errors;
@@ -110,7 +110,7 @@ class CatalogInfoResponse implements ArrayAccess
   
     /**
      * Sets errors
-     * @param \SquareConnect\Model\Error[] $errors The set of `Error`s encountered.
+     * @param \SquareConnect\Model\Error[] $errors The set of errors encountered.
      * @return $this
      */
     public function setErrors($errors)

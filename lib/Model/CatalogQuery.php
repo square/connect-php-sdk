@@ -109,22 +109,22 @@ class CatalogQuery implements ArrayAccess
       */
     protected $text_query;
     /**
-      * $items_for_tax_query A query that returns all `CatalogItem](#type-catalogitem)s that have any of the given [CatalogTax`es enabled.
+      * $items_for_tax_query A query that returns all `CatalogItem`s that have any of the given `CatalogTax`es enabled.
       * @var \SquareConnect\Model\CatalogQueryItemsForTax
       */
     protected $items_for_tax_query;
     /**
-      * $items_for_modifier_list_query A query that returns all `CatalogItem](#type-catalogitem)s that have any of the given [CatalogModifierList`s enabled.
+      * $items_for_modifier_list_query A query that returns all `CatalogItem`s that have any of the given `CatalogModifierList`s enabled.
       * @var \SquareConnect\Model\CatalogQueryItemsForModifierList
       */
     protected $items_for_modifier_list_query;
     /**
-      * $items_for_item_options_query A query that returns all `CatalogItem](#type-catalogitem)s that have all of the given [CatalogItemOption`s.
+      * $items_for_item_options_query A query that returns all `CatalogItem`s that have all of the given `CatalogItemOption`s.
       * @var \SquareConnect\Model\CatalogQueryItemsForItemOptions
       */
     protected $items_for_item_options_query;
     /**
-      * $item_variations_for_item_option_values_query A query that returns all `CatalogItemVariation](#type-catalogitemvariations)s that have all of the given [CatalogItemOption` values.
+      * $item_variations_for_item_option_values_query A query that returns all `CatalogItemVariation`s that have all of the given `CatalogItemOption` values.
       * @var \SquareConnect\Model\CatalogQueryItemVariationsForItemOptionValues
       */
     protected $item_variations_for_item_option_values_query;
@@ -289,7 +289,7 @@ class CatalogQuery implements ArrayAccess
   
     /**
      * Sets items_for_tax_query
-     * @param \SquareConnect\Model\CatalogQueryItemsForTax $items_for_tax_query A query that returns all `CatalogItem](#type-catalogitem)s that have any of the given [CatalogTax`es enabled.
+     * @param \SquareConnect\Model\CatalogQueryItemsForTax $items_for_tax_query A query that returns all `CatalogItem`s that have any of the given `CatalogTax`es enabled.
      * @return $this
      */
     public function setItemsForTaxQuery($items_for_tax_query)
@@ -308,7 +308,7 @@ class CatalogQuery implements ArrayAccess
   
     /**
      * Sets items_for_modifier_list_query
-     * @param \SquareConnect\Model\CatalogQueryItemsForModifierList $items_for_modifier_list_query A query that returns all `CatalogItem](#type-catalogitem)s that have any of the given [CatalogModifierList`s enabled.
+     * @param \SquareConnect\Model\CatalogQueryItemsForModifierList $items_for_modifier_list_query A query that returns all `CatalogItem`s that have any of the given `CatalogModifierList`s enabled.
      * @return $this
      */
     public function setItemsForModifierListQuery($items_for_modifier_list_query)
@@ -327,7 +327,7 @@ class CatalogQuery implements ArrayAccess
   
     /**
      * Sets items_for_item_options_query
-     * @param \SquareConnect\Model\CatalogQueryItemsForItemOptions $items_for_item_options_query A query that returns all `CatalogItem](#type-catalogitem)s that have all of the given [CatalogItemOption`s.
+     * @param \SquareConnect\Model\CatalogQueryItemsForItemOptions $items_for_item_options_query A query that returns all `CatalogItem`s that have all of the given `CatalogItemOption`s.
      * @return $this
      */
     public function setItemsForItemOptionsQuery($items_for_item_options_query)
@@ -346,7 +346,7 @@ class CatalogQuery implements ArrayAccess
   
     /**
      * Sets item_variations_for_item_option_values_query
-     * @param \SquareConnect\Model\CatalogQueryItemVariationsForItemOptionValues $item_variations_for_item_option_values_query A query that returns all `CatalogItemVariation](#type-catalogitemvariations)s that have all of the given [CatalogItemOption` values.
+     * @param \SquareConnect\Model\CatalogQueryItemVariationsForItemOptionValues $item_variations_for_item_option_values_query A query that returns all `CatalogItemVariation`s that have all of the given `CatalogItemOption` values.
      * @return $this
      */
     public function setItemVariationsForItemOptionValuesQuery($item_variations_for_item_option_values_query)

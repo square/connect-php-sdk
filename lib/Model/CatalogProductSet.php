@@ -82,12 +82,12 @@ class CatalogProductSet implements ArrayAccess
       */
     protected $name;
     /**
-      * $product_ids_any Unique IDs for any `CatalogObjects`s to include in this product set. Any number of these catalog objects can be in an order for a pricing rule to apply.  This can be used with `product_ids_all` in a parent `CatalogProductSet` to match groups of products for a bulk discount, such as a discount for an entree and side combo.  Only one of `product_ids_all`, `product_ids_any`, or `all_products` can be set.  Max: 500 catalog object IDs.
+      * $product_ids_any Unique IDs for any `CatalogObject` included in this product set. Any number of these catalog objects can be in an order for a pricing rule to apply.  This can be used with `product_ids_all` in a parent `CatalogProductSet` to match groups of products for a bulk discount, such as a discount for an entree and side combo.  Only one of `product_ids_all`, `product_ids_any`, or `all_products` can be set.  Max: 500 catalog object IDs.
       * @var string[]
       */
     protected $product_ids_any;
     /**
-      * $product_ids_all Unique IDs for `CatalogObjects` to include in this product set. All objects in this set must be included in an order for a pricing rule to apply.  Only one of `product_ids_all`, `product_ids_any`, or `all_products` can be set.  Max: 500 catalog object IDs.
+      * $product_ids_all Unique IDs for any `CatalogObject` included in this product set. All objects in this set must be included in an order for a pricing rule to apply.  Only one of `product_ids_all`, `product_ids_any`, or `all_products` can be set.  Max: 500 catalog object IDs.
       * @var string[]
       */
     protected $product_ids_all;
@@ -186,7 +186,7 @@ class CatalogProductSet implements ArrayAccess
   
     /**
      * Sets product_ids_any
-     * @param string[] $product_ids_any Unique IDs for any `CatalogObjects`s to include in this product set. Any number of these catalog objects can be in an order for a pricing rule to apply.  This can be used with `product_ids_all` in a parent `CatalogProductSet` to match groups of products for a bulk discount, such as a discount for an entree and side combo.  Only one of `product_ids_all`, `product_ids_any`, or `all_products` can be set.  Max: 500 catalog object IDs.
+     * @param string[] $product_ids_any Unique IDs for any `CatalogObject` included in this product set. Any number of these catalog objects can be in an order for a pricing rule to apply.  This can be used with `product_ids_all` in a parent `CatalogProductSet` to match groups of products for a bulk discount, such as a discount for an entree and side combo.  Only one of `product_ids_all`, `product_ids_any`, or `all_products` can be set.  Max: 500 catalog object IDs.
      * @return $this
      */
     public function setProductIdsAny($product_ids_any)
@@ -205,7 +205,7 @@ class CatalogProductSet implements ArrayAccess
   
     /**
      * Sets product_ids_all
-     * @param string[] $product_ids_all Unique IDs for `CatalogObjects` to include in this product set. All objects in this set must be included in an order for a pricing rule to apply.  Only one of `product_ids_all`, `product_ids_any`, or `all_products` can be set.  Max: 500 catalog object IDs.
+     * @param string[] $product_ids_all Unique IDs for any `CatalogObject` included in this product set. All objects in this set must be included in an order for a pricing rule to apply.  Only one of `product_ids_all`, `product_ids_any`, or `all_products` can be set.  Max: 500 catalog object IDs.
      * @return $this
      */
     public function setProductIdsAll($product_ids_all)

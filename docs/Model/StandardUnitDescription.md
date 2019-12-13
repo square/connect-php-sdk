@@ -8,8 +8,8 @@ Contains the name and abbreviation for standard measurement unit.
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------
 **unit** | getUnit() | setUnit($value) | [**\SquareConnect\Model\MeasurementUnit**](MeasurementUnit.md) | Identifies the measurement unit being described. | [optional] 
-**name** | getName() | setName($value) | **string** | Display name of the measurement unit. For example, &#39;Pound&#39;. | [optional] 
-**abbreviation** | getAbbreviation() | setAbbreviation($value) | **string** | Abbreviation for the measurement unit. For example, &#39;lb&#39;. | [optional] 
+**name** | getName() | setName($value) | **string** | UI display name of the measurement unit. For example, &#39;Pound&#39;. | [optional] 
+**abbreviation** | getAbbreviation() | setAbbreviation($value) | **string** | UI display abbreviation for the measurement unit. For example, &#39;lb&#39;. | [optional] 
 
 Note: All properties are protected and only accessed via getters and setters.
 
