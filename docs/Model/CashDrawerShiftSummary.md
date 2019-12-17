@@ -1,0 +1,23 @@
+# CashDrawerShiftSummary
+
+### Description
+
+The summary of a closed cash drawer shift. This model contains only the money counted to start a cash drawer shift, counted at the end of the shift, and the amount that should be in the drawer at shift end based on summing all cash drawer shift events.
+
+## Properties
+Name | Getter | Setter | Type | Description | Notes
+------------ | ------------- | ------------- | ------------- | ------------- | -------------
+**id** | getId() | setId($value) | **string** | The shift unique ID. | [optional] 
+**state** | getState() | setState($value) | **string** | The shift current state. See [CashDrawerShiftState](#type-cashdrawershiftstate) for possible values | [optional] 
+**opened_at** | getOpenedAt() | setOpenedAt($value) | **string** | The shift start time in ISO 8601 format. | [optional] 
+**ended_at** | getEndedAt() | setEndedAt($value) | **string** | The shift end time in ISO 8601 format. | [optional] 
+**closed_at** | getClosedAt() | setClosedAt($value) | **string** | The shift close time in ISO 8601 format. | [optional] 
+**description** | getDescription() | setDescription($value) | **string** | An employee free-text description of a cash drawer shift. | [optional] 
+**opened_cash_money** | getOpenedCashMoney() | setOpenedCashMoney($value) | [**\SquareConnect\Model\Money**](Money.md) | The amount of money in the cash drawer at the start of the shift. This must be a positive amount. | [optional] 
+**expected_cash_money** | getExpectedCashMoney() | setExpectedCashMoney($value) | [**\SquareConnect\Model\Money**](Money.md) | The amount of money that should be in the cash drawer at the end of the shift, based on the cash drawer events on the shift. The amount is correct if all shift employees accurately recorded their cash drawer shift events. Unrecorded events and events with the wrong amount result in an incorrect expected_cash_money amount that can be negative. | [optional] 
+**closed_cash_money** | getClosedCashMoney() | setClosedCashMoney($value) | [**\SquareConnect\Model\Money**](Money.md) | The amount of money found in the cash drawer at the end of the shift by an auditing employee. The amount must be greater than or equal to zero. | [optional] 
+
+Note: All properties are protected and only accessed via getters and setters.
+
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+

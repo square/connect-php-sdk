@@ -303,7 +303,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $apiInstance = new SquareConnect\Api\V1TransactionsApi();
-$location_id = "location_id_example"; // string | The ID of the location to list settlements for. If you specify me, this endpoint returns payments aggregated from all of the business's locations.
+$location_id = "location_id_example"; // string | The ID of the location to list settlements for.
 $order = "order_example"; // string | TThe order in which payments are listed in the response.
 $begin_time = "begin_time_example"; // string | The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year.
 $end_time = "end_time_example"; // string | The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time.
@@ -324,7 +324,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **location_id** | **string**| The ID of the location to list settlements for. If you specify me, this endpoint returns payments aggregated from all of the business&#39;s locations. |
+ **location_id** | **string**| The ID of the location to list settlements for. |
  **order** | **string**| TThe order in which payments are listed in the response. | [optional]
  **begin_time** | **string**| The beginning of the requested reporting period, in ISO 8601 format. If this value is before January 1, 2013 (2013-01-01T00:00:00Z), this endpoint returns an error. Default value: The current time minus one year. | [optional]
  **end_time** | **string**| The end of the requested reporting period, in ISO 8601 format. If this value is more than one year greater than begin_time, this endpoint returns an error. Default value: The current time. | [optional]

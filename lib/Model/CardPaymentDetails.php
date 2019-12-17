@@ -36,6 +36,7 @@ class CardPaymentDetails implements ArrayAccess
         'verification_method' => 'string',
         'verification_results' => 'string',
         'statement_description' => 'string',
+        'device_details' => '\SquareConnect\Model\DeviceDetails',
         'errors' => '\SquareConnect\Model\Error[]'
     );
   
@@ -56,6 +57,7 @@ class CardPaymentDetails implements ArrayAccess
         'verification_method' => 'verification_method',
         'verification_results' => 'verification_results',
         'statement_description' => 'statement_description',
+        'device_details' => 'device_details',
         'errors' => 'errors'
     );
   
@@ -76,6 +78,7 @@ class CardPaymentDetails implements ArrayAccess
         'verification_method' => 'setVerificationMethod',
         'verification_results' => 'setVerificationResults',
         'statement_description' => 'setStatementDescription',
+        'device_details' => 'setDeviceDetails',
         'errors' => 'setErrors'
     );
   
@@ -96,6 +99,7 @@ class CardPaymentDetails implements ArrayAccess
         'verification_method' => 'getVerificationMethod',
         'verification_results' => 'getVerificationResults',
         'statement_description' => 'getStatementDescription',
+        'device_details' => 'getDeviceDetails',
         'errors' => 'getErrors'
     );
   
@@ -159,6 +163,11 @@ class CardPaymentDetails implements ArrayAccess
       * @var string
       */
     protected $statement_description;
+    /**
+      * $device_details Details about the device that took the payment.
+      * @var \SquareConnect\Model\DeviceDetails
+      */
+    protected $device_details;
     /**
       * $errors Information on errors encountered during the request.
       * @var \SquareConnect\Model\Error[]
@@ -231,6 +240,11 @@ class CardPaymentDetails implements ArrayAccess
               $this->statement_description = $data["statement_description"];
             } else {
               $this->statement_description = null;
+            }
+            if (isset($data["device_details"])) {
+              $this->device_details = $data["device_details"];
+            } else {
+              $this->device_details = null;
             }
             if (isset($data["errors"])) {
               $this->errors = $data["errors"];
@@ -465,6 +479,25 @@ class CardPaymentDetails implements ArrayAccess
     public function setStatementDescription($statement_description)
     {
         $this->statement_description = $statement_description;
+        return $this;
+    }
+    /**
+     * Gets device_details
+     * @return \SquareConnect\Model\DeviceDetails
+     */
+    public function getDeviceDetails()
+    {
+        return $this->device_details;
+    }
+  
+    /**
+     * Sets device_details
+     * @param \SquareConnect\Model\DeviceDetails $device_details Details about the device that took the payment.
+     * @return $this
+     */
+    public function setDeviceDetails($device_details)
+    {
+        $this->device_details = $device_details;
         return $this;
     }
     /**

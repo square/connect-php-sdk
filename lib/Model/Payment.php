@@ -46,7 +46,9 @@ class Payment implements ArrayAccess
         'billing_address' => '\SquareConnect\Model\Address',
         'shipping_address' => '\SquareConnect\Model\Address',
         'note' => 'string',
-        'statement_description_identifier' => 'string'
+        'statement_description_identifier' => 'string',
+        'receipt_number' => 'string',
+        'receipt_url' => 'string'
     );
   
     /** 
@@ -76,7 +78,9 @@ class Payment implements ArrayAccess
         'billing_address' => 'billing_address',
         'shipping_address' => 'shipping_address',
         'note' => 'note',
-        'statement_description_identifier' => 'statement_description_identifier'
+        'statement_description_identifier' => 'statement_description_identifier',
+        'receipt_number' => 'receipt_number',
+        'receipt_url' => 'receipt_url'
     );
   
     /**
@@ -106,7 +110,9 @@ class Payment implements ArrayAccess
         'billing_address' => 'setBillingAddress',
         'shipping_address' => 'setShippingAddress',
         'note' => 'setNote',
-        'statement_description_identifier' => 'setStatementDescriptionIdentifier'
+        'statement_description_identifier' => 'setStatementDescriptionIdentifier',
+        'receipt_number' => 'setReceiptNumber',
+        'receipt_url' => 'setReceiptUrl'
     );
   
     /**
@@ -136,7 +142,9 @@ class Payment implements ArrayAccess
         'billing_address' => 'getBillingAddress',
         'shipping_address' => 'getShippingAddress',
         'note' => 'getNote',
-        'statement_description_identifier' => 'getStatementDescriptionIdentifier'
+        'statement_description_identifier' => 'getStatementDescriptionIdentifier',
+        'receipt_number' => 'getReceiptNumber',
+        'receipt_url' => 'getReceiptUrl'
     );
   
     /**
@@ -254,6 +262,16 @@ class Payment implements ArrayAccess
       * @var string
       */
     protected $statement_description_identifier;
+    /**
+      * $receipt_number The payment's receipt number. The field will be missing if a payment is CANCELED
+      * @var string
+      */
+    protected $receipt_number;
+    /**
+      * $receipt_url The URL for the payment's receipt. The field will only be populated for COMPLETED payments.
+      * @var string
+      */
+    protected $receipt_url;
 
     /**
      * Constructor
@@ -376,6 +394,16 @@ class Payment implements ArrayAccess
               $this->statement_description_identifier = $data["statement_description_identifier"];
             } else {
               $this->statement_description_identifier = null;
+            }
+            if (isset($data["receipt_number"])) {
+              $this->receipt_number = $data["receipt_number"];
+            } else {
+              $this->receipt_number = null;
+            }
+            if (isset($data["receipt_url"])) {
+              $this->receipt_url = $data["receipt_url"];
+            } else {
+              $this->receipt_url = null;
             }
         }
     }
@@ -814,6 +842,44 @@ class Payment implements ArrayAccess
     public function setStatementDescriptionIdentifier($statement_description_identifier)
     {
         $this->statement_description_identifier = $statement_description_identifier;
+        return $this;
+    }
+    /**
+     * Gets receipt_number
+     * @return string
+     */
+    public function getReceiptNumber()
+    {
+        return $this->receipt_number;
+    }
+  
+    /**
+     * Sets receipt_number
+     * @param string $receipt_number The payment's receipt number. The field will be missing if a payment is CANCELED
+     * @return $this
+     */
+    public function setReceiptNumber($receipt_number)
+    {
+        $this->receipt_number = $receipt_number;
+        return $this;
+    }
+    /**
+     * Gets receipt_url
+     * @return string
+     */
+    public function getReceiptUrl()
+    {
+        return $this->receipt_url;
+    }
+  
+    /**
+     * Sets receipt_url
+     * @param string $receipt_url The URL for the payment's receipt. The field will only be populated for COMPLETED payments.
+     * @return $this
+     */
+    public function setReceiptUrl($receipt_url)
+    {
+        $this->receipt_url = $receipt_url;
         return $this;
     }
     /**
