@@ -1,6 +1,6 @@
 # Change Log
 
-## Version 2.3.0.20191217 (2019-12-17)
+## Version 2.20191217.0 (2019-12-17)
 !!!important
 Square is excited to announce the public release of customized SDKs for [Java](https://github.com/square/square-java-sdk) and [.NET](https://github.com/square/square-dotnet-sdk). For more information, see [Square SDKs](/sdks).
 !!!
