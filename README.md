@@ -157,6 +157,9 @@ All URIs are relative to *https://connect.squareup.com*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *ApplePayApi* | [**registerDomain**](docs/Api/ApplePayApi.md#registerdomain) | **POST** /v2/apple-pay/domains | RegisterDomain
+*CashDrawersApi* | [**listCashDrawerShiftEvents**](docs/Api/CashDrawersApi.md#listcashdrawershiftevents) | **GET** /v2/cash-drawers/shifts/{shift_id}/events | ListCashDrawerShiftEvents
+*CashDrawersApi* | [**listCashDrawerShifts**](docs/Api/CashDrawersApi.md#listcashdrawershifts) | **GET** /v2/cash-drawers/shifts | ListCashDrawerShifts
+*CashDrawersApi* | [**retrieveCashDrawerShift**](docs/Api/CashDrawersApi.md#retrievecashdrawershift) | **GET** /v2/cash-drawers/shifts/{shift_id} | RetrieveCashDrawerShift
 *CatalogApi* | [**batchDeleteCatalogObjects**](docs/Api/CatalogApi.md#batchdeletecatalogobjects) | **POST** /v2/catalog/batch-delete | BatchDeleteCatalogObjects
 *CatalogApi* | [**batchRetrieveCatalogObjects**](docs/Api/CatalogApi.md#batchretrievecatalogobjects) | **POST** /v2/catalog/batch-retrieve | BatchRetrieveCatalogObjects
 *CatalogApi* | [**batchUpsertCatalogObjects**](docs/Api/CatalogApi.md#batchupsertcatalogobjects) | **POST** /v2/catalog/batch-upsert | BatchUpsertCatalogObjects
@@ -337,6 +340,12 @@ Class | Method | HTTP request | Description
  - [Card](docs/Model/Card.md)
  - [CardBrand](docs/Model/CardBrand.md)
  - [CardPaymentDetails](docs/Model/CardPaymentDetails.md)
+ - [CashDrawerDevice](docs/Model/CashDrawerDevice.md)
+ - [CashDrawerEventType](docs/Model/CashDrawerEventType.md)
+ - [CashDrawerShift](docs/Model/CashDrawerShift.md)
+ - [CashDrawerShiftEvent](docs/Model/CashDrawerShiftEvent.md)
+ - [CashDrawerShiftState](docs/Model/CashDrawerShiftState.md)
+ - [CashDrawerShiftSummary](docs/Model/CashDrawerShiftSummary.md)
  - [CashPaymentDetails](docs/Model/CashPaymentDetails.md)
  - [CatalogCategory](docs/Model/CatalogCategory.md)
  - [CatalogDiscount](docs/Model/CatalogDiscount.md)
@@ -443,6 +452,7 @@ Class | Method | HTTP request | Description
  - [DeleteShiftRequest](docs/Model/DeleteShiftRequest.md)
  - [DeleteShiftResponse](docs/Model/DeleteShiftResponse.md)
  - [Device](docs/Model/Device.md)
+ - [DeviceDetails](docs/Model/DeviceDetails.md)
  - [Employee](docs/Model/Employee.md)
  - [EmployeeStatus](docs/Model/EmployeeStatus.md)
  - [EmployeeWage](docs/Model/EmployeeWage.md)
@@ -476,6 +486,10 @@ Class | Method | HTTP request | Description
  - [ListAdditionalRecipientReceivablesResponse](docs/Model/ListAdditionalRecipientReceivablesResponse.md)
  - [ListBreakTypesRequest](docs/Model/ListBreakTypesRequest.md)
  - [ListBreakTypesResponse](docs/Model/ListBreakTypesResponse.md)
+ - [ListCashDrawerShiftEventsRequest](docs/Model/ListCashDrawerShiftEventsRequest.md)
+ - [ListCashDrawerShiftEventsResponse](docs/Model/ListCashDrawerShiftEventsResponse.md)
+ - [ListCashDrawerShiftsRequest](docs/Model/ListCashDrawerShiftsRequest.md)
+ - [ListCashDrawerShiftsResponse](docs/Model/ListCashDrawerShiftsResponse.md)
  - [ListCatalogRequest](docs/Model/ListCatalogRequest.md)
  - [ListCatalogResponse](docs/Model/ListCatalogResponse.md)
  - [ListCustomersRequest](docs/Model/ListCustomersRequest.md)
@@ -564,6 +578,8 @@ Class | Method | HTTP request | Description
  - [RegisterDomainResponseStatus](docs/Model/RegisterDomainResponseStatus.md)
  - [RenewTokenRequest](docs/Model/RenewTokenRequest.md)
  - [RenewTokenResponse](docs/Model/RenewTokenResponse.md)
+ - [RetrieveCashDrawerShiftRequest](docs/Model/RetrieveCashDrawerShiftRequest.md)
+ - [RetrieveCashDrawerShiftResponse](docs/Model/RetrieveCashDrawerShiftResponse.md)
  - [RetrieveCatalogObjectRequest](docs/Model/RetrieveCatalogObjectRequest.md)
  - [RetrieveCatalogObjectResponse](docs/Model/RetrieveCatalogObjectResponse.md)
  - [RetrieveCustomerRequest](docs/Model/RetrieveCustomerRequest.md)
