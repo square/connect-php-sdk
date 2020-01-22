@@ -72,7 +72,7 @@ class V1ListSettlementsRequest implements ArrayAccess
     );
   
     /**
-      * $order TThe order in which payments are listed in the response. See [SortOrder](#type-sortorder) for possible values
+      * $order The order in which settlements are listed in the response. See [SortOrder](#type-sortorder) for possible values
       * @var string
       */
     protected $order;
@@ -87,7 +87,7 @@ class V1ListSettlementsRequest implements ArrayAccess
       */
     protected $end_time;
     /**
-      * $limit The maximum number of payments to return in a single response. This value cannot exceed 200.
+      * $limit The maximum number of settlements to return in a single response. This value cannot exceed 200.
       * @var int
       */
     protected $limit;
@@ -152,7 +152,7 @@ class V1ListSettlementsRequest implements ArrayAccess
   
     /**
      * Sets order
-     * @param string $order TThe order in which payments are listed in the response. See [SortOrder](#type-sortorder) for possible values
+     * @param string $order The order in which settlements are listed in the response. See [SortOrder](#type-sortorder) for possible values
      * @return $this
      */
     public function setOrder($order)
@@ -209,7 +209,7 @@ class V1ListSettlementsRequest implements ArrayAccess
   
     /**
      * Sets limit
-     * @param int $limit The maximum number of payments to return in a single response. This value cannot exceed 200.
+     * @param int $limit The maximum number of settlements to return in a single response. This value cannot exceed 200.
      * @return $this
      */
     public function setLimit($limit)
