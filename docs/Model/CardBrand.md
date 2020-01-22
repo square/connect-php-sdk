@@ -16,6 +16,7 @@ Name | Type
 **JCB** | string
 **CHINA_UNIONPAY** | string
 **SQUARE_GIFT_CARD** | string
+**SQUARE_CAPITAL_CARD** | string
 
 Note: All properties are protected and only accessed via getters and setters.
 

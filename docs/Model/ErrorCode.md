@@ -101,9 +101,6 @@ Name | Type
 **BAD_CERTIFICATE** | string
 **INVALID_SQUARE_VERSION_FORMAT** | string
 **API_VERSION_INCOMPATIBLE** | string
-**INVALID_URL** | string
-**HTTPS_ONLY** | string
-**UNREACHABLE_URL** | string
 **CARD_DECLINED** | string
 **VERIFY_CVV_FAILURE** | string
 **VERIFY_AVS_FAILURE** | string

@@ -31,6 +31,7 @@ class Employee implements ArrayAccess
         'phone_number' => 'string',
         'location_ids' => 'string[]',
         'status' => 'string',
+        'is_owner' => 'bool',
         'created_at' => 'string',
         'updated_at' => 'string'
     );
@@ -47,6 +48,7 @@ class Employee implements ArrayAccess
         'phone_number' => 'phone_number',
         'location_ids' => 'location_ids',
         'status' => 'status',
+        'is_owner' => 'is_owner',
         'created_at' => 'created_at',
         'updated_at' => 'updated_at'
     );
@@ -63,6 +65,7 @@ class Employee implements ArrayAccess
         'phone_number' => 'setPhoneNumber',
         'location_ids' => 'setLocationIds',
         'status' => 'setStatus',
+        'is_owner' => 'setIsOwner',
         'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt'
     );
@@ -79,6 +82,7 @@ class Employee implements ArrayAccess
         'phone_number' => 'getPhoneNumber',
         'location_ids' => 'getLocationIds',
         'status' => 'getStatus',
+        'is_owner' => 'getIsOwner',
         'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt'
     );
@@ -118,6 +122,11 @@ class Employee implements ArrayAccess
       * @var string
       */
     protected $status;
+    /**
+      * $is_owner Whether this employee is the owner of the merchant. Each merchant has one owner employee, and that employee has full authority over the account.
+      * @var bool
+      */
+    protected $is_owner;
     /**
       * $created_at A read-only timestamp in RFC 3339 format.
       * @var string
@@ -170,6 +179,11 @@ class Employee implements ArrayAccess
               $this->status = $data["status"];
             } else {
               $this->status = null;
+            }
+            if (isset($data["is_owner"])) {
+              $this->is_owner = $data["is_owner"];
+            } else {
+              $this->is_owner = null;
             }
             if (isset($data["created_at"])) {
               $this->created_at = $data["created_at"];
@@ -314,6 +328,25 @@ class Employee implements ArrayAccess
     public function setStatus($status)
     {
         $this->status = $status;
+        return $this;
+    }
+    /**
+     * Gets is_owner
+     * @return bool
+     */
+    public function getIsOwner()
+    {
+        return $this->is_owner;
+    }
+  
+    /**
+     * Sets is_owner
+     * @param bool $is_owner Whether this employee is the owner of the merchant. Each merchant has one owner employee, and that employee has full authority over the account.
+     * @return $this
+     */
+    public function setIsOwner($is_owner)
+    {
+        $this->is_owner = $is_owner;
         return $this;
     }
     /**
