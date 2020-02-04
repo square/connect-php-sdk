@@ -1,5 +1,9 @@
 # Change Log
 
+## Version 2.20200122.1 (2020-02-04)
+* Addresses bug that doesn't allow `getV1BatchTokenFromHeaders` to retrieve batch_token
+
+
 ## Version 2.20200122.0 (2020-01-22)
 * New field:  The **Employee** object now has an `is_owner` field.
 * New field:  The **Card** enumeration has a new `SQUARE_CAPITAL_CARD` enum value to support a Square one-time Installments payment.
