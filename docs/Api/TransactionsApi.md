@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 CaptureTransaction
 
-Captures a transaction that was created with the [Charge](#endpoint-charge) endpoint with a `delay_capture` value of `true`.  See [Delayed capture transactions](/payments/transactions/overview#delayed-capture) for more information.
+Captures a transaction that was created with the [Charge](#endpoint-charge) endpoint with a `delay_capture` value of `true`.  ---  - __Deprecation date__: 2019-08-15 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2021-09-01 - [Migration guide](/payments-api/migrate-from-transactions-api)  ---  See [Delayed capture transactions](/payments/transactions/overview#delayed-capture) for more information.
 
 ### Example
 ```php
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 Charge
 
-Charges a card represented by a card nonce or a customer's card on file.  Deprecated - recommend using [CreatePayment](#endpoint-payments-createpayment)  Your request to this endpoint must include _either_:  - A value for the `card_nonce` parameter (to charge a card nonce generated with the `SqPaymentForm`) - Values for the `customer_card_id` and `customer_id` parameters (to charge a customer's card on file)  In order for an eCommerce payment to potentially qualify for [Square chargeback protection](https://squareup.com/help/article/5394), you _must_ provide values for the following parameters in your request:  - `buyer_email_address` - At least one of `billing_address` or `shipping_address`  When this response is returned, the amount of Square's processing fee might not yet be calculated. To obtain the processing fee, wait about ten seconds and call [RetrieveTransaction](#endpoint-retrievetransaction). See the `processing_fee_money` field of each [Tender included](#type-tender) in the transaction.
+Charges a card represented by a card nonce or a customer's card on file.  Deprecated - recommend using [CreatePayment](#endpoint-payments-createpayment)  ---  - __Deprecation date__: 2019-08-15 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2021-09-01 - [Migration guide](/payments-api/migrate-from-transactions-api)  ---  Your request to this endpoint must include _either_:  - A value for the `card_nonce` parameter (to charge a card nonce generated with the `SqPaymentForm`) - Values for the `customer_card_id` and `customer_id` parameters (to charge a customer's card on file)  In order for an eCommerce payment to potentially qualify for [Square chargeback protection](https://squareup.com/help/article/5394), you _must_ provide values for the following parameters in your request:  - `buyer_email_address` - At least one of `billing_address` or `shipping_address`  When this response is returned, the amount of Square's processing fee might not yet be calculated. To obtain the processing fee, wait about ten seconds and call [RetrieveTransaction](#endpoint-retrievetransaction). See the `processing_fee_money` field of each [Tender included](#type-tender) in the transaction.
 
 ### Example
 ```php
@@ -121,7 +121,7 @@ Name | Type | Description  | Notes
 
 CreateRefund
 
-Initiates a refund for a previously charged tender.  Deprecated - recommend using [RefundPayment](#endpoint-refunds-refundpayment)  You must issue a refund within 120 days of the associated payment. See [this article](https://squareup.com/help/us/en/article/5060) for more information on refund behavior.  NOTE: Card-present transactions with Interac credit cards **cannot be refunded using the Connect API**. Interac transactions must refunded in-person (e.g., dipping the card using POS app).
+Initiates a refund for a previously charged tender.  Deprecated - recommend using [RefundPayment](#endpoint-refunds-refundpayment)  ---  - __Deprecation date__: 2019-08-15 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2021-09-01 - [Migration guide](/payments-api/migrate-from-transactions-api)  ---   You must issue a refund within 120 days of the associated payment. See [this article](https://squareup.com/help/us/en/article/5060) for more information on refund behavior.  NOTE: Card-present transactions with Interac credit cards **cannot be refunded using the Connect API**. Interac transactions must refunded in-person (e.g., dipping the card using POS app).
 
 ### Example
 ```php
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 
 ListRefunds
 
-Lists refunds for one of a business's locations.  Deprecated - recommend using [SearchOrders](#endpoint-orders-searchorders)  In addition to full or partial tender refunds processed through Square APIs, refunds may result from itemized returns or exchanges through Square's Point of Sale applications.  Refunds with a `status` of `PENDING` are not currently included in this endpoint's response.  Max results per [page](#paginatingresults): 50
+Lists refunds for one of a business's locations.  Deprecated - recommend using [SearchOrders](#endpoint-orders-searchorders)  ---  - __Deprecation date__: 2019-08-15 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2021-09-01 - [Migration guide](/payments-api/migrate-from-transactions-api)  ---   In addition to full or partial tender refunds processed through Square APIs, refunds may result from itemized returns or exchanges through Square's Point of Sale applications.  Refunds with a `status` of `PENDING` are not currently included in this endpoint's response.  Max results per [page](#paginatingresults): 50
 
 ### Example
 ```php
@@ -231,7 +231,7 @@ Name | Type | Description  | Notes
 
 ListTransactions
 
-Lists transactions for a particular location.  Deprecated - recommend using [SearchOrders](#endpoint-orders-searchorders)  Transactions include payment information from sales and exchanges and refund information from returns and exchanges.  Max results per [page](#paginatingresults): 50
+Lists transactions for a particular location.  Deprecated - recommend using [SearchOrders](#endpoint-orders-searchorders) ---  - __Deprecation date__: 2019-08-15 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2021-09-01 - [Migration guide](/payments-api/migrate-from-transactions-api)  ---   Transactions include payment information from sales and exchanges and refund information from returns and exchanges.  Max results per [page](#paginatingresults): 50
 
 ### Example
 ```php
@@ -288,7 +288,7 @@ Name | Type | Description  | Notes
 
 RetrieveTransaction
 
-Retrieves details for a single transaction.  Deprecated - recommend using [BatchRetrieveOrders](#endpoint-batchretrieveorders)
+Retrieves details for a single transaction.  Deprecated - recommend using [BatchRetrieveOrders](#endpoint-batchretrieveorders) ---  - __Deprecation date__: 2019-08-15 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2021-09-01 - [Migration guide](/payments-api/migrate-from-transactions-api)  ---
 
 ### Example
 ```php
@@ -339,7 +339,7 @@ Name | Type | Description  | Notes
 
 VoidTransaction
 
-Cancels a transaction that was created with the [Charge](#endpoint-charge) endpoint with a `delay_capture` value of `true`.  See [Delayed capture transactions](/payments/transactions/overview#delayed-capture) for more information.
+Cancels a transaction that was created with the [Charge](#endpoint-charge) endpoint with a `delay_capture` value of `true`.  ---  - __Deprecation date__: 2019-08-15 - [__Retirement date__](/build-basics/api-lifecycle#deprecated): 2021-09-01 - [Migration guide](/payments-api/migrate-from-transactions-api)  ---  See [Delayed capture transactions](/payments/transactions/overview#delayed-capture) for more information.
 
 ### Example
 ```php

@@ -163,7 +163,7 @@ class Payment implements ArrayAccess
       */
     protected $updated_at;
     /**
-      * $amount_money The amount of money processed for this payment, not including `tip_money`. Specified in the smallest denomination of the applicable currency. For example,  US dollar amounts are specified in cents. For more information, see [Working with monetary amounts](https://developer.squareup.com/docs/build-basics/working-with-monetary-amounts).
+      * $amount_money The amount of money processed for this payment, not including `tip_money`. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents. For more information, see [Working with monetary amounts](https://developer.squareup.com/docs/build-basics/working-with-monetary-amounts).
       * @var \SquareConnect\Model\Money
       */
     protected $amount_money;
@@ -173,12 +173,12 @@ class Payment implements ArrayAccess
       */
     protected $tip_money;
     /**
-      * $total_money The total money for the payment, including `amount_money` and `tip_money`. Specified in the smallest denomination of the applicable currency.  For example, US dollar amounts are specified in cents.
+      * $total_money The total money for the payment, including `amount_money` and `tip_money`. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents.
       * @var \SquareConnect\Model\Money
       */
     protected $total_money;
     /**
-      * $app_fee_money The amount of money the developer is taking as a fee for facilitating the payment on behalf of the seller. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents.   For more information, see   [Take Payments and Collect Fees](https://developer.squareup.com/docs/payments-api/take-payments-and-collect-fees).  Cannot be more than 90% of the `total_money` value.
+      * $app_fee_money The amount of money the developer is taking as a fee for facilitating the payment on behalf of the seller. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents.  For more information, see [Take Payments and Collect Fees](https://developer.squareup.com/docs/payments-api/take-payments-and-collect-fees).  Cannot be more than 90% of the `total_money` value.
       * @var \SquareConnect\Model\Money
       */
     protected $app_fee_money;
@@ -475,7 +475,7 @@ class Payment implements ArrayAccess
   
     /**
      * Sets amount_money
-     * @param \SquareConnect\Model\Money $amount_money The amount of money processed for this payment, not including `tip_money`. Specified in the smallest denomination of the applicable currency. For example,  US dollar amounts are specified in cents. For more information, see [Working with monetary amounts](https://developer.squareup.com/docs/build-basics/working-with-monetary-amounts).
+     * @param \SquareConnect\Model\Money $amount_money The amount of money processed for this payment, not including `tip_money`. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents. For more information, see [Working with monetary amounts](https://developer.squareup.com/docs/build-basics/working-with-monetary-amounts).
      * @return $this
      */
     public function setAmountMoney($amount_money)
@@ -513,7 +513,7 @@ class Payment implements ArrayAccess
   
     /**
      * Sets total_money
-     * @param \SquareConnect\Model\Money $total_money The total money for the payment, including `amount_money` and `tip_money`. Specified in the smallest denomination of the applicable currency.  For example, US dollar amounts are specified in cents.
+     * @param \SquareConnect\Model\Money $total_money The total money for the payment, including `amount_money` and `tip_money`. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents.
      * @return $this
      */
     public function setTotalMoney($total_money)
@@ -532,7 +532,7 @@ class Payment implements ArrayAccess
   
     /**
      * Sets app_fee_money
-     * @param \SquareConnect\Model\Money $app_fee_money The amount of money the developer is taking as a fee for facilitating the payment on behalf of the seller. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents.   For more information, see   [Take Payments and Collect Fees](https://developer.squareup.com/docs/payments-api/take-payments-and-collect-fees).  Cannot be more than 90% of the `total_money` value.
+     * @param \SquareConnect\Model\Money $app_fee_money The amount of money the developer is taking as a fee for facilitating the payment on behalf of the seller. Specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents.  For more information, see [Take Payments and Collect Fees](https://developer.squareup.com/docs/payments-api/take-payments-and-collect-fees).  Cannot be more than 90% of the `total_money` value.
      * @return $this
      */
     public function setAppFeeMoney($app_fee_money)

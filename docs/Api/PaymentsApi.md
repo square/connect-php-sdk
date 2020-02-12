@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 CancelPaymentByIdempotencyKey
 
-Cancels (voids) a payment identified by the idempotency key that is specified in the request.   Use this method when status of a CreatePayment request is unknown.  For example, after you send a CreatePayment  request a network error occurs and you don't get a response. In this case, you can direct  Square to cancel the payment using this endpoint. In the request, you provide the same idempotency  key that you provided in your CreatePayment request you want  to cancel. After cancelling the  payment, you can submit your CreatePayment request again.  Note that if no payment with the specified idempotency key is found, no action is taken, the end  point returns successfully.
+Cancels (voids) a payment identified by the idempotency key that is specified in the request.  Use this method when status of a CreatePayment request is unknown. For example, after you send a CreatePayment request a network error occurs and you don't get a response. In this case, you can direct Square to cancel the payment using this endpoint. In the request, you provide the same idempotency key that you provided in your CreatePayment request you want  to cancel. After cancelling the payment, you can submit your CreatePayment request again.  Note that if no payment with the specified idempotency key is found, no action is taken, the end point returns successfully.
 
 ### Example
 ```php
@@ -272,7 +272,7 @@ $begin_time = "begin_time_example"; // string | Timestamp for the beginning of t
 $end_time = "end_time_example"; // string | Timestamp for the end of the requested reporting period, in RFC 3339 format.  Default: The current time.
 $sort_order = "sort_order_example"; // string | The order in which results are listed. - `ASC` - oldest to newest - `DESC` - newest to oldest (default).
 $cursor = "cursor_example"; // string | A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information.
-$location_id = "location_id_example"; // string | ID of location associated with payment
+$location_id = "location_id_example"; // string | Limit results to the location supplied. By default, results are returned for all locations associated with the merchant.
 $total = 789; // int | The exact amount in the total_money for a `Payment`.
 $last_4 = "last_4_example"; // string | The last 4 digits of `Payment` card.
 $card_brand = "card_brand_example"; // string | The brand of `Payment` card. For example, `VISA`
@@ -294,7 +294,7 @@ Name | Type | Description  | Notes
  **end_time** | **string**| Timestamp for the end of the requested reporting period, in RFC 3339 format.  Default: The current time. | [optional]
  **sort_order** | **string**| The order in which results are listed. - &#x60;ASC&#x60; - oldest to newest - &#x60;DESC&#x60; - newest to oldest (default). | [optional]
  **cursor** | **string**| A pagination cursor returned by a previous call to this endpoint. Provide this to retrieve the next set of results for the original query.  See [Pagination](https://developer.squareup.com/docs/basics/api101/pagination) for more information. | [optional]
- **location_id** | **string**| ID of location associated with payment | [optional]
+ **location_id** | **string**| Limit results to the location supplied. By default, results are returned for all locations associated with the merchant. | [optional]
  **total** | **int**| The exact amount in the total_money for a &#x60;Payment&#x60;. | [optional]
  **last_4** | **string**| The last 4 digits of &#x60;Payment&#x60; card. | [optional]
  **card_brand** | **string**| The brand of &#x60;Payment&#x60; card. For example, &#x60;VISA&#x60; | [optional]

@@ -121,7 +121,7 @@ class CreatePaymentRequest implements ArrayAccess
       */
     protected $source_id;
     /**
-      * $idempotency_key A unique string that identifies this CreatePayment request. Keys can be any valid string but must be unique for every CreatePayment request.   Max: 45 characters  See [Idempotency keys](https://developer.squareup.com/docs/basics/api101/idempotency) for more information.
+      * $idempotency_key A unique string that identifies this CreatePayment request. Keys can be any valid string but must be unique for every CreatePayment request.  Max: 45 characters  See [Idempotency keys](https://developer.squareup.com/docs/basics/api101/idempotency) for more information.
       * @var string
       */
     protected $idempotency_key;
@@ -136,12 +136,12 @@ class CreatePaymentRequest implements ArrayAccess
       */
     protected $tip_money;
     /**
-      * $app_fee_money The amount of money the developer is taking as a fee for facilitating the payment on behalf of the seller.  Cannot be more than 90% of the total amount of the Payment.  Must be specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents. See [Working with monetary amounts](https://developer.squareup.com/docs/build-basics/working-with-monetary-amounts) for details.  The fee currency code must match the currency associated with the merchant that is accepting the payment. The application must be from a developer  account in the same country as the merchant.  For more information about the application fee scenario, see   [Collect Fees](https://developer.squareup.com/docs/payments-api/take-payments-and-collect-fees).
+      * $app_fee_money The amount of money the developer is taking as a fee for facilitating the payment on behalf of the seller.  Cannot be more than 90% of the total amount of the Payment.  Must be specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents. See [Working with monetary amounts](https://developer.squareup.com/docs/build-basics/working-with-monetary-amounts) for details.  The fee currency code must match the currency associated with the merchant that is accepting the payment. The application must be from a developer account in the same country, and using the same currency code, as the merchant.  For more information about the application fee scenario, see [Collect Fees](https://developer.squareup.com/docs/payments-api/take-payments-and-collect-fees).
       * @var \SquareConnect\Model\Money
       */
     protected $app_fee_money;
     /**
-      * $autocomplete If set to `true`, this payment will be completed when possible. If set to `false`, this payment will be held in an approved state until either explicitly completed (captured) or canceled (voided). For more information, see  [Delayed Payments](https://developer.squareup.com/docs/payments-api/take-payments#delayed-payments).  Default: true
+      * $autocomplete If set to `true`, this payment will be completed when possible. If set to `false`, this payment will be held in an approved state until either explicitly completed (captured) or canceled (voided). For more information, see [Delayed Payments](https://developer.squareup.com/docs/payments-api/take-payments#delayed-payments).  Default: true
       * @var bool
       */
     protected $autocomplete;
@@ -171,7 +171,7 @@ class CreatePaymentRequest implements ArrayAccess
       */
     protected $verification_token;
     /**
-      * $accept_partial_authorization If set to true and charging a Square Gift Card, a payment may be returned with amount_money equal to less than what was requested.  Example, a request for $20 when charging a Square Gift Card with balance of $5 wil result in an APPROVED payment of $5.  You may choose to prompt the buyer for an additional payment to cover the remainder, or cancel the gift card payment.  Cannot be `true` when `autocomplete = true`.  For more information, see  [Partial amount with Square gift cards](https://developer.squareup.com/docs/payments-api/take-payments#partial-payment-gift-card).  Default: false
+      * $accept_partial_authorization If set to true and charging a Square Gift Card, a payment may be returned with amount_money equal to less than what was requested.  Example, a request for $20 when charging a Square Gift Card with balance of $5 wil result in an APPROVED payment of $5.  You may choose to prompt the buyer for an additional payment to cover the remainder, or cancel the gift card payment.  Cannot be `true` when `autocomplete = true`.  For more information, see [Partial amount with Square gift cards](https://developer.squareup.com/docs/payments-api/take-payments#partial-payment-gift-card).  Default: false
       * @var bool
       */
     protected $accept_partial_authorization;
@@ -325,7 +325,7 @@ class CreatePaymentRequest implements ArrayAccess
   
     /**
      * Sets idempotency_key
-     * @param string $idempotency_key A unique string that identifies this CreatePayment request. Keys can be any valid string but must be unique for every CreatePayment request.   Max: 45 characters  See [Idempotency keys](https://developer.squareup.com/docs/basics/api101/idempotency) for more information.
+     * @param string $idempotency_key A unique string that identifies this CreatePayment request. Keys can be any valid string but must be unique for every CreatePayment request.  Max: 45 characters  See [Idempotency keys](https://developer.squareup.com/docs/basics/api101/idempotency) for more information.
      * @return $this
      */
     public function setIdempotencyKey($idempotency_key)
@@ -382,7 +382,7 @@ class CreatePaymentRequest implements ArrayAccess
   
     /**
      * Sets app_fee_money
-     * @param \SquareConnect\Model\Money $app_fee_money The amount of money the developer is taking as a fee for facilitating the payment on behalf of the seller.  Cannot be more than 90% of the total amount of the Payment.  Must be specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents. See [Working with monetary amounts](https://developer.squareup.com/docs/build-basics/working-with-monetary-amounts) for details.  The fee currency code must match the currency associated with the merchant that is accepting the payment. The application must be from a developer  account in the same country as the merchant.  For more information about the application fee scenario, see   [Collect Fees](https://developer.squareup.com/docs/payments-api/take-payments-and-collect-fees).
+     * @param \SquareConnect\Model\Money $app_fee_money The amount of money the developer is taking as a fee for facilitating the payment on behalf of the seller.  Cannot be more than 90% of the total amount of the Payment.  Must be specified in the smallest denomination of the applicable currency. For example, US dollar amounts are specified in cents. See [Working with monetary amounts](https://developer.squareup.com/docs/build-basics/working-with-monetary-amounts) for details.  The fee currency code must match the currency associated with the merchant that is accepting the payment. The application must be from a developer account in the same country, and using the same currency code, as the merchant.  For more information about the application fee scenario, see [Collect Fees](https://developer.squareup.com/docs/payments-api/take-payments-and-collect-fees).
      * @return $this
      */
     public function setAppFeeMoney($app_fee_money)
@@ -401,7 +401,7 @@ class CreatePaymentRequest implements ArrayAccess
   
     /**
      * Sets autocomplete
-     * @param bool $autocomplete If set to `true`, this payment will be completed when possible. If set to `false`, this payment will be held in an approved state until either explicitly completed (captured) or canceled (voided). For more information, see  [Delayed Payments](https://developer.squareup.com/docs/payments-api/take-payments#delayed-payments).  Default: true
+     * @param bool $autocomplete If set to `true`, this payment will be completed when possible. If set to `false`, this payment will be held in an approved state until either explicitly completed (captured) or canceled (voided). For more information, see [Delayed Payments](https://developer.squareup.com/docs/payments-api/take-payments#delayed-payments).  Default: true
      * @return $this
      */
     public function setAutocomplete($autocomplete)
@@ -515,7 +515,7 @@ class CreatePaymentRequest implements ArrayAccess
   
     /**
      * Sets accept_partial_authorization
-     * @param bool $accept_partial_authorization If set to true and charging a Square Gift Card, a payment may be returned with amount_money equal to less than what was requested.  Example, a request for $20 when charging a Square Gift Card with balance of $5 wil result in an APPROVED payment of $5.  You may choose to prompt the buyer for an additional payment to cover the remainder, or cancel the gift card payment.  Cannot be `true` when `autocomplete = true`.  For more information, see  [Partial amount with Square gift cards](https://developer.squareup.com/docs/payments-api/take-payments#partial-payment-gift-card).  Default: false
+     * @param bool $accept_partial_authorization If set to true and charging a Square Gift Card, a payment may be returned with amount_money equal to less than what was requested.  Example, a request for $20 when charging a Square Gift Card with balance of $5 wil result in an APPROVED payment of $5.  You may choose to prompt the buyer for an additional payment to cover the remainder, or cancel the gift card payment.  Cannot be `true` when `autocomplete = true`.  For more information, see [Partial amount with Square gift cards](https://developer.squareup.com/docs/payments-api/take-payments#partial-payment-gift-card).  Default: false
      * @return $this
      */
     public function setAcceptPartialAuthorization($accept_partial_authorization)

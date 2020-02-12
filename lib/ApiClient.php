@@ -286,8 +286,7 @@ class ApiClient
      * @return
      */
     public static function getV1BatchTokenFromHeaders($http_headers) {
-        $is_an_array = (is_array($http_headers) || $http_headers instanceof \SquareConnect\Util\CaseInsensitiveArray);
-        if ($is_an_array && isset($http_headers['Link']))
+        if (is_array($http_headers) && isset($http_headers['Link']))
         {
             $connect_link_regexp = "/^<([^>]+)>;rel='next'$/";
             if (preg_match($connect_link_regexp, $http_headers['Link'], $match) === 1)
