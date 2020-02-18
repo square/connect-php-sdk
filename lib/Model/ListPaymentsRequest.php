@@ -100,7 +100,7 @@ class ListPaymentsRequest implements ArrayAccess
       */
     protected $cursor;
     /**
-      * $location_id ID of location associated with payment
+      * $location_id Limit results to the location supplied. By default, results are returned for all locations associated with the merchant.
       * @var string
       */
     protected $location_id;
@@ -256,7 +256,7 @@ class ListPaymentsRequest implements ArrayAccess
   
     /**
      * Sets location_id
-     * @param string $location_id ID of location associated with payment
+     * @param string $location_id Limit results to the location supplied. By default, results are returned for all locations associated with the merchant.
      * @return $this
      */
     public function setLocationId($location_id)
