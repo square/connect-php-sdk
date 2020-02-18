@@ -1,6 +1,6 @@
 # Change Log
 
-## Version 2.20200122.1 (2020-02-12)
+## Version 2.20200122.2 (2020-02-12)
 **Documentation Changes**
 
 * Minor updates for Payments API descriptions
