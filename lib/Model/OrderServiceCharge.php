@@ -34,7 +34,6 @@ class OrderServiceCharge implements ArrayAccess
         'total_tax_money' => '\SquareConnect\Model\Money',
         'calculation_phase' => 'string',
         'taxable' => 'bool',
-        'taxes' => '\SquareConnect\Model\OrderLineItemTax[]',
         'applied_taxes' => '\SquareConnect\Model\OrderLineItemAppliedTax[]',
         'metadata' => 'map[string,string]'
     );
@@ -54,7 +53,6 @@ class OrderServiceCharge implements ArrayAccess
         'total_tax_money' => 'total_tax_money',
         'calculation_phase' => 'calculation_phase',
         'taxable' => 'taxable',
-        'taxes' => 'taxes',
         'applied_taxes' => 'applied_taxes',
         'metadata' => 'metadata'
     );
@@ -74,7 +72,6 @@ class OrderServiceCharge implements ArrayAccess
         'total_tax_money' => 'setTotalTaxMoney',
         'calculation_phase' => 'setCalculationPhase',
         'taxable' => 'setTaxable',
-        'taxes' => 'setTaxes',
         'applied_taxes' => 'setAppliedTaxes',
         'metadata' => 'setMetadata'
     );
@@ -94,7 +91,6 @@ class OrderServiceCharge implements ArrayAccess
         'total_tax_money' => 'getTotalTaxMoney',
         'calculation_phase' => 'getCalculationPhase',
         'taxable' => 'getTaxable',
-        'taxes' => 'getTaxes',
         'applied_taxes' => 'getAppliedTaxes',
         'metadata' => 'getMetadata'
     );
@@ -149,11 +145,6 @@ class OrderServiceCharge implements ArrayAccess
       * @var bool
       */
     protected $taxable;
-    /**
-      * $taxes A list of taxes applied to this service charge. On read or retrieve, this list includes both item-level taxes and any order-level taxes apportioned to this service charge. When creating an Order, set your service charge-level taxes in this list. By default, order-level taxes apply to service charges calculated in the `SUBTOTAL_PHASE` if `taxable` is set to `true`.  This field has been deprecated in favour of `applied_taxes`. Usage of both this field and `applied_taxes` when creating an order will result in an error. Usage of this field when sending requests to the UpdateOrder endpoint will result in an error.
-      * @var \SquareConnect\Model\OrderLineItemTax[]
-      */
-    protected $taxes;
     /**
       * $applied_taxes The list of references to taxes applied to this service charge. Each `OrderLineItemAppliedTax` has a `tax_uid` that references the `uid` of a top-level `OrderLineItemTax` that is being applied to this service charge. On reads, the amount applied is populated.  An `OrderLineItemAppliedTax` will be automatically created on every taxable service charge for all `ORDER` scoped taxes that are added to the order. `OrderLineItemAppliedTax` records for `LINE_ITEM` scoped taxes must be added in requests for the tax to apply to any taxable service charge.  Taxable service charges have the `taxable` field set to true and calculated in the `SUBTOTAL_PHASE`.  To change the amount of a tax, modify the referenced top-level tax.
       * @var \SquareConnect\Model\OrderLineItemAppliedTax[]
@@ -221,11 +212,6 @@ class OrderServiceCharge implements ArrayAccess
               $this->taxable = $data["taxable"];
             } else {
               $this->taxable = null;
-            }
-            if (isset($data["taxes"])) {
-              $this->taxes = $data["taxes"];
-            } else {
-              $this->taxes = null;
             }
             if (isset($data["applied_taxes"])) {
               $this->applied_taxes = $data["applied_taxes"];
@@ -427,25 +413,6 @@ class OrderServiceCharge implements ArrayAccess
     public function setTaxable($taxable)
     {
         $this->taxable = $taxable;
-        return $this;
-    }
-    /**
-     * Gets taxes
-     * @return \SquareConnect\Model\OrderLineItemTax[]
-     */
-    public function getTaxes()
-    {
-        return $this->taxes;
-    }
-  
-    /**
-     * Sets taxes
-     * @param \SquareConnect\Model\OrderLineItemTax[] $taxes A list of taxes applied to this service charge. On read or retrieve, this list includes both item-level taxes and any order-level taxes apportioned to this service charge. When creating an Order, set your service charge-level taxes in this list. By default, order-level taxes apply to service charges calculated in the `SUBTOTAL_PHASE` if `taxable` is set to `true`.  This field has been deprecated in favour of `applied_taxes`. Usage of both this field and `applied_taxes` when creating an order will result in an error. Usage of this field when sending requests to the UpdateOrder endpoint will result in an error.
-     * @return $this
-     */
-    public function setTaxes($taxes)
-    {
-        $this->taxes = $taxes;
         return $this;
     }
     /**

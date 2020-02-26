@@ -3,6 +3,7 @@
 ### Description
 
 Represents a timecard for an employee.
+**Note: This model is deprecated.**
 
 ## Properties
 Name | Getter | Setter | Type | Description | Notes

@@ -10,8 +10,6 @@ Name | Type
 **REGULAR** | string
 **GIFT_CARD** | string
 **APPOINTMENTS_SERVICE** | string
-**RETAIL_ITEM** | string
-**RESTAURANT_ITEM** | string
 
 Note: All properties are protected and only accessed via getters and setters.
 

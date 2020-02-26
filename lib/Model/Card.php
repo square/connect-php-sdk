@@ -32,6 +32,8 @@ class Card implements ArrayAccess
         'cardholder_name' => 'string',
         'billing_address' => '\SquareConnect\Model\Address',
         'fingerprint' => 'string',
+        'card_type' => 'string',
+        'prepaid_type' => 'string',
         'bin' => 'string'
     );
   
@@ -48,6 +50,8 @@ class Card implements ArrayAccess
         'cardholder_name' => 'cardholder_name',
         'billing_address' => 'billing_address',
         'fingerprint' => 'fingerprint',
+        'card_type' => 'card_type',
+        'prepaid_type' => 'prepaid_type',
         'bin' => 'bin'
     );
   
@@ -64,6 +68,8 @@ class Card implements ArrayAccess
         'cardholder_name' => 'setCardholderName',
         'billing_address' => 'setBillingAddress',
         'fingerprint' => 'setFingerprint',
+        'card_type' => 'setCardType',
+        'prepaid_type' => 'setPrepaidType',
         'bin' => 'setBin'
     );
   
@@ -80,6 +86,8 @@ class Card implements ArrayAccess
         'cardholder_name' => 'getCardholderName',
         'billing_address' => 'getBillingAddress',
         'fingerprint' => 'getFingerprint',
+        'card_type' => 'getCardType',
+        'prepaid_type' => 'getPrepaidType',
         'bin' => 'getBin'
     );
   
@@ -89,7 +97,7 @@ class Card implements ArrayAccess
       */
     protected $id;
     /**
-      * $card_brand The card's brand (such as `VISA`). See `CardBrand` for all possible values. See [CardBrand](#type-cardbrand) for possible values
+      * $card_brand The card's brand. See [CardBrand](#type-cardbrand) for possible values
       * @var string
       */
     protected $card_brand;
@@ -123,6 +131,16 @@ class Card implements ArrayAccess
       * @var string
       */
     protected $fingerprint;
+    /**
+      * $card_type The type of the card. The Card object includes this field only in response to Payments API calls. See [CardType](#type-cardtype) for possible values
+      * @var string
+      */
+    protected $card_type;
+    /**
+      * $prepaid_type Indicates whether the Card is prepaid or not. The Card object includes this field only in response to Payments API calls. See [CardPrepaidType](#type-cardprepaidtype) for possible values
+      * @var string
+      */
+    protected $prepaid_type;
     /**
       * $bin The first six digits of the card number, known as the Bank Identification Number (BIN). Only the Payments API returns this field.
       * @var string
@@ -176,6 +194,16 @@ class Card implements ArrayAccess
             } else {
               $this->fingerprint = null;
             }
+            if (isset($data["card_type"])) {
+              $this->card_type = $data["card_type"];
+            } else {
+              $this->card_type = null;
+            }
+            if (isset($data["prepaid_type"])) {
+              $this->prepaid_type = $data["prepaid_type"];
+            } else {
+              $this->prepaid_type = null;
+            }
             if (isset($data["bin"])) {
               $this->bin = $data["bin"];
             } else {
@@ -213,7 +241,7 @@ class Card implements ArrayAccess
   
     /**
      * Sets card_brand
-     * @param string $card_brand The card's brand (such as `VISA`). See `CardBrand` for all possible values. See [CardBrand](#type-cardbrand) for possible values
+     * @param string $card_brand The card's brand. See [CardBrand](#type-cardbrand) for possible values
      * @return $this
      */
     public function setCardBrand($card_brand)
@@ -333,6 +361,44 @@ class Card implements ArrayAccess
     public function setFingerprint($fingerprint)
     {
         $this->fingerprint = $fingerprint;
+        return $this;
+    }
+    /**
+     * Gets card_type
+     * @return string
+     */
+    public function getCardType()
+    {
+        return $this->card_type;
+    }
+  
+    /**
+     * Sets card_type
+     * @param string $card_type The type of the card. The Card object includes this field only in response to Payments API calls. See [CardType](#type-cardtype) for possible values
+     * @return $this
+     */
+    public function setCardType($card_type)
+    {
+        $this->card_type = $card_type;
+        return $this;
+    }
+    /**
+     * Gets prepaid_type
+     * @return string
+     */
+    public function getPrepaidType()
+    {
+        return $this->prepaid_type;
+    }
+  
+    /**
+     * Sets prepaid_type
+     * @param string $prepaid_type Indicates whether the Card is prepaid or not. The Card object includes this field only in response to Payments API calls. See [CardPrepaidType](#type-cardprepaidtype) for possible values
+     * @return $this
+     */
+    public function setPrepaidType($prepaid_type)
+    {
+        $this->prepaid_type = $prepaid_type;
         return $this;
     }
     /**

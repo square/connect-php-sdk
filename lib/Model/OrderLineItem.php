@@ -33,8 +33,6 @@ class OrderLineItem implements ArrayAccess
         'variation_name' => 'string',
         'metadata' => 'map[string,string]',
         'modifiers' => '\SquareConnect\Model\OrderLineItemModifier[]',
-        'taxes' => '\SquareConnect\Model\OrderLineItemTax[]',
-        'discounts' => '\SquareConnect\Model\OrderLineItemDiscount[]',
         'applied_taxes' => '\SquareConnect\Model\OrderLineItemAppliedTax[]',
         'applied_discounts' => '\SquareConnect\Model\OrderLineItemAppliedDiscount[]',
         'base_price_money' => '\SquareConnect\Model\Money',
@@ -59,8 +57,6 @@ class OrderLineItem implements ArrayAccess
         'variation_name' => 'variation_name',
         'metadata' => 'metadata',
         'modifiers' => 'modifiers',
-        'taxes' => 'taxes',
-        'discounts' => 'discounts',
         'applied_taxes' => 'applied_taxes',
         'applied_discounts' => 'applied_discounts',
         'base_price_money' => 'base_price_money',
@@ -85,8 +81,6 @@ class OrderLineItem implements ArrayAccess
         'variation_name' => 'setVariationName',
         'metadata' => 'setMetadata',
         'modifiers' => 'setModifiers',
-        'taxes' => 'setTaxes',
-        'discounts' => 'setDiscounts',
         'applied_taxes' => 'setAppliedTaxes',
         'applied_discounts' => 'setAppliedDiscounts',
         'base_price_money' => 'setBasePriceMoney',
@@ -111,8 +105,6 @@ class OrderLineItem implements ArrayAccess
         'variation_name' => 'getVariationName',
         'metadata' => 'getMetadata',
         'modifiers' => 'getModifiers',
-        'taxes' => 'getTaxes',
-        'discounts' => 'getDiscounts',
         'applied_taxes' => 'getAppliedTaxes',
         'applied_discounts' => 'getAppliedDiscounts',
         'base_price_money' => 'getBasePriceMoney',
@@ -168,16 +160,6 @@ class OrderLineItem implements ArrayAccess
       * @var \SquareConnect\Model\OrderLineItemModifier[]
       */
     protected $modifiers;
-    /**
-      * $taxes A list of taxes applied to this line item. On read or retrieve, this list includes both item-level taxes and any order-level taxes apportioned to this item. When creating an Order, set your item-level taxes in this list.  This field has been deprecated in favour of `applied_taxes`. Usage of both this field and `applied_taxes` when creating an order will result in an error. Usage of this field when sending requests to the UpdateOrder endpoint will result in an error.
-      * @var \SquareConnect\Model\OrderLineItemTax[]
-      */
-    protected $taxes;
-    /**
-      * $discounts A list of discounts applied to this line item. On read or retrieve, this list includes both item-level discounts and any order-level discounts apportioned to this item. When creating an Order, set your item-level discounts in this list.  This field has been deprecated in favour of `applied_discounts`. Usage of both this field and `applied_discounts` when creating an order will result in an error. Usage of this field when sending requests to the UpdateOrder endpoint will result in an error.
-      * @var \SquareConnect\Model\OrderLineItemDiscount[]
-      */
-    protected $discounts;
     /**
       * $applied_taxes The list of references to taxes applied to this line item. Each `OrderLineItemAppliedTax` has a `tax_uid` that references the `uid` of a top-level `OrderLineItemTax` applied to the line item. On reads, the amount applied is populated.  An `OrderLineItemAppliedTax` will be automatically created on every line item for all `ORDER` scoped taxes added to the order. `OrderLineItemAppliedTax` records for `LINE_ITEM` scoped taxes must be added in requests for the tax to apply to any line items.  To change the amount of a tax, modify the referenced top-level tax.
       * @var \SquareConnect\Model\OrderLineItemAppliedTax[]
@@ -270,16 +252,6 @@ class OrderLineItem implements ArrayAccess
               $this->modifiers = $data["modifiers"];
             } else {
               $this->modifiers = null;
-            }
-            if (isset($data["taxes"])) {
-              $this->taxes = $data["taxes"];
-            } else {
-              $this->taxes = null;
-            }
-            if (isset($data["discounts"])) {
-              $this->discounts = $data["discounts"];
-            } else {
-              $this->discounts = null;
             }
             if (isset($data["applied_taxes"])) {
               $this->applied_taxes = $data["applied_taxes"];
@@ -492,44 +464,6 @@ class OrderLineItem implements ArrayAccess
     public function setModifiers($modifiers)
     {
         $this->modifiers = $modifiers;
-        return $this;
-    }
-    /**
-     * Gets taxes
-     * @return \SquareConnect\Model\OrderLineItemTax[]
-     */
-    public function getTaxes()
-    {
-        return $this->taxes;
-    }
-  
-    /**
-     * Sets taxes
-     * @param \SquareConnect\Model\OrderLineItemTax[] $taxes A list of taxes applied to this line item. On read or retrieve, this list includes both item-level taxes and any order-level taxes apportioned to this item. When creating an Order, set your item-level taxes in this list.  This field has been deprecated in favour of `applied_taxes`. Usage of both this field and `applied_taxes` when creating an order will result in an error. Usage of this field when sending requests to the UpdateOrder endpoint will result in an error.
-     * @return $this
-     */
-    public function setTaxes($taxes)
-    {
-        $this->taxes = $taxes;
-        return $this;
-    }
-    /**
-     * Gets discounts
-     * @return \SquareConnect\Model\OrderLineItemDiscount[]
-     */
-    public function getDiscounts()
-    {
-        return $this->discounts;
-    }
-  
-    /**
-     * Sets discounts
-     * @param \SquareConnect\Model\OrderLineItemDiscount[] $discounts A list of discounts applied to this line item. On read or retrieve, this list includes both item-level discounts and any order-level discounts apportioned to this item. When creating an Order, set your item-level discounts in this list.  This field has been deprecated in favour of `applied_discounts`. Usage of both this field and `applied_discounts` when creating an order will result in an error. Usage of this field when sending requests to the UpdateOrder endpoint will result in an error.
-     * @return $this
-     */
-    public function setDiscounts($discounts)
-    {
-        $this->discounts = $discounts;
         return $this;
     }
     /**

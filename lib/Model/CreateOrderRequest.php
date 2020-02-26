@@ -25,11 +25,7 @@ class CreateOrderRequest implements ArrayAccess
       */
     static $swaggerTypes = array(
         'order' => '\SquareConnect\Model\Order',
-        'idempotency_key' => 'string',
-        'reference_id' => 'string',
-        'line_items' => '\SquareConnect\Model\CreateOrderRequestLineItem[]',
-        'taxes' => '\SquareConnect\Model\CreateOrderRequestTax[]',
-        'discounts' => '\SquareConnect\Model\CreateOrderRequestDiscount[]'
+        'idempotency_key' => 'string'
     );
   
     /** 
@@ -38,11 +34,7 @@ class CreateOrderRequest implements ArrayAccess
       */
     static $attributeMap = array(
         'order' => 'order',
-        'idempotency_key' => 'idempotency_key',
-        'reference_id' => 'reference_id',
-        'line_items' => 'line_items',
-        'taxes' => 'taxes',
-        'discounts' => 'discounts'
+        'idempotency_key' => 'idempotency_key'
     );
   
     /**
@@ -51,11 +43,7 @@ class CreateOrderRequest implements ArrayAccess
       */
     static $setters = array(
         'order' => 'setOrder',
-        'idempotency_key' => 'setIdempotencyKey',
-        'reference_id' => 'setReferenceId',
-        'line_items' => 'setLineItems',
-        'taxes' => 'setTaxes',
-        'discounts' => 'setDiscounts'
+        'idempotency_key' => 'setIdempotencyKey'
     );
   
     /**
@@ -64,11 +52,7 @@ class CreateOrderRequest implements ArrayAccess
       */
     static $getters = array(
         'order' => 'getOrder',
-        'idempotency_key' => 'getIdempotencyKey',
-        'reference_id' => 'getReferenceId',
-        'line_items' => 'getLineItems',
-        'taxes' => 'getTaxes',
-        'discounts' => 'getDiscounts'
+        'idempotency_key' => 'getIdempotencyKey'
     );
   
     /**
@@ -81,26 +65,6 @@ class CreateOrderRequest implements ArrayAccess
       * @var string
       */
     protected $idempotency_key;
-    /**
-      * $reference_id __Deprecated__: Please set the reference_id on the nested `order` field instead.  An optional ID you can associate with the order for your own purposes (such as to associate the order with an entity ID in your own database).  This value cannot exceed 40 characters.
-      * @var string
-      */
-    protected $reference_id;
-    /**
-      * $line_items __Deprecated__: Please set the line_items on the nested `order` field instead.  The line items to associate with this order.  Each line item represents a different product to include in a purchase.
-      * @var \SquareConnect\Model\CreateOrderRequestLineItem[]
-      */
-    protected $line_items;
-    /**
-      * $taxes __Deprecated__: Please set the taxes on the nested `order` field instead.  The taxes to include on the order.
-      * @var \SquareConnect\Model\CreateOrderRequestTax[]
-      */
-    protected $taxes;
-    /**
-      * $discounts __Deprecated__: Please set the discounts on the nested `order` field instead.  The discounts to include on the order.
-      * @var \SquareConnect\Model\CreateOrderRequestDiscount[]
-      */
-    protected $discounts;
 
     /**
      * Constructor
@@ -118,26 +82,6 @@ class CreateOrderRequest implements ArrayAccess
               $this->idempotency_key = $data["idempotency_key"];
             } else {
               $this->idempotency_key = null;
-            }
-            if (isset($data["reference_id"])) {
-              $this->reference_id = $data["reference_id"];
-            } else {
-              $this->reference_id = null;
-            }
-            if (isset($data["line_items"])) {
-              $this->line_items = $data["line_items"];
-            } else {
-              $this->line_items = null;
-            }
-            if (isset($data["taxes"])) {
-              $this->taxes = $data["taxes"];
-            } else {
-              $this->taxes = null;
-            }
-            if (isset($data["discounts"])) {
-              $this->discounts = $data["discounts"];
-            } else {
-              $this->discounts = null;
             }
         }
     }
@@ -177,82 +121,6 @@ class CreateOrderRequest implements ArrayAccess
     public function setIdempotencyKey($idempotency_key)
     {
         $this->idempotency_key = $idempotency_key;
-        return $this;
-    }
-    /**
-     * Gets reference_id
-     * @return string
-     */
-    public function getReferenceId()
-    {
-        return $this->reference_id;
-    }
-  
-    /**
-     * Sets reference_id
-     * @param string $reference_id __Deprecated__: Please set the reference_id on the nested `order` field instead.  An optional ID you can associate with the order for your own purposes (such as to associate the order with an entity ID in your own database).  This value cannot exceed 40 characters.
-     * @return $this
-     */
-    public function setReferenceId($reference_id)
-    {
-        $this->reference_id = $reference_id;
-        return $this;
-    }
-    /**
-     * Gets line_items
-     * @return \SquareConnect\Model\CreateOrderRequestLineItem[]
-     */
-    public function getLineItems()
-    {
-        return $this->line_items;
-    }
-  
-    /**
-     * Sets line_items
-     * @param \SquareConnect\Model\CreateOrderRequestLineItem[] $line_items __Deprecated__: Please set the line_items on the nested `order` field instead.  The line items to associate with this order.  Each line item represents a different product to include in a purchase.
-     * @return $this
-     */
-    public function setLineItems($line_items)
-    {
-        $this->line_items = $line_items;
-        return $this;
-    }
-    /**
-     * Gets taxes
-     * @return \SquareConnect\Model\CreateOrderRequestTax[]
-     */
-    public function getTaxes()
-    {
-        return $this->taxes;
-    }
-  
-    /**
-     * Sets taxes
-     * @param \SquareConnect\Model\CreateOrderRequestTax[] $taxes __Deprecated__: Please set the taxes on the nested `order` field instead.  The taxes to include on the order.
-     * @return $this
-     */
-    public function setTaxes($taxes)
-    {
-        $this->taxes = $taxes;
-        return $this;
-    }
-    /**
-     * Gets discounts
-     * @return \SquareConnect\Model\CreateOrderRequestDiscount[]
-     */
-    public function getDiscounts()
-    {
-        return $this->discounts;
-    }
-  
-    /**
-     * Sets discounts
-     * @param \SquareConnect\Model\CreateOrderRequestDiscount[] $discounts __Deprecated__: Please set the discounts on the nested `order` field instead.  The discounts to include on the order.
-     * @return $this
-     */
-    public function setDiscounts($discounts)
-    {
-        $this->discounts = $discounts;
         return $this;
     }
     /**

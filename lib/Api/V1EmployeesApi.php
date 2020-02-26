@@ -108,7 +108,7 @@ class V1EmployeesApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2020-01-22";
+        $headerParams['Square-Version'] = "2020-02-26";
 
         
         
@@ -201,7 +201,7 @@ class V1EmployeesApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2020-01-22";
+        $headerParams['Square-Version'] = "2020-02-26";
 
         
         
@@ -251,6 +251,7 @@ class V1EmployeesApi
         }
     }
     /**
+     * @deprecated
      * createTimecard
      *
      * CreateTimecard
@@ -261,6 +262,7 @@ class V1EmployeesApi
      */
     public function createTimecard($body)
     {
+        trigger_error("\x1B[33mCalling deprecated API: V1EmployeesApi.createTimecard\x1B[0m", E_USER_DEPRECATED);
         list($response, $statusCode, $httpHeader) = $this->createTimecardWithHttpInfo ($body);
         return $response; 
     }
@@ -294,7 +296,7 @@ class V1EmployeesApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2020-01-22";
+        $headerParams['Square-Version'] = "2020-02-26";
 
         
         
@@ -344,6 +346,7 @@ class V1EmployeesApi
         }
     }
     /**
+     * @deprecated
      * deleteTimecard
      *
      * DeleteTimecard
@@ -354,6 +357,7 @@ class V1EmployeesApi
      */
     public function deleteTimecard($timecard_id)
     {
+        trigger_error("\x1B[33mCalling deprecated API: V1EmployeesApi.deleteTimecard\x1B[0m", E_USER_DEPRECATED);
         list($response, $statusCode, $httpHeader) = $this->deleteTimecardWithHttpInfo ($timecard_id);
         return $response; 
     }
@@ -387,7 +391,7 @@ class V1EmployeesApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2020-01-22";
+        $headerParams['Square-Version'] = "2020-02-26";
 
         
         
@@ -440,6 +444,7 @@ class V1EmployeesApi
         }
     }
     /**
+     * @deprecated
      * listCashDrawerShifts
      *
      * ListCashDrawerShifts
@@ -453,6 +458,7 @@ class V1EmployeesApi
      */
     public function listCashDrawerShifts($location_id, $order = null, $begin_time = null, $end_time = null)
     {
+        trigger_error("\x1B[33mCalling deprecated API: V1EmployeesApi.listCashDrawerShifts\x1B[0m", E_USER_DEPRECATED);
         list($response, $statusCode, $httpHeader) = $this->listCashDrawerShiftsWithHttpInfo ($location_id, $order, $begin_time, $end_time);
         return $response; 
     }
@@ -489,7 +495,7 @@ class V1EmployeesApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2020-01-22";
+        $headerParams['Square-Version'] = "2020-02-26";
 
         // query params
         if ($order !== null) {
@@ -594,7 +600,7 @@ class V1EmployeesApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2020-01-22";
+        $headerParams['Square-Version'] = "2020-02-26";
 
         // query params
         if ($order !== null) {
@@ -704,7 +710,7 @@ class V1EmployeesApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2020-01-22";
+        $headerParams['Square-Version'] = "2020-02-26";
 
         // query params
         if ($order !== null) {
@@ -777,6 +783,7 @@ class V1EmployeesApi
         }
     }
     /**
+     * @deprecated
      * listTimecardEvents
      *
      * ListTimecardEvents
@@ -787,6 +794,7 @@ class V1EmployeesApi
      */
     public function listTimecardEvents($timecard_id)
     {
+        trigger_error("\x1B[33mCalling deprecated API: V1EmployeesApi.listTimecardEvents\x1B[0m", E_USER_DEPRECATED);
         list($response, $statusCode, $httpHeader) = $this->listTimecardEventsWithHttpInfo ($timecard_id);
         return $response; 
     }
@@ -820,7 +828,7 @@ class V1EmployeesApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2020-01-22";
+        $headerParams['Square-Version'] = "2020-02-26";
 
         
         
@@ -873,6 +881,7 @@ class V1EmployeesApi
         }
     }
     /**
+     * @deprecated
      * listTimecards
      *
      * ListTimecards
@@ -893,6 +902,7 @@ class V1EmployeesApi
      */
     public function listTimecards($order = null, $employee_id = null, $begin_clockin_time = null, $end_clockin_time = null, $begin_clockout_time = null, $end_clockout_time = null, $begin_updated_at = null, $end_updated_at = null, $deleted = null, $limit = null, $batch_token = null)
     {
+        trigger_error("\x1B[33mCalling deprecated API: V1EmployeesApi.listTimecards\x1B[0m", E_USER_DEPRECATED);
         list($response, $statusCode, $httpHeader) = $this->listTimecardsWithHttpInfo ($order, $employee_id, $begin_clockin_time, $end_clockin_time, $begin_clockout_time, $end_clockout_time, $begin_updated_at, $end_updated_at, $deleted, $limit, $batch_token);
         return $response; 
     }
@@ -932,7 +942,7 @@ class V1EmployeesApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2020-01-22";
+        $headerParams['Square-Version'] = "2020-02-26";
 
         // query params
         if ($order !== null) {
@@ -1011,6 +1021,7 @@ class V1EmployeesApi
         }
     }
     /**
+     * @deprecated
      * retrieveCashDrawerShift
      *
      * RetrieveCashDrawerShift
@@ -1022,6 +1033,7 @@ class V1EmployeesApi
      */
     public function retrieveCashDrawerShift($location_id, $shift_id)
     {
+        trigger_error("\x1B[33mCalling deprecated API: V1EmployeesApi.retrieveCashDrawerShift\x1B[0m", E_USER_DEPRECATED);
         list($response, $statusCode, $httpHeader) = $this->retrieveCashDrawerShiftWithHttpInfo ($location_id, $shift_id);
         return $response; 
     }
@@ -1060,7 +1072,7 @@ class V1EmployeesApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2020-01-22";
+        $headerParams['Square-Version'] = "2020-02-26";
 
         
         
@@ -1163,7 +1175,7 @@ class V1EmployeesApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2020-01-22";
+        $headerParams['Square-Version'] = "2020-02-26";
 
         
         
@@ -1259,7 +1271,7 @@ class V1EmployeesApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2020-01-22";
+        $headerParams['Square-Version'] = "2020-02-26";
 
         
         
@@ -1312,6 +1324,7 @@ class V1EmployeesApi
         }
     }
     /**
+     * @deprecated
      * retrieveTimecard
      *
      * RetrieveTimecard
@@ -1322,6 +1335,7 @@ class V1EmployeesApi
      */
     public function retrieveTimecard($timecard_id)
     {
+        trigger_error("\x1B[33mCalling deprecated API: V1EmployeesApi.retrieveTimecard\x1B[0m", E_USER_DEPRECATED);
         list($response, $statusCode, $httpHeader) = $this->retrieveTimecardWithHttpInfo ($timecard_id);
         return $response; 
     }
@@ -1355,7 +1369,7 @@ class V1EmployeesApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2020-01-22";
+        $headerParams['Square-Version'] = "2020-02-26";
 
         
         
@@ -1457,7 +1471,7 @@ class V1EmployeesApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2020-01-22";
+        $headerParams['Square-Version'] = "2020-02-26";
 
         
         
@@ -1563,7 +1577,7 @@ class V1EmployeesApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2020-01-22";
+        $headerParams['Square-Version'] = "2020-02-26";
 
         
         
@@ -1620,6 +1634,7 @@ class V1EmployeesApi
         }
     }
     /**
+     * @deprecated
      * updateTimecard
      *
      * UpdateTimecard
@@ -1631,6 +1646,7 @@ class V1EmployeesApi
      */
     public function updateTimecard($timecard_id, $body)
     {
+        trigger_error("\x1B[33mCalling deprecated API: V1EmployeesApi.updateTimecard\x1B[0m", E_USER_DEPRECATED);
         list($response, $statusCode, $httpHeader) = $this->updateTimecardWithHttpInfo ($timecard_id, $body);
         return $response; 
     }
@@ -1669,7 +1685,7 @@ class V1EmployeesApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2020-01-22";
+        $headerParams['Square-Version'] = "2020-02-26";
 
         
         

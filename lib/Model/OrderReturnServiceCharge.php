@@ -35,7 +35,6 @@ class OrderReturnServiceCharge implements ArrayAccess
         'total_tax_money' => '\SquareConnect\Model\Money',
         'calculation_phase' => 'string',
         'taxable' => 'bool',
-        'return_taxes' => '\SquareConnect\Model\OrderReturnTax[]',
         'applied_taxes' => '\SquareConnect\Model\OrderLineItemAppliedTax[]'
     );
   
@@ -55,7 +54,6 @@ class OrderReturnServiceCharge implements ArrayAccess
         'total_tax_money' => 'total_tax_money',
         'calculation_phase' => 'calculation_phase',
         'taxable' => 'taxable',
-        'return_taxes' => 'return_taxes',
         'applied_taxes' => 'applied_taxes'
     );
   
@@ -75,7 +73,6 @@ class OrderReturnServiceCharge implements ArrayAccess
         'total_tax_money' => 'setTotalTaxMoney',
         'calculation_phase' => 'setCalculationPhase',
         'taxable' => 'setTaxable',
-        'return_taxes' => 'setReturnTaxes',
         'applied_taxes' => 'setAppliedTaxes'
     );
   
@@ -95,7 +92,6 @@ class OrderReturnServiceCharge implements ArrayAccess
         'total_tax_money' => 'getTotalTaxMoney',
         'calculation_phase' => 'getCalculationPhase',
         'taxable' => 'getTaxable',
-        'return_taxes' => 'getReturnTaxes',
         'applied_taxes' => 'getAppliedTaxes'
     );
   
@@ -154,11 +150,6 @@ class OrderReturnServiceCharge implements ArrayAccess
       * @var bool
       */
     protected $taxable;
-    /**
-      * $return_taxes Taxes applied to the `OrderReturnServiceCharge`. By default, return-level taxes apply to `OrderReturnServiceCharge`s calculated in the `SUBTOTAL_PHASE` if `taxable` is set to `true`.  On read or retrieve, this list includes both item-level taxes and any return-level taxes apportioned to this item.  This field has been deprecated in favour of `applied_taxes`.
-      * @var \SquareConnect\Model\OrderReturnTax[]
-      */
-    protected $return_taxes;
     /**
       * $applied_taxes The list of references to `OrderReturnTax` entities applied to the `OrderReturnServiceCharge`. Each `OrderLineItemAppliedTax` has a `tax_uid` that references the `uid` of a top-level `OrderReturnTax` that is being applied to the `OrderReturnServiceCharge`. On reads, the amount applied is populated.
       * @var \SquareConnect\Model\OrderLineItemAppliedTax[]
@@ -226,11 +217,6 @@ class OrderReturnServiceCharge implements ArrayAccess
               $this->taxable = $data["taxable"];
             } else {
               $this->taxable = null;
-            }
-            if (isset($data["return_taxes"])) {
-              $this->return_taxes = $data["return_taxes"];
-            } else {
-              $this->return_taxes = null;
             }
             if (isset($data["applied_taxes"])) {
               $this->applied_taxes = $data["applied_taxes"];
@@ -446,25 +432,6 @@ class OrderReturnServiceCharge implements ArrayAccess
     public function setTaxable($taxable)
     {
         $this->taxable = $taxable;
-        return $this;
-    }
-    /**
-     * Gets return_taxes
-     * @return \SquareConnect\Model\OrderReturnTax[]
-     */
-    public function getReturnTaxes()
-    {
-        return $this->return_taxes;
-    }
-  
-    /**
-     * Sets return_taxes
-     * @param \SquareConnect\Model\OrderReturnTax[] $return_taxes Taxes applied to the `OrderReturnServiceCharge`. By default, return-level taxes apply to `OrderReturnServiceCharge`s calculated in the `SUBTOTAL_PHASE` if `taxable` is set to `true`.  On read or retrieve, this list includes both item-level taxes and any return-level taxes apportioned to this item.  This field has been deprecated in favour of `applied_taxes`.
-     * @return $this
-     */
-    public function setReturnTaxes($return_taxes)
-    {
-        $this->return_taxes = $return_taxes;
         return $this;
     }
     /**

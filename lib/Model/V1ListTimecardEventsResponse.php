@@ -9,6 +9,7 @@ namespace SquareConnect\Model;
 
 use \ArrayAccess;
 /**
+ * @deprecated
  * V1ListTimecardEventsResponse Class Doc Comment
  *
  * @category Class

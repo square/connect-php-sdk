@@ -114,7 +114,7 @@ class V1TransactionsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2020-01-22";
+        $headerParams['Square-Version'] = "2020-02-26";
 
         
         
@@ -171,6 +171,7 @@ class V1TransactionsApi
         }
     }
     /**
+     * @deprecated
      * listBankAccounts
      *
      * ListBankAccounts
@@ -181,6 +182,7 @@ class V1TransactionsApi
      */
     public function listBankAccounts($location_id)
     {
+        trigger_error("\x1B[33mCalling deprecated API: V1TransactionsApi.listBankAccounts\x1B[0m", E_USER_DEPRECATED);
         list($response, $statusCode, $httpHeader) = $this->listBankAccountsWithHttpInfo ($location_id);
         return $response; 
     }
@@ -214,7 +216,7 @@ class V1TransactionsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2020-01-22";
+        $headerParams['Square-Version'] = "2020-02-26";
 
         
         
@@ -316,7 +318,7 @@ class V1TransactionsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2020-01-22";
+        $headerParams['Square-Version'] = "2020-02-26";
 
         // query params
         if ($order !== null) {
@@ -433,7 +435,7 @@ class V1TransactionsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2020-01-22";
+        $headerParams['Square-Version'] = "2020-02-26";
 
         // query params
         if ($order !== null) {
@@ -557,7 +559,7 @@ class V1TransactionsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2020-01-22";
+        $headerParams['Square-Version'] = "2020-02-26";
 
         // query params
         if ($order !== null) {
@@ -680,7 +682,7 @@ class V1TransactionsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2020-01-22";
+        $headerParams['Square-Version'] = "2020-02-26";
 
         // query params
         if ($order !== null) {
@@ -751,6 +753,7 @@ class V1TransactionsApi
         }
     }
     /**
+     * @deprecated
      * retrieveBankAccount
      *
      * RetrieveBankAccount
@@ -762,6 +765,7 @@ class V1TransactionsApi
      */
     public function retrieveBankAccount($location_id, $bank_account_id)
     {
+        trigger_error("\x1B[33mCalling deprecated API: V1TransactionsApi.retrieveBankAccount\x1B[0m", E_USER_DEPRECATED);
         list($response, $statusCode, $httpHeader) = $this->retrieveBankAccountWithHttpInfo ($location_id, $bank_account_id);
         return $response; 
     }
@@ -800,7 +804,7 @@ class V1TransactionsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2020-01-22";
+        $headerParams['Square-Version'] = "2020-02-26";
 
         
         
@@ -909,7 +913,7 @@ class V1TransactionsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2020-01-22";
+        $headerParams['Square-Version'] = "2020-02-26";
 
         
         
@@ -1018,7 +1022,7 @@ class V1TransactionsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2020-01-22";
+        $headerParams['Square-Version'] = "2020-02-26";
 
         
         
@@ -1127,7 +1131,7 @@ class V1TransactionsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2020-01-22";
+        $headerParams['Square-Version'] = "2020-02-26";
 
         
         
@@ -1242,7 +1246,7 @@ class V1TransactionsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2020-01-22";
+        $headerParams['Square-Version'] = "2020-02-26";
 
         
         

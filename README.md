@@ -8,6 +8,13 @@
 [![PHP version](https://badge.fury.io/ph/square%2Fconnect.svg)](https://badge.fury.io/ph/square%2Fconnect)
 [![Apache-2 license](https://img.shields.io/badge/license-Apache2-brightgreen.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 ==================
+## NOTICE: Square Connect PHP SDK deprecated
+This Square Connect SDK will enter a security maintenance phase in Q2 2020 and will be RETIRED (EOL) in Q4 2020. In the security maintenance phase, this SDK will continue to receive support and security patches but will no longer receive bug fixes or product updates. Once it is retired, support and security patches will no longer be available.  A new SDK, more bespoke to the language, will be available once this SDK enters its security maintenance phase.
+The SDK itself will continue to work indefinitely until such time that the underlying APIs are retired at which point portions of the SDK may stop functioning.  For a full list of API retirement dates, please see our [Square API Lifecycle documentation](https://developer.squareup.com/docs/build-basics/api-lifecycle#deprecated-apis).
+
+| Security Maintenance | New SDK Release | Retired (EOL)  |
+| ------------- |-------------| -----|
+| Q2, 2020      | Q2, 2020 | Q4, 2020 |
 
 **If you have feedback about the new SDKs, or just want to talk to other Square Developers, request an invite to the new [slack community for Square Developers](https://squ.re/2JkDBcO)**
 
@@ -158,6 +165,9 @@ All URIs are relative to *https://connect.squareup.com*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *ApplePayApi* | [**registerDomain**](docs/Api/ApplePayApi.md#registerdomain) | **POST** /v2/apple-pay/domains | RegisterDomain
+*BankAccountsApi* | [**getBankAccount**](docs/Api/BankAccountsApi.md#getbankaccount) | **GET** /v2/bank-accounts/{bank_account_id} | GetBankAccount
+*BankAccountsApi* | [**getBankAccountByV1Id**](docs/Api/BankAccountsApi.md#getbankaccountbyv1id) | **GET** /v2/bank-accounts/by-v1-id/{v1_bank_account_id} | GetBankAccountByV1Id
+*BankAccountsApi* | [**listBankAccounts**](docs/Api/BankAccountsApi.md#listbankaccounts) | **GET** /v2/bank-accounts | ListBankAccounts
 *CashDrawersApi* | [**listCashDrawerShiftEvents**](docs/Api/CashDrawersApi.md#listcashdrawershiftevents) | **GET** /v2/cash-drawers/shifts/{shift_id}/events | ListCashDrawerShiftEvents
 *CashDrawersApi* | [**listCashDrawerShifts**](docs/Api/CashDrawersApi.md#listcashdrawershifts) | **GET** /v2/cash-drawers/shifts | ListCashDrawerShifts
 *CashDrawersApi* | [**retrieveCashDrawerShift**](docs/Api/CashDrawersApi.md#retrievecashdrawershift) | **GET** /v2/cash-drawers/shifts/{shift_id} | RetrieveCashDrawerShift
@@ -181,6 +191,14 @@ Class | Method | HTTP request | Description
 *CustomersApi* | [**retrieveCustomer**](docs/Api/CustomersApi.md#retrievecustomer) | **GET** /v2/customers/{customer_id} | RetrieveCustomer
 *CustomersApi* | [**searchCustomers**](docs/Api/CustomersApi.md#searchcustomers) | **POST** /v2/customers/search | SearchCustomers
 *CustomersApi* | [**updateCustomer**](docs/Api/CustomersApi.md#updatecustomer) | **PUT** /v2/customers/{customer_id} | UpdateCustomer
+*DisputesApi* | [**acceptDispute**](docs/Api/DisputesApi.md#acceptdispute) | **POST** /v2/disputes/{dispute_id}/accept | AcceptDispute
+*DisputesApi* | [**createDisputeEvidenceText**](docs/Api/DisputesApi.md#createdisputeevidencetext) | **POST** /v2/disputes/{dispute_id}/evidence_text | CreateDisputeEvidenceText
+*DisputesApi* | [**listDisputeEvidence**](docs/Api/DisputesApi.md#listdisputeevidence) | **GET** /v2/disputes/{dispute_id}/evidence | ListDisputeEvidence
+*DisputesApi* | [**listDisputes**](docs/Api/DisputesApi.md#listdisputes) | **GET** /v2/disputes | ListDisputes
+*DisputesApi* | [**removeDisputeEvidence**](docs/Api/DisputesApi.md#removedisputeevidence) | **DELETE** /v2/disputes/{dispute_id}/evidence/{evidence_id} | RemoveDisputeEvidence
+*DisputesApi* | [**retrieveDispute**](docs/Api/DisputesApi.md#retrievedispute) | **GET** /v2/disputes/{dispute_id} | RetrieveDispute
+*DisputesApi* | [**retrieveDisputeEvidence**](docs/Api/DisputesApi.md#retrievedisputeevidence) | **GET** /v2/disputes/{dispute_id}/evidence/{evidence_id} | RetrieveDisputeEvidence
+*DisputesApi* | [**submitEvidence**](docs/Api/DisputesApi.md#submitevidence) | **POST** /v2/disputes/{dispute_id}/submit-evidence | SubmitEvidence
 *EmployeesApi* | [**listEmployees**](docs/Api/EmployeesApi.md#listemployees) | **GET** /v2/employees | ListEmployees
 *EmployeesApi* | [**retrieveEmployee**](docs/Api/EmployeesApi.md#retrieveemployee) | **GET** /v2/employees/{id} | RetrieveEmployee
 *InventoryApi* | [**batchChangeInventory**](docs/Api/InventoryApi.md#batchchangeinventory) | **POST** /v2/inventory/batch-change | BatchChangeInventory
@@ -310,11 +328,16 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [AcceptDisputeRequest](docs/Model/AcceptDisputeRequest.md)
+ - [AcceptDisputeResponse](docs/Model/AcceptDisputeResponse.md)
  - [AdditionalRecipient](docs/Model/AdditionalRecipient.md)
  - [AdditionalRecipientReceivable](docs/Model/AdditionalRecipientReceivable.md)
  - [AdditionalRecipientReceivableRefund](docs/Model/AdditionalRecipientReceivableRefund.md)
  - [Address](docs/Model/Address.md)
  - [BalancePaymentDetails](docs/Model/BalancePaymentDetails.md)
+ - [BankAccount](docs/Model/BankAccount.md)
+ - [BankAccountStatus](docs/Model/BankAccountStatus.md)
+ - [BankAccountType](docs/Model/BankAccountType.md)
  - [BatchChangeInventoryRequest](docs/Model/BatchChangeInventoryRequest.md)
  - [BatchChangeInventoryResponse](docs/Model/BatchChangeInventoryResponse.md)
  - [BatchDeleteCatalogObjectsRequest](docs/Model/BatchDeleteCatalogObjectsRequest.md)
@@ -341,6 +364,8 @@ Class | Method | HTTP request | Description
  - [Card](docs/Model/Card.md)
  - [CardBrand](docs/Model/CardBrand.md)
  - [CardPaymentDetails](docs/Model/CardPaymentDetails.md)
+ - [CardPrepaidType](docs/Model/CardPrepaidType.md)
+ - [CardType](docs/Model/CardType.md)
  - [CashDrawerDevice](docs/Model/CashDrawerDevice.md)
  - [CashDrawerEventType](docs/Model/CashDrawerEventType.md)
  - [CashDrawerShift](docs/Model/CashDrawerShift.md)
@@ -413,15 +438,15 @@ Class | Method | HTTP request | Description
  - [CreateCustomerCardResponse](docs/Model/CreateCustomerCardResponse.md)
  - [CreateCustomerRequest](docs/Model/CreateCustomerRequest.md)
  - [CreateCustomerResponse](docs/Model/CreateCustomerResponse.md)
+ - [CreateDisputeEvidenceFileRequest](docs/Model/CreateDisputeEvidenceFileRequest.md)
+ - [CreateDisputeEvidenceFileResponse](docs/Model/CreateDisputeEvidenceFileResponse.md)
+ - [CreateDisputeEvidenceTextRequest](docs/Model/CreateDisputeEvidenceTextRequest.md)
+ - [CreateDisputeEvidenceTextResponse](docs/Model/CreateDisputeEvidenceTextResponse.md)
  - [CreateLocationRequest](docs/Model/CreateLocationRequest.md)
  - [CreateLocationResponse](docs/Model/CreateLocationResponse.md)
  - [CreateMobileAuthorizationCodeRequest](docs/Model/CreateMobileAuthorizationCodeRequest.md)
  - [CreateMobileAuthorizationCodeResponse](docs/Model/CreateMobileAuthorizationCodeResponse.md)
  - [CreateOrderRequest](docs/Model/CreateOrderRequest.md)
- - [CreateOrderRequestDiscount](docs/Model/CreateOrderRequestDiscount.md)
- - [CreateOrderRequestLineItem](docs/Model/CreateOrderRequestLineItem.md)
- - [CreateOrderRequestModifier](docs/Model/CreateOrderRequestModifier.md)
- - [CreateOrderRequestTax](docs/Model/CreateOrderRequestTax.md)
  - [CreateOrderResponse](docs/Model/CreateOrderResponse.md)
  - [CreatePaymentRequest](docs/Model/CreatePaymentRequest.md)
  - [CreatePaymentResponse](docs/Model/CreatePaymentResponse.md)
@@ -454,6 +479,14 @@ Class | Method | HTTP request | Description
  - [DeleteShiftResponse](docs/Model/DeleteShiftResponse.md)
  - [Device](docs/Model/Device.md)
  - [DeviceDetails](docs/Model/DeviceDetails.md)
+ - [Dispute](docs/Model/Dispute.md)
+ - [DisputeEvidence](docs/Model/DisputeEvidence.md)
+ - [DisputeEvidenceFile](docs/Model/DisputeEvidenceFile.md)
+ - [DisputeEvidenceType](docs/Model/DisputeEvidenceType.md)
+ - [DisputeReason](docs/Model/DisputeReason.md)
+ - [DisputeState](docs/Model/DisputeState.md)
+ - [DisputedPayment](docs/Model/DisputedPayment.md)
+ - [EcomVisibility](docs/Model/EcomVisibility.md)
  - [Employee](docs/Model/Employee.md)
  - [EmployeeStatus](docs/Model/EmployeeStatus.md)
  - [EmployeeWage](docs/Model/EmployeeWage.md)
@@ -462,6 +495,10 @@ Class | Method | HTTP request | Description
  - [ErrorCode](docs/Model/ErrorCode.md)
  - [ExcludeStrategy](docs/Model/ExcludeStrategy.md)
  - [ExternalPaymentDetails](docs/Model/ExternalPaymentDetails.md)
+ - [GetBankAccountByV1IdRequest](docs/Model/GetBankAccountByV1IdRequest.md)
+ - [GetBankAccountByV1IdResponse](docs/Model/GetBankAccountByV1IdResponse.md)
+ - [GetBankAccountRequest](docs/Model/GetBankAccountRequest.md)
+ - [GetBankAccountResponse](docs/Model/GetBankAccountResponse.md)
  - [GetBreakTypeRequest](docs/Model/GetBreakTypeRequest.md)
  - [GetBreakTypeResponse](docs/Model/GetBreakTypeResponse.md)
  - [GetEmployeeWageRequest](docs/Model/GetEmployeeWageRequest.md)
@@ -485,6 +522,8 @@ Class | Method | HTTP request | Description
  - [ListAdditionalRecipientReceivableRefundsResponse](docs/Model/ListAdditionalRecipientReceivableRefundsResponse.md)
  - [ListAdditionalRecipientReceivablesRequest](docs/Model/ListAdditionalRecipientReceivablesRequest.md)
  - [ListAdditionalRecipientReceivablesResponse](docs/Model/ListAdditionalRecipientReceivablesResponse.md)
+ - [ListBankAccountsRequest](docs/Model/ListBankAccountsRequest.md)
+ - [ListBankAccountsResponse](docs/Model/ListBankAccountsResponse.md)
  - [ListBreakTypesRequest](docs/Model/ListBreakTypesRequest.md)
  - [ListBreakTypesResponse](docs/Model/ListBreakTypesResponse.md)
  - [ListCashDrawerShiftEventsRequest](docs/Model/ListCashDrawerShiftEventsRequest.md)
@@ -495,6 +534,10 @@ Class | Method | HTTP request | Description
  - [ListCatalogResponse](docs/Model/ListCatalogResponse.md)
  - [ListCustomersRequest](docs/Model/ListCustomersRequest.md)
  - [ListCustomersResponse](docs/Model/ListCustomersResponse.md)
+ - [ListDisputeEvidenceRequest](docs/Model/ListDisputeEvidenceRequest.md)
+ - [ListDisputeEvidenceResponse](docs/Model/ListDisputeEvidenceResponse.md)
+ - [ListDisputesRequest](docs/Model/ListDisputesRequest.md)
+ - [ListDisputesResponse](docs/Model/ListDisputesResponse.md)
  - [ListEmployeeWagesRequest](docs/Model/ListEmployeeWagesRequest.md)
  - [ListEmployeeWagesResponse](docs/Model/ListEmployeeWagesResponse.md)
  - [ListEmployeesRequest](docs/Model/ListEmployeesRequest.md)
@@ -528,6 +571,7 @@ Class | Method | HTTP request | Description
  - [MeasurementUnitWeight](docs/Model/MeasurementUnitWeight.md)
  - [Merchant](docs/Model/Merchant.md)
  - [MerchantStatus](docs/Model/MerchantStatus.md)
+ - [MethodErrorCodes](docs/Model/MethodErrorCodes.md)
  - [ModelBreak](docs/Model/ModelBreak.md)
  - [Money](docs/Model/Money.md)
  - [ObtainTokenRequest](docs/Model/ObtainTokenRequest.md)
@@ -577,6 +621,8 @@ Class | Method | HTTP request | Description
  - [RegisterDomainRequest](docs/Model/RegisterDomainRequest.md)
  - [RegisterDomainResponse](docs/Model/RegisterDomainResponse.md)
  - [RegisterDomainResponseStatus](docs/Model/RegisterDomainResponseStatus.md)
+ - [RemoveDisputeEvidenceRequest](docs/Model/RemoveDisputeEvidenceRequest.md)
+ - [RemoveDisputeEvidenceResponse](docs/Model/RemoveDisputeEvidenceResponse.md)
  - [RenewTokenRequest](docs/Model/RenewTokenRequest.md)
  - [RenewTokenResponse](docs/Model/RenewTokenResponse.md)
  - [RetrieveCashDrawerShiftRequest](docs/Model/RetrieveCashDrawerShiftRequest.md)
@@ -585,6 +631,10 @@ Class | Method | HTTP request | Description
  - [RetrieveCatalogObjectResponse](docs/Model/RetrieveCatalogObjectResponse.md)
  - [RetrieveCustomerRequest](docs/Model/RetrieveCustomerRequest.md)
  - [RetrieveCustomerResponse](docs/Model/RetrieveCustomerResponse.md)
+ - [RetrieveDisputeEvidenceRequest](docs/Model/RetrieveDisputeEvidenceRequest.md)
+ - [RetrieveDisputeEvidenceResponse](docs/Model/RetrieveDisputeEvidenceResponse.md)
+ - [RetrieveDisputeRequest](docs/Model/RetrieveDisputeRequest.md)
+ - [RetrieveDisputeResponse](docs/Model/RetrieveDisputeResponse.md)
  - [RetrieveEmployeeRequest](docs/Model/RetrieveEmployeeRequest.md)
  - [RetrieveEmployeeResponse](docs/Model/RetrieveEmployeeResponse.md)
  - [RetrieveInventoryAdjustmentRequest](docs/Model/RetrieveInventoryAdjustmentRequest.md)
@@ -634,6 +684,8 @@ Class | Method | HTTP request | Description
  - [SourceApplication](docs/Model/SourceApplication.md)
  - [StandardUnitDescription](docs/Model/StandardUnitDescription.md)
  - [StandardUnitDescriptionGroup](docs/Model/StandardUnitDescriptionGroup.md)
+ - [SubmitEvidenceRequest](docs/Model/SubmitEvidenceRequest.md)
+ - [SubmitEvidenceResponse](docs/Model/SubmitEvidenceResponse.md)
  - [TaxCalculationPhase](docs/Model/TaxCalculationPhase.md)
  - [TaxInclusionType](docs/Model/TaxInclusionType.md)
  - [Tender](docs/Model/Tender.md)
@@ -645,6 +697,7 @@ Class | Method | HTTP request | Description
  - [TimeRange](docs/Model/TimeRange.md)
  - [Transaction](docs/Model/Transaction.md)
  - [TransactionProduct](docs/Model/TransactionProduct.md)
+ - [TransactionType](docs/Model/TransactionType.md)
  - [UpdateBreakTypeRequest](docs/Model/UpdateBreakTypeRequest.md)
  - [UpdateBreakTypeResponse](docs/Model/UpdateBreakTypeResponse.md)
  - [UpdateCustomerRequest](docs/Model/UpdateCustomerRequest.md)

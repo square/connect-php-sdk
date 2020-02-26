@@ -9,6 +9,7 @@ namespace SquareConnect\Model;
 
 use \ArrayAccess;
 /**
+ * @deprecated
  * V1CashDrawerShift Class Doc Comment
  *
  * @category Class

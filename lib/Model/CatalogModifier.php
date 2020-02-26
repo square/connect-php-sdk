@@ -25,7 +25,9 @@ class CatalogModifier implements ArrayAccess
       */
     static $swaggerTypes = array(
         'name' => 'string',
-        'price_money' => '\SquareConnect\Model\Money'
+        'price_money' => '\SquareConnect\Model\Money',
+        'ordinal' => 'int',
+        'modifier_list_id' => 'string'
     );
   
     /** 
@@ -34,7 +36,9 @@ class CatalogModifier implements ArrayAccess
       */
     static $attributeMap = array(
         'name' => 'name',
-        'price_money' => 'price_money'
+        'price_money' => 'price_money',
+        'ordinal' => 'ordinal',
+        'modifier_list_id' => 'modifier_list_id'
     );
   
     /**
@@ -43,7 +47,9 @@ class CatalogModifier implements ArrayAccess
       */
     static $setters = array(
         'name' => 'setName',
-        'price_money' => 'setPriceMoney'
+        'price_money' => 'setPriceMoney',
+        'ordinal' => 'setOrdinal',
+        'modifier_list_id' => 'setModifierListId'
     );
   
     /**
@@ -52,7 +58,9 @@ class CatalogModifier implements ArrayAccess
       */
     static $getters = array(
         'name' => 'getName',
-        'price_money' => 'getPriceMoney'
+        'price_money' => 'getPriceMoney',
+        'ordinal' => 'getOrdinal',
+        'modifier_list_id' => 'getModifierListId'
     );
   
     /**
@@ -65,6 +73,16 @@ class CatalogModifier implements ArrayAccess
       * @var \SquareConnect\Model\Money
       */
     protected $price_money;
+    /**
+      * $ordinal Determines where this `CatalogModifier` appears in the `CatalogModifierList`.
+      * @var int
+      */
+    protected $ordinal;
+    /**
+      * $modifier_list_id The ID of the `CatalogModifierList` associated with this modifier. Searchable.
+      * @var string
+      */
+    protected $modifier_list_id;
 
     /**
      * Constructor
@@ -82,6 +100,16 @@ class CatalogModifier implements ArrayAccess
               $this->price_money = $data["price_money"];
             } else {
               $this->price_money = null;
+            }
+            if (isset($data["ordinal"])) {
+              $this->ordinal = $data["ordinal"];
+            } else {
+              $this->ordinal = null;
+            }
+            if (isset($data["modifier_list_id"])) {
+              $this->modifier_list_id = $data["modifier_list_id"];
+            } else {
+              $this->modifier_list_id = null;
             }
         }
     }
@@ -121,6 +149,44 @@ class CatalogModifier implements ArrayAccess
     public function setPriceMoney($price_money)
     {
         $this->price_money = $price_money;
+        return $this;
+    }
+    /**
+     * Gets ordinal
+     * @return int
+     */
+    public function getOrdinal()
+    {
+        return $this->ordinal;
+    }
+  
+    /**
+     * Sets ordinal
+     * @param int $ordinal Determines where this `CatalogModifier` appears in the `CatalogModifierList`.
+     * @return $this
+     */
+    public function setOrdinal($ordinal)
+    {
+        $this->ordinal = $ordinal;
+        return $this;
+    }
+    /**
+     * Gets modifier_list_id
+     * @return string
+     */
+    public function getModifierListId()
+    {
+        return $this->modifier_list_id;
+    }
+  
+    /**
+     * Sets modifier_list_id
+     * @param string $modifier_list_id The ID of the `CatalogModifierList` associated with this modifier. Searchable.
+     * @return $this
+     */
+    public function setModifierListId($modifier_list_id)
+    {
+        $this->modifier_list_id = $modifier_list_id;
         return $this;
     }
     /**

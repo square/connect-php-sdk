@@ -9,8 +9,7 @@ namespace SquareConnect\Model;
 
 use \ArrayAccess;
 /**
- * @deprecated
- * CreateOrderRequestModifier Class Doc Comment
+ * ListBankAccountsRequest Class Doc Comment
  *
  * @category Class
  * @package  SquareConnect
@@ -18,16 +17,16 @@ use \ArrayAccess;
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://squareup.com/developers
  */
-class CreateOrderRequestModifier implements ArrayAccess
+class ListBankAccountsRequest implements ArrayAccess
 {
     /**
       * Array of property to type mappings. Used for (de)serialization 
       * @var string[]
       */
     static $swaggerTypes = array(
-        'catalog_object_id' => 'string',
-        'name' => 'string',
-        'base_price_money' => '\SquareConnect\Model\Money'
+        'cursor' => 'string',
+        'limit' => 'int',
+        'location_id' => 'string'
     );
   
     /** 
@@ -35,9 +34,9 @@ class CreateOrderRequestModifier implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
-        'catalog_object_id' => 'catalog_object_id',
-        'name' => 'name',
-        'base_price_money' => 'base_price_money'
+        'cursor' => 'cursor',
+        'limit' => 'limit',
+        'location_id' => 'location_id'
     );
   
     /**
@@ -45,9 +44,9 @@ class CreateOrderRequestModifier implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
-        'catalog_object_id' => 'setCatalogObjectId',
-        'name' => 'setName',
-        'base_price_money' => 'setBasePriceMoney'
+        'cursor' => 'setCursor',
+        'limit' => 'setLimit',
+        'location_id' => 'setLocationId'
     );
   
     /**
@@ -55,26 +54,26 @@ class CreateOrderRequestModifier implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
-        'catalog_object_id' => 'getCatalogObjectId',
-        'name' => 'getName',
-        'base_price_money' => 'getBasePriceMoney'
+        'cursor' => 'getCursor',
+        'limit' => 'getLimit',
+        'location_id' => 'getLocationId'
     );
   
     /**
-      * $catalog_object_id The catalog object ID of a `CatalogModifier`.
+      * $cursor The pagination cursor returned by a previous call to this endpoint. Use it in the next `ListBankAccounts` request to retrieve the next set  of results.  See the [Pagination](https://developer.squareup.com/docs/docs/working-with-apis/pagination) guide for more information.
       * @var string
       */
-    protected $catalog_object_id;
+    protected $cursor;
     /**
-      * $name Only used for ad hoc modifiers. The name of the modifier. `name` cannot exceed 255 characters.  Do not provide a value for `name` if you provide a value for `catalog_object_id`.
+      * $limit Upper limit on the number of bank accounts to return in the response.  Currently, 1000 is the largest supported limit. You can specify a limit  of up to 1000 bank accounts. This is also the default limit.
+      * @var int
+      */
+    protected $limit;
+    /**
+      * $location_id Location ID. You can specify this optional filter  to retrieve only the linked bank accounts belonging to a specific location.
       * @var string
       */
-    protected $name;
-    /**
-      * $base_price_money The base price for the modifier.  `base_price_money` is required for ad hoc modifiers. If both `catalog_object_id` and `base_price_money` are set, `base_price_money` will override the predefined `CatalogModifier` price.
-      * @var \SquareConnect\Model\Money
-      */
-    protected $base_price_money;
+    protected $location_id;
 
     /**
      * Constructor
@@ -83,78 +82,78 @@ class CreateOrderRequestModifier implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
-            if (isset($data["catalog_object_id"])) {
-              $this->catalog_object_id = $data["catalog_object_id"];
+            if (isset($data["cursor"])) {
+              $this->cursor = $data["cursor"];
             } else {
-              $this->catalog_object_id = null;
+              $this->cursor = null;
             }
-            if (isset($data["name"])) {
-              $this->name = $data["name"];
+            if (isset($data["limit"])) {
+              $this->limit = $data["limit"];
             } else {
-              $this->name = null;
+              $this->limit = null;
             }
-            if (isset($data["base_price_money"])) {
-              $this->base_price_money = $data["base_price_money"];
+            if (isset($data["location_id"])) {
+              $this->location_id = $data["location_id"];
             } else {
-              $this->base_price_money = null;
+              $this->location_id = null;
             }
         }
     }
     /**
-     * Gets catalog_object_id
+     * Gets cursor
      * @return string
      */
-    public function getCatalogObjectId()
+    public function getCursor()
     {
-        return $this->catalog_object_id;
+        return $this->cursor;
     }
   
     /**
-     * Sets catalog_object_id
-     * @param string $catalog_object_id The catalog object ID of a `CatalogModifier`.
+     * Sets cursor
+     * @param string $cursor The pagination cursor returned by a previous call to this endpoint. Use it in the next `ListBankAccounts` request to retrieve the next set  of results.  See the [Pagination](https://developer.squareup.com/docs/docs/working-with-apis/pagination) guide for more information.
      * @return $this
      */
-    public function setCatalogObjectId($catalog_object_id)
+    public function setCursor($cursor)
     {
-        $this->catalog_object_id = $catalog_object_id;
+        $this->cursor = $cursor;
         return $this;
     }
     /**
-     * Gets name
-     * @return string
+     * Gets limit
+     * @return int
      */
-    public function getName()
+    public function getLimit()
     {
-        return $this->name;
+        return $this->limit;
     }
   
     /**
-     * Sets name
-     * @param string $name Only used for ad hoc modifiers. The name of the modifier. `name` cannot exceed 255 characters.  Do not provide a value for `name` if you provide a value for `catalog_object_id`.
+     * Sets limit
+     * @param int $limit Upper limit on the number of bank accounts to return in the response.  Currently, 1000 is the largest supported limit. You can specify a limit  of up to 1000 bank accounts. This is also the default limit.
      * @return $this
      */
-    public function setName($name)
+    public function setLimit($limit)
     {
-        $this->name = $name;
+        $this->limit = $limit;
         return $this;
     }
     /**
-     * Gets base_price_money
-     * @return \SquareConnect\Model\Money
+     * Gets location_id
+     * @return string
      */
-    public function getBasePriceMoney()
+    public function getLocationId()
     {
-        return $this->base_price_money;
+        return $this->location_id;
     }
   
     /**
-     * Sets base_price_money
-     * @param \SquareConnect\Model\Money $base_price_money The base price for the modifier.  `base_price_money` is required for ad hoc modifiers. If both `catalog_object_id` and `base_price_money` are set, `base_price_money` will override the predefined `CatalogModifier` price.
+     * Sets location_id
+     * @param string $location_id Location ID. You can specify this optional filter  to retrieve only the linked bank accounts belonging to a specific location.
      * @return $this
      */
-    public function setBasePriceMoney($base_price_money)
+    public function setLocationId($location_id)
     {
-        $this->base_price_money = $base_price_money;
+        $this->location_id = $location_id;
         return $this;
     }
     /**
