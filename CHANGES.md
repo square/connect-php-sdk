@@ -1,6 +1,36 @@
 # Change Log
 
-## Version 2.20200122.2 (2020-02-12)
+## Version 3.2020226.0 (2020-02-26)
+## API releases
+* **GA release**: All SDKs have been updated to support the new Bank Accounts and CashDrawerShifts APIs.
+
+* **Beta release**: All SDKs have been updated to support the new Disputes API.
+
+
+## Existing API updates
+
+All SDKs have been updated to support the following changes:
+
+* **Catalog API**    
+  * Batch upsert catalog objects endpoint &mdash; The `batches` field is now required and the array must have at least one element.   
+  * CatalogModifier &mdash; Two fields added:
+     * `ordinal` to support custom ordering in a modifier list   
+     * `modifier_list_id` to reference the parent modifier list
+  * CatalogModifierList &mdash; New field added: `ordinal` to support custom ordering in a list of **CatalogModifierList** objects.
+
+* **Customers API changes**
+  * SearchCustomers endpoint &mdash; `limit` size reduced from 1000 to 100 to improve the endpoint performance. 
+
+* **Orders API changes**
+  * CreateOrderRequest &mdash; Previously these request fields were deprecated: `line_items`, `taxes`, `discounts`. These fields are no longer available. Instead you now use the `Order` object in the request. For example, `Order.line_items`, `Order.taxes`, and `Order.discounts`.
+  * OrderLineItem type &mdash; There are two changes:
+    * The `taxes` field that was previously deprecated is no longer available. Instead, you now use the `OrderLineItem.applied_taxes` field. This also now requires that you set the `OrderLineItemTax.scope` field. 
+    * The `discounts` field that was previously deprecated is no longer available. Instead, you now use the `OrderLineItem.applied_discounts` field. This also now requires that you set the `OrderLineItemDiscount.scope` field. 
+
+* **Shared object updates**
+  * **Card object** &mdash; New fields added: `card_type`, `prepaid_type`. Currently, only the Payments API responses populate these fields. 
+
+## Version 2.20200122.1 (2020-02-12)
 **Documentation Changes**
 
 * Minor updates for Payments API descriptions

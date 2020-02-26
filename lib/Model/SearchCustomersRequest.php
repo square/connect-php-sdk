@@ -65,7 +65,7 @@ class SearchCustomersRequest implements ArrayAccess
       */
     protected $cursor;
     /**
-      * $limit A limit on the number of results to be returned in a single page. The limit is advisory - the implementation may return more or fewer results. If the supplied limit is negative, zero, or is higher than the maximum limit of 1,000, it will be ignored.
+      * $limit A limit on the number of results to be returned in a single page. The limit is advisory - the implementation may return more or fewer results. If the supplied limit is negative, zero, or is higher than the maximum limit of 100, it will be ignored.
       * @var int
       */
     protected $limit;
@@ -129,7 +129,7 @@ class SearchCustomersRequest implements ArrayAccess
   
     /**
      * Sets limit
-     * @param int $limit A limit on the number of results to be returned in a single page. The limit is advisory - the implementation may return more or fewer results. If the supplied limit is negative, zero, or is higher than the maximum limit of 1,000, it will be ignored.
+     * @param int $limit A limit on the number of results to be returned in a single page. The limit is advisory - the implementation may return more or fewer results. If the supplied limit is negative, zero, or is higher than the maximum limit of 100, it will be ignored.
      * @return $this
      */
     public function setLimit($limit)

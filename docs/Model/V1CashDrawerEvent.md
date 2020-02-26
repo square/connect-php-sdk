@@ -3,6 +3,7 @@
 ### Description
 
 V1CashDrawerEvent
+**Note: This model is deprecated.**
 
 ## Properties
 Name | Getter | Setter | Type | Description | Notes

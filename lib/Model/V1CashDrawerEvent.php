@@ -9,6 +9,7 @@ namespace SquareConnect\Model;
 
 use \ArrayAccess;
 /**
+ * @deprecated
  * V1CashDrawerEvent Class Doc Comment
  *
  * @category Class

@@ -3,6 +3,7 @@
 ### Description
 
 Actions that resulted in a change to a timecard. All timecard events created with the Connect API have an event type that begins with `API`.
+**Note: This model is deprecated.**
 
 ## Properties
 Name | Type

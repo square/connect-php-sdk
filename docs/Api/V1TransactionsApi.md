@@ -68,11 +68,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listBankAccounts**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1BankAccount[] listBankAccounts($location_id)
 
 ListBankAccounts
 
-Provides non-confidential details for all of a location's associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+Provides non-confidential details for all of a location's associated bank accounts. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.  ---  - __Deprecation date__: 2020-02-26 - [__Retirement date__](/docs/build-basics/api-lifecycle#deprecated): 2021-02-26 - [Migration guide](/docs/migrate-from-v1/guides/v1-bankaccounts)  ---
 
 ### Example
 ```php
@@ -348,11 +349,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **retrieveBankAccount**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1BankAccount retrieveBankAccount($location_id, $bank_account_id)
 
 RetrieveBankAccount
 
-Provides non-confidential details for a merchant's associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.
+Provides non-confidential details for a merchant's associated bank account. This endpoint does not provide full bank account numbers, and there is no way to obtain a full bank account number with the Connect API.  ---  - __Deprecation date__: 2020-02-26 - [__Retirement date__](/docs/build-basics/api-lifecycle#deprecated): 2021-02-26 - [Migration guide](/docs/migrate-from-v1/guides/v1-bankaccounts)  ---
 
 ### Example
 ```php

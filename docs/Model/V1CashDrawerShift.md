@@ -3,6 +3,7 @@
 ### Description
 
 Contains details for a single cash drawer shift.
+**Note: This model is deprecated.**
 
 ## Properties
 Name | Getter | Setter | Type | Description | Notes

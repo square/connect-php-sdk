@@ -88,7 +88,7 @@ class CatalogItemModifierListInfo implements ArrayAccess
       */
     protected $max_selected_modifiers;
     /**
-      * $enabled If `true`, enable this `CatalogModifierList`.
+      * $enabled If `true`, enable this `CatalogModifierList`. The default value is `true`.
       * @var bool
       */
     protected $enabled;
@@ -214,7 +214,7 @@ class CatalogItemModifierListInfo implements ArrayAccess
   
     /**
      * Sets enabled
-     * @param bool $enabled If `true`, enable this `CatalogModifierList`.
+     * @param bool $enabled If `true`, enable this `CatalogModifierList`. The default value is `true`.
      * @return $this
      */
     public function setEnabled($enabled)

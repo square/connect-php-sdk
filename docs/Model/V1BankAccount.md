@@ -3,6 +3,7 @@
 ### Description
 
 V1BankAccount
+**Note: This model is deprecated.**
 
 ## Properties
 Name | Getter | Setter | Type | Description | Notes

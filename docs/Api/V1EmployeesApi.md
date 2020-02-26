@@ -119,11 +119,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createTimecard**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1Timecard createTimecard($body)
 
 CreateTimecard
 
-Creates a timecard for an employee and clocks them in with an `API_CREATE` event and a `clockin_time` set to the current time unless the request provides a different value. To import timecards from another system (rather than clocking someone in). Specify the `clockin_time` and* `clockout_time` in the request.  Timecards correspond to exactly one shift for a given employee, bounded by the `clockin_time` and `clockout_time` fields. An employee is considered clocked in if they have a timecard that doesn't have a `clockout_time` set. An employee that is currently clocked in cannot be clocked in a second time.
+Creates a timecard for an employee and clocks them in with an `API_CREATE` event and a `clockin_time` set to the current time unless the request provides a different value.  ---  - __Deprecation date__: 2020-02-26 - [__Retirement date__](/docs/build-basics/api-lifecycle#deprecated): 2021-02-26 - [Migration guide](/docs/migrate-from-v1/guides/v1-timecards)  ---   To import timecards from another system (rather than clocking someone in). Specify the `clockin_time` and* `clockout_time` in the request.  Timecards correspond to exactly one shift for a given employee, bounded by the `clockin_time` and `clockout_time` fields. An employee is considered clocked in if they have a timecard that doesn't have a `clockout_time` set. An employee that is currently clocked in cannot be clocked in a second time.
 
 ### Example
 ```php
@@ -167,11 +168,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteTimecard**
+**Note: This endpoint is deprecated.**
 > object deleteTimecard($timecard_id)
 
 DeleteTimecard
 
-Deletes a timecard. Timecards can also be deleted through the Square Dashboard. Deleted timecards are still accessible through Connect API endpoints, but cannot be modified. The `deleted` field of the `Timecard` object indicates whether the timecard has been deleted.  *Note**: By default, deleted timecards appear alongside valid timecards in results returned by the [ListTimecards](#endpoint-v1employees-listtimecards) endpoint. To filter deleted timecards, include the `deleted` query parameter in the list request.  <aside> Only approved accounts can manage their employees with Square. Unapproved accounts cannot use employee management features with the API. </aside>
+Deletes a timecard. Timecards can also be deleted through the Square Dashboard. Deleted timecards are still accessible through Connect API endpoints, but cannot be modified. The `deleted` field of the `Timecard` object indicates whether the timecard has been deleted.  ---  - __Deprecation date__: 2020-02-26 - [__Retirement date__](/docs/build-basics/api-lifecycle#deprecated): 2021-02-26 - [Migration guide](/docs/migrate-from-v1/guides/v1-timecards)  ---  *Note**: By default, deleted timecards appear alongside valid timecards in results returned by the [ListTimecards](#endpoint-v1employees-listtimecards) endpoint. To filter deleted timecards, include the `deleted` query parameter in the list request.  <aside> Only approved accounts can manage their employees with Square. Unapproved accounts cannot use employee management features with the API. </aside>
 
 ### Example
 ```php
@@ -215,11 +217,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listCashDrawerShifts**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1CashDrawerShift[] listCashDrawerShifts($location_id, $order, $begin_time, $end_time)
 
 ListCashDrawerShifts
 
-Provides the details for all of a location's cash drawer shifts during a date range. The date range you specify cannot exceed 90 days.
+Provides the details for all of a location's cash drawer shifts during a date range. The date range you specify cannot exceed 90 days.  ---  - __Deprecation date__: 2020-02-26 - [__Retirement date__](/docs/build-basics/api-lifecycle#deprecated): 2021-02-26 - [Migration guide](/docs/migrate-from-v1/guides/v1-cashdrawershifts)  ---
 
 ### Example
 ```php
@@ -385,11 +388,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listTimecardEvents**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1TimecardEvent[] listTimecardEvents($timecard_id)
 
 ListTimecardEvents
 
-Provides summary information for all events associated with a particular timecard.  <aside> Only approved accounts can manage their employees with Square. Unapproved accounts cannot use employee management features with the API. </aside>
+Provides summary information for all events associated with a particular timecard.  ---  - __Deprecation date__: 2020-02-26 - [__Retirement date__](/docs/build-basics/api-lifecycle#deprecated): 2021-02-26 - [Migration guide](/docs/migrate-from-v1/guides/v1-timecards)  ---  <aside> Only approved accounts can manage their employees with Square. Unapproved accounts cannot use employee management features with the API. </aside>
 
 ### Example
 ```php
@@ -433,11 +437,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listTimecards**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1Timecard[] listTimecards($order, $employee_id, $begin_clockin_time, $end_clockin_time, $begin_clockout_time, $end_clockout_time, $begin_updated_at, $end_updated_at, $deleted, $limit, $batch_token)
 
 ListTimecards
 
-Provides summary information for all of a business's employee timecards.
+Provides summary information for all of a business's employee timecards.  ---  - __Deprecation date__: 2020-02-26 - [__Retirement date__](/docs/build-basics/api-lifecycle#deprecated): 2021-02-26 - [Migration guide](/docs/migrate-from-v1/guides/v1-timecards)  ---
 
 ### Example
 ```php
@@ -501,11 +506,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **retrieveCashDrawerShift**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1CashDrawerShift retrieveCashDrawerShift($location_id, $shift_id)
 
 RetrieveCashDrawerShift
 
-Provides the details for a single cash drawer shift, including all events that occurred during the shift.
+Provides the details for a single cash drawer shift, including all events that occurred during the shift.  ---  - __Deprecation date__: 2020-02-26 - [__Retirement date__](/docs/build-basics/api-lifecycle#deprecated): 2021-02-26 - [Migration guide](/docs/migrate-from-v1/guides/v1-cashdrawershifts)  ---
 
 ### Example
 ```php
@@ -647,11 +653,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **retrieveTimecard**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1Timecard retrieveTimecard($timecard_id)
 
 RetrieveTimecard
 
-Provides the details for a single timecard. <aside> Only approved accounts can manage their employees with Square. Unapproved accounts cannot use employee management features with the API. </aside>
+Provides the details for a single timecard.  ---  - __Deprecation date__: 2020-02-26 - [__Retirement date__](/docs/build-basics/api-lifecycle#deprecated): 2021-02-26 - [Migration guide](/docs/migrate-from-v1/guides/v1-timecards)  ---  <aside> Only approved accounts can manage their employees with Square. Unapproved accounts cannot use employee management features with the API. </aside>
 
 ### Example
 ```php
@@ -795,11 +802,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateTimecard**
+**Note: This endpoint is deprecated.**
 > \SquareConnect\Model\V1Timecard updateTimecard($timecard_id, $body)
 
 UpdateTimecard
 
-Modifies the details of a timecard with an `API_EDIT` event for the timecard. Updating an active timecard with a `clockout_time` clocks the employee out.
+Modifies the details of a timecard with an `API_EDIT` event for the timecard. Updating an active timecard with a `clockout_time` clocks the employee out.  ---  - __Deprecation date__: 2020-02-26 - [__Retirement date__](/docs/build-basics/api-lifecycle#deprecated): 2021-02-26 - [Migration guide](/docs/migrate-from-v1/guides/v1-timecards)  ---
 
 ### Example
 ```php
