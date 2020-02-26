@@ -280,7 +280,7 @@ class CatalogApiTest extends \PHPUnit_Framework_TestCase
       $this->assertContains($largeCoffeeId, $response->getDeletedObjectIds());
       $this->assertContains($smallTeaId, $response->getDeletedObjectIds());
     }
-   
+
     /**
      * Test case for batchUpsertCatalogObjects
      *

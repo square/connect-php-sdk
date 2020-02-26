@@ -1,6 +1,6 @@
 # Change Log
 
-## Version 3.2020226.0 (2020-02-26)
+## Version 3.20200226.0 (2020-02-26)
 ## API releases
 * **GA release**: All SDKs have been updated to support the new Bank Accounts and CashDrawerShifts APIs.
 
