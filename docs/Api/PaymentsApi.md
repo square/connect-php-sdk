@@ -109,7 +109,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **completePayment**
-> \SquareConnect\Model\CompletePaymentResponse completePayment($payment_id)
+> \SquareConnect\Model\CompletePaymentResponse completePayment($payment_id, $body)
 
 CompletePayment
 
@@ -125,9 +125,10 @@ SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACC
 
 $apiInstance = new SquareConnect\Api\PaymentsApi();
 $payment_id = "payment_id_example"; // string | Unique ID identifying the payment to be completed.
+$body = new \SquareConnect\Model\CompletePaymentRequest(); // \SquareConnect\Model\CompletePaymentRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
 try {
-    $result = $apiInstance->completePayment($payment_id);
+    $result = $apiInstance->completePayment($payment_id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PaymentsApi->completePayment: ', $e->getMessage(), PHP_EOL;
@@ -140,6 +141,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **payment_id** | **string**| Unique ID identifying the payment to be completed. |
+ **body** | [**\SquareConnect\Model\CompletePaymentRequest**](../Model/CompletePaymentRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
 
 ### Return type
 
