@@ -10,7 +10,6 @@ Method | HTTP request | Description
 
 
 # **listCashDrawerShiftEvents**
-**Note: This endpoint is in beta.**
 > \SquareConnect\Model\ListCashDrawerShiftEventsResponse listCashDrawerShiftEvents($location_id, $shift_id, $limit, $cursor)
 
 ListCashDrawerShiftEvents
@@ -65,7 +64,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listCashDrawerShifts**
-**Note: This endpoint is in beta.**
 > \SquareConnect\Model\ListCashDrawerShiftsResponse listCashDrawerShifts($location_id, $sort_order, $begin_time, $end_time, $limit, $cursor)
 
 ListCashDrawerShifts
@@ -124,7 +122,6 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **retrieveCashDrawerShift**
-**Note: This endpoint is in beta.**
 > \SquareConnect\Model\RetrieveCashDrawerShiftResponse retrieveCashDrawerShift($location_id, $shift_id)
 
 RetrieveCashDrawerShift
