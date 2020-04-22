@@ -1,5 +1,13 @@
 # Change Log
 
+## Version 3.20200422.1 (2020-04-22)
+## API releases
+* **Customer Segments API (beta).** `limit` field removed from **ListCustomerSegments** endpoint.
+
+
+**Note:** This release fixes a bug introduced on the [April 22, 2020](changelog/connect-logs/2020-04-22) release of the Square API.
+
+
 ## Version 3.20200422.0 (2020-04-22)
 ## API releases
 * **Terminal API.** The new Terminal API lets a custom third-party POS app integrate with the Square Terminal to send terminal checkout requests to collect payments.

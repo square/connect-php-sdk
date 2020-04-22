@@ -25,8 +25,7 @@ class ListCustomerSegmentsRequest implements ArrayAccess
       * @var string[]
       */
     static $swaggerTypes = array(
-        'cursor' => 'string',
-        'limit' => 'int'
+        'cursor' => 'string'
     );
   
     /** 
@@ -34,8 +33,7 @@ class ListCustomerSegmentsRequest implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
-        'cursor' => 'cursor',
-        'limit' => 'limit'
+        'cursor' => 'cursor'
     );
   
     /**
@@ -43,8 +41,7 @@ class ListCustomerSegmentsRequest implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
-        'cursor' => 'setCursor',
-        'limit' => 'setLimit'
+        'cursor' => 'setCursor'
     );
   
     /**
@@ -52,8 +49,7 @@ class ListCustomerSegmentsRequest implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
-        'cursor' => 'getCursor',
-        'limit' => 'getLimit'
+        'cursor' => 'getCursor'
     );
   
     /**
@@ -61,11 +57,6 @@ class ListCustomerSegmentsRequest implements ArrayAccess
       * @var string
       */
     protected $cursor;
-    /**
-      * $limit Sets the maximum number of results to be returned in a single page. Limit values outside the supported range are ignored.  Minimum value: `1` Maximum value: `1,000`
-      * @var int
-      */
-    protected $limit;
 
     /**
      * Constructor
@@ -78,11 +69,6 @@ class ListCustomerSegmentsRequest implements ArrayAccess
               $this->cursor = $data["cursor"];
             } else {
               $this->cursor = null;
-            }
-            if (isset($data["limit"])) {
-              $this->limit = $data["limit"];
-            } else {
-              $this->limit = null;
             }
         }
     }
@@ -103,25 +89,6 @@ class ListCustomerSegmentsRequest implements ArrayAccess
     public function setCursor($cursor)
     {
         $this->cursor = $cursor;
-        return $this;
-    }
-    /**
-     * Gets limit
-     * @return int
-     */
-    public function getLimit()
-    {
-        return $this->limit;
-    }
-  
-    /**
-     * Sets limit
-     * @param int $limit Sets the maximum number of results to be returned in a single page. Limit values outside the supported range are ignored.  Minimum value: `1` Maximum value: `1,000`
-     * @return $this
-     */
-    public function setLimit($limit)
-    {
-        $this->limit = $limit;
         return $this;
     }
     /**
