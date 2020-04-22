@@ -71,13 +71,12 @@ class CustomerSegmentsApi
      * Note: This endpoint is in beta.
      *
      * @param string $cursor A pagination cursor returned by previous calls to __ListCustomerSegments__. Used to retrieve the next set of query results.  See the [Pagination guide](https://developer.squareup.com/docs/docs/working-with-apis/pagination) for more information. (optional)
-     * @param int $limit Sets the maximum number of results to be returned in a single page. Limit values outside the supported range are ignored.  Minimum value: &#x60;1&#x60; Maximum value: &#x60;1,000&#x60; (optional)
      * @return \SquareConnect\Model\ListCustomerSegmentsResponse
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function listCustomerSegments($cursor = null, $limit = null)
+    public function listCustomerSegments($cursor = null)
     {
-        list($response, $statusCode, $httpHeader) = $this->listCustomerSegmentsWithHttpInfo ($cursor, $limit);
+        list($response, $statusCode, $httpHeader) = $this->listCustomerSegmentsWithHttpInfo ($cursor);
         return $response; 
     }
 
@@ -88,11 +87,10 @@ class CustomerSegmentsApi
      * ListCustomerSegments
      *
      * @param string $cursor A pagination cursor returned by previous calls to __ListCustomerSegments__. Used to retrieve the next set of query results.  See the [Pagination guide](https://developer.squareup.com/docs/docs/working-with-apis/pagination) for more information. (optional)
-     * @param int $limit Sets the maximum number of results to be returned in a single page. Limit values outside the supported range are ignored.  Minimum value: &#x60;1&#x60; Maximum value: &#x60;1,000&#x60; (optional)
      * @return Array of \SquareConnect\Model\ListCustomerSegmentsResponse, HTTP status code, HTTP response headers (array of strings)
      * @throws \SquareConnect\ApiException on non-2xx response
      */
-    public function listCustomerSegmentsWithHttpInfo($cursor = null, $limit = null)
+    public function listCustomerSegmentsWithHttpInfo($cursor = null)
     {
         
   
@@ -112,9 +110,6 @@ class CustomerSegmentsApi
         // query params
         if ($cursor !== null) {
             $queryParams['cursor'] = $this->apiClient->getSerializer()->toQueryValue($cursor);
-        }// query params
-        if ($limit !== null) {
-            $queryParams['limit'] = $this->apiClient->getSerializer()->toQueryValue($limit);
         }
         
         

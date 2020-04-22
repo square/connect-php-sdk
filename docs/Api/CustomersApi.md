@@ -22,7 +22,7 @@ Method | HTTP request | Description
 
 AddGroupToCustomer
 
-Adds a customer membership to a customer group.   The customer is identified by the `customer_id` value  and the customer group is identified by the `group_id` value.
+Adds a group membership to a customer.   The customer is identified by the `customer_id` value  and the customer group is identified by the `group_id` value.
 
 ### Example
 ```php
@@ -321,7 +321,7 @@ Name | Type | Description  | Notes
 
 RemoveGroupFromCustomer
 
-Removes a customer membership from a customer group.   The customer is identified by the `customer_id` value  and the customer group is identified by the `group_id` value.
+Removes a group membership from a customer.   The customer is identified by the `customer_id` value  and the customer group is identified by the `group_id` value.
 
 ### Example
 ```php

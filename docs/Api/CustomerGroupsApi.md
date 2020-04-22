@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 CreateCustomerGroup
 
-Creates a new customer group for a business.   The request must include at least the `name` value of the group.
+Creates a new customer group for a business.   The request must include the `name` value of the group.
 
 ### Example
 ```php

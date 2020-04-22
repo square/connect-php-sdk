@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 # **listCustomerSegments**
 **Note: This endpoint is in beta.**
-> \SquareConnect\Model\ListCustomerSegmentsResponse listCustomerSegments($cursor, $limit)
+> \SquareConnect\Model\ListCustomerSegmentsResponse listCustomerSegments($cursor)
 
 ListCustomerSegments
 
@@ -26,10 +26,9 @@ SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACC
 
 $apiInstance = new SquareConnect\Api\CustomerSegmentsApi();
 $cursor = "cursor_example"; // string | A pagination cursor returned by previous calls to __ListCustomerSegments__. Used to retrieve the next set of query results.  See the [Pagination guide](https://developer.squareup.com/docs/docs/working-with-apis/pagination) for more information.
-$limit = 789; // int | Sets the maximum number of results to be returned in a single page. Limit values outside the supported range are ignored.  Minimum value: `1` Maximum value: `1,000`
 
 try {
-    $result = $apiInstance->listCustomerSegments($cursor, $limit);
+    $result = $apiInstance->listCustomerSegments($cursor);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerSegmentsApi->listCustomerSegments: ', $e->getMessage(), PHP_EOL;
@@ -42,7 +41,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cursor** | **string**| A pagination cursor returned by previous calls to __ListCustomerSegments__. Used to retrieve the next set of query results.  See the [Pagination guide](https://developer.squareup.com/docs/docs/working-with-apis/pagination) for more information. | [optional]
- **limit** | **int**| Sets the maximum number of results to be returned in a single page. Limit values outside the supported range are ignored.  Minimum value: &#x60;1&#x60; Maximum value: &#x60;1,000&#x60; | [optional]
 
 ### Return type
 
