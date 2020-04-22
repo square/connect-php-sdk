@@ -113,7 +113,7 @@ class CatalogCustomAttributeDefinition implements ArrayAccess
       */
     protected $source_application;
     /**
-      * $allowed_object_types The set of Catalog Object Types that this Custom Attribute may be applied to. Currently, only `ITEM` and `ITEM_VARIATION` are allowed. See [CatalogObjectType](#type-catalogobjecttype) for possible values
+      * $allowed_object_types The set of Catalog Object Types that this Custom Attribute may be applied to. Currently, only `ITEM` and `ITEM_VARIATION` are allowed. At least one type must be included. See [CatalogObjectType](#type-catalogobjecttype) for possible values
       * @var string[]
       */
     protected $allowed_object_types;
@@ -143,7 +143,7 @@ class CatalogCustomAttributeDefinition implements ArrayAccess
       */
     protected $custom_attribute_usage_count;
     /**
-      * $key The name of the desired custom attribute key that can be used to access the custom attribute value on catalog objects. Cannot be modified after the custom attribute definition has been created.
+      * $key The name of the desired custom attribute key that can be used to access the custom attribute value on catalog objects. Cannot be modified after the custom attribute definition has been created. Must be between 1 and 60 characters, and may only contain the characters [a-zA-Z0-9_-].
       * @var string
       */
     protected $key;
@@ -299,7 +299,7 @@ class CatalogCustomAttributeDefinition implements ArrayAccess
   
     /**
      * Sets allowed_object_types
-     * @param string[] $allowed_object_types The set of Catalog Object Types that this Custom Attribute may be applied to. Currently, only `ITEM` and `ITEM_VARIATION` are allowed. See [CatalogObjectType](#type-catalogobjecttype) for possible values
+     * @param string[] $allowed_object_types The set of Catalog Object Types that this Custom Attribute may be applied to. Currently, only `ITEM` and `ITEM_VARIATION` are allowed. At least one type must be included. See [CatalogObjectType](#type-catalogobjecttype) for possible values
      * @return $this
      */
     public function setAllowedObjectTypes($allowed_object_types)
@@ -413,7 +413,7 @@ class CatalogCustomAttributeDefinition implements ArrayAccess
   
     /**
      * Sets key
-     * @param string $key The name of the desired custom attribute key that can be used to access the custom attribute value on catalog objects. Cannot be modified after the custom attribute definition has been created.
+     * @param string $key The name of the desired custom attribute key that can be used to access the custom attribute value on catalog objects. Cannot be modified after the custom attribute definition has been created. Must be between 1 and 60 characters, and may only contain the characters [a-zA-Z0-9_-].
      * @return $this
      */
     public function setKey($key)

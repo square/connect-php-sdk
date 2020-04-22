@@ -30,7 +30,8 @@ class ObtainTokenRequest implements ArrayAccess
         'redirect_uri' => 'string',
         'grant_type' => 'string',
         'refresh_token' => 'string',
-        'migration_token' => 'string'
+        'migration_token' => 'string',
+        'scopes' => 'string[]'
     );
   
     /** 
@@ -44,7 +45,8 @@ class ObtainTokenRequest implements ArrayAccess
         'redirect_uri' => 'redirect_uri',
         'grant_type' => 'grant_type',
         'refresh_token' => 'refresh_token',
-        'migration_token' => 'migration_token'
+        'migration_token' => 'migration_token',
+        'scopes' => 'scopes'
     );
   
     /**
@@ -58,7 +60,8 @@ class ObtainTokenRequest implements ArrayAccess
         'redirect_uri' => 'setRedirectUri',
         'grant_type' => 'setGrantType',
         'refresh_token' => 'setRefreshToken',
-        'migration_token' => 'setMigrationToken'
+        'migration_token' => 'setMigrationToken',
+        'scopes' => 'setScopes'
     );
   
     /**
@@ -72,7 +75,8 @@ class ObtainTokenRequest implements ArrayAccess
         'redirect_uri' => 'getRedirectUri',
         'grant_type' => 'getGrantType',
         'refresh_token' => 'getRefreshToken',
-        'migration_token' => 'getMigrationToken'
+        'migration_token' => 'getMigrationToken',
+        'scopes' => 'getScopes'
     );
   
     /**
@@ -110,6 +114,11 @@ class ObtainTokenRequest implements ArrayAccess
       * @var string
       */
     protected $migration_token;
+    /**
+      * $scopes __OPTIONAL__  A JSON list of strings that are the permissions the application is requesting. For example: \"`[\"MERCHANT_PROFILE_READ\",\"PAYMENTS_READ\",\"BANK_ACCOUNTS_READ\"]`\" The access token returned in the response will be granted the permissions that comprise the intersection between the given list of permissions, and those that belong to the provided refresh token.
+      * @var string[]
+      */
+    protected $scopes;
 
     /**
      * Constructor
@@ -152,6 +161,11 @@ class ObtainTokenRequest implements ArrayAccess
               $this->migration_token = $data["migration_token"];
             } else {
               $this->migration_token = null;
+            }
+            if (isset($data["scopes"])) {
+              $this->scopes = $data["scopes"];
+            } else {
+              $this->scopes = null;
             }
         }
     }
@@ -286,6 +300,25 @@ class ObtainTokenRequest implements ArrayAccess
     public function setMigrationToken($migration_token)
     {
         $this->migration_token = $migration_token;
+        return $this;
+    }
+    /**
+     * Gets scopes
+     * @return string[]
+     */
+    public function getScopes()
+    {
+        return $this->scopes;
+    }
+  
+    /**
+     * Sets scopes
+     * @param string[] $scopes __OPTIONAL__  A JSON list of strings that are the permissions the application is requesting. For example: \"`[\"MERCHANT_PROFILE_READ\",\"PAYMENTS_READ\",\"BANK_ACCOUNTS_READ\"]`\" The access token returned in the response will be granted the permissions that comprise the intersection between the given list of permissions, and those that belong to the provided refresh token.
+     * @return $this
+     */
+    public function setScopes($scopes)
+    {
+        $this->scopes = $scopes;
         return $this;
     }
     /**
