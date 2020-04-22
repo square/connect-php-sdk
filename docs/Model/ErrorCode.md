@@ -11,6 +11,7 @@ Name | Type
 **UNAUTHORIZED** | string
 **ACCESS_TOKEN_EXPIRED** | string
 **ACCESS_TOKEN_REVOKED** | string
+**CLIENT_DISABLED** | string
 **FORBIDDEN** | string
 **INSUFFICIENT_SCOPES** | string
 **APPLICATION_DISABLED** | string

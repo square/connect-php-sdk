@@ -23,6 +23,8 @@ Name | Getter | Setter | Type | Description | Notes
 **picked_up_at** | getPickedUpAt() | setPickedUpAt($value) | **string** | The [timestamp](#workingwithdates) indicating when the fulfillment was picked up by the recipient. In RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;. | [optional] 
 **canceled_at** | getCanceledAt() | setCanceledAt($value) | **string** | The [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., \&quot;2016-09-04T23:59:33.123Z\&quot;, indicating when the fulfillment was canceled. | [optional] 
 **cancel_reason** | getCancelReason() | setCancelReason($value) | **string** | A description of why the pickup was canceled. Max length: 100 characters. | [optional] 
+**is_curbside_pickup** | getIsCurbsidePickup() | setIsCurbsidePickup($value) | **bool** | If true, indicates this pickup order is for curbside pickup, not in-store pickup. | [optional] [beta]
+**curbside_pickup_details** | getCurbsidePickupDetails() | setCurbsidePickupDetails($value) | [**\SquareConnect\Model\OrderFulfillmentPickupDetailsCurbsidePickupDetails**](OrderFulfillmentPickupDetailsCurbsidePickupDetails.md) | Specific details for curbside pickup. Can only be populated if &#x60;is_curbside_pickup&#x60; is true. | [optional] 
 
 Note: All properties are protected and only accessed via getters and setters.
 
