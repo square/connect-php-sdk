@@ -1,5 +1,12 @@
 # Change Log
 
+## Version 3.20200422.2 (2020-04-25)
+## Existing API updates
+
+* **OAuth API**
+  * [Obtain Token](${SQUARE_TECH_REF}/oauth-api/revoke-token) endpoint: Removed the `scopes` property from the request body.
+
+
 ## Version 3.20200422.1 (2020-04-22)
 ## API releases
 * **Customer Segments API (beta).** `limit` field removed from **ListCustomerSegments** endpoint.
