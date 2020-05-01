@@ -108,7 +108,7 @@ class RefundsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2020-03-25";
+        $headerParams['Square-Version'] = "2020-04-22";
 
         
         
@@ -212,7 +212,7 @@ class RefundsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2020-03-25";
+        $headerParams['Square-Version'] = "2020-04-22";
 
         // query params
         if ($begin_time !== null) {
@@ -322,7 +322,7 @@ class RefundsApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2020-03-25";
+        $headerParams['Square-Version'] = "2020-04-22";
 
         
         

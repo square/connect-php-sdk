@@ -247,7 +247,7 @@ class Order implements ArrayAccess
       */
     protected $updated_at;
     /**
-      * $closed_at Timestamp for when the order was closed. In RFC 3339 format, e.g., \"2016-09-04T23:59:33.123Z\".
+      * $closed_at Timestamp for when the order reached a terminal [state](#property-state). In RFC 3339 format, e.g., \"2016-09-04T23:59:33.123Z\".
       * @var string
       */
     protected $closed_at;
@@ -793,7 +793,7 @@ class Order implements ArrayAccess
   
     /**
      * Sets closed_at
-     * @param string $closed_at Timestamp for when the order was closed. In RFC 3339 format, e.g., \"2016-09-04T23:59:33.123Z\".
+     * @param string $closed_at Timestamp for when the order reached a terminal [state](#property-state). In RFC 3339 format, e.g., \"2016-09-04T23:59:33.123Z\".
      * @return $this
      */
     public function setClosedAt($closed_at)

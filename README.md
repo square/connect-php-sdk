@@ -183,14 +183,26 @@ Class | Method | HTTP request | Description
 *CatalogApi* | [**updateItemTaxes**](docs/Api/CatalogApi.md#updateitemtaxes) | **POST** /v2/catalog/update-item-taxes | UpdateItemTaxes
 *CatalogApi* | [**upsertCatalogObject**](docs/Api/CatalogApi.md#upsertcatalogobject) | **POST** /v2/catalog/object | UpsertCatalogObject
 *CheckoutApi* | [**createCheckout**](docs/Api/CheckoutApi.md#createcheckout) | **POST** /v2/locations/{location_id}/checkouts | CreateCheckout
+*CustomerGroupsApi* | [**createCustomerGroup**](docs/Api/CustomerGroupsApi.md#createcustomergroup) | **POST** /v2/customers/groups | CreateCustomerGroup
+*CustomerGroupsApi* | [**deleteCustomerGroup**](docs/Api/CustomerGroupsApi.md#deletecustomergroup) | **DELETE** /v2/customers/groups/{group_id} | DeleteCustomerGroup
+*CustomerGroupsApi* | [**listCustomerGroups**](docs/Api/CustomerGroupsApi.md#listcustomergroups) | **GET** /v2/customers/groups | ListCustomerGroups
+*CustomerGroupsApi* | [**retrieveCustomerGroup**](docs/Api/CustomerGroupsApi.md#retrievecustomergroup) | **GET** /v2/customers/groups/{group_id} | RetrieveCustomerGroup
+*CustomerGroupsApi* | [**updateCustomerGroup**](docs/Api/CustomerGroupsApi.md#updatecustomergroup) | **PUT** /v2/customers/groups/{group_id} | UpdateCustomerGroup
+*CustomerSegmentsApi* | [**listCustomerSegments**](docs/Api/CustomerSegmentsApi.md#listcustomersegments) | **GET** /v2/customers/segments | ListCustomerSegments
+*CustomerSegmentsApi* | [**retrieveCustomerSegment**](docs/Api/CustomerSegmentsApi.md#retrievecustomersegment) | **GET** /v2/customers/segments/{segment_id} | RetrieveCustomerSegment
+*CustomersApi* | [**addGroupToCustomer**](docs/Api/CustomersApi.md#addgrouptocustomer) | **PUT** /v2/customers/{customer_id}/groups/{group_id} | AddGroupToCustomer
 *CustomersApi* | [**createCustomer**](docs/Api/CustomersApi.md#createcustomer) | **POST** /v2/customers | CreateCustomer
 *CustomersApi* | [**createCustomerCard**](docs/Api/CustomersApi.md#createcustomercard) | **POST** /v2/customers/{customer_id}/cards | CreateCustomerCard
 *CustomersApi* | [**deleteCustomer**](docs/Api/CustomersApi.md#deletecustomer) | **DELETE** /v2/customers/{customer_id} | DeleteCustomer
 *CustomersApi* | [**deleteCustomerCard**](docs/Api/CustomersApi.md#deletecustomercard) | **DELETE** /v2/customers/{customer_id}/cards/{card_id} | DeleteCustomerCard
 *CustomersApi* | [**listCustomers**](docs/Api/CustomersApi.md#listcustomers) | **GET** /v2/customers | ListCustomers
+*CustomersApi* | [**removeGroupFromCustomer**](docs/Api/CustomersApi.md#removegroupfromcustomer) | **DELETE** /v2/customers/{customer_id}/groups/{group_id} | RemoveGroupFromCustomer
 *CustomersApi* | [**retrieveCustomer**](docs/Api/CustomersApi.md#retrievecustomer) | **GET** /v2/customers/{customer_id} | RetrieveCustomer
 *CustomersApi* | [**searchCustomers**](docs/Api/CustomersApi.md#searchcustomers) | **POST** /v2/customers/search | SearchCustomers
 *CustomersApi* | [**updateCustomer**](docs/Api/CustomersApi.md#updatecustomer) | **PUT** /v2/customers/{customer_id} | UpdateCustomer
+*DevicesApi* | [**createDeviceCode**](docs/Api/DevicesApi.md#createdevicecode) | **POST** /v2/devices/codes | CreateDeviceCode
+*DevicesApi* | [**getDeviceCode**](docs/Api/DevicesApi.md#getdevicecode) | **GET** /v2/devices/codes/{id} | GetDeviceCode
+*DevicesApi* | [**listDeviceCodes**](docs/Api/DevicesApi.md#listdevicecodes) | **GET** /v2/devices/codes | ListDeviceCodes
 *DisputesApi* | [**acceptDispute**](docs/Api/DisputesApi.md#acceptdispute) | **POST** /v2/disputes/{dispute_id}/accept | AcceptDispute
 *DisputesApi* | [**createDisputeEvidenceText**](docs/Api/DisputesApi.md#createdisputeevidencetext) | **POST** /v2/disputes/{dispute_id}/evidence_text | CreateDisputeEvidenceText
 *DisputesApi* | [**listDisputeEvidence**](docs/Api/DisputesApi.md#listdisputeevidence) | **GET** /v2/disputes/{dispute_id}/evidence | ListDisputeEvidence
@@ -248,6 +260,10 @@ Class | Method | HTTP request | Description
 *RefundsApi* | [**refundPayment**](docs/Api/RefundsApi.md#refundpayment) | **POST** /v2/refunds | RefundPayment
 *ReportingApi* | [**listAdditionalRecipientReceivableRefunds**](docs/Api/ReportingApi.md#listadditionalrecipientreceivablerefunds) | **GET** /v2/locations/{location_id}/additional-recipient-receivable-refunds | ListAdditionalRecipientReceivableRefunds
 *ReportingApi* | [**listAdditionalRecipientReceivables**](docs/Api/ReportingApi.md#listadditionalrecipientreceivables) | **GET** /v2/locations/{location_id}/additional-recipient-receivables | ListAdditionalRecipientReceivables
+*TerminalApi* | [**cancelTerminalCheckout**](docs/Api/TerminalApi.md#cancelterminalcheckout) | **POST** /v2/terminals/checkouts/{checkout_id}/cancel | CancelTerminalCheckout
+*TerminalApi* | [**createTerminalCheckout**](docs/Api/TerminalApi.md#createterminalcheckout) | **POST** /v2/terminals/checkouts | CreateTerminalCheckout
+*TerminalApi* | [**getTerminalCheckout**](docs/Api/TerminalApi.md#getterminalcheckout) | **GET** /v2/terminals/checkouts/{checkout_id} | GetTerminalCheckout
+*TerminalApi* | [**searchTerminalCheckouts**](docs/Api/TerminalApi.md#searchterminalcheckouts) | **POST** /v2/terminals/checkouts/search | SearchTerminalCheckouts
 *TransactionsApi* | [**captureTransaction**](docs/Api/TransactionsApi.md#capturetransaction) | **POST** /v2/locations/{location_id}/transactions/{transaction_id}/capture | CaptureTransaction
 *TransactionsApi* | [**charge**](docs/Api/TransactionsApi.md#charge) | **POST** /v2/locations/{location_id}/transactions | Charge
 *TransactionsApi* | [**createRefund**](docs/Api/TransactionsApi.md#createrefund) | **POST** /v2/locations/{location_id}/transactions/{transaction_id}/refund | CreateRefund
@@ -330,6 +346,8 @@ Class | Method | HTTP request | Description
 
  - [AcceptDisputeRequest](docs/Model/AcceptDisputeRequest.md)
  - [AcceptDisputeResponse](docs/Model/AcceptDisputeResponse.md)
+ - [AddGroupToCustomerRequest](docs/Model/AddGroupToCustomerRequest.md)
+ - [AddGroupToCustomerResponse](docs/Model/AddGroupToCustomerResponse.md)
  - [AdditionalRecipient](docs/Model/AdditionalRecipient.md)
  - [AdditionalRecipientReceivable](docs/Model/AdditionalRecipientReceivable.md)
  - [AdditionalRecipientReceivableRefund](docs/Model/AdditionalRecipientReceivableRefund.md)
@@ -359,6 +377,8 @@ Class | Method | HTTP request | Description
  - [CancelPaymentByIdempotencyKeyResponse](docs/Model/CancelPaymentByIdempotencyKeyResponse.md)
  - [CancelPaymentRequest](docs/Model/CancelPaymentRequest.md)
  - [CancelPaymentResponse](docs/Model/CancelPaymentResponse.md)
+ - [CancelTerminalCheckoutRequest](docs/Model/CancelTerminalCheckoutRequest.md)
+ - [CancelTerminalCheckoutResponse](docs/Model/CancelTerminalCheckoutResponse.md)
  - [CaptureTransactionRequest](docs/Model/CaptureTransactionRequest.md)
  - [CaptureTransactionResponse](docs/Model/CaptureTransactionResponse.md)
  - [Card](docs/Model/Card.md)
@@ -424,6 +444,10 @@ Class | Method | HTTP request | Description
  - [CatalogQueryRange](docs/Model/CatalogQueryRange.md)
  - [CatalogQuerySortedAttribute](docs/Model/CatalogQuerySortedAttribute.md)
  - [CatalogQueryText](docs/Model/CatalogQueryText.md)
+ - [CatalogQuickAmount](docs/Model/CatalogQuickAmount.md)
+ - [CatalogQuickAmountType](docs/Model/CatalogQuickAmountType.md)
+ - [CatalogQuickAmountsSettings](docs/Model/CatalogQuickAmountsSettings.md)
+ - [CatalogQuickAmountsSettingsOption](docs/Model/CatalogQuickAmountsSettingsOption.md)
  - [CatalogTax](docs/Model/CatalogTax.md)
  - [CatalogTimePeriod](docs/Model/CatalogTimePeriod.md)
  - [CatalogV1Id](docs/Model/CatalogV1Id.md)
@@ -443,8 +467,12 @@ Class | Method | HTTP request | Description
  - [CreateCheckoutResponse](docs/Model/CreateCheckoutResponse.md)
  - [CreateCustomerCardRequest](docs/Model/CreateCustomerCardRequest.md)
  - [CreateCustomerCardResponse](docs/Model/CreateCustomerCardResponse.md)
+ - [CreateCustomerGroupRequest](docs/Model/CreateCustomerGroupRequest.md)
+ - [CreateCustomerGroupResponse](docs/Model/CreateCustomerGroupResponse.md)
  - [CreateCustomerRequest](docs/Model/CreateCustomerRequest.md)
  - [CreateCustomerResponse](docs/Model/CreateCustomerResponse.md)
+ - [CreateDeviceCodeRequest](docs/Model/CreateDeviceCodeRequest.md)
+ - [CreateDeviceCodeResponse](docs/Model/CreateDeviceCodeResponse.md)
  - [CreateDisputeEvidenceFileRequest](docs/Model/CreateDisputeEvidenceFileRequest.md)
  - [CreateDisputeEvidenceFileResponse](docs/Model/CreateDisputeEvidenceFileResponse.md)
  - [CreateDisputeEvidenceTextRequest](docs/Model/CreateDisputeEvidenceTextRequest.md)
@@ -461,15 +489,19 @@ Class | Method | HTTP request | Description
  - [CreateRefundResponse](docs/Model/CreateRefundResponse.md)
  - [CreateShiftRequest](docs/Model/CreateShiftRequest.md)
  - [CreateShiftResponse](docs/Model/CreateShiftResponse.md)
+ - [CreateTerminalCheckoutRequest](docs/Model/CreateTerminalCheckoutRequest.md)
+ - [CreateTerminalCheckoutResponse](docs/Model/CreateTerminalCheckoutResponse.md)
  - [Currency](docs/Model/Currency.md)
  - [Customer](docs/Model/Customer.md)
  - [CustomerCreationSource](docs/Model/CustomerCreationSource.md)
  - [CustomerCreationSourceFilter](docs/Model/CustomerCreationSourceFilter.md)
  - [CustomerFilter](docs/Model/CustomerFilter.md)
+ - [CustomerGroup](docs/Model/CustomerGroup.md)
  - [CustomerGroupInfo](docs/Model/CustomerGroupInfo.md)
  - [CustomerInclusionExclusion](docs/Model/CustomerInclusionExclusion.md)
  - [CustomerPreferences](docs/Model/CustomerPreferences.md)
  - [CustomerQuery](docs/Model/CustomerQuery.md)
+ - [CustomerSegment](docs/Model/CustomerSegment.md)
  - [CustomerSort](docs/Model/CustomerSort.md)
  - [CustomerSortField](docs/Model/CustomerSortField.md)
  - [DateRange](docs/Model/DateRange.md)
@@ -480,11 +512,16 @@ Class | Method | HTTP request | Description
  - [DeleteCatalogObjectResponse](docs/Model/DeleteCatalogObjectResponse.md)
  - [DeleteCustomerCardRequest](docs/Model/DeleteCustomerCardRequest.md)
  - [DeleteCustomerCardResponse](docs/Model/DeleteCustomerCardResponse.md)
+ - [DeleteCustomerGroupRequest](docs/Model/DeleteCustomerGroupRequest.md)
+ - [DeleteCustomerGroupResponse](docs/Model/DeleteCustomerGroupResponse.md)
  - [DeleteCustomerRequest](docs/Model/DeleteCustomerRequest.md)
  - [DeleteCustomerResponse](docs/Model/DeleteCustomerResponse.md)
  - [DeleteShiftRequest](docs/Model/DeleteShiftRequest.md)
  - [DeleteShiftResponse](docs/Model/DeleteShiftResponse.md)
  - [Device](docs/Model/Device.md)
+ - [DeviceCheckoutOptions](docs/Model/DeviceCheckoutOptions.md)
+ - [DeviceCode](docs/Model/DeviceCode.md)
+ - [DeviceCodeStatus](docs/Model/DeviceCodeStatus.md)
  - [DeviceDetails](docs/Model/DeviceDetails.md)
  - [Dispute](docs/Model/Dispute.md)
  - [DisputeEvidence](docs/Model/DisputeEvidence.md)
@@ -501,12 +538,15 @@ Class | Method | HTTP request | Description
  - [ErrorCategory](docs/Model/ErrorCategory.md)
  - [ErrorCode](docs/Model/ErrorCode.md)
  - [ExcludeStrategy](docs/Model/ExcludeStrategy.md)
+ - [FilterValue](docs/Model/FilterValue.md)
  - [GetBankAccountByV1IdRequest](docs/Model/GetBankAccountByV1IdRequest.md)
  - [GetBankAccountByV1IdResponse](docs/Model/GetBankAccountByV1IdResponse.md)
  - [GetBankAccountRequest](docs/Model/GetBankAccountRequest.md)
  - [GetBankAccountResponse](docs/Model/GetBankAccountResponse.md)
  - [GetBreakTypeRequest](docs/Model/GetBreakTypeRequest.md)
  - [GetBreakTypeResponse](docs/Model/GetBreakTypeResponse.md)
+ - [GetDeviceCodeRequest](docs/Model/GetDeviceCodeRequest.md)
+ - [GetDeviceCodeResponse](docs/Model/GetDeviceCodeResponse.md)
  - [GetEmployeeWageRequest](docs/Model/GetEmployeeWageRequest.md)
  - [GetEmployeeWageResponse](docs/Model/GetEmployeeWageResponse.md)
  - [GetPaymentRefundRequest](docs/Model/GetPaymentRefundRequest.md)
@@ -515,6 +555,8 @@ Class | Method | HTTP request | Description
  - [GetPaymentResponse](docs/Model/GetPaymentResponse.md)
  - [GetShiftRequest](docs/Model/GetShiftRequest.md)
  - [GetShiftResponse](docs/Model/GetShiftResponse.md)
+ - [GetTerminalCheckoutRequest](docs/Model/GetTerminalCheckoutRequest.md)
+ - [GetTerminalCheckoutResponse](docs/Model/GetTerminalCheckoutResponse.md)
  - [InventoryAdjustment](docs/Model/InventoryAdjustment.md)
  - [InventoryAlertType](docs/Model/InventoryAlertType.md)
  - [InventoryChange](docs/Model/InventoryChange.md)
@@ -538,8 +580,14 @@ Class | Method | HTTP request | Description
  - [ListCashDrawerShiftsResponse](docs/Model/ListCashDrawerShiftsResponse.md)
  - [ListCatalogRequest](docs/Model/ListCatalogRequest.md)
  - [ListCatalogResponse](docs/Model/ListCatalogResponse.md)
+ - [ListCustomerGroupsRequest](docs/Model/ListCustomerGroupsRequest.md)
+ - [ListCustomerGroupsResponse](docs/Model/ListCustomerGroupsResponse.md)
+ - [ListCustomerSegmentsRequest](docs/Model/ListCustomerSegmentsRequest.md)
+ - [ListCustomerSegmentsResponse](docs/Model/ListCustomerSegmentsResponse.md)
  - [ListCustomersRequest](docs/Model/ListCustomersRequest.md)
  - [ListCustomersResponse](docs/Model/ListCustomersResponse.md)
+ - [ListDeviceCodesRequest](docs/Model/ListDeviceCodesRequest.md)
+ - [ListDeviceCodesResponse](docs/Model/ListDeviceCodesResponse.md)
  - [ListDisputeEvidenceRequest](docs/Model/ListDisputeEvidenceRequest.md)
  - [ListDisputeEvidenceResponse](docs/Model/ListDisputeEvidenceResponse.md)
  - [ListDisputesRequest](docs/Model/ListDisputesRequest.md)
@@ -583,14 +631,20 @@ Class | Method | HTTP request | Description
  - [ObtainTokenRequest](docs/Model/ObtainTokenRequest.md)
  - [ObtainTokenResponse](docs/Model/ObtainTokenResponse.md)
  - [Order](docs/Model/Order.md)
+ - [OrderCreated](docs/Model/OrderCreated.md)
+ - [OrderCreatedObject](docs/Model/OrderCreatedObject.md)
  - [OrderEntry](docs/Model/OrderEntry.md)
  - [OrderFulfillment](docs/Model/OrderFulfillment.md)
  - [OrderFulfillmentPickupDetails](docs/Model/OrderFulfillmentPickupDetails.md)
+ - [OrderFulfillmentPickupDetailsCurbsidePickupDetails](docs/Model/OrderFulfillmentPickupDetailsCurbsidePickupDetails.md)
  - [OrderFulfillmentPickupDetailsScheduleType](docs/Model/OrderFulfillmentPickupDetailsScheduleType.md)
  - [OrderFulfillmentRecipient](docs/Model/OrderFulfillmentRecipient.md)
  - [OrderFulfillmentShipmentDetails](docs/Model/OrderFulfillmentShipmentDetails.md)
  - [OrderFulfillmentState](docs/Model/OrderFulfillmentState.md)
  - [OrderFulfillmentType](docs/Model/OrderFulfillmentType.md)
+ - [OrderFulfillmentUpdated](docs/Model/OrderFulfillmentUpdated.md)
+ - [OrderFulfillmentUpdatedObject](docs/Model/OrderFulfillmentUpdatedObject.md)
+ - [OrderFulfillmentUpdatedUpdate](docs/Model/OrderFulfillmentUpdatedUpdate.md)
  - [OrderLineItem](docs/Model/OrderLineItem.md)
  - [OrderLineItemAppliedDiscount](docs/Model/OrderLineItemAppliedDiscount.md)
  - [OrderLineItemAppliedTax](docs/Model/OrderLineItemAppliedTax.md)
@@ -614,12 +668,16 @@ Class | Method | HTTP request | Description
  - [OrderServiceChargeCalculationPhase](docs/Model/OrderServiceChargeCalculationPhase.md)
  - [OrderSource](docs/Model/OrderSource.md)
  - [OrderState](docs/Model/OrderState.md)
+ - [OrderUpdated](docs/Model/OrderUpdated.md)
+ - [OrderUpdatedObject](docs/Model/OrderUpdatedObject.md)
  - [PayOrderRequest](docs/Model/PayOrderRequest.md)
  - [PayOrderResponse](docs/Model/PayOrderResponse.md)
  - [Payment](docs/Model/Payment.md)
+ - [PaymentOptions](docs/Model/PaymentOptions.md)
  - [PaymentRefund](docs/Model/PaymentRefund.md)
  - [ProcessingFee](docs/Model/ProcessingFee.md)
  - [Product](docs/Model/Product.md)
+ - [ProductType](docs/Model/ProductType.md)
  - [Refund](docs/Model/Refund.md)
  - [RefundPaymentRequest](docs/Model/RefundPaymentRequest.md)
  - [RefundPaymentResponse](docs/Model/RefundPaymentResponse.md)
@@ -629,14 +687,20 @@ Class | Method | HTTP request | Description
  - [RegisterDomainResponseStatus](docs/Model/RegisterDomainResponseStatus.md)
  - [RemoveDisputeEvidenceRequest](docs/Model/RemoveDisputeEvidenceRequest.md)
  - [RemoveDisputeEvidenceResponse](docs/Model/RemoveDisputeEvidenceResponse.md)
+ - [RemoveGroupFromCustomerRequest](docs/Model/RemoveGroupFromCustomerRequest.md)
+ - [RemoveGroupFromCustomerResponse](docs/Model/RemoveGroupFromCustomerResponse.md)
  - [RenewTokenRequest](docs/Model/RenewTokenRequest.md)
  - [RenewTokenResponse](docs/Model/RenewTokenResponse.md)
  - [RetrieveCashDrawerShiftRequest](docs/Model/RetrieveCashDrawerShiftRequest.md)
  - [RetrieveCashDrawerShiftResponse](docs/Model/RetrieveCashDrawerShiftResponse.md)
  - [RetrieveCatalogObjectRequest](docs/Model/RetrieveCatalogObjectRequest.md)
  - [RetrieveCatalogObjectResponse](docs/Model/RetrieveCatalogObjectResponse.md)
+ - [RetrieveCustomerGroupRequest](docs/Model/RetrieveCustomerGroupRequest.md)
+ - [RetrieveCustomerGroupResponse](docs/Model/RetrieveCustomerGroupResponse.md)
  - [RetrieveCustomerRequest](docs/Model/RetrieveCustomerRequest.md)
  - [RetrieveCustomerResponse](docs/Model/RetrieveCustomerResponse.md)
+ - [RetrieveCustomerSegmentRequest](docs/Model/RetrieveCustomerSegmentRequest.md)
+ - [RetrieveCustomerSegmentResponse](docs/Model/RetrieveCustomerSegmentResponse.md)
  - [RetrieveDisputeEvidenceRequest](docs/Model/RetrieveDisputeEvidenceRequest.md)
  - [RetrieveDisputeEvidenceResponse](docs/Model/RetrieveDisputeEvidenceResponse.md)
  - [RetrieveDisputeRequest](docs/Model/RetrieveDisputeRequest.md)
@@ -676,6 +740,8 @@ Class | Method | HTTP request | Description
  - [SearchOrdersStateFilter](docs/Model/SearchOrdersStateFilter.md)
  - [SearchShiftsRequest](docs/Model/SearchShiftsRequest.md)
  - [SearchShiftsResponse](docs/Model/SearchShiftsResponse.md)
+ - [SearchTerminalCheckoutsRequest](docs/Model/SearchTerminalCheckoutsRequest.md)
+ - [SearchTerminalCheckoutsResponse](docs/Model/SearchTerminalCheckoutsResponse.md)
  - [Shift](docs/Model/Shift.md)
  - [ShiftFilter](docs/Model/ShiftFilter.md)
  - [ShiftFilterStatus](docs/Model/ShiftFilterStatus.md)
@@ -700,12 +766,20 @@ Class | Method | HTTP request | Description
  - [TenderCardDetailsStatus](docs/Model/TenderCardDetailsStatus.md)
  - [TenderCashDetails](docs/Model/TenderCashDetails.md)
  - [TenderType](docs/Model/TenderType.md)
+ - [TerminalCheckout](docs/Model/TerminalCheckout.md)
+ - [TerminalCheckoutCancelReason](docs/Model/TerminalCheckoutCancelReason.md)
+ - [TerminalCheckoutQuery](docs/Model/TerminalCheckoutQuery.md)
+ - [TerminalCheckoutQueryFilter](docs/Model/TerminalCheckoutQueryFilter.md)
+ - [TerminalCheckoutQuerySort](docs/Model/TerminalCheckoutQuerySort.md)
  - [TimeRange](docs/Model/TimeRange.md)
+ - [TipSettings](docs/Model/TipSettings.md)
  - [Transaction](docs/Model/Transaction.md)
  - [TransactionProduct](docs/Model/TransactionProduct.md)
  - [TransactionType](docs/Model/TransactionType.md)
  - [UpdateBreakTypeRequest](docs/Model/UpdateBreakTypeRequest.md)
  - [UpdateBreakTypeResponse](docs/Model/UpdateBreakTypeResponse.md)
+ - [UpdateCustomerGroupRequest](docs/Model/UpdateCustomerGroupRequest.md)
+ - [UpdateCustomerGroupResponse](docs/Model/UpdateCustomerGroupResponse.md)
  - [UpdateCustomerRequest](docs/Model/UpdateCustomerRequest.md)
  - [UpdateCustomerResponse](docs/Model/UpdateCustomerResponse.md)
  - [UpdateItemModifierListsRequest](docs/Model/UpdateItemModifierListsRequest.md)
@@ -899,6 +973,7 @@ Class | Method | HTTP request | Description
  - **BANK_ACCOUNTS_READ**: __HTTP Method__: `GET`  Grants read access to bank account information associated with the targeted Square account. For example, to call the Connect v1 ListBankAccounts endpoint.
  - **CUSTOMERS_READ**: __HTTP Method__: `GET`  Grants read access to customer information. For example, to call the ListCustomers endpoint.
  - **CUSTOMERS_WRITE**: __HTTP Method__: `POST`, `PUT`, `DELETE`  Grants write access to customer information. For example, to create and update customer profiles.
+ - **DEVICE_CREDENTIAL_MANAGEMENT**: __HTTP Method__: `POST`, `GET`  Grants read/write access to device credentials information. For example, to call the CreateDeviceCode endpoint.
  - **EMPLOYEES_READ**: __HTTP Method__: `GET`  Grants read access to employee profile information. For example, to call the Connect v1 Employees API.
  - **EMPLOYEES_WRITE**: __HTTP Method__: `POST`, `PUT`, `DELETE`  Grants write access to employee profile information. For example, to create and modify employee profiles.
  - **INVENTORY_READ**: __HTTP Method__: `GET`  Grants read access to inventory information. For example, to call the RetrieveInventoryCount endpoint.
