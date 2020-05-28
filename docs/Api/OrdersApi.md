@@ -5,6 +5,7 @@ All URIs are relative to *https://connect.squareup.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**batchRetrieveOrders**](OrdersApi.md#batchRetrieveOrders) | **POST** /v2/locations/{location_id}/orders/batch-retrieve | BatchRetrieveOrders
+[**calculateOrder**](OrdersApi.md#calculateOrder) | **POST** /v2/orders/calculate | CalculateOrder
 [**createOrder**](OrdersApi.md#createOrder) | **POST** /v2/locations/{location_id}/orders | CreateOrder
 [**payOrder**](OrdersApi.md#payOrder) | **POST** /v2/orders/{order_id}/pay | PayOrder
 [**searchOrders**](OrdersApi.md#searchOrders) | **POST** /v2/orders/search | SearchOrders
@@ -49,6 +50,55 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\SquareConnect\Model\BatchRetrieveOrdersResponse**](../Model/BatchRetrieveOrdersResponse.md)
+
+### Authorization
+
+[oauth2](../../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **calculateOrder**
+**Note: This endpoint is in beta.**
+> \SquareConnect\Model\CalculateOrderResponse calculateOrder($body)
+
+CalculateOrder
+
+Calculates an [Order](#type-order).
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure OAuth2 access token for authorization: oauth2
+SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+$apiInstance = new SquareConnect\Api\OrdersApi();
+$body = new \SquareConnect\Model\CalculateOrderRequest(); // \SquareConnect\Model\CalculateOrderRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
+
+try {
+    $result = $apiInstance->calculateOrder($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrdersApi->calculateOrder: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\SquareConnect\Model\CalculateOrderRequest**](../Model/CalculateOrderRequest.md)| An object containing the fields to POST for the request.  See the corresponding object definition for field details. |
+
+### Return type
+
+[**\SquareConnect\Model\CalculateOrderResponse**](../Model/CalculateOrderResponse.md)
 
 ### Authorization
 

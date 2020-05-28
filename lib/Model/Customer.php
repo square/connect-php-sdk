@@ -199,7 +199,7 @@ class Customer implements ArrayAccess
       */
     protected $preferences;
     /**
-      * $groups The customer groups and segments the customer belongs to. This deprecated field is replaced with dedicated `group_ids` for customer groups and `segment_ids` for customer segments.
+      * $groups The customer groups and segments the customer belongs to. This deprecated field has been replaced with  the dedicated `group_ids` for customer groups and the dedicated `segment_ids` field for customer segments. You can retrieve information about a given customer group and segment respectively using the Customer Groups API and Customer Segments API.
       * @var \SquareConnect\Model\CustomerGroupInfo[]
       */
     protected $groups;
@@ -619,7 +619,7 @@ class Customer implements ArrayAccess
   
     /**
      * Sets groups
-     * @param \SquareConnect\Model\CustomerGroupInfo[] $groups The customer groups and segments the customer belongs to. This deprecated field is replaced with dedicated `group_ids` for customer groups and `segment_ids` for customer segments.
+     * @param \SquareConnect\Model\CustomerGroupInfo[] $groups The customer groups and segments the customer belongs to. This deprecated field has been replaced with  the dedicated `group_ids` for customer groups and the dedicated `segment_ids` field for customer segments. You can retrieve information about a given customer group and segment respectively using the Customer Groups API and Customer Segments API.
      * @return $this
      */
     public function setGroups($groups)

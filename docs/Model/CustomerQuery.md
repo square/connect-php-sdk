@@ -2,13 +2,13 @@
 
 ### Description
 
-Represents a query (filtering and sorting criteria) used to search for customer profiles.
+Represents a query (including filtering criteria, sorting criteria, or both) used to search for customer profiles.
 
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------
-**filter** | getFilter() | setFilter($value) | [**\SquareConnect\Model\CustomerFilter**](CustomerFilter.md) | A list of filter criteria. | [optional] 
-**sort** | getSort() | setSort($value) | [**\SquareConnect\Model\CustomerSort**](CustomerSort.md) | Sort criteria for query results. The default sort behavior is to order customers alphabetically by &#x60;given_name&#x60; and &#x60;last_name&#x60;. | [optional] 
+**filter** | getFilter() | setFilter($value) | [**\SquareConnect\Model\CustomerFilter**](CustomerFilter.md) | A list of filtering criteria. | [optional] 
+**sort** | getSort() | setSort($value) | [**\SquareConnect\Model\CustomerSort**](CustomerSort.md) | Sorting criteria for query results. The default behavior is to sort  customers alphabetically by &#x60;given_name&#x60; and &#x60;family_name&#x60;. | [optional] 
 
 Note: All properties are protected and only accessed via getters and setters.
 

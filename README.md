@@ -8,7 +8,7 @@
 [![PHP version](https://badge.fury.io/ph/square%2Fconnect.svg)](https://badge.fury.io/ph/square%2Fconnect)
 [![Apache-2 license](https://img.shields.io/badge/license-Apache2-brightgreen.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 ==================
-## NOTICE: Square Connect PHP SDK will be replaced in Q2, 2020
+## NOTICE: Square Connect PHP SDK deprecated
 This Square Connect SDK will enter a security maintenance phase in Q2 2020 and will be RETIRED (EOL) in Q4 2020. In the security maintenance phase, this SDK will continue to receive support and security patches but will no longer receive bug fixes or product updates. Once it is retired, support and security patches will no longer be available.  A new SDK, more bespoke to the language, will be available once this SDK enters its security maintenance phase.
 The SDK itself will continue to work indefinitely until such time that the underlying APIs are retired at which point portions of the SDK may stop functioning.  For a full list of API retirement dates, please see our [Square API Lifecycle documentation](https://developer.squareup.com/docs/build-basics/api-lifecycle#deprecated-apis).
 
@@ -238,6 +238,19 @@ Class | Method | HTTP request | Description
 *LocationsApi* | [**listLocations**](docs/Api/LocationsApi.md#listlocations) | **GET** /v2/locations | ListLocations
 *LocationsApi* | [**retrieveLocation**](docs/Api/LocationsApi.md#retrievelocation) | **GET** /v2/locations/{location_id} | RetrieveLocation
 *LocationsApi* | [**updateLocation**](docs/Api/LocationsApi.md#updatelocation) | **PUT** /v2/locations/{location_id} | UpdateLocation
+*LoyaltyApi* | [**accumulateLoyaltyPoints**](docs/Api/LoyaltyApi.md#accumulateloyaltypoints) | **POST** /v2/loyalty/accounts/{account_id}/accumulate | AccumulateLoyaltyPoints
+*LoyaltyApi* | [**adjustLoyaltyPoints**](docs/Api/LoyaltyApi.md#adjustloyaltypoints) | **POST** /v2/loyalty/accounts/{account_id}/adjust | AdjustLoyaltyPoints
+*LoyaltyApi* | [**calculateLoyaltyPoints**](docs/Api/LoyaltyApi.md#calculateloyaltypoints) | **POST** /v2/loyalty/programs/{program_id}/calculate | CalculateLoyaltyPoints
+*LoyaltyApi* | [**createLoyaltyAccount**](docs/Api/LoyaltyApi.md#createloyaltyaccount) | **POST** /v2/loyalty/accounts | CreateLoyaltyAccount
+*LoyaltyApi* | [**createLoyaltyReward**](docs/Api/LoyaltyApi.md#createloyaltyreward) | **POST** /v2/loyalty/rewards | CreateLoyaltyReward
+*LoyaltyApi* | [**deleteLoyaltyReward**](docs/Api/LoyaltyApi.md#deleteloyaltyreward) | **DELETE** /v2/loyalty/rewards/{reward_id} | DeleteLoyaltyReward
+*LoyaltyApi* | [**listLoyaltyPrograms**](docs/Api/LoyaltyApi.md#listloyaltyprograms) | **GET** /v2/loyalty/programs | ListLoyaltyPrograms
+*LoyaltyApi* | [**redeemLoyaltyReward**](docs/Api/LoyaltyApi.md#redeemloyaltyreward) | **POST** /v2/loyalty/rewards/{reward_id}/redeem | RedeemLoyaltyReward
+*LoyaltyApi* | [**retrieveLoyaltyAccount**](docs/Api/LoyaltyApi.md#retrieveloyaltyaccount) | **GET** /v2/loyalty/accounts/{account_id} | RetrieveLoyaltyAccount
+*LoyaltyApi* | [**retrieveLoyaltyReward**](docs/Api/LoyaltyApi.md#retrieveloyaltyreward) | **GET** /v2/loyalty/rewards/{reward_id} | RetrieveLoyaltyReward
+*LoyaltyApi* | [**searchLoyaltyAccounts**](docs/Api/LoyaltyApi.md#searchloyaltyaccounts) | **POST** /v2/loyalty/accounts/search | SearchLoyaltyAccounts
+*LoyaltyApi* | [**searchLoyaltyEvents**](docs/Api/LoyaltyApi.md#searchloyaltyevents) | **POST** /v2/loyalty/events/search | SearchLoyaltyEvents
+*LoyaltyApi* | [**searchLoyaltyRewards**](docs/Api/LoyaltyApi.md#searchloyaltyrewards) | **POST** /v2/loyalty/rewards/search | SearchLoyaltyRewards
 *MerchantsApi* | [**listMerchants**](docs/Api/MerchantsApi.md#listmerchants) | **GET** /v2/merchants | ListMerchants
 *MerchantsApi* | [**retrieveMerchant**](docs/Api/MerchantsApi.md#retrievemerchant) | **GET** /v2/merchants/{merchant_id} | RetrieveMerchant
 *MobileAuthorizationApi* | [**createMobileAuthorizationCode**](docs/Api/MobileAuthorizationApi.md#createmobileauthorizationcode) | **POST** /mobile/authorization-code | CreateMobileAuthorizationCode
@@ -245,6 +258,7 @@ Class | Method | HTTP request | Description
 *OAuthApi* | [**renewToken**](docs/Api/OAuthApi.md#renewtoken) | **POST** /oauth2/clients/{client_id}/access-token/renew | RenewToken
 *OAuthApi* | [**revokeToken**](docs/Api/OAuthApi.md#revoketoken) | **POST** /oauth2/revoke | RevokeToken
 *OrdersApi* | [**batchRetrieveOrders**](docs/Api/OrdersApi.md#batchretrieveorders) | **POST** /v2/locations/{location_id}/orders/batch-retrieve | BatchRetrieveOrders
+*OrdersApi* | [**calculateOrder**](docs/Api/OrdersApi.md#calculateorder) | **POST** /v2/orders/calculate | CalculateOrder
 *OrdersApi* | [**createOrder**](docs/Api/OrdersApi.md#createorder) | **POST** /v2/locations/{location_id}/orders | CreateOrder
 *OrdersApi* | [**payOrder**](docs/Api/OrdersApi.md#payorder) | **POST** /v2/orders/{order_id}/pay | PayOrder
 *OrdersApi* | [**searchOrders**](docs/Api/OrdersApi.md#searchorders) | **POST** /v2/orders/search | SearchOrders
@@ -346,12 +360,16 @@ Class | Method | HTTP request | Description
 
  - [AcceptDisputeRequest](docs/Model/AcceptDisputeRequest.md)
  - [AcceptDisputeResponse](docs/Model/AcceptDisputeResponse.md)
+ - [AccumulateLoyaltyPointsRequest](docs/Model/AccumulateLoyaltyPointsRequest.md)
+ - [AccumulateLoyaltyPointsResponse](docs/Model/AccumulateLoyaltyPointsResponse.md)
  - [AddGroupToCustomerRequest](docs/Model/AddGroupToCustomerRequest.md)
  - [AddGroupToCustomerResponse](docs/Model/AddGroupToCustomerResponse.md)
  - [AdditionalRecipient](docs/Model/AdditionalRecipient.md)
  - [AdditionalRecipientReceivable](docs/Model/AdditionalRecipientReceivable.md)
  - [AdditionalRecipientReceivableRefund](docs/Model/AdditionalRecipientReceivableRefund.md)
  - [Address](docs/Model/Address.md)
+ - [AdjustLoyaltyPointsRequest](docs/Model/AdjustLoyaltyPointsRequest.md)
+ - [AdjustLoyaltyPointsResponse](docs/Model/AdjustLoyaltyPointsResponse.md)
  - [BalancePaymentDetails](docs/Model/BalancePaymentDetails.md)
  - [BankAccount](docs/Model/BankAccount.md)
  - [BankAccountStatus](docs/Model/BankAccountStatus.md)
@@ -373,6 +391,10 @@ Class | Method | HTTP request | Description
  - [BreakType](docs/Model/BreakType.md)
  - [BusinessHours](docs/Model/BusinessHours.md)
  - [BusinessHoursPeriod](docs/Model/BusinessHoursPeriod.md)
+ - [CalculateLoyaltyPointsRequest](docs/Model/CalculateLoyaltyPointsRequest.md)
+ - [CalculateLoyaltyPointsResponse](docs/Model/CalculateLoyaltyPointsResponse.md)
+ - [CalculateOrderRequest](docs/Model/CalculateOrderRequest.md)
+ - [CalculateOrderResponse](docs/Model/CalculateOrderResponse.md)
  - [CancelPaymentByIdempotencyKeyRequest](docs/Model/CancelPaymentByIdempotencyKeyRequest.md)
  - [CancelPaymentByIdempotencyKeyResponse](docs/Model/CancelPaymentByIdempotencyKeyResponse.md)
  - [CancelPaymentRequest](docs/Model/CancelPaymentRequest.md)
@@ -395,6 +417,7 @@ Class | Method | HTTP request | Description
  - [CatalogCategory](docs/Model/CatalogCategory.md)
  - [CatalogCustomAttributeDefinition](docs/Model/CatalogCustomAttributeDefinition.md)
  - [CatalogCustomAttributeDefinitionAppVisibility](docs/Model/CatalogCustomAttributeDefinitionAppVisibility.md)
+ - [CatalogCustomAttributeDefinitionNumberConfig](docs/Model/CatalogCustomAttributeDefinitionNumberConfig.md)
  - [CatalogCustomAttributeDefinitionSelectionConfig](docs/Model/CatalogCustomAttributeDefinitionSelectionConfig.md)
  - [CatalogCustomAttributeDefinitionSelectionConfigCustomAttributeSelection](docs/Model/CatalogCustomAttributeDefinitionSelectionConfigCustomAttributeSelection.md)
  - [CatalogCustomAttributeDefinitionSellerVisibility](docs/Model/CatalogCustomAttributeDefinitionSellerVisibility.md)
@@ -479,6 +502,10 @@ Class | Method | HTTP request | Description
  - [CreateDisputeEvidenceTextResponse](docs/Model/CreateDisputeEvidenceTextResponse.md)
  - [CreateLocationRequest](docs/Model/CreateLocationRequest.md)
  - [CreateLocationResponse](docs/Model/CreateLocationResponse.md)
+ - [CreateLoyaltyAccountRequest](docs/Model/CreateLoyaltyAccountRequest.md)
+ - [CreateLoyaltyAccountResponse](docs/Model/CreateLoyaltyAccountResponse.md)
+ - [CreateLoyaltyRewardRequest](docs/Model/CreateLoyaltyRewardRequest.md)
+ - [CreateLoyaltyRewardResponse](docs/Model/CreateLoyaltyRewardResponse.md)
  - [CreateMobileAuthorizationCodeRequest](docs/Model/CreateMobileAuthorizationCodeRequest.md)
  - [CreateMobileAuthorizationCodeResponse](docs/Model/CreateMobileAuthorizationCodeResponse.md)
  - [CreateOrderRequest](docs/Model/CreateOrderRequest.md)
@@ -504,6 +531,7 @@ Class | Method | HTTP request | Description
  - [CustomerSegment](docs/Model/CustomerSegment.md)
  - [CustomerSort](docs/Model/CustomerSort.md)
  - [CustomerSortField](docs/Model/CustomerSortField.md)
+ - [CustomerTextFilter](docs/Model/CustomerTextFilter.md)
  - [DateRange](docs/Model/DateRange.md)
  - [DayOfWeek](docs/Model/DayOfWeek.md)
  - [DeleteBreakTypeRequest](docs/Model/DeleteBreakTypeRequest.md)
@@ -516,6 +544,8 @@ Class | Method | HTTP request | Description
  - [DeleteCustomerGroupResponse](docs/Model/DeleteCustomerGroupResponse.md)
  - [DeleteCustomerRequest](docs/Model/DeleteCustomerRequest.md)
  - [DeleteCustomerResponse](docs/Model/DeleteCustomerResponse.md)
+ - [DeleteLoyaltyRewardRequest](docs/Model/DeleteLoyaltyRewardRequest.md)
+ - [DeleteLoyaltyRewardResponse](docs/Model/DeleteLoyaltyRewardResponse.md)
  - [DeleteShiftRequest](docs/Model/DeleteShiftRequest.md)
  - [DeleteShiftResponse](docs/Model/DeleteShiftResponse.md)
  - [Device](docs/Model/Device.md)
@@ -598,6 +628,8 @@ Class | Method | HTTP request | Description
  - [ListEmployeesResponse](docs/Model/ListEmployeesResponse.md)
  - [ListLocationsRequest](docs/Model/ListLocationsRequest.md)
  - [ListLocationsResponse](docs/Model/ListLocationsResponse.md)
+ - [ListLoyaltyProgramsRequest](docs/Model/ListLoyaltyProgramsRequest.md)
+ - [ListLoyaltyProgramsResponse](docs/Model/ListLoyaltyProgramsResponse.md)
  - [ListMerchantsRequest](docs/Model/ListMerchantsRequest.md)
  - [ListMerchantsResponse](docs/Model/ListMerchantsResponse.md)
  - [ListPaymentRefundsRequest](docs/Model/ListPaymentRefundsRequest.md)
@@ -614,6 +646,38 @@ Class | Method | HTTP request | Description
  - [LocationCapability](docs/Model/LocationCapability.md)
  - [LocationStatus](docs/Model/LocationStatus.md)
  - [LocationType](docs/Model/LocationType.md)
+ - [LoyaltyAccount](docs/Model/LoyaltyAccount.md)
+ - [LoyaltyAccountMapping](docs/Model/LoyaltyAccountMapping.md)
+ - [LoyaltyAccountMappingType](docs/Model/LoyaltyAccountMappingType.md)
+ - [LoyaltyEvent](docs/Model/LoyaltyEvent.md)
+ - [LoyaltyEventAccumulatePoints](docs/Model/LoyaltyEventAccumulatePoints.md)
+ - [LoyaltyEventAdjustPoints](docs/Model/LoyaltyEventAdjustPoints.md)
+ - [LoyaltyEventCreateReward](docs/Model/LoyaltyEventCreateReward.md)
+ - [LoyaltyEventDateTimeFilter](docs/Model/LoyaltyEventDateTimeFilter.md)
+ - [LoyaltyEventDeleteReward](docs/Model/LoyaltyEventDeleteReward.md)
+ - [LoyaltyEventExpirePoints](docs/Model/LoyaltyEventExpirePoints.md)
+ - [LoyaltyEventFilter](docs/Model/LoyaltyEventFilter.md)
+ - [LoyaltyEventLocationFilter](docs/Model/LoyaltyEventLocationFilter.md)
+ - [LoyaltyEventLoyaltyAccountFilter](docs/Model/LoyaltyEventLoyaltyAccountFilter.md)
+ - [LoyaltyEventOrderFilter](docs/Model/LoyaltyEventOrderFilter.md)
+ - [LoyaltyEventOther](docs/Model/LoyaltyEventOther.md)
+ - [LoyaltyEventQuery](docs/Model/LoyaltyEventQuery.md)
+ - [LoyaltyEventRedeemReward](docs/Model/LoyaltyEventRedeemReward.md)
+ - [LoyaltyEventSource](docs/Model/LoyaltyEventSource.md)
+ - [LoyaltyEventType](docs/Model/LoyaltyEventType.md)
+ - [LoyaltyEventTypeFilter](docs/Model/LoyaltyEventTypeFilter.md)
+ - [LoyaltyProgram](docs/Model/LoyaltyProgram.md)
+ - [LoyaltyProgramAccrualRule](docs/Model/LoyaltyProgramAccrualRule.md)
+ - [LoyaltyProgramAccrualRuleType](docs/Model/LoyaltyProgramAccrualRuleType.md)
+ - [LoyaltyProgramExpirationPolicy](docs/Model/LoyaltyProgramExpirationPolicy.md)
+ - [LoyaltyProgramRewardDefinition](docs/Model/LoyaltyProgramRewardDefinition.md)
+ - [LoyaltyProgramRewardDefinitionScope](docs/Model/LoyaltyProgramRewardDefinitionScope.md)
+ - [LoyaltyProgramRewardDefinitionType](docs/Model/LoyaltyProgramRewardDefinitionType.md)
+ - [LoyaltyProgramRewardTier](docs/Model/LoyaltyProgramRewardTier.md)
+ - [LoyaltyProgramStatus](docs/Model/LoyaltyProgramStatus.md)
+ - [LoyaltyProgramTerminology](docs/Model/LoyaltyProgramTerminology.md)
+ - [LoyaltyReward](docs/Model/LoyaltyReward.md)
+ - [LoyaltyRewardStatus](docs/Model/LoyaltyRewardStatus.md)
  - [MeasurementUnit](docs/Model/MeasurementUnit.md)
  - [MeasurementUnitArea](docs/Model/MeasurementUnitArea.md)
  - [MeasurementUnitCustom](docs/Model/MeasurementUnitCustom.md)
@@ -663,6 +727,7 @@ Class | Method | HTTP request | Description
  - [OrderReturnLineItemModifier](docs/Model/OrderReturnLineItemModifier.md)
  - [OrderReturnServiceCharge](docs/Model/OrderReturnServiceCharge.md)
  - [OrderReturnTax](docs/Model/OrderReturnTax.md)
+ - [OrderReward](docs/Model/OrderReward.md)
  - [OrderRoundingAdjustment](docs/Model/OrderRoundingAdjustment.md)
  - [OrderServiceCharge](docs/Model/OrderServiceCharge.md)
  - [OrderServiceChargeCalculationPhase](docs/Model/OrderServiceChargeCalculationPhase.md)
@@ -678,6 +743,8 @@ Class | Method | HTTP request | Description
  - [ProcessingFee](docs/Model/ProcessingFee.md)
  - [Product](docs/Model/Product.md)
  - [ProductType](docs/Model/ProductType.md)
+ - [RedeemLoyaltyRewardRequest](docs/Model/RedeemLoyaltyRewardRequest.md)
+ - [RedeemLoyaltyRewardResponse](docs/Model/RedeemLoyaltyRewardResponse.md)
  - [Refund](docs/Model/Refund.md)
  - [RefundPaymentRequest](docs/Model/RefundPaymentRequest.md)
  - [RefundPaymentResponse](docs/Model/RefundPaymentResponse.md)
@@ -717,6 +784,10 @@ Class | Method | HTTP request | Description
  - [RetrieveInventoryPhysicalCountResponse](docs/Model/RetrieveInventoryPhysicalCountResponse.md)
  - [RetrieveLocationRequest](docs/Model/RetrieveLocationRequest.md)
  - [RetrieveLocationResponse](docs/Model/RetrieveLocationResponse.md)
+ - [RetrieveLoyaltyAccountRequest](docs/Model/RetrieveLoyaltyAccountRequest.md)
+ - [RetrieveLoyaltyAccountResponse](docs/Model/RetrieveLoyaltyAccountResponse.md)
+ - [RetrieveLoyaltyRewardRequest](docs/Model/RetrieveLoyaltyRewardRequest.md)
+ - [RetrieveLoyaltyRewardResponse](docs/Model/RetrieveLoyaltyRewardResponse.md)
  - [RetrieveMerchantRequest](docs/Model/RetrieveMerchantRequest.md)
  - [RetrieveMerchantResponse](docs/Model/RetrieveMerchantResponse.md)
  - [RetrieveTransactionRequest](docs/Model/RetrieveTransactionRequest.md)
@@ -727,6 +798,14 @@ Class | Method | HTTP request | Description
  - [SearchCatalogObjectsResponse](docs/Model/SearchCatalogObjectsResponse.md)
  - [SearchCustomersRequest](docs/Model/SearchCustomersRequest.md)
  - [SearchCustomersResponse](docs/Model/SearchCustomersResponse.md)
+ - [SearchLoyaltyAccountsRequest](docs/Model/SearchLoyaltyAccountsRequest.md)
+ - [SearchLoyaltyAccountsRequestLoyaltyAccountQuery](docs/Model/SearchLoyaltyAccountsRequestLoyaltyAccountQuery.md)
+ - [SearchLoyaltyAccountsResponse](docs/Model/SearchLoyaltyAccountsResponse.md)
+ - [SearchLoyaltyEventsRequest](docs/Model/SearchLoyaltyEventsRequest.md)
+ - [SearchLoyaltyEventsResponse](docs/Model/SearchLoyaltyEventsResponse.md)
+ - [SearchLoyaltyRewardsRequest](docs/Model/SearchLoyaltyRewardsRequest.md)
+ - [SearchLoyaltyRewardsRequestLoyaltyRewardQuery](docs/Model/SearchLoyaltyRewardsRequestLoyaltyRewardQuery.md)
+ - [SearchLoyaltyRewardsResponse](docs/Model/SearchLoyaltyRewardsResponse.md)
  - [SearchOrdersCustomerFilter](docs/Model/SearchOrdersCustomerFilter.md)
  - [SearchOrdersDateTimeFilter](docs/Model/SearchOrdersDateTimeFilter.md)
  - [SearchOrdersFilter](docs/Model/SearchOrdersFilter.md)
@@ -971,6 +1050,7 @@ Class | Method | HTTP request | Description
 - **Authorization URL**: `https://connect.squareup.com/oauth2/authorize`
 - **Scopes**:
  - **BANK_ACCOUNTS_READ**: __HTTP Method__: `GET`  Grants read access to bank account information associated with the targeted Square account. For example, to call the Connect v1 ListBankAccounts endpoint.
+ - **CASH_DRAWER_READ**: __HTTP Method__: `GET`  Grants read access to cash drawer shift information. For example, to call the ListCashDrawerShifts endpoint.
  - **CUSTOMERS_READ**: __HTTP Method__: `GET`  Grants read access to customer information. For example, to call the ListCustomers endpoint.
  - **CUSTOMERS_WRITE**: __HTTP Method__: `POST`, `PUT`, `DELETE`  Grants write access to customer information. For example, to create and update customer profiles.
  - **DEVICE_CREDENTIAL_MANAGEMENT**: __HTTP Method__: `POST`, `GET`  Grants read/write access to device credentials information. For example, to call the CreateDeviceCode endpoint.
@@ -980,6 +1060,8 @@ Class | Method | HTTP request | Description
  - **INVENTORY_WRITE**: __HTTP Method__:  `POST`, `PUT`, `DELETE`  Grants write access to inventory information. For example, to call the BatchChangeInventory endpoint.
  - **ITEMS_READ**: __HTTP Method__: `GET`  Grants read access to business and location information. For example, to obtain a location ID for subsequent activity.
  - **ITEMS_WRITE**: __HTTP Method__: `POST`, `PUT`, `DELETE`  Grants write access to product catalog information. For example, to modify or add to a product catalog.
+ - **LOYALTY_READ**: __HTTP Method__: `GET`  Grants read access to loyalty information. For example, to call the ListLoyaltyPrograms endpoint.
+ - **LOYALTY_WRITE**: __HTTP Method__: `POST`, `PUT`, `DELETE`  Grants write access to loyalty information. For example, to call the CreateLoyaltyAccount endpoint.
  - **MERCHANT_PROFILE_READ**: __HTTP Method__: `GET`  Grants read access to business and location information. For example, to obtain a location ID for subsequent activity.
  - **ORDERS_READ**: __HTTP Method__: `GET`  Grants read access to order information. For example, to call the BatchRetrieveOrders endpoint.
  - **ORDERS_WRITE**: __HTTP Method__: `POST`, `PUT`, `DELETE`  Grants write access to order information. For example, to call the CreateCheckout endpoint.

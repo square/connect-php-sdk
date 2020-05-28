@@ -63,7 +63,7 @@ class ApiClientTest extends \PHPUnit_Framework_TestCase
      */
     public function test_getV1BatchTokenFromHeadersNoNextLinkHeader() {
         $headers = [
-            'Link' => '<https://connect.squareup.com/v1/payments/?batch_token=TOKEN1>; rel="previous"; title="previous chapter"'
+            'Link' => '<http://connect.squareup.com/v1/payments/?batch_token=TOKEN1>; rel="previous"; title="previous chapter"'
         ];
         $batch_token = \SquareConnect\ApiClient::getV1BatchTokenFromHeaders($headers);
         $this->assertEquals(null, $batch_token);
@@ -75,7 +75,7 @@ class ApiClientTest extends \PHPUnit_Framework_TestCase
      */
     public function test_getV1BatchTokenFromHeadersNoBatchToken() {
         $headers = [
-            'Link' => "<https://connect.squareup.com/v1/payments/?batch_Ttoken=TOKEN1>;rel='next'"
+            'Link' => "<http://connect.squareup.com/v1/payments/?batch_Ttoken=TOKEN1>;rel='next'"
         ];
         $batch_token = \SquareConnect\ApiClient::getV1BatchTokenFromHeaders($headers);
         $this->assertEquals(null, $batch_token);
@@ -87,7 +87,7 @@ class ApiClientTest extends \PHPUnit_Framework_TestCase
      */
     public function test_getV1BatchTokenFromHeaders() {
         $headers = [
-            'Link' => "<https://connect.squareup.com/v1/payments/?batch_token=TOKEN1>;rel='next'"
+            'Link' => "<http://connect.squareup.com/v1/payments/?batch_token=TOKEN1>;rel='next'"
         ];
         $batch_token = \SquareConnect\ApiClient::getV1BatchTokenFromHeaders($headers);
         $this->assertEquals('TOKEN1', $batch_token);
