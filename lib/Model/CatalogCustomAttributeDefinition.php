@@ -33,6 +33,7 @@ class CatalogCustomAttributeDefinition implements ArrayAccess
         'seller_visibility' => 'string',
         'app_visibility' => 'string',
         'string_config' => '\SquareConnect\Model\CatalogCustomAttributeDefinitionStringConfig',
+        'number_config' => '\SquareConnect\Model\CatalogCustomAttributeDefinitionNumberConfig',
         'selection_config' => '\SquareConnect\Model\CatalogCustomAttributeDefinitionSelectionConfig',
         'custom_attribute_usage_count' => 'int',
         'key' => 'string'
@@ -51,6 +52,7 @@ class CatalogCustomAttributeDefinition implements ArrayAccess
         'seller_visibility' => 'seller_visibility',
         'app_visibility' => 'app_visibility',
         'string_config' => 'string_config',
+        'number_config' => 'number_config',
         'selection_config' => 'selection_config',
         'custom_attribute_usage_count' => 'custom_attribute_usage_count',
         'key' => 'key'
@@ -69,6 +71,7 @@ class CatalogCustomAttributeDefinition implements ArrayAccess
         'seller_visibility' => 'setSellerVisibility',
         'app_visibility' => 'setAppVisibility',
         'string_config' => 'setStringConfig',
+        'number_config' => 'setNumberConfig',
         'selection_config' => 'setSelectionConfig',
         'custom_attribute_usage_count' => 'setCustomAttributeUsageCount',
         'key' => 'setKey'
@@ -87,6 +90,7 @@ class CatalogCustomAttributeDefinition implements ArrayAccess
         'seller_visibility' => 'getSellerVisibility',
         'app_visibility' => 'getAppVisibility',
         'string_config' => 'getStringConfig',
+        'number_config' => 'getNumberConfig',
         'selection_config' => 'getSelectionConfig',
         'custom_attribute_usage_count' => 'getCustomAttributeUsageCount',
         'key' => 'getKey'
@@ -132,6 +136,11 @@ class CatalogCustomAttributeDefinition implements ArrayAccess
       * @var \SquareConnect\Model\CatalogCustomAttributeDefinitionStringConfig
       */
     protected $string_config;
+    /**
+      * $number_config 
+      * @var \SquareConnect\Model\CatalogCustomAttributeDefinitionNumberConfig
+      */
+    protected $number_config;
     /**
       * $selection_config Populated when `type` is set to `SELECTION`, unset otherwise.
       * @var \SquareConnect\Model\CatalogCustomAttributeDefinitionSelectionConfig
@@ -194,6 +203,11 @@ class CatalogCustomAttributeDefinition implements ArrayAccess
               $this->string_config = $data["string_config"];
             } else {
               $this->string_config = null;
+            }
+            if (isset($data["number_config"])) {
+              $this->number_config = $data["number_config"];
+            } else {
+              $this->number_config = null;
             }
             if (isset($data["selection_config"])) {
               $this->selection_config = $data["selection_config"];
@@ -362,6 +376,25 @@ class CatalogCustomAttributeDefinition implements ArrayAccess
     public function setStringConfig($string_config)
     {
         $this->string_config = $string_config;
+        return $this;
+    }
+    /**
+     * Gets number_config
+     * @return \SquareConnect\Model\CatalogCustomAttributeDefinitionNumberConfig
+     */
+    public function getNumberConfig()
+    {
+        return $this->number_config;
+    }
+  
+    /**
+     * Sets number_config
+     * @param \SquareConnect\Model\CatalogCustomAttributeDefinitionNumberConfig $number_config 
+     * @return $this
+     */
+    public function setNumberConfig($number_config)
+    {
+        $this->number_config = $number_config;
         return $this;
     }
     /**

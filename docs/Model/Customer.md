@@ -7,9 +7,9 @@ Represents a Square customer profile, which can have one or more cards on file a
 ## Properties
 Name | Getter | Setter | Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------
-**id** | getId() | setId($value) | **string** | A unique Square-assigned ID for the customer profile. | 
-**created_at** | getCreatedAt() | setCreatedAt($value) | **string** | The timestamp when the customer profile was created, in RFC 3339 format. | 
-**updated_at** | getUpdatedAt() | setUpdatedAt($value) | **string** | The timestamp when the customer profile was last updated, in RFC 3339 format. | 
+**id** | getId() | setId($value) | **string** | A unique Square-assigned ID for the customer profile. | [optional] 
+**created_at** | getCreatedAt() | setCreatedAt($value) | **string** | The timestamp when the customer profile was created, in RFC 3339 format. | [optional] 
+**updated_at** | getUpdatedAt() | setUpdatedAt($value) | **string** | The timestamp when the customer profile was last updated, in RFC 3339 format. | [optional] 
 **cards** | getCards() | setCards($value) | [**\SquareConnect\Model\Card[]**](Card.md) | Payment details of cards stored on file for the customer profile. | [optional] 
 **given_name** | getGivenName() | setGivenName($value) | **string** | The given (i.e., first) name associated with the customer profile. | [optional] 
 **family_name** | getFamilyName() | setFamilyName($value) | **string** | The family (i.e., last) name associated with the customer profile. | [optional] 
@@ -22,7 +22,7 @@ Name | Getter | Setter | Type | Description | Notes
 **reference_id** | getReferenceId() | setReferenceId($value) | **string** | An optional, second ID used to associate the customer profile with an entity in another system. | [optional] 
 **note** | getNote() | setNote($value) | **string** | A custom note associated with the customer profile. | [optional] 
 **preferences** | getPreferences() | setPreferences($value) | [**\SquareConnect\Model\CustomerPreferences**](CustomerPreferences.md) | Represents general customer preferences. | [optional] 
-**groups** | getGroups() | setGroups($value) | [**\SquareConnect\Model\CustomerGroupInfo[]**](CustomerGroupInfo.md) | The customer groups and segments the customer belongs to. This deprecated field is replaced with dedicated &#x60;group_ids&#x60; for customer groups and &#x60;segment_ids&#x60; for customer segments. | [optional] [deprecated]
+**groups** | getGroups() | setGroups($value) | [**\SquareConnect\Model\CustomerGroupInfo[]**](CustomerGroupInfo.md) | The customer groups and segments the customer belongs to. This deprecated field has been replaced with  the dedicated &#x60;group_ids&#x60; for customer groups and the dedicated &#x60;segment_ids&#x60; field for customer segments. You can retrieve information about a given customer group and segment respectively using the Customer Groups API and Customer Segments API. | [optional] [deprecated]
 **creation_source** | getCreationSource() | setCreationSource($value) | **string** | A creation source represents the method used to create the customer profile. See [CustomerCreationSource](#type-customercreationsource) for possible values | [optional] 
 **group_ids** | getGroupIds() | setGroupIds($value) | **string[]** | The IDs of customer groups the customer belongs to. | [optional] [beta]
 **segment_ids** | getSegmentIds() | setSegmentIds($value) | **string[]** | The IDs of segments the customer belongs to. | [optional] [beta]

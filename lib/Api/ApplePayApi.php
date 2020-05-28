@@ -108,7 +108,7 @@ class ApplePayApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('application/json'));
-        $headerParams['Square-Version'] = "2020-04-22";
+        $headerParams['Square-Version'] = "2020-05-28";
 
         
         

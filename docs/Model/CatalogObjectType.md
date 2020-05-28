@@ -21,6 +21,7 @@ Name | Type
 **MEASUREMENT_UNIT** | string
 **ITEM_OPTION** | string
 **ITEM_OPTION_VAL** | string
+**CUSTOM_ATTRIBUTE_DEFINITION** | string
 **QUICK_AMOUNTS_SETTINGS** | string
 
 Note: All properties are protected and only accessed via getters and setters.
