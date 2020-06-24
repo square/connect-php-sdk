@@ -1,6 +1,4 @@
-![Square logo]
-
-# Square Connect PHP SDK - RETIRED
+# Square Connect PHP SDK - RETIRED replaced by [square/square-php-sdk](https://github.com/square/square-php-sdk)
 
 ---
 
@@ -38,7 +36,6 @@ The old Connect SDK documentation is available under the
 Follow the instructions below to migrate your apps from the deprecated
 `square/connect` sdk to the new library.
 
-### Option 1: With composer.json
 You need to update your app to use the Square PHP SDK instead of the Connect PHP SDK
 The Square PHP SDK uses the `square/square` identifier.
 
@@ -52,24 +49,10 @@ $ php composer.phar require square/square
 ```
 "require": {
     ...
-    "square/square": "*",
+    "square/square": "^5.0.0",
     ...
 }
 ```
-
-### Option 2: From GitHub
-Clone the Square PHP SDK repository or download the zip into your project folder and
-then update the following line in your code from
-
-```php
-require('connect-php-sdk/autoload.php');
-```
-to:
-
-```php
-require('square-php-sdk/autoload.php');
-```
-
 ### Update your code
 
 1. Change all instances of `use SquareConnect\...` to `use Square\...`.
@@ -103,14 +86,13 @@ Square SDK
 ```php
 require 'vendor/autoload.php';
 
-use Square\Client;
-
-$access_token = 'YOUR_ACCESS_TOKEN';
+use Square\SquareClient;
+use Square\Environment;
 
 // Initialize the Square client.
 $api_client = new SquareClient([
-  'accessToken' => $access_token,
-  'environment' => 'sandbox'
+  'accessToken' => "YOUR_ACCESS_TOKEN",
+  'environment' => Environment::SANDBOX
 ]); // In production, the environment arg is 'production'
 ```
 
@@ -162,6 +144,14 @@ try {
 Now consider equivalent code using the new `square/square` library:
 
 ```php
+require 'vendor/autoload.php';
+
+use Square\Environment;
+use Square\Exceptions\ApiException;
+use Square\SquareClient;
+use Square\Models\CreatePaymentRequest;
+use Square\Models\Money;
+
 $payments_api = $api_client->getPaymentsApi();
 
 $money = new Money();
@@ -200,6 +190,5 @@ Please join us in our [Square developer community] if you have any questions!
 
 
 [//]: # "Link anchor definitions"
-[Square Logo]: https://docs.connect.squareup.com/images/github/github-square-logo.svg
 [Square PHP SDK]: https://github.com/square/square-php-sdk
 [Square developer community]: https://squ.re/slack
