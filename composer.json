@@ -1,7 +1,7 @@
 {
     "name": "square/connect",
     "version": "3.20200528.1",
-    "description": "PHP client library for the Square Connect v2 API",
+    "description": "This Package is deprecated, it is replaced by https://packagist.org/packages/square/square.",
     "keywords": [
         "swagger",
         "php",
