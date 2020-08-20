@@ -14,5 +14,13 @@ Name | Getter | Setter | Type | Description | Notes
 
 Note: All properties are protected and only accessed via getters and setters.
 
+## Adjustment Types
+adjustment_type | Description
+------------ | ------------ |
+ SALE | Deduct from inventory
+ RECEIVE_STOCK | Add to inventory
+ MANUAL_ADJUST | 
+
+
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
